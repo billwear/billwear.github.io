@@ -1,5 +1,9 @@
 # i use org-mode
 
+-----
+[home](README.md) ~ [geek](geekcode.md)
+-----
+
 *a long time ago, in an irc far, far away*
 
 > **ack**: tables are 90% of my use cases for org mode  
@@ -19,7 +23,7 @@ On the fourth Saturday (according to legend), she came home with a packed Volksw
 
 ## i didn't go to MIT
 
-Our family was just getting by, so my dad asked me to avoid faraway colleges. As incentive, he got me into coding classes at the local college (at 14) and arranged for me to split high-school college. Fine by me, and I did okay.
+Our family was just getting by, so my dad asked me to avoid faraway colleges. As incentive, he got me into coding classes at the local college (at 14) and arranged for me to split high-school and college. Fine by me, and I did okay.
 
 I logged into UNIX for the first time on June 18th, 1974.  An avid reader since age 6, text-processing was very much on my mind.  When I encountered a system where plain text is the currency, I was hooked.
 

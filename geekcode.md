@@ -1,5 +1,9 @@
 # my geek code
 
+-----
+[home](README.md) ~ [org](orgmode.md)
+-----
+
 **GE d- s:++ a+++ C++++ UL+++ P+ L+++ E+++ W+++ N+++ o+ K+ w— V PS+ PE f— c+++ Y+ PGP++ t+++ 5- X- R+++ tv++ b++ D-— xkcd G e++++ h– r+++**
 
 Translation:
