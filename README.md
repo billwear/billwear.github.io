@@ -9,5 +9,5 @@ setting orange, 7th discord, 3190
 moving my web presence to github pages. no stones thrown at my previous provider; i just want to stop spending so much on hosting.  here's what you can find on this page atm:
 
 - [my geek code](geekcode.md)
-
+- [i use org mode](orgmode.md)
 
