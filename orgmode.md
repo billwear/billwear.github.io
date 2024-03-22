@@ -6,7 +6,7 @@
 > **stormrider**: life is 90% of my use cases for org mode  
 
 -----
-[home](README.md) ~ [geek](geekcode.md)
+[home](README.md) ~ [geek](geekcode.md) ~ [blogroll](blogroll.md)
 
 -----
 
