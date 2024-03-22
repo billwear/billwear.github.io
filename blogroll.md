@@ -3,8 +3,9 @@
 Generally, this is in order by epoch.  There is no nav menu on rolled pages; just use the back arrow.
 
 -----
-[home](README.md) ~ [geek](geekcode.md) ~ [orgmode](orgmode.md)
+[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ **blogroll**
 
 -----
+
 
 - [1711047833](1711047833.md)
