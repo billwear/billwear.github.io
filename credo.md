@@ -1,7 +1,7 @@
 Here is my credo, which is loosely based on the general principles of UNIX programming.  These have evolved over my lifetime.
 
 -----
-[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ **credo** ~ [blogroll](blogroll.md)
+[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
 
 -----
 
