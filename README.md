@@ -24,4 +24,6 @@ Emotional causes seem a little far-fetched to me a lot of the time. I have my mo
 
 This kinda has some implications. First, it would be really hard to think your way out of behaviours that are not driven by your state of mind, but by the habitual pathways you've laid down in your neurons. Second, pattern interrupts would only work temporarily to stop the behaviours.
 
-It just seems extraordinarily hard to break a habit. Gotta work on this.
+It just seems extraordinarily hard to break a habit. Gotta work on this. Everyone refers to "mindfulness" as the cure for, well, nearly everything. I think that's an overloaded term, fraught with Eastern philosophy and the idea of meditation and Zen-ness.  Not sure that's what's required.  This isn't a philosophical shift, but just a shift *in attention*. When I can get myself to eat my own dog food -- to "speak clearly, listen carefully, [and] pay attention" -- it's a lot easier.
+
+We put too much force into doing things, dragging emotion into everything from folding clothes to putting up a tent.  In reality, most things are not that hard, and go much better with a much lighter touch.  We aren't encouraged by the screeniverse to live that way.  Interesting.  I have to focus on integrating this calm, attentive approach in my life; it should make things much better.
