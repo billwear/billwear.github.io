@@ -5,7 +5,7 @@ Sweetmorn, 8th Discord, 3190
 **/opt/exp/lib/zork/bin/run-oomk.sh: line 451: 16207 Segmentation fault**  
 
 -----
-[geek](geekcode.md) ~ [org](orgmode.md) ~ [blogroll](blogroll.md)
+**home** ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [blogroll](blogroll.md)
 
 -----
 
