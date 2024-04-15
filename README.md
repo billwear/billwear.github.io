@@ -1,14 +1,13 @@
 [home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
 
 -----
-This is the personal website of Bill Wear. I also go by the handle "stormrider." 
+Welcome to the personal website of Bill Wear, also known as "stormrider."
 
-I like using UNIX, Linux, emacs, and org-mode. I like to wear t-shirts and blue jeans, with all-black skateboard shoes. Sometimes I wear Columbia fishing shirts when I go out with others. 
+I'm a fan of UNIX, Linux, emacs, and org-mode. My usual attire consists of t-shirts, blue jeans, and all-black skateboard shoes, though I'll switch to Columbia fishing shirts for social outings.
 
-You can learn more about me by studying my [geek code](geekcode.md) and my [credo](credo.md). I live in the woods in the very deep South of the United States, in a 67-year-old house that my wife and I recently bought and are slowly renovating.
+You can get to know more about me through my [geek code](https://billwear.github.io/geekcode.html) and [my credo](https://billwear.github.io/credo.html). I reside in a 67-year-old house nestled in the woods of the deep South, which my wife and I are gradually renovating.
 
-I am not impressed by distractions like social media, television, or the constant drive to "do something." I am learning, slowly, to do [deep work](https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/).
-
+I prefer to steer clear of distractions like social media and television. Instead, I'm cultivating the art of [deep work](https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/), learning to focus and engage more profoundly over time.
 -----
 
 Copyright (C) 2024 by Bill Wear. All rights reserved.
