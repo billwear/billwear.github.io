@@ -5,9 +5,7 @@ Welcome to the personal website of Bill Wear, also known as "stormrider."
 
 I'm a fan of UNIX, Linux, emacs, and org-mode. My usual attire consists of t-shirts, blue jeans, and all-black skateboard shoes, though I'll switch to Columbia fishing shirts for social outings.
 
------
-I prefer to steer clear of ... social media and television.
------
+> *I prefer to steer clear of ... social media and television.*
 
 You can get to know more about me through my [geek code](https://billwear.github.io/geekcode.html) and [my credo](https://billwear.github.io/credo.html). I reside in a 67-year-old house nestled in the woods of the deep South, which my wife and I are gradually renovating.
 
