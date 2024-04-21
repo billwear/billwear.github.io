@@ -1,9 +1,10 @@
+-----
+[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
+
+-----
+
 Here is my credo, which is loosely based on the general principles of UNIX programming.  These have evolved over my lifetime.
 
------
-[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
-
------
 
 1. Start small and build a little at a time; a mosaic is more beautiful than the finest concrete, and way less likely to get you sued for improper construction.
 
