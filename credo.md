@@ -39,3 +39,5 @@ Here is my credo, which is loosely based on the general principles of UNIX progr
 
 17. Think ahead, but don’t worship your plans; all things are possible, except maybe skiing through a revolving door.
 
+18. Think big: you *are* the universe. And like any good universe, remember to occasionally expand beyond your current dimensions — just without the big bang.
+
