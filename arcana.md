@@ -1,3 +1,8 @@
+-----
+[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
+
+-----
+
 # arcana
 
 Here are some arcane and obscure things you might find interesting:
@@ -5,11 +10,6 @@ Here are some arcane and obscure things you might find interesting:
 -   [Phone recordings you can call](#orgff3b882)
 -   [Textspeak, chatronyms, WYWTCI](#org5dee725)
 -   [A catalog of the .org domains](#org022f2e5)
-
------
-[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
-
------
 
 ## Phone recordings you can call {#orgff3b882}
 
