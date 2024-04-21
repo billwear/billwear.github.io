@@ -1,5 +1,10 @@
-[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
+# billwear.github.io 
+
 -----
+[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
+
+-----
+
 Welcome to the personal website of Bill Wear, also known as "stormrider."
 
 I'm a fan of UNIX, Linux, emacs, and org-mode. My usual attire consists of t-shirts, blue jeans, and all-black skateboard shoes, though I'll switch to Columbia fishing shirts for social outings.
