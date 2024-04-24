@@ -1,5 +1,10 @@
 # Networking tutorial
 
+-----
+[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
+
+-----
+
 Centuries ago, John Milton wrote, \"I cannot praise a fugitive and
 cloistered virtue,\" referring, at least in part, to those who keep
 their intelligence to themselves. Without some form of communication --
@@ -7,11 +12,6 @@ without manifesting that intelligence in word or deed -- there is
 generally no evidence of intelligence or intelligent life. Our knowledge
 must create ripples in space and time if it is to be shared, and it must
 be shared to benefit others.
-
------
-[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
-
------
 
 For this reason, we create networks, which might be defined as
 \"channels of sharing\". All virtue and all goodness is valued only in
