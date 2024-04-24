@@ -1,10 +1,10 @@
 # blogroll
 
-Generally, this is in order by epoch.  There is no nav menu on rolled pages; just use the back arrow.
-
 -----
 [home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
 
 -----
+
+In order by reverse epic, no nav menu on blog pages (just use the back button).
 
 - [1711047833](1711047833.md)
