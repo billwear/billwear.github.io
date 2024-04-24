@@ -1,14 +1,14 @@
-# i use org-mode
-
-*a long time ago, in an irc far, far away*
-
-> **ack**: tables are 90% of my use cases for org mode  
-> **stormrider**: life is 90% of my use cases for org mode  
+# life is 90$ of my use-cases for org-mode
 
 -----
 [home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
 
 -----
+
+*a long time ago, in an irc far, far away*
+
+> **ack**: tables are 90% of my use cases for org mode  
+> **stormrider**: life is 90% of my use cases for org mode  
 
 Here's a old MIT story: the computer age began with the Tech Model Railroad Club in the late 50's. Specifically, it started with the folks that worked on the switchgear.  When a mainframe came to MIT (the "hulking giant"), these hackers began to hog overnight slots, trying to code with minimum instructions.  It became an obsession.
 
