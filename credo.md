@@ -1,3 +1,5 @@
+# my credo
+
 -----
 [home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
 
