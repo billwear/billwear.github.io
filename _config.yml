@@ -1,2 +1,4 @@
 theme: jekyll-theme-hacker
 favicon: emacs-dragon-01.jpg
+og:
+title: "Bill Wear"
