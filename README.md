@@ -56,7 +56,7 @@ Along the way, observing myself, some principles have emerged as clear habits fo
 
 More recently, I've encoded this philosophy into a personal motto, "simple, solid, sincere," and a statement of belief, "practical action creates personal meaning."
 
-Here is one person's evolving understanding of themselves, and an ongoing exploration of what can be done if one commits to a clear purpose. 
+This site is about one person's evolving understanding of themselves, and an ongoing exploration of what can be done if one commits to a clear purpose. 
 
 -----
 
