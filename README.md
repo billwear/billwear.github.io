@@ -1,8 +1,20 @@
 Welcome to the personal website of Bill Wear.
 
-I am a pragmatic existentialist, trying to live out a simple idea: *practical action creates personal meaning*. This philosophy has evolved over fifty-four years, since I began reading *[On Being a Real Person](https://www.goodreads.com/book/show/1572133.On_Being_a_Real_Person)* at age 9. It grew slowly as I tackled *[Walden](https://www.goodreads.com/book/show/16902.Walden?ref=nav_sb_ss_1_6)*, then moved on to *[Zen and the Art of Motorcycle Maintenance](https://www.goodreads.com/book/show/629.Zen_and_the_Art_of_Motorcycle_Maintenance?ref=nav_sb_ss_1_3)*, the *[Tao Te Ching](https://www.goodreads.com/book/show/67896.Tao_Te_Ching?ref=nav_sb_ss_1_7)*, and an extended bibliography, long since forgotten, that included Frankl, Nietzche, and a host of Zen and Quaker practioners, and some of the transient hippie philosophers of my teenage years.
+I am a pragmatic existentialist, trying to live out a simple idea: *practical action creates personal meaning*. 
 
-It was simultaneously cemented into place through my ongoing, fifty-year, daily practice of using Unix -- and later Linux -- alongside systems such as Emacs.  In one form or another, local or remote, printed or handheld, I have depended on a Unix-like environment to help me take practical action and create personal meaning.
+This quest started fifty-four years ago, when I read *[On Being a Real Person](https://www.goodreads.com/book/show/1572133.On_Being_a_Real_Person)* at age 9. From there, it evolved through:
+
+ * *[Walden](https://www.goodreads.com/book/show/16902.Walden?ref=nav_sb_ss_1_6)*
+* *[Zen and the Art of Motorcycle Maintenance](https://www.goodreads.com/book/show/629.Zen_and_the_Art_of_Motorcycle_Maintenance?ref=nav_sb_ss_1_3)*
+* The *[Tao Te Ching](https://www.goodreads.com/book/show/67896.Tao_Te_Ching?ref=nav_sb_ss_1_7)*
+* Frankl
+* Nietzche
+* Zen classics
+* Quaker writers
+* John Muir
+* Some forgotten, transient hippie philosophers
+
+It was locked into place through my lifelong practice of Unix, Linux, and Emacs.  Local or remote, printed or handheld, I have daily depended on such tools to help me take practical action and create personal meaning.
 
 Along the way, observing myself, some principles have emerged as clear habits for me:
 
@@ -41,6 +53,10 @@ Along the way, observing myself, some principles have emerged as clear habits fo
 17. Think ahead, but don’t worship your plans.
 
 18. Think as big as you can as often as you can, but understand that dreams are a vector, not a goal.
+
+More recently, I've encoded this philosophy into a personal motto, "simple, solid, sincere," and a statement of belief, "practical action creates personal meaning."
+
+Here is one person's understanding of themselves, and an ongoing exploration what can be done if one commits to a clear purpose. 
 
 -----
 
