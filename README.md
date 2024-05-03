@@ -18,7 +18,7 @@ It was locked into place through my lifelong practice of Unix, Linux, and Emacs.
 
 Along the way, observing myself, some principles have emerged as clear habits for me:
 
-1. Start small, build incrementally. 
+1. [Start small, build incrementally](kaizen.md). 
 
 2. [Say exactly what you mean](truth.md).
 
