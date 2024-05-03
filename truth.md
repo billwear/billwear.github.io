@@ -1,31 +1,26 @@
-## Truth
+## The social catalyst of truth
 
 For much of my life, I was a casual liar. 
 
-As a teenager, I was sexually abused by a male teacher at a time when I was very vulnerable. My little sister had just died after a two-year struggle with severe leukemia; my mother had all but lost her mind; my father's addiction to alcohol had taken over his life; and my little brother had to get married at 15 because his girlfriend was pregnant.  This teacher knew my family and exploited the situation, essentially extorting me into doing things I otherwise wouldn't consider.
+As a teenager grappling with immense personal trauma—from the loss of my sister and the breakdown of my family to the abuse by a trusted teacher—I found myself spinning tales as a form of escape. This teacher exploited my vulnerability, which led me down a dark path of shame and deceit.  I was afraid to be myself, and I hated myself for years -- partly for lying, and partly out of shame
 
-Shame haunted me for years. Until I was able to publicly confess what had happened, many years later, I was afraid to be myself. I never did the audit trail to decide exactly what drove me to be dishonest, and to be fair, some level of the dishonesty was beyond my conscious control. I misremembered things as vividly as if they had been reality. 
-
-I hated myself for years -- partly for lying, and partly out of shame -- but still I continued down this path.
+### Breaking free
+Shame haunted me until, years later, I found the strength to reveal the truth. This confession didn't immediately change my habits of dishonesty, but it sparked a crucial transformation. Eventually, as other victims came forward, we used the media and the legal system to amplify our stories, which was profoundly cathartic. Within months, the need to lie diminished; I reclaimed my voice and my truth.
 
 Eventually other boys came forward, and we formed a sort of riot squad that used the full power of the press {and the legal system} to be heard and acknowledged. It was cathartic. I won't say my lying vanished right away, but it was completely gone within about eight months. Somehow, having gotten the shame out of my system, I felt worthy to speak my truth again.
 
-### A culture that rewards falsehood
+### Challenging a deceptive culture
+Our society  rewards deception— 
 
-We live in a culture that rewards deception, in one form or another. We are praised when we don't Uncle Ray that we can't stand his famous Brussels Sprouts and don't want to eat them. People look up to us when we don't tell someone the truth about how they look.  We are encouraged to put our best foot forward at all times. We are well-thought-of when we find a way to say something good about the awful neighbor who died yesterday.  Life can be popularity contest.
+We live in a culture that often rewards deception, whether it's sparing Uncle Ray's feelings about his unloved Brussels Sprouts, or embellishing our lives on social media to match an illusion of perfection. "Best foot forward" is the winning move in a popularity contest, even if it means filters, photoshop, and carefully-curated vignettes that highlight the happy side of life.
 
-Social media amplifies these rewards. People always show their best side, using filters and photoshop. Vacation shots, baby and pet pictures, and a stream of other millisecond snapshots paint a deceptive portrait of a happy life. We respond by trying to figure out how to top their story. 
+I reached a breaking point and chose transparency over pretense. This doesn't mean I overshare, but I've learned to value clarity and simplicity. When something is private, I simply say, "pass," respecting my boundaries without deceit. Just the truth, as clearly and simply as I can express it.  What you see is largely what you get.
 
-One day, I just decided I didn't want to do this any more: No lying; no *implying*; no posturing; no decption by omission.  Just the truth, as clearly and simply as I can express it.  What you see is what you get. This doesn't mean I share everything.  When I say, "no deception by omission," I have learned to say, "pass."  This lets the listener know that it's private, and I don't want to talk about it.
-
-### Everything changed
-
-After wearing masks for many years, I was shocked at how well I was received when putting them down. The people in my life who valued the false faces seem to have disappeared. Those who value the truth, told as simply and plainly as possible, now populate my daily reality. It's wondeful.  I can express myself honestly, reveal my ignorance, and give my honest opinions.
+### The rewards of authenticity
+Dropping the guise was transformative. Those who favored superficiality drifted away, replaced by individuals who appreciate honesty. Now, I can express my doubts, voice my opinions, and confront my past abuse without the shadows of fear and shame. This honesty has not only mended old wounds but also fostered genuine relationships and made daily interactions more straightforward.
 
 Suddenly, I have friends again. People listen to my opinion and act on it. They compliment me when I do well, and feel comfortable correcting me when I do poorly. It isn't at all the horrible ordeal that I imagined it would be. All of the angst I felt over my abuse had gotten conflated with a false undercurrent of bad karma and paranoia. In short, I am now completely open and honest with people, and nothing strange has happened. 
 
-Today, when I catch myself feeling the urge to lie, I know to look for the stressor -- the unsaid thing, the buried feeling, the unpopular opinion I'm hoarding -- and immediately rectify the situation. It's actually less difficult than allowing deception to set in.
+Living truthfully has simplified my life in unexpected ways. I can decline invitations without guilt, discuss my limitations openly, and often find that plans adapt to accommodate my honest input. The practice of being frank has taught me to address underlying stresses and uncomfortable truths promptly, avoiding the complexities that come with deception.
 
-### Positive side-effects
-
-One of the unanticipated benefits of total honesty turned out to be easier navigation of daily affairs. I'm comfortable refusing invitations when I don't have the time or interest, and quite happy to be honest about my budget when confronted with unplanned outings. Sometimes it means I don't participate, but usually it means plans are changed so that I can join. It's good to be able to tell someone frankly that I'm not interested and have them say, "Oh, that's okay. Let's find something we both like."
+In embracing total honesty, I've discovered a life where authenticity leads to both personal freedom and deeper connections. It's a journey from darkness into a life filled with genuine interaction and peace. I highly recommend it.
