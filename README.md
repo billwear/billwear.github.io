@@ -20,7 +20,7 @@ Along the way, observing myself, some principles have emerged as clear habits fo
 
 1. Start small, build incrementally. 
 
-2. Say exactly what you mean.
+2. [Say exactly what you mean](truth.md).
 
 3. Connect with others and build real relationships.
 
