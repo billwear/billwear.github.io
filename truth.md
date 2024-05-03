@@ -10,11 +10,11 @@ Shame haunted me until, years later, I found the strength to reveal the truth. T
 Eventually other boys came forward, and we formed a sort of riot squad that used the full power of the press {and the legal system} to be heard and acknowledged. It was cathartic. I won't say my lying vanished right away, but it was completely gone within about eight months. Somehow, having gotten the shame out of my system, I felt worthy to speak my truth again.
 
 ### Challenging a deceptive culture
-Our society  rewards deception— 
+Our society  rewards deception.
 
 We live in a culture that often rewards deception, whether it's sparing Uncle Ray's feelings about his unloved Brussels Sprouts, or embellishing our lives on social media to match an illusion of perfection. "Best foot forward" is the winning move in a popularity contest, even if it means filters, photoshop, and carefully-curated vignettes that highlight the happy side of life.
 
-I reached a breaking point and chose transparency over pretense. This doesn't mean I overshare, but I've learned to value clarity and simplicity. When something is private, I simply say, "pass," respecting my boundaries without deceit. Just the truth, as clearly and simply as I can express it.  What you see is largely what you get.
+I reached a breaking point and chose transparency over pretense. This doesn't mean I overshare, but I've learned to value clarity and simplicity. When something is private, I simply say, "pass," respecting my boundaries without deceit. I just speak the truth, as clearly and simply as I can express it.  What you see is largely what you get.
 
 ### The rewards of authenticity
 Dropping the guise was transformative. Those who favored superficiality drifted away, replaced by individuals who appreciate honesty. Now, I can express my doubts, voice my opinions, and confront my past abuse without the shadows of fear and shame. This honesty has not only mended old wounds but also fostered genuine relationships and made daily interactions more straightforward.
