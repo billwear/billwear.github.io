@@ -1,4 +1,4 @@
-Welcome to the personal website of Bill Wear.
+Welcome to the personal website of Bill Wear.  You can also visit my [blog](https://williamwear.blogspot.com/).
 
 I am a pragmatic existentialist, trying to live out a simple idea: *practical action creates personal meaning*. 
 
