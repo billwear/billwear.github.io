@@ -24,3 +24,6 @@ then I fired up emacs:
 
 ![Screenshot_20240528_150835_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/abfef089-88f1-4d0b-953c-0076e105b47d)
 
+nevermind that my extra keys look like this:
+
+
