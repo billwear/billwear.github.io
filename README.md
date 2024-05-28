@@ -2,6 +2,7 @@ tl;dr: is it necessity or laziness that sparks invention? a little of both, I re
 
 -----
 [vanilla](vanilla.md)
+
 -----
 
 ## how this got started
