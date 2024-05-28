@@ -142,3 +142,14 @@ extra-keys = [['ESC','CTRL','ALT','TAB','/','-','HOME','END'],['F1','F2','F3','F
 
 the resultant extra-key bar looks like this:
 
+![Screenshot_20240528_163213_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/4d236c77-be87-4259-a83e-b178a48f2c87)
+
+* I also discovered that the menu bar on emacs on termux is useless, because off-by-one error, and text selection needs a shortcut method better than
+
+```bash
+C-a C-spacebar C-u-<try and guess how many lines>
+C-n or C-p to correct location
+miss the Ctrl key and start over
+```
+
+but I don't have a good fix yet. 
