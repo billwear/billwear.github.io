@@ -1,4 +1,8 @@
-tl;dr: is it necessity or laziness that sparks invention? a little of both, I reckon. and anyway, like the washing machine, eventually, laziness becomes necessity. I guess I'm there with emacs on my phone: I ain't giving up emacs, and I can't drag a laptop with me everywhere, so I'm just gonna have to make the two of them -- and me -- more compatible. 
+tl;dr: is it necessity or laziness that sparks invention? a little of both, I reckon. and anyway, like the washing machine, eventually, laziness becomes necessity. I guess I'm there with emacs on my phone: I ain't giving up emacs, and I can't drag a laptop with me everywhere, so I'm just gonna have to make the two of them -- and me -- more compatible. jump to any section, or start from the beginning.
+
+-----
+[vanilla](vanilla.md)
+-----
 
 ## how this got started
 
