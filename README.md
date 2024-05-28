@@ -1,10 +1,12 @@
-Using Emacs for *everything* pretty much means that it has to run on your phone.  Reliably. With automated, regular backups.
+so I use emacs for lots of things, even if another tool would be faster. dunno, it just feels right. but recently, my longtime company let us know that we're getting corporate laptops this summer. we've always used our own, with no rules about things like personal use or stickers or stuff like that. 
 
-I started doing this in late May, 2024. Here's how I'm making it work. 
+but for me, personally, this changes some things. call me weird, but I don't see myself treating someone else's property with the casual disrespect I have for my own stuff. I don't feel right about putting stickers on it; it ain't gonna do for me to leave it on my father-in-law's kitchen table while we go on a trip; and I really don't think I should put my personal data on there. Just doesn't seem right to me. 
 
------
+for a long time, I've had a kinda trivial problem using emacs, one that wasn't really worth solving: what to do when I can't take my laptop with me. yeah, I had orgzly, and it did okay enough for errands and trips and stuff. but it wasn't full- bull emacs. but there's a lot more to life, and I kinda just let some things slide here and there. 
 
-1. [Adapting the human](adaptation.md)
-2. [Building by induction](induction.md)
-3. [Adding shortcuts](shortcuts.md)
+## refusing to become brittle
+musing about the corporate laptop, and my wish to keep the boundaries clean, it occurred to me that I'd really been ducking a bigger transformation. my phone is a really powerful computer, it just has a smaller screen and a different interface. it hit me that I was kinda hanging on to the past. 
 
+my dad died about 20 years at 73, mostly from a life of drinking and smoking way too much, and in some ways, because of hardening of the *attitudes*. can't remember exactly when he said this to me, but around the time he was my age now (65), he told me he was too old to learn new things. 
+
+I remember being horrified at this. it was so wrong to me. he was a really smart person, a teenage prodigy who kinda made good. it struck me wrong. when I realized that I had classified my phone as "not a fully functional computer," I was just short of following in his footsteps. not my plan, y'all. 
