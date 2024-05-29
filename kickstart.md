@@ -1,6 +1,6 @@
-| Up | Current | Next |
+| ^ | v | > |
 | :--- | :----: | ---: |
-| [Home](README.md) | **Kickstart** | [journaling](journaling.md) |
+| [Home](README.md) | **Kickstart** | [Journal](journal.md) |
 
 I like organic development -- that is, just start where you are and see where it goes -- so that's my plan here. First, I need a fully-functional Emacs running on my phone.
 
