@@ -1,3 +1,4 @@
+| Up | Current | Next |
 | :--- | :----: | ---: |
 | Up: [Home](README.md) | *Kickstart* | Next: [journaling](journaling.md) |
 
