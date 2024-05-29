@@ -1,4 +1,5 @@
-Up: [Home](README.md) | *Kickstart* | Next: [journaling](journaling.md)
+| :--- | :----: | ---: |
+| Up: [Home](README.md) | *Kickstart* | Next: [journaling](journaling.md) |
 
 I like organic development -- that is, just start where you are and see where it goes -- so that's my plan here. First, I need a fully-functional Emacs running on my phone.
 
