@@ -1,4 +1,4 @@
-*Home (top)*  Next: [kickstart](kickstart.md)
+*Home (top)* | Next: [kickstart](kickstart.md)
 
 -----
 
