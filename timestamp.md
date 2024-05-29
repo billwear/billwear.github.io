@@ -13,7 +13,15 @@ First, I'll need a little Emacs lisp function to handle it for me, something lik
     (insert "\n** " (format-time-string "%H:%M ") ""))
 ```
 
-Next, I also need to tie that to an extra key:
+Next, I also need to tie that to an extra key, I. this case, F2, added to .emacs:
+
+'''nohighlight
+(global-set-key (kbd "<f1>") 'save-buffer)
+'''
+
+And with just a little effirt,we have a way to add journal entries.
+
+
 
 
 
