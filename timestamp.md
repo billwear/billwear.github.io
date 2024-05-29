@@ -19,7 +19,7 @@ Next, I also need to tie that to an extra key, I. this case, F2, added to .emacs
 (global-set-key (kbd "<f1>") 'save-buffer)
 '''
 
-And with just a little effirt,we have a way to add journal entries.
+And with just a little effort,we have a way to add journal entries.
 
 
 
