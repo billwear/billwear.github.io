@@ -1,9 +1,8 @@
+Up: [home](README.md) (top),  Next: [kickstart](kickstart.md)
+
+-----
+
 TL;DR: Is invention born of necessity or laziness, or both? Eventually, laziness, like the washing machine, becomes necessity. I've reached that point with Emacs on my phone: committed to both, so I'm determined to make it work beautifully, in small steps.
-
------
-[vanilla](vanilla.md)
-
------
 
 ## Emacs as a universal tool
 I use Emacs for lots of things, even if it's not faster. I recently learned that my employer is assigning corporate laptops this summer, giving up BYOD. This changes things for me: I don't want to put personal information on it (not even stickers). And this raises the urgency of a trivial issue.
