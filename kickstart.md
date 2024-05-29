@@ -1,14 +1,14 @@
-[Up](README.md) | *Kickstart* | Next: [foo](foo.md)
+Up: [Home](README.md) | *Kickstart* | Next: [foo](foo.md)
 
-Building organically, running Emacs on Android is priority one. so I'm a big fan of the organic style of doing stuff, that is, just start where you are and see where it goes. that's what I'm doing here. 
+I like organic development -- that is, just start where you are and see where it goes -- so that's my plan here. First, I need a fully-functional Emacs running on my phone.
 
-first, I need to be able to run emacs on my Android phone. there are certainly more options than these that I considered:
+There are options; here are three:
 
- * ssh into a rented server someplace, like Digital Ocean. did this for awhile, but requires me to be online, and costs money every month. -1.
+- ssh into a rented server someplace; did this for awhile, but requires the Internet and costs money. -1.
 
- * there's an emacs native app for android, but it seems like it's not ready for prime time yet.  -1.
+- an emacs native app for android; there are some, but they are immature. -1.
 
- * termux on Android with the emacs pkg installed. termux has a dropbox api I can already use to back up files. +1.
+ * Emacs on Termux on Android; supports a Dropbox API I can use to back up files. +1.
 
 I know there are more. I don't care at this point, analysis paralysis ain't my thing.
 
