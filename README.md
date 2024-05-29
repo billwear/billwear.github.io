@@ -1,4 +1,4 @@
-TL;DR: Is invention born or necessity or laziness, or both? Eventually, laziness, like the washing machine, becomes necessity. I've reached that point with emacs on my phone: committed to both, so I'm determined to make it work beautifully, in small steps.
+TL;DR: Is invention born of necessity or laziness, or both? Eventually, laziness, like the washing machine, becomes necessity. I've reached that point with Emacs on my phone: committed to both, so I'm determined to make it work beautifully, in small steps.
 
 -----
 [vanilla](vanilla.md)
@@ -16,6 +16,6 @@ My dad died twenty-some years ago, at age 73, mostly from drinking and smoking t
 Recently, I realized that I had classified my phone as "not a fully functional computer/" I was just short of following his footsteps. Not my plan, y'all. 
 
 ## Better interfacing
-Two things need to change: first, me; second, emacs. *I* need to learn to *not* act old, instead adapting my daily life to the smaller, touchscreen interface. *Emacs* needs some customization to make it efficient on the phone. Sounds like a case for "start small and build," but I'm pretty sure I'll eventually get down to a native app that runs standalone on Android. No promises, but I can't see another endgame at this point. 
+Two things need to change: first, me; second, Emacs. *I* need to learn to *not* act old, instead adapting my daily life to the smaller, touchscreen interface. *Emacs* needs some customization to make it efficient on the phone. Sounds like a case for "start small and build," but I'm pretty sure I'll eventually get down to a native app that runs standalone on Android. No promises, but I can't see another endgame at this point. 
 
 Wish me luck, and watch this space. 
