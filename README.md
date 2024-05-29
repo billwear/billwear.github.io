@@ -1,27 +1,21 @@
-tl;dr: is it necessity or laziness that sparks invention? a little of both, I reckon. and anyway, like the washing machine, eventually, laziness becomes necessity. I guess I'm there with emacs on my phone: I ain't giving up emacs, and I can't drag a laptop with me everywhere, so I'm just gonna have to make the two of them -- and me -- more compatible. jump to any section, or start from the beginning.
+TL;DR: Is invention born or necessity or laziness, or both? Eventually, laziness, like the washing machine, becomes necessity. I've reached that point with emacs on my phone: committed to both, so I'm determined to make it work beautifully, in small steps.
 
 -----
 [vanilla](vanilla.md)
 
 -----
 
-## how this got started
+## Emacs as a universal tool
+I use Emacs for lots of things, even if it's not faster. I recently learned that my employer is assigning corporate laptops this summer, giving up BYOD. This changes things for me: I don't want to put personal information on it (not even stickers). And this raises the urgency of a trivial issue.
 
-so I use emacs for lots of things, even if another tool would be faster. dunno, it just feels right. but recently, my longtime company let us know that we're getting corporate laptops this summer. we've always used our own, with no rules about things like personal use or stickers or stuff like that. 
+For the longest time, Emacs was mostly confined to my laptop, with Orgzly filling the gaps on Andriod.  Now I want clean boundaries.  Yet out of hardening of the *attitudes*, I've been ducking the obvious: my phone is a powerful computer with a different interface. Time to make it my primary.
 
-but for me, personally, this changes some things. call me weird, but I don't see myself treating someone else's property with the casual disrespect I have for my own stuff. I don't feel right about putting stickers on it; it ain't gonna do for me to leave it on my father-in-law's kitchen table while we go on a trip; and I really don't think I should put my personal data on there. Just doesn't seem right to me. 
+## Refusing to become brittle
+My dad died twenty-some years ago, at age 73, mostly from drinking and smoking too much, but there was something else, too.  Can't remember when he said it, but as he aged, he declared that he was too old to learn new things. It was horrifying.  He was very intelligent, a teenage prodigy who made good. His attitude struck me the wrong way.
 
-for a long time, I've had a kinda trivial problem using emacs, one that wasn't really worth solving: what to do when I can't take my laptop with me. yeah, I had orgzly, and it did okay enough for errands and trips and stuff. but it wasn't full-bull emacs. but there's a lot more to life, and I kinda just let some things slide here and there. 
+Recently, I realized that I had classified my phone as "not a fully functional computer/" I was just short of following his footsteps. Not my plan, y'all. 
 
-## refusing to become brittle
-musing about the corporate laptop, and my wish to keep the boundaries clean, it occurred to me that I'd really been ducking a bigger transformation. my phone is a really powerful computer, it just has a smaller screen and a different interface. it hit me that I was kinda hanging on to the past. 
+## Better interfacing
+Two things need to change: first, me; second, emacs. *I* need to learn to *not* act old, instead adapting my daily life to the smaller, touchscreen interface. *Emacs* needs some customization to make it efficient on the phone. Sounds like a case for "start small and build," but I'm pretty sure I'll eventually get down to a native app that runs standalone on Android. No promises, but I can't see another endgame at this point. 
 
-my dad died about 20 years ago, at age 73, mostly from a life of drinking and smoking way too much, and in some ways, because of hardening of the *attitudes*. can't remember exactly when he said this to me, but around the time he was my age now (65), he told me he was too old to learn new things. 
-
-I remember being horrified at this. it was so wrong to me. he was a really smart person, a teenage prodigy who kinda made good. it struck me wrong. when I realized that I had classified my phone as "not a fully functional computer," I was just short of following in his footsteps. not my plan, y'all. 
-
-## better interfacing
-
-there are two things that need to change for me: first, me; second, emacs. I need to learn to *not* act like an old man and learn to adapt my daily life to the smaller, touchscreen interface. emacs needs some customization to make it efficient on the phone. since emacs is really flexible, I'll start small and build, but I'm pretty sure I'll eventually get down to a native app that runs standalone on Android. no promises, but I can't see another endgame at this point. 
-
-wish me luck, and watch this space. 
+Wish me luck, and watch this space. 
