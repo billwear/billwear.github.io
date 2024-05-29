@@ -10,21 +10,27 @@ There are options; here are three:
 
  * Emacs on Termux on Android; supports a Dropbox API I can use to back up files. +1.
 
-I know there are more. I don't care at this point, analysis paralysis ain't my thing.
+There are more, but I want to avoid analysis paralysis.
 
-# emacs on termux on Android, oh my
+# Bringing up Emacs
 
-(had to be done, sorry). so I started with:
+After installing Termux on my Android phone, I started with:
 
 ```bash
 pkg install emacs
 ```
 
-then I fired up emacs:
+Nexr, I started Emacs:
 
 ![Screenshot_20240528_150835_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/abfef089-88f1-4d0b-953c-0076e105b47d)
 
-nevermind that my extra keys look like this:
+Note that this doesn't work as a *background* process on Termux, that is, you can't type:
+
+```nohighlight
+emacs &
+```
+
+in the Termux command line and expect it to work.  Also, nevermind that my extra keys look like this:
 
 ![Screenshot_20240528_151849_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/c3e58cc2-3233-46c3-9671-0f180cbee088)
 
