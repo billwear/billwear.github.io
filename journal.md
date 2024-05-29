@@ -44,3 +44,14 @@ extra-keys = [['ESC','TAB','CTRL','ALT','-','UP','DOWN','F1']]
 
 which gives me this Termux view:
 
+![Screenshot_20240529_155734_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/eb942f49-5fd3-415e-9aa2-c954750f97a3)
+
+Next, I create a ```.emacs``` file with one line, mapping ```save-buffer``` to F1:
+
+```nohighlight
+(global-set-key (kbd "<f1>") 'save-buffer)
+```
+
+Now I can just press **F1** on the Termux extra key bar whenever I feel the need to save. It should become muscle memory fairly quickly. 
+
+
