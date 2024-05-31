@@ -30,4 +30,4 @@
 
 ![Screenshot_20240531_132157_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/a64e2685-7775-4b09-b3a9-520d67731ffd)
 
-
+[three](three.md)
