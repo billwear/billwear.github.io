@@ -19,18 +19,24 @@
 * *sets up symlink to shared storage*
 
 ```nohighlight
-ln -s /storage/emulated/0 ~/root
+$ ln -s /storage/emulated/0 ~/root
 ```
 
 * *installs emacs*
 
-![Screenshot_20240531_123150_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/8b2d03d1-a79d-4b2e-9ec3-ab34c62fbec7)
+```nohighlight
+$ pkg install emacs
+```
 
 ![Screenshot_20240531_123143_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/796d0ffa-8470-4987-a013-17a0dfc55250)
 
+![Screenshot_20240531_123150_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/8b2d03d1-a79d-4b2e-9ec3-ab34c62fbec7)
+
 * *runs emacs to confirm*
 
-![Screenshot_20240531_123254_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/436f32a9-25ed-4ece-8a5b-7141165bd10d)
+```nohighlight
+$ emacs
+```
 
 ![Screenshot_20240531_123307_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/23dffeb3-56db-4df5-b387-83e98aefc44f)
 
