@@ -6,7 +6,14 @@
 
 *taps spyglass, enters "termux", hits return*
 
+
 ![Screenshot_20240531_121259_F-Droid.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/81b90f0b-6763-4bb6-a5b3-1b1e40408063)
+
+*completes install, chooses *Setup > Apps > Termux > Permissions*
+
+![Screenshot_20240531_123055_Permission controller.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/cc99237b-3287-4dbc-a5da-1a7b8728faf9)
+
+*makes sure all permissions are set, then starts termux*
 
 ![Screenshot_20240531_123307_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/23dffeb3-56db-4df5-b387-83e98aefc44f)
 
@@ -16,7 +23,7 @@
 
 ![Screenshot_20240531_123143_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/796d0ffa-8470-4987-a013-17a0dfc55250)
 
-![Screenshot_20240531_123055_Permission controller.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/cc99237b-3287-4dbc-a5da-1a7b8728faf9)
+
 
 ![Screenshot_20240531_123030_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/3bbaff82-6fcc-4272-8f29-a39a9352f46d)
 
