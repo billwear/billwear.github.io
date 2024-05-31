@@ -8,5 +8,19 @@
 
 ![Screenshot_20240531_121259_F-Droid.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/81b90f0b-6763-4bb6-a5b3-1b1e40408063)
 
+![Screenshot_20240531_123307_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/23dffeb3-56db-4df5-b387-83e98aefc44f)
+
+![Screenshot_20240531_123254_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/436f32a9-25ed-4ece-8a5b-7141165bd10d)
+
+![Screenshot_20240531_123150_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/8b2d03d1-a79d-4b2e-9ec3-ab34c62fbec7)
+
+![Screenshot_20240531_123143_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/796d0ffa-8470-4987-a013-17a0dfc55250)
+
+![Screenshot_20240531_123055_Permission controller.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/cc99237b-3287-4dbc-a5da-1a7b8728faf9)
+
+![Screenshot_20240531_123030_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/3bbaff82-6fcc-4272-8f29-a39a9352f46d)
+
+![Screenshot_20240531_122608_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/fed3723d-757d-4a84-86c3-ead6beee8e4a)
+
 
 
