@@ -8,6 +8,8 @@
 
 -----
 
+* *commits to using touchscreen to move point, most of the time*
+
 ![Screenshot_20240531_141628_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/3ca03b8b-e1c7-4a4d-9a0e-3d23eff75c98)
 
 -----
