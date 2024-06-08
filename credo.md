@@ -1,9 +1,8 @@
-# my credo
+[home](README.md) ~ [andromacs](andromacs.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
 
 -----
-[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md) 
 
------
+## my credo
 
 Here is my credo, which is loosely based on the general principles of UNIX programming.  These have evolved over my lifetime.
 
