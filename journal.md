@@ -1,8 +1,10 @@
-| < | v | > |
-| :--- | :---: | ---: |
-| [Kickstart](kickstart.md) | **Journal** | [Timestamp](timestamp.md) |
+[home](README.md) ~ [andromacs](andromacs.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
 
-I've been keeping a journal since I started using Unix decades ago:
+-----
+
+## journals on a phone
+
+I've been keeping a journal since I started using Unix five decades ago:
 
 ![Screenshot_20240529_152703_Termux.jpg](https://github.com/billwear/billwear.github.io/assets/18288776/b181b7d3-bb85-405e-b9b7-124c5fd67437)
 
