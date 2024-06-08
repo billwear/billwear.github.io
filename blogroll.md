@@ -1,11 +1,9 @@
-# blogroll
-
 -----
-[home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
+[home](README.md) ~ [andromacs](andromacs.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
 
 -----
 
-In order by reverse epic, no nav menu on blog pages (just use the back button).
+## blogroll
 
-- [1713980008](1713980008.md)
-- [1711047833](1711047833.md)
+sometimes, you just have stuff to say. 
+
