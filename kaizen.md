@@ -1,4 +1,9 @@
-## The parable of the mustard seed
+[home](README.md) ~ [andromacs](andromacs.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
+
+-----
+
+## kaizen, or the mustard seed
+
 When you believe (as I do) that your actions define your personal meaning, inaction is anathema.  When it comes to large tasks, goals, dreams even, I have a "point of infinite procrastination," which to me represents ultimate meaninglessness.  In some ways, this is the point at which my philosphy inverts itself: Nothing I'm doing at the moment has any particular meaning, so why should I bother to act?  It's a mood, at best.
 
 The more tired I am, the easier it is to become meaningless.  At 11pm, my typical bedtime, I often continue sitting on the couch for a minute or two, trying to "work up the energy" to go to bed.  This is doubly sad, because my couch *is* my bed, and if I'm tired enough, I will just sleep in my clothes.
