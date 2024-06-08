@@ -1,6 +1,8 @@
-| ^ | v | > |
-| :--- | :----: | ---: |
-| [Home](README.md) | **Kickstart** | [Journal](journal.md) |
+[home](README.md) ~ [andromacs](andromacs.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
+
+-----
+
+## kickstarting emacs on the phone
 
 I like organic development -- that is, just start where you are and see where it goes -- so that's my plan here. First, I need a fully-functional Emacs running on my phone.
 
