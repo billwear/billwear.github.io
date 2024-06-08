@@ -2,7 +2,9 @@
 
 -----
 
-hi. i'm bill. june 18th, 2024, marks fifty years since i started using Unix. you could say that everything i really need to know i learned from unix:
+hi. i'm bill, but you may know me better as ***billwear*** (my ancient, arpanet email address), or ***stormrider*** (my irc handle).
+
+june 18th, 2024, marks fifty years since i started using Unix. you could say that everything i really need to know i learned from unix:
 
 * small is beautiful.
 * just the facts, ma'am.
