@@ -1,6 +1,4 @@
 theme: jekyll-theme-hacker
 favicon: emacs-dragon-01.jpg
-og:
 title: "Bill Wear"
-description: "emacs on android for everything"
-image: "https://billwear.github.io/emacs-dragon-01.jpeg"
+description: "fifty years of Unix"
