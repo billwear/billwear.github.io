@@ -1,9 +1,9 @@
-# life is 90% of my use-cases for org-mode
-
 -----
 [home](README.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
 
 -----
+
+# life is 90% of my use-cases for org-mode
 
 *a long time ago, in an irc far, far away*
 
