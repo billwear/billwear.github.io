@@ -6,3 +6,5 @@
 
 sometimes, you just have stuff to say. 
 
+* [adapting to a smartphone](adaptation.md)
+
