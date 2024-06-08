@@ -28,5 +28,4 @@ these principles have served me well, tho sometimes my choices mystify others.
 
 for example, if i end up in a relationship with someone who turns out to be greedy and mean, i need to end that relationship, whatever the cost (maintain balance, don't work from expectations). i've done that more than once in my life, and although it meant some hard times for a while, i came out better in the end. 
 
-here you can learn more about me if you're interested. i have no exorcism
-expectations. enjoy.
+here you can learn more about me if you're interested. i have no expectations. enjoy.
