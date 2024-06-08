@@ -1,3 +1,9 @@
+[home](README.md) ~ [andromacs](andromacs.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
+
+-----
+
+## adaptation 
+
 Using Emacs on Android, for me, means using Termux and installing the available ~emacs~ package.  I knew that there would be lots of muscle memory to overcome, so I just started using Emacs for random things, like simple checklists. This gave me the chance to catch myself trying to treat a phone (primarily touch-oriented) like a laptop (totally keyboard-driven).
 
 ## Use the touchscreen,  Luke
