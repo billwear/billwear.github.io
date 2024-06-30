@@ -47,4 +47,4 @@ Here is my credo, which is loosely based on the general principles of UNIX progr
 
 20. Be choosy with your media, because your brain thinks it's real. Unless, of course, you're watching someone paint happy little trees.
 
-21.Abhor violence in all its forms, even contradicting others. Keep your peace, hold your tongue, and avoid turning into a debate club mascot.
+21. Abhor violence in all its forms, even contradicting others. Keep your peace, hold your tongue, and avoid turning into a debate club mascot.
