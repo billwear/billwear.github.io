@@ -4,9 +4,6 @@
 
 ## my credo
 
-Here is my credo, which is loosely based on the general principles of UNIX programming.  These have evolved over my lifetime.
-
-
 1. Say what you mean; because telepathy is still in beta testing.
 
 2. Be choosy with your media, because your brain thinks it's real. Unless, of course, you're watching someone paint happy little trees.
