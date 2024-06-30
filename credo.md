@@ -43,3 +43,8 @@ Here is my credo, which is loosely based on the general principles of UNIX progr
 
 18. Think big: [you *are* the universe](https://news.ycombinator.com/item?id=40107000). And like any good universe, remember to occasionally expand beyond your current dimensions — just without the big bang.
 
+19. Do what you love; life's too short not to ply your craft. Just don't expect it to pay the bills, unless your craft is printing money.
+
+20. Be choosy with your media, because your brain thinks it's real. Unless, of course, you're watching someone paint happy little trees.
+
+21.Abhor violence in all its forms, even contradicting others. Keep your peace, hold your tongue, and avoid turning into a debate club mascot.
