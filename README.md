@@ -2,31 +2,47 @@
 
 -----
 
-hi. i'm bill, but you may know me better as ***billwear*** (my ancient, arpanet email address), or ***stormrider*** (my irc handle).
+I am Bill. Here are the values I use as metrics in my life:
 
-june 18th, 2024, marks fifty years since i started using Unix. you could say that everything i really need to know i learned from unix:
+**Balance**: to use effort and leverage in the correct proportions.
 
-* small is beautiful.
-* just the facts, ma'am.
-* connect thru a simple, common language.
-* take small bytes.
-* simpler is better.
-* do one thing well.
-* accept your limitations.
-* maintain balance.
-* communicate clearly in both directions.
-* aim for the 80% solution.
-* don't work from expectations.
-* try something and build from there.
-* use whatever you have, do whatever you know.
-* leverage is an amazing thing.
-* get feedback often.
-* distrust generalization.
-* think ahead, but don't count on being right. 
-* think big, do small.
+**Proactivity**: to act when it is appropriate, rather than waiting for perfection.
 
-these principles have served me well, tho sometimes my choices mystify others. 
+**Skepticism**: to distrust claims offered without evidence.
 
-for example, if i end up in a relationship with someone who turns out to be greedy and mean, i need to end that relationship, whatever the cost (maintain balance, don't work from expectations). i've done that more than once in my life, and although it meant some hard times for a while, i came out better in the end. 
+**Flexibility**: to bravely make plans and back them up with even more courageous contingency plans.
 
-here you can learn more about me if you're interested. i have no expectations. enjoy.
+**Ambition**: to think big, but only because I am misled by neither failure nor success.
+
+**Peacefulness**: to choose the least violent alternative to every challenge.
+
+**Respect**: to not think, act, or speak for others, nor advise them without imminent danger or consent.
+
+**Mastery**: to use tools I understand to produce results worth remembering.
+
+**Incrementalism**: to practice the art of getting better over time.
+
+**Honesty**: to always say what I mean.
+
+**Comnection**: to connect with other beings. 
+
+**Strategy**: to always divide and comquer.
+
+**Focus**: to do one thing at a time, and do it well.
+
+**Simplicity**: to keep things relatively simple.
+
+**Authenticity**: to be who I am by being fully present in every moment.
+
+**Growth**: to continuously develop both strength and speed.
+
+**Communication**: to speak clearly, listen carefully, and pay close attention all the time.
+
+**Reliability**: to promise only what I know I can deliver.
+
+**Acceptance**: to avoid interfering with others or making judgments about them.
+
+**Curiosity**: to forever hack, since I believe trial and error are the only ways we learn anything.
+
+**Sustainability**: to always preserve and use what I have, rather than buying more, when possible, because I believe that preserving the good we have *is* progress.
+
