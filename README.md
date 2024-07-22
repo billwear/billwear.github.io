@@ -34,7 +34,7 @@ I am Bill. Here are the values I use as metrics in my life:
 
 15. **Authenticity**: to be who I am by being fully present in every moment.
 
-16,. **Growth**: to continuously develop both strength and speed.
+16. **Growth**: to continuously develop both strength and speed.
 
 17. **Communication**: to speak clearly, listen carefully, and pay close attention all the time.
 
