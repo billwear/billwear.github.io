@@ -38,7 +38,7 @@ I am Bill. Here are the values I use as metrics in my life:
 
 17. **Communication**: to speak clearly, listen carefully, and pay close attention all the time.
 
-18.**Reliability**: to promise only what I know I can deliver.
+18. **Reliability**: to promise only what I know I can deliver.
 
 19. **Acceptance**: to avoid interfering with others or making judgments about them.
 
