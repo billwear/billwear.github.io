@@ -26,7 +26,7 @@ I am Bill. Here are the values I use as metrics in my life:
 
 11. **Comnection**: to connect with other beings. 
 
-12. **Strategy**: to always divide and comquer.
+12. **Strategy**: to always divide and conquer.
 
 13. **Focus**: to do one thing at a time, and do it well.
 
