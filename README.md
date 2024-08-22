@@ -1,48 +1,49 @@
-[home](README.md) ~ [andromacs](andromacs.md) ~ [geek](geekcode.md) ~ [org](orgmode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) ~ [blog](blogroll.md)
+## Welcome to **Tuesday After Lunch**
 
------
+### Life Lessons from Fifty Years of Unix Usage
 
-I am Bill. Here are the values I use as metrics in my life:
+***Telepathy is still in beta testing, so let's just say what we mean.***
 
-1. **Balance**: to use effort and leverage in the correct proportions.
+Dive into a series that explores life through the lens of a seasoned Unix user, where simplicity rules, every command has a purpose, and life’s lessons are learned one terminal prompt at a time:
 
-2. **Proactivity**: to act when it is appropriate, rather than waiting for perfection.
+- **Media Mindfulness**: Your brain thinks what you watch is real, so choose wisely. Unless it's happy little trees—then go ahead and relax.
 
-3. **Skepticism**: to distrust claims offered without evidence.
+- **Communication Counts**: Speak clearly, listen carefully, and don't get lost in a quantum physics debate when you just asked for the time.
 
-4. **Flexibility**: to bravely make plans and back them up with even more courageous contingency plans.
+- **Do What You Love**: Life’s too short for anything else. But unless your craft is minting coins, don’t count on it paying the bills.
 
-5. **Ambition**: to think big, but only because I am misled by neither failure nor success.
+- **Keep It Simple**: Complex plans require running. Who's got the energy for that?
 
-6. **Peacefulness**: to choose the least violent alternative to every challenge.
+- **Start Small, Build Big**: Like a mosaic, small pieces create something beautiful. Plus, fewer lawsuits for improper construction.
 
-7. **Respect**: to not think, act, or speak for others, nor advise them without imminent danger or consent.
+- **Network Like a Pro**: After all, who else will appreciate your "I'm not a robot" jokes?
 
-8. **Mastery**: to use tools I understand to produce results worth remembering.
+- **Be Yourself**: Even a bent wire can light up a room, especially in a modern art exhibit.
 
-9. **Incrementalism**: to practice the art of getting better over time.
+- **Build for the Long Haul**: The tortoise won the race, but the hare had more Instagram followers.
 
-10. **Honesty**: to always say what I mean.
+- **Hack Your Life**: Just remember, "try it and see" doesn't apply to skydiving or lion taming.
 
-11. **Comnection**: to connect with other beings. 
+- **Under-Promise, Over-Deliver**: Everyone loves a surprise—just make sure it’s not another birthday card.
 
-12. **Strategy**: to always divide and conquer.
+- **Divide and Conquer**: Life’s a giant strategy game; make your moves wisely.
 
-13. **Focus**: to do one thing at a time, and do it well.
+- **Master Your Craft**: Unicorns are famous for just one thing.
 
-14. **Simplicity**: to keep things relatively simple.
+- **Use What You Have**: Unless it's a floppy disk—then maybe it's time to upgrade.
 
-15. **Authenticity**: to be who I am by being fully present in every moment.
+- **Leverage Wisely**: Use levers, not people—they’re notoriously bad at being levers and keep asking for coffee breaks.
 
-16. **Growth**: to continuously develop both strength and speed.
+- **Release Early, Release Often**: Don't hoard half-baked ideas; there's no market for those.
 
-17. **Communication**: to speak clearly, listen carefully, and pay close attention all the time.
+- **Skepticism Saves**: Distrust all claims of the one true way—except for pizza. Pizza is always the answer.
 
-18. **Reliability**: to promise only what I know I can deliver.
+- **Plan, But Don't Worship**: All things are possible, just don’t try skiing through a revolving door.
 
-19. **Acceptance**: to avoid interfering with others or making judgments about them.
+- **Think Big**: You are the universe; after all, the real one doesn't care. Just remember to occasionally expand beyond your current dimensions—Big Bang not recommended.
 
-20. **Curiosity**: to forever hack, since I believe trial and error are the only ways we learn anything.
+- **Keep the Peace**: Abhor violence in all its forms, even in debates. Stay calm, and don't become the debate club mascot.
 
-21. **Sustainability**: to always preserve and use what I have, rather than buying more, when possible, because I believe that preserving the good we have *is* progress.
+- **Practice the Prime Directive**: Unless you're in a sci-fi movie—then totally ignore it.
 
+Join me every Tuesday after lunch as we unravel the complexities of life, one line of code at a time.
