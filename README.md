@@ -16,7 +16,7 @@ Dive into a series that explores life through the lens of a seasoned Unix user, 
 
 - **Start Small, Build Big**: Like a mosaic, small pieces create something beautiful. Plus, fewer lawsuits for improper construction.
 
-- **Network Like a Pro**: After all, who else will appreciate your "I'm not a robot" jokes?
+- **Network Like a Pro**: Sharing your time, passions, and life with others might just make you happier. After all, even the best dad jokes need need *someone* to groan back at you.
 
 - **Be Yourself**: Even a bent wire can light up a room, especially in a modern art exhibit.
 
