@@ -20,7 +20,7 @@ Dive into a series that explores life through the lens of a seasoned Unix user, 
 
 - **Be Yourself**: Even a bent wire can light up a room, especially in a modern art exhibit.
 
-- **Build for the Long Haul**: The tortoise won the race, but the hare had more Instagram followers.
+- **Build for the Long Haul**: The hare may have had more Instagram followers, but the *tortoise* won the race.
 
 - **Hack Your Life**: Just remember, "try it and see" doesn't apply to skydiving or lion taming.
 
