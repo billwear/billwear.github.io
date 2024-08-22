@@ -6,7 +6,7 @@
 
 Dive into a series that explores life through the lens of a seasoned Unix user, where simplicity rules, every command has a purpose, and life’s lessons are learned one terminal prompt at a time:
 
-- **Media Mindfulness**: Your brain thinks what you watch is real, so choose wisely. Unless it's happy little trees—then go ahead and relax.
+- **[Media Mindfulness](stardate-20240820.1222.md)**: Your brain thinks what you watch is real, so choose wisely. Unless it's happy little trees—then go ahead and relax.
 
 - **Communication Counts**: Speak clearly, listen carefully, and don't get lost in a quantum physics debate when you just asked for the time.
 
