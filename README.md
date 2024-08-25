@@ -6,7 +6,7 @@ Emacs is just a text editor, right? A tool for writing code, drafting documents,
 
 Hmm. 
 
-Somehow,Emacs looms larger for me. Couldn't put my finger on it for a long time, but now I'm starting to understand. It evolved from a way of thinking, a philosophy, and a particular lifestyle. Over time, I’ve come to realize that Emacs and I are -- oddly -- kindred spirits. There's some close alignment of principle and purpose. 
+Somehow, Emacs looms larger for me. Couldn't put my finger on it for a long time, but now I'm starting to understand. It evolved from a way of thinking, a philosophy, and a particular lifestyle. Over time, I’ve come to realize that Emacs and I are -- oddly -- kindred spirits. There's some close alignment of principle and purpose. 
 
 At its core, Emacs is a testament to **self-reliance and adaptability**. Unlike most software, Emacs doesn’t impose a rigid workflow on its users. Instead, it offers a flexible foundation that can be shaped and reshaped to fit any need. 
 
@@ -36,4 +36,4 @@ In many ways, Emacs and I are perfectly aligned. Oddly, it’s more than just a 
 
 This is why I am so in sync with Emacs. It doesn’t just fit my workflow; somehow, and I *know* it sounds incredibly weird,Emacs fits my soul. 
 
-*73, ZL2LEB, wherever you are*
+*73, ZL2LEB & KE5LP, wherever y'all are*
