@@ -1,3 +1,7 @@
+[home](README.md) ~ [geek](geekcode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
+
+-----
+
 ## tuesday, after lunch
 
 why i'm in sync with emacs
