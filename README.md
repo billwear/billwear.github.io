@@ -34,6 +34,6 @@ This echoes my own journey. I know that the most meaningful achievements in life
 
 In many ways, Emacs and I are perfectly aligned. Oddly, it’s more than just a tool -- it’s a reflection of how I choose to live my life. Through adaptability, continuous learning, community, efficiency, respect for the past, and perseverance, Emacs embodies the principles that I strive to uphold every day. 
 
-This is why I am so in sync with Emacs. It doesn’t just fit my workflow; somehow, and I *know* it sounds incredibly weird,Emacs fits my soul. 
+This is why I am so in sync with Emacs. It doesn’t just fit my workflow; somehow, and I *know* it sounds incredibly weird, Emacs fits my soul. 
 
 *73, ZL2LEB & KE5LP, wherever y'all are*
