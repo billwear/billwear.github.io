@@ -1,4 +1,4 @@
-[home](README.md) ~ [geek](geekcode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
+[home](README.md) ~ [geek](geekcode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) - [next bessay](org-mode.md)
 
 -----
 
