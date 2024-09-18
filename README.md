@@ -1,12 +1,12 @@
-[home](README.md) ~ [geek](geekcode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md) - [next bessay](org-mode.md)
+[home](README.md) ~ [geek](geekcode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
 
 -----
 
 ## tuesday, after lunch
 
-**Why I’m in Sync with Emacs**
+Emacs is a lisp intepreter with a plaintext interface. You can write code, draft and publish documents, and take notes with minimal customization and only a few Ctrl keys. TBH, with its menubar and arrow key support, Emacs hardly needs a tutorial for those not incined toward technical depth.
 
-Emacs is just a text editor, right? A tool for writing code, drafting documents, or taking notes. But, as with most things that touch the depths of what it means to live authentically, it is much more than that. In my journey, I've discovered that Emacs is less a tool and more a philosophy, a manifestation of a way of thinking that resonates deeply with how I choose to live my life. It’s a digital reflection of my own approach to existence—one that prizes adaptability, continuous learning, community, and a profound respect for both simplicity and complexity.
+For me, though, Emacs feels direct and authentic, more like real life and less like skeuomorphic magic. There's an undeniable hint of a resonant design philosophy, a way of thinking that resonates deeply with how I choose to live my life. 
 
 ### Self-Reliance and Adaptability
 
