@@ -4,6 +4,10 @@
 
 ## **Chapter 3: Building Systems That Support Your Vision**
 
+-----
+*This chapter deepens the focus on systems and how Org-mode can be used to break projects down, automate routines, and reduce mental friction. By integrating useful brain science around habit formation, decision fatigue, and dopamine, this system builds a foundation for consistent progress without overwhelming the visionary thinker.*
+-----
+
 Now that you’ve started to get comfortable with the basics of Emacs and Org-mode, it’s time to take the next step: **building systems** that turn your vision into reality. Systems are how you make progress automatic—how you break down projects and create routines that keep you moving forward even when motivation fades.
 
 In this chapter, we’re going to do two things:
