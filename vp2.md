@@ -79,9 +79,7 @@ Org-mode lets you create structure without limiting your creativity. Here’s ho
    - Type `* Big Idea` and hit Enter. This is your main heading. By creating structure, your brain feels in control, which helps reduce the anxiety caused by unfamiliarity.
    - Add subheadings by typing `** First Task` and hitting Enter. You’re breaking down big ideas into smaller, manageable chunks, which not only helps with realization but also soothes your brain’s natural aversion to complexity.
 
-3. **
-
-Todo Items**:
+3. **Todo Items**:
    - Turn a heading into a task by pressing `Ctrl + c`, then `Ctrl + t`. This creates a TODO item. This simple structure brings clarity and organization, giving your brain the dopamine hit it craves.
 
 4. **Capture Ideas**:
