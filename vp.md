@@ -1,4 +1,4 @@
-[Chapter 2](vp2.md)
+[Chapter 2](vp2.html)
 
 -----
 
