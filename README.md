@@ -1,4 +1,4 @@
-[home](README.md) ~ [geek](geekcode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
+[home](README.md) ~ [visionary practitioner](vp.md) ~ [geek](geekcode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
 
 -----
 ## Why I'm staying with Canonical
