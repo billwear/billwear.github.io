@@ -45,9 +45,3 @@
 20. **Abhor violence in all its forms**, even contradicting others. Keep your peace, hold your tongue, and avoid turning into a debate club mascot.
 
 21. **Practice the Prime Directive**; unless you're in a sci-fi movie, then totally ignore it.
-
-19. **Think big**; you’re the root user of your life. Expand your horizons but avoid kernel panics.
-
-20. **Abhor violence in all its forms**; even in argument. There’s no `kill -9` for bad vibes.
-
-21. **Practice the Prime Directive**; explore boldly but respect all syntax conventions.  
