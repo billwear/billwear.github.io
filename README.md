@@ -95,7 +95,7 @@ At first blush, there are also some potential clashes:
 
 #### But am I living my values?
 
-Let's take a little deeper cut at this.  In many ways, I'm living my values and working hard to live life on my terms, and my work environment is supporting this.  There are also place, though, where I'm actually not fully expressing some values -- especially where those values are in conflict.  For example, "say what you mean" and "avoid conflict" could oppose each other.
+Let's take a little deeper cut at this.  In many ways, I'm living my values and working hard to live life on my terms, and my work environment is supporting this.  There are also places, though, where I'm actually not fully expressing some values -- especially where those values are in conflict.  For example, "say what you mean" and "avoid conflict" could oppose each other.
 
 Is the feedback pushing me away from my values?  No, not really.  It's trying to align my thinking with the organization's needs by focusing my big-picture thinking on tangible outcomes, and manage the dissonance between "tell the honest truth" and "never be assertive."  Effectively, the feedback is nudging me to adapt in areas where I have built-in conflicts or where I'm spinning my wheels a lot.
 
