@@ -106,6 +106,4 @@ The creative desert is where most visionaries get lost. It’s the place where e
 
 Your ideas deserve to be realized, and you have what it takes to cross the desert. Stay focused, stay creative, and keep moving forward, one microtask at a time. The other side of the desert is where your vision becomes reality.
 
-In the next chapter, we
-
-’ll dive into building the systems that will support your realization journey. You don’t have to navigate the desert without a map—we’ll create a structure that keeps you on track, no matter how long the journey takes.
+In the next chapter, we’ll dive into building the systems that will support your realization journey. You don’t have to navigate the desert without a map—we’ll create a structure that keeps you on track, no matter how long the journey takes.
