@@ -4,6 +4,10 @@
 
 ## **Chapter 2: Confronting the Fear of Flying**
 
+_____
+*This chapter deepens the focus on brain science, especially around fear, unfamiliarity, and learning. It emphasizes the brain’s natural resistance to new tasks and how to overcome that through small, manageable steps—helping the reader move past initial resistance and begin their journey into using Emacs and Org-mode effectively.*
+-----
+
 You’ve got the vision, and you’ve read about the gap between ideas and reality. Now it’s time to tackle something that isn’t often spoken about: the **fear of flying**. Not the literal kind, but the kind that holds you back from the grind—the fear of starting something unfamiliar, the discomfort of doing work that doesn’t spark the same excitement as the vision itself. 
 
 If you’re reading this, you’ve likely experienced it before: the resistance to learning something new, the hesitation to dive into the “hard” stuff. It’s easy to be drawn to the shiny world of new ideas, but when it comes time to put in the work, there’s this wall you hit—an internal resistance that whispers, *maybe later*. 
