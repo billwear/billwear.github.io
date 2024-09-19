@@ -1,53 +1,136 @@
 [home](README.md) ~ [geek](geekcode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
 
 -----
+## Why I'm staying with Canonical
 
-## tuesday, after lunch
+Canonical has taken hits from time to time, as does anyone who takes the risk to do something big and public. On the inside, they seriously practice continuous improvement, always trying to get better, so there are frequent changes.  Twice yearly, we have 360-degree reviews that indicate how others see our performance.  Usually, these reviews are not what you expect.  Often, there is both positive and negative feedback.
 
-Emacs is a lisp intepreter with a plaintext interface. You can write code, draft and publish documents, and take notes with minimal customization and only a few Ctrl keys. TBH, with its menubar and arrow key support, Emacs hardly needs a tutorial for those not incined toward technical depth.
+So many of my friends get offended by negative feedback, frequent corporate policy changes, and project churn.  Often, if their reviews aren't stellar, they conclude that they should look for another job.  If their pet benefit erodes, they jump ship as fast as they can.  And if they get a manager they don't like or can't connect with, they quit as fast as possible and move on to (ostensibly) greener pastures.
 
-For me, though, Emacs feels direct and authentic, more like real life and less like skeuomorphic magic. There's an undeniable hint of a resonant design philosophy, a way of thinking that resonates deeply with how I choose to live my life. 
+I think this can lead to job-hopping with permanent dissatisfaction.  I prefer to think differently.  I wanted to share some (very anonymized) feedback from my last review and explain how I examined that feedback, in light of my personal values, to decide what to do next.
 
-### Self-Reliance and Adaptability
+### How I struggle with feedback
 
-At the heart of Emacs lies a commitment to self-reliance and adaptability. It doesn't confine its users within a predefined set of rules or workflows. Instead, it offers a foundation—a blank canvas of endless possibilities, where each stroke is a choice, and every choice is a declaration of independence. It is software that respects the user's agency, allowing them to mold it, shape it, and twist it to fit the contours of their needs and desires.
+I should set your expectations with a warning: I try not to emotionalize things, though it's really hard for me.  I've been told I have tremendous empathy and obvious compassion.  In fact, I've learned, for my own sanity, to process emotional content by capturing your words and evaluating their nuance in context, rather than reacting to tone, nuance, and facial expressions.  I try to remind myself that feedback isn't inherently negative or positive to me: it's either actionable or not.  And I try very hard to implement actionable feedback only if it conforms to my personal values.
 
-I see a kindred spirit in this philosophy. My life has always been about crafting my environment to suit my purpose, not the other way around. Growing up in a turbulent household where chaos reigned, I learned early on that if there was to be any order, any sense of purpose, it would have to come from within me. I was the architect of my own stability, adapting to whatever storm blew in, making my own decisions, finding my own way. Emacs, too, does not come pre-packaged with a "one-size-fits-all" approach. It’s a tool that demands its user to be an active participant in their own experience, much like life itself. To live well, to thrive amidst the chaos, is to continually adapt, to redefine oneself in response to the changing tides. Emacs is the embodiment of this philosophy.
+In other words, I don't see feedback as good or bad -- only as something I can do or not do.  If I can do it, I then decide if it matches my values.  I may temporarily violate my values if needed, but eventually, I will make changes to re-balance my life.
 
-### Continuous Improvement and Learning
+### By the way, my values
 
-Emacs is never static; it is perpetually in a state of becoming. Every keybinding is an invitation to learn, every configuration file a new avenue for exploration. This never-ending quest for refinement and enhancement mirrors a core tenet of my own credo: to be in a constant state of learning, to never settle for the surface but to always dig deeper, question more profoundly, understand more completely.
+My values are embedded in my personal credo:
 
-Life, like Emacs, is a process, not a destination. It is the journey of continuous improvement—a concept that I hold close to my heart. The thrill of discovery, the joy of learning, the satisfaction of refining a process or mastering a skill—these are the things that give my life meaning. There is no perfect way, only the perpetual pursuit of better ways. In the spirit of hacking, I have found that trying, failing, and trying again is the only path to true understanding. Emacs is a reflection of this endless quest for improvement. It is a community of people who share this love for discovery and innovation, who find joy not in the destination but in the journey itself.
+- Say what you mean, because telepathy is still in beta testing.
 
-### Community and Collaboration
+- Be choosy with your media, because your brain thinks it's real. Unless, of course, you're watching someone paint happy little trees.
 
-Emacs is more than software; it is a community. It is a collective effort, built and maintained by a diverse group of contributors who bring their own perspectives, skills, and insights to the table. It is a manifestation of the belief that together we are stronger, that through collaboration, we can achieve more than any of us could alone.
+- Speak clearly, listen carefully, pay close attention; otherwise, you'll end up in a conversation about quantum physics when you just asked for the time.
 
-This resonates deeply with my own values. I have always believed in the power of community, in the importance of building relationships, sharing knowledge, and helping others. Life has a way of knocking us down, and it is in those moments that the strength of our community is most apparent. When I stumble, there are those who help me up, and when others fall, I am there to do the same. Emacs is a digital embodiment of this spirit of mutual support and collaboration. It is a space where people come together to build something greater than themselves, where knowledge is shared freely, and where the contributions of each individual are valued.
+- Do what you love; life's too short not to ply your craft. Just don't expect it to pay the bills, unless your craft is printing money.
 
-### Minimalism and Efficiency
+- Keep it simple; complex plans involve running, and who's got the energy for that?
 
-In a world that often values complexity for its own sake, Emacs is a testament to the power of simplicity and efficiency. It is a tool that encourages its users to strip away the unnecessary, to focus on what is essential, and to find the most direct path to their goal. It is about doing more with less, about finding elegance in simplicity.
+- Start small and build a little at a time; a mosaic is more beautiful than the finest concrete, and way less likely to get you sued for improper construction.
 
-This aligns perfectly with my own philosophy. I believe in keeping things simple, in focusing on what truly matters and discarding the rest. Life is too short to be weighed down by unnecessary complexities, whether they are physical possessions or mental clutter. By minimizing the extraneous, I can focus on what is truly important to me, on the things that bring me joy and fulfillment. Emacs is a tool that helps me do just that. It allows me to streamline my workflow, to remove distractions, and to focus on the tasks that matter most.
+- Network; because who else will laugh at your "I'm not a robot" jokes?
 
-### Legacy and Flexibility
+- Be who you are; even a bent wire can carry a great light, especially in a modern art exhibit.
 
-Emacs is a bridge between the past and the future. It is a tool that respects its legacy while remaining open to new ideas and innovations. It carries with it the wisdom of decades of development, but it is not afraid to change, to evolve, to adapt to new challenges and new possibilities.
+- Build for strength, not just speed; the hare may have had more Instagram followers, but the tortoise won the race.
 
-This balance between honoring the past and embracing the future is something that I strive for in my own life. I believe in the importance of tradition, of learning from the experiences of those who came before us, but I also believe in the need to remain open to new ideas, to be willing to change and adapt as the world around us changes. It is a delicate balance, but it is one that I believe is essential for living a meaningful and fulfilling life.
+- Hack; just remember, "try it and see" doesn't apply to skydiving or lion taming.
 
-### Patience and Persistence
+- Under-promise and over-deliver; because everyone loves a surprise, especially when it's not another birthday card.
 
-Finally, Emacs teaches the value of patience and persistence. It is not a tool that can be mastered overnight; it requires time, effort, and a willingness to learn from mistakes. It is a journey, not a destination, and it rewards those who are willing to put in the effort, to dig deep, and to push through the challenges.
+- Divide and conquer; because life is essentially a giant game of strategy board games.
 
-This mirrors my own experience in life. I have faced many challenges, and I have learned that the most meaningful achievements are often the result of sustained effort and perseverance. It is not always easy, but it is always worth it. Emacs, like life, requires patience and persistence, and it rewards those who are willing to embrace the journey, to learn from their mistakes, and to keep pushing forward.
+- Do one thing well; remember, unicorns are famous for just one horn.
 
-### In a Mirror, Darkly
+- Use what you have; unless it's a floppy disk, then maybe it's time to upgrade.
 
-In many ways, Emacs and I are perfectly aligned. It is more than just a tool; it is a reflection of how I choose to live my life. Through its emphasis on adaptability, continuous learning, community, efficiency, respect for the past, and perseverance, Emacs embodies the principles that I strive to uphold every day. It is a tool that fits not just my workflow, but my soul. It is a mirror, reflecting my values, my journey, and my approach to life. In Emacs, I have found not just a tool, but a kindred spirit, a companion on my journey, and a reminder of the values that guide me.
+- Use levers, not people; because people are terrible at being levers, they keep asking for coffee breaks.
 
------
+- Release early, release often; otherwise, you're just hoarding half-baked ideas, and there's no market for those.
 
-*73, ZL2LEB & KE5LP, wherever y'all are*
+- Distrust all claims for the one true way; except for pizza, pizza is always the answer.
+
+- Think ahead, but don’t worship your plans; all things are possible, except maybe skiing through a revolving door.
+
+- Think big: you are the universe. And like any good universe, remember to occasionally expand beyond your current dimensions — just without the big bang.
+
+- Abhor violence in all its forms, even contradicting others. Keep your peace, hold your tongue, and avoid turning into a debate club mascot.
+
+- Practice the Prime Directive; unless you're in a sci-fi movie, then totally ignore it.
+
+I tried once putting nouns around each of these, and it doesn't work out great.  For example, what noun would you assign to "be choosy with your media" that doesn't have pejorative connotations in modern society?
+
+### Well, what had happened was
+
+During this review period, I delivered some meaningful results that were driven by my 50k-foot view.  For example, I came up with a way of expressing a product's features in a few simple diagrams that resonated with the product management folks.  I also drafted a difficult product model, in the process absorbing some new techniques and tools that were completely foreign to me, kind of blazing a trail. Other than that, the rest was the usual, mundane work that's expected.
+
+#### Feedback and analysis
+
+I'm not going to share the feedback directly, since that would be really rude, but I will allude to it in my analysis.  I started with an attempt to decide whether the various feedback elements align or diverge.  It's not shallow thinking, but it's not yet very deep, either:
+
+1. Start small and build: People encouraged me to focus on smaller, more concrete outcomes, and TBH, this aligns perfectly with my value of starting small and building over time.  Simplifying the scope of everything I attempt ties into my vision of work -- and life -- as a mosaic and not a magnum opus.
+
+2. Keep it simple: There were also recommendations to simplify my approach and avoid distractions, and that's harmonious, as well.  Emphasizing needful delivery, instead of complex new projects, supports my drive for simplicity in plans and actions.
+
+3. Do one thing well: Narrowing down tasks and committing to solid deliverables mirrors my belief that it's better to excel at one task than to spread myself too thin.  Realistic, scope-controlled targets are consistent.
+
+4. Under-promise and over-deliver: The advice was to streamline, focus, and resist over-committing is directly aligned.
+
+5. Think big, but don't worship plans: I did get lots of feedback that I should hold onto my big-picture thinking, but not get distracted by lofty ideas or side projects that don't really pay off in the medium term.  This fits my idea of thinking big without being rigid.
+
+6. Divide and conquer: Delegate and hold others accountable, they said, and this obviously fits right in.
+
+At first blush, there are also some potential clashes:
+
+1. Say what you mean: Lots of feedback encouraged me to hold team members accountable and disagree when necessary.  This is a nudge away from my tendency to avoid contradiction.  Yes, I value peace and non-violence, and the recommendation to speak up when something is wrong is definitely a challenge.
+
+2. Hack and try: My instinct is to experiment and iterate, but the feedback warns against distractions from intellectual pursuits that don't lead to concrete results (how would you know for sure until you try)?  This feels like it's limiting my creating freedom to try new things as part of the learning process.
+
+3. Abhor violence and conflict: Enforcing accountability feels like it's in conflict with my desire to avoid confrontation.  Holding people accountable and objecting to disagreeable ideas feels confrontational and uncomfortable.
+
+4. Be who you are: There's an underlying tension between staying true to the big picture and the push to focus on smaller, visible wins.  It can feel like a clash with my authentic self.
+
+#### But am I living my values?
+
+Let's take a little deeper cut at this.  In many ways, I'm living my values and working hard to live life on my terms, and my work environment is supporting this.  There are also place, though, where I'm actually not fully expressing some values -- especially where those values are in conflict.  For example, "say what you mean" and "avoid conflict" could oppose each other.
+
+Is the feedback pushing me away from my values?  No, not really.  It's trying to align my thinking with the organization's needs by focusing my big-picture thinking on tangible outcomes, and manage the dissonance between "tell the honest truth" and "never be assertive."  Effectively, the feedback is nudging me to adapt in areas where I have built-in conflicts or where I'm spinning my wheels a lot.
+
+#### Meta-thinking
+
+Let's take this a little deeper, maybe as deep as I can go with this at the moment.  An ideological shift I really need to consider (and not just at work) involves reconciling some of my natural inclinations and conflicted values with the ability to do something useful and meaningful.  I could wax on about this for paragraphs, but let me just summarize the neonatal plan:
+
+1. From visionary to visionary practitioner:  I need to integrate the big-picture thinking with actionable results.  I've got to accept the fact that my strategic visions are most powerful when they lead to real world results.  I need to start more small things, but be quicker to abandon them when they don't seem to be getting anywhere -- or at least defer them to quieter moments.
+
+2. Embracing simplicity as a core principle: This hurt, but it was clearly good feedback.  I'm simple in my planning, but not simply in how I communicate, and not particularly simple in execution.  I like complexity, but I don't have to add it where it doesn't already exist.  This is going to require some discipline to resist adding layers.  Clarity and effectiveness, just keep saying that to myself.
+
+3. Redefining collaboration: Clearly, I need to take accountability out of the "war camp."  Done right, I realize that it can be an act of mutual growth and not aggression.  I have a hint that constructive accountability doesn't have to be confrontational.  Still, there's some serious alignment work to do there, and it's work that I should do for everything else in my life as well.
+
+4. Transform hacking into focused innovation: I'm not giving up my hacking spirit, but I need to channel it better, into things that align with visible and more immediate objectives.  If I have to do some things on the side to figure out what's working, that's okay, but I do need to cut off the experiments a little sooner.
+
+5. Try for assertive clarity: I don't quite know what that means yet, but that's the best phrase I can think of to describe how I feel about it.  "Say what you mean" emphasizes clear communication when I think something isn't right -- so it's all in learning how to say it, rather than trying not to say it. That's gonna be hard, uncomfortable, and unfamiliar, but worth it in the long run.
+
+6. Balance individuality with collective goals: speaks for itself.
+
+#### One level deeper
+
+Okay, there is another level.  At it's core, this feedback is really pushing me to harmonize my visionary nature with pragmatic action.  It's about recognizing that my capacity for big-picture thinking is useful only when it regularly delivers tangible results. Though for me, sometimes just having the picture is an accomplishment, I need to find ways to share that picture that impacts others positively.  This feedback isn't pushing me away from my values, but urging me to apply them in more nuanced and meaningful way.
+
+The big "life lessons" include the following personal epiphanies:
+
+1. I thrive on the big picture at the expenses of details, aka, Reality Distortion Field.
+
+2. I'm taking my desire for peace a little farther than it will go.
+
+3. Incremental progress is good; do it a lot more.
+
+4. Intellectual exploration is good, but maybe not so much when there are tasks on the line.  Set aside time for it, but don't let it overwhelm me.
+
+## What's it to be?
+
+It's easy to have a negative emotional reaction to feedback.  I have them all the time.  It's not useful.  Based on what I see here, this feedback isn't political, and it isn't designed to randomize me into the one-sigma so somebody else can get a raise.  It's honest, direct, and relevant.  As long as my colleagues keep providing this kind of advice, I'm staying.
+
+Jobs like this really are fewer and farther between.  I'm 100% remote, as are nearly all of the other employees in my company.  My local job prospects would be horrible compared to this one, and while I'm certain I could find another remote job, why would I?  The people here are smart, honest, and thoughtful, and we work together pretty well in our teams.  No reason to walk away from that because of a little feedback that stings.
