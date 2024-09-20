@@ -10,11 +10,11 @@ If you’re reading this, you’ve likely experienced it before: the resistance 
 
 And that’s where we’re going to start, head-on. This chapter is about addressing that fear and confronting it through the lens of **brain science**. You’re going to take that fear of the unfamiliar, the fear of "doing," and turn it into fuel for realizing your vision.
 
-We’re going to use a tool that will seem intimidating at first: **Emacs and Org-mode**. But here’s the thing—you’re going to learn just enough to get moving, just enough to make the process of turning ideas into action a little more structured, a little more manageable. And more importantly, you’re going to learn *why* your brain resists this, and *how* to work with it rather than against it.
+We’re going to use tools that will seem intimidating at first: **Emacs and Org-mode**. But here’s the thing—you’re going to learn just enough to get moving, just enough to make the process of turning ideas into action a little more structured, a little more manageable. And more importantly, you’re going to learn *why* your brain resists this, and *how* to work with it rather than against it.
 
-### **The Science of Fear and Unfamiliarity**
+### **Fear and Unfamiliarity**
 
-Let’s start with a deep dive into the **science of fear** and how your brain reacts to unfamiliar tasks. The brain isn’t just a machine—it’s a highly sensitive, highly adaptable organ that craves comfort and familiarity. When you encounter something new, like learning a tool you’ve never used before (say, Emacs), your brain throws up a red flag. It detects **uncertainty**, and it wants to retreat.
+Let’s start with a deep dive into the **science of fear** and how your brain reacts to unfamiliar tasks. The brain isn’t just a machine, it’s a highly sensitive, highly adaptable organ that craves comfort and familiarity. When you encounter something new, like learning a tool you’ve never used before (say, Emacs), your brain throws up a red flag. It detects **uncertainty**, and it wants to retreat.
 
 #### 1. **The Role of the Amygdala**  
 The part of your brain responsible for this fear response is the **amygdala**. It’s an ancient structure, deeply embedded in your limbic system, and its job is to keep you safe. When faced with an unfamiliar challenge, like a complex software tool, the amygdala sends out signals that trigger anxiety or hesitation. It’s saying, *Wait, this feels risky. We don’t know how this works yet. Let’s avoid it*.
@@ -29,7 +29,7 @@ The amygdala says, *Stay safe.* The prefrontal cortex says, *Push through the di
 #### 3. **The Power of Dopamine and Novelty**  
 Another critical player is **dopamine**, the neurotransmitter responsible for motivation and pleasure. Here’s why this matters: Dopamine is released when you’re working on something novel, something exciting—like dreaming up new ideas. But when you shift from the brainstorming phase to the realization phase, where the work gets repetitive and unfamiliar, dopamine levels drop. That drop is why you feel like the grind isn’t worth it—it’s not giving your brain the pleasure it craves.
 
-Your brain doesn’t want to focus on mundane tasks like learning how to navigate a new system. It would rather jump to the next shiny idea, where the dopamine flow is stronger. But here’s where things get interesting: once you start making progress with a new tool, your brain will *reward* you with dopamine. Progress—no matter how small—stimulates the reward pathways in your brain. This is why taking small, achievable steps is key to working with your brain’s chemistry.
+Your brain doesn’t want to focus on mundane tasks like learning how to navigate a new system. It would rather jump to the next shiny idea, where the dopamine flow is stronger. But here’s where things get interesting: once you start making progress with a new tool, your brain will *reward* you with dopamine. Progress—no matter how small—stimulates the reward pathways in your brain. This is why taking small, achievable steps is key to working *with* your brain’s chemistry.
 
 ---
 
