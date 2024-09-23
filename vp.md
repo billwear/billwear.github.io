@@ -2,7 +2,7 @@
 
 -----
 
-## **1: The Impatient Visionary**
+## The Impatient Visionary
 
 I'm an idea generator. My brain works like a storm cloud—filled with concepts, innovations, and grand possibilities that flash through my mind like lightning. While most people are focused on the task in front of them, I'm seeing what’s next: the next project, the next big leap, the next transformation. I see connections where others see only loose ends, and I'm driven by what *could be*.
 
