@@ -2,6 +2,7 @@
 
 -----
 
+[Canonical](blog.md) ~ [visionary](vp.md)
 ## Why I'm staying with Canonical
 
 Canonical has taken hits from time to time, as does anyone who takes the risk to do something big and public. On the inside, they seriously practice continuous improvement, always trying to get better, so there are frequent changes.  Twice yearly, we have 360-degree reviews that indicate how others see our performance.  Usually, these reviews are not what you expect.  Often, there is both positive and negative feedback.
