@@ -1,3 +1,3 @@
-[home](README.md) ~ [blog](blog.md) ~ [geek](geekcode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
-
------
+<div style="background-color:black; color:white;">
+this is text
+</div>
