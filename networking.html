@@ -1,11 +1,24 @@
-[home](README.md) ~ [geek](geekcode.md) ~ [credo](credo.md) ~ [arcana](arcana.md) ~ [networks](networking.md)
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stormrider</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+ a:link, a:visited {
+      color:lightskyblue;
+      text-decoration:none;
+    }
+  </style>
+</head>
+<body>
+<h1>networking tutorial</h1>
 
------
-
-## networking tutorial
-
-Centuries ago, John Milton wrote, \"I cannot praise a fugitive and
-cloistered virtue,\" referring, at least in part, to those who keep
+Centuries ago, John Milton wrote, "I cannot praise a fugitive and
+cloistered virtue," referring, at least in part, to those who keep
 their intelligence to themselves. Without some form of communication --
 without manifesting that intelligence in word or deed -- there is
 generally no evidence of intelligence or intelligent life. Our knowledge
@@ -13,37 +26,37 @@ must create ripples in space and time if it is to be shared, and it must
 be shared to benefit others.
 
 For this reason, we create networks, which might be defined as
-\"channels of sharing\". All virtue and all goodness is valued only in
+"channels of sharing". All virtue and all goodness is valued only in
 sharing, whether by having mercy on another person or communicating the
 answer to life, the universe, and everything. Only by sharing do we come
 to the notice of others, and only with the help of others do we share
 the load of living.
 
-## Channels of sharing are complicated {#org464c4fe}
+<h2>Channels of sharing are complicated</h2>
 
 Sharing involves risk. Will the other person understand? Will they
-accept what I\'ve shared, or turn against me? Will they appreciate what
+accept what I've shared, or turn against me? Will they appreciate what
 I have shared, or judge me harshly? All communication involves the risks
 of misunderstanding, judgement, and ridicule. We must choose carefully
 when sharing information, tools, knowledge -- even compassion, love,
-loyalty, and devotion. In a way, that\'s one of the \"equations\" of
+loyalty, and devotion. In a way, that's one of the "equations" of
 living in a society, although public social media platforms have made
 that more, er, interesting.
 
 Often we segregate our sharing based on some measurable characteristic.
 For example, we share with people of our own race, gender, color, or
-national origin, but not with the \"others\". And we share in different
+national origin, but not with the "others". And we share in different
 ways with different social groups. In fact, you might say that the
 average person has as many personalities as there are groups of people
 whose opinions they care about: we are one person at home, another at
-the office, still another on the Internet, and yet another when we\'re
+the office, still another on the Internet, and yet another when we're
 golfing, as examples. Each of these channels can have different rules,
 mores, idioms, dialects, and vocabulary.
 
 As we grow up, we learn to be *one* self, sharing with everyone in very
 much the same way, restricting only *what* we share, not *how* we share
 it. You begin to deeply understand the basics of human communication. If
-you\'re serious about it, you begin to try to normalise your messaging
+you're serious about it, you begin to try to normalise your messaging
 to include less moody prejudice and more honest opinion, modulated only
 by personal privacy.
 
@@ -54,18 +67,18 @@ information from one system to another, sometimes even involving
 specially-crafted physical interface cables to handle the translation.
 
 Eventually, though, computer networks began to gravitate toward a
-standard approach, \"one self to rule them all\", as it were. This
+standard approach, "one self to rule them all", as it were. This
 singular personality is known as TCP/IP. Learning how the TCP/IP
 protocols work will serve you well in understanding, designing, and
 debugging computer networks.
 
-Let\'s get started.
+Let's get started.
 
-## Adversarial beginnings {#org4d68ba6}
+<h2>Adversarial beginnings</h2>
 
-If you\'re going to learn a new language, it\'s probably important to
+If you're going to learn a new language, it's probably important to
 get an idea of the culture. After all, culture defines the vocabulary
-and the level of abstraction of a country\'s language. Certainly that\'s
+and the level of abstraction of a country's language. Certainly that's
 true of networking.
 
 Computer networks began largely because of the ways humans segregate
@@ -74,13 +87,13 @@ of its underlying structure -- evolved to meet a specific need: how can
 we keep a computer network functioning in the event of a nuclear war?
 When nodes go offline, randomly, how can surviving nodes keep the
 communication going? If Boise is destroyed, how can we still communicate
-with Seattle? Wiping out Kansas should not imply that we can\'t connect
+with Seattle? Wiping out Kansas should not imply that we can't connect
 with Nebraska.
 
 Gruesome beginnings, indeed. Over time, though, those same TCP/IP
 networks evolved to meet a less bellicose need: How can we keep a
 network functioning efficiently if some of the paths are bottle-necked
-or even out-of-service? Well, the answer is, \"build the ARPAnet\" --
+or even out-of-service? Well, the answer is, "build the ARPAnet" --
 now called the Internet -- which relies heavily on TCP/IP networks. The
 OSI model underlying TCP/IP can adapt to changing loads, handle
 significant failures, and strictly limit the network "blast radius"
@@ -94,16 +107,16 @@ TCP/IP network has survived even the loss of its original purpose. This
 tutorial is about the surviving network. Full disclosure: I used to work
 in the WMD industry, but one day, I walked away and chose to promote
 sharing with other humans, instead of dividing and cloistering them. And
-I changed my official term for network failures from \"blast radius\" to
-\"cone of silence\" (CoS), probably my happiest choice of all.
+I changed my official term for network failures from "blast radius" to
+"cone of silence" (CoS), probably my happiest choice of all.
 
-## Focusing on architecture {#org354722e}
+<h2>Focusing on architecture</h2>
 
-With complicated subjects, it\'s always hard to know where to start.
-There\'s a huge chicken-and-egg problem with TCP/IP when trying to
-define terms. I prefer to take Isaac Newton\'s approach to physics, as
+With complicated subjects, it's always hard to know where to start.
+There's a huge chicken-and-egg problem with TCP/IP when trying to
+define terms. I prefer to take Isaac Newton's approach to physics, as
 he did in the Principia -- create some definitions that start from
-common things we\'re all likely to understand.
+common things we're all likely to understand.
 
 For example, Newton begins with mass; slightly paraphrasing his
 definition:
@@ -111,18 +124,18 @@ definition:
 -   The quantity of matter is defined as the density of that matter and
     the volume that it takes up, conjointly.
 
-In other words, m = ρ x V, or \"mass equals density times volume\". That
-doesn\'t seem like much, but it\'s an astounding starting point. Hint:
-If you haven\'t read an English translation of the Principia (it\'s
-natively in Latin), you should take the time out to do so: it\'ll change
+In other words, m = ρ x V, or "mass equals density times volume". That
+doesn't seem like much, but it's an astounding starting point. Hint:
+If you haven't read an English translation of the Principia (it's
+natively in Latin), you should take the time out to do so: it'll change
 your understanding. Anyway, back to our story.
 
-### Network architecture {#org3b0cd02}
+<h3>Network architecture</h3>
 
-It\'s very easy to just dive in, of course, and some fair percentage of
-my readers will get what I\'m saying, but that isn\'t good enough for
-this tutorial. Instead, imagine two computers, \"SanDiego\" and
-\"Bangor\", located at opposite corners of the country. They want to
+It's very easy to just dive in, of course, and some fair percentage of
+my readers will get what I'm saying, but that isn't good enough for
+this tutorial. Instead, imagine two computers, "SanDiego" and
+"Bangor", located at opposite corners of the country. They want to
 communicate via available networks. How do they do it?
 
 Well, we could just hook up a wire between SanDiego and Bangor.
@@ -130,59 +143,59 @@ Well, we could just hook up a wire between SanDiego and Bangor.
 
 People probably did that, at one point, back in the day. It might have
 even worked, until someone with a backhoe cut a cable. No problem!
-We\'ll just use two wires. Surely we can get the first one fixed before
+We'll just use two wires. Surely we can get the first one fixed before
 somebody cuts the second one, right?
 
 
-Of course, it wouldn\'t take long to figure out that messages are
-getting lost and garbled. After all, it\'s a long wire, which has lots
+Of course, it wouldn't take long to figure out that messages are
+getting lost and garbled. After all, it's a long wire, which has lots
 of impedance. Some signals will disappear into the noise long before
-they get there. No problem! We\'ll just build repeaters, little boxes
+they get there. No problem! We'll just build repeaters, little boxes
 that read the incoming signal and duplicate it at full voltage on the
 outgoing line:
 
 
-(Forgive the weird choice of cities, but I\'m trying to work from memory
+(Forgive the weird choice of cities, but I'm trying to work from memory
 here.) And if memory serves, leasing this space all over the country to
 add repeaters -- especially at military bases like Redstone
 (Huntsville), Fort Hood, and Point Mugu -- can get really expensive,
 really fast.
 
-### The AAC network model {#orgac9df6c}
+<h3>The AAC network model</h3>
 
 By far a much easier way is to create and use the Internet. As the
-Internet became \"the network\", it evolved into what some call the
-\"access-aggregation-core\" network.
+Internet became "the network", it evolved into what some call the
+"access-aggregation-core" network.
 
 In the AAC model, SanDiego sends a message, labelled for Bangor, to some
-router on the Internet (which one doesn\'t matter so much). If this
-router doesn\'t know where Bangor is, it just sends it on to another
+router on the Internet (which one doesn't matter so much). If this
+router doesn't know where Bangor is, it just sends it on to another
 router, until the message finds a router that knows where to forward the
 message:
 
 
 Theoretically, this works great, but from a practical standpoint, there
-are \"short circuits\" all over this network:
+are "short circuits" all over this network:
 
 
-These \"sideways paths\" are there mostly for performance reasons, like
-latency, redundancy, and so on. Sometimes they\'re there because someone
+These "sideways paths" are there mostly for performance reasons, like
+latency, redundancy, and so on. Sometimes they're there because someone
 can get a better deal, so the reasoning is financial, too. Later on in
-this tutorial, we\'ll talk about some of these issues -- and why network
-architectures have evolved. For now, though, let\'s just say that they
+this tutorial, we'll talk about some of these issues -- and why network
+architectures have evolved. For now, though, let's just say that they
 have evolved to a more monochromatic design known at the Clos
 architecture:
 
 
 This more scalable architecture can basically use the same switch for
-everything. There are leaf switches, known as \"top of rack\" (TOR)
-switches, and spine switches. As I\'ve ghosted into the diagram, you
+everything. There are leaf switches, known as "top of rack" (TOR)
+switches, and spine switches. As I've ghosted into the diagram, you
 scale horizontally by adding more racks, and vertically by adding more
 levels of spine switches. This architectural model is more economical to
-scale, so it discourages these little \"side bets\" that plagued the
+scale, so it discourages these little "side bets" that plagued the
 early Internet.
 
-### Yesterday's phone network is today's Internet {#org7adbaaf}
+<h3>Yesterday's phone network is today's Internet</h3>
 
 When learning a language, it also helps to get into some of the
 *history* of the people who speak that language. For instance, you may
@@ -192,14 +205,14 @@ a very sloped main roof, surrounding the house with a somewhat-elevated,
 wraparound porch.
 
 To be honest, this design makes *no* sense for a people living in
-\"hurricane alley\". They\'d be better off building houses out of
+"hurricane alley". They'd be better off building houses out of
 concrete block, with a metal and concrete roof tied to the base with
 welded steel girders, and small windows instead of French doors. But
-they don\'t, because of their *history*.
+they don't, because of their *history*.
 
-The word \"Cajun\" is a lazy contraction of *Acadian*, the people who
-lived in Acadia, or \"New France\" in the 17th and 18th centuries. If
-you look it up, you\'ll find that Acadia included New Brunswick, Maine,
+The word "Cajun" is a lazy contraction of *Acadian*, the people who
+lived in Acadia, or "New France" in the 17th and 18th centuries. If
+you look it up, you'll find that Acadia included New Brunswick, Maine,
 and lots of Canadian maritime islands. They built houses with
 high-pitched roofs, with wraparound porches, so that the heavy *snow
 load* of winter would slide down the sloped roof, scoot off the porch
@@ -211,12 +224,12 @@ As a homework assignment, you can Google how the Acadians got to South
 Louisiana and South Mississippi; Wikipedia is largely accurate, if local
 folklore means anything.
 
-#### Reusing what already works {#org122484d}
+<h4>Reusing what already works</h4>
 
 In the same way, most of today's modern networking is just a direct
-translation of the landline telephone system -- [the \"Plain Old
+translation of the landline telephone system -- [the "Plain Old
 Telephone Service
-(POTS)](https://networkencyclopedia.com/plain-old-telephone-service-pots/)\"
+(POTS)](https://networkencyclopedia.com/plain-old-telephone-service-pots/)"
 -- into the digital space. Network switching is really just an outgrowth
 of crossbar, which is how local phone calls were "switched" or "routed"
 to the correct telephone line. In most cases, every number dialled
@@ -229,11 +242,11 @@ trigger any relays beyond just sending the call to the "881" frameset.
 In some small exchanges, it wasn't even necessary to dial the exchange,
 just the four digits of the phone number, if the caller had the same
 exchange. My grandparents had such an arrangement for many years, as did
-my partner\'s parents.
+my partner's parents.
 
-Essentially, these \"shorthand numbers\" were the early *subnets*.
+Essentially, these "shorthand numbers" were the early *subnets*.
 
-#### Long distance and T1 {#org84769ee}
+<h4>Long distance and T1</h4>
 
 In order to maintain call quality, the very early telephone system
 (about 1908) began to use repeaters and loading coils. A repeater
@@ -260,7 +273,7 @@ Telephone linemen, on the other hand, could usually tell by the
 conversation over a digital TDM circuit.
 
 My first real job was telephone lineman, so I can attest to this
-\"flatness\". In fact, I recall an actual training session in which we
+"flatness". In fact, I recall an actual training session in which we
 listened to the same call on two different lines in stereo headphones.
 In one ear, we heard the T1 call; in the other, the analog output of the
 same conversation. Listening to them in stereo, in sync, made it easy to
@@ -269,23 +282,23 @@ learn the subtle differences.
 The real point is that these "little digital packets" formed the model
 for the *packet networking* we have today.
 
-#### On the shoulders of giants {#orgd30f670}
+<h4>On the shoulders of giants</h4>
 
 Especially in the computer field, people who come up with new ideas love
 to pretend that they invented it. But as Newton said (him again?), we
-are \"standing on the shoulders of giants\". In fact, it actually helps
-if you realise that today\'s networking technology evolved from
+are "standing on the shoulders of giants". In fact, it actually helps
+if you realise that today's networking technology evolved from
 telephone technology, which evolved from carbon fibres and cups of acid,
 which evolved from telegraph clickers, which evolved from cans and
 strings.... If you look back far enough, everything about modern
 networks makes perfect sense, because you can see the original problems
-that drove today\'s designs.
+that drove today's designs.
 
 For example, telephone connections have used balanced or twisted pair
 wiring for more than 100 years. Twisted pairs resist interference from
 other pairs of wires *because* they are twisted together. I have *read*
 that in the very early days, the called party transmitted on one wire,
-and the calling party transmitted on the other, but I\'ve never been
+and the calling party transmitted on the other, but I've never been
 able to make much mathematical sense of that, so take that with a small
 box of salt.
 
@@ -297,28 +310,28 @@ multiplexing (like TDM), are all just holdovers of the original
 telephone system, repurposed for computer networking. Why invent
 something when you have a working model? Just rename it.
 
-#### To be fair... {#org039010f}
+<h4>To be fair...</h4>
 
-Actually, in many cases, renaming isn\'t actually a *terrible* idea,
+Actually, in many cases, renaming isn't actually a *terrible* idea,
 because it often conveys the repurposing aspect of the new technology.
-You can buy t-shirts that say, \"It\'s not really a cloud, it\'s just
-someone else\'s server,\" but it\'s actually *useful* to say \"cloud\".
-That implies that it\'s out there somewhere (you don\'t care where), it
-may change randomly (as with the weather, you still don\'t care), and
-you don\'t have to do anything about it.
+You can buy t-shirts that say, "It's not really a cloud, it's just
+someone else's server," but it's actually *useful* to say "cloud".
+That implies that it's out there somewhere (you don't care where), it
+may change randomly (as with the weather, you still don't care), and
+you don't have to do anything about it.
 
-Using the word \"cloud\" also kind of forces the providers to guarantee
-the promise that you won\'t ever have to know anything about it except
+Using the word "cloud" also kind of forces the providers to guarantee
+the promise that you won't ever have to know anything about it except
 an address where you can get to it, and maybe a handy script to upload
 changes every time you save. The new name carries implications that
-can\'t be drawn so easily from the term \"someone else\'s server\", and
+can't be drawn so easily from the term "someone else's server", and
 that helps to set expectations and standards.
 
-### The Internet infrastructure {#orgfd89ba2}
+<h3>The Internet infrastructure</h3>
 
-There\'s an idea floating around that the Internet is survivable because
+There's an idea floating around that the Internet is survivable because
 any and every computer can connect any and every other computer. While
-that might be possible, that\'s not generally how it works. There\'s
+that might be possible, that's not generally how it works. There's
 actually a hierarchy which we refer to as the Internet Infrastructure:
 
 -   Internet Infrastructure -- a hierarchy of computers used to transfer
@@ -334,12 +347,12 @@ Exchanges are private. These are virtually indistinguishable for the
 purposes of this discussion:
 
 
-And, of course, by now you\'ve probably guessed that many of the MAEs
+And, of course, by now you've probably guessed that many of the MAEs
 are the residue of the phone company's early T1 nodes, which was the
 initial backbone for the Internet. These MAEs act just like a NAP for
 the purposes of this discussion.
 
-### About Internet network traffic {#org4921912}
+<h3>About Internet network traffic</h3>
 
 On-the-fly, Internet network paths can become very complicated and
 somewhat unpredictable. As a result, there's rarely a reason to even
@@ -354,14 +367,14 @@ specific route (almost) never helps. What we do want to know about is
 the network traffic between computers. We have to understand what kind
 of data travels between computers, besides just the data we send. The
 structure and grouping of message traffic in TCP/IP is governed by the
-**OSI model**. Let\'s take a look.
+**OSI model**. Let's take a look.
 
-## The OSI model {#org230dc0c}
+<h2>The OSI model</h2>
 
-No, that\'s not referring to the WWII forerunner of the CIA (which was
+No, that's not referring to the WWII forerunner of the CIA (which was
 the *[OSS](https://en.wikipedia.org/wiki/Office_of_Strategic_Services)*
 anyway), but to the *Open Systems Interconnect* model, once called
-\"[GOSIP](https://en.wikipedia.org/wiki/Government_Open_Systems_Interconnection_Profile)\".
+"[GOSIP](https://en.wikipedia.org/wiki/Government_Open_Systems_Interconnection_Profile)".
 Networks are really just continuous wires. We need to understand what
 travels on those wires, which depends on our perspective -- our level of
 magnification.
@@ -369,14 +382,14 @@ magnification.
 At the highest "zoom" level, all we'll see are electrons travelling down
 the wire; that's a level of abstraction that isn't comprehensible for
 debugging purposes. About all we can tell is whether or not the
-circuit's dead -- and not even that, if we don\'t pick a low range on
+circuit's dead -- and not even that, if we don't pick a low range on
 the voltmeter.
 
 The Open Systems Interconnection model was created to standardise on a
 few, well-defined levels. It defines how the data should be
-*encapsulated*, how the transmission \"dance\" is carried out, and what
+*encapsulated*, how the transmission "dance" is carried out, and what
 to do when things go wrong. Collectively, this *interface definition* is
-called a *protocol*. As long as you follow the protocol, it doesn\'t
+called a *protocol*. As long as you follow the protocol, it doesn't
 matter how you build your network device.
 
 The OSI model looks something like this:
@@ -397,7 +410,7 @@ more widely they vary with the user application. Higher layers don't
 really help us better understand networking, any more than watching
 electrons travel through a wire help us debug a missing packet.
 
-### The physical layer (L1) {#org46eb38d}
+<h3>The physical layer (L1)</h3>
 
 The phrase "physical layer" may conjure up notions of physics, but don't
 worry: we look at *signals*, not *electrons*. At the physical layer,
@@ -409,23 +422,23 @@ time protocol, does the trick.
 NTP is probably the oldest Internet protocol in use. It synchronises
 subscriber computers to within a few milliseconds of UTC (Coordinated
 Universal Time). That acronym is *not* out of order, by the way. English
-speakers wanted CUT (for \"coordinated universal time\"), while French
-speakers preferred TUC (for \"temps universel coordonné\"). \"UTC\" was
+speakers wanted CUT (for "coordinated universal time"), while French
+speakers preferred TUC (for "temps universel coordonné"). "UTC" was
 picked because, (1) it was a compromise between those two proposals, and
-(2) there was already a \"UT\" (Universal Time) that is based on a
-measure of the Earth\'s current angle of rotation and the International
+(2) there was already a "UT" (Universal Time) that is based on a
+measure of the Earth's current angle of rotation and the International
 Celestial Reference Frame....
 
-Yeah, it really *is* better if you don\'t ask.
+Yeah, it really *is* better if you don't ask.
 
 You could say that NTP only has one job: keeping time. Like all the
 moving parts of a clock, though, keeping computer clocks in sync is very
 difficult. If your curiosity is stronger than your fear of complexity,
 you might [take a look at this NTP article on
-Wikipedia](https://en.wikipedia.org/wiki/Network_Time_Protocol). It\'ll
+Wikipedia](https://en.wikipedia.org/wiki/Network_Time_Protocol). It'll
 tell you more than you need to know about the protocol.
 
-#### Variable latency {#orga797718}
+<h4>Variable latency</h4>
 
 Variable latency is the important thing to know about the physical
 layer, because it affects the timing of network traffic. In order to
@@ -456,10 +469,10 @@ by choosing the right network architecture. We can't predict
 transmission delays, though we can statistically bound them. Almost all
 digital networks are considered "variable-latency".
 
-#### The physical layer is not very interesting {#orga5b1ebe}
+<h4>The physical layer is not very interesting</h4>
 
 In spite of the complexities given above, the physical layer really
-doesn\'t do much for us when it comes to building and debugging
+doesn't do much for us when it comes to building and debugging
 networks. Other than verifying that signals are flowing, the physical
 layer doesn't usually tell us much about what happened to that DHCP
 request that never made it to the router. Consequently, we really won't
@@ -469,34 +482,34 @@ Just know that it's the thing that's passing bits back and forth between
 hosts, and very occasionally, we need to scan it to find network
 breakage.
 
-### The datalink layer (L2) {#org15da23a}
+<h3>The datalink layer (L2)</h3>
 
 The **datalink layer** (the **link layer**, **Layer 2** or **L2**) also
 has one purpose: send and receive IP datagrams. L2 doesn't maintain a
 connection with the target host; it's intentionally "connectionless",
 and it doesn't guarantee delivery or integrity of packets. It just ships
 them between source and destination. Give it a message, give it a MAC
-address, and it sends it; that\'s all.
+address, and it sends it; that's all.
 
 At first, this message-agnostic approach may seem a little weird. L2 is
 not without error-checking and recovery code, but it functions
 efficiently *precisely* because it isn't concerned with the data, or
 even the message containing the data. That might surprise you,
-especially since the word \"datagram\" is sometimes used a little too
+especially since the word "datagram" is sometimes used a little too
 freely with respect to L2.
 
 A datagram is just a basic network transfer unit -- the indivisible unit
 for a given layer -- *any* given layer. If we're talking about L2, it's
-an IEEE 802.xx frame. At the network layer (L3, we\'ll come to that in a
+an IEEE 802.xx frame. At the network layer (L3, we'll come to that in a
 minute), it's a data packet. For the transport layer (L4), it would be
 called a segment.
 
-By now, you\'re probably wondering what the indivisible units in the
-*physical layer* are called. *Chips*; they\'re called chips. Beats me.
+By now, you're probably wondering what the indivisible units in the
+*physical layer* are called. *Chips*; they're called chips. Beats me.
 But I do know that they are
 [spread-spectrum](https://en.wikipedia.org/wiki/Spread_spectrum) pulses
 in the CDMA, noise-utilising transmission system that operates at that
-layer. My advice? Unless you\'re a EE with some communications training,
+layer. My advice? Unless you're a EE with some communications training,
 you might not need to go there.
 
 Since datagram isn't carefully used by everyone (think of User Datagram
@@ -505,7 +518,7 @@ Protocol), we'll agree to call these indivisible layer units PDUs
 reminds you that it's the atomic unit at the current network layer. Just
 remember that, at the link layer (L2), it's a frame.
 
-#### MAC frames {#org33e09be}
+<h4>MAC frames</h4>
 
 A MAC frame, or just "frame", encapsulates the packets from the network
 layer so that they can be transmitted on the physical layer. A frame can
@@ -525,7 +538,7 @@ in the IEEE 802 standards, so we'll stick to that particular frame type
 for this discussion. Where other frame types may come into play, we'll
 discuss those as special cases.
 
-#### Ethernet {#org58b0eef}
+<h4>Ethernet</h4>
 
 Before explaining an Ethernet Frame, we need to give a little background
 information about how Ethernet works; otherwise a lot of the frame
@@ -554,7 +567,7 @@ previously waited. When it waits some maximum number of times, the NIC
 will declare a failure and report that the message didn't go. This
 ensures that only one frame is traversing the network at any given time.
 
-#### Media Access Control (MAC) {#org6213567}
+<h4>Media Access Control (MAC)</h4>
 
 Systems like CSMA/CD are a subset of the Media Access Control (MAC)
 protocol kit. MAC is one-half of the link layer, with Logical Link
@@ -649,7 +662,7 @@ Address. That distinction shouldn't affect anything meaningful that we
 do with networks, but it's nice to keep in mind, in case you run into
 someone who groups packets differently than you do.
 
-#### Trunking VLANs {#org44a59d8}
+<h4>Trunking VLANs</h4>
 
 There is a crucial modification to the basic frame format called a P/Q
 or VLAN Tag. This allows something called VLAN trunking, which means
@@ -675,7 +688,7 @@ now. When more than one VLAN spans multiple switches, frames need to
 carry VLAN information that can be used by switches to sort or "trunk"
 the traffic.
 
-##### The origin of "trunking" {#org5331e32}
+<h5>The origin of "trunking"</h5>
 
 The word "trunking" is derived from the telephone network term trunk
 lines, which are lines connecting switchboards.
@@ -700,7 +713,7 @@ every half mile or so, also called "pedestals") and from there to
 subscriber homes. When you draw out this network, it looks like a tree,
 where the bundles of cables between COs look like the trunks of trees.
 
-##### Multiplexing LAN channels, actually {#orge407fef}
+<h5>Multiplexing LAN channels, actually</h5>
 
 With VLAN trunking, by the way, we're not just multiplexing packets,
 we're actually multiplexing LAN channels, so to speak.
@@ -719,7 +732,7 @@ removes frame elements before passing the data up to the higher layers.
 Basically, anything that some other MAC layer did to encapsulate the
 message for sending, the receiving MAC layer un-does on the way in.
 
-##### VLANs, subnets, and fabrics {#orgc62f266}
+<h5>VLANs, subnets, and fabrics</h5>
 
 When working with networks, you will frequently be concerned with VLANs,
 subnets, and fabrics, which are all network groupings:
@@ -730,7 +743,7 @@ subnets, and fabrics, which are all network groupings:
 
 Let's give each of these terms their due.
 
-###### Subnets {#org5a7e2e2}
+<h6>Subnets</h6>
 
 A subnet is a range or collection of IP addresses. A subnet just means
 "sub-network," and that's exactly what it is: a subset of IP addresses
@@ -753,7 +766,7 @@ possible permutations that network architects needed. The change to CIDR
 notation made subnets more granular, allowing many more subnets from the
 same network.
 
-###### VLANs {#orgc8c8b50}
+<h6>VLANs</h6>
 
 A VLAN used to be a series of IP addresses that could access a given
 port on a specific switch, generally the switch that gated some
@@ -774,7 +787,7 @@ but it isn't practical or easy to debug when conflicts happen. You
 should endeavour to enforce a clean "fan-out" across the network, with
 no possibility of conflicting IP addresses.
 
-###### Fabrics {#org60d568e}
+<h6>Fabrics</h6>
 
 A fabric just collects VLANs together. If you stick to the clean
 fan-out, that also means that a fabric collects subnets. A fabric
@@ -790,7 +803,7 @@ that people admitted to that fabric can access the VLANs without having
 to be explicitly added to each one. That's very handy in really large
 organisations, saving a lot of time and effort.
 
-#### Visualising the link layer {#orgf55c28e}
+<h4>Visualising the link layer</h4>
 
 Let's start with a message coming on Layer 1 from SanDiego to Bangor.
 When the message comes in, the link layer does the following things:
@@ -813,7 +826,7 @@ When the message comes in, the link layer does the following things:
 Next, we'll take a look at the network layer, where most of the message
 transactions take place, and where most of our debugging will be done.
 
-### Interlayer addressing: ARP {#org0a76b34}
+<h3>Interlayer addressing: ARP</h3>
 
 One frequently asked question is this: Is ARP a layer 2 or layer 3
 protocol? Actually, it's both, as you'll discover later, but it does all
@@ -838,7 +851,7 @@ ones you create by hand-assigning MAC addresses.
 The shorter answer to that implied question is this: MAC addresses must
 be unique across the domain where they're used.
 
-#### TCP/IP does not use MAC addresses {#orga714be9}
+<h4>TCP/IP does not use MAC addresses</h4>
 
 If we look at the IP datagram again, we see that it doesn't know about
 MAC addresses at all:
@@ -854,7 +867,7 @@ the NIC card. IP addresses, on the other hand, are assigned to a NIC by
 a DHCP server or an administrator. This intentional separation of
 addressing schemes is what makes the Internet flexible.
 
-#### Fixed versus assigned addressing {#org4dfe172}
+<h4>Fixed versus assigned addressing</h4>
 
 Here's an analogy. Your postal address doesn't *actually* define where
 your house is located. There are two layers of other addressing schemes
@@ -901,7 +914,7 @@ makes those coordinates unique. Granted, we don't use a different format
 for MAC addresses for VMs than we do for Internet-connected NICs, but
 you get the idea.
 
-#### Address resolution {#orgd197f23}
+<h4>Address resolution</h4>
 
 Address resolution is what we call the process of mapping between IP
 addresses and MAC addresses. It's done with something called ARP, which
@@ -958,7 +971,7 @@ routers are all doing ARP caching. They copy down the mapping between IP
 and MAC addresses, holding onto it for about twenty minutes. In terms of
 most network transactions, twenty minutes is an eternity.
 
-#### Messages are sent to MAC addresses {#orgec597f9}
+<h4>Messages are sent to MAC addresses</h4>
 
 We often speak of TCP/IP as if messages are sent from one IP address to
 another, but that's actually not strictly true. Messages are sent to MAC
@@ -982,7 +995,7 @@ By the way, You should also note that ARP only works with IPv4. Certain
 other protocols, like Point-to-Point Protocol (PPP), don't make use of
 ARP at all.
 
-#### The ARP frame {#orgd3747e0}
+<h4>The ARP frame</h4>
 
 ARP sends requests as an Ethernet frame, using the MAC address. If you
 remember the MAC frame from earlier:
@@ -994,7 +1007,7 @@ shown above. The resulting ARP frame looks something like this:
 Based on the above diagram, you can see how the ARP request fits into
 the Ethernet frame to make an ARP frame.
 
-#### The ARP cache {#orge4d07a1}
+<h4>The ARP cache</h4>
 
 Let's take a look at the ARP cache on a local system, `cloudburst`. We
 can do that like this:
@@ -1015,7 +1028,7 @@ ourselves by clearing the cache:
 
 ...and rebuilding the ARP table:
 
-#### More about ARP {#orgc3a6084}
+<h4>More about ARP</h4>
 
 Another form of ARP is promiscuous ARP, in which some proxy host
 pretends to be the destination host and provides an ARP response on
@@ -1036,7 +1049,7 @@ addresses are the same. This can be used for at least two purposes:
 You can read more about these (and many more) nuances of ARP, but this
 introduction should answer most of the immediate questions.
 
-### The network layer {#orgb6daeb0}
+<h3>The network layer</h3>
 
 You might have noticed in the original OSI model that "IP" was part of
 Layer 3, and protocol stacks like UDP and TCP were part of Layer 4. It's
@@ -1067,7 +1080,7 @@ computer's memory and Layer 3. For most situations, that fact isn't
 particularly useful, but there is the occasional fault that involves
 failure to reverse byte order along the path from RAM to NIC.
 
-#### What is this \"packets\" you speak of, Kimosabe? {#orgd6d9fa6}
+<h4>What is this "packets" you speak of, Kimosabe?</h4>
 
 Packets are basic Internet Protocol (IP) message units. A message will
 probably be split into multiple packets by L4 (the transport layer) so
@@ -1093,7 +1106,7 @@ envelope and mail each letter separately. When your friend gets the
 letters, it doesn't matter which one gets there first, because they can
 reassemble your message, using the page numbers.
 
-#### Fixed packet lengths and segmented messaging {#org4559c54}
+<h4>Fixed packet lengths and segmented messaging</h4>
 
 We could have designed computer networks to take messages of
 indeterminate lengths, but that presents some unique challenges when
@@ -1117,7 +1130,7 @@ messages through the network in a given amount of time. In network
 terminology, it's the highest-throughput approach to network traffic.
 Specifically, this technique is called multiplexing.
 
-#### IP packets {#orgb809a18}
+<h4>IP packets</h4>
 
 The IP datagram (packet) is the backbone of most modern networks. The
 following diagram depicts an IPv4 header, which attaches to the front of
@@ -1181,7 +1194,7 @@ fields and what information they carry:
     this hop only. As shown below, routers change this address to act as
     brokers in the IP chain.
 
-#### Routing {#orgbf75bca}
+<h4>Routing</h4>
 
 We now have enough concepts in play to talk about routing. Routing takes
 place at the network layer, by changing the source and destination
@@ -1194,7 +1207,7 @@ message, and records the source IP against that port number. When the
 message comes back to it on that port number, it can look up the IP
 address of the NIC that sent the packet and route the answer back.
 
-### The transport layer {#orgb58489d}
+<h3>The transport layer</h3>
 
 Layer 4 brings us to protocols implemented only by the end hosts (i.e.,
 not by the routers or other switching gear that connect the network).
@@ -1212,12 +1225,12 @@ in one piece. L4 breaks up larger messages into segments. Each segment
 gets a TCP header, and gets passed on to L3 where it becomes an IP
 packet.
 
-### TCP: Transmission Control Protocol {#org048798c}
+<h3>TCP: Transmission Control Protocol</h3>
 
 I mentioned above the Layer 4 is all about connections, but the
-situation\'s not always that simple. UDP, for example does not have any
+situation's not always that simple. UDP, for example does not have any
 mechanisms for delivering data reliably. I have a t-shirt that says,
-\"I\'d tell you a joke about UDP, but you might not get it.\" The pun
+"I'd tell you a joke about UDP, but you might not get it." The pun
 turns on the fact that UDP is sort of a *fire and forget* protocol.
 
 The problem of making sure the message got delivered is as old as time.
@@ -1234,14 +1247,14 @@ ACK (I got the message) and a CRC (Cyclic Redundancy Check). If the
 message gets there, and it passes the CRC, an ACK is sent.
 
 Returning to the sneaky messenger, what if the messenger got there and
-delivered the message, but didn\'t get back to tell the sender that the
-message got through? That\'s a more complicated problem. In the
+delivered the message, but didn't get back to tell the sender that the
+message got through? That's a more complicated problem. In the
 networking world, we deal with that by waiting a set amount of time for
 an ACK before re-sending: The recipient has to know how to deal with
 duplicate messages.
 
-How long do we want? That\'s a really complex topic called \"timeout and
-re-transmission\", and I\'m going to skip over that here. You can find a
+How long do we want? That's a really complex topic called "timeout and
+re-transmission", and I'm going to skip over that here. You can find a
 lot of great sources in Google that will help you with that.
 
 The most important things to take away from timeouts, though, are that
@@ -1253,8 +1266,8 @@ Oh, and there has to be a limit on how many unacknowledged messages a
 sender is willing to leave hanging. If the sender sends three messages
 and gets no ACKs, it might not send out sequence number four until the
 other end catches up. This number of outstanding, unacknowledged
-messages is called a \"sliding window\". If the sliding window is three
-messages, and number four hasn\'t been acknowledged, number 8 won\'t be
+messages is called a "sliding window". If the sliding window is three
+messages, and number four hasn't been acknowledged, number 8 won't be
 sent yet.
 
 Sometimes it helps to think of it like jelly beans in a jar with a small
@@ -1267,7 +1280,7 @@ sometimes.
 The simplest way to envision how it works, is, well, to actually look at
 how it works, hence the next section on the TCP header.
 
-#### The TCP header {#org9601318}
+<h4>The TCP header</h4>
 
 Here's a diagram of the L4-to-L3 hand-off:
 
@@ -1284,7 +1297,7 @@ the contents of the TCP header. It contains the following fields:
 -   Sequence number: the sequence number of this segment of data, to
     help the other end put the data back together in the correct order,
     as well as help Level 4 on the receiving end know whether a packet's
-    been dropped or lost. This handles the fact that segments don\'t
+    been dropped or lost. This handles the fact that segments don't
     necessarily arrive in order.
 -   Acknowledgement number: essentially, the next sequence number the
     destination host is expecting; used to "gate" packets through the
@@ -1299,10 +1312,10 @@ the contents of the TCP header. It contains the following fields:
     the most efficient transmission possible, based on the
     characteristics of the two communicating hosts. This is the sliding
     window that defines how many messages can be sent (but not
-    acknowledged) before the sender pauses. The \"negotiable\" part is
+    acknowledged) before the sender pauses. The "negotiable" part is
     what makes for efficient networks: the sender and receiver can
     quickly get to know each other and know how many messages they can
-    \"trust\" to be delivered without an ACK.
+    "trust" to be delivered without an ACK.
 -   Checksum (CRC): used to check the integrity of the segment.
 -   Urgent pointer: data byte count where urgent data ends; used if the
     urgent flag is set (see below).
@@ -1328,7 +1341,7 @@ The code bits can indicate the following things:
     that OSI provides several methods for endpoints to know that the
     network is congested.
 
-#### TCP is like a phone call {#org10b30f8}
+<h4>TCP is like a phone call</h4>
 
 As you can see from the bytes above, TCP is all about the state of a
 connection, which is basically the same as a phone call. When you pick
@@ -1351,7 +1364,7 @@ multiplexing) are handled by the telephone, and some are handled by the
 people operating the telephone (flow control, reliability). In the
 network, the Level 4 protocol stack handles it all.
 
-#### There\'s a lot more here {#org5b4f7ff}
+<h4>There's a lot more here</h4>
 
 There is a lot more to know about TCP, like:
 
@@ -1366,9 +1379,9 @@ You should now have enough basic knowledge to transition to the
 [excellent Wikipedia article about
 TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). A
 word of warning, though: this rabbit hole is very deep, so weigh what
-you\'re learning with what you actually need to know from this point on.
+you're learning with what you actually need to know from this point on.
 
-### The session layer {#org297c586}
+<h3>The session layer</h3>
 
 Layer 5, the session layer, is where ongoing interactions between
 applications happen. The data is couched in terms of things an
@@ -1376,14 +1389,14 @@ application might understand (e.g., cookies for a Web browser). This is
 also the layer where check-pointing (i.e., saving work finished so far)
 happens. At this layer, we'd discuss things like RPC, SQL, or NetBIOS.
 
-### The presentation layer {#org50464ca}
+<h3>The presentation layer</h3>
 
 The presentation layer converts data between formats and ensures
 standard encodings are used to present the information to the
 application. This layer is all about file formats: ASCII, EBCDIC, JPEG,
 GIF, and HTML, to name just a few.
 
-### The application layer {#org21596cd}
+<h3>The application layer</h3>
 
 The top layer, layer 7, is totally the province of the application(s)
 involved in processing messages. Two techs talking about this layer
@@ -1392,4 +1405,8 @@ SMTP, or NFS. Almost nothing that happens at this layer -- except for
 throughput estimates or fouled daemon code -- filters into designing or
 debugging networks.
 
-Copyright (C) 2020-2023 by stormrider; All Rights Reserved
+<hr>
+
+Copyright (C) 2024 by Bill Wear; All Rights Reserved
+</body>
+</html>
