@@ -1,0 +1,13 @@
+stormrider's homepage
+=====================
+
+.. toctree::
+   :maxdepth: 1
+   :caption: what's here?
+
+   philosophy/index
+   emacs/index
+   networking/index
+   maas/index
+   impatience/index
+   amusements/index
