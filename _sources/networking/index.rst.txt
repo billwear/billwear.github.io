@@ -1,0 +1,16 @@
+Networking
+==========
+
+.. toctree::
+   :maxdepth: 1
+   :caption: what's here?
+
+   complicated-channels.rst
+   adversarial-beginnings.rst
+   reinventing-the-internet.rst
+   the-physical-layer-l1.rst
+   the-datalink-layer-l2.rst
+   arp.rst
+   the-network-layer-l3.rst
+   the-transport-layer-l4.rst
+   the-higher-layers.rst
