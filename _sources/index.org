@@ -5,6 +5,4 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="custom.css">
 
 
-* Welcome to billwear's homepage!
-
-A site about truth, emacs, and the netizen way.
+* truth, emacs, and the netizen way.
