@@ -4,10 +4,6 @@
 #+EXPORT_FILE_NAME: ~/bill/var/www/billwear.github.io/truth.html
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="custom.css">
 
-* Truth
-:PROPERTIES:
-:CUSTOM_ID: truth
-:END:
 For much of my life, I was a casual liar.
 
 As a teenager grappling with immense personal trauma --- from the loss
