@@ -5,4 +5,5 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="custom.css">
 
 
-* truth, emacs, and the netizen way.
+* welcome
+truth, emacs, and the netizen way.
