@@ -1,6 +1,6 @@
 #+TITLE: billwear
 #+AUTHOR: Bill Wear
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil num:nil
 #+EXPORT_FILE_NAME: ~/bill/var/www/billwear.github.io/index.html
 
 * Welcome to billwear's homepage
