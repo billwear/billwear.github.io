@@ -5,7 +5,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="custom.css">
 
 * Hi, I'm Bill Wear
-I hung up my cape a long time ago, left the closet behind, and forgot to look back. Still, some things stick with you, no matter where you go: I stand for [[truth.org][truth]], Emacs, and the the Netizen Way.
+I hung up my cape a long time ago, left the closet behind, and forgot to look back. Still, some things stick with you, no matter where you go: I stand for truth, Emacs, and the the Netizen Way.
 
 Being a netizen is more than just being online; it's about contributing meaningfully, connecting authentically, and hacking away at life's puzzles with curiosity and care. It's about sharing what you know, learning from others, and never settling the "one true way."
 
