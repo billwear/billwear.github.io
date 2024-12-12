@@ -66,7 +66,7 @@ This ensures that my work is always up-to-date and consistent across devices, re
 
 ** Managing Life with Org-mode
 
-Emacs becomes even more powerful with Org-mode, a system for organizing tasks, notes, and schedules. Inspired by Tom Limoncelli’s *Time Management for System Administrators*, I use three primary Org-mode files: =life-goals.org=, =todo.org=, and =calendar.org=. These files help me plan, prioritize, and execute tasks effectively.
+Emacs becomes even more powerful with Org-mode, a system for organizing tasks, notes, and schedules. Inspired by Tom Limoncelli’s [[https://www.amazon.com/Time-Management-System-Administrators-Working/dp/0596007833][Time Management for System Administrators]], I use three primary Org-mode files: =life-goals.org=, =todo.org=, and =calendar.org=. These files help me plan, prioritize, and execute tasks effectively.
 
 *** The Three Key Files
 
