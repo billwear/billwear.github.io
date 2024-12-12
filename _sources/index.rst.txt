@@ -1,5 +1,5 @@
-stormrider's homepage
-=====================
+billwear's homepage
+
 
 .. toctree::
    :maxdepth: 1
