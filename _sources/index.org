@@ -2,7 +2,7 @@
 #+AUTHOR: Bill Wear
 #+OPTIONS: toc:nil num:nil
 #+EXPORT_FILE_NAME: ~/bill/var/www/billwear.github.io/index.html
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="_sources/custom.css">
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="custom.css">
 
 
 * Welcome to billwear's homepage
