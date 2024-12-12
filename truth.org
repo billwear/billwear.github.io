@@ -4,9 +4,9 @@
 #+EXPORT_FILE_NAME: ~/bill/var/www/billwear.github.io/truth.html  
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="custom.css">  
 
-For much of my life, I was a casual liar.
+For much of my youth, I was a casual liar.
 
-As a teenager grappling with immense personal trauma — from the loss of my sister and the breakdown of my family, to the abuse by a trusted teacher — I found myself spinning tales as a form of escape. This teacher exploited my vulnerability, which led me down a dark path of shame and deceit. I was afraid to be myself, and I hated myself for years — partly for lying, and partly out of shame.
+As a teenager grappling with immense personal trauma — from the loss of my sister, through my dad's continual demands for perfection, to the breakdown of my family, to the abuse by a trusted teacher — I found myself spinning tales as a form of escape. This teacher exploited my vulnerability, which led me down a dark path of shame and deceit. I was afraid to be myself, and I hated myself for years — partly for lying, and partly out of shame.
 
 Lies became a coping mechanism, a way to navigate a world that seemed too painful to engage with honestly. Each falsehood was a tiny fortress wall, a way to protect myself from judgment or further injury. But as with all fortresses, the walls eventually closed in. My escape became a prison.
 
