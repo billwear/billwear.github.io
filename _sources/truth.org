@@ -1,3 +1,9 @@
+#+TITLE: truth
+#+AUTHOR: Bill Wear
+#+OPTIONS: toc:nil num:nil
+#+EXPORT_FILE_NAME: ~/bill/var/www/billwear.github.io/truth.html
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="custom.css">
+
 * Truth
 :PROPERTIES:
 :CUSTOM_ID: truth
