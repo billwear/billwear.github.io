@@ -1,7 +1,3 @@
-Here's the essay formatted in Org mode, preserving the narrative exactly as requested.
-
----
-
 #+TITLE: The Netizen’s Way: A Manifesto for Open Source and Digital Integrity  
 #+AUTHOR: Bill Wear  
 #+OPTIONS: toc:nil num:nil  
