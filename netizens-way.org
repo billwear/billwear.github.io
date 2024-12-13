@@ -1,11 +1,10 @@
-#+TITLE: The Netizen’s Way: A Manifesto for Open Source and Digital Integrity  
+#+TITLE: The Netizen’s Way
 #+AUTHOR: Bill Wear  
 #+OPTIONS: toc:nil num:nil  
 #+EXPORT_FILE_NAME: ~/bill/var/www/billwear.github.io/netizen-manifesto.html  
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="custom.css">  
 
 * The Netizen’s Way: A Manifesto for Open Source and Digital Integrity
-
 
 In an increasingly interconnected world, being a *netizen* — a citizen of the digital realm — is both a privilege and a responsibility. To navigate the vast, open seas of the internet while championing the ideals of open source, we need more than just tools and technology. We need principles, a compass for integrity, collaboration, and authenticity.  
 
