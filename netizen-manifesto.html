@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-12-12 Thu 18:13 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Netizen’s Way: A Manifesto for Open Source and Digital Integrity</title>
+<meta name="author" content="Bill Wear" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="custom.css">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">The Netizen’s Way: A Manifesto for Open Source and Digital Integrity</h1>
+<p>
+Here's the essay formatted in Org mode, preserving the narrative exactly as requested.
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<div id="outline-container-orgc870ea6" class="outline-2">
+<h2 id="orgc870ea6">The Netizen’s Way: A Manifesto for Open Source and Digital Integrity</h2>
+<div class="outline-text-2" id="text-orgc870ea6">
+<p>
+In an increasingly interconnected world, being a <b>netizen</b> — a citizen of the digital realm — is both a privilege and a responsibility. To navigate the vast, open seas of the internet while championing the ideals of open source, we need more than just tools and technology. We need principles, a compass for integrity, collaboration, and authenticity.  
+</p>
+
+<p>
+This credo isn’t just a personal ethos; it’s a guide for every netizen who believes in the power of open source and the transformative potential of the internet. It’s about living with clarity, creativity, and purpose in a digital landscape that is still being shaped by those bold enough to contribute.
+</p>
+</div>
+
+<div id="outline-container-org81ddb31" class="outline-3">
+<h3 id="org81ddb31">Say What You Mean</h3>
+<div class="outline-text-3" id="text-org81ddb31">
+<p>
+In the world of open source, clarity is everything. Code comments, documentation, and communication with contributors are the backbone of collaboration. <b>Say what you mean</b> — because telepathy is still in beta testing, and ambiguity kills projects faster than bugs do. Transparency and directness ensure that everyone shares the same understanding and direction. If we can’t express our ideas clearly, we can’t build them together.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4e3d0a3" class="outline-3">
+<h3 id="org4e3d0a3">Be Choosy with Your Media</h3>
+<div class="outline-text-3" id="text-org4e3d0a3">
+<p>
+Our minds are shaped by what we consume. Misinformation, clickbait, and noise clutter the digital landscape. As netizens, we must <b>be choosy with our media</b>. Trust verified sources. Seek out communities and creators who foster knowledge, not outrage. When contributing to open source, let your work reflect reality — not distortions. And if you need a break, there’s always someone painting happy little trees to remind you of simpler joys.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga27cae9" class="outline-3">
+<h3 id="orga27cae9">Speak Clearly, Listen Carefully, Pay Close Attention</h3>
+<div class="outline-text-3" id="text-orga27cae9">
+<p>
+Communication is the heart of the internet. Whether you’re in a GitHub discussion, an IRC channel, or a mailing list, <b>speak clearly, listen carefully, pay close attention</b>. Misunderstandings online are easy, and clarity is the antidote. Open source thrives on respectful discourse and mutual understanding. If you want to ask for help or offer feedback, precision and attentiveness make all the difference. Otherwise, you might end up discussing quantum physics when you just wanted the version number.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org948af87" class="outline-3">
+<h3 id="org948af87">Do What You Love</h3>
+<div class="outline-text-3" id="text-org948af87">
+<p>
+Open source is fueled by passion. Developers, writers, designers, and maintainers contribute because they <b>love what they do</b>. Life’s too short not to ply your craft. But remember — not every passion pays the bills, unless your craft is printing money. Find joy in your contributions and remember that sharing your knowledge is its own reward.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org71c7189" class="outline-3">
+<h3 id="org71c7189">Keep It Simple</h3>
+<div class="outline-text-3" id="text-org71c7189">
+<p>
+In both code and life, complexity breeds frustration. <b>Keep it simple</b>. Elegant solutions are maintainable solutions. Complex plans are like software with unnecessary dependencies — they break under pressure. A straightforward, robust design is worth more than a convoluted mess. Simplicity scales; complexity fails.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf5ec92b" class="outline-3">
+<h3 id="orgf5ec92b">Start Small and Build a Little at a Time</h3>
+<div class="outline-text-3" id="text-orgf5ec92b">
+<p>
+Great projects don’t spring into existence fully formed. They start with a single commit, a basic README, or a simple script. <b>Start small and build a little at a time</b>. Each contribution is a tile in the mosaic. Incremental progress is sustainable, and small wins lead to big victories. Remember, a mosaic is more beautiful than the finest concrete — and way less likely to collapse under its own weight.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2fe2f66" class="outline-3">
+<h3 id="org2fe2f66">Network</h3>
+<div class="outline-text-3" id="text-org2fe2f66">
+<p>
+No netizen thrives alone. The power of open source lies in its community. <b>Network</b>; connect with people who share your values and interests. Collaboration sparks innovation, and the collective wisdom of the community propels us forward. Besides, who else will laugh at your "I'm not a robot" jokes?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd4c0737" class="outline-3">
+<h3 id="orgd4c0737">Be Who You Are</h3>
+<div class="outline-text-3" id="text-orgd4c0737">
+<p>
+Authenticity is your superpower. In a digital world where personas are easily crafted, <b>be who you are</b>. Even a bent wire can carry a great light. Your unique perspective, skills, and experiences are valuable. Open source thrives on diversity, and your honest voice makes the community stronger.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8340409" class="outline-3">
+<h3 id="org8340409">Build for Strength, Not Just Speed</h3>
+<div class="outline-text-3" id="text-org8340409">
+<p>
+In a world obsessed with quick wins and instant gratification, <b>build for strength, not just speed</b>. The hare may have more followers, but the tortoise reaches the finish line. Resilient systems, thoughtful contributions, and solid principles outlast fads and quick hacks. Longevity matters.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4b323ab" class="outline-3">
+<h3 id="org4b323ab">Hack</h3>
+<div class="outline-text-3" id="text-org4b323ab">
+<p>
+<b>Hack</b> — explore, experiment, and learn through doing. But remember, "try it and see" doesn’t apply to skydiving or lion taming. In the realm of code, hacking is the path to discovery. Iterate, fail fast, and grow. Open source was built by hackers who dared to try new things.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd98e904" class="outline-3">
+<h3 id="orgd98e904">Under-Promise and Over-Deliver</h3>
+<div class="outline-text-3" id="text-orgd98e904">
+<p>
+Trust is earned through reliability. <b>Under-promise and over-deliver</b>. Surprise people with your commitment, not with missed deadlines. In the open-source world, consistency and follow-through matter. When you say you’ll contribute, deliver. When you deliver more than expected, the community thrives.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdcb8a55" class="outline-3">
+<h3 id="orgdcb8a55">Divide and Conquer</h3>
+<div class="outline-text-3" id="text-orgdcb8a55">
+<p>
+Big problems are daunting. <b>Divide and conquer</b>. Break down tasks, distribute responsibilities, and tackle issues systematically. Life is a giant strategy game, and open source is no different. A thousand small fixes can solve a massive problem.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc49209b" class="outline-3">
+<h3 id="orgc49209b">Do One Thing Well</h3>
+<div class="outline-text-3" id="text-orgc49209b">
+<p>
+In a world of multi-purpose tools, <b>do one thing well</b>. Unix taught us the power of simplicity, and this principle applies to code, projects, and life. Be the unicorn: famous for one horn, but unforgettable because of it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5afaa50" class="outline-3">
+<h3 id="org5afaa50">Use What You Have</h3>
+<div class="outline-text-3" id="text-org5afaa50">
+<p>
+Resourcefulness is a netizen’s virtue. <b>Use what you have</b>. Repurpose, adapt, and innovate with the tools at hand. Unless it's a floppy disk — then maybe it's time to upgrade. Open source thrives on the idea that good tools are built from what’s available and shared freely.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org875d834" class="outline-3">
+<h3 id="org875d834">Use Levers, Not People</h3>
+<div class="outline-text-3" id="text-org875d834">
+<p>
+<b>Use levers, not people</b>. Automation, scripts, and tools amplify productivity. People aren’t levers; they’re collaborators. Respect their time and energy. Build tools that make life easier for everyone.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf9c203c" class="outline-3">
+<h3 id="orgf9c203c">Release Early, Release Often</h3>
+<div class="outline-text-3" id="text-orgf9c203c">
+<p>
+Perfection is the enemy of progress. <b>Release early, release often</b>. Share your work, gather feedback, and iterate. The open-source world doesn’t reward hoarding half-baked ideas — it thrives on sharing, learning, and improving together.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb383881" class="outline-3">
+<h3 id="orgb383881">Distrust All Claims for the One True Way</h3>
+<div class="outline-text-3" id="text-orgb383881">
+<p>
+Dogma has no place in open source. <b>Distrust all claims for the one true way</b>. There’s always another approach, another tool, another perspective. Except for pizza. Pizza is always the answer.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgda55ca9" class="outline-3">
+<h3 id="orgda55ca9">Think Ahead, but Don’t Worship Your Plans</h3>
+<div class="outline-text-3" id="text-orgda55ca9">
+<p>
+Planning is crucial, but rigidity is fatal. <b>Think ahead, but don’t worship your plans</b>. Adapt, evolve, and embrace change. The digital world moves fast, and flexibility keeps you relevant.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdac9a88" class="outline-3">
+<h3 id="orgdac9a88">Think Big: You Are the Universe</h3>
+<div class="outline-text-3" id="text-orgdac9a88">
+<p>
+You are part of something vast. <b>Think big</b>. Contribute boldly. Expand your horizons. Like any good universe, occasionally expand beyond your current dimensions — just without the big bang.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgacda39e" class="outline-3">
+<h3 id="orgacda39e">Abhor Violence in All Its Forms</h3>
+<div class="outline-text-3" id="text-orgacda39e">
+<p>
+In a realm built on collaboration, <b>abhor violence in all its forms</b>. Keep your peace, hold your tongue, and resist the urge to dominate. Healthy discourse, not conflict, builds strong communities.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb9fda28" class="outline-3">
+<h3 id="orgb9fda28">Practice the Prime Directive</h3>
+<div class="outline-text-3" id="text-orgb9fda28">
+<p>
+Respect autonomy. <b>Practice the Prime Directive</b>. Let others create, explore, and innovate in their own way. Unless you're in a sci-fi movie — then totally ignore it.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9a0e386" class="outline-2">
+<h2 id="org9a0e386">The Netizen's Path</h2>
+<div class="outline-text-2" id="text-org9a0e386">
+<p>
+This credo is a guide to being a netizen who contributes meaningfully to the open-source world. It calls for clarity, integrity, passion, and respect. By living these principles, we don’t just create better software — we create a better digital society. One commit, one conversation, and one collaboration at a time, we build a more open, resilient, and creative world.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Bill Wear</p>
+<p class="date">Created: 2024-12-12 Thu 18:13</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
