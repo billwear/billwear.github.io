@@ -1,4 +1,4 @@
-Reinventing the Internet
+reinventing the Internet
 ========================
 
 Especially in the computer field, people who come up with new ideas love
@@ -27,7 +27,7 @@ repurposed for computer networking.
 
 Why invent something when you have a working model?  Just rename it.
 
-To Be Fair...
+to be fair...
 ^^^^^^^^^^^^^
 
 Actually, in many cases, renaming isn't actually a *terrible* idea,
@@ -45,7 +45,7 @@ changes every time you save. The new name carries implications that
 can't be drawn so easily from the term "someone else's server", and
 that helps to set expectations and standards.
 
-The Internet Infrastructure
+the Internet infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There's an idea floating around that the Internet is survivable because
@@ -69,7 +69,7 @@ are the residue of the phone company's early T1 nodes, which was the
 initial backbone for the Internet. These MAEs act just like a NAP for
 the purposes of this discussion.
 
-About Internet Network Traffic
+about Internet network traffic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On-the-fly, Internet network paths can become very complicated and
@@ -87,7 +87,7 @@ of data travels between computers, besides just the data we send. The
 structure and grouping of message traffic in TCP/IP is governed by the
 **OSI model**. Let's take a look.
 
-The OSI Model
+the OSI model
 -------------
 
 No, that's not referring to the WWII forerunner of the CIA (which was

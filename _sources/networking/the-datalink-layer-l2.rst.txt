@@ -1,4 +1,4 @@
-The Datalink Layer
+the datalink layer
 ==================
 
 The **datalink layer** (the **link layer**, **Layer 2** or
@@ -32,7 +32,7 @@ units). This avoids conflation with other uses and reminds you that
 it's the atomic unit at the current network layer. Just remember that,
 at the link layer (L2), it's a frame.
 
-MAC Frames
+MAC frames
 ^^^^^^^^^^
 
 A MAC frame, or just "frame", encapsulates the packets from the network
@@ -52,7 +52,7 @@ so we'll stick to that particular frame type for this
 discussion. Where other frame types may come into play, we'll discuss
 those as special cases.
 
-Ethernet
+ethernet
 ^^^^^^^^
 
 Before explaining an Ethernet Frame, we need to give a little background
@@ -79,7 +79,7 @@ of times, the NIC will declare a failure and report that the message
 didn't go. This ensures that only one frame is traversing the network
 at any given time.
 
-Media Access Control (MAC)
+media access control (MAC)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Systems like CSMA/CD are a subset of the Media Access Control (MAC)
@@ -181,7 +181,7 @@ Address. That distinction shouldn't affect anything meaningful that we
 do with networks, but it's nice to keep in mind, in case you run into
 someone who groups packets differently than you do.
 
-Trunking VLANs
+trunking VLANs
 ^^^^^^^^^^^^^^
 
 There is a crucial modification to the basic frame format called a P/Q
@@ -204,7 +204,7 @@ something like this:
   spans multiple switches, frames need to carry VLAN information that
   can be used by switches to sort or "trunk" the traffic.
 
-The Origin of "Trunking"
+the origin of "trunking"
 ''''''''''''''''''''''''
 
 The word "trunking" is derived from the telephone network term trunk
@@ -231,7 +231,7 @@ there to subscriber homes. When you draw out this network, it looks
 like a tree, where the bundles of cables between COs look like the
 trunks of trees.
 
-Multiplexing LAN Channels, Actually
+multiplexing LAN channels, actually
 '''''''''''''''''''''''''''''''''''
 
 With VLAN trunking, by the way, we're not just multiplexing packets,
@@ -251,7 +251,7 @@ layers. Basically, anything that some other MAC layer did to
 encapsulate the message for sending, the receiving MAC layer un-does
 on the way in.
 
-VLANs, Subnets, and Fabrics
+VLANs, subnets, and fabrics
 '''''''''''''''''''''''''''
 
 When working with networks, you will frequently be concerned with VLANs,
@@ -259,7 +259,7 @@ subnets, and fabrics, which are all network groupings: - Subnets define
 (group) a range of IP addresses. - VLANs group subnets. - Fabrics group
 VLANs. Let's give each of these terms their due.
 
-Subnets
+subnets
 ,,,,,,,
 
 A subnet is a range or collection of IP addresses. A subnet just means
@@ -305,7 +305,7 @@ possible, but it isn't practical or easy to debug when conflicts
 happen. You should endeavour to enforce a clean "fan-out" across the
 network, with no possibility of conflicting IP addresses.
 
-Fabrics
+fabrics
 ,,,,,,,       
 
 A fabric just collects VLANs together. If you stick to the clean
@@ -321,7 +321,7 @@ that people admitted to that fabric can access the VLANs without
 having to be explicitly added to each one.  That's very handy in
 really large organisations, saving a lot of time and effort.
 
-Visualising the link layer
+visualising the link layer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's start with a message coming on Layer 1 from SanDiego to Bangor.

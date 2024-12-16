@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Transport Layer &mdash; billwear 1.0 documentation</title>
+  <title>the transport layer &mdash; billwear 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Higher OSI Layers" href="the-higher-layers.html" />
-    <link rel="prev" title="The Network Layer" href="the-network-layer-l3.html" /> 
+    <link rel="next" title="the higher OSI layers" href="the-higher-layers.html" />
+    <link rel="prev" title="the network layer" href="the-network-layer-l3.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,23 +54,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../textspeak.html">textspeak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../truth.html">truth</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Networking</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="complicated-channels.html">Channels of Sharing are Complicated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adversarial-beginnings.html">Adversarial Beginnings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reinventing-the-internet.html">Reinventing the Internet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-physical-layer-l1.html">The Physical Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-datalink-layer-l2.html">The Datalink Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arp.html">Interlayer addressing: ARP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-network-layer-l3.html">The Network Layer</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The Transport Layer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tcp-transmission-control-protocol">TCP: Transmission Control Protocol</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-tcp-header">The TCP Header</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tcp-is-like-a-phone-call">TCP is Like a Phone Call</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#there-s-a-lot-more-here">There’s a Lot More Here</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complicated-channels.html">channels of sharing are complicated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adversarial-beginnings.html">adversarial beginnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reinventing-the-internet.html">reinventing the Internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-physical-layer-l1.html">the physical layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-datalink-layer-l2.html">the datalink layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arp.html">interlayer addressing: ARP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-network-layer-l3.html">the network layer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">the transport layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tcp-transmission-control-protocol">TCP: transmission control protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-tcp-header">the TCP header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tcp-is-like-a-phone-call">TCP is like a phone call</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#there-s-a-lot-more-here">there’s a lot more here</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="the-higher-layers.html">The Higher OSI Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-higher-layers.html">the higher OSI layers</a></li>
 </ul>
 </li>
 </ul>
@@ -90,7 +90,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Networking</a></li>
-      <li class="breadcrumb-item active">The Transport Layer</li>
+      <li class="breadcrumb-item active">the transport layer</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/networking/the-transport-layer-l4.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -101,7 +101,7 @@
            <div itemprop="articleBody">
              
   <section id="the-transport-layer">
-<h1>The Transport Layer<a class="headerlink" href="#the-transport-layer" title="Link to this heading"></a></h1>
+<h1>the transport layer<a class="headerlink" href="#the-transport-layer" title="Link to this heading"></a></h1>
 <p>Layer 4 brings us to protocols implemented only by the end hosts (i.e.,
 not by the routers or other switching gear that connect the network).
 This layer handles things like redundancy, confirmed delivery, managing
@@ -117,7 +117,7 @@ message exists in one piece. L4 breaks up larger messages into
 segments. Each segment gets a TCP header, and gets passed on to L3
 where it becomes an IP packet.</p>
 <section id="tcp-transmission-control-protocol">
-<h2>TCP: Transmission Control Protocol<a class="headerlink" href="#tcp-transmission-control-protocol" title="Link to this heading"></a></h2>
+<h2>TCP: transmission control protocol<a class="headerlink" href="#tcp-transmission-control-protocol" title="Link to this heading"></a></h2>
 <p>I mentioned above the Layer 4 is all about connections, but the
 situation’s not always that simple. UDP, for example does not have any
 mechanisms for delivering data reliably. I have a t-shirt that says,
@@ -163,7 +163,7 @@ muddle of beans moves one bean closer to freedom.</p>
 how it works, is, well, to actually look at how it works, hence the
 next section on the TCP header.</p>
 <section id="the-tcp-header">
-<h3>The TCP Header<a class="headerlink" href="#the-tcp-header" title="Link to this heading"></a></h3>
+<h3>the TCP header<a class="headerlink" href="#the-tcp-header" title="Link to this heading"></a></h3>
 <p>Here’s a diagram of the L4-to-L3 hand-off: We can get a pretty good idea
 what happens at Layer 4 just by decoding the contents of the TCP header.
 It contains the following fields:</p>
@@ -223,7 +223,7 @@ network is congested.</p></li>
 </div></blockquote>
 </section>
 <section id="tcp-is-like-a-phone-call">
-<h3>TCP is Like a Phone Call<a class="headerlink" href="#tcp-is-like-a-phone-call" title="Link to this heading"></a></h3>
+<h3>TCP is like a phone call<a class="headerlink" href="#tcp-is-like-a-phone-call" title="Link to this heading"></a></h3>
 <p>As you can see from the bytes above, TCP is all about the state of a
 connection, which is basically the same as a phone call. When you pick
 up the receiver, you and the caller exchange information. You say “bye”
@@ -245,7 +245,7 @@ operating the telephone (flow control, reliability). In the network,
 the Level 4 protocol stack handles it all.</p>
 </section>
 <section id="there-s-a-lot-more-here">
-<h3>There’s a Lot More Here<a class="headerlink" href="#there-s-a-lot-more-here" title="Link to this heading"></a></h3>
+<h3>there’s a lot more here<a class="headerlink" href="#there-s-a-lot-more-here" title="Link to this heading"></a></h3>
 <p>There is a lot more to know about TCP, like:</p>
 <blockquote>
 <div><ul class="simple">
@@ -271,8 +271,8 @@ on.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="the-network-layer-l3.html" class="btn btn-neutral float-left" title="The Network Layer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="the-higher-layers.html" class="btn btn-neutral float-right" title="The Higher OSI Layers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="the-network-layer-l3.html" class="btn btn-neutral float-left" title="the network layer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="the-higher-layers.html" class="btn btn-neutral float-right" title="the higher OSI layers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

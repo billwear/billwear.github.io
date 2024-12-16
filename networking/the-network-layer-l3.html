@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Network Layer &mdash; billwear 1.0 documentation</title>
+  <title>the network layer &mdash; billwear 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Transport Layer" href="the-transport-layer-l4.html" />
-    <link rel="prev" title="Interlayer addressing: ARP" href="arp.html" /> 
+    <link rel="next" title="the transport layer" href="the-transport-layer-l4.html" />
+    <link rel="prev" title="interlayer addressing: ARP" href="arp.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,21 +54,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../textspeak.html">textspeak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../truth.html">truth</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Networking</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="complicated-channels.html">Channels of Sharing are Complicated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adversarial-beginnings.html">Adversarial Beginnings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reinventing-the-internet.html">Reinventing the Internet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-physical-layer-l1.html">The Physical Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-datalink-layer-l2.html">The Datalink Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arp.html">Interlayer addressing: ARP</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The Network Layer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#what-is-this-packets-you-speak-of-kimosabe">What is This “Packets” You Speak of, Kimosabe?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixed-packet-lengths-and-segmented-messaging">Fixed Packet Lengths and Segmented Messaging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ip-packets">IP Packets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#routing">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complicated-channels.html">channels of sharing are complicated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adversarial-beginnings.html">adversarial beginnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reinventing-the-internet.html">reinventing the Internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-physical-layer-l1.html">the physical layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-datalink-layer-l2.html">the datalink layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arp.html">interlayer addressing: ARP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">the network layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-this-packets-you-speak-of-kimosabe">what is this “packets” you speak of, kimosabe?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-packet-lengths-and-segmented-messaging">fixed packet lengths and segmented messaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ip-packets">IP packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#routing">routing</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="the-transport-layer-l4.html">The Transport Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-higher-layers.html">The Higher OSI Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-transport-layer-l4.html">the transport layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-higher-layers.html">the higher OSI layers</a></li>
 </ul>
 </li>
 </ul>
@@ -88,7 +88,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Networking</a></li>
-      <li class="breadcrumb-item active">The Network Layer</li>
+      <li class="breadcrumb-item active">the network layer</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/networking/the-network-layer-l3.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -99,7 +99,7 @@
            <div itemprop="articleBody">
              
   <section id="the-network-layer">
-<h1>The Network Layer<a class="headerlink" href="#the-network-layer" title="Link to this heading"></a></h1>
+<h1>the network layer<a class="headerlink" href="#the-network-layer" title="Link to this heading"></a></h1>
 <p>You might have noticed in the original OSI model that “IP” was part of
 Layer 3, and protocol stacks like UDP and TCP were part of Layer 4. It’s
 a little bit confusing that we say “TCP/IP” when the “IP” really applies
@@ -126,7 +126,7 @@ Layer 3. For most situations, that fact isn’t particularly useful, but
 there is the occasional fault that involves failure to reverse byte
 order along the path from RAM to NIC.</p>
 <section id="what-is-this-packets-you-speak-of-kimosabe">
-<h2>What is This “Packets” You Speak of, Kimosabe?<a class="headerlink" href="#what-is-this-packets-you-speak-of-kimosabe" title="Link to this heading"></a></h2>
+<h2>what is this “packets” you speak of, kimosabe?<a class="headerlink" href="#what-is-this-packets-you-speak-of-kimosabe" title="Link to this heading"></a></h2>
 <p>Packets are basic Internet Protocol (IP) message units. A message will
 probably be split into multiple packets by L4 (the transport layer) so
 it can be efficiently sent. For example, imagine that you’re sending a
@@ -150,7 +150,7 @@ matter which one gets there first, because they can reassemble your
 message, using the page numbers.</p>
 </section>
 <section id="fixed-packet-lengths-and-segmented-messaging">
-<h2>Fixed Packet Lengths and Segmented Messaging<a class="headerlink" href="#fixed-packet-lengths-and-segmented-messaging" title="Link to this heading"></a></h2>
+<h2>fixed packet lengths and segmented messaging<a class="headerlink" href="#fixed-packet-lengths-and-segmented-messaging" title="Link to this heading"></a></h2>
 <p>We could have designed computer networks to take messages of
 indeterminate lengths, but that presents some unique challenges when
 trying to manage network traffic. For example, suppose you send seven
@@ -173,7 +173,7 @@ highest-throughput approach to network traffic. Specifically, this
 technique is called multiplexing.</p>
 </section>
 <section id="ip-packets">
-<h2>IP Packets<a class="headerlink" href="#ip-packets" title="Link to this heading"></a></h2>
+<h2>IP packets<a class="headerlink" href="#ip-packets" title="Link to this heading"></a></h2>
 <p>The IP datagram (packet) is the backbone of most modern networks. The
 datagram is preceded by an IPv4 header, which attaches to the front of
 data packets up to about 65K long. Here are the header fields and what
@@ -237,7 +237,7 @@ as brokers in the IP chain.</p></li>
 </div></blockquote>
 </section>
 <section id="routing">
-<h2>Routing<a class="headerlink" href="#routing" title="Link to this heading"></a></h2>
+<h2>routing<a class="headerlink" href="#routing" title="Link to this heading"></a></h2>
 <p>We now have enough concepts in play to talk about routing. Routing takes
 place at the network layer, by changing the source and destination
 addresses (without losing track of the replaced address). The process
@@ -255,8 +255,8 @@ answer back.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="arp.html" class="btn btn-neutral float-left" title="Interlayer addressing: ARP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="the-transport-layer-l4.html" class="btn btn-neutral float-right" title="The Transport Layer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arp.html" class="btn btn-neutral float-left" title="interlayer addressing: ARP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="the-transport-layer-l4.html" class="btn btn-neutral float-right" title="the transport layer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

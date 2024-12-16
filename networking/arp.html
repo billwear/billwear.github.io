@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interlayer addressing: ARP &mdash; billwear 1.0 documentation</title>
+  <title>interlayer addressing: ARP &mdash; billwear 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Network Layer" href="the-network-layer-l3.html" />
-    <link rel="prev" title="The Datalink Layer" href="the-datalink-layer-l2.html" /> 
+    <link rel="next" title="the network layer" href="the-network-layer-l3.html" />
+    <link rel="prev" title="the datalink layer" href="the-datalink-layer-l2.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,24 +54,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../textspeak.html">textspeak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../truth.html">truth</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Networking</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="complicated-channels.html">Channels of Sharing are Complicated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adversarial-beginnings.html">Adversarial Beginnings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reinventing-the-internet.html">Reinventing the Internet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-physical-layer-l1.html">The Physical Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-datalink-layer-l2.html">The Datalink Layer</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Interlayer addressing: ARP</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tcp-ip-does-not-use-mac-addresses">TCP/IP Does Not Use MAC Addresses</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixed-versus-assigned-addressing">Fixed Versus Assigned Addressing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#address-resolution">Address Resolution</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#messages-are-sent-to-mac-addresses">Messages are Sent to mac Addresses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complicated-channels.html">channels of sharing are complicated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adversarial-beginnings.html">adversarial beginnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reinventing-the-internet.html">reinventing the Internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-physical-layer-l1.html">the physical layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-datalink-layer-l2.html">the datalink layer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">interlayer addressing: ARP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tcp-ip-does-not-use-mac-addresses">TCP/IP does not use MAC addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-versus-assigned-addressing">fixed versus assigned addressing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#address-resolution">address resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#messages-are-sent-to-mac-addresses">messages are sent to MAC addresses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-arp-frame">The ARP Frame</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-arp-cache">The ARP cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#more-about-arp">More About ARP</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="the-network-layer-l3.html">The Network Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-transport-layer-l4.html">The Transport Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-higher-layers.html">The Higher OSI Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-network-layer-l3.html">the network layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-transport-layer-l4.html">the transport layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-higher-layers.html">the higher OSI layers</a></li>
 </ul>
 </li>
 </ul>
@@ -91,7 +91,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Networking</a></li>
-      <li class="breadcrumb-item active">Interlayer addressing: ARP</li>
+      <li class="breadcrumb-item active">interlayer addressing: ARP</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/networking/arp.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -102,7 +102,7 @@
            <div itemprop="articleBody">
              
   <section id="interlayer-addressing-arp">
-<h1>Interlayer addressing: ARP<a class="headerlink" href="#interlayer-addressing-arp" title="Link to this heading"></a></h1>
+<h1>interlayer addressing: ARP<a class="headerlink" href="#interlayer-addressing-arp" title="Link to this heading"></a></h1>
 <p>One frequently asked question is this: Is ARP a layer 2 or layer 3
 protocol? Actually, it’s both, as you’ll discover later, but it does all
 of its work at L2. One way to distinguish L2 from L3 is to find out what
@@ -123,7 +123,7 @@ about are the ones you create by hand-assigning MAC addresses. The
 shorter answer to that implied question is this: MAC addresses must be
 unique across the domain where they’re used.</p>
 <section id="tcp-ip-does-not-use-mac-addresses">
-<h2>TCP/IP Does Not Use MAC Addresses<a class="headerlink" href="#tcp-ip-does-not-use-mac-addresses" title="Link to this heading"></a></h2>
+<h2>TCP/IP does not use MAC addresses<a class="headerlink" href="#tcp-ip-does-not-use-mac-addresses" title="Link to this heading"></a></h2>
 <p>If we look at the IP datagram again, we see that it doesn’t know about
 MAC addresses at all: TCP, UDP, and a number of other protocol stacks
 are written to use IP addresses. Routers depend on IP addresses, as
@@ -136,7 +136,7 @@ intentional separation of addressing schemes is what makes the Internet
 flexible.</p>
 </section>
 <section id="fixed-versus-assigned-addressing">
-<h2>Fixed Versus Assigned Addressing<a class="headerlink" href="#fixed-versus-assigned-addressing" title="Link to this heading"></a></h2>
+<h2>fixed versus assigned addressing<a class="headerlink" href="#fixed-versus-assigned-addressing" title="Link to this heading"></a></h2>
 <p>Here’s an analogy. Your postal address doesn’t <em>actually</em> define where
 your house is located. There are two layers of other addressing schemes
 that are actually used by government organisations, like your county tax
@@ -177,7 +177,7 @@ different format for MAC addresses for VMs than we do for
 Internet-connected NICs, but you get the idea.</p>
 </section>
 <section id="address-resolution">
-<h2>Address Resolution<a class="headerlink" href="#address-resolution" title="Link to this heading"></a></h2>
+<h2>address resolution<a class="headerlink" href="#address-resolution" title="Link to this heading"></a></h2>
 <p>Address resolution is what we call the process of mapping between IP
 addresses and MAC addresses. It’s done with something called ARP, which
 stands for “Address Resolution Protocol”. Oddly enough, ARP takes on a
@@ -223,7 +223,7 @@ holding onto it for about twenty minutes. In terms of most network
 transactions, twenty minutes is an eternity.</p>
 </section>
 <section id="messages-are-sent-to-mac-addresses">
-<h2>Messages are Sent to mac Addresses<a class="headerlink" href="#messages-are-sent-to-mac-addresses" title="Link to this heading"></a></h2>
+<h2>messages are sent to MAC addresses<a class="headerlink" href="#messages-are-sent-to-mac-addresses" title="Link to this heading"></a></h2>
 <p>We often speak of TCP/IP as if messages are sent from one IP address to
 another, but that’s actually not strictly true. Messages are sent to MAC
 addresses. IP addresses are only used to get MAC addresses, so the
@@ -296,8 +296,8 @@ immediate questions.</p></li>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="the-datalink-layer-l2.html" class="btn btn-neutral float-left" title="The Datalink Layer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="the-network-layer-l3.html" class="btn btn-neutral float-right" title="The Network Layer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="the-datalink-layer-l2.html" class="btn btn-neutral float-left" title="the datalink layer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="the-network-layer-l3.html" class="btn btn-neutral float-right" title="the network layer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

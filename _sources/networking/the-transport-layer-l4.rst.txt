@@ -1,4 +1,4 @@
-The Transport Layer
+the transport layer
 ===================
 
 Layer 4 brings us to protocols implemented only by the end hosts (i.e.,
@@ -17,7 +17,7 @@ message exists in one piece. L4 breaks up larger messages into
 segments. Each segment gets a TCP header, and gets passed on to L3
 where it becomes an IP packet.
 
-TCP: Transmission Control Protocol
+TCP: transmission control protocol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I mentioned above the Layer 4 is all about connections, but the
@@ -72,7 +72,7 @@ Okay, weird, but it does help sometimes. The simplest way to envision
 how it works, is, well, to actually look at how it works, hence the
 next section on the TCP header.
 
-The TCP Header
+the TCP header
 ^^^^^^^^^^^^^^
 
 Here's a diagram of the L4-to-L3 hand-off: We can get a pretty good idea
@@ -146,7 +146,7 @@ It contains the following fields:
    that OSI provides several methods for endpoints to know that the
    network is congested.
 
-TCP is Like a Phone Call
+TCP is like a phone call
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 As you can see from the bytes above, TCP is all about the state of a
@@ -171,7 +171,7 @@ are handled by the telephone, and some are handled by the people
 operating the telephone (flow control, reliability). In the network,
 the Level 4 protocol stack handles it all.
 
-There's a Lot More Here
+there's a lot more here
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 There is a lot more to know about TCP, like:

@@ -1,4 +1,4 @@
-Adversarial Beginnings
+adversarial beginnings
 ======================
 
 If you're going to learn a new language, it's probably important to get
@@ -35,7 +35,7 @@ dividing and cloistering them. And I changed my official term for
 network failures from "blast radius" to "cone of silence" (CoS),
 probably my happiest choice of all.
 
-Focusing on architecture
+focusing on architecture
 ------------------------
 
 With complicated subjects, it's always hard to know where to start.

@@ -1,4 +1,4 @@
-Interlayer addressing: ARP
+interlayer addressing: ARP
 ==========================
 
 One frequently asked question is this: Is ARP a layer 2 or layer 3
@@ -22,7 +22,7 @@ about are the ones you create by hand-assigning MAC addresses. The
 shorter answer to that implied question is this: MAC addresses must be
 unique across the domain where they're used.
 
-TCP/IP Does Not Use MAC Addresses
+TCP/IP does not use MAC addresses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If we look at the IP datagram again, we see that it doesn't know about
@@ -36,7 +36,7 @@ hand, are assigned to a NIC by a DHCP server or an administrator. This
 intentional separation of addressing schemes is what makes the Internet
 flexible.
 
-Fixed Versus Assigned Addressing
+fixed versus assigned addressing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Here's an analogy. Your postal address doesn't *actually* define where
@@ -81,7 +81,7 @@ coordinates Township 1, Section 1, Parcel 1 -- but the outer domain
 different format for MAC addresses for VMs than we do for
 Internet-connected NICs, but you get the idea.
 
-Address Resolution
+address resolution
 ^^^^^^^^^^^^^^^^^^
 
 Address resolution is what we call the process of mapping between IP
@@ -133,7 +133,7 @@ caching. They copy down the mapping between IP and MAC addresses,
 holding onto it for about twenty minutes. In terms of most network
 transactions, twenty minutes is an eternity.
 
-Messages are Sent to mac Addresses
+messages are sent to MAC addresses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We often speak of TCP/IP as if messages are sent from one IP address to

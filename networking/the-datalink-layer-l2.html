@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Datalink Layer &mdash; billwear 1.0 documentation</title>
+  <title>the datalink layer &mdash; billwear 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Interlayer addressing: ARP" href="arp.html" />
-    <link rel="prev" title="The Physical Layer" href="the-physical-layer-l1.html" /> 
+    <link rel="next" title="interlayer addressing: ARP" href="arp.html" />
+    <link rel="prev" title="the physical layer" href="the-physical-layer-l1.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,27 +54,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../textspeak.html">textspeak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../truth.html">truth</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Networking</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="complicated-channels.html">Channels of Sharing are Complicated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adversarial-beginnings.html">Adversarial Beginnings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reinventing-the-internet.html">Reinventing the Internet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-physical-layer-l1.html">The Physical Layer</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The Datalink Layer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mac-frames">MAC Frames</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ethernet">Ethernet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#media-access-control-mac">Media Access Control (MAC)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#trunking-vlans">Trunking VLANs</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-origin-of-trunking">The Origin of “Trunking”</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#multiplexing-lan-channels-actually">Multiplexing LAN Channels, Actually</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#vlans-subnets-and-fabrics">VLANs, Subnets, and Fabrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complicated-channels.html">channels of sharing are complicated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adversarial-beginnings.html">adversarial beginnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reinventing-the-internet.html">reinventing the Internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-physical-layer-l1.html">the physical layer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">the datalink layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mac-frames">MAC frames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ethernet">ethernet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#media-access-control-mac">media access control (MAC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trunking-vlans">trunking VLANs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-origin-of-trunking">the origin of “trunking”</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiplexing-lan-channels-actually">multiplexing LAN channels, actually</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vlans-subnets-and-fabrics">VLANs, subnets, and fabrics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#visualising-the-link-layer">Visualising the link layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualising-the-link-layer">visualising the link layer</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="arp.html">Interlayer addressing: ARP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-network-layer-l3.html">The Network Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-transport-layer-l4.html">The Transport Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-higher-layers.html">The Higher OSI Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arp.html">interlayer addressing: ARP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-network-layer-l3.html">the network layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-transport-layer-l4.html">the transport layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-higher-layers.html">the higher OSI layers</a></li>
 </ul>
 </li>
 </ul>
@@ -94,7 +94,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Networking</a></li>
-      <li class="breadcrumb-item active">The Datalink Layer</li>
+      <li class="breadcrumb-item active">the datalink layer</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/networking/the-datalink-layer-l2.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -105,7 +105,7 @@
            <div itemprop="articleBody">
              
   <section id="the-datalink-layer">
-<h1>The Datalink Layer<a class="headerlink" href="#the-datalink-layer" title="Link to this heading"></a></h1>
+<h1>the datalink layer<a class="headerlink" href="#the-datalink-layer" title="Link to this heading"></a></h1>
 <p>The <strong>datalink layer</strong> (the <strong>link layer</strong>, <strong>Layer 2</strong> or
 <strong>L2</strong>) also has one purpose: send and receive IP datagrams. L2
 doesn’t maintain a connection with the target host; it’s intentionally
@@ -135,7 +135,7 @@ units). This avoids conflation with other uses and reminds you that
 it’s the atomic unit at the current network layer. Just remember that,
 at the link layer (L2), it’s a frame.</p>
 <section id="mac-frames">
-<h2>MAC Frames<a class="headerlink" href="#mac-frames" title="Link to this heading"></a></h2>
+<h2>MAC frames<a class="headerlink" href="#mac-frames" title="Link to this heading"></a></h2>
 <p>A MAC frame, or just “frame”, encapsulates the packets from the network
 layer so that they can be transmitted on the physical layer. A frame can
 be small or big, anywhere from 5 bytes up to the kilobyte range. The
@@ -153,7 +153,7 @@ discussion. Where other frame types may come into play, we’ll discuss
 those as special cases.</p>
 </section>
 <section id="ethernet">
-<h2>Ethernet<a class="headerlink" href="#ethernet" title="Link to this heading"></a></h2>
+<h2>ethernet<a class="headerlink" href="#ethernet" title="Link to this heading"></a></h2>
 <p>Before explaining an Ethernet Frame, we need to give a little background
 information about how Ethernet works; otherwise a lot of the frame
 components either won’t make sense, or you’ll wonder how it works at
@@ -178,7 +178,7 @@ didn’t go. This ensures that only one frame is traversing the network
 at any given time.</p>
 </section>
 <section id="media-access-control-mac">
-<h2>Media Access Control (MAC)<a class="headerlink" href="#media-access-control-mac" title="Link to this heading"></a></h2>
+<h2>media access control (MAC)<a class="headerlink" href="#media-access-control-mac" title="Link to this heading"></a></h2>
 <p>Systems like CSMA/CD are a subset of the Media Access Control (MAC)
 protocol kit. MAC is one-half of the link layer, with Logical Link
 Control (LLC) being the other half – though these are sometimes called
@@ -268,7 +268,7 @@ do with networks, but it’s nice to keep in mind, in case you run into
 someone who groups packets differently than you do.</p>
 </section>
 <section id="trunking-vlans">
-<h2>Trunking VLANs<a class="headerlink" href="#trunking-vlans" title="Link to this heading"></a></h2>
+<h2>trunking VLANs<a class="headerlink" href="#trunking-vlans" title="Link to this heading"></a></h2>
 <p>There is a crucial modification to the basic frame format called a P/Q
 or VLAN Tag. This allows something called VLAN trunking, which means
 sending all the VLAN data over the same wire and port, but giving the
@@ -288,7 +288,7 @@ spans multiple switches, frames need to carry VLAN information that
 can be used by switches to sort or “trunk” the traffic.</p></li>
 </ul>
 <section id="the-origin-of-trunking">
-<h3>The Origin of “Trunking”<a class="headerlink" href="#the-origin-of-trunking" title="Link to this heading"></a></h3>
+<h3>the origin of “trunking”<a class="headerlink" href="#the-origin-of-trunking" title="Link to this heading"></a></h3>
 <p>The word “trunking” is derived from the telephone network term trunk
 lines, which are lines connecting switchboards. In the original
 telephone company model, each telephone had a subscriber line, which was
@@ -312,7 +312,7 @@ like a tree, where the bundles of cables between COs look like the
 trunks of trees.</p>
 </section>
 <section id="multiplexing-lan-channels-actually">
-<h3>Multiplexing LAN Channels, Actually<a class="headerlink" href="#multiplexing-lan-channels-actually" title="Link to this heading"></a></h3>
+<h3>multiplexing LAN channels, actually<a class="headerlink" href="#multiplexing-lan-channels-actually" title="Link to this heading"></a></h3>
 <p>With VLAN trunking, by the way, we’re not just multiplexing packets,
 we’re actually multiplexing LAN channels, so to speak. In the parlance
 of networks, especially VLANs, the term “trunking” is used to indicate
@@ -330,13 +330,13 @@ encapsulate the message for sending, the receiving MAC layer un-does
 on the way in.</p>
 </section>
 <section id="vlans-subnets-and-fabrics">
-<h3>VLANs, Subnets, and Fabrics<a class="headerlink" href="#vlans-subnets-and-fabrics" title="Link to this heading"></a></h3>
+<h3>VLANs, subnets, and fabrics<a class="headerlink" href="#vlans-subnets-and-fabrics" title="Link to this heading"></a></h3>
 <p>When working with networks, you will frequently be concerned with VLANs,
 subnets, and fabrics, which are all network groupings: - Subnets define
 (group) a range of IP addresses. - VLANs group subnets. - Fabrics group
 VLANs. Let’s give each of these terms their due.</p>
 <section id="subnets">
-<h4>Subnets<a class="headerlink" href="#subnets" title="Link to this heading"></a></h4>
+<h4>subnets<a class="headerlink" href="#subnets" title="Link to this heading"></a></h4>
 <p>A subnet is a range or collection of IP addresses. A subnet just means
 “sub-network,” and that’s exactly what it is: a subset of IP addresses
 that can be treated like a single block for some operations. Subnets are
@@ -376,7 +376,7 @@ happen. You should endeavour to enforce a clean “fan-out” across the
 network, with no possibility of conflicting IP addresses.</p>
 </section>
 <section id="fabrics">
-<h4>Fabrics<a class="headerlink" href="#fabrics" title="Link to this heading"></a></h4>
+<h4>fabrics<a class="headerlink" href="#fabrics" title="Link to this heading"></a></h4>
 <p>A fabric just collects VLANs together. If you stick to the clean
 fan-out, that also means that a fabric collects subnets. A fabric
 provides a higher level grouping. Consider an example: Suppose you have
@@ -392,7 +392,7 @@ really large organisations, saving a lot of time and effort.</p>
 </section>
 </section>
 <section id="visualising-the-link-layer">
-<h2>Visualising the link layer<a class="headerlink" href="#visualising-the-link-layer" title="Link to this heading"></a></h2>
+<h2>visualising the link layer<a class="headerlink" href="#visualising-the-link-layer" title="Link to this heading"></a></h2>
 <p>Let’s start with a message coming on Layer 1 from SanDiego to Bangor.
 When the message comes in, the link layer does the following things:</p>
 <ul class="simple">
@@ -423,8 +423,8 @@ be done.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="the-physical-layer-l1.html" class="btn btn-neutral float-left" title="The Physical Layer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="arp.html" class="btn btn-neutral float-right" title="Interlayer addressing: ARP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="the-physical-layer-l1.html" class="btn btn-neutral float-left" title="the physical layer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="arp.html" class="btn btn-neutral float-right" title="interlayer addressing: ARP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

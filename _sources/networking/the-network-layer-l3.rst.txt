@@ -1,4 +1,4 @@
-The Network Layer
+the network layer
 =================
 
 You might have noticed in the original OSI model that "IP" was part of
@@ -30,7 +30,7 @@ Layer 3. For most situations, that fact isn't particularly useful, but
 there is the occasional fault that involves failure to reverse byte
 order along the path from RAM to NIC.
 
-What is This "Packets" You Speak of, Kimosabe?
+what is this "packets" you speak of, kimosabe?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Packets are basic Internet Protocol (IP) message units. A message will
@@ -57,7 +57,7 @@ letter separately. When your friend gets the letters, it doesn't
 matter which one gets there first, because they can reassemble your
 message, using the page numbers.
 
-Fixed Packet Lengths and Segmented Messaging
+fixed packet lengths and segmented messaging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We could have designed computer networks to take messages of
@@ -83,7 +83,7 @@ given amount of time. In network terminology, it's the
 highest-throughput approach to network traffic. Specifically, this
 technique is called multiplexing.
 
-IP Packets
+IP packets
 ^^^^^^^^^^
 
 The IP datagram (packet) is the backbone of most modern networks. The
@@ -146,7 +146,7 @@ information they carry:
    this hop only. As shown below, routers change this address to act
    as brokers in the IP chain.
 
-Routing
+routing
 ^^^^^^^
 
 We now have enough concepts in play to talk about routing. Routing takes

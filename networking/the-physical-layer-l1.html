@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Physical Layer &mdash; billwear 1.0 documentation</title>
+  <title>the physical layer &mdash; billwear 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Datalink Layer" href="the-datalink-layer-l2.html" />
-    <link rel="prev" title="Reinventing the Internet" href="reinventing-the-internet.html" /> 
+    <link rel="next" title="the datalink layer" href="the-datalink-layer-l2.html" />
+    <link rel="prev" title="reinventing the Internet" href="reinventing-the-internet.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,19 +54,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../textspeak.html">textspeak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../truth.html">truth</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Networking</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="complicated-channels.html">Channels of Sharing are Complicated</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adversarial-beginnings.html">Adversarial Beginnings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reinventing-the-internet.html">Reinventing the Internet</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The Physical Layer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#variable-latency">Variable Latency</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-physical-layer-is-not-very-interesting">The Physical Layer is not Very Interesting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complicated-channels.html">channels of sharing are complicated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adversarial-beginnings.html">adversarial beginnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reinventing-the-internet.html">reinventing the Internet</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">the physical layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variable-latency">variable latency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-physical-layer-is-not-very-interesting">the physical layer is not very interesting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="the-datalink-layer-l2.html">The Datalink Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arp.html">Interlayer addressing: ARP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-network-layer-l3.html">The Network Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-transport-layer-l4.html">The Transport Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="the-higher-layers.html">The Higher OSI Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-datalink-layer-l2.html">the datalink layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arp.html">interlayer addressing: ARP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-network-layer-l3.html">the network layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-transport-layer-l4.html">the transport layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-higher-layers.html">the higher OSI layers</a></li>
 </ul>
 </li>
 </ul>
@@ -86,7 +86,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Networking</a></li>
-      <li class="breadcrumb-item active">The Physical Layer</li>
+      <li class="breadcrumb-item active">the physical layer</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/networking/the-physical-layer-l1.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -97,7 +97,7 @@
            <div itemprop="articleBody">
              
   <section id="the-physical-layer">
-<h1>The Physical Layer<a class="headerlink" href="#the-physical-layer" title="Link to this heading"></a></h1>
+<h1>the physical layer<a class="headerlink" href="#the-physical-layer" title="Link to this heading"></a></h1>
 <p>The phrase “physical layer” may conjure up notions of physics, but don’t
 worry: we look at <em>signals</em>, not <em>electrons</em>. At the physical layer,
 we’re looking for binary (on/off) signals, set to the cadence of a
@@ -120,7 +120,7 @@ curiosity is stronger than your fear of complexity, you might <a class="referenc
 look at this NTP article on Wikipedia</a>. It’ll tell
 you more than you need to know about the protocol.</p>
 <section id="variable-latency">
-<h2>Variable Latency<a class="headerlink" href="#variable-latency" title="Link to this heading"></a></h2>
+<h2>variable latency<a class="headerlink" href="#variable-latency" title="Link to this heading"></a></h2>
 <p>Variable latency is the important thing to know about the physical
 layer, because it affects the timing of network traffic. In order to
 understand variable latency, we need to understand network latency.
@@ -147,7 +147,7 @@ transmission delays, though we can statistically bound them. Almost
 all digital networks are considered “variable-latency”.</p>
 </section>
 <section id="the-physical-layer-is-not-very-interesting">
-<h2>The Physical Layer is not Very Interesting<a class="headerlink" href="#the-physical-layer-is-not-very-interesting" title="Link to this heading"></a></h2>
+<h2>the physical layer is not very interesting<a class="headerlink" href="#the-physical-layer-is-not-very-interesting" title="Link to this heading"></a></h2>
 <p>In spite of the complexities given above, the physical layer really
 doesn’t do much for us when it comes to building and debugging networks.
 Other than verifying that signals are flowing, the physical layer
@@ -165,8 +165,8 @@ need to scan it to find network breakage.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="reinventing-the-internet.html" class="btn btn-neutral float-left" title="Reinventing the Internet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="the-datalink-layer-l2.html" class="btn btn-neutral float-right" title="The Datalink Layer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="reinventing-the-internet.html" class="btn btn-neutral float-left" title="reinventing the Internet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="the-datalink-layer-l2.html" class="btn btn-neutral float-right" title="the datalink layer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

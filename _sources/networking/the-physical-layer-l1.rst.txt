@@ -1,4 +1,4 @@
-The Physical Layer
+the physical layer
 ==================
 
 The phrase "physical layer" may conjure up notions of physics, but don't
@@ -26,7 +26,7 @@ look at this NTP article on Wikipedia
 <https://en.wikipedia.org/wiki/Network_Time_Protocol>`_. It'll tell
 you more than you need to know about the protocol.
 
-Variable Latency
+variable latency
 ^^^^^^^^^^^^^^^^
 
 Variable latency is the important thing to know about the physical
@@ -55,7 +55,7 @@ routing by choosing the right network architecture. We can't predict
 transmission delays, though we can statistically bound them. Almost
 all digital networks are considered "variable-latency".
 
-The Physical Layer is not Very Interesting
+the physical layer is not very interesting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In spite of the complexities given above, the physical layer really
