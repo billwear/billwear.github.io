@@ -1,0 +1,196 @@
+The Transport Layer
+===================
+
+Layer 4 brings us to protocols implemented only by the end hosts (i.e.,
+not by the routers or other switching gear that connect the network).
+This layer handles things like redundancy, confirmed delivery, managing
+packets on an unreliable network, and so forth. This is the last layer
+that TCP/IP has anything to say about; layers above this are unique to
+specific applications. Troubleshooting this level would involve knowing
+about entire protocol sets, like UDP or TCP.
+
+If the Internet Protocol (IP) is connectionless, the transport layer
+is all about connections.  The transport-layer protocol in use --
+we'll talk exclusively about Transmission Control Protocol or TCP here
+-- the L4 protocol is the last place in the stack where the entire
+message exists in one piece. L4 breaks up larger messages into
+segments. Each segment gets a TCP header, and gets passed on to L3
+where it becomes an IP packet.
+
+TCP: Transmission Control Protocol
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+I mentioned above the Layer 4 is all about connections, but the
+situation's not always that simple. UDP, for example does not have any
+mechanisms for delivering data reliably. I have a t-shirt that says,
+"I'd tell you a joke about UDP, but you might not get it." The pun turns
+on the fact that UDP is sort of a *fire and forget* protocol.
+
+The problem of making sure the message got delivered is as old as
+time.  There are many logic problems that involve an army sending a
+message between battalions, indicating the time of a planned
+attack. But if the messenger has to sneak through enemy lines to
+deliver it, how do we know it got there?
+
+Error-correcting codes help, but at the end of the day, nothing beats
+the Automatic Repeat Request, cleverly abbreviated **ARQ**. ARQ simply
+means we keep sending the message until we know for sure it got there,
+intact. We need two mechanisms in order to make this work: an ACK (I
+got the message) and a CRC (Cyclic Redundancy Check). If the message
+gets there, and it passes the CRC, an ACK is sent.
+
+Returning to the sneaky messenger, what if the messenger got there and
+delivered the message, but didn't get back to tell the sender that the
+message got through? That's a more complicated problem. In the
+networking world, we deal with that by waiting a set amount of time
+for an ACK before re-sending: The recipient has to know how to deal
+with duplicate messages.
+
+How long do we want? That's a really complex topic called "timeout and
+re-transmission", and I'm going to skip over that here. You can find a
+lot of great sources in Google that will help you with that. The most
+important things to take away from timeouts, though, are that (1)
+messages may arrive out of order, so the ACK signal needs to be tagged
+with the ID of the message received, and (2) the recipient has to be
+able to reassemble the messages in the correct order.
+
+Oh, and there has to be a limit on how many unacknowledged messages a
+sender is willing to leave hanging. If the sender sends three messages
+and gets no ACKs, it might not send out sequence number four until the
+other end catches up. This number of outstanding, unacknowledged
+messages is called a "sliding window". If the sliding window is three
+messages, and number four hasn't been acknowledged, number 8 won't be
+sent yet.
+
+Sometimes it helps to think of it like jelly beans in a jar with a
+small opening; only three or four jelly beans can pop through the
+mouth of the jar at any given time -- the rest will have to wait. One
+falls out, another one gets to the edge of the jar, and the whole
+muddle of beans moves one bean closer to freedom.
+
+Okay, weird, but it does help sometimes. The simplest way to envision
+how it works, is, well, to actually look at how it works, hence the
+next section on the TCP header.
+
+The TCP Header
+^^^^^^^^^^^^^^
+
+Here's a diagram of the L4-to-L3 hand-off: We can get a pretty good idea
+what happens at Layer 4 just by decoding the contents of the TCP header.
+It contains the following fields:
+
+ * Source port: the application port number of the host sending the
+   data. For example, if this is an FTP message, the source port would
+   probably be 21.
+
+ * Destination port: the port number of the application requested on
+   the destination host. If this is FTP, again this port would likely
+   be 21.
+
+ * Sequence number: the sequence number of this segment of data, to
+   help the other end put the data back together in the correct order,
+   as well as help Level 4 on the receiving end know whether a
+   packet's been dropped or lost. This handles the fact that segments
+   don't necessarily arrive in order.
+
+ * Acknowledgement number: essentially, the next sequence number the
+   destination host is expecting; used to "gate" packets through the
+   connection. This is a smart way to ACK packets so that the
+   recipient knows which messages have been received.
+
+ * TCP header length: given to know where the data begins.
+
+ * Reserved: reserved for future use, basically; currently always set
+   to 0.
+
+ * Code bits: essentially a set of flags; see the list below.
+
+ * Window: used to negotiate the "window" size, that is, how many
+   bytes the destination host is willing to receive at once; this
+   allows for the most efficient transmission possible, based on the
+   characteristics of the two communicating hosts. This is the sliding
+   window that defines how many messages can be sent (but not
+   acknowledged) before the sender pauses. The "negotiable" part is
+   what makes for efficient networks: the sender and receiver can
+   quickly get to know each other and know how many messages they can
+   "trust" to be delivered without an ACK.
+
+ * Checksum (CRC): used to check the integrity of the segment.
+
+ * Urgent pointer: data byte count where urgent data ends; used if the
+   urgent flag is set (see below). The code bits can indicate the
+   following things:
+
+ * URG: indicates that the urgent pointer field is meaningful, used to
+   prioritise this message over other messages.
+
+ * ACK: used to acknowledge successful delivery of the previous
+   segment.
+
+ * PSH: push notification; tells the receiving host the message is
+   complete, you can push the data to the application.
+
+ * RST: request a connection reset when the error level reaches a
+   certain threshold; basically, "let's try that again from the top."
+   This is considered an abnormal termination of the TCP connection.
+
+ * SYN: used for a three-way TCP handshake; this handshake is how
+   sender and receiver sync up; it serves a purpose similar to the
+   preamble in a MAC frame, but at a different level of
+   synchronisation.
+
+ * FIN: we're done, close the connection. This is considered a normal
+   termination of a TCP connection.
+
+ * NS/CWR/ECE: used to provide Explicit Congestion Notification; note
+   that OSI provides several methods for endpoints to know that the
+   network is congested.
+
+TCP is Like a Phone Call
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+As you can see from the bytes above, TCP is all about the state of a
+connection, which is basically the same as a phone call. When you pick
+up the receiver, you and the caller exchange information. You say "bye"
+when the call is over. If it's a bad connection or one end suddenly gets
+noisy (think jack-hammers outside), one of you can reset the connection
+by saying, "Let me call you back in a minute." Take a minute and try to
+see how the other header bytes fit this analogy.
+
+Also like a telephone call, TCP provides a connection (the call,
+however long it lasts), flow control (provided by the two parties on
+the call), multiplexing (handled by the two handsets, basically
+letting through multiple frequencies and sounds, so that you can get
+the tone and breath sounds of the other person, not just their raw
+words).
+
+Likewise, the two parties try to handle the reliability of the
+connection by making sure you understand each other. The analogy
+spreads a little because some of the items (connection, multiplexing)
+are handled by the telephone, and some are handled by the people
+operating the telephone (flow control, reliability). In the network,
+the Level 4 protocol stack handles it all.
+
+There's a Lot More Here
+^^^^^^^^^^^^^^^^^^^^^^^
+
+There is a lot more to know about TCP, like:
+
+ * Variable windows
+
+ * Flow and congestion control
+
+ * Reliability and the TCP service model - Encapsulation
+
+ * Connection management (etc.)
+
+You should now have enough basic knowledge to transition to the
+`excellent Wikipedia article about TCP
+<https://en.wikipedia.org/wiki/Transmission_Control_Protocol>`. A word
+of warning, though: this rabbit hole is very deep, so weigh what
+you're learning with what you actually need to know from this point
+on.
+
+--------------
+
+Copyright (C) 2024 by Bill Wear; All Rights Reserved

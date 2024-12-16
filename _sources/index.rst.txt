@@ -11,8 +11,14 @@ what's here?
 .. toctree::
    :maxdepth: 1
 
-   truth/index
-   emacs/index
-   the netizen way/index
-   phreak numbers
+   netizen
+   orgmode
+   attention
+   geekcode
+   emacs
+   credo
+   phreak
+   media
    textspeak
+   truth
+   networking/index

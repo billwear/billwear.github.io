@@ -7,9 +7,9 @@ Otherwise known as "chatronynms," many of these came of age in the IRC era of th
 
   * -  **nym**                 
     -  **expansion**                                                 
-  * -  3                  
+  * -  <3                  
     -  i like that comment                                       
-  * -  g>                 
+  * -  <g>                 
     -  grin                                                      
   * -  3bs                 
     -  three beers short                                         
@@ -106,7 +106,9 @@ Otherwise known as "chatronynms," many of these came of age in the IRC era of th
   * -  gmta                
     -  great minds think alike                                   
   * -  gmtaasdo            
-    -  great minds think alike, and so do ours                   
+    -  great minds think alike, and so do ours
+  * -  gnsdily
+    -  good night, sweet dreams, i love you 
   * -  goybwaroc           
     -  get on your big wheel and ride on, cowboy                 
   * -  gtg                 
