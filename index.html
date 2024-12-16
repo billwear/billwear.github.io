@@ -1,233 +1,154 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-<!-- 2024-12-12 Thu 18:16 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>billwear</title>
-<meta name="author" content="Bill Wear" />
-<meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
-</style>
-<link rel="stylesheet" type="text/css" href="custom.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>billwear’s homepage &mdash; billwear 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="truth" href="truth/index.html" /> 
 </head>
-<body>
-<div id="content" class="content">
-<h1 class="title">billwear</h1>
 
-<div id="outline-container-org8e3d4d6" class="outline-2">
-<h2 id="org8e3d4d6">Hi, I'm Bill</h2>
-<div class="outline-text-2" id="text-org8e3d4d6">
-<p>
-I hung up my cape a long time ago, left the closet behind, and forgot to look back. Still, some things stick with you, no matter where you go: I stand for <a href="truth.html">truth</a>, <a href="emacs.html">Emacs</a>, and the the <a href="netizen-manifesto.html">Netizen Way</a>.
-</p>
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-<p>
-Being a netizen is a <b>lot</b> more than just being online; it's about contributing meaningfully, connecting authentically, and hacking away at life's puzzles with curiosity and care. It's about sharing what you know, learning from others, and never settling the "one true way."
-</p>
-
-<p>
-Emacs is my home base, my Swiss Army knife for navigating code, text, and thought. I've spent years making it <b>do everything possible</b> — and when that fails, I make it <b>do something new</b>. It's not just a tool; it's a way of thinking, a philosophy of adaptability and leverage.
-</p>
-
-<p>
-My truth? It's simple: Say what you mean, start small, and build steadily. Focus on doing one thing at a time and doing it well. When you find a problem, divide it, conquer it, and move forward.  And never interfere in someone else's journey without asking first.
-</p>
-
-<p>
-If this resonates, <a href="mailto:wowear@gmail.com">connect with me</a>. Let’s explore, learn, and hack our way forward together.
-</p>
+          
+          
+          <a href="#" class="icon icon-home">
+            billwear
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="truth/index.html">truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emacs/index.html">emacs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="the%20netizen%20way/index.html">the netizen way</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">billwear</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">billwear’s homepage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="billwear-s-homepage">
+<h1>billwear’s homepage<a class="headerlink" href="#billwear-s-homepage" title="Link to this heading"></a></h1>
+<p>what’s here?</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="truth/index.html">truth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="truth/index.html#breaking-free">Breaking free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="truth/index.html#challenging-a-deceptive-culture">Challenging a deceptive culture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="truth/index.html#the-rewards-of-authenticity">The rewards of authenticity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="truth/index.html#truth-as-a-foundation-for-life">Truth as a foundation for life</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="emacs/index.html">emacs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emacs/index.html#freedom-through-customization">Freedom Through Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs/index.html#automation-the-system-works-for-me">Automation: The System Works for Me</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs/index.html#managing-life-with-org-mode">Managing Life with Org-mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs/index.html#the-three-key-files">The Three Key Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs/index.html#configuration-file-for-org-agenda">Configuration File for Org-Agenda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs/index.html#efficiency-through-treemacs-company-and-ivy">Efficiency Through Treemacs, Company, and Ivy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs/index.html#conclusion-emacs-as-a-way-of-life">Conclusion: Emacs as a Way of Life</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="the%20netizen%20way/index.html">the netizen way</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#say-what-you-mean">Say What You Mean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#be-choosy-with-your-media">Be Choosy with Your Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#speak-clearly-listen-carefully-pay-close-attention">Speak Clearly, Listen Carefully, Pay Close Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#do-what-you-love">Do What You Love</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#keep-it-simple">Keep It Simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#start-small-and-build-a-little-at-a-time">Start Small and Build a Little at a Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#network">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#be-who-you-are">Be Who You Are</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#build-for-strength-not-just-speed">Build for Strength, Not Just Speed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#hack">Hack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#under-promise-and-over-deliver">Under-Promise and Over-Deliver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#divide-and-conquer">Divide and Conquer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#do-one-thing-well">Do One Thing Well</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#use-what-you-have">Use What You Have</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#use-levers-not-people">Use Levers, Not People</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#release-early-release-often">Release Early, Release Often</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#distrust-all-claims-for-the-one-true-way">Distrust All Claims for the One True Way</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#think-ahead-but-dont-worship-your-plans">Think Ahead, but Don’t Worship Your Plans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#think-big-you-are-the-universe">Think Big: You Are the Universe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#abhor-violence-in-all-its-forms">Abhor Violence in All Its Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the%20netizen%20way/index.html#practice-the-prime-directive">Practice the Prime Directive</a></li>
+</ul>
+</li>
+</ul>
 </div>
-<div id="postamble" class="status">
-<p class="author">Author: Bill Wear</p>
-<p class="date">Created: 2024-12-12 Thu 18:16</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
-</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="truth/index.html" class="btn btn-neutral float-right" title="truth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Bill Wear.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
 </body>
 </html>
