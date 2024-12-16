@@ -14,3 +14,5 @@ what's here?
    truth/index
    emacs/index
    the netizen way/index
+   phreak numbers
+   textspeak

@@ -2,8 +2,18 @@ truth
 =====
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
+   attention
+   change
+   credo
+   kaizen
+   media-mindfulness
+   motivation
+   neither-here-nor-there
+   powering-through
+
+   
 For much of my youth, I was a casual liar.
 
 As a teenager grappling with immense personal trauma — from the loss of my sister, through my dad's continual demands for perfection, to the breakdown of my family, to the abuse by a trusted teacher — I found myself spinning tales as a form of escape. This teacher exploited my vulnerability, which led me down a dark path of shame and deceit. I was afraid to be myself, and I hated myself for years — partly for lying, and partly out of shame.
