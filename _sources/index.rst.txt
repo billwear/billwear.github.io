@@ -9,7 +9,7 @@ billwear's homepage
 what's here?
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    truth/index
    emacs/index
