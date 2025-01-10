@@ -6,16 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAAS to Machine with NIC Status Indicators</title>
     <style>
-        body { margin: 0; }
-        canvas { display: block; }
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .animation-container {
+            position: relative;
+            width: 600px;  /* Slightly wider than the servers */
+            height: 400px; /* A bit taller for spacing */
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
         .slider-container {
             position: absolute;
-            bottom: 370px;
+            bottom: 50px;  /* 50px below the servers */
             left: 50%;
             transform: translateX(-50%);
-            width: 40%;
+            width: 80%;  /* Make the slider width smaller */
         }
-    </style>
+        .intro-text {
+            text-align: center;
+            padding: 20px;
+        }    </style>
 </head>
 <body>
     <div style="text-align: left; padding: 20px; font-family: Arial, sans-serif;">
