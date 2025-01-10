@@ -123,7 +123,7 @@
             scene.add(boxGroup);
 
             // Add label centered and closer to the server box
-            const widthFactor = label === "NIC" ? 1.5 : 5.0;  // Width factor for normal labels
+            const widthFactor = label === "BMC" ? 1.5 : 5.0;  // Width factor for normal labels
             createTextSprite(label, x, y + 0.85, z, widthFactor);  // Centered and proportional text
 
             return { boxGroup, lamp };
