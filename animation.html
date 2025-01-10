@@ -18,6 +18,15 @@
     </style>
 </head>
 <body>
+    <div style="text-align: center; padding: 20px; font-family: Arial, sans-serif;">
+        <h2>Provisioning machines with MAAS</h2>
+        <p>MAAS (Metal as a Service) provisions bare metal servers and virtual machines.  It creates a single point of control that removes a lot of the logistical errors associated with manual hookup, configuration, and discovery.</p>
+
+        <p>Over the course of this article, we'll explain how MAAS provisions machines.  In any animation, you can drag the slider to control the action for that particular segment of the process, so you can see how it works.</p>
+        <h3>PXE booting</h3>
+        <p>MAAS depends on connected machines being in network-boot mode.  This means the Baseboard Management Controller (BMC) has been set up to listen on the network for a valid PXE packet.  When it receives a valid packet, the first thing it does is to boot the machine.  Note that the machine won't have an IP address, and won't be able to boot, but it's waiting for one.</p>
+        <p>Drag the slider to watch the PXE packet travel to the BMC and -- in just a second or so -- turn on the machine.</p>
+    </div>
     <!-- Slider to control the pulse -->
     <div class="slider-container">
         <input id="slider" type="range" min="0" max="100" value="0" style="width: 100%;">
