@@ -180,6 +180,12 @@
                     machineGreen = true;
                 }, 1000);
             }
+            if (newX < 1.4) {
+                nicBox.blackCircle.material.color.setHex(0x000000);
+                nicGreen = true
+                machineServer.lamp.material.color.setHex(0x000000);
+                machineGreen = false;
+            }
         }
 
         // Slider listener
