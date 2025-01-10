@@ -26,7 +26,9 @@
 
 <h2>Network discovery</h2>
 
-<p>One of the first ways that MAAS cuts down on manual errors is called network discovery. MAAS listens passively to IP traffic on any network it can see. As it does so, it observes other devices receiving and responding to TCP packets, and it captures each device's IP address. It also captures any other identifying information that's available.</p>
+<p>One of the first ways that MAAS cuts down on manual errors is called network discovery. MAAS listens passively to IP traffic on any network it can see. As it does so, it observes other devices receiving and responding to TCP packets, and it captures each device's IP address.
+
+MAAS also captures any other identifying information that's available. For example, it also uses mDNS to collect and present the hostname, if available.</p>
 
 <p>Move the slider below to see how this works.</p>
 
@@ -35,6 +37,7 @@
 <h2>Enlistment</h2>
 
 <p>All of the captured information is summarized in a discovery dashboard. Administrators can use the dashboard to enlist machines that need to be remotely provisioned. MAAS doesn't do anything with devices that aren't enlisted, but it doesn't forget them.
+
         <h3>PXE booting</h3>
         <p>MAAS depends on connected machines being in network-boot mode.  This means the Baseboard Management Controller (BMC) has been set up to listen on the network for a valid PXE packet.  When it receives a valid packet, the first thing it does is to boot the machine.  Note that the machine won't have an IP address, and won't be able to boot, but it's waiting for one.</p>
         <p>Drag the slider to watch the PXE packet travel to the BMC and -- in just a second or so -- turn on the machine.</p>
