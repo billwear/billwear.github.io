@@ -21,7 +21,7 @@
         .animation-container {
             position: relative;
             width: 600px;
-            height: 350px;
+            height: 300px;
             background-color: #f2f2f2;
         }
         canvas {
@@ -29,7 +29,7 @@
         }
         .slider-container {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             width: 80%;
@@ -47,6 +47,7 @@
 
     <!-- Animation container -->
     <div class="animation-container">
+        <canvas id="threeCanvas"></canvas>
         <div class="slider-container">
             <input id="slider" type="range" min="0" max="100" value="0">
         </div>
@@ -57,20 +58,30 @@
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0xf2f2f2);
 
-        const camera = new THREE.PerspectiveCamera(75, 600 / 350, 0.1, 1000);
-        camera.position.set(0, 0, 7);  // Adjust camera to center the view
-        camera.lookAt(0, 0, 0);
+        const canvasWidth = 600;
+        const canvasHeight = 300;
+        const camera = new THREE.OrthographicCamera(
+            canvasWidth / -100, canvasWidth / 100,
+            canvasHeight / 100, canvasHeight / -100,
+            0.1, 1000
+        );
+        camera.position.set(0, 0, 10);
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(600, 350);
-        document.querySelector('.animation-container').appendChild(renderer.domElement);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('threeCanvas'), antialias: true });
+        renderer.setSize(canvasWidth, canvasHeight);
 
-        function createServerBox(x, y, z, label, isAlwaysOn) {
+        // Create servers
+        function createServerBox(x, y, z, label, lampAlwaysGreen) {
             const boxGroup = new THREE.Group();
-            const box = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1, 1), new THREE.MeshBasicMaterial({ color: 0x666666 }));
-            const lamp = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.1, 0.01), new THREE.MeshBasicMaterial({ color: isAlwaysOn ? 0x00ff00 : 0x003300 }));
+            const box = new THREE.Mesh(
+                new THREE.BoxGeometry(1.5, 1, 1),
+                new THREE.MeshBasicMaterial({ color: 0x666666 })
+            );
+            const lamp = new THREE.Mesh(
+                new THREE.BoxGeometry(0.3, 0.1, 0.01),
+                new THREE.MeshBasicMaterial({ color: lampAlwaysGreen ? 0x00ff00 : 0x003300 })
+            );
             lamp.position.set(0, -0.4, 0.51);
-
             boxGroup.add(box, lamp);
             boxGroup.position.set(x, y, z);
             scene.add(boxGroup);
@@ -81,15 +92,24 @@
         const maasServer = createServerBox(-3, 0, 0, "MAAS", true);
         const machineServer = createServerBox(3, 0, 0, "Machine", false);
 
-        const wire = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 6), new THREE.MeshBasicMaterial({ color: 0x444444 }));
+        // Create wire
+        const wire = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.05, 0.05, 6),
+            new THREE.MeshBasicMaterial({ color: 0x444444 })
+        );
         wire.rotation.z = Math.PI / 2;
         wire.position.set(0, 0, 0);
         scene.add(wire);
 
-        const pulse = new THREE.Mesh(new THREE.SphereGeometry(0.15, 32, 32), new THREE.MeshBasicMaterial({ color: 0xffcc00 }));
+        // Create pulse
+        const pulse = new THREE.Mesh(
+            new THREE.SphereGeometry(0.1, 32, 32),
+            new THREE.MeshBasicMaterial({ color: 0xffcc00 })
+        );
         pulse.position.set(-3, 0, 0);
         scene.add(pulse);
 
+        // Update pulse position and light indicators
         function updatePulsePosition(value) {
             const startX = -3;
             const endX = 3;
@@ -97,20 +117,23 @@
             pulse.position.x = newX;
 
             if (newX >= 2) {
-                machineServer.lamp.material.color.setHex(0x00ff00);  // Turn machine lamp green
+                machineServer.lamp.material.color.setHex(0x00ff00);
             } else {
-                machineServer.lamp.material.color.setHex(0x003300);  // Turn off lamp
+                machineServer.lamp.material.color.setHex(0x003300);
             }
         }
 
+        // Slider listener
         document.getElementById('slider').addEventListener('input', (e) => {
             updatePulsePosition(e.target.value);
         });
 
+        // Render loop
         function animate() {
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
         }
+
         animate();
     </script>
 </body>
