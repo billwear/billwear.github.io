@@ -20,17 +20,13 @@
 <body>
     <div style="text-align: left; padding: 20px; font-family: Arial, sans-serif;">
         <h1>MAAS</h1>
-        <p>MAAS (Metal as a Service) provisions bare metal servers and virtual machines.  It creates a single point of control that removes a lot of the logistical errors associated with manual hookup, configuration, and discovery. MAAS also makes it easier to run your racks remotely.</p>
-
-        <p>Over the course of this article, we'll explain how MAAS does all this.  In any animation, you can drag the slider to control the action for that particular segment of the process, so you can see how it works.</p>
+        <p>MAAS (Metal as a Service) provisions bare metal servers and virtual machines.  It creates a single point of control that removes a lot of the logistical errors associated with manual hookup, configuration, and discovery. MAAS also makes it very easy to run your racks -- or even your whole datacenter -- remotely. This document explains how MAAS does all this.</p>
 
 <h2>Network discovery</h2>
 
 <p>One of the first ways that MAAS cuts down on manual errors is called network discovery. MAAS listens passively to IP traffic on any network it can see. As it does so, it observes other devices receiving and responding to TCP packets, and it captures each device's IP address.
 
 MAAS also captures any other identifying information that's available. For example, it also uses mDNS to collect and present the hostname, if available. All of the captured information is summarized in a discovery dashboard.</p>
-
-<p>Move the slider below to see how this works.</p>
 
 <p><em>insert discovery animation here</em></p>
 
