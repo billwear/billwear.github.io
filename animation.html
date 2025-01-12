@@ -56,8 +56,8 @@ MAAS also captures any other identifying information that's available. For examp
         // Utility to create text label as a sprite
         function createTextSprite(message, x, y, z, widthFactor = 1.0) {
             const canvas = document.createElement('canvas');
-            canvas.width = 100%;
-            canvas.height = 200;
+            canvas.width = 200;
+            canvas.height = 100;
 
             const context = canvas.getContext('2d');
             context.font = 'bold 48px Arial';  // Normal text size
