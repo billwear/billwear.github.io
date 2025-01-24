@@ -3,94 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A minimal monospace-styled web page.">
-    <title>Welcome to My Site</title>
+    <title>My Monospace Web</title>
     <style>
-        /* Monospace Web */
         body {
             font-family: "Courier New", Courier, monospace;
             font-size: 16px;
             line-height: 1.6;
-            background-color: #fdf6e3;
-            color: #073642;
+            background-color: #ffffff;
+            color: #000;
             margin: 0;
-            padding: 0;
-        }
-        header, footer {
-            text-align: center;
             padding: 1rem;
+        }
+        .top-block {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr;
+            gap: 1px;
+            border: 1px solid black;
             margin-bottom: 1rem;
-            background: #eee8d5;
-            border: 1px solid #93a1a1;
+            padding: 0.5rem;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
+        .top-block div {
+            border: 1px solid black;
+            padding: 0.5rem;
         }
-        nav {
-            margin-top: 0.5rem;
-        }
-        nav a {
-            color: #268bd2;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1rem;
-            border: 1px solid #93a1a1;
-            background: #eee8d5;
-            border-radius: 8px;
-        }
-        h2 {
-            margin-top: 0;
+        .top-block .title {
+            grid-column: 1 / 4;
+            text-align: left;
             font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .top-block .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content {
+            margin-top: 1rem;
+        }
+        h1 {
+            font-size: 1.2rem;
+            margin: 0;
         }
         p {
-            margin-bottom: 1rem;
-        }
-        footer {
-            font-size: 0.9rem;
-        }
-        /* Top Block */
-        .top-block {
-            background: #073642;
-            color: #fdf6e3;
-            padding: 2rem;
-            text-align: center;
-        }
-        .top-block h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        .top-block p {
-            margin: 0.5rem 0 0;
-            font-size: 1rem;
+            margin: 0.5rem 0;
         }
     </style>
 </head>
 <body>
     <section class="top-block">
-        <h1>billwear</h1>
+        <div class="title">
+            THE MONOSPACE WEB<br>
+            <span style="font-size: 1rem; font-weight: normal;">A minimalist design exploration</span>
+        </div>
+        <div class="meta">Author<br><strong>Oskar Wickström</strong></div>
+        <div class="meta">Version<br><strong>v0.1.1</strong></div>
+        <div class="meta">Updated<br><strong>2024-08-26</strong></div>
+        <div class="meta">License<br><strong>MIT</strong></div>
     </section>
-    <header>
-        <nav>
-            <a href="/about.html">About</a>
-            <a href="/blog.html">Blog</a>
-            <a href="/contact.html">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Welcome!</h2>
-        <p>This site embraces the beauty of simplicity and readability with a monospace design. Perfect for minimalists and hackers alike.</p>
-        <p>Feel free to explore and customize this template to make it your own!</p>
-    </main>
-    <footer>
-        <p>&copy; 2025 My Name. Built with <a href="https://owickstrom.github.io/the-monospace-web/" target="_blank">The Monospace Web</a>.</p>
-    </footer>
+    <section class="content">
+        <h1>Contents</h1>
+        <ul>
+            <li>Introduction</li>
+            <li>The Basics</li>
+            <li>Lists</li>
+            <li>Tables</li>
+            <li>Forms</li>
+            <li>Grids</li>
+            <li>ASCII Drawings</li>
+            <li>Media</li>
+            <li>Discussion</li>
+        </ul>
+    </section>
 </body>
 </html>
