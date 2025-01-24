@@ -16,7 +16,8 @@
         }
         .top-block {
             display: grid;
-            grid-template-columns: 3fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: auto auto;
             gap: 1px;
             border: 1px solid black;
             margin-bottom: 1rem;
@@ -32,10 +33,20 @@
             font-size: 1.5rem;
             font-weight: bold;
         }
-        .top-block .meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .top-block .author {
+            grid-column: 1 / 2;
+        }
+        .top-block .license {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+        .top-block .version {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+        .top-block .updated {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
         }
         .content {
             margin-top: 1rem;
@@ -55,10 +66,10 @@
             THE MONOSPACE WEB<br>
             <span style="font-size: 1rem; font-weight: normal;">A minimalist design exploration</span>
         </div>
-        <div class="meta">Author<br><strong>Oskar Wickström</strong></div>
-        <div class="meta">Version<br><strong>v0.1.1</strong></div>
-        <div class="meta">Updated<br><strong>2024-08-26</strong></div>
-        <div class="meta">License<br><strong>MIT</strong></div>
+        <div class="author">Author<br><strong>Oskar Wickström</strong></div>
+        <div class="version">Version<br><strong>v0.1.1</strong></div>
+        <div class="updated">Updated<br><strong>2024-08-26</strong></div>
+        <div class="license">License<br><strong>MIT</strong></div>
     </section>
     <section class="content">
         <h1>Contents</h1>
