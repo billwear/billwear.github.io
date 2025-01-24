@@ -1,89 +1,629 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Monospace Web</title>
+    <title>Org-Style Page</title>
     <style>
-        body {
-            font-family: "Courier New", Courier, monospace;
-            font-size: 16px;
-            line-height: 1.6;
-            background-color: #ffffff;
-            color: #000;
-            margin: 0;
-            padding: 1rem;
-        }
-        .top-block {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            grid-template-rows: auto auto;
-            gap: 1px;
-            border: 1px solid black;
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-        }
-        .top-block div {
-            border: 1px solid black;
-            padding: 0.5rem;
-        }
-        .top-block .title {
-            grid-column: 1 / 4;
-            text-align: left;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .top-block .author {
-            grid-column: 1 / 2;
-        }
-        .top-block .license {
-            grid-column: 1 / 2;
-            grid-row: 2 / 3;
-        }
-        .top-block .version {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-        }
-        .top-block .updated {
-            grid-column: 3 / 4;
-            grid-row: 1 / 2;
-        }
-        .content {
-            margin-top: 1rem;
-        }
-        h1 {
-            font-size: 1.2rem;
-            margin: 0;
-        }
-        p {
-            margin: 0.5rem 0;
-        }
+      body {
+          font-family: "Courier New", Courier, monospace;
+          font-size: 16px;
+          line-height: 1.6;
+      }
+      summary {
+          font-weight: bold;
+          cursor: pointer;
+          font-size: 1.2em;
+          margin-bottom: 0.5em;
+      }
+      details {
+          margin-bottom: 1rem;
+      }
+      summary.level-1 {
+          font-size: 1.8em;
+          color: blue;
+      }
+      summary.level-2 {
+          font-size: 1.6em;
+          color: green;
+      }
+      summary.level-3 {
+          font-size: 1.4em;
+          color: red;
+      }
+      summary.level-4 {
+          font-size: 1.2em;
+          color: orange;
+      }
+
+      /* Remove arrows */
+      details summary {
+          list-style: none;
+      }
+      details[open] summary::after, 
+      details summary::after {
+          content: ""; /* Remove any generated content after summary */
+      }
     </style>
-</head>
-<body>
-    <section class="top-block">
-        <div class="title">
-            THE MONOSPACE WEB<br>
-            <span style="font-size: 1rem; font-weight: normal;">A minimalist design exploration</span>
-        </div>
-        <div class="author">Author<br><strong>Oskar Wickström</strong></div>
-        <div class="version">Version<br><strong>v0.1.1</strong></div>
-        <div class="updated">Updated<br><strong>2024-08-26</strong></div>
-        <div class="license">License<br><strong>MIT</strong></div>
-    </section>
-    <section class="content">
-        <h1>Contents</h1>
-        <ul>
-            <li>Introduction</li>
-            <li>The Basics</li>
-            <li>Lists</li>
-            <li>Tables</li>
-            <li>Forms</li>
-            <li>Grids</li>
-            <li>ASCII Drawings</li>
-            <li>Media</li>
-            <li>Discussion</li>
-        </ul>
-    </section>
+  </head>
+  <body>
+    <p><em>hint: click the colorful headings to open and close sections</em></p>
+
+    <details>
+      <summary class="level-1">** billwear's homepage.org</summary>
+      <p>hi. i'm billwear. i've been using UNIX&trade; for over 50 years, emacs for almost 40, and org-mode for nearly 20. this site is a reflection of my journey through emacs, org-mode, and deep living.  there's prolly something here for every curious mind.</p>
+      <details>
+	<summary class="level-2">*** emacs</summary>
+      </details>
+      <details>
+	<summary class="level-2">*** org-mode</summary>
+      </details>
+      <details>
+	<summary class="level-2">*** deep living</summary>
+	<details>
+	  <summary class="level-3">**** the quiet art of attention</summary>
+<p>There comes a moment in life, often in the quietest of hours, when
+one realizes that the world will continue on its wayward course,
+indifferent to our desires or frustrations. And it is then, perhaps,
+that a subtle truth begins to emerge: the only thing we truly possess,
+the only thing we might, with enough care, exert some mastery over, is
+our mind. It is not a realization of resignation, but rather of
+liberation. For if the mind can be ordered, if it can be made still in
+the midst of this restless life, then we have already discovered the key
+to a deeper kind of freedom.</p>
+<h2 id="beginning-to-observe-your-thoughts">beginning to observe your
+thoughts</h2>
+<p>But how does one begin? It is not with grand declarations or bold,
+sweeping changes. That would miss the point entirely. Rather, it is with
+a gentle attention to the present, a deliberate shift in the way we move
+through the world. We begin by paying attention to what our mind
+does—its wanderings, its anxieties, its compulsions. It is a garden
+untended, overgrown with concerns that may not even be our own. And the
+first step is simply to watch, to observe how the mind moves, without
+judgment, without rush.</p>
+<p>In this quiet observation, we begin to see patterns. The mind leaps
+from one thing to another, rarely resting. It is caught in a web of
+habits, most of which we never consciously chose. But, once we notice
+this, a door opens. There is space, however small, between the thoughts.
+And in that space, if we are patient, we can decide how to respond
+rather than being dragged along by every impulse or fear. This is not
+about control in the traditional sense, but about clarity. To act, not
+from reflex, but from intent.</p>
+<p>It is a simple beginning, but one of great consequence. For when we
+reclaim our attention, even in this small way, we are no longer mere
+passengers on the journey. We become, in a sense, our own guides.</p>
+<h2 id="new-understandings-with-continued-practice">new understandings
+with continued practice</h2>
+	  <p>As we grow in this practice of attention, something else becomes
+clear: much of what occupies our thoughts is unnecessary. The mind is
+cluttered, filled with concerns that seem urgent but, on closer
+inspection, do little to serve our deeper well-being. Simplification is
+not just a matter of decluttering our physical surroundings—it is a way
+of thinking, of living. As we quiet the noise within, we see more
+clearly what truly matters. We focus, not on everything, but on the
+essentials. We pare down, not by force, but by choice.</p>
+	  <p>This process of simplification is not an escape from complexity. It
+is, in fact, a way of engaging with it more meaningfully. There are
+things in life that are intricate, yes, but not everything needs our
+attention at once. What truly requires our effort can be approached in
+small steps, in manageable pieces. The mind works best when it is
+focused on one thing at a time, when it is allowed to give itself fully
+to the task at hand. In this way, the most complex of undertakings
+becomes simple, not because it is easy, but because we have allowed it
+to unfold naturally, one step after the other.</p>
+<h2 id="its-a-process">it's a process</h2>
+	  <p>It is tempting, in moments of ambition, to think that we must change
+everything all at once, that the path to mastery or peace requires a
+sudden, dramatic shift. But this is rarely the case. In truth, most
+lasting changes come from small, deliberate actions. It is in the
+repetition of these small actions, over time, that we build strength,
+that we build the habits of mind that lead to deeper clarity. Just as a
+mountain is climbed not in great leaps but in steady, measured steps, so
+too is the mind brought into alignment by daily, patient attention to
+the way we think.</p>
+	  <p>But in this process, we must remember something important: life is
+not meant to be rushed through. It is not a race, nor is it a problem to
+be solved. It is an experience to be lived, and living well requires
+presence. To focus on one thing deeply, to give it your full attention,
+is to experience it fully. And when we do this, something remarkable
+happens. Time, which so often feels like it is slipping through our
+fingers, begins to slow. Moments become rich, textured. Even the
+simplest of tasks takes on a new significance when approached with care,
+with attention.</p>
+	  <p>This is the quiet art of living well. It does not demand that we
+abandon the world, but that we engage with it more mindfully. It asks
+that we slow down, that we look more closely, that we listen more
+carefully. For in doing so, we discover that much of what we
+seek—clarity, peace, even strength—was always within reach. It was
+simply waiting for us to stop, to pay attention, and to begin again
+with intention.</p>
+	  <p>The mind, like a garden, requires tending. It needs patience, a
+steady hand, and, above all, consistency. There will be days when it
+seems unruly, when old habits return, and when focus feels
+elusive. But these days, too, are part of the process. Each small
+effort, each moment of renewed attention, builds upon the last. Over
+time, these moments accumulate, and what was once difficult becomes
+second nature.</p>
+	  <p>And so, the journey to mastery of the mind begins not
+with grand gestures but with the simplest of practices: the practice
+of paying attention. Attention to the present, attention to what truly
+matters, and attention to the quiet spaces in between. In this way,
+step by step, thought by thought, we move closer to that elusive state
+of clarity, of peace, and of freedom.</p>
+	</details>
+	<details>
+	  <summary class="level-3">**** media mindfulness</summary>
+	    <h1 id="media-mindfulness-how-what-we-see-becomes-a-part-of-us">how what we see becomes a part of us</h1>
+<p>A favorite streaming series; social media; news sites: The stories,
+pictures, and videos you take in seem harmless -- just passsing the
+time. But if you search your feelings (Luke), you know these things
+affect you: how you think and feel, and more importantly, how you make
+decisions. Even if they seem unreal or ridiculous?</p>
+<p>Media (movies, TV shows, video games, and social media) can be a huge
+part of our lives. It's easy to spend hours every day staring passively
+at screens, absorbing whatever comes into your mind. But here's the
+thing: our brains are sponges. No, really, they actually are, basically,
+and they soak up all that stuff, and it shapes our identity, thinking,
+and beliefs.</p>
+<h2 id="the-power-of-images-and-stories">the power of images and
+stories</h2>
+<p>Our brains react to sounds and images almost as if we having the
+experience ourselves. Ever felt scared during a horror movie, or cheered
+when Superman wins? Our brains can't always tell the difference between
+what's real and what's CGI. These powerful feelings and reactions stay
+with us long after the movie ends.</p>
+<p>The more we see something, the more it becomes a part of us. If we
+watch shows that are always full of violence, we might start to think
+the world is a scarier place than it really is. If we constantly see
+perfect-looking people on social media, we might start to feel bad about
+ourselves, even though we know those pictures are often edited or
+filtered.</p>
+<h2 id="how-media-shapes-our-beliefs">how media shapes our beliefs</h2>
+<p>It's not just our emotions that are affected by what we watch—our
+beliefs and values can be shaped by media, too. For example, if we
+always see certain groups of people portrayed in negative ways, we might
+start to believe those stereotypes, even if we know better. Or if we see
+unrealistic images of beauty, we might begin to think that’s how
+everyone should look.</p>
+<p>Even when something seems silly or absurd, it can still have an
+impact. Cartoons, for example, might exaggerate things for laughs, but
+they can also send messages about how people should act or what’s
+considered normal. Over time, these messages can become a part of our
+own thinking, without us even realizing it.</p>
+<h2 id="being-mindful-of-what-we-watch">being mindful of what we
+watch</h2>
+<p>So, what can we do about it? The key is to be mindful of what we
+watch and how much time we spend in front of screens. Being mindful
+means paying attention to how media makes us feel and think. If
+something makes us feel bad or seems unrealistic, it’s okay to step away
+or choose something else.</p>
+<p>It's also important to balance the media we consume. Watching
+different types of shows, reading various kinds of books, and following
+a mix of people on social media can help us see the world in a more
+balanced way. We should choose content that makes us think, teaches us
+something new, or simply makes us feel good.</p>
+<h2 id="conclusion">conclusion</h2>
+<p>Media is a powerful tool that can shape who we are and how we see the
+world. By being mindful of what we watch and how it affects us, we can
+make better choices that help us grow in positive ways. Remember, just
+because something is on a screen doesn’t mean it’s real—or that it
+should become a part of who we are.</p>
+
+	</details>
+	<details>
+	  <summary class="level-3">**** truth</summary>
+<p>For much of my youth, I was a casual liar.</p>
+<p>As a teenager grappling with immense personal trauma — from the loss
+of my sister, through my dad’s continual demands for perfection, to the
+breakdown of my family, to the abuse by a trusted teacher — I found
+myself spinning tales as a form of escape. This teacher exploited my
+vulnerability, which led me down a dark path of shame and deceit. I was
+afraid to be myself, and I hated myself for years — partly for lying,
+and partly out of shame.</p>
+<p>Lies became a coping mechanism, a way to navigate a world that seemed
+too painful to engage with honestly. Each falsehood was a tiny fortress
+wall, a way to protect myself from judgment or further injury. But as
+with all fortresses, the walls eventually closed in. My escape became a
+prison.</p>
+<h2 id="breaking-free">breaking free</h2>
+<p>Shame haunted me until, years later, I found the strength to reveal
+the truth. This confession didn’t immediately change my habits of
+dishonesty, but it sparked a crucial transformation. Eventually, as
+other victims came forward, we used the media and the legal system to
+amplify our stories, which was profoundly cathartic. Within months, the
+need to lie diminished; I reclaimed my voice and my truth.</p>
+<p>Eventually, other boys came forward, and we formed a sort of riot
+squad that used the full power of the press and the legal system to be
+heard and acknowledged. It was cathartic. I won’t say my lying vanished
+right away, but it was completely gone within about eight months.
+Somehow, having gotten the shame out of my system, I felt worthy to
+speak my truth again.</p>
+<p>The liberation I experienced by breaking free from lies highlighted a
+deeper realization: the truth isn’t just a moral choice; it’s a
+practical one. As Sam Harris writes in his book Lying, even small lies
+create unnecessary burdens. Every lie is a weight on the mind, demanding
+memory, calculation, and anxiety. In contrast, the truth is liberating
+in its simplicity. When you tell the truth, you don’t have to remember
+your fabrications. You are free to be fully present in the moment.</p>
+<h2 id="challenging-a-deceptive-culture">challenging a deceptive
+culture</h2>
+<p>Our society rewards deception.</p>
+<p>We live in a culture that often rewards deception, whether it’s
+sparing Uncle Ray’s feelings about his unloved Brussels sprouts, or
+embellishing our lives on social media to match an illusion of
+perfection. “Best foot forward” is the winning move in a popularity
+contest, even if it means filters, Photoshop, and carefully curated
+vignettes that highlight only the happy side of life.</p>
+<p>Sam Harris argues that these “white lies” are not harmless. They
+undermine trust, complicate relationships, and diminish genuine
+connection. The moment we decide someone can’t handle the truth, we
+reduce their agency and limit the possibility of real understanding. The
+small deceits we justify for convenience or politeness create ripples of
+confusion and mistrust.</p>
+<p>I reached a breaking point and chose transparency over pretense. This
+doesn’t mean I overshare, but I’ve learned to value clarity and
+simplicity. When something is private, I simply say, “pass,” respecting
+my boundaries without deceit. I just speak the truth, as clearly and
+simply as I can express it. What you see is largely what you get.</p>
+<h2 id="the-rewards-of-authenticity">the rewards of authenticity</h2>
+<p>Dropping the guise was transformative. Those who favored
+superficiality drifted away, replaced by individuals who appreciate
+honesty. Now, I can express my doubts, voice my opinions, and confront
+my past abuse without the shadows of fear and shame. This honesty has
+not only mended old wounds but also fostered genuine relationships and
+made daily interactions more straightforward.</p>
+<p>Suddenly, I have friends again. People listen to my opinion and act
+on it. They compliment me when I do well and feel comfortable correcting
+me when I do poorly. It isn’t at all the horrible ordeal that I imagined
+it would be. All of the angst I felt over my abuse had gotten conflated
+with a false undercurrent of bad karma and paranoia. In short, I am now
+completely open and honest with people, and nothing strange has
+happened.</p>
+<p>Living truthfully has simplified my life in unexpected ways. I can
+decline invitations without guilt, discuss my limitations openly, and
+often find that plans adapt to accommodate my honest input. The practice
+of being frank has taught me to address underlying stresses and
+uncomfortable truths promptly, avoiding the complexities that come with
+deception.</p>
+<h2 id="truth-as-a-foundation-for-life">truth as a foundation for
+life</h2>
+<p>Truth is more than a personal choice; it’s a foundation for
+meaningful living. In a world where misinformation, posturing, and
+“alternative facts” cloud our collective judgment, the commitment to
+truth becomes revolutionary. It cuts through noise and creates clarity.
+It builds resilience because facing reality — however difficult —
+prepares us for genuine growth.</p>
+<p>Sam Harris’ Lying emphasizes that even the smallest lies undermine
+our integrity. They separate us from reality and from each other. When
+we lie, we create distance. When we tell the truth, we invite
+understanding. Living authentically means embracing this understanding,
+even when it’s uncomfortable. It means building trust, not just with
+others, but with ourselves.</p>
+<p>In embracing total honesty, I’ve discovered a life where authenticity
+leads to both personal freedom and deeper connections. It’s a journey
+from darkness into a life filled with genuine interaction and peace. The
+weight of deception has lifted, replaced by the lightness of truth. I
+highly recommend it.</p>
+	</details>
+      </details>
+      <details>
+	<summary class="level-2">*** about me</summary>
+	<p>learn about me at four different levels, from shallow to deep.</p>
+	<details>
+          <summary class="level-3">**** my geek code</summary>
+	  <p>GE d- s:++ a+++ C++++ UL+++ P+ L+++ E+++ W+++ N+++ o+ K+ w— V PS+ PE f— c+++ Y+ PGP++ t+++ 5- X- R+++ tv++ b++ D-— xkcd G e++++ h– r+++</p>
+	  <details>
+	    <summary class="level-4">***** translation</summary>
+	    <dt>GE</dt>
+	    <dd>geek of engineering.</dd>
+	    <dt>d-</dt>
+	    <dd>i’m usually in jeans and a t-shirt.</dd>
+	    <dt>s:++</dt>
+	    <dd>i’m of average height, i’m a linebacker candidate.</dd>
+	    <dt>a+++</dt>
+	    <dd>age 60 and up.</dd>
+	    <dt>C++++</dt>
+	    <dd>i’ll be first in line to get the new cybernetic interface installed into my skull.</dd>
+	    <dt>UL50+</dt>
+	    <dd>i’ve been using Unix for over 50 years (since Jun 14, 1974).</dd>
+	    <dt>P+++</dt>
+	    <dd>i’ve earned a living with Perl.</dd>
+	    <dt>L(U)+++</dt>
+	    <dd>i use Ubuntu exclusively, mostly command line.</dd>
+	    <dt>E+++</dt>
+	    <dd>Emacs is my login shell!! M-x doctor is my psychologist! i use emacs to control my tv and toaster oven! all you vi people don’t know what you’re missing! i read alt.religion.emacs, alt.sex.emacs, and comp.os.emacs.</dd>
+	    <dt>W1.0+++</dt>
+	    <dd>i am an original netizen, first logging on in 1994.</dd>
+	    <dt>N+++</dt>
+	    <dd>i read so many newsgroups that the next batch of news comes in before i finish reading the last batch, and i have to read for about 2 hours straight before i’m caught up on the morning’s news. then there’s the afternoon.</dd>
+	    <dt>K+</dt>
+	    <dd>i like kibo. if you know, you know.</dd>
+	    <dt>w—</dt>
+	    <dd>Windows is bloatware.</dd>
+	    <dt>V</dt>
+	    <dd>i’ve used VMS. meh.</dd>
+	    <dt>PS+</dt>
+	    <dd>my whole concept of politics? nobody has the right to legislate morality.</dd>
+	    <dt>PE</dt>
+	    <dd>distrust both government and business.</dd>
+	    <dt>f—</dt>
+	    <dd>in matters of religion, i distrust all claims for the one true way.</dd>
+	    <dt>c+++</dt>
+	    <dd>i am a cyberpunk all the way, including music.</dd>
+	    <dt>Y+</dt>
+	    <dd>i have an interest and concern in privacy issues, but in reality i am not really all that active or vocal.</dd>
+	    <dt>PGP++</dt>
+	    <dd>I have the most recent version of PGP (Pretty Good Privacy) and use it regularly.</dd>
+	    <dt>t+++</dt>
+	    <dd>Star Trek inspires me. i wonder about about warp field dynamics and the principles behind the transporter. i have owned the tech manual and the lp record. i speak some klingon. i wear an idic. i still hate the LCARS interface, though: incredibly noisy, and it really sucks.</dd>
+	    <dt>5</dt>
+	    <dd>Babylon 5 is sub-par.</dd>
+	    <dt>X-Files</dt>
+	    <dd>it’s ok if you like paranoia and conspiracy stories. i don’t.</dd>
+	    <dt>R+++</dt>
+	    <dd>i’ve built and run my own dungeons for money. lots of money. at comic-cons. with 100 little envelopes of dice i brought with me.</dd>
+	    <dt>tv—</dt>
+	    <dd>not much on tv anymore, though i sometimes watch it when i’m petting the cat.</dd>
+	    <dt>b++</dt>
+	    <dd>i find the time to get through at least one new book a month.</dd>
+	    <dt>D—</dt>
+	    <dd>Dilbert doesn’t speak to me; i’ve tried to stay out of those type situations.</dd>
+	    <dt>xkcd</dt>
+	    <dd>i check out xkcd from time to time; sometimes it’s really funny.</dd>
+	    <dt>G</dt>
+	    <dd>i know what the geek code is and even did up this code.</dd>
+	    <dt>e++++</dt>
+	    <dd>i am well-educated, mostly by myself, but i do have degrees in electrical engineering and computer engineering (hardware).</dd>
+	    <dt>h+++</dt>
+	    <dd>i live in woods, on 14 acres I own, in a three-bedroom house I own, and try to live as self-sufficiently as possible.</dd>
+	    <dt>r+++</dt>
+	    <dd>i found my angel, and we’ve been married for decades now.</dd>
+	  </details>
+	</details>
+	<details>
+          <summary class="level-3">**** my credo</summary>
+	  <p><strong>Say what you mean;</strong> because telepathy is still in beta testing.</p>
+
+	  <p><strong>Be choosy with your media,</strong> because your brain thinks it’s real. Unless, of course, you’re watching someone paint happy little trees.</p>
+
+	  <p><strong>Speak clearly, listen carefully, pay close attention;</strong> otherwise, you’ll end up in a conversation about quantum physics when you just asked for the time.</p>
+
+	  <p><strong>Do what you love;</strong> life’s too short not to ply your craft. Just don’t expect it to pay the bills, unless your craft is printing money.</p>
+
+	  <p><strong>Keep it simple;</strong> complex plans involve running, and who’s got the energy for that?</p>
+
+	  <p><strong>Start small and build a little at a time;</strong> a mosaic is more beautiful than the finest concrete, and way less likely to get you sued for improper construction.</p>
+
+	  <p><strong>Network;</strong> because who else will laugh at your “I’m not a robot” jokes?</p>
+
+	  <p><strong>Be who you are;</strong> even a bent wire can carry a great light, especially in a modern art exhibit.</p>
+
+	  <p><strong>Build for strength, not just speed;</strong> the hare may have had more Instagram followers, but the tortoise won the race.</p>
+
+	  <p><strong>Hack;</strong> just remember, “try it and see” doesn’t apply to skydiving or lion taming.</p>
+
+	  <p><strong>Under-promise and over-deliver;</strong> because everyone loves a surprise, especially when it’s not another birthday card.</p>
+
+	  <p><strong>Divide and conquer;</strong> because life is essentially a giant game of strategy board games.</p>
+
+	  <p><strong>Do one thing well;</strong> remember, unicorns are famous for just one horn.</p>
+
+	  <p><strong>Use what you have;</strong> unless it’s a floppy disk, then maybe it’s time to upgrade.</p>
+
+	  <p><strong>Use levers, not people;</strong> because people are terrible at being levers, they keep asking for coffee breaks.</p>
+
+	  <p><strong>Release early, release often;</strong> otherwise, you’re just hoarding half-baked ideas, and there’s no market for those.</p>
+
+	  <p><strong>Distrust all claims for the one true way;</strong> except for pizza, pizza is always the answer.</p>
+
+	  <p><strong>Think ahead, but don’t worship your plans;</strong> all things are possible, except maybe skiing through a revolving door.</p>
+
+	  <p><strong>Think big:</strong> you are the universe. And like any good universe, remember to occasionally expand beyond your current dimensions — just without the big bang.</p>
+
+	  <p><strong>Abhor violence in all its forms,</strong> even contradicting others. Keep your peace, hold your tongue, and avoid turning into a debate club mascot.</p>
+
+	  <p><strong>Practice the Prime Directive;</strong> unless you’re in a sci-fi movie, then totally ignore it.</p>
+	</details>
+	<details>
+	  <summary class="level-3">**** my path</summary>
+	  <p>this is a manifesto for open source and digital integrity that i call "the netizen way."</p>
+
+	  <p>in an increasingly interconnected world, being a netizen — a citizen of the digital realm — is both a privilege and a responsibility. to navigate the vast, open seas of the internet while championing the ideals of open source, we need more than just tools and technology. we need principles, a compass for integrity, collaboration, and authenticity.</p>
+
+	  <p>this credo isn’t just a personal ethos; it’s a guide for every netizen who believes in the power of open source and the transformative potential of the internet. It’s about living with clarity, creativity, and purpose in a digital landscape that is still being shaped by those bold enough to contribute.</p>
+
+	  <details>
+	    <summary class="level-4">***** say what you mean</summary>
+	    <p>in the world of open source, clarity is everything. code comments, documentation, and communication with contributors are the backbone of collaboration. say what you mean — because telepathy is still in beta testing, and ambiguity kills projects faster than bugs do. transparency and directness ensure that everyone shares the same understanding and direction. if we can’t express our ideas clearly, we can’t build them together.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** be choosy with your media</summary>
+	    <p>our minds are shaped by what we consume. misinformation, clickbait, and noise clutter the digital landscape. as netizens, we must be choosy with our media. trust verified sources. seek out communities and creators who foster knowledge, not outrage. when contributing to open source, let your work reflect reality — not distortions. and if you need a break, there’s always someone painting happy little trees to remind you of simpler joys.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** speak clearly, listen carefully, pay close attention</summary>
+	    <p>communication is the heart of the internet. whether you’re in a github discussion, an irc channel, or a mailing list, speak clearly, listen carefully, pay close attention. misunderstandings online are easy, and clarity is the antidote. open source thrives on respectful discourse and mutual understanding. if you want to ask for help or offer feedback, precision and attentiveness make all the difference. otherwise, you might end up discussing quantum physics when you just wanted the version number.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** do what you love</summary>
+	    <p>open source is fueled by passion. developers, writers, designers, and maintainers contribute because they love what they do. life’s too short not to ply your craft. but remember — not every passion pays the bills, unless your craft is printing money. find joy in your contributions and remember that sharing your knowledge is its own reward.</p>
+	  </details>
+
+	  <details>
+	    <summary class="level-4">***** keep it simple</summary>
+	    <p>in both code and life, complexity breeds frustration. keep it simple. elegant solutions are maintainable solutions. complex plans are like software with unnecessary dependencies — they break under pressure. a straightforward, robust design is worth more than a convoluted mess. simplicity scales; complexity fails.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** start small and build a little at a time</summary>
+	    <p>great projects don’t spring into existence fully formed. they start with a single commit, a basic readme, or a simple script. start small and build a little at a time. each contribution is a tile in the mosaic. incremental progress is sustainable, and small wins lead to big victories. remember, a mosaic is more beautiful than the finest concrete — and way less likely to collapse under its own weight.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** network</summary>
+	    <p>no netizen thrives alone. the power of open source lies in its community. network; connect with people who share your values and interests. collaboration sparks innovation, and the collective wisdom of the community propels us forward. besides, who else will laugh at your “i’m not a robot” jokes?</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** be who you are</summary>
+	    <p>authenticity is your superpower. in a digital world where personas are easily crafted, be who you are. even a bent wire can carry a great light. your unique perspective, skills, and experiences are valuable. open source thrives on diversity, and your honest voice makes the community stronger.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** build for strength, not just speed</summary>
+	    <p>in a world obsessed with quick wins and instant gratification, build for strength, not just speed. the hare may have more followers, but the tortoise reaches the finish line. resilient systems, thoughtful contributions, and solid principles outlast fads and quick hacks. longevity matters.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** hack</summary>
+	    <p>hack — explore, experiment, and learn through doing. but remember, “try it and see” doesn’t apply to skydiving or lion taming. in the realm of code, hacking is the path to discovery. iterate, fail fast, and grow. open source was built by hackers who dared to try new things.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** under-promise and over-deliver</summary>
+	    <p>trust is earned through reliability. under-promise and over-deliver. surprise people with your commitment, not with missed deadlines. in the open-source world, consistency and follow-through matter. when you say you’ll contribute, deliver. when you deliver more than expected, the community thrives.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** divide and conquer</summary>
+	    <p>big problems are daunting. divide and conquer. break down tasks, distribute responsibilities, and tackle issues systematically. life is a giant strategy game, and open source is no different. a thousand small fixes can solve a massive problem.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** do one thing well</summary>
+	    <p>in a world of multi-purpose tools, do one thing well. unix taught us the power of simplicity, and this principle applies to code, projects, and life. be the unicorn: famous for one horn, but unforgettable because of it.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** use what you have</summary>
+	    <p>resourcefulness is a netizen’s virtue. use what you have. repurpose, adapt, and innovate with the tools at hand. unless it’s a floppy disk — then maybe it’s time to upgrade. open source thrives on the idea that good tools are built from what’s available and shared freely.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** use levers, not people</summary>
+	    <p>use levers, not people. automation, scripts, and tools amplify productivity. people aren’t levers; they’re collaborators. respect their time and energy. build tools that make life easier for everyone.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** release early, release often</summary>
+	    <p>perfection is the enemy of progress. release early, release often. share your work, gather feedback, and iterate. the open-source world doesn’t reward hoarding half-baked ideas — it thrives on sharing, learning, and improving together.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** distrust all claims for the one true way</summary>
+	    <p>dogma has no place in open source. distrust all claims for the one true way. there’s always another approach, another tool, another perspective. except for pizza. pizza is always the answer.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** think ahead, but don’t worship your plans</summary>
+	    <p>planning is crucial, but rigidity is fatal. think ahead, but don’t worship your plans. adapt, evolve, and embrace change. the digital world moves fast, and flexibility keeps you relevant.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** think big: you are the universe</summary>
+	    <p>you are part of something vast. think big. contribute boldly. expand your horizons. like any good universe, occasionally expand beyond your current dimensions — just without the big bang.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** abhor violence in all its forms</summary>
+	    <p>in a realm built on collaboration, abhor violence in all its forms. keep your peace, hold your tongue, and resist the urge to dominate. healthy discourse, not conflict, builds strong communities.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** practice the prime directive</summary>
+	    <p>respect autonomy. practice the prime directive. let others create, explore, and innovate in their own way. unless you’re in a sci-fi movie — then totally ignore it.</p>
+	  </details>
+	  <details>
+	    <summary class="level-4">***** the road not (often) taken</summary>
+	    <p>this credo is a guide to being a netizen who contributes meaningfully to the open-source world. it calls for clarity, integrity, passion, and respect. by living these principles, we don’t just create better software — we create a better digital society. one commit, one conversation, and one collaboration at a time, we build a more open, resilient, and creative world.</p>
+	  </details>
+	</details>
+	<details>
+	  <summary class="level-3">**** my journey</summary>
+
+	  <p><em><strong>a long time ago, in an irc far, far away</strong><br>
+	  ack: tables are 90% of my use cases for org mode<br>
+	  stormrider: life is 90% of my use cases for org mode<br>
+	  sparkiegeek: sounds quoteworthy to me</em></p>
+
+	  <p>Here’s a old MIT story: the computer age began with the Tech Model Railroad Club in the late 50’s. Specifically, it started with the folks that worked on the switchgear. When a mainframe came to MIT (the “hulking giant”), these hackers began to hog overnight slots, trying to code with minimum instructions. It became an obsession.</p>
+
+	  <p><strong>groceries and a Volkswagen</strong><br>
+	  Such an obsession, in fact, that one hacker took it too far. For three Saturdays on end, his wife went for groceries. Arriving home, she’d ask, “You want to help me bring in the groceries?” His reply? “No.” And then he’d keep tinkering.</p>
+
+	  <p>On the fourth Saturday (according to legend), she came home with a packed Volkswagen and asked again. Again he declined, but this time she blew up.</p>
+
+	  <p>“What’s wrong with you? Why won’t you help me with the groceries?”</p>
+
+	  <p>“You asked me if I *wanted* to help you bring in the groceries. You didn’t ask me if I *would*.”</p>
+
+	  <p><strong>i didn’t go to MIT</strong><br>
+	  Our family was just getting by, so my dad asked me to avoid faraway colleges. As incentive, he got me into coding classes at the local college (at 14) and arranged for me to split high-school and college. Fine by me, and I did okay.</p>
+
+	  <p>I logged into UNIX for the first time on June 18th, 1974. An avid reader since age 6, text-processing was very much on my mind. When I encountered a system where plain text is the currency, I was hooked.</p>
+
+	  <p>But the story about the groceries and the Volkswagen made me think: Computers and humans both depend on language, but unlike computers, human speech conveys an exact meaning even using apparently *imprecise* language. Could the informal UNIX programming rules be adapted to life?</p>
+
+	  <p><strong>ed > vi > emacs</strong><br>
+	    I remember my first foo, created with the ``ed`` line editor, in September, 1974. Bill Joy hadn’t even written ``vi`` yet (that watershed weekend was still about three years in the future). It was an amazing experience for a fifteen-year-old.</p>
+
+	  <p>Fifth edition UNIX had just been licensed to educational institutions at no cost, and since this college was situated squarely in the middle of the military-industrial complex, scoring a Hulking Giant was easy. Finding good code to run it? That was another issue, until Bell Labs offered up a freebie. Something to do with escaping the wrath of the Sherman Anti-Trust Act.</p>
+
+	  <p>Coding in UNIX was fun. Getting the computer to do things on its own — via ASM and FORTRAN — was not new to me. This was simpler: here was this thing that took away all the complexity: text is data; everything is a file; small is beautiful; do one thing well. Yes, it was cranky and buggy and sometimes dumped you in the bit bucket. But it was powerful and relatively easy to use.</p>
+
+	  <p>What made UNIX beautiful to me was abstraction. You didn’t have to worry (much) about the low-level details if you didn’t feel like it. You could focus on logic and abstraction without having to learn too much first. You could take little pieces — like “ls” and “cat” and “awk” and “sed” — and you could assemble a script or a C program that would grant your wish. And that was exhilarating and exciting and fabulous for me.</p>
+
+	  <p>I got turned onto emacs sometime in the mid-eighties, when I moved to Atlanta to work for HP. A fellow writer there used it, and suggested it might help me write and code up examples more effectively. He was right, and it stuck as my editing platform of choice. But I hadn’t discovered org-mode yet. Either nobody I knew used it, or it hadn’t been invented yet. And to be honest, I kinda went back and forth between vi and emacs, depending on my “mood of the month.”</p>
+
+	  <p><strong>a cabin in the woods</strong><br>
+	    Eventually, my HP job became a telecommuting-type arrangement, and I moved to my wife’s farm, about an hour outside New Orleans, in the woods. At that time, Internet was still modem-driven out here, so having command-line Linux with emacs on my laptop was a time-saver.</p>
+
+	  <p>Sometime not long before Katrina hit, I stumbled across org-mode. I’d already used outline mode for some period of time (can’t remember how long), and org-mode seemed like a logical follow-on from there.</p>
+
+	  <p>From there, org-mode just grew, and I grew with it. All the features made it easy for me to both do what seemed natural for me, and do things in a way that felt like they supported my principles. Gradually, my other methods of keeping track of things faded away, except for my alarm clock.</p>
+
+	  <p>Even when smart-phones took off, I was always trying to find some way to send org files over to my phone and use them there. I think I even wrote some lua code in an iPhone wiki app to emulate org-mode with my files, though it was not fully satisfactory.</p>
+
+	  <p><strong>the UNIX ethos</strong><br>
+	    On June 14, 2024, I marked 50 years of using some form of UNIX nearly every day, so it’s no surprise that my personal ethos aligns with some of the UNIX philosophy:</p>
+
+	  <ul>
+	    <li>Say what you mean; because telepathy is still in beta testing.</li>
+
+	    <li>Be choosy with your media, because your brain thinks it’s real. Unless, of course, you’re watching someone paint happy little trees.</li>
+
+	    <li>Speak clearly, listen carefully, pay close attention; otherwise, you’ll end up in a conversation about quantum physics when you just asked for the time.</li>
+
+	    <li>Do what you love; life’s too short not to ply your craft. Just don’t expect it to pay the bills, unless your craft is printing money.</li>
+
+	    <li>Keep it simple; complex plans involve running, and who’s got the energy for that?</li>
+
+	    <li>Start small and build a little at a time; a mosaic is more beautiful than the finest concrete, and way less likely to get you sued for improper construction.</li>
+
+	    <li>Network; because who else will laugh at your “I’m not a robot” jokes?</li>
+
+	    <li>Be who you are; even a bent wire can carry a great light, especially in a modern art exhibit.</li>
+
+	    <li>Build for strength, not just speed; the hare may have had more Instagram followers, but the tortoise won the race.</li>
+
+	    <li>Hack; just remember, “try it and see” doesn’t apply to skydiving or lion taming.</li>
+
+	    <li>Under-promise and over-deliver; because everyone loves a surprise, especially when it’s not another birthday card.</li>
+
+	    <li>Divide and conquer; because life is essentially a giant game of strategy board games.</li>
+
+	    <li>Do one thing well; remember, unicorns are famous for just one horn.</li>
+
+	    <li>Use what you have; unless it’s a floppy disk, then maybe it’s time to upgrade.</li>
+
+	    <li>Use levers, not people; because people are terrible at being levers, they keep asking for coffee breaks.</li>
+
+	    <li>Release early, release often; otherwise, you’re just hoarding half-baked ideas, and there’s no market for those.</li>
+
+	    <li>Distrust all claims for the one true way; except for pizza, pizza is always the answer.</li>
+
+	    <li>Think ahead, but don’t worship your plans; all things are possible, except maybe skiing through a revolving door.</li>
+
+	    <li>Think big: you are the universe. And like any good universe, remember to occasionally expand beyond your current dimensions — just without the big bang.</li>
+
+	    <li>Abhor violence in all its forms, even contradicting others. Keep your peace, hold your tongue, and avoid turning into a debate club mascot.</li>
+
+	    <li>Practice the Prime Directive; unless you’re in a sci-fi movie, then totally ignore it.</li>
+	  </ul>
+
+	    <p><strong>Emacs on Termux on Android (or anywhere) with a Git repo</strong><br>
+	      Nowadays I have a floating root directory in a private Git repo, all administered automatically from my .emacs file on any given device. Emacs startup pulls the latest from the repo, copies the (possibly) updated .emacs file to my homedir, rereads it, and starts emacs. Every 10 minutes it does a “save-all” and updates the repo, so I can walk off and leave things running, not worrying about whether I saved them or not.</p>
+	    <p>And when I do shut down gracefully, it saves all and updates the repo just for good measure. I have a bunch of functions tied to “C-c m …” that do everything from bring up local apps (email, calendar, SMS, etc) to synching my org-roam DB to browsing to God knows what. I’m living in an emacs bubble, guided by org-mode and made to match my flighty personality by heavy customization.</p>
+	    <p>What’s the other 10%? Wishful thinking. I’m hoping when I die, I go to a mainframe computer room in the sky, with a little office off to the side, with stained green carpet squares and dodgy flourescent lights, a metal desk, a VT-100, and infinite time to play. And a never-empty coffee pot. Who knows?</p>
+
+
+      </details>
+    </details>
+</details>
+<p>&copy; 2025 by bill wear. gnu gpl applies.</p>
 </body>
 </html>
