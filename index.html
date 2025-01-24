@@ -1,68 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homepage.org</title>
-    <style>
-      body {
-          font-family: "Courier New", Courier, monospace;
-          font-size: 16px;
-          line-height: 1.6;
-      }
-      summary {
-          font-weight: bold;
-          cursor: pointer;
-          font-size: 1.2em;
-          margin-bottom: 0.5em;
-      }
-      details {
-          margin-bottom: 1rem;
-      }
-      summary.level-1 {
-          font-size: 1.8em;
-          color: blue;
-      }
-      summary.level-2 {
-          font-size: 1.6em;
-          color: green;
-      }
-      summary.level-3 {
-          font-size: 1.4em;
-          color: red;
-      }
-      summary.level-4 {
-          font-size: 1.2em;
-          color: orange;
-      }
-
-      /* Remove arrows */
-      details summary {
-          list-style: none;
-      }
-      details[open] summary::after, 
-      details summary::after {
-          content: ""; /* Remove any generated content after summary */
-      }
-    </style>
-  </head>
-  <body>
-    <p><em>hint: click the colorful headings to open and close sections</em></p>
-	  <p><em>for the older, unmaintained page, <a href="/index3.html">go here</a></em></p>
-
-    <details>
-      <summary class="level-1">** billwear's homepage.org</summary>
-      <p>hi. i'm billwear. i've been using UNIX&trade; for over 50 years, emacs for almost 40, and org-mode for nearly 20. this site is a reflection of my journey through emacs, org-mode, and deep living.  there's prolly something here for every curious mind.</p>
-      <details>
-	<summary class="level-2">*** emacs</summary>
-      </details>
-      <details>
-	<summary class="level-2">*** org-mode</summary>
-      </details>
-      <details>
-	<summary class="level-2">*** deep living</summary>
-	<details>
-	  <summary class="level-3">**** the quiet art of attention</summary>
+	<head>
+    		<meta charset="UTF-8">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    		<title>
+			homepage.org
+		</title>
+    		<style>
+      			body {
+          			font-family: "Courier New", Courier, monospace;
+          			font-size: 16px;
+          			line-height: 1.6;
+      			}
+      			summary {
+          			font-weight: bold;
+      	    			cursor: pointer;
+          			font-size: 1.2em;
+          			margin-bottom: 0.5em;
+      			}
+      			details {
+          			margin-bottom: 1rem;
+      			}
+      			summary.level-1 {
+          			font-size: 1.8em;
+          			color: blue;
+      			}
+      			summary.level-2 {
+         	 		font-size: 1.6em;
+          			color: green;
+      			}
+      			summary.level-3 {
+          			font-size: 1.4em;
+          			color: red;
+      			}
+      			summary.level-4 {
+          			font-size: 1.2em;
+          			color: orange;
+      			}
+       			details summary {
+          			list-style: none;
+      			}
+      			details[open] summary::after, 
+      			details summary::after {
+          			content: ""; /* Remove any generated content after summary */
+      			}
+    		</style>
+  	</head>
+  	<body>
+    		<p>
+			<em>
+				hint: click the colorful headings to open and close sections
+				<br>
+				for the older, unmaintained page, <a href="/index3.html">go here</a>
+			</em>
+			<br>
+	  	</p>
+    		<details>
+      			<summary class="level-1">
+				** billwear's homepage.org
+			</summary>
+      			<p>
+				hi. i'm billwear. i've been using UNIX&trade; for over 50 years, 
+				emacs for almost 40, and org-mode for nearly 20. this site is a 
+				reflection of my journey through emacs, org-mode, and deep living.  
+				there's prolly something here for every curious mind.
+			</p>
+      			<details>
+				<summary class="level-2">
+					*** emacs
+				</summary>
+	      			<details>
+	      			</details>
+      			</details>
+      			<details>
+				<summary class="level-2">
+					*** org-mode
+				</summary>
+      			</details>
+      			<details>
+				<summary class="level-2">
+					*** deep living
+				</summary>
+				<details>
+	  			<summary class="level-3">
+					**** the quiet art of attention
+				</summary>
 <p>There comes a moment in life, often in the quietest of hours, when
 one realizes that the world will continue on its wayward course,
 indifferent to our desires or frustrations. And it is then, perhaps,
