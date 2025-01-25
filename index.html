@@ -51,6 +51,530 @@
 	<summary>
 	  *** emacs
 	</summary>
+	<details>
+	  <summary>
+	    **** my .emacs file
+	  </summary>
+	  <pre>
+	    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; .emacs file for billwear, le 29dec24 09:53 ;;
+;; wowear@gmail.com, billwear.github.io       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; auto text adjust in info mode
+;;; i prefer a soft wrap; this is how you get it
+(add-hook 'Info-mode-hook
+	  (lambda ()
+	    (visual-line-mode 1)
+	    (setq word-wrap t)))
+(add-hook 'Info-mode-hook
+	  (lambda ()
+	    (setq fill-column (1- (window-width)))
+	    (auto-fill-mode 1)))
+(setq frame-resize-pixelwise t)
+
+;; kill warnings
+;;; some warnings just don't tell you anything
+(setq native-comp-async-report-warnings-errors nil)
+
+;; set up homedir
+;;; my homedir is a git repo, kept up by emacs
+;;; here's how you can set this up
+;; 0. create a (private) git*** repo online
+;; 1. navigate to your home directory.
+;; 2. initialize a new git repo there.
+;;    $ git init
+;; 3. add a .gitignore file to exclude unnecessary files
+;;    (e.g., caches, secrets, dot-files, etc).
+;;    $ echo -e "*.swp\n*.tmp\n.cache..." > .gitignore
+;; 4. add your desired files to the git index.
+;;    $ git add .
+;; 5. commit the initial snapshot of the home directory.
+;;    $ git commit -m "Initial commit of home directory"
+;; 6. connect to your remote repository.
+;;    $ git remote add origin <your-remote-repo-url>
+;; 7. push to the remote repository.
+;;    $ git branch -M main
+;;    $ git push -u origin main
+;;
+;;; also note that my homedir follows the hier(7) standard
+;;; filesystem hierarchy; it's just easier for me, since
+;;; i've been using UNIX so long and have a pretty good
+;;; idea where stuff should go.
+;;; 
+;;; it helps to set some variables to reduce mistakes
+(setq hdir "~/")
+(setq default-directory hdir)
+(setq git-repo-url "git@github.com:billwear/bill.git")
+
+;;; function to auto-sync your homedir;
+;;; notice that it saves everything first;
+;;; this can't hurt, because it's version-controlled,
+;;; so you can usually revert to an earlier commit
+(defun my/git-auto-sync ()
+  (interactive)
+  (save-some-buffers t)
+  (let ((default-directory hdir))
+    ;; check for uncommitted changes
+    (when (not (string-empty-p
+		(shell-command-to-string
+		 "git status --porcelain")))
+      (shell-command "git add .")
+      (shell-command
+       "git commit -m 'pre-sync autocommit'"))
+
+    ;; merge latest changes
+    (if (zerop
+	 (shell-command
+	  "git pull --no-rebase origin main"))
+        (progn
+          (message
+	   "success pulling latest changes.")
+          (shell-command
+	   "git push origin main"))
+      (message
+       "git pull error; resolve manually."))))
+
+;;; set autosync to run on desired interval;
+;;; this lets me just walk away from an emacs session
+;;; and wait no more than 10 minutes for the repo to
+;;; be updated, so i can access from elsewhere
+(run-at-time "10 min" 600 #'my/git-auto-sync)
+
+;;; sync the repo when i shut down emacs (anywhere)
+(defun my/commit-homedir-on-shutdown ()
+  (save-some-buffers t)
+  (let ((default-directory hdir))
+    (condition-case err
+        (progn
+          (shell-command "git add .")
+          (shell-command
+	   "git commit -m 'init6 autocommit'")
+          (shell-command "git push"))
+      (error
+       (message
+	"Error during save and commit: %s"
+	(error-message-string err))))))
+
+;;; this shutdown sync is hooked into kill logic
+(add-hook 'kill-emacs-hook
+	  'my/commit-homedir-on-shutdown)
+
+;;; pull the latest when i start up;
+;;; always have the freshest version
+(defun my/pull-homedir-on-startup ()
+  (let ((default-directory "~/"))
+    (condition-case err
+        (progn
+          (shell-command "git pull"))
+      (error
+       (message
+	"Error during git pull: %s"
+	(error-message-string err))))))
+
+;;; pull latest is in the startup hooks
+(add-hook 'emacs-startup-hook
+	  'my/pull-homedir-on-startup)
+
+;; enable package management & updates
+;;; this not only makes sure that i have all the
+;;; packages i need loaded on whatever system i
+;;; care to use, it also auto-updates at least
+;;; once a week (usually on wednesday, dunno why)
+(require 'package)
+(setq package-archives
+      '(("gnu"   . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")
+        ("org"   . "https://orgmode.org/elpa/")))
+(package-initialize)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
+(setq use-package-always-ensure t)
+(use-package auto-package-update
+  :config
+  (setq auto-package-update-delete-old-versions t)
+  (auto-package-update-maybe))
+
+;; magit
+;;; load magit; i don't use it much (git cli instead),
+;;; but there's the odd thing it's hard to remember
+(use-package magit :bind ("C-x g" . magit-status))
+
+;; treemacs
+;;; treemacs saves me from having to use dired all the
+;;; time to do filesystem maintenance & start new dirs;
+;;; it's too wide on the phone, so i usually kill it there,
+;;; but it's worth it to have it by default, anyway
+(use-package treemacs
+  :ensure t
+  :defer t
+  :config
+  (setq treemacs-width 30
+        treemacs-follow-mode t
+        treemacs-filewatch-mode t
+        treemacs-git-mode 'deferred)
+  :bind
+  (("C-x t t" . treemacs)           
+   ("C-x t f" . treemacs-find-file) 
+   ("C-x t p" . treemacs-projectile)))
+(use-package treemacs-magit
+  :after (treemacs magit)
+  :ensure t)
+
+;;; here's a function to open a terminal in the
+;;; treemacs cwd, which is often handier than
+;;; finding an open terminal and figuring out how
+;;; to get to the directory i'm in from somewhere else
+(defun treemacs-open-terminal-here ()
+  (interactive)
+  (let ((node (treemacs-current-button)))
+    (if node
+        (let ((dir
+	       (treemacs-button-get node
+				    :path)))
+          (if (file-directory-p dir)
+              (let ((default-directory dir))
+                (ansi-term "/bin/bash"))
+            (message
+	     "node is not a directory.")))
+      (message "No node selected."))))
+
+;;; just press the "T" key in treemacs when the
+;;; highlight is on the cwd you want
+(with-eval-after-load 'treemacs
+  (define-key treemacs-mode-map
+	      (kbd "T")
+	      #'treemacs-open-terminal-here))
+
+;;; set my treemacs default project (the directory
+;;; that it starts with) to be my homedir
+(defun my/treemacs-set-default-project ()
+  (let ((default-root "hdir"))
+    (unless (treemacs-current-workspace)
+      (treemacs-select-workspace-by-name
+       "Default"))
+    (treemacs-do-add-project-to-workspace
+     default-root
+     "Default Project")))
+
+;;; set default project to homedir on startup
+(add-hook 'emacs-startup-hook
+	  #'my/treemacs-set-default-project)
+
+;;; put the default project in the treemacs window
+(defun my/treemacs-setup ()
+    (treemacs)
+  (unless (treemacs-workspace->is-empty?)
+    (treemacs-do-add-project-to-workspace
+     hdir "Home")))
+
+;;; do that last on startup, too
+(add-hook 'emacs-startup-hook
+	  #'my/treemacs-setup)
+(defun my/treemacs-cleanup ()
+  (when (treemacs-is-treemacs-window?
+	 (selected-window))
+    (delete-window)))
+(add-hook 'kill-emacs-hook
+	  #'my/treemacs-cleanup)
+
+;; org-mode
+;;; here is my org-mode config
+;;; i set indents and visual wrapping as presets
+(use-package org
+  :config
+  :hook ((org-mode . org-indent-mode)
+         (org-mode . visual-line-mode)))
+
+;;; this is where i keep my org agenda files;
+;;; org files are essentially a database, so
+;;; they belong under my home /etc dir; i follow
+;;; limoncelli's methods in "time mgmt for system
+;;; administators," which is the best pattern for
+;;; me, personally; it's highly subjective
+(setq org-agenda-files
+      "~/etc/org/org-agenda-files")
+
+;;; i like to use shift select, and i like to
+;;; paste over what's selected; note that i
+;;; don't like using standard cut/paste keys
+;;; with emacs, because it steps on other
+;;; standard navigation keys
+(setq org-support-shift-select t)
+(delete-selection-mode 1)
+
+;;; set up the org agenda to my liking
+;; very compact prefix (easier on my phone)
+(setq org-agenda-prefix-format '((agenda . "%c: %t")))
+;; default to one day (more efficient)
+(setq org-agenda-span 'day)
+;; make the blocks compact
+(setq org-agenda-compact-blocks t)
+
+;;; set up three capture templates
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/etc/org/tmsa/to-do-list.org" "Inbox")
+         "* TODO %?\n %i\n %a")
+	("c" "Calendar" entry (file+headline "~/etc/org/tmsa/calendar.org" "Inbox")
+	 "* TODO %?\n %i\n %a")
+        ("l" "Life goal" entry (file+headline "~/etc/org/tmsa/life-goals.org" "Inbox")
+         "* TODO %?\n %i\n %a")))
+
+;;; i like to see just italics, bold, etc,
+;;; not the markdown that creates them
+(setq org-hide-emphasis-markers t)
+
+;;; i don't use org-roam all that much, but
+;;; it's too handy to not have it enabled
+(use-package org-roam
+  :ensure t
+  :custom
+  (org-roam-directory (file-truename "~/etc/org/roam"))
+  :config
+  (org-roam-db-autosync-enable))
+
+;;; i use org-journal to keep my daily log, tho
+;;; heavily customized, as you can see here: it builds
+;;; a header, adds output from date, ddate, and fortune,
+;;; and leaves me in a place where i can add my first
+;;; entry; i usually copy the fortune into my daily chat
+;;; header, whose emoji is always a fortune cookie.
+(use-package org-journal
+  :custom
+  (org-journal-dir "~/var/log/2025")
+  (org-journal-date-format "%A, %d %B %Y")
+  :config
+  (defun my-org-journal-entry ()
+      (interactive)
+      (let ((today-file
+	     (org-journal--get-entry-path)))
+      (if (file-exists-p today-file)
+          (org-journal-open-current-journal-file)
+        (progn
+          (org-journal-new-entry t)
+          (let* ((date-output
+		  (string-trim
+		   (shell-command-to-string
+		    "date")))
+                 (ddate-output
+		  (string-trim
+		   (shell-command-to-string
+		    "ddate")))
+                 (fortune-output
+		  (string-trim
+                   (shell-command-to-string
+		    "fortune"))))
+            (insert
+	     (format
+	      "\n%s\n%s\n%s\n\n"
+	      date-output
+	      ddate-output
+	      fortune-output))))))))
+
+;; i use company mode for typing completions, like
+;; a cheap predictive text;  it takes getting used to,
+;; and sometimes it's still a bother, but it's still
+;; worth having it.
+(use-package company
+  :ensure t
+  :config
+  (setq company-minimum-prefix-length 1
+        company-idle-delay 0.2
+        company-dabbrev-ignore-case t
+        company-dabbrev-other-buffers t)
+  (global-company-mode))
+(add-hook 'text-mode-hook
+          (lambda ()
+            (set (make-local-variable
+		  'company-backends)
+                 '((company-dabbrev
+		    company-yasnippet)))))
+(add-hook 'org-mode-hook
+          (lambda ()
+            (set (make-local-variable
+		  'company-backends)
+                 '((company-dabbrev
+		    company-yasnippet)))))
+
+;; markdown mode lets me expand and collapse
+;; markdown files with the tab key, just like
+;; org mode -- really handy for working with long
+;; markdown documents, since it's what i do all day
+(use-package markdown-mode
+  :mode (("\\.md\\'" . markdown-mode)))
+
+;; which-key makes it easy to find out which key does
+;; what, and it also runs when you pause long enough,
+;; giving you the full list of options for the second key
+;; in a key chord
+(use-package which-key
+  :config (which-key-mode))
+
+;; yasnippet is useful if i'm programming; i'm pretty sure i
+;; could make better use of it while writing, as well, but i
+;; never seem to get around to it
+(use-package yasnippet
+  :config (yas-global-mode 1))
+
+;; ivy and counsel give me vertical lists of files and commands,
+;; based on sparse inputs; worth having enabled
+(use-package ivy :config (ivy-mode 1))
+(use-package counsel
+  :after ivy :config (counsel-mode))
+
+;;; a few random display settings
+;; default font
+(set-face-attribute 'default nil
+		    :height 140
+		    :background "#282828"
+		    :foreground "#ebdbb2")
+
+;; cursor style
+(set-face-attribute 'cursor nil
+		    :background "#ebdbb2")
+
+;; no menu bar or toolbar
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+;; column numbers
+(column-number-mode)
+
+;; golden ratio is nice, because when you switch windows, the active window
+;; expands to take up 2/3-ish of the screen; very handy
+(require 'golden-ratio)
+(golden-ratio-mode 1)
+
+;; scratch message
+(setq initial-scratch-message
+      ";; Welcome to your streamlined Emacs!\n\n"
+      inhibit-startup-screen t)
+
+;; wrap lines
+(global-visual-line-mode t)
+
+;; turn off noise
+(setq visible-bell t
+      auto-save-no-message t
+      confirm-kill-emacs nil)
+
+;; open fullscreen
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+;;; these are my personal shortcut keys, under C-c m;
+;;; the comments below are self-explanatory
+
+;; C-c m keybindings
+;;; a = agenda list
+(defalias 'agenda 'org-agenda-list)
+(global-set-key (kbd "C-c m a") #'agenda)
+
+;;; b = bash
+(defun run-ansi-term ()
+  "Open an ansi-term running bash."
+  (interactive)
+  (ansi-term "/bin/bash"))
+(defalias 'bash 'run-ansi-term)
+(global-set-key (kbd "C-c m b") #'bash)
+
+;;; c = calendar
+(defalias 'cal 'calendar)
+(global-set-key (kbd "C-c m c") #'cal)
+
+;;; d = bbdb database
+(global-set-key (kbd "C-c m d") #'bbdb)
+
+;;; e = .emacs init file
+(defun edit-emacs-init-file ()
+  "Open the user's init file."
+  (interactive)
+  (find-file user-init-file))
+(defalias 'init 'edit-emacs-init-file)
+(global-set-key (kbd "C-c m e") #'init)
+
+;;; f = flush lines
+(defalias 'flush 'flush-lines)
+(global-set-key (kbd "C-c m f") #'flush)
+
+;;; g = gnus
+(global-set-key (kbd "C-c m g") #'gnus)
+
+;;; h = html export
+(defalias 'htmlx 'org-html-export-to-html)
+(global-set-key (kbd "C-c m h") 'htmlx)
+
+;;; j = open daily journal
+(defalias 'journal 'my-org-journal-entry)
+(global-set-key (kbd "C-c m j") 'journal)
+
+;;; k = capture
+(defalias 'capture 'org-capture)
+(global-set-key (kbd "C-c m k") 'capture)
+
+;;; l = list directory
+(defalias 'ls 'dired)
+(global-set-key (kbd "C-c m l") #'ls)
+
+;;; n = next buffer
+(defalias 'net 'eww)
+(global-set-key (kbd "C-c m n") #'net)
+
+;;; o = orgfiles
+(defalias 'orgfiles 'org-cycle-agenda-files)
+(global-set-key (kbd "C-c m o") #'orgfiles)
+
+;;; p = prev buffer
+(defalias 'prevbuf 'previous-buffer)
+(global-set-key (kbd "C-c m p") #'prevbuf)
+
+;;; r = replace
+(defalias 'replace 'replace-regexp)
+(global-set-key (kbd "C-c m r") #'replace)
+
+;; windmove w/ctrl-arrow keys; i love being able to
+;; switch windows with a keystroke
+(windmove-default-keybindings 'control)
+
+;; i also like to auto-create a new window when moving off the edge
+;; of the frame; saves so many steps
+(setq windmove-create-window t)
+
+;; backup directory
+(setq backup-directory-alist
+      `(("." . , "~/var/backups/emacs")))
+
+;; archive directory
+(setq org-archive-location
+      "~/var/archive/emacs/%s_archive::")
+
+;; sometimes i get lazy and use customize-options to change
+;; the settings on a particular package.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-sorting-strategy
+   '((agenda time-up category-up priority-down)
+     (todo priority-down category-keep)
+     (tags priority-down category-keep)
+     (search category-keep)))
+ '(org-priority-default 90)
+ '(org-priority-lowest 90)
+ '(package-selected-packages
+   '(golden yasnippet writegood-mode which-key websocket unfill treemacs-magit simple-httpd pandoc-mode pandoc org-super-agenda org-roam org-journal org-bullets move-text lsp-ltex lsp-latex golden-ratio flycheck exec-path-from-shell emms ement diminish counsel company blacken auto-package-update accent))
+ '(yas-snippet-dirs '("~/.yasnippets")))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+	  </pre>
+	</details>
       </details>
       <details>
 	<summary>
