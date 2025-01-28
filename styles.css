@@ -108,3 +108,24 @@ footer {
     color: #fff;
     font-size: 0.9rem;
 }
+
+.color-lines {
+    display: flex;
+    height: 20px; /* Adjust the height as needed */
+    margin: 20px 0; /* Spacing between headings */
+}
+
+.color-lines::before, .color-lines::after {
+    content: "";
+    flex: 1;
+}
+
+.color-lines div {
+    flex: 1;
+    height: 100%;
+}
+
+.color-lines div:nth-child(1) { background: #FFD700; } /* Gold */
+.color-lines div:nth-child(2) { background: #FF8C00; } /* Dark Orange */
+.color-lines div:nth-child(3) { background: #FF4500; } /* Red-Orange */
+.color-lines div:nth-child(4) { background: #8B0000; } /* Deep Red */
