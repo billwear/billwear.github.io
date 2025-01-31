@@ -6,18 +6,18 @@
     <title>MAAS Network Animation</title>
     <style>
         body { margin: 0; overflow: hidden; background: white; }
-        canvas { display: block; }
+        canvas { display: block; position: absolute; }
         #textCanvas {
             position: absolute;
             top: 0;
             left: 0;
-            pointer-events: none; /* Let WebGL canvas receive events */
+            pointer-events: none; /* Allow interactions with WebGL */
         }
     </style>
 </head>
 <body>
     <canvas id="glCanvas"></canvas>
-    <canvas id="textCanvas"></canvas> <!-- Canvas for text -->
+    <canvas id="textCanvas"></canvas> <!-- Separate canvas for text -->
     <script>
         const canvas = document.getElementById("glCanvas");
         const textCanvas = document.getElementById("textCanvas");
@@ -25,7 +25,7 @@
         canvas.height = window.innerHeight;
         textCanvas.width = window.innerWidth;
         textCanvas.height = window.innerHeight;
-        
+
         const gl = canvas.getContext("webgl");
         const ctx = textCanvas.getContext("2d");  // 2D context for text
 
@@ -41,7 +41,6 @@
             attribute vec2 a_position;
             void main() {
                 gl_Position = vec4(a_position, 0.0, 1.0);
-                gl_PointSize = 10.0;
             }
         `;
 
@@ -87,77 +86,44 @@
         gl.enableVertexAttribArray(positionLocation);
         gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
 
-        function createPacketPath(start, end, steps) {
-            let path = [];
-            for (let i = 0; i <= steps; i++) {
-                let t = i / steps;
-                path.push([
-                    start[0] * (1 - t) + end[0] * t,
-                    start[1] * (1 - t) + end[1] * t
-                ]);
-            }
-            return path;
-        }
-
-        const devices = {
-            regionController: [-0.8, 0.3], // Blue (Region Controller)
-            rackController: [-0.3, 0.3], // Green (Rack Controller)
-            machines: [
-                [-0.1, -0.2], [0.1, -0.2], [0.3, -0.2], [0.5, -0.2], [0.7, -0.2] // Gray (Machines in rack)
-            ]
-        };
-
-        const packets = [
-            { path: createPacketPath(devices.regionController, devices.rackController, 50), index: 0, color: [0.0, 0.0, 1.0, 1.0] },  // Blue packet (Region → Rack)
-            { path: createPacketPath(devices.rackController, devices.machines[0], 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] },  // Green packet (Rack → Machine 1)
-            { path: createPacketPath(devices.rackController, devices.machines[1], 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] },  // Green packet (Rack → Machine 2)
-            { path: createPacketPath(devices.rackController, devices.machines[2], 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] },  // Green packet (Rack → Machine 3)
-            { path: createPacketPath(devices.rackController, devices.machines[3], 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] },  // Green packet (Rack → Machine 4)
-            { path: createPacketPath(devices.rackController, devices.machines[4], 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] }   // Green packet (Rack → Machine 5)
-        ];
-
-        function drawDevice(position, color) {
+        function drawRectangle(x, y, width, height, color) {
+            const x1 = x, x2 = x + width;
+            const y1 = y, y2 = y - height;
+            const vertices = new Float32Array([
+                x1, y1,  x2, y1,  x1, y2,
+                x2, y1,  x2, y2,  x1, y2
+            ]);
             gl.uniform4fv(colorLocation, color);
-            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(position), gl.STATIC_DRAW);
-            gl.drawArrays(gl.POINTS, 0, 1);
+            gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+            gl.drawArrays(gl.TRIANGLES, 0, 6);
         }
 
-        function drawPacket(packet) {
-            gl.uniform4fv(colorLocation, packet.color);
-            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(packet.path[packet.index]), gl.STATIC_DRAW);
-            gl.drawArrays(gl.POINTS, 0, 1);
-        }
-
-        // Function to draw text inside the Region Controller box
         function drawText() {
-            ctx.clearRect(0, 0, textCanvas.width, textCanvas.height);  // Clear canvas
-            ctx.fillStyle = 'black';
+            ctx.clearRect(0, 0, textCanvas.width, textCanvas.height);
+            ctx.fillStyle = 'white';
             ctx.font = '30px Arial';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText('Region', canvas.width * 0.2, canvas.height * 0.3); // Draw text inside Region Controller
+            ctx.fillText('Region', textCanvas.width * 0.2, textCanvas.height * 0.3);
         }
 
         function render() {
             gl.clear(gl.COLOR_BUFFER_BIT);
 
-            // Draw devices
-            drawDevice(devices.regionController, [0.0, 0.0, 1.0, 1.0]); // Blue (Region Controller)
-            drawDevice(devices.rackController, [0.0, 1.0, 0.0, 1.0]); // Green (Rack Controller)
+            // Draw Region Controller (Blue Box)
+            drawRectangle(-0.9, 0.6, 0.3, 0.2, [0.0, 0.0, 1.0, 1.0]);
 
-            devices.machines.forEach(machine => {
-                drawDevice(machine, [0.5, 0.5, 0.5, 1.0]); // Gray Machines
-            });
+            // Draw Rack Controller (Green Box)
+            drawRectangle(-0.3, 0.3, 0.2, 0.2, [0.0, 1.0, 0.0, 1.0]);
 
-            // Move packets along their paths
-            packets.forEach(packet => {
-                drawPacket(packet);
-                packet.index = (packet.index + 1) % packet.path.length;
-            });
+            // Draw Machines in Rack (Gray Boxes)
+            let machineX = -0.1;
+            for (let i = 0; i < 5; i++) {
+                drawRectangle(machineX, -0.2, 0.15, 0.15, [0.5, 0.5, 0.5, 1.0]);
+                machineX += 0.2;
+            }
 
-            // Draw the text after rendering the WebGL content
             drawText();
-
             requestAnimationFrame(render);
         }
 
