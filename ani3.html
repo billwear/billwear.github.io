@@ -7,15 +7,27 @@
     <style>
         body { margin: 0; overflow: hidden; background: white; }
         canvas { display: block; }
+        #textCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none; /* Let WebGL canvas receive events */
+        }
     </style>
 </head>
 <body>
     <canvas id="glCanvas"></canvas>
+    <canvas id="textCanvas"></canvas> <!-- Canvas for text -->
     <script>
         const canvas = document.getElementById("glCanvas");
+        const textCanvas = document.getElementById("textCanvas");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        textCanvas.width = window.innerWidth;
+        textCanvas.height = window.innerHeight;
+        
         const gl = canvas.getContext("webgl");
+        const ctx = textCanvas.getContext("2d");  // 2D context for text
 
         if (!gl) {
             alert("WebGL not supported");
@@ -116,6 +128,16 @@
             gl.drawArrays(gl.POINTS, 0, 1);
         }
 
+        // Function to draw text inside the Region Controller box
+        function drawText() {
+            ctx.clearRect(0, 0, textCanvas.width, textCanvas.height);  // Clear canvas
+            ctx.fillStyle = 'black';
+            ctx.font = '30px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('Region', canvas.width * 0.2, canvas.height * 0.3); // Draw text inside Region Controller
+        }
+
         function render() {
             gl.clear(gl.COLOR_BUFFER_BIT);
 
@@ -132,6 +154,9 @@
                 drawPacket(packet);
                 packet.index = (packet.index + 1) % packet.path.length;
             });
+
+            // Draw the text after rendering the WebGL content
+            drawText();
 
             requestAnimationFrame(render);
         }
