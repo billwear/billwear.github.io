@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebGL TCP/IP Animation</title>
+    <title>MAAS Network Animation</title>
     <style>
-        body { margin: 0; overflow: hidden; }
-        canvas { display: block; background: black; }
+        body { margin: 0; overflow: hidden; background: white; }
+        canvas { display: block; }
     </style>
 </head>
 <body>
@@ -21,7 +21,7 @@
             alert("WebGL not supported");
         }
 
-        gl.clearColor(0.0, 0.0, 0.0, 1.0);  // Black background
+        gl.clearColor(1.0, 1.0, 1.0, 1.0); // White background
         gl.clear(gl.COLOR_BUFFER_BIT);
 
         // WebGL Shader Programs
@@ -29,7 +29,7 @@
             attribute vec2 a_position;
             void main() {
                 gl_Position = vec4(a_position, 0.0, 1.0);
-                gl_PointSize = 8.0;
+                gl_PointSize = 10.0;
             }
         `;
 
@@ -88,16 +88,20 @@
         }
 
         const devices = {
-            client1: [-0.8, -0.5],
-            client2: [-0.8, 0.0],
-            router: [-0.3, 0.0],
-            server: [0.7, 0.0]
+            regionController: [-0.8, 0.3], // Blue (Region Controller)
+            rackController: [-0.3, 0.3], // Green (Rack Controller)
+            machines: [
+                [-0.1, -0.2], [0.1, -0.2], [0.3, -0.2], [0.5, -0.2], [0.7, -0.2] // Gray (Machines in rack)
+            ]
         };
 
         const packets = [
-            { path: createPacketPath(devices.client1, devices.router, 50), index: 0, color: [1.0, 0.0, 0.0, 1.0] },  // Red
-            { path: createPacketPath(devices.client2, devices.router, 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] },  // Green
-            { path: createPacketPath(devices.router, devices.server, 50), index: 0, color: [0.0, 0.0, 1.0, 1.0] }   // Blue
+            { path: createPacketPath(devices.regionController, devices.rackController, 50), index: 0, color: [0.0, 0.0, 1.0, 1.0] },  // Blue packet (Region → Rack)
+            { path: createPacketPath(devices.rackController, devices.machines[0], 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] },  // Green packet (Rack → Machine 1)
+            { path: createPacketPath(devices.rackController, devices.machines[1], 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] },  // Green packet (Rack → Machine 2)
+            { path: createPacketPath(devices.rackController, devices.machines[2], 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] },  // Green packet (Rack → Machine 3)
+            { path: createPacketPath(devices.rackController, devices.machines[3], 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] },  // Green packet (Rack → Machine 4)
+            { path: createPacketPath(devices.rackController, devices.machines[4], 50), index: 0, color: [0.0, 1.0, 0.0, 1.0] }   // Green packet (Rack → Machine 5)
         ];
 
         function drawDevice(position, color) {
@@ -116,10 +120,12 @@
             gl.clear(gl.COLOR_BUFFER_BIT);
 
             // Draw devices
-            drawDevice(devices.client1, [1.0, 1.0, 1.0, 1.0]); // White
-            drawDevice(devices.client2, [1.0, 1.0, 1.0, 1.0]); // White
-            drawDevice(devices.router, [1.0, 1.0, 0.0, 1.0]); // Yellow
-            drawDevice(devices.server, [1.0, 0.5, 0.5, 1.0]); // Pink
+            drawDevice(devices.regionController, [0.0, 0.0, 1.0, 1.0]); // Blue (Region Controller)
+            drawDevice(devices.rackController, [0.0, 1.0, 0.0, 1.0]); // Green (Rack Controller)
+
+            devices.machines.forEach(machine => {
+                drawDevice(machine, [0.5, 0.5, 0.5, 1.0]); // Gray Machines
+            });
 
             // Move packets along their paths
             packets.forEach(packet => {
