@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple WebGL</title>
+    <title>WebGL Rotating Triangles</title>
 </head>
 <body>
     <canvas id="glCanvas"></canvas>
@@ -14,7 +14,7 @@
         if (!gl) {
             alert("WebGL not supported");
         } else {
-            gl.clearColor(0.0, 0.5, 0.5, 1.0);
+            gl.clearColor(0.0, 0.2, 0.3, 1.0);
             gl.clear(gl.COLOR_BUFFER_BIT);
         }
 
@@ -22,20 +22,24 @@
         const vsSource = `
             attribute vec2 a_position;
             uniform float u_angle;
+            uniform vec2 u_translation;
             void main() {
                 float s = sin(u_angle);
                 float c = cos(u_angle);
-                gl_Position = vec4(
+                vec2 rotatedPosition = vec2(
                     a_position.x * c - a_position.y * s,
-                    a_position.x * s + a_position.y * c,
-                    0.0, 1.0);
+                    a_position.x * s + a_position.y * c
+                );
+                gl_Position = vec4(rotatedPosition + u_translation, 0.0, 1.0);
             }
         `;
 
         // Fragment shader
         const fsSource = `
+            precision mediump float;
+            uniform vec4 u_color;
             void main() {
-                gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0);
+                gl_FragColor = u_color;
             }
         `;
 
@@ -66,7 +70,7 @@
         const positionBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-            0.0, 0.5,  -0.5, -0.5,  0.5, -0.5
+            0.0, 0.2,  -0.2, -0.2,  0.2, -0.2
         ]), gl.STATIC_DRAW);
 
         const positionLocation = gl.getAttribLocation(program, "a_position");
@@ -74,16 +78,32 @@
         gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
 
         const angleLocation = gl.getUniformLocation(program, "u_angle");
+        const translationLocation = gl.getUniformLocation(program, "u_translation");
+        const colorLocation = gl.getUniformLocation(program, "u_color");
 
-        function render(angle) {
+        const triangles = [
+            { x: -0.5, y: 0.5, angle: 0, speed: 0.01, color: [1.0, 0.0, 0.0, 1.0] }, // Red
+            { x: 0.5, y: 0.5, angle: 0, speed: -0.015, color: [0.0, 1.0, 0.0, 1.0] }, // Green
+            { x: -0.5, y: -0.5, angle: 0, speed: 0.02, color: [0.0, 0.0, 1.0, 1.0] }, // Blue
+            { x: 0.5, y: -0.5, angle: 0, speed: -0.025, color: [1.0, 1.0, 0.0, 1.0] }  // Yellow
+        ];
+
+        function render() {
             gl.clear(gl.COLOR_BUFFER_BIT);
             gl.useProgram(program);
-            gl.uniform1f(angleLocation, angle);
-            gl.drawArrays(gl.TRIANGLES, 0, 3);
-            requestAnimationFrame(() => render(angle + 0.01));
+
+            triangles.forEach(triangle => {
+                triangle.angle += triangle.speed;
+                gl.uniform1f(angleLocation, triangle.angle);
+                gl.uniform2f(translationLocation, triangle.x, triangle.y);
+                gl.uniform4fv(colorLocation, triangle.color);
+                gl.drawArrays(gl.TRIANGLES, 0, 3);
+            });
+
+            requestAnimationFrame(render);
         }
 
-        render(0);
+        render();
     </script>
 </body>
 </html>
