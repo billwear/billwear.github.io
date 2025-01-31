@@ -1,66 +1,22 @@
-j<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAAS</title>
-    <style>
-        body { margin: 0; }
-
-    </style>
+    <title>Simple WebGL</title>
 </head>
 <body>
-    <div style="text-align: left; padding: 20px; font-family: Arial, sans-serif;">
-        <h1>MAAS</h1>
-        <p>MAAS (Metal as a Service) provisions bare metal servers and virtual machines.  It creates a single point of control that removes a lot of the logistical errors associated with manual hookup, configuration, and discovery. MAAS also makes it very easy to run your racks -- or even your whole datacenter -- remotely. This document explains how MAAS does all this.</p>
+    <canvas id="glCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById("glCanvas");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const gl = canvas.getContext("webgl");
 
-<h2>Network discovery</h2>
-
-<p>One of the first ways that MAAS cuts down on manual errors is called network discovery. MAAS listens passively to IP traffic on any network it can see. As it does so, it observes other devices receiving and responding to TCP packets, and it captures each device's IP address.
-
-MAAS also captures any other identifying information that's available. For example, it also uses mDNS to collect and present the hostname, if available. All of the captured information is summarized in a discovery dashboard.</p>
-
-<h2>The BMC</h2>
-
-Machines that MAAS can provision have a baseboard management controller or BMC. A BMC is a separate CPU often included on the motherboard of servers and devices.  Its capabilities are limited to managing and monitoring the health of the device. The BMC has sensors for physical characteristics like temperature and power supply voltage, and controls for rebooting or power-cycling the device.</p>
-
-<p>MAAS uses the BMC to turn remote devices on or off, and reboot them at will. A BMC can also monitor BIOS or UEFI, provide a serial console for the device, and do a few other things with the hardware -- but most of them are uninteresting from a MAAS perspective.  For the purposes of this discussion, our main interest in the BMC is the ability to power cycle and reboot machines.</p>
-
-<h2>Network booting and PXE</h2>
-
-<p>Power-cycling a machine is all well and good, but MAAS can't actually provision the machine until it's enabled to network boot. This just means that the BIOS or UEFI firmware must be set to first attempt to boot from the network connection on the device's Network Interface Card (NIC).</p>
-
-<p>This also means the NIC must be capable of PXE booting (PXE stands for Preboot Execution Environment). PXE booting is pretty basic: the NIC tries to discover a DHCP server on its connection and waits for an answer. The answer must contain two things: a usable IP address and a server that can provide booting instructions.</p>
-
-<h2>DHCP</h2>
-
-<p>So we've seen that the BMC handles power cycling the machine, and the NIC handles booting it remotely. Let's quickly dive into DHCP, which mediates the boot process.</p>
-
-<p>DHCP stands for Dynamic Host Control Protocol, which simply means that it gives a host a unique IP address that won't collide with other devices on that network. It also does a couple of other things, one of which is very useful to PXE booting.</p>
-
-<p>The DHCP protocol consists of four messages:</p>
-
-<ol>
-<li>DISCOVER: The machine that wants an IP address asks to discover any DHCP servers visible to its network segmemt.</li>
-<li>OFFER: Any available DHCP server on the segment offers to lease the machine a specific, unique IP address.</li>
-<li>REQUEST: The machine requests to accept one of the offers (there can be more than one DHCP server on a network).</li>
-<li>ACKNOWLEDGE: The DHCP server confirms to the machine that the offered IP is now leased to that machine.
-</ol>
-
-<h2>Next server and the NBP</h2>
-
-PXE booting requires that an optional DHCP parameter called <code>next-server</code> be set. 
-
- 
-When network booting, the PXE-capable NIC sends a DHCP request to its connected networks, asking for an IP address for itself, and also for the IP address of a connected TFTP (Trivial File Transport Protocol) server that can provide a bootable file called a NBP (Network Boot Packet). We'll cover this somewhat complex sounding operation in just a minute.
-
-<h2>Enlistment</h2>
-
-<p>Administrators can use the dashboard to enlist machines that need to be remotely provisioned. MAAS doesn't do anything with devices that aren't enlisted, but it doesn't forget them.
-
-        
-    </div>
-
+        if (!gl) {
+            alert("WebGL not supported");
+        } else {
+            gl.clearColor(0.0, 0.5, 0.5, 1.0); // Teal color
+            gl.clear(gl.COLOR_BUFFER_BIT);
+        }
+    </script>
 </body>
 </html>
