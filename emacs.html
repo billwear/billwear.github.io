@@ -128,7 +128,7 @@
 	  These three functions allow me to use Emacs on any device where I can run <code>git</code> and the Emacs binary itself.  This includes my Android phone, running the F-droid version of Termux.
 	</p>
 	<p>
-	  My entire home directory (everywhere) is actually <code>git</code> repository, with reasonable exclusions for three types of things:
+	  My entire home directory (everywhere) is actually a <code>git</code> repository, with reasonable exclusions for three types of things:
 	</p>
 	<ol>
 	  <li>Files and directories specific to the local system's OS.</li>
@@ -138,6 +138,9 @@
 	<p>
 	  To deal with these, I consolidate them into a few directories and then use the <code>.gitignore</code> file to keep them from getting backed up with my homedir.
 	</p>
+<p>
+For those who wonder, you can turn any directory into a git repo; just work from the remote first.
+</p>
 	<p>
 	  Here's how these three functions work:
 	<ul>
@@ -187,6 +190,8 @@
 	(error-message-string err))))))
 
 	</pre>
+<p>
+The next block of functions are just
 	<pre>
 (defun my/copy-current-line ()
   "Copy the current line to the kill ring without selecting it."
