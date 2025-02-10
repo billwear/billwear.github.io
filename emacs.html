@@ -90,13 +90,13 @@
         <p class="intro">
             it does vary from time to time
         </p>
-	<p class="bodytext">
+	<p>
 	  I /could/ talk all day about Emacs, but it's a lot easier for you to get an idea how I use it by just looking at my <code>.emacs</code> file.  Rather than explaining too much, let me just dive right in.
 	</p>
 	<h2>
 	  Revision history
 	</h2>
-	<p class="bodytext">
+	<p>
 	  I started late last year adding a revision history to my .emacs file.  Like most power users, I used to declare Emacs "bankrupcy" from time to time and start over with a blank slate.  This last few updates, though, I've saved a lot of stuff, because it's working well for me.  In early February, I decided to let ChatGPT see what it could recommend for configuration.  It gave me lots of stuff -- not all of it working elisp code, by any means, and its explanations were often just plain wrong -- but it was just a way to branch out a little and change my approach a bit.
 	<pre>
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -116,13 +116,62 @@
 	<p>
 	  Since I started programming in <a href="https://en.wikipedia.org/wiki/BCPL">BCPL</a>, then B, and later C, putting function definitions above the first point of use is an old habit.  Yes, I'm that old.  Don't knock it; proud to still be kicking and writing technical documentation full time for money.
 	</p>
-	<p class="bodytext">
-	  These are in alpha order, so I'll just briefly describe each of them for now.
+	<p>
+	  These are normally in alpha order (again, old programming habits die hard, or never), but I've regrouped them for the purposes of coherent discussion.
 	</p>
 	<pre>
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; U S E R   F U N C T I O N S          ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	</pre>
+	<p>
+	  These three functions allow me to use Emacs on any device where I can run <code>git</code> and the Emacs binary itself.  This includes my Android phone, running the F-droid version of Termux.
+	</p>
+	<p>
+	  My entire home directory (everywhere) is actually <code>git</code> repository, with reasonable exclusions for three types of things:
+	</p>
+	<ol>
+	  <li>Files and directories specific to the local system's OS.</li>
+	  <li>Things that are already part of another <code>git</code> repo.</li>
+	  <li>Things that don't need to be backed up on a repo, because they take up way too much disk space (like photographs, backed up to external drives) or because they're too personal to even commit (like my tax returns).</li>
+	</ol>
+	<p>
+	  To deal with these, I consolidate them into a few directories and then use the <code>.gitignore</code> file to keep them from getting backed up with my homedir.
+	</p>
+	<p>
+	  Here's how these three functions work:
+	<ul>
+	  <li>
+	    <code>my/pull-homedir-on-startup</code> updates my homedir when Emacs starts; this may or may not pull updates to <code>.emacs</code> in time, so sometimes, I have to restart Emacs once.  Rarely happens, tho.  This function is linked to the startup hook.
+	  </li>
+	  <li>
+	    <code>my/git-auto-sync</code> is run on a timer (currently just a few minutes).  Since it's <code>git</code>, I can always back out if I didn't want to save those changes.  This function makes it possible for me to walk away, given that it does a full save with <code>(save-some-buffers ...)</code> before committing.  I can get up from my desk at 6 PM, walk away, and within no more than 10 minutes, access what I was just working on from whatever devices are set up to use the repo.
+	  </li>
+	  <li>
+	    <code>my/commit-homedir-on-shutdown</code> puts things away every time I shut down Emacs, or I should say correctly, every time Emacs shuts down in a controller manner.
+	  </li>
+	</ul>
+	<pre>
+(defun my/pull-homedir-on-startup ()
+  (let ((default-directory "~/"))
+    (condition-case err
+        (progn
+          (shell-command "git pull"))
+      (error
+       (message
+	"Error during git pull: %s"
+	(error-message-string err))))))
+
+(defun my/git-auto-sync ()
+  "Attempt to push local changes to the main branch"
+  (interactive)
+  (save-some-buffers t)
+  (let ((default-directory hdir))
+    (shell-command "git add .")
+    (shell-command
+     "git commit -m 'pre-sync autocommit'")
+    (shell-command "git push")))
+
 (defun my/commit-homedir-on-shutdown ()
   (save-some-buffers t)
   (let ((default-directory hdir))
@@ -137,6 +186,8 @@
 	"Error during save and commit: %s"
 	(error-message-string err))))))
 
+	</pre>
+	<pre>
 (defun my/copy-current-line ()
   "Copy the current line to the kill ring without selecting it."
   (interactive)
@@ -168,16 +219,6 @@
   "open the user's init file."
   (interactive)
   (find-file user-init-file))
-
-(defun my/git-auto-sync ()
-  "Attempt to push local changes to the main branch"
-  (interactive)
-  (save-some-buffers t)
-  (let ((default-directory hdir))
-    (shell-command "git add .")
-    (shell-command
-     "git commit -m 'pre-sync autocommit'")
-    (shell-command "git push")))
 
 (defun my/grep-thru-homedir (search-term)
   "Prompt for a SEARCH-TERM and perform rgrep in a fixed directory.
@@ -250,16 +291,6 @@ If the wildcard 'all' is specified, search through all files."
                (ddate-output (or (string-trim (shell-command-to-string "ddate")) "Ddate Unavailable"))
                (fortune-output (or (string-trim (shell-command-to-string "fortune")) "No fortune available")))
           (insert (format "\n%s\n%s\n%s\n\n" date-output ddate-output fortune-output)))))))
-
-(defun my/pull-homedir-on-startup ()
-  (let ((default-directory "~/"))
-    (condition-case err
-        (progn
-          (shell-command "git pull"))
-      (error
-       (message
-	"Error during git pull: %s"
-	(error-message-string err))))))
 
 (defun my/run-bash-ansi-term ()
   "Open an ansi-term running bash."
