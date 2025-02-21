@@ -1,155 +1,108 @@
+*"Speak clearly, listen carefully, pay close attention\...*
 
-Otherwise known as "chatronynms," many of these came of age in the IRC
-era of the 80s.
+There comes a moment in life, often in the quietest of hours, when one
+realizes that the world will continue on its wayward course, indifferent
+to our desires or frustrations. And it is then, perhaps, that a subtle
+truth begins to emerge: the only thing we truly possess, the only thing
+we might, with enough care, exert some mastery over, is our mind. It is
+not a realization of resignation, but rather of liberation. For if the
+mind can be ordered, if it can be made still in the midst of this
+restless life, then we have already discovered the key to a deeper kind
+of freedom.
 
-  --------------------- ----------------------------------------------------------
-  **nym**               **expansion**
-  \<3                   i like that comment
-  \<g\>                 grin
-  3bs                   three beers short
-  aamof                 as a matter of fact
-  adn                   any day now
-  afaiac                as far as i am concerned
-  afaict                as far as i can tell
-  afaik                 as far as i know
-  afair                 as far as i remember
-  afk                   away from the keyboard
-  afpsoagf              a few punches short of a good fight
-  afssoap               a few sandwiches short of a picnic
-  aopc                  reciting local national motto
-  asap                  as soon as possible
-  asl pls               age sex location please
-  athyrio               and the horse you rode in on
-  atm                   at the moment
-  atp                   at this point
-  aybabtu               all your base are belong to us
-  b4n                   bye for now
-  bak                   back at (my) keyboard
-  bbfn                  bye bye for now
-  bbiab                 be back in a bit
-  bbiaf                 be back in a few
-  bbl                   be back later
-  bbs                   be back shortly
-  bbs                   be back soon
-  beg                   big evil grin
-  brb                   be right back/bathroom break
-  bta                   but then again
-  btw                   by the way
-  c-c-c-combo breaker   call a halt to repeated posts
-  cp                    coder pig
-  cq...                 looking for...
-  ctc                   care to chat?
-  cya                   see ya
-  d/c                   disconnected
-  djiad                 darnit jim, i'm a doctor
-  djiad                 not my area of expertise
-  e.g.                  exempli gratia
-  faq                   frequently asked questions
-  fb                    fine business
-  focl                  falling off chair laughing
-  ftw                   for the win
-  fwiw                  for what it's worth
-  fyi                   for your information
-  ga                    good afternoon
-  gm                    good morning
-  gmta                  great minds think alike
-  gmtaasdo              great minds think alike, and so do ours
-  gnsdily               good night, sweet dreams, i love you
-  goybwaroc             get on your big wheel and ride on, cowboy
-  gtg                   got to go
-  hdj                   irretrievably broken (he's dead, jim)
-  hth                   hope that helps
-  hybs                  christian greeting
-  hyfj                  another christian greeting
-  iaadbnyd              i am a doctor, but not your doctor
-  iaalbnyl              i am a lawyer, but not your lawyer
-  ianad                 i am not a doctor
-  ianaitp               i am not an IT person
-  ianal                 i am not a lawyer
-  ianyg                 i am not your guru (don't ask me)
-  iapnad                i'm a programmer, not a doctor
-  inyitp                i'm not your IT person
-  ic                    i see
-  ifypfy                i fixed your post for you
-  iha                   i hate acronyms
-  iirc                  if i recall correctly
-  imho                  in my humble opinion
-  imnsho                in my not so humble opinion
-  imo                   in my opinion
-  iow                   in other words
-  irl                   in real life
-  isagn                 i see a great need
-  istr                  i seem to recall
-  ito                   in terms of
-  itt                   i think that
-  j/k                   just kidding
-  jk                    just kidding
-  jsia                  just say it already
-  kbn                   gimme a minute to break it
-  kbn                   klaatu barada nikto
-  kbn                   stand down, cowboy \^\^
-  kwh                   kilroy was here
-  l8r                   later
-  lahith                (i need that) like a hole in the head
-  le                    later edit
-  llap                  live long and prosper
-  lmao                  laughing my %%% off
-  lol                   laughing out loud
-  ltns                  long time no see
-  lts                   laughing to self
-  ly                    love you
-  mil                   mother-in-law
-  motd                  message of the day
-  n/a                   no attachment
-  n/m                   nevermind
-  n/p                   no problem - np also used
-  n/t                   no text
-  nhdbof                observing a religious holiday/ritual
-  nmcnmm                not my circus, not my monkeys
-  np                    no problem
-  oic                   oh, I see
-  omg                   oh, my god
-  op                    original poster
-  opiahh                op is a hose head
-  otoh                  on the other hand
-  pal2                  peace and long life
-  ppl                   people
-  re                    re hi or re hello
-  rofl                  rolling on floor laughing
-  roflmao               rolling on floor laughing my arse off
-  rotfl                 rolling on the floor laughing
-  rtfm                  read the **\*\*\*** manual
-  rtfm                  read the full manual
-  sahm                  stay at home mom
-  sio                   spit it out
-  shlm                  jewish greeting
-  slm                   muslim greeting
-  smmas                 sudo make me a sandwich
-  st                    spell that
-  ta                    thanks/again
-  tafn                  that's all for now
-  tam                   thanks a million
-  tmi                   too much information
-  tsta                  try spelling that again
-  ttyl                  talk (type) to you later
-  ttys                  talk (type) to you soon
-  ty                    thank you thx thanks
-  w8                    wait
-  wb                    welcome back
-  wc?                   are you hungry? (want chinese?)
-  we                    whatever
-  w/e                   whatever
-  wfm                   works for me
-  wsof                  way short of fudge (to give)
-  wtf                   what, the fudge?
-  wtf                   why the face?
-  wtg                   way to go
-  ww                    wire weenie (hardware person)
-  wx                    weather
-  wysineutwyg           what you see is not entirely unrelated to what you get
-  wysiwyg               what you see is what you get
-  wywtci                whatever (you want to call it) \[origin of "whatever"?\]
-  ygbkm                 you gotta be kidding me
-  ymmv                  your milage may vary
-  yold                  year of our lady of discord
-  --------------------- ----------------------------------------------------------
+## Observe your thoughts
+
+But how does one begin? It is not with grand declarations or bold,
+sweeping changes. That would miss the point entirely. Rather, it is with
+a gentle attention to the present, a deliberate shift in the way we move
+through the world. We begin by paying attention to what our mind
+does---its wanderings, its anxieties, its compulsions. It is a garden
+untended, overgrown with concerns that may not even be our own. And the
+first step is simply to watch, to observe how the mind moves, without
+judgment, without rush.
+
+In this quiet observation, we begin to see patterns. The mind leaps from
+one thing to another, rarely resting. It is caught in a web of habits,
+most of which we never consciously chose. But, once we notice this, a
+door opens. There is space, however small, between the thoughts. And in
+that space, if we are patient, we can decide how to respond rather than
+being dragged along by every impulse or fear. This is not about control
+in the traditional sense, but about clarity. To act, not from reflex,
+but from intent.
+
+It is a simple beginning, but one of great consequence. For when we
+reclaim our attention, even in this small way, we are no longer mere
+passengers on the journey. We become, in a sense, our own guides.
+
+## Continued practice
+
+As we grow in this practice of attention, something else becomes clear:
+much of what occupies our thoughts is unnecessary. The mind is
+cluttered, filled with concerns that seem urgent but, on closer
+inspection, do little to serve our deeper well-being. Simplification is
+not just a matter of decluttering our physical surroundings---it is a
+way of thinking, of living. As we quiet the noise within, we see more
+clearly what truly matters. We focus, not on everything, but on the
+essentials. We pare down, not by force, but by choice.
+
+This process of simplification is not an escape from complexity. It is,
+in fact, a way of engaging with it more meaningfully. There are things
+in life that are intricate, yes, but not everything needs our attention
+at once. What truly requires our effort can be approached in small
+steps, in manageable pieces. The mind works best when it is focused on
+one thing at a time, when it is allowed to give itself fully to the task
+at hand. In this way, the most complex of undertakings becomes simple,
+not because it is easy, but because we have allowed it to unfold
+naturally, one step after the other.
+
+## It's a process
+
+It is tempting, in moments of ambition, to think that we must change
+everything all at once, that the path to mastery or peace requires a
+sudden, dramatic shift. But this is rarely the case. In truth, most
+lasting changes come from small, deliberate actions. It is in the
+repetition of these small actions, over time, that we build strength,
+that we build the habits of mind that lead to deeper clarity. Just as a
+mountain is climbed not in great leaps but in steady, measured steps, so
+too is the mind brought into alignment by daily, patient attention to
+the way we think.
+
+That \"small action\" is simply *stating a mild preference*. As you
+being to notice your thoughts, you can very simply address the ones that
+seem particularly good or bad. For the good ones, just say quietly, to
+yourself, in your head, \"I like having that thought.\" As to the
+others? \"I don\'t like thinking this way.\" It seems trivial and
+ineffective, but it is, in fact, life-changing.
+
+## Strength and speed together
+
+But in this process, we must also remember something important: life is
+not meant to be rushed through. It is not a race, nor is it a problem to
+be solved. It is an experience to be lived, and living well requires
+presence. To focus on one thing deeply, to give it your full attention,
+is to experience it fully. And when we do this, something remarkable
+happens. Time, which so often feels like it is slipping through our
+fingers, begins to slow. Moments become rich, textured. Even the
+simplest of tasks takes on a new significance when approached with care,
+with attention.
+
+This is the quiet art of living well. It does not demand that we abandon
+the world, but that we engage with it more mindfully. It asks that we
+slow down, that we look more closely, that we listen more carefully. For
+in doing so, we discover that much of what we seek---clarity, peace,
+even strength---was always within reach. It was simply waiting for us to
+stop, to pay attention, and to begin again with intention.
+
+The mind, like a garden, requires tending. It needs patience, a steady
+hand, and, above all, consistency. There will be days when it seems
+unruly, when old habits return, and when focus feels elusive. But these
+days, too, are part of the process. Each small effort, each moment of
+renewed attention, builds upon the last. Over time, these moments
+accumulate, and what was once difficult becomes second nature.
+
+And so, the journey to mastery of the mind begins not with grand
+gestures but with the simplest of practices: the practice of paying
+attention. Attention to the present, attention to what truly matters,
+and attention to the quiet spaces in between. In this way, step by step,
+thought by thought, we move closer to that elusive state of clarity, of
+peace, and of freedom.
