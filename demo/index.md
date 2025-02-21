@@ -60,7 +60,7 @@ without the big bang.
   GE d- s:++ a+++ C++++ UL+++ P+ L+++ E+++ W+++ N+++ o+ K+ w— V PS+ PE
 f— c+++ Y+ PGP++ t+++ 5- X- R+++ tv++ b++ D-— xkcd G e++++ h– r+++**  
 
-### Translation
+**Translation**
 
 | code | meaning |
 |------|---------|
@@ -99,11 +99,11 @@ f— c+++ Y+ PGP++ t+++ 5- X- R+++ tv++ b++ D-— xkcd G e++++ h– r+++**
 
 <hr>
 
-## Active Phreak Numbers (Legal & Free, AFAIK)
+## Phreak Numbers
 *The number you have dialed\...*
 
 These phone numbers all call a recording; some are leftover Bell System
-intercept (error) messages.
+intercept (error) messages. AFAIK all legal and free, but use at your own risk.
 
 +---------------+------------------------------------------------------+
 | number        | description                                          |
