@@ -198,193 +198,160 @@ intercept (error) messages.
 
 <hr>
 
-## Lists
+## Chatronynms
 
-This is a plain old bulleted list:
 
-* Banana
-* Paper boat
-* Cucumber
-* Rocket
+Otherwise known as "chatronynms," many of these came of age in the IRC
+era of the 80s.
 
-Ordered lists look pretty much as you'd expect:
-
-1. Goals
-1. Motivations
-    1. Intrinsic
-    1. Extrinsic
-1. Second-order effects
-
-It's nice to visualize trees.
-This is a regular unordered list with a `tree` class:
-
-<ul class="tree"><li><p style="margin: 0;"><strong>/dev/nvme0n1p2</strong></p>
-
-* usr                               
-    * local                         
-    * share                         
-    * libexec                       
-    * include                       
-    * sbin                          
-    * src                           
-    * lib64                         
-    * lib                           
-    * bin                           
-    * games                         
-        * solitaire
-        * snake
-        * tic-tac-toe
-    * media                         
-* media                             
-* run                               
-* tmp                               
-
-</li></ul>
-
-## Tables
-
-We can use regular tables that automatically adjust to the monospace grid.
-They're responsive. 
-
-<table>
-<thead>
-  <tr>
-    <th class="width-min">Name</th>
-    <th class="width-auto">Dimensions</th>
-    <th class="width-min">Position</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Boboli Obelisk</td>
-    <td>1.41m &times; 1.41m &times; 4.87m</td>
-    <td>43°45'50.78"N 11°15'3.34"E</td>
-  </tr>
-  <tr>
-    <td>Pyramid of Khafre</td>
-    <td>215.25m &times; 215.25m &times; 136.4m</td>
-    <td>29°58'34"N 31°07'51"E</td>
-  </tr>
-</tbody>
-</table>
-
-Note that only one column is allowed to grow.
-
-## Forms
-
-Here are some buttons:
-
-<nav>
-    <button>Reset</button>
-    <button>Save</button>
-</nav>
-
-And inputs:
-
-<form class="grid">
-<label>First name <input type="text" placeholder="Placeholder..." /></label>
-<label>Last name <input type="text" placeholder="Text goes here..." /></label>
-<label>Age <input type="text" value="30" /></label>
-</form>
-
-And radio buttons:
-
-<form class="grid">
-<label><input name="radio" type="radio" /> Option #1</label>
-<label><input name="radio" type="radio" /> Option #2</label>
-<label><input name="radio" type="radio" /> Option #3</label>
-</form>
-
-## Grids
-
-Add the `grid` class to a container to divide up the horizontal space evenly for the cells.
-Note that it maintains the monospace, so the total width might not be 100%.
-Here are six grids with increasing cell count:
-
-<div class="grid"><input readonly value="1" /></div>
-<div class="grid"><input readonly value="1" /><input readonly value="2" /></div>
-<div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /></div>
-<div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /></div>
-<div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" /></div>
-<div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" /></div>
-
-If we want one cell to fill the remainder, we set `flex-grow: 1;` for that particular cell.
-
-<div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3!" style="flex-grow: 1;" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" /></div>
-
-## ASCII Drawings
-
-We can draw in `<pre>` tags using [box-drawing characters](https://en.wikipedia.org/wiki/Box-drawing_characters):
-
-```
-╭─────────────────╮
-│ MONOSPACE ROCKS │
-╰─────────────────╯
-```
-
-To have it stand out a bit more, we can wrap it in a `<figure>` tag, and why not also add a `<figcaption>`.
-
-<figure>
-<pre>
-┌───────┐ ┌───────┐ ┌───────┐
-│Actor 1│ │Actor 2│ │Actor 3│
-└───┬───┘ └───┬───┘ └───┬───┘
-    │         │         │    
-    │         │  msg 1  │    
-    │         │────────►│    
-    │         │         │    
-    │  msg 2  │         │    
-    │────────►│         │    
-┌───┴───┐ ┌───┴───┐ ┌───┴───┐
-│Actor 1│ │Actor 2│ │Actor 3│
-└───────┘ └───────┘ └───────┘</pre>
-<figcaption>Example: Message passing.</figcaption>
-</figure>
-
-Let's go wild and draw a chart!
-
-<figure><pre>
-                      Things I Have
-                                              
-    │                                     ████ Usable
-15  │
-    │                                     ░░░░ Broken
-    │
-12  │             ░            
-    │             ░            
-    │   ░         ░              
- 9  │   ░         ░              
-    │   ░         ░              
-    │   ░         ░                    ░
- 6  │   █         ░         ░          ░
-    │   █         ░         ░          ░
-    │   █         ░         █          ░
- 3  │   █         █         █          ░
-    │   █         █         █          ░
-    │   █         █         █          ░
- 0  └───▀─────────▀─────────▀──────────▀─────────────
-      Socks     Jeans     Shirts   USB Drives
-</pre></figure>
-
-## Media
-
-Media objects are supported, like images and video:
-
-![A room in an old French castle (2024)](castle.jpg)
-
-![[The Center of the Web (1914), Wikimedia](https://en.wikisource.org/wiki/Page:The_Center_of_the_Web_(1914).webm/11)](https://upload.wikimedia.org/wikipedia/commons/e/e0/The_Center_of_the_Web_%281914%29.webm)
-
-They extend to the width of the page, and add appropriate padding in the bottom to maintain the monospace grid.
-
-## Discussion
-
-That's it for now.
-I've very much enjoyed making this, pushing my CSS chops and having a lot of fun with the design.
-If you like it or even decide to use it, please [let me know](https://x.com/owickstrom).
-
-The full source code is here: [github.com/owickstrom/the-monospace-web](https://github.com/owickstrom/the-monospace-web)
-
-Finally, a massive shout-out to [U.S. Graphics Company](https://x.com/usgraphics) for all the inspiration.
-
-UNIX is a registered trademark
-of The Open Group
+  --------------------- ----------------------------------------------------------
+  **nym**               **expansion**
+  \<3                   i like that comment
+  \<g\>                 grin
+  3bs                   three beers short
+  aamof                 as a matter of fact
+  adn                   any day now
+  afaiac                as far as i am concerned
+  afaict                as far as i can tell
+  afaik                 as far as i know
+  afair                 as far as i remember
+  afk                   away from the keyboard
+  afpsoagf              a few punches short of a good fight
+  afssoap               a few sandwiches short of a picnic
+  aopc                  reciting local national motto
+  asap                  as soon as possible
+  asl pls               age sex location please
+  athyrio               and the horse you rode in on
+  atm                   at the moment
+  atp                   at this point
+  aybabtu               all your base are belong to us
+  b4n                   bye for now
+  bak                   back at (my) keyboard
+  bbfn                  bye bye for now
+  bbiab                 be back in a bit
+  bbiaf                 be back in a few
+  bbl                   be back later
+  bbs                   be back shortly
+  bbs                   be back soon
+  beg                   big evil grin
+  brb                   be right back/bathroom break
+  bta                   but then again
+  btw                   by the way
+  c-c-c-combo breaker   call a halt to repeated posts
+  cp                    coder pig
+  cq...                 looking for...
+  ctc                   care to chat?
+  cya                   see ya
+  d/c                   disconnected
+  djiad                 darnit jim, i'm a doctor
+  djiad                 not my area of expertise
+  e.g.                  exempli gratia
+  faq                   frequently asked questions
+  fb                    fine business
+  focl                  falling off chair laughing
+  ftw                   for the win
+  fwiw                  for what it's worth
+  fyi                   for your information
+  ga                    good afternoon
+  gm                    good morning
+  gmta                  great minds think alike
+  gmtaasdo              great minds think alike, and so do ours
+  gnsdily               good night, sweet dreams, i love you
+  goybwaroc             get on your big wheel and ride on, cowboy
+  gtg                   got to go
+  hdj                   irretrievably broken (he's dead, jim)
+  hth                   hope that helps
+  hybs                  christian greeting
+  hyfj                  another christian greeting
+  iaadbnyd              i am a doctor, but not your doctor
+  iaalbnyl              i am a lawyer, but not your lawyer
+  ianad                 i am not a doctor
+  ianaitp               i am not an IT person
+  ianal                 i am not a lawyer
+  ianyg                 i am not your guru (don't ask me)
+  iapnad                i'm a programmer, not a doctor
+  inyitp                i'm not your IT person
+  ic                    i see
+  ifypfy                i fixed your post for you
+  iha                   i hate acronyms
+  iirc                  if i recall correctly
+  imho                  in my humble opinion
+  imnsho                in my not so humble opinion
+  imo                   in my opinion
+  iow                   in other words
+  irl                   in real life
+  isagn                 i see a great need
+  istr                  i seem to recall
+  ito                   in terms of
+  itt                   i think that
+  j/k                   just kidding
+  jk                    just kidding
+  jsia                  just say it already
+  kbn                   gimme a minute to break it
+  kbn                   klaatu barada nikto
+  kbn                   stand down, cowboy \^\^
+  kwh                   kilroy was here
+  l8r                   later
+  lahith                (i need that) like a hole in the head
+  le                    later edit
+  llap                  live long and prosper
+  lmao                  laughing my %%% off
+  lol                   laughing out loud
+  ltns                  long time no see
+  lts                   laughing to self
+  ly                    love you
+  mil                   mother-in-law
+  motd                  message of the day
+  n/a                   no attachment
+  n/m                   nevermind
+  n/p                   no problem - np also used
+  n/t                   no text
+  nhdbof                observing a religious holiday/ritual
+  nmcnmm                not my circus, not my monkeys
+  np                    no problem
+  oic                   oh, I see
+  omg                   oh, my god
+  op                    original poster
+  opiahh                op is a hose head
+  otoh                  on the other hand
+  pal2                  peace and long life
+  ppl                   people
+  re                    re hi or re hello
+  rofl                  rolling on floor laughing
+  roflmao               rolling on floor laughing my arse off
+  rotfl                 rolling on the floor laughing
+  rtfm                  read the **\*\*\*** manual
+  rtfm                  read the full manual
+  sahm                  stay at home mom
+  sio                   spit it out
+  shlm                  jewish greeting
+  slm                   muslim greeting
+  smmas                 sudo make me a sandwich
+  st                    spell that
+  ta                    thanks/again
+  tafn                  that's all for now
+  tam                   thanks a million
+  tmi                   too much information
+  tsta                  try spelling that again
+  ttyl                  talk (type) to you later
+  ttys                  talk (type) to you soon
+  ty                    thank you thx thanks
+  w8                    wait
+  wb                    welcome back
+  wc?                   are you hungry? (want chinese?)
+  we                    whatever
+  w/e                   whatever
+  wfm                   works for me
+  wsof                  way short of fudge (to give)
+  wtf                   what, the fudge?
+  wtf                   why the face?
+  wtg                   way to go
+  ww                    wire weenie (hardware person)
+  wx                    weather
+  wysineutwyg           what you see is not entirely unrelated to what you get
+  wysiwyg               what you see is what you get
+  wywtci                whatever (you want to call it) \[origin of "whatever"?\]
+  ygbkm                 you gotta be kidding me
+  ymmv                  your milage may vary
+  yold                  year of our lady of discord
+  --------------------- ----------------------------------------------------------
