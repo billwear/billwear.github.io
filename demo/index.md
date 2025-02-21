@@ -3,6 +3,7 @@ title: bill wear
 subtitle: netizen
 author: Bill Wear
 author-url: "mailto:wowear@gmail.com"
+version: 2.07
 lang: en
 toc-title: what's here
 ---
