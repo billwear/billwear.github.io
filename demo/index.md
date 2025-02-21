@@ -12,21 +12,96 @@ toc-title: what's here
 
 **Say what you mean**; because telepathy is still in beta testing.
 
-## The Basics
+**Be choosy with your media**, because your brain thinks it’s real. Unless, of course, you’re watching someone paint happy little trees.
 
-This document uses a few extra classes here and there, but mostly it's just markup.
-This, for instance, is a regular paragraph.
+**Speak clearly, listen carefully, pay close attention**; otherwise, you’ll end up in a conversation about quantum physics when you just asked for the time.
 
-Look at this horizontal break:
+**Do what you love**; life’s too short not to ply your craft. Just don’t expect it to pay the bills, unless your craft is printing money.
+
+**Keep it simple**; complex plans involve running, and who’s got the energy for that?
+
+**Start small and build a little at a time**; a mosaic is more beautiful than the finest concrete, and way less likely to get you sued for improper construction.
+
+**Network**; because who else will laugh at your “I’m not a robot” jokes?
+
+**Be who you are**; even a bent wire can carry a great light, especially in a modern art exhibit.
+
+**Build for strength, not just speed**; the hare may have had more Instagram followers, but the tortoise won the race.
+
+**Hack**; just remember, “try it and see” doesn’t apply to skydiving or lion taming.
+
+**Under-promise and over-deliver**; because everyone loves a surprise, especially when it’s not another birthday card.
+
+**Divide and conquer**; because life is essentially a giant game of strategy board games.
+
+**Do one thing well**; remember, unicorns are famous for just one horn.
+
+**Use what you have**; unless it’s a floppy disk, then maybe it’s time to upgrade.
+
+**Use levers, not people**; because people are terrible at being levers, they keep asking for coffee breaks.
+
+**Release early, release often**; otherwise, you’re just hoarding half-baked ideas, and there’s no market for those.
+
+**Distrust all claims for the one true way**; except for pizza, pizza is always the answer.
+
+**Think ahead, but don’t worship your plans**; all things are possible, except maybe skiing through a revolving door.
+
+**Think big: you are the universe**. And like any good universe, remember to occasionally expand beyond your current dimensions — just
+without the big bang.
+
+**Abhor violence in all its forms**, even contradicting others. Keep your peace, hold your tongue, and avoid turning into a debate club mascot.
+
+**Practice the Prime Directive**; unless you’re in a sci-fi movie, then totally ignore it.
+
+<hr>
+
+## My Geek Code
+
+  GE d- s:++ a+++ C++++ UL+++ P+ L+++ E+++ W+++ N+++ o+ K+ w— V PS+ PE
+f— c+++ Y+ PGP++ t+++ 5- X- R+++ tv++ b++ D-— xkcd G e++++ h– r+++**  
+
+### Translation
+
+| code | meaning |
+|------|---------|
+| GE | Geek of Engineering. | |
+| d- | I’m usually in jeans and a t-shirt. |
+| s:++ | I’m of average height, I’m a linebacker candidate. |
+| a+++ | age 60 and up (65 atm). |
+| C++++ | I’ll be first in line to get the new cybernetic interface installed into my skull. |
+| UL50 | I’ve been using Unix for 50 years (on Jun 14, 2024). |
+| P+++ | I’ve earned a living with Perl. |
+| L(U)+++ | I use Ubuntu Linux exclusively, mostly command line. |
+| E+++ | Emacs is my login shell!! M-x doctor is my psychologist! I use emacs to control my TV and toaster oven! All you vi people don’t know what you’re missing! I read alt.religion.emacs, alt.sex.emacs, and comp.os.emacs. |
+| W1.0+++ | I am an original Netizen, first logging on in 1994. |
+| N+++ | I read so many newsgroups that the next batch of news comes in before I finish reading the last batch, and I have to read for about 2 hours straight before I’m caught up on the morning’s news. Then there’s the afternoon. |
+| K+ | I like Kibo. If you know, you know. |
+| w— | Windows is bloatware. |
+| V | I’ve used VMS. Meh. |
+| PS+ | My whole concept of politics? Nobody has the right to legislate morality. |
+| PE | Distrust both government and business. |
+| f— | In matters of religion, I distrust all human claims for the one true way. |
+| c+++ | I am a cyberpunk all the way, including music. |
+| Y+ | I have an interest and concern in privacy issues, but in reality I am not really all that active or vocal. |
+| PGP++ | I have the most recent version and use it regularly. |
+| t+++ | Star Trek inspires me. I wonder about about warp field dynamics and the principles behind the transporter. I have owned the |
+TECH manual and the LP record. I speak some Klingon. I wear an IDIC. I still hate the LCARS interface, though: incredibly noisy, and it really sucks. |
+| 5 | Babylon 5 is sub-par. |
+| X-Files | It’s ok if you like paranoia and conspiracy stories. I don’t. |
+| R+++ | I’ve built and run my own dungeons for money. Lots of money. At comic-cons. With 100 little envelopes of dice I brought with me. |
+| tv— | Not much on TV anymore, though I sometimes watch it when I’m petting the cat. |
+| b++ | I find the time to get through at least one new book a month. |
+| D— | Dilbert doesn’t speak to me; I’ve tried to stay out of those type situations. |
+| xkcd | I check out xkcd from time to time; sometimes it’s really funny. |
+| G | I know what the geek code is and even did up this code. |
+| e++++ | I am well-educated, mostly by myself, but I did get more than one college degree. |
+| h+++ | I live in the swampy woods, on land I own, in a house I own outright, and try to live as self-sufficiently as possible. |
+| r+++ | I found my angel, and we’ve been married for decades now. |
 
 <hr>
 
 Lovely. We can hide stuff in the `<details`> element:
 
-<details>
-<summary>A short summary of the contents</summary>
-<p>Hidden gems.</p>
-</details>
 
 ## Lists
 
