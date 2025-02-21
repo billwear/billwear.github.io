@@ -1,0 +1,30 @@
+{
+  "name": "@owickstrom/the-monospace-web",
+  "version": "0.1.5",
+  "description": " A minimalist design exploration",
+  "main": "src/index.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/owickstrom/the-monospace-web.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "Oskar Wickström",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/owickstrom/the-monospace-web/issues"
+  },
+  "homepage": "https://github.com/owickstrom/the-monospace-web#readme",
+
+  "files": [
+    "src/index.css",
+    "src/reset.css",
+    "src/index.js",
+    "LICENSE",
+    "README.md"
+  ]
+}
