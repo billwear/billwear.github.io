@@ -1,6 +1,6 @@
 ---
-title: stormrider's websute
-subtitle: personal homepage
+title: billwear
+subtitle: -nix user
 author: Bill Wear
 author-url: "https://billwear.github.io"
 lang: en
