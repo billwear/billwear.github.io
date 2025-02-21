@@ -1,0 +1,207 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAAS</title>
+    <style>
+        body { margin: 0; }
+        canvas {
+    display: block;
+}
+        .slider-container {
+            position: absolute;
+            bottom: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slider to control the pulse -->
+    <div class="slider-container">
+        <input id="slider" type="range" min="0" max="100" value="0" style="width: 100%;">
+    </div>
+
+    <script>
+        // Set up scene, camera, renderer
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xf2f2f2);  // Ghostly light gray background color
+
+        const camera = new THREE.PerspectiveCamera(88, window.innerWidth / window.innerHeight, 0.1, 2000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Utility to create text label as a sprite
+        function createTextSprite(message, x, y, z, widthFactor = 1.0) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 500;
+            canvas.height = 200;
+
+            const context = canvas.getContext('2d');
+            context.font = 'bold 48px Arial';  // Normal text size
+            context.fillStyle = 'black';  // Black text color
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText(message, canvas.width / 2, canvas.height / 2);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+            const sprite = new THREE.Sprite(spriteMaterial);
+
+            // Scale sprite width according to the width factor (for centering over the box width)
+            sprite.scale.set(widthFactor, 2.0, 2);  // Proportional height for normal text appearance
+            sprite.position.set(x, y, z);
+            scene.add(sprite);
+        }
+
+        // Create NIC box
+        function createNICBox(x, y, z) {
+            const nicGroup = new THREE.Group();
+
+            // NIC base box (darker gray)
+            const boxGeometry = new THREE.BoxGeometry(1.8, 0.5, 0.5);  // Wider NIC box
+            const darkGrayMaterial = new THREE.MeshBasicMaterial({ color: 0xb0b0b0 });  // Darker gray fill
+            const nicBox = new THREE.Mesh(boxGeometry, darkGrayMaterial);
+            nicGroup.add(nicBox);
+
+            // Green indicator circle (always on)
+            const greenCircleGeometry = new THREE.CircleGeometry(0.15, 32);
+            const greenMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+            const greenCircle = new THREE.Mesh(greenCircleGeometry, greenMaterial);
+            greenCircle.position.set(-0.2, 0.0, 0.26);  // Bottom left of NIC box
+            nicGroup.add(greenCircle);
+
+            // Black status circle (turns yellow later)
+            const blackCircleGeometry = new THREE.CircleGeometry(0.15, 32);
+            const blackMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+            const blackCircle = new THREE.Mesh(blackCircleGeometry, blackMaterial);
+            blackCircle.position.set(-0.6, 0.0, 0.26);  // Slightly to the left of the green circle
+            nicGroup.add(blackCircle);
+
+            nicGroup.position.set(x, y, z);
+            scene.add(nicGroup);
+
+            // Add "NIC" label (half the width of the NIC box)
+            createTextSprite('BMC', x - 0.5, y + 0.45, z, 4.0);  // NIC label centered with half-width
+
+            return { nicGroup, blackCircle };
+        }
+
+        // Function to create a server box with vents and lamp
+        function createServerBox(x, y, z, label, lampAlwaysGreen) {
+            const boxGroup = new THREE.Group();
+
+            // Outer box (gray)
+            const boxWidth = 1.5;
+            const outerGeometry = new THREE.BoxGeometry(boxWidth, 1, 1);
+            const outerMaterial = new THREE.MeshBasicMaterial({ color: 0x666666 });
+            const outerBox = new THREE.Mesh(outerGeometry, outerMaterial);
+
+            // On-lamp
+            const lampGeometry = new THREE.BoxGeometry(0.3, 0.1, 0.01);
+            const lampColor = lampAlwaysGreen ? 0x00ff00 : 0x003300;
+            const lampMaterial = new THREE.MeshBasicMaterial({ color: lampColor });
+            const lamp = new THREE.Mesh(lampGeometry, lampMaterial);
+            lamp.position.set(0, -0.4, 0.51);  // Slightly outside the front face
+
+            // Vent lines
+            const ventGroup = new THREE.Group();
+            const ventMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+            for (let i = -0.6; i <= 0.6; i += 0.2) {
+                const ventGeometry = new THREE.BoxGeometry(0.05, 0.8, 0.01);
+                const vent = new THREE.Mesh(ventGeometry, ventMaterial);
+                vent.position.set(i, 0, 0.51);
+                ventGroup.add(vent);
+            }
+
+            boxGroup.add(outerBox);
+            boxGroup.add(ventGroup);
+            boxGroup.add(lamp);
+            boxGroup.position.set(x, y, z);
+            scene.add(boxGroup);
+
+            // Add label centered and closer to the server box
+            const widthFactor = label === "BMC" ? 1.5 : 5.0;  // Width factor for normal labels
+            createTextSprite(label, x, y + 0.85, z, widthFactor);  // Centered and proportional text
+
+            return { boxGroup, lamp };
+        }
+
+        const maasServer = createServerBox(-3, 0, 0, "MAAS", true);  // MAAS always green
+        const machineServer = createServerBox(3, 0, 0, "Machine", false);  // Machine starts off
+        const nicBox = createNICBox(2.1, 0, 0);  // NIC positioned closer and wider
+
+        // Wire between MAAS and NIC
+        const wireGeometry = new THREE.CylinderGeometry(0.05, 0.05, 5.6);
+        const wireMaterial = new THREE.MeshBasicMaterial({ color: 0x444444 });
+        const wire = new THREE.Mesh(wireGeometry, wireMaterial);
+        wire.rotation.z = Math.PI / 2;
+        wire.position.set(-0.5, 0, 0);
+        scene.add(wire);
+
+        // Pulse (sphere representing data transfer)
+        const pulseGeometry = new THREE.SphereGeometry(0.15, 32, 32);
+        const pulseMaterial = new THREE.MeshBasicMaterial({ color: 0xFFCC00 });
+        const pulse = new THREE.Mesh(pulseGeometry, pulseMaterial);
+        pulse.position.set(-3, 0, 0);  // Start at MAAS
+        scene.add(pulse);
+
+        camera.position.z = 8;
+
+        // Function to update the pulse position and status lights
+        let nicGreen = false;
+        let machineGreen = false;
+
+        function updatePulsePosition(value) {
+            const startX = -3;
+            const endX = 2.1;
+            const newX = startX + (value / 100) * (endX - startX);
+            pulse.position.x = newX;
+
+            // Turn NIC status light yellow when pulse arrives
+            if (newX >= 1.4) {
+                nicBox.blackCircle.material.color.setHex(0xFFCC00);  // Yellow status light
+                nicGreen = true;
+
+                // Turn Machine lamp green after 1 second
+                setTimeout(() => {
+                    machineServer.lamp.material.color.setHex(0x00ff00);  // Green Machine lamp
+                    machineGreen = true;
+                }, 1000);
+            }
+            if (newX < 1.4) {
+                nicBox.blackCircle.material.color.setHex(0x000000);
+                nicGreen = true
+                machineServer.lamp.material.color.setHex(0x000000);
+                machineGreen = false;
+            }
+        }
+
+        // Slider listener
+        const slider = document.getElementById('slider');
+        slider.addEventListener('input', (event) => {
+            updatePulsePosition(event.target.value);
+        });
+
+        // Render loop
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+
+    </script>
+</body>
+</html>
