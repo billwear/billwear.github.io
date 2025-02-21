@@ -1,77 +1,770 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bill Wear</title>
-    <style>
-        /* General styles */
-        body {
-            font-family: 'Courier New', monospace;
-            background-color: #333;
-            color: #f4f4f4;
-            text-align: center;
-            margin: 0;
-            padding: 2rem;
-        }
-
-        /* Header styles */
-        header {
-            margin-bottom: 2rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #888;
-        }
-
-        /* Main content */
-        .intro {
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 3rem;
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        /* Readable Links */
-        a {
-            color: #5b9bd5;  /* Lighter blue */
-            text-decoration: none;
-        }
-        a:hover {
-            color: #4a90e2; /* Slightly brighter on hover */
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Bill Wear" />
+  <title>bill wear</title>
+  <link rel="stylesheet" href="src/reset.css" />
+  <link rel="stylesheet" href="src/index.css" />
 </head>
 <body>
-    <header>
-        <h1>billwear</h1>
-        <p class="tagline">UNIX&trade; user since 140448720</p>
-    </header>
-    <main>
-        <p class="intro">
-            <a href="unix-philosophy.html">UNIX&trade; philosophy</a>. emacs. <a href="orgmode.html">org-mode</a>. networking. <a href="phreak.html">phreaking</a>. IRC. and other such stuff.
-        </p>
-    </main>
-    <footer>
-        <p>© 2001-2025 by Bill Wear.</p>
-<p>GNU GPL applies: don't use it without attribution.</p>
-<p>UNIX is a registered trademark of The Open Group.</p>
-    </footer>
+<table class="header">
+  <tr>
+    <td colspan="2" rowspan="2" class="width-auto">
+      <h1 class="title">bill wear</h1>
+      <span class="subtitle">netizen</span>
+    </td>
+    <th>Version</th>
+    <td class="width-min">v2.07</td>
+  </tr>
+  <tr>
+    <th>Updated</th>
+    <td class="width-min"><time style="white-space: pre;">2025-02-21</time></td>
+  </tr>
+  <tr>
+    <th class="width-min">Author</th>
+    <td class="width-auto"><a href="mailto:wowear@gmail.com"><cite>Bill
+Wear</cite></a></td>
+    <th class="width-min">License</th>
+    <td>MIT</td>
+  </tr>
+</table>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">what’s here</h2>
+<ul class="incremental">
+<li><a href="#the-netizens-way" id="toc-the-netizens-way">The Netizen’s
+Way</a></li>
+<li><a href="#my-geek-code" id="toc-my-geek-code">My Geek Code</a>
+<ul class="incremental">
+<li><a href="#translation" id="toc-translation">Translation</a></li>
+</ul></li>
+<li><a href="#active-phreak-numbers-legal-free-afaik"
+id="toc-active-phreak-numbers-legal-free-afaik">Active Phreak Numbers
+(Legal &amp; Free, AFAIK)</a></li>
+<li><a href="#lists" id="toc-lists">Lists</a></li>
+<li><a href="#tables" id="toc-tables">Tables</a></li>
+<li><a href="#forms" id="toc-forms">Forms</a></li>
+<li><a href="#grids" id="toc-grids">Grids</a></li>
+<li><a href="#ascii-drawings" id="toc-ascii-drawings">ASCII
+Drawings</a></li>
+<li><a href="#media" id="toc-media">Media</a></li>
+<li><a href="#discussion" id="toc-discussion">Discussion</a></li>
+</ul>
+</nav>
+<h2 id="the-netizens-way">The Netizen’s Way</h2>
+<p><strong>Say what you mean</strong>; because telepathy is still in
+beta testing.</p>
+<p><strong>Be choosy with your media</strong>, because your brain thinks
+it’s real. Unless, of course, you’re watching someone paint happy little
+trees.</p>
+<p><strong>Speak clearly, listen carefully, pay close
+attention</strong>; otherwise, you’ll end up in a conversation about
+quantum physics when you just asked for the time.</p>
+<p><strong>Do what you love</strong>; life’s too short not to ply your
+craft. Just don’t expect it to pay the bills, unless your craft is
+printing money.</p>
+<p><strong>Keep it simple</strong>; complex plans involve running, and
+who’s got the energy for that?</p>
+<p><strong>Start small and build a little at a time</strong>; a mosaic
+is more beautiful than the finest concrete, and way less likely to get
+you sued for improper construction.</p>
+<p><strong>Network</strong>; because who else will laugh at your “I’m
+not a robot” jokes?</p>
+<p><strong>Be who you are</strong>; even a bent wire can carry a great
+light, especially in a modern art exhibit.</p>
+<p><strong>Build for strength, not just speed</strong>; the hare may
+have had more Instagram followers, but the tortoise won the race.</p>
+<p><strong>Hack</strong>; just remember, “try it and see” doesn’t apply
+to skydiving or lion taming.</p>
+<p><strong>Under-promise and over-deliver</strong>; because everyone
+loves a surprise, especially when it’s not another birthday card.</p>
+<p><strong>Divide and conquer</strong>; because life is essentially a
+giant game of strategy board games.</p>
+<p><strong>Do one thing well</strong>; remember, unicorns are famous for
+just one horn.</p>
+<p><strong>Use what you have</strong>; unless it’s a floppy disk, then
+maybe it’s time to upgrade.</p>
+<p><strong>Use levers, not people</strong>; because people are terrible
+at being levers, they keep asking for coffee breaks.</p>
+<p><strong>Release early, release often</strong>; otherwise, you’re just
+hoarding half-baked ideas, and there’s no market for those.</p>
+<p><strong>Distrust all claims for the one true way</strong>; except for
+pizza, pizza is always the answer.</p>
+<p><strong>Think ahead, but don’t worship your plans</strong>; all
+things are possible, except maybe skiing through a revolving door.</p>
+<p><strong>Think big: you are the universe</strong>. And like any good
+universe, remember to occasionally expand beyond your current dimensions
+— just without the big bang.</p>
+<p><strong>Abhor violence in all its forms</strong>, even contradicting
+others. Keep your peace, hold your tongue, and avoid turning into a
+debate club mascot.</p>
+<p><strong>Practice the Prime Directive</strong>; unless you’re in a
+sci-fi movie, then totally ignore it.</p>
+<hr>
+<h2 id="my-geek-code">My Geek Code</h2>
+<p>GE d- s:++ a+++ C++++ UL+++ P+ L+++ E+++ W+++ N+++ o+ K+ w— V PS+ PE
+f— c+++ Y+ PGP++ t+++ 5- X- R+++ tv++ b++ D-— xkcd G e++++ h– r+++**</p>
+<h3 id="translation">Translation</h3>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>code</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GE</td>
+<td>Geek of Engineering.</td>
+</tr>
+<tr class="even">
+<td>d-</td>
+<td>I’m usually in jeans and a t-shirt.</td>
+</tr>
+<tr class="odd">
+<td>s:++</td>
+<td>I’m of average height, I’m a linebacker candidate.</td>
+</tr>
+<tr class="even">
+<td>a+++</td>
+<td>age 60 and up (65 atm).</td>
+</tr>
+<tr class="odd">
+<td>C++++</td>
+<td>I’ll be first in line to get the new cybernetic interface installed
+into my skull.</td>
+</tr>
+<tr class="even">
+<td>UL50</td>
+<td>I’ve been using *nix, off and on, for about 50 years.</td>
+</tr>
+<tr class="odd">
+<td>P+++</td>
+<td>I’ve earned a living with Perl.</td>
+</tr>
+<tr class="even">
+<td>L(U)+++</td>
+<td>I use Ubuntu Linux exclusively, mostly command line.</td>
+</tr>
+<tr class="odd">
+<td>E+++</td>
+<td>Emacs is my login shell!! M-x doctor is my psychologist! I use emacs
+to control my TV and toaster oven! All you vi people don’t know what
+you’re missing! I read alt.religion.emacs, alt.sex.emacs, and
+comp.os.emacs.</td>
+</tr>
+<tr class="even">
+<td>W1.0+++</td>
+<td>I am an original Netizen, first logging on in 1994.</td>
+</tr>
+<tr class="odd">
+<td>N+++</td>
+<td>I live to chat online.</td>
+</tr>
+<tr class="even">
+<td>K+</td>
+<td>I like Kibo. If you know, you know.</td>
+</tr>
+<tr class="odd">
+<td>w—</td>
+<td>Windows is bloatware.</td>
+</tr>
+<tr class="even">
+<td>V</td>
+<td>I’ve used VMS. Meh.</td>
+</tr>
+<tr class="odd">
+<td>PS+</td>
+<td>My whole concept of politics? Nobody has the right to legislate
+morality.</td>
+</tr>
+<tr class="even">
+<td>PE</td>
+<td>Distrust both government and business.</td>
+</tr>
+<tr class="odd">
+<td>f—</td>
+<td>In matters of religion, I distrust all human claims for the one true
+way.</td>
+</tr>
+<tr class="even">
+<td>c+++</td>
+<td>I am a cyberpunk all the way, except the music.</td>
+</tr>
+<tr class="odd">
+<td>Y+</td>
+<td>I have an interest and concern in privacy issues, but in reality I
+am not really all that active or vocal.</td>
+</tr>
+<tr class="even">
+<td>PGP++</td>
+<td>I have the most recent version and use it when needed.</td>
+</tr>
+<tr class="odd">
+<td>t+++</td>
+<td>Star Trek inspires me. I wonder about about warp field dynamics and
+the principles behind the transporter. I have owned the TECH manual and
+the LP record. I speak some Klingon. I wear an IDIC. I still hate the
+LCARS interface, though: incredibly noisy, and it really sucks.</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Babylon 5 is sub-par.</td>
+</tr>
+<tr class="odd">
+<td>X-Files</td>
+<td>It’s ok if you like paranoia and conspiracy stories. I don’t.</td>
+</tr>
+<tr class="even">
+<td>R+++</td>
+<td>I’ve built and run my own dungeons. I have a drawer full of dice of
+random designs.</td>
+</tr>
+<tr class="odd">
+<td>tv—</td>
+<td>Not much on TV anymore, though I sometimes watch it when I’m petting
+the cat.</td>
+</tr>
+<tr class="even">
+<td>b++</td>
+<td>I (used to) find the time to get through at least one new book a
+month. And I will again, when this legacy heritage home renovation is
+finally done.</td>
+</tr>
+<tr class="odd">
+<td>D—</td>
+<td>Dilbert doesn’t speak to me; I’ve tried to stay out of those type
+situations.</td>
+</tr>
+<tr class="even">
+<td>xkcd</td>
+<td>I check out xkcd from time to time; sometimes it’s really
+funny.</td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>I know what the geek code is and even did up this code.</td>
+</tr>
+<tr class="even">
+<td>e++++</td>
+<td>I am well-educated, mostly by myself, but I did get more than one
+college degree.</td>
+</tr>
+<tr class="odd">
+<td>h+++</td>
+<td>I live in the woods, on land I own, in a house I own.</td>
+</tr>
+<tr class="even">
+<td>r+++</td>
+<td>I found my angel, and we’ve been married for decades now.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="active-phreak-numbers-legal-free-afaik">Active Phreak Numbers
+(Legal &amp; Free, AFAIK)</h2>
+<p><em>The number you have dialed...</em></p>
+<p>These phone numbers all call a recording; some are leftover Bell
+System intercept (error) messages.</p>
+<table style="width:99%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>number</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><ol class="incremental" start="202" type="1">
+<li>762-1401</li>
+</ol></td>
+<td>USNO master clock!</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="202" type="1">
+<li>965-9970</li>
+</ol></td>
+<td>you have just deactivated this feature.</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="203" type="1">
+<li>777-4647</li>
+</ol></td>
+<td>Pat Fleet time &amp; temp in New Haven, CT</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="204" type="1">
+<li>867-5309</li>
+</ol></td>
+<td><strong>The Jenny Song!</strong></td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="205" type="1">
+<li>867-5309</li>
+</ol></td>
+<td>Jenny is <em>not</em> in service in Birmingham.</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="206" type="1">
+<li>343-0011</li>
+</ol></td>
+<td>this call requires a coin deposit. no, really.</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="213" type="1">
+<li>223-6101</li>
+</ol></td>
+<td>RING A BELL</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="213" type="1">
+<li>621-0001</li>
+</ol></td>
+<td>the good, old-fashioned, “We’re sorry…” recording (not Jane Barbe,
+sadly)</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="213" type="1">
+<li>621-0002</li>
+</ol></td>
+<td>1000Hz @ 0dB (this only makes sense if you’re a phone person)</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="216" type="1">
+<li>931-1212</li>
+</ol></td>
+<td>WKYC Time and Weather</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="270" type="1">
+<li>301-5797</li>
+</ol></td>
+<td>a maze of twisty little touch tones, all different.</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="303" type="1">
+<li>337-2500</li>
+</ol></td>
+<td>Denver Post Weather</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="313" type="1">
+<li>849-9906</li>
+</ol></td>
+<td>calling is too heavy to answer this number.</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="406" type="1">
+<li>442-1730</li>
+</ol></td>
+<td>Helena, MT, time &amp; temp</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="412" type="1">
+<li>885-0075</li>
+</ol></td>
+<td>“All test positions are unmanned at this time, please try your call
+again later.”</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="415" type="1">
+<li>767-2676</li>
+</ol></td>
+<td>“Popcorn” time &amp; temp, preceded by a religious message</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="505" type="1">
+<li>503-4455</li>
+</ol></td>
+<td>Better Call Saul</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="509" type="1">
+<li>457-0044</li>
+</ol></td>
+<td>This call requires a coin deposit…</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="509" type="1">
+<li>457-0045</li>
+</ol></td>
+<td>Your call cannot be completed as dialed…</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="509" type="1">
+<li>457-0051</li>
+</ol></td>
+<td>All circuits are busy now…</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="540" type="1">
+<li>829-9910</li>
+</ol></td>
+<td><strong>genuine Pat Fleet intercept message</strong></td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="570" type="1">
+<li>387-0000</li>
+</ol></td>
+<td>“due to an emergency condition….”</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="573" type="1">
+<li>996-000x</li>
+</ol></td>
+<td>Doniphan, MO, CO intercept lines (autoforwards)</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="573" type="1">
+<li>996-0002</li>
+</ol></td>
+<td>they still have party lines?</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="573" type="1">
+<li>996-0003</li>
+</ol></td>
+<td>“your call cannot be completed as dialed” (remote intercept)</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="573" type="1">
+<li>996-0005</li>
+</ol></td>
+<td>“your call did not go through…” (remote intercept)</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="573" type="1">
+<li>996-0006</li>
+</ol></td>
+<td>“the number you have reached…is not in service”</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="609" type="1">
+<li>729-9928</li>
+</ol></td>
+<td>…the long distance company you have selected is unable to complete
+your call…</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="610" type="1">
+<li>797-0014</li>
+</ol></td>
+<td>Excuse me, please deposit five cents for the next 3 minutes …</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="718" type="1">
+<li>816-9901</li>
+</ol></td>
+<td>North Staten Island DMS-100 ident message &amp; area code list</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="719" type="1">
+<li>266-2837</li>
+</ol></td>
+<td>hall and oates emergency song line</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="800" type="1">
+<li>444-4444</li>
+</ol></td>
+<td>automated number announcement circuit</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="800" type="1">
+<li>437-9606</li>
+</ol></td>
+<td>“your international call can not be completed as dialled”</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="845" type="1">
+<li>354-9912</li>
+</ol></td>
+<td>callcannotbecompletedasdialed…..</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="877" type="1">
+<li>763-2435</li>
+</ol></td>
+<td>odd squad HQ</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="888" type="1">
+<li>447-5594</li>
+</ol></td>
+<td>congratulations, you found your way here</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="914" type="1">
+<li>232-9901</li>
+</ol></td>
+<td>pleasant hills DMS 100</td>
+</tr>
+<tr class="even">
+<td><ol class="incremental" start="914" type="1">
+<li>737-9938</li>
+</ol></td>
+<td>somebody said put an outgoing message here</td>
+</tr>
+<tr class="odd">
+<td><ol class="incremental" start="916" type="1">
+<li>440-0031</li>
+</ol></td>
+<td>“due to facility trouble….”</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="lists">Lists</h2>
+<p>This is a plain old bulleted list:</p>
+<ul class="incremental">
+<li>Banana</li>
+<li>Paper boat</li>
+<li>Cucumber</li>
+<li>Rocket</li>
+</ul>
+<p>Ordered lists look pretty much as you’d expect:</p>
+<ol class="incremental" type="1">
+<li>Goals</li>
+<li>Motivations
+<ol class="incremental" type="1">
+<li>Intrinsic</li>
+<li>Extrinsic</li>
+</ol></li>
+<li>Second-order effects</li>
+</ol>
+<p>It’s nice to visualize trees. This is a regular unordered list with a
+<code>tree</code> class:</p>
+<ul class="tree">
+<li>
+<p style="margin: 0;">
+<strong>/dev/nvme0n1p2</strong>
+</p>
+<ul class="incremental">
+<li>usr
+<ul class="incremental">
+<li>local<br />
+</li>
+<li>share<br />
+</li>
+<li>libexec<br />
+</li>
+<li>include<br />
+</li>
+<li>sbin<br />
+</li>
+<li>src<br />
+</li>
+<li>lib64<br />
+</li>
+<li>lib<br />
+</li>
+<li>bin<br />
+</li>
+<li>games
+<ul class="incremental">
+<li>solitaire</li>
+<li>snake</li>
+<li>tic-tac-toe</li>
+</ul></li>
+<li>media<br />
+</li>
+</ul></li>
+<li>media<br />
+</li>
+<li>run<br />
+</li>
+<li>tmp</li>
+</ul>
+</li>
+</ul>
+<h2 id="tables">Tables</h2>
+<p>We can use regular tables that automatically adjust to the monospace
+grid. They’re responsive.</p>
+<table>
+<thead>
+<tr>
+<th class="width-min">
+Name
+</th>
+<th class="width-auto">
+Dimensions
+</th>
+<th class="width-min">
+Position
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Boboli Obelisk
+</td>
+<td>
+1.41m × 1.41m × 4.87m
+</td>
+<td>
+43°45’50.78”N 11°15’3.34”E
+</td>
+</tr>
+<tr>
+<td>
+Pyramid of Khafre
+</td>
+<td>
+215.25m × 215.25m × 136.4m
+</td>
+<td>
+29°58’34”N 31°07’51”E
+</td>
+</tr>
+</tbody>
+</table>
+<p>Note that only one column is allowed to grow.</p>
+<h2 id="forms">Forms</h2>
+<p>Here are some buttons:</p>
+<nav>
+<button>
+Reset
+</button>
+<button>
+Save
+</button>
+</nav>
+<p>And inputs:</p>
+<form class="grid">
+<label>First name
+<input type="text" placeholder="Placeholder..." /></label> <label>Last
+name <input type="text" placeholder="Text goes here..." /></label>
+<label>Age <input type="text" value="30" /></label>
+</form>
+<p>And radio buttons:</p>
+<form class="grid">
+<label><input name="radio" type="radio" /> Option #1</label>
+<label><input name="radio" type="radio" /> Option #2</label>
+<label><input name="radio" type="radio" /> Option #3</label>
+</form>
+<h2 id="grids">Grids</h2>
+<p>Add the <code>grid</code> class to a container to divide up the
+horizontal space evenly for the cells. Note that it maintains the
+monospace, so the total width might not be 100%. Here are six grids with
+increasing cell count:</p>
+<div class="grid">
+<input readonly value="1" />
+</div>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" />
+</div>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" /><input readonly value="3" />
+</div>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" />
+</div>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" />
+</div>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" />
+</div>
+<p>If we want one cell to fill the remainder, we set
+<code>flex-grow: 1;</code> for that particular cell.</p>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" /><input readonly value="3!" style="flex-grow: 1;" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" />
+</div>
+<h2 id="ascii-drawings">ASCII Drawings</h2>
+<p>We can draw in <code>&lt;pre&gt;</code> tags using <a
+href="https://en.wikipedia.org/wiki/Box-drawing_characters">box-drawing
+characters</a>:</p>
+<pre><code>╭─────────────────╮
+│ MONOSPACE ROCKS │
+╰─────────────────╯</code></pre>
+<p>To have it stand out a bit more, we can wrap it in a
+<code>&lt;figure&gt;</code> tag, and why not also add a
+<code>&lt;figcaption&gt;</code>.</p>
+<figure>
+<pre>
+┌───────┐ ┌───────┐ ┌───────┐
+│Actor 1│ │Actor 2│ │Actor 3│
+└───┬───┘ └───┬───┘ └───┬───┘
+    │         │         │    
+    │         │  msg 1  │    
+    │         │────────►│    
+    │         │         │    
+    │  msg 2  │         │    
+    │────────►│         │    
+┌───┴───┐ ┌───┴───┐ ┌───┴───┐
+│Actor 1│ │Actor 2│ │Actor 3│
+└───────┘ └───────┘ └───────┘</pre>
+<figcaption>
+Example: Message passing.
+</figcaption>
+</figure>
+<p>Let’s go wild and draw a chart!</p>
+<figure>
+<pre>
+                      Things I Have
+                                              
+    │                                     ████ Usable
+15  │
+    │                                     ░░░░ Broken
+    │
+12  │             ░            
+    │             ░            
+    │   ░         ░              
+ 9  │   ░         ░              
+    │   ░         ░              
+    │   ░         ░                    ░
+ 6  │   █         ░         ░          ░
+    │   █         ░         ░          ░
+    │   █         ░         █          ░
+ 3  │   █         █         █          ░
+    │   █         █         █          ░
+    │   █         █         █          ░
+ 0  └───▀─────────▀─────────▀──────────▀─────────────
+      Socks     Jeans     Shirts   USB Drives
+</pre>
+</figure>
+<h2 id="media">Media</h2>
+<p>Media objects are supported, like images and video:</p>
+<figure>
+<img src="castle.jpg" alt="A room in an old French castle (2024)" />
+<figcaption aria-hidden="true">A room in an old French castle
+(2024)</figcaption>
+</figure>
+<figure>
+<video
+src="https://upload.wikimedia.org/wikipedia/commons/e/e0/The_Center_of_the_Web_%281914%29.webm"
+controls=""><a
+href="https://upload.wikimedia.org/wikipedia/commons/e/e0/The_Center_of_the_Web_%281914%29.webm">The
+Center of the Web (1914), Wikimedia</a></video>
+<figcaption aria-hidden="true"><a
+href="https://en.wikisource.org/wiki/Page:The_Center_of_the_Web_(1914).webm/11">The
+Center of the Web (1914), Wikimedia</a></figcaption>
+</figure>
+<p>They extend to the width of the page, and add appropriate padding in
+the bottom to maintain the monospace grid.</p>
+<h2 id="discussion">Discussion</h2>
+<p>That’s it for now. I’ve very much enjoyed making this, pushing my CSS
+chops and having a lot of fun with the design. If you like it or even
+decide to use it, please <a href="https://x.com/owickstrom">let me
+know</a>.</p>
+<p>The full source code is here: <a
+href="https://github.com/owickstrom/the-monospace-web">github.com/owickstrom/the-monospace-web</a></p>
+<p>Finally, a massive shout-out to <a
+href="https://x.com/usgraphics">U.S. Graphics Company</a> for all the
+inspiration.</p>
+<p>UNIX is a registered trademark of The Open Group</p>
+  <div class="debug-grid"></div>
+  <script src="src/index.js"></script>
 </body>
 </html>
