@@ -84,8 +84,7 @@ f— c+++ Y+ PGP++ t+++ 5- X- R+++ tv++ b++ D-— xkcd G e++++ h– r+++**
 | c+++ | I am a cyberpunk all the way, including music. |
 | Y+ | I have an interest and concern in privacy issues, but in reality I am not really all that active or vocal. |
 | PGP++ | I have the most recent version and use it regularly. |
-| t+++ | Star Trek inspires me. I wonder about about warp field dynamics and the principles behind the transporter. I have owned the |
-TECH manual and the LP record. I speak some Klingon. I wear an IDIC. I still hate the LCARS interface, though: incredibly noisy, and it really sucks. |
+| t+++ | Star Trek inspires me. I wonder about about warp field dynamics and the principles behind the transporter. I have owned the TECH manual and the LP record. I speak some Klingon. I wear an IDIC. I still hate the LCARS interface, though: incredibly noisy, and it really sucks. |
 | 5 | Babylon 5 is sub-par. |
 | X-Files | It’s ok if you like paranoia and conspiracy stories. I don’t. |
 | R+++ | I’ve built and run my own dungeons for money. Lots of money. At comic-cons. With 100 little envelopes of dice I brought with me. |
