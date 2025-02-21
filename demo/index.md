@@ -1,10 +1,10 @@
 ---
-title: The Monospace Web
-subtitle: A minimalist design exploration
-author: Oskar Wickström
-author-url: "https://wickstrom.tech"
+title: stormrider's websute
+subtitle: personal homepage
+author: Bill Wear
+author-url: "https://billwear.github.io"
 lang: en
-toc-title: Contents
+toc-title: what's here
 ---
 
 ## Introduction
