@@ -231,4 +231,5 @@ The full source code is here: [github.com/owickstrom/the-monospace-web](https://
 
 Finally, a massive shout-out to [U.S. Graphics Company](https://x.com/usgraphics) for all the inspiration.
 
-UNIX is a registered trademark of the Open Group
+UNIX is a registered trademark
+of The Open Group
