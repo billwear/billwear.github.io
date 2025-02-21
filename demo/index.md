@@ -1,8 +1,8 @@
 ---
-title: billwear
-subtitle: UNIX&trade; user
+title: bill wear
+subtitle: netizen
 author: Bill Wear
-author-url: "https://billwear.github.io"
+author-url: "mailto:wowear@gmail.com"
 lang: en
 toc-title: what's here
 ---
