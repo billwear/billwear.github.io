@@ -1,6 +1,6 @@
 ---
 title: billwear
-subtitle: -nix user
+subtitle: UNIX&trade; user
 author: Bill Wear
 author-url: "https://billwear.github.io"
 lang: en
@@ -230,3 +230,5 @@ If you like it or even decide to use it, please [let me know](https://x.com/owic
 The full source code is here: [github.com/owickstrom/the-monospace-web](https://github.com/owickstrom/the-monospace-web)
 
 Finally, a massive shout-out to [U.S. Graphics Company](https://x.com/usgraphics) for all the inspiration.
+
+UNIX is a registered trademark of the Open Group
