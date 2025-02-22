@@ -372,7 +372,7 @@ mind can be ordered, if it can be made still in the midst of this
 restless life, then we have already discovered the key to a deeper kind
 of freedom.
 
-## Observe your thoughts
+**Observe your thoughts**
 
 But how does one begin? It is not with grand declarations or bold,
 sweeping changes. That would miss the point entirely. Rather, it is with
@@ -396,7 +396,7 @@ It is a simple beginning, but one of great consequence. For when we
 reclaim our attention, even in this small way, we are no longer mere
 passengers on the journey. We become, in a sense, our own guides.
 
-## Continued practice
+**Continued practice**
 
 As we grow in this practice of attention, something else becomes clear:
 much of what occupies our thoughts is unnecessary. The mind is
@@ -417,7 +417,7 @@ at hand. In this way, the most complex of undertakings becomes simple,
 not because it is easy, but because we have allowed it to unfold
 naturally, one step after the other.
 
-## It's a process
+**It's a process**
 
 It is tempting, in moments of ambition, to think that we must change
 everything all at once, that the path to mastery or peace requires a
@@ -436,7 +436,7 @@ yourself, in your head, \"I like having that thought.\" As to the
 others? \"I don\'t like thinking this way.\" It seems trivial and
 ineffective, but it is, in fact, life-changing.
 
-## Strength and speed together
+**Strength and speed together**
 
 But in this process, we must also remember something important: life is
 not meant to be rushed through. It is not a race, nor is it a problem to
