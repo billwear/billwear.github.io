@@ -10,7 +10,7 @@ toc-title: what's here
 
 ## 1740682679: caulk
 
-When I was a young man, we used to say, "If all you have is a hammer, everything looks like a nail."  That is to say, we adjust our expectations to the tools and techniques we have.  Today at lunch, I was caulking the last few trim pieces on our renovated living room, and noticing all the places in the cabinets (contracted out) that also need caulk.  Made a grudging mental note to get the ladder out at some future time, before the family reunion in April that is our house-christening, and fill up those gaps.
+When I was a young man, we used to say, "If all you have is a hammer, everything looks like a nail."  That is to say, we adjust our expectations to the tools and techniques we have.  Today at lunch, I was caulking the last few trim pieces on our renovated kitchen, and noticing all the places in the cabinets (contracted out) that also need caulk.  Made a grudging mental note to get the ladder out at some future time, before the family reunion in April that is our house-christening, and fill up those gaps.
 
 I'm quite sure there were other things I didn't notice because my RAS (Reticular Activating System, I think it is?) wasn't primed for it.  The tools we hold in our hand -- the mode of working we're in at the moment -- greatly affects how we percieve the world.  If we're holding a particular tool, or in a particular mood or mindset at the moment, everything centers on those emotions, concerns, and capabilities.
 
