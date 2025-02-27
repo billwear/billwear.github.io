@@ -8,6 +8,14 @@ lang: en
 toc-title: what's here
 ---
 
+## Whatever comes of it, I did good today
+
+So I've had an uneven couple of weeks. Had a dressing-down from my boss, heavy responsibilities at work, my PCP reducing my anxiety meds (didn't work so well), renovation issues, a sinus infection, stacking bills due to deduction errors at work, and a painful tooth that needs a root canal. But somehow, with it all, I've stayed sane and tried to do the right thing.
+
+Today was good. The stronger antibiotics from the dentist are doing the trick, slowly, and I have a new, non-narcotic pain med. I cut and fitted two complicated pieces of crown mold and installed them in the most inaccessible place in the house. I made really good headway on my project at work, while picking up new skills and thinking deeply about what I'm trying to accomplish with this project. And I did three perfect drawer handle installs tonight,
+
+Who knows what may happen tomorrow?  I don't, but whatever comes of it, today I did good.
+
 ## The Netizen's Way
 
 **Say what you mean**; because telepathy is still in beta testing.
