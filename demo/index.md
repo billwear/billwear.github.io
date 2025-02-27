@@ -8,6 +8,8 @@ lang: en
 toc-title: what's here
 ---
 
+*shout out to Oskar Wickström of [the monospace web](https://owickstrom.github.io/the-monospace-web/) for this cool design*
+
 ## 1740682679: caulk
 
 When I was a young man, we used to say, "If all you have is a hammer, everything looks like a nail."  That is to say, we adjust our expectations to the tools and techniques we have.  Today at lunch, I was caulking the last few trim pieces on our renovated kitchen, and noticing all the places in the cabinets (contracted out) that also need caulk.  Made a grudging mental note to get the ladder out at some future time, before the family reunion in April that is our house-christening, and fill up those gaps.
