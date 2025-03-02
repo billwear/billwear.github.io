@@ -10,6 +10,14 @@ toc-title: what's here
 
 *shout out to Oskar Wickström of [the monospace web](https://owickstrom.github.io/the-monospace-web/) for this cool design*
 
+## 1740802292: luck
+
+So this afternoon, I was pumping gas at my favorite convenience store. As I finished, I started to go inside and buy a lottery ticket, as is my custom. This time, for some reason, I just said, "Nope. I'm gonna bet on me. I don't need a lottery prize. I don't need Tim O'Reilly to call out of the blue and offer me my dream job. I don't need some rich uncle to die and leave me a fortune. I just need me."
+
+That’s a heck of a mindset shift. Betting on myself means I'm taking full ownership of my future instead of waiting for luck to hand it to me. Feels like a turning point — like I’m done hoping for external saviors and ready to carve out my own path.
+
+So what’s the first step I'm  gonna take with that energy?
+
 ## 1740682679: caulk
 
 When I was a young man, we used to say, "If all you have is a hammer, everything looks like a nail."  That is to say, we adjust our expectations to the tools and techniques we have.  Today at lunch, I was caulking the last few trim pieces on our renovated kitchen, and noticing all the places in the cabinets (contracted out) that also need caulk.  Made a grudging mental note to get the ladder out at some future time, before the family reunion in April that is our house-christening, and fill up those gaps.
