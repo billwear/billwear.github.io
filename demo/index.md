@@ -10,6 +10,10 @@ toc-title: what's here
 
 *shout out to Oskar Wickström of [the monospace web](https://owickstrom.github.io/the-monospace-web/) for this cool design*
 
+## 1740968649: change
+
+I have ambition, and I'm betting on myself.  Gonna restart networking and electronics (and ham radio) from "scratch" and blog about it. That is all.
+
 ## 1740802292: luck
 
 So this afternoon, I was pumping gas at my favorite convenience store. As I finished, I started to go inside and buy a lottery ticket, as is my custom. This time, for some reason, I just said, "Nope. I'm gonna bet on me. I don't need a lottery prize. I don't need Tim O'Reilly to call out of the blue and offer me my dream job. I don't need some rich uncle to die and leave me a fortune. I just need me."
