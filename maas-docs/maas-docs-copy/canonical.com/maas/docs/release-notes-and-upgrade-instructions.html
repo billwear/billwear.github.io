@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
 
   
-<!-- Mirrored from canonical.com/maas/docs/release-notes-and-upgrade-instructions by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:41:00 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/release-notes-and-upgrade-instructions by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:01:16 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8" />
@@ -99,7 +99,7 @@
           <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js"
                   defer></script>
 
-          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=62f7ad6" />
+          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=a85ac60" />
         </head>
 
         <body class=" 
@@ -8516,138 +8516,32 @@
 
         <p>These release notes for MAAS summarize new features, bug fixes and backwards-incompatible changes in each version.</p>
 <h2><a class="p-link--anchor-heading" href="#p-9229-releases" name="p-9229-releases">Releases</a></h2>
-<p><a href="release-notes-and-upgrade-instructions.html#p-9229-version-37-release-notes">Version 3.7</a><br/>
-<a href="release-notes-and-upgrade-instructions.html#p-9229-version-36-release-notes">Version 3.6</a><br/>
+<p><a href="release-notes-and-upgrade-instructionsb309.html?_ga=2.238555336.999421397.1744814112-1844343596.1742394996&amp;_gl=1*j4r5fy*_ga*MTg0NDM0MzU5Ni4xNzQyMzk0OTk2*_ga_5LTL1CNEJM*czE3NDQ4OTc2MTkkbzcyJGcxJHQxNzQ0OTAwMTE5JGo0NCRsMCRoMA..#p-9229-version-36-release-notes-3">Version 3.6</a><br/>
 <a href="release-notes-and-upgrade-instructions.html#p-9229-version-35-release-notes">Version 3.5</a><br/>
 <a href="release-notes-and-upgrade-instructions.html#p-9229-version-34-release-notes">Version 3.4</a></p>
 <h3><a class="p-link--anchor-heading" href="#p-9229-older-releases" name="p-9229-older-releases">Older releases</a></h3>
-<p><a href="https://maas.io/docs/reference-release-notes-maas-3-3">MAAS 3.3 release notes</a><br/>
-<a href="https://maas.io/docs/reference-release-notes-maas-3-2">MAAS 3.2 release notes</a><br/>
-<a href="https://maas.io/docs/reference-release-notes-maas-3-1">MAAS 3.1 release notes</a><br/>
-<a href="https://maas.io/docs/reference-release-notes-maas-3-0">MAAS 3.0 release notes</a><br/>
-<a href="https://maas.io/docs/reference-release-notes-maas-2-9">MAAS 2.9 release notes</a><br/>
-<a href="https://maas.io/docs/reference-release-notes-maas-2-8">MAAS 2.8 release notes</a><br/>
-<a href="https://maas.io/docs/reference-release-notes-maas-2-7">MAAS 2.7 release notes</a></p>
-<h2><a class="p-link--anchor-heading" href="#p-9229-version-37-release-notes" name="p-9229-version-37-release-notes">Version 3.7 release notes</a></h2>
-<h3><a class="p-link--anchor-heading" href="#p-9229-h-370-beta-1" name="p-9229-h-370-beta-1">3.7.0 Beta 1</a></h3>
-<h4><a class="anchor" href="#p-9229-bluefield-3-dpu-provisioning-5" name="p-9229-bluefield-3-dpu-provisioning-5"></a>BlueField-3 DPU Provisioning</h4>
-<p>Support for NVIDIA BlueField-3 DPUs, enabling MAAS users to manage and configure them just like any other machine. Thanks to the addition of a BMC to this generation of DPUs, MAAS can interact with BlueField-3 DPUs for commissioning, deployment, and release operations. While BlueField-3 introduces new complexity compared to previous generations, MAAS handles these differences behind the scenes, making it easier for data center operators to integrate DPUs into their workflows.</p>
-<h4><a class="anchor" href="#p-9229-speedup-maas-cli-6" name="p-9229-speedup-maas-cli-6"></a>Speedup MAAS CLI</h4>
-<p>Refactored MAAS CLI initialization to defer loading Django and other heavy dependencies during CLI parser setup. This change significantly improves startup performance and responsiveness for most commands, yielding a 55% reduction in CLI startup time. Previously, every command took over 2 seconds to initialize the CLI; with this refactor, commands now complete in under 1 second.</p>
-<p>Note: These improvements only affect CLI startup time, not the execution time of commands that involve server communication or data retrieval.</p>
-<h4><a class="anchor" href="#p-9229-deprecation-notices-7" name="p-9229-deprecation-notices-7"></a>Deprecation notices</h4>
-<ul>
-<li>OpenStack Compute (nova) power driver was removed</li>
-</ul>
-<h4><a class="anchor" href="#p-9229-known-issues-8" name="p-9229-known-issues-8"></a>Known issues</h4>
-<ul>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2117401">LP#2117401</a>: “zone already frozen” error when updating MAAS</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/1964644">LP#1964644</a>: Adding overlapping subnets in fabric breaks deployments and squid</li>
-</ul>
-<h4><a class="anchor" href="#p-9229-bug-fixes-9" name="p-9229-bug-fixes-9"></a>Bug fixes</h4>
-<ul>
-<li><a href="https://bugs.launchpad.net/maas/+bug/1995070">LP#1995070</a>: MAAS TLS offers CBC ciphers</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2063458">LP#2063458</a>: “Node has no address family in common with server” when deploying a LXD VM on an IPv6-only bridge</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2085160">LP#2085160</a>: Temporal workflow deadlock</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2091271">LP#2091271</a>: HW sync is not able to detect a bridge interface configured with OVS</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2092188">LP#2092188</a>: Redfish detection causes bmc_config script to fail despite it seems to succeed</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2095085">LP#2095085</a>: maas-agent fails to start: Workflow execution already started</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2095476">LP#2095476</a>: Store last deploy time of images more directly in the database</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2095477">LP#2095477</a>: boot-resources read is slow when there are a lot of images that have been deployed a lot of times</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2097079">LP#2097079</a>: Failed to initialize MAAS on PostgreSQL with pgaudit plugin enabled</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2097242">LP#2097242</a>: MAAS is not auditing changes in OS images</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2098446">LP#2098446</a>: Maas prometheus wrong Content-Type</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2098472">LP#2098472</a>: Wrong message when trying to delete the commissioning OS image</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2099949">LP#2099949</a>: Redfish power driver requests fails with 412 status code</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2099952">LP#2099952</a>: HW sync fails due to MAAS/metadata/2012-03-01 HTTP Error 409: Conflict</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2100790">LP#2100790</a>: MAAS KVM Host option disabled for 24.04 noble</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2102126">LP#2102126</a>: MAAS 3.6 can’t power control AMT BMCs after upgrade from 3.5</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2103654">LP#2103654</a>: Lease expiry removes all IP addresses of a machine</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2103733">LP#2103733</a>: Machine in Deploying status after deploy workflow timed out</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2103903">LP#2103903</a>: Deployment fails when using interface with OVS bridge</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2104260">LP#2104260</a>: Cloud-init 24.04.1 requires OVS bridge interface not to be optional in the netplan preseed network</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2104278">LP#2104278</a>: MAAS KVM deploy with 24.04 fails sshd.service not found</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2104530">LP#2104530</a>: plucky deployments fail after reboot to disk due to no network</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2104838">LP#2104838</a>: MAAS snap incorrectly calculates cache_size</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2104907">LP#2104907</a>: Enabling ‘Verify SSL connections with system CA certificates’ for Proxmox power type fails</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2105901">LP#2105901</a>: MAAS UI cannot compose a VM using LXD as KVM host</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2106398">LP#2106398</a>: Multiple results were returned by get_one</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2106542">LP#2106542</a>: When MAAS receives a DHCP lease it should remove all the old discovered IPs linked to the interface</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2106671">LP#2106671</a>: Deployments using a bonded interface on the “MAAS” management network are broken</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2107537">LP#2107537</a>: sshkeys import command not working</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2107967">LP#2107967</a>: MAAS 3.6.0 - Splitted upgrade doesn’t work with snap</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2109360">LP#2109360</a>: MAAS incorrectly calculates cache_size for SNAP</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2109681">LP#2109681</a>: Proxmox power driver is broken</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2109864">LP#2109864</a>: No rack controller can access BMC of node [MAAS 3.5.5]</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2110021">LP#2110021</a>: Reserving IPs in MAAS 3.6 causes duplicate host entries in dhcpd.conf after deploying machines</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2110023">LP#2110023</a>: [3.6] external DHCP on rack controller appears to break data model</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2112206">LP#2112206</a>: Powerloop on HPE ProLiant DL385 and DL360</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2112460">LP#2112460</a>: DHCP Commissioning script fails on nodes with multiple unused interfaces</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2112637">LP#2112637</a>: MAAS does not set BOOTIF mac address for IBM s390x LPARs during PXE boot</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2113894">LP#2113894</a>: AMT power driver (amttool) is broken - builtins.TypeError: AMTPowerDriver._issue_amttool_command() takes from 4 to 5 positional arguments but 6 were given. amttool perl not found</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2115176">LP#2115176</a>: Power management picks offline Rack Controller for VLAN</li>
-</ul>
+<p><a href="reference-release-notes-maas-3-3.html">MAAS 3.3 release notes</a><br/>
+<a href="reference-release-notes-maas-3-2.html">MAAS 3.2 release notes</a><br/>
+<a href="reference-release-notes-maas-3-1.html">MAAS 3.1 release notes</a><br/>
+<a href="reference-release-notes-maas-3-0.html">MAAS 3.0 release notes</a><br/>
+<a href="reference-release-notes-maas-2-9.html">MAAS 2.9 release notes</a><br/>
+<a href="reference-release-notes-maas-2-8.html">MAAS 2.8 release notes</a><br/>
+<a href="reference-release-notes-maas-2-7.html">MAAS 2.7 release notes</a></p>
 <h2><a class="p-link--anchor-heading" href="#p-9229-version-36-release-notes" name="p-9229-version-36-release-notes">Version 3.6 release notes</a></h2>
-<h3><a class="p-link--anchor-heading" href="#p-9229-maas-361-has-been-released" name="p-9229-maas-361-has-been-released">MAAS 3.6.1 has been released</a></h3>
-<p>We are happy to announce that MAAS 3.6.1 has been released, with the following bug fixes</p>
-<ul>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2109681">2109681</a>: Proxmox power driver is broken</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2109864">2109864</a>: No rack controller can access BMC of node [MAAS 3.5.5]</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2040324">2040324</a>: Power configuration change fails with  is not a valid distro series error</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2063457">2063457</a>: dhcpd6.conf can contain IPv4 nameserver options</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2091370">2091370</a>: MAAS snap build pulls python modules from outside Ubuntu Archive / MAAS PPAs</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2097242">2097242</a>: MAAS is not auditing changes in OS images</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2103733">2103733</a>: Machine in Deploying status after <code>deploy</code> workflow timed out</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2103903">2103903</a>: Deployment fails when using interface with OVS bridge</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2104260">2104260</a>: Cloud-init 24.04.1 requires OVS bridge interface not to be optional in the netplan preseed network</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2104838">2104838</a>: MAAS snap incorrectly calculates cache_size</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2104530">2104530</a>: plucky deployments fail after reboot to disk due to no network</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2107967">2107967</a>: MAAS 3.6.0 - Splitted upgrade doesn’t work with snap</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2109360">2109360</a>: MAAS incorrectly calculates cache_size for SNAP</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2063458">2063458</a>: “Node has no address family in common with server” when deploying a LXD VM on an IPv6-only bridge</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2110023">2110023</a>: [3.6] external DHCP on rack controller appears to break data model</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2110021">2110021</a>: Reserving IPs in MAAS 3.6 causes duplicate host entries in dhcpd.conf after deploying machines</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2091271">2091271</a>: HW sync is not able to detect a bridge interface configured with OVS</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2111831">2111831</a>: MAAS snap uses setuptools from pip - UserWarning: pkg_resources is deprecated as an API.</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2112460">2112460</a>: DHCP Commissioning script fails on nodes with multiple unused interfaces</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2115176">2115176</a>: Power management picks offline Rack Controller for VLAN</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2112637">2112637</a>: MAAS does not set BOOTIF mac address for IBM s390x LPARs during PXE boot</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2112206">2112206</a>: Powerloop on HPE ProLiant DL385 and DL360</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2097079">2097079</a>: Failed to initialize MAAS on PostgreSQL with pgaudit plugin enabled</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2118408">2118408</a>: MAAS TFTP is not compatible in some networking environments that are using tunneling adding extra padding in the datagram</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/1901905">1901905</a>: Updating DNS records yields unexpected results</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/1990871">1990871</a>: TestPostgresListenerService - test_handles_missing_system_handler_onnotification</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2054312">2054312</a>: Documentation is broken is so many ways</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2054836">2054836</a>: Redfish in bmc-config commissioning script is hard-coded for a particular Manager and EthernetInterface</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2057782">2057782</a>: Quick erasing disks doesn’t clean properly some special filesystem</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/1901905">1901905</a>: Updating DNS records yields unexpected results</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/1990871">1990871</a>: TestPostgresListenerService - test_handles_missing_system_handler_onnotification</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2054312">2054312</a>: Documentation is broken is so many ways</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2054836">2054836</a>: Redfish in bmc-config commissioning script is hard-coded for a particular Manager and EthernetInterface</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2092299">2092299</a>: MAAS 3.5.2 does not sort machines by DISKS or STORAGE</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2104907">2104907</a>: Enabling ‘Verify SSL connections with system CA certificates’ for Proxmox power type fails</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2106398">2106398</a>: Multiple results were returned by get_one</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2107537">2107537</a>: sshkeys import command not working</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2113894">2113894</a>: AMT power driver (amttool) is broken - builtins.TypeError: AMTPowerDriver._issue_amttool_command() takes from 4 to 5 positional arguments but 6 were given. amttool perl not found</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2118761">2118761</a>: apiserver is not restarted properly when vault is configured</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2058063">2058063</a>: Controllers show different versions when installed with debs</li>
-<li><a href="https://bugs.launchpad.net/maas/+bug/2098446">2098446</a>: Maas prometheus wrong Content-Type</li>
-</ul>
-<h3><a class="p-link--anchor-heading" href="#p-9229-maas-360-has-been-released" name="p-9229-maas-360-has-been-released">MAAS 3.6.0 has been released</a></h3>
-<h4><a class="anchor" href="#p-9229-maas-36-based-on-ubuntu-2404-lts-13" name="p-9229-maas-36-based-on-ubuntu-2404-lts-13"></a>MAAS 3.6 based on Ubuntu 24.04 LTS</h4>
+<h3><a class="p-link--anchor-heading" href="#p-9229-maas-36-based-on-ubuntu-2404-lts" name="p-9229-maas-36-based-on-ubuntu-2404-lts">MAAS 3.6 based on Ubuntu 24.04 LTS</a></h3>
 <p>MAAS 3.6 is the first release to run natively on Ubuntu 24.04 LTS. This comes with refreshed dependencies and lots of improvements and bug fixes. It’s available in both deb (PPA) and snap formats.</p>
 <p>Previous releases will continue to be supported on their current Ubuntu distribution for the duration of their normal lifecycle, but moving forward, upgrading to 24.04 LTS will be mandatory.</p>
 <p>You should upgrade the node Ubuntu distribution to 24.04 LTS before attempting to upgrade MAAS, so plan your maintenance window appropriately. Note that you might be required to upgrade PostgreSQL to version 16 before continuing with the MAAS upgrade (see below).</p>
-<h4><a class="anchor" href="#p-9229-maas-36-recommends-postgresql-16-maintaining-support-for-14-14" name="p-9229-maas-36-recommends-postgresql-16-maintaining-support-for-14-14"></a>MAAS 3.6 recommends PostgreSQL 16 maintaining support for 14</h4>
+<h3><a class="p-link--anchor-heading" href="#p-9229-maas-36-recommends-postgresql-16-maintaining-support-for-14" name="p-9229-maas-36-recommends-postgresql-16-maintaining-support-for-14">MAAS 3.6 recommends PostgreSQL 16 maintaining support for 14</a></h3>
 <p>Ubuntu 24.04 LTS comes with PostgreSQL version 16, and this is the new recommended version for use with MAAS. The minimum supported version continues to be version 14 for the time being, but it’s regarded as deprecated and you should expect its support to be removed in the upcoming MAAS releases.</p>
-<h4><a class="anchor" href="#p-9229-reserved-ips-15" name="p-9229-reserved-ips-15"></a>Reserved IPs</h4>
+<h3><a class="p-link--anchor-heading" href="#p-9229-reserved-ips" name="p-9229-reserved-ips">Reserved IPs</a></h3>
 <p>MAAS 3.6 introduces a powerful new feature allowing users to reserve an IP address for a specific MAC address within a subnet managed by MAAS. This capability ensures consistent network configuration and simplifies IP management in dynamic environments.</p>
 <p>Previously, implementing this scenario required the use of custom DHCPd snippets, which added complexity and required manual configuration. With this release, we strongly recommend migrating to the new built-in mechanism for a streamlined, reliable, and fully integrated solution to manage reserved IP scenarios.</p>
 <p>DHCP snippets have been deprecated in MAAS 3.6 and will be removed in the next major version.</p>
-<h5><a class="anchor" href="#p-9229-how-to-reserve-ip-addresses-16" name="p-9229-how-to-reserve-ip-addresses-16"></a>How to reserve IP addresses</h5>
+<h4><a class="anchor" href="#p-9229-how-to-reserve-ip-addresses-7" name="p-9229-how-to-reserve-ip-addresses-7"></a>How to reserve IP addresses</h4>
 <p>UI: navigate to subnets → select a subnet → Address reservation → Reserve static DHCP lease</p>
 <p>CLI: maas  reserved-ips -h to get started.</p>
-<h5><a class="anchor" href="#p-9229-expected-behavior-17" name="p-9229-expected-behavior-17"></a>Expected behavior</h5>
+<h4><a class="anchor" href="#p-9229-expected-behavior-8" name="p-9229-expected-behavior-8"></a>Expected behavior</h4>
 <p>When an IP/MAC reservation is configured, the following applies:</p>
 <p>The reserved IP/MAC pair will be included in the DHCP configuration generated by MAAS. This ensures that any device with the specified MAC address requesting an IP via DHCP will always receive the reserved IP.</p>
 <p>Upon machine deployment, the behavior varies depending on the network interface mode:</p>
@@ -8657,7 +8551,7 @@
 <li>Static: Only the reserved IP can be configured.</li>
 <li>Unconfigured: The interface will remain unconfigured</li>
 </ul>
-<h5><a class="anchor" href="#p-9229-key-constraints-and-rules-18" name="p-9229-key-constraints-and-rules-18"></a>Key constraints and rules</h5>
+<h4><a class="anchor" href="#p-9229-key-constraints-and-rules-9" name="p-9229-key-constraints-and-rules-9"></a>Key constraints and rules</h4>
 <p>Observe the following constraints when reserving addresses:</p>
 <ul>
 <li>The IP must be outside any dynamic range.</li>
@@ -8665,17 +8559,17 @@
 <li>A single IP cannot be reserved for multiple MAC addresses.</li>
 <li>Reserved IPs are immutable: to modify a reserved IP or MAC address, you must delete the existing reservation and create a new one.</li>
 </ul>
-<h4><a class="anchor" href="#p-9229-kernel-crash-dumps-19" name="p-9229-kernel-crash-dumps-19"></a>Kernel crash dumps</h4>
+<h3><a class="p-link--anchor-heading" href="#p-9229-kernel-crash-dumps" name="p-9229-kernel-crash-dumps">Kernel crash dumps</a></h3>
 <p>We introduce the ability to enable kernel crash dumps for Ubuntu deployments.</p>
 <p>You can configure this feature for individual deployments or enable it globally by default. Even if kernel crash dumps are enabled by default, they can be disabled on a per-machine basis during deployment.</p>
-<h5><a class="anchor" href="#p-9229-requirements-20" name="p-9229-requirements-20"></a>Requirements</h5>
+<h4><a class="anchor" href="#p-9229-requirements-11" name="p-9229-requirements-11"></a>Requirements</h4>
 <p>The target machine for the deployment must have:</p>
 <ul>
 <li>CPU: Minimum of 4 threads.</li>
 <li>RAM: Between 6 GB and 2 TB (2 TB is the current tested maximum).</li>
 <li>Disk Space: At least five times the RAM size as free disk space in /var</li>
 </ul>
-<h5><a class="anchor" href="#p-9229-enabling-kernel-crash-dumps-during-deployment-21" name="p-9229-enabling-kernel-crash-dumps-during-deployment-21"></a>Enabling kernel crash dumps during deployment</h5>
+<h4><a class="anchor" href="#p-9229-enabling-kernel-crash-dumps-during-deployment-12" name="p-9229-enabling-kernel-crash-dumps-during-deployment-12"></a>Enabling kernel crash dumps during deployment</h4>
 <p>For single machines:</p>
 <ul>
 <li>UI: navigate to machines → select a machine → Deploy → Enable kernel crash dump</li>
@@ -8686,13 +8580,13 @@
 <li>UI: navigate to settings → configuration/kernel parameters → enable kernel crash dump by default</li>
 <li>CLI: maas  maas set-config name=enable_kernel_crash_dump value=True</li>
 </ul>
-<h5><a class="anchor" href="#p-9229-overriding-default-settings-22" name="p-9229-overriding-default-settings-22"></a>Overriding default settings</h5>
+<h4><a class="anchor" href="#p-9229-overriding-default-settings-13" name="p-9229-overriding-default-settings-13"></a>Overriding default settings</h4>
 <p>If kernel crash dumps are enabled globally, you can disable them for specific machines:</p>
 <ul>
 <li>UI: Uncheck the kernel crash dump flag during deployment.</li>
 <li>CLI: maas  machine deploy &lt;system_id&gt; enable_kernel_crash_dump=False</li>
 </ul>
-<h4><a class="anchor" href="#p-9229-o11y-dashboards-for-maas-23" name="p-9229-o11y-dashboards-for-maas-23"></a>O11y - dashboards for MAAS</h4>
+<h3><a class="p-link--anchor-heading" href="#p-9229-o11y-dashboards-for-maas" name="p-9229-o11y-dashboards-for-maas">O11y - dashboards for MAAS</a></h3>
 <p>With MAAS 3.6 comes the initial version of a Grafana dashboard, designed to provide a high-level overview of your current MAAS deployment. This first iteration provides insights into:</p>
 <ul>
 <li>MAAS architecture (number of region and rack controllers)</li>
@@ -8702,7 +8596,7 @@
 </ul>
 <p>You can access the dashboard at <a class="inline-onebox" href="https://github.com/canonical/maas-grafana-dashboards">GitHub - canonical/maas-grafana-dashboards: Grafana dashboards to monitor MAAS.</a>. As it’s a first iteration, feedback is always welcome.</p>
 <h3><a class="p-link--anchor-heading" href="#p-9229-ui" name="p-9229-ui">UI</a></h3>
-<h4><a class="anchor" href="#p-9229-features-25" name="p-9229-features-25"></a>Features</h4>
+<h4><a class="anchor" href="#p-9229-features-16" name="p-9229-features-16"></a>Features</h4>
 <ul>
 <li>Forms to create or edit VLANs are now side panels as most of the other forms in MAAS (<span class="hashtag-raw">#5404</span>)</li>
 <li>The subnet details page was always very long and hard to understand. We added tabs for Static Routes, Address reservation, DHCP snippers and IP Address usage to make information easier to find</li>
@@ -8712,7 +8606,7 @@
 <li>Enabled support for kernel crash dumps when deploying machines (see Kernel Crash dumps above)</li>
 <li>We reworked the image list to be more concise and easier to use. The image list was always using radio buttons that worked similar to tabs. We created a new user experience using side panels that is consistent with the other views in MAAS.</li>
 </ul>
-<h4><a class="anchor" href="#p-9229-ui-bug-fixes-26" name="p-9229-ui-bug-fixes-26"></a>UI bug fixes</h4>
+<h4><a class="anchor" href="#p-9229-ui-bug-fixes-17" name="p-9229-ui-bug-fixes-17"></a>UI bug fixes</h4>
 <ul>
 <li>Network discovery date truncation MAASENG-2991 (<span class="hashtag-raw">#5403</span>)</li>
 <li>Html error formatting MAASENG-2935 (<span class="hashtag-raw">#5405</span>)</li>
@@ -8956,30 +8850,30 @@
 </ul>
 <h3><a class="p-link--anchor-heading" href="#p-9229-capabilities-added-in-maas-35" name="p-9229-capabilities-added-in-maas-35">Capabilities added in MAAS 3.5</a></h3>
 <p>MAAS 3.5 delivers substantial improvements in core functionality.  We’ve integrated Temporal for enhanced process and thread management, and started a transition to Go, re-implementing some of the rack controller functions as the “MAAS agent.”  We’ve standardized logging and monitoring to use tools like syslogd, stepping away from the custom code we had been using.  We’ve also expanded the capabilities of existing features to include comprehensive service monitoring and support for deploying ephemeral (RAM-only) OS images.  And we’ve made great strides in visibly improving the performance of MAAS.</p>
-<h4><a class="anchor" href="#p-9229-faster-and-more-efficient-image-storage-and-sync-38" name="p-9229-faster-and-more-efficient-image-storage-and-sync-38"></a>Faster and more efficient image storage and sync</h4>
+<h4><a class="anchor" href="#p-9229-faster-and-more-efficient-image-storage-and-sync-29" name="p-9229-faster-and-more-efficient-image-storage-and-sync-29"></a>Faster and more efficient image storage and sync</h4>
 <p>MAAS previously stored the boot resources (boot-loaders, kernels and disk images) in the MAAS database, and then replicated them on all Rack controllers. This make operations difficult and slow, as the database quickly became huge and files had to be transferred to all Racks before they were available for use. To address this issue, we have moved the resource storage from the database to the Region controller, and repurposed the storage in the Rack.</p>
-<h4><a class="anchor" href="#p-9229-storing-boot-resources-in-the-region-controllers-39" name="p-9229-storing-boot-resources-in-the-region-controllers-39"></a>Storing boot resources in the Region Controllers</h4>
+<h4><a class="anchor" href="#p-9229-storing-boot-resources-in-the-region-controllers-30" name="p-9229-storing-boot-resources-in-the-region-controllers-30"></a>Storing boot resources in the Region Controllers</h4>
 <p>All boot resources are stored in the local disk in each Controller host (<code>/var/lib/maas/image-storage</code> for <em>deb</em> or <code>$SNAP_COMMON/maas/image-storage</code> for <em>snap</em>). MAAS checks the contents of these directories on every start-up, removing unknown/stale files and downloading any missing resource.</p>
 <p>MAAS checks the amount of disk space available before downloading any resource, and stops synchronizing files if there isn’t enough free space. This error will be reported in the logs and a banner in the Web UI.</p>
-<h4><a class="anchor" href="#p-9229-storage-use-by-the-rack-controller-40" name="p-9229-storage-use-by-the-rack-controller-40"></a>Storage use by the Rack Controller</h4>
+<h4><a class="anchor" href="#p-9229-storage-use-by-the-rack-controller-31" name="p-9229-storage-use-by-the-rack-controller-31"></a>Storage use by the Rack Controller</h4>
 <p>Images are no longer copied from the MAAS database to the rack. Instead, the rack downloads images from the region on-demand.  This works well with the redesign of the rack controller (now known as the <em>MAAS agent</em>), which has been re-imagined as a 4G LRU caching agent.  The MAAS agent has limited storage space, managing cache carefully, but it is possible to configure the size of this cache if you need to do so.</p>
 <p>As boot resources are now downloaded from a Region controller on-demand, a fast and reliable network connection between Regions and Racks is essential for a smooth operation. Adjusting the cache size might also be important for performance if you regularly deploy a large number of different systems.</p>
-<h4><a class="anchor" href="#p-9229-one-time-image-migration-process-41" name="p-9229-one-time-image-migration-process-41"></a>One-time image migration process</h4>
+<h4><a class="anchor" href="#p-9229-one-time-image-migration-process-32" name="p-9229-one-time-image-migration-process-32"></a>One-time image migration process</h4>
 <p>The first Region controller that upgrades will try to move all images out of the database. This is a background operation performed after all database migrations are applied, and <strong>it’s not reversible</strong>. This is also a blocking operation, so MAAS might be un-available for some time (i.e., you should plan for some downtime during the upgrade process).</p>
 <p>MAAS will check if the host has enough disk space before starting to export the resources, and it will not proceed otherwise. In order to discover how much disk space you need for all your images, you can run the following SQL query in MAAS database before upgrading:</p>
 <pre data-code-wrap="sql"><code class="lang-sql">select sum(n."size") from (select distinct on (f."sha256") f."size" from maasserver_bootresourcefile f order by f."sha256") n;
 </code></pre>
 <p>The controllers are no longer capable of serving boot resources directly from the database, and won’t be able to commission or to deploy machines until this migration succeeds. If the process fails, you must free enough disk space and restart the controller for the migration to be attempted again.</p>
-<h4><a class="anchor" href="#p-9229-sync-works-differently-42" name="p-9229-sync-works-differently-42"></a>Sync works differently</h4>
+<h4><a class="anchor" href="#p-9229-sync-works-differently-33" name="p-9229-sync-works-differently-33"></a>Sync works differently</h4>
 <p>When downloading boot resources from an upstream source (e.g. <a href="http://images.maas.io/">images.maas.io</a>), MAAS divides the workload between all Region controllers available, so each file is downloaded only once, but not all by the same controller. After all external files were fetched, the controllers synchronize files among them in a peer-to-peer fashion. This requires <strong>direct communication between Regions to be allowed</strong>, so you should review your firewall rules before upgrading.</p>
 <p>In this new model, a given image is <em>only</em> available for deployment after <em>all</em> regions have it, although stale versions can be used until everyone is up to date. This differs from previous versions where the boot resource needed to be copied to all Rack controllers before it was available, meaning that the images should be ready for use sooner.</p>
-<h4><a class="anchor" href="#p-9229-faster-machine-listing-when-deploying-many-machines-43" name="p-9229-faster-machine-listing-when-deploying-many-machines-43"></a>Faster machine listing when deploying many machines</h4>
+<h4><a class="anchor" href="#p-9229-faster-machine-listing-when-deploying-many-machines-34" name="p-9229-faster-machine-listing-when-deploying-many-machines-34"></a>Faster machine listing when deploying many machines</h4>
 <p>We have made the MAAS machine listing considerably faster for large page sizes.</p>
-<h4><a class="anchor" href="#p-9229-soft-power-off-44" name="p-9229-soft-power-off-44"></a>Soft Power Off</h4>
+<h4><a class="anchor" href="#p-9229-soft-power-off-35" name="p-9229-soft-power-off-35"></a>Soft Power Off</h4>
 <p>MAAS 3.5 allows you to execute a “soft” power-off for one or more machines.  Rather than commanding a power-off via the BMC, MAAS will ask the running OS to power-down the machine.  This allows machines to go through their normal shutdown routines before powering off.</p>
-<h4><a class="anchor" href="#p-9229-improved-select-all-in-the-machine-list-45" name="p-9229-improved-select-all-in-the-machine-list-45"></a>Improved “Select All” in the machine list</h4>
+<h4><a class="anchor" href="#p-9229-improved-select-all-in-the-machine-list-36" name="p-9229-improved-select-all-in-the-machine-list-36"></a>Improved “Select All” in the machine list</h4>
 <p>With MAAS 3.5, you can select only the machines that are visible on the current page.</p>
-<h4><a class="anchor" href="#p-9229-improved-support-for-multipath-storage-devices-46" name="p-9229-improved-support-for-multipath-storage-devices-46"></a>Improved support for multipath storage devices</h4>
+<h4><a class="anchor" href="#p-9229-improved-support-for-multipath-storage-devices-37" name="p-9229-improved-support-for-multipath-storage-devices-37"></a>Improved support for multipath storage devices</h4>
 <p>MAAS support of multipath storage devices has been reviewed and improved, and now it’s capable of correctly identifying the following technologies:</p>
 <ul>
 <li>SCSI</li>
@@ -8988,7 +8882,7 @@
 <li>SAS (including wide port and expanders)</li>
 </ul>
 <p>When one of these devices is detected by the commissioning scripts, MAAS will suppress the duplicated disks.</p>
-<h4><a class="anchor" href="#p-9229-maas-services-exposed-as-prometheus-metrics-47" name="p-9229-maas-services-exposed-as-prometheus-metrics-47"></a>MAAS services exposed as Prometheus metrics</h4>
+<h4><a class="anchor" href="#p-9229-maas-services-exposed-as-prometheus-metrics-38" name="p-9229-maas-services-exposed-as-prometheus-metrics-38"></a>MAAS services exposed as Prometheus metrics</h4>
 <p>All services found in the <em>Hardware &gt; Controllers &gt;  &gt; Services</em> panel are now exposed as Prometheus metrics, to include:</p>
 <ul>
 <li>regiond</li>
@@ -9005,18 +8899,18 @@
 <li>DNS</li>
 </ul>
 <p>This should improve the user’s ability to monitor MAAS.</p>
-<h4><a class="anchor" href="#p-9229-monitoring-setup-sequence-updated-48" name="p-9229-monitoring-setup-sequence-updated-48"></a>Monitoring setup sequence updated</h4>
+<h4><a class="anchor" href="#p-9229-monitoring-setup-sequence-updated-39" name="p-9229-monitoring-setup-sequence-updated-39"></a>Monitoring setup sequence updated</h4>
 <p>Also, the monitoring setup sequence for MAAS <a href="how-to-monitor-maas.html">has changed</a>.</p>
-<h4><a class="anchor" href="#p-9229-logs-collapsed-into-system-log-files-49" name="p-9229-logs-collapsed-into-system-log-files-49"></a>Logs collapsed into system log files</h4>
+<h4><a class="anchor" href="#p-9229-logs-collapsed-into-system-log-files-40" name="p-9229-logs-collapsed-into-system-log-files-40"></a>Logs collapsed into system log files</h4>
 <p>With the advent of 3.5, all of the separate logs used by MAAS through version 3.4 have been eliminated and replaced with logging into the standard <code>systemd</code> files.  See <a href="https://discourse.maas.io/t/how-to-use-maas-systemd-logs/8103">How to use MAAS systemd logs</a> in the documentation set for details.</p>
-<h4><a class="anchor" href="#p-9229-deployment-of-oracle-linux-8-and-9-on-maas-machines-50" name="p-9229-deployment-of-oracle-linux-8-and-9-on-maas-machines-50"></a>Deployment of Oracle Linux 8 and 9 on MAAS machines</h4>
+<h4><a class="anchor" href="#p-9229-deployment-of-oracle-linux-8-and-9-on-maas-machines-41" name="p-9229-deployment-of-oracle-linux-8-and-9-on-maas-machines-41"></a>Deployment of Oracle Linux 8 and 9 on MAAS machines</h4>
 <p>Concurrent with the release of MAAS 3.5, we have added Oracle Linux 8 and Oracle Linux 9 to the stable of custom OS images that can be deployed on MAAS machines.</p>
-<h4><a class="anchor" href="#p-9229-ephemeral-os-deployments-51" name="p-9229-ephemeral-os-deployments-51"></a>Ephemeral OS deployments</h4>
+<h4><a class="anchor" href="#p-9229-ephemeral-os-deployments-42" name="p-9229-ephemeral-os-deployments-42"></a>Ephemeral OS deployments</h4>
 <p>With the release of MAAS 3.5, ephemeral deployments for Ubuntu and custom images should succeed.  Networking is only set up for Ubuntu images. For non-Ubuntu images, you only get the PXE interface set up to do DHCP against MAAS. All other interfaces need to be configured manually after deployment.</p>
 <p>You can choose an ephemeral OS deployment from the deployment configuration screen in the machine list: Just select the “Deploy in memory” option and deploy as normal.</p>
-<h4><a class="anchor" href="#p-9229-new-filters-to-support-ephemeral-deployments-52" name="p-9229-new-filters-to-support-ephemeral-deployments-52"></a>New filters to support ephemeral deployments</h4>
+<h4><a class="anchor" href="#p-9229-new-filters-to-support-ephemeral-deployments-43" name="p-9229-new-filters-to-support-ephemeral-deployments-43"></a>New filters to support ephemeral deployments</h4>
 <p>You can now select two new filters for deployment targets: “Deployed in memory” and “Deployed to disk.”</p>
-<h4><a class="anchor" href="#p-9229-machine-release-scripts-53" name="p-9229-machine-release-scripts-53"></a>Machine release scripts</h4>
+<h4><a class="anchor" href="#p-9229-machine-release-scripts-44" name="p-9229-machine-release-scripts-44"></a>Machine release scripts</h4>
 <p>MAAS now supports machine release scripts – scripts that will be run when releasing a machine from deployment.  These scripts run on an ephemeral copy of Ubuntu that is loaded after the deployed OS has been shut down.  This ephemeral Ubuntu is similar to the OS image used to commission machines.</p>
 <p>Release scripts are the same type of scripts that you can create for commissioning or testing, with one difference: <code>script_type: release</code>.  Here’s a sample release script:</p>
 <pre data-code-wrap="nohighlight"><code class="lang-nohighlight">#!/usr/bin/env python3
@@ -9070,7 +8964,7 @@ s.close()
 <p>You can inspect release script results via the MAAS CLI:</p>
 <pre data-code-wrap="nohighlight"><code class="lang-nohighlight">maas $PROFILE node-script-results read $SYSTEM_ID type=release
 </code></pre>
-<h4><a class="anchor" href="#p-9229-updates-to-the-maas-ui-54" name="p-9229-updates-to-the-maas-ui-54"></a>Updates to the MAAS UI</h4>
+<h4><a class="anchor" href="#p-9229-updates-to-the-maas-ui-45" name="p-9229-updates-to-the-maas-ui-45"></a>Updates to the MAAS UI</h4>
 <ul>
 <li>The header of the “Deploy” form now sticks to the top of the screen when you scroll down</li>
 <li>Added a message on empty tables across the UI</li>
@@ -9090,7 +8984,7 @@ s.close()
 – Less JavaScript code has to be fetched on the initial page load<br/>
 – Increased performance of the development environment of the UI</li>
 </ul>
-<h4><a class="anchor" href="#p-9229-agent-and-temporal-controller-services-55" name="p-9229-agent-and-temporal-controller-services-55"></a>“Agent” and “Temporal” controller services</h4>
+<h4><a class="anchor" href="#p-9229-agent-and-temporal-controller-services-46" name="p-9229-agent-and-temporal-controller-services-46"></a>“Agent” and “Temporal” controller services</h4>
 <p>MAAS 3.5 makes some internal changes to improve the operation of MAAS, including:</p>
 <ul>
 <li>
@@ -9271,7 +9165,7 @@ s.close()
 <p>We are happy to announce that MAAS 3.4 has been released.</p>
 <h3><a class="p-link--anchor-heading" href="#p-9229-new-capabilities-in-maas-34" name="p-9229-new-capabilities-in-maas-34">New capabilities in MAAS 3.4</a></h3>
 <p>MAAS 3.4 provides several new features.</p>
-<h4><a class="anchor" href="#p-9229-redesigned-ui-69" name="p-9229-redesigned-ui-69"></a>Redesigned UI</h4>
+<h4><a class="anchor" href="#p-9229-redesigned-ui-60" name="p-9229-redesigned-ui-60"></a>Redesigned UI</h4>
 <p>The MAAS User Interface (UI) has undergone a significant redesign, introducing the MAAS UI new layout. This new layout incorporates various features and improvements aimed at enhancing the user experience for MAAS users and operators who primarily interact with the UI.  The MAAS UI new layout introduces several enhancements that aim to improve usability, customization, and navigation within the application</p>
 <ul>
 <li>
@@ -9287,7 +9181,7 @@ s.close()
 <p>Improved side navigation: To enhance navigation within the application, the MAAS UI new layout implements a new side navigation system. Users can conveniently navigate through different sections of the app using the side panel. Additionally, the inclusion of a secondary side navigation specifically for settings and account pages improves the organization and accessibility of these sections.</p>
 </li>
 </ul>
-<h5><a class="anchor" href="#p-9229-intended-benefits-70" name="p-9229-intended-benefits-70"></a>Intended Benefits</h5>
+<h5><a class="anchor" href="#p-9229-intended-benefits-61" name="p-9229-intended-benefits-61"></a>Intended Benefits</h5>
 <p>The MAAS UI was redesigned with several user benefits in mind.</p>
 <ul>
 <li>
@@ -9307,9 +9201,9 @@ s.close()
 </li>
 </ul>
 <p>The MAAS UI new layout introduces a redesigned interface with enhanced features to provide a more efficient and user-friendly experience for MAAS users and operators. By allowing users to customize their views, streamlining form interactions</p>
-<h4><a class="anchor" href="#p-9229-configurable-session-timeout-71" name="p-9229-configurable-session-timeout-71"></a>Configurable session timeout</h4>
+<h4><a class="anchor" href="#p-9229-configurable-session-timeout-62" name="p-9229-configurable-session-timeout-62"></a>Configurable session timeout</h4>
 <p>In MAAS 3.4, we’ve introduced the Configurable Session Timeout feature, offering better control over session length. This feature allows you to set a personalized duration for your sessions, hopefully avoiding abrupt disconnections or lingering sessions.  If you’re a user who has login repeatedly, due to short session defaults, or you’re concerned about leaving your session accessible for too long, setting a custom timeout is useful and potentially more secure.</p>
-<h4><a class="anchor" href="#p-9229-packer-maas-sles-72" name="p-9229-packer-maas-sles-72"></a>Packer MAAS - SLES</h4>
+<h4><a class="anchor" href="#p-9229-packer-maas-sles-63" name="p-9229-packer-maas-sles-63"></a>Packer MAAS - SLES</h4>
 <p>The MAAS 3.4 release expands Packer support to include SUSE Linux Enterprise Server (SLES), expanding the the list of deployable Linux distributions.  We also support openSUSE and openSUSE Tumbleweed. And we’ve added a template for Red Hat Enterprise Linux (RHEL) version 9.</p>
 <h3><a class="p-link--anchor-heading" href="#p-9229-installation" name="p-9229-installation">Installation</a></h3>
 <p>MAAS will run on <a href="installation-requirements.html">just about any modern hardware configuration</a>.</p>
@@ -9326,7 +9220,7 @@ s.close()
 </ul>
 <h3><a class="p-link--anchor-heading" href="#p-9229-bug-fixes" name="p-9229-bug-fixes">Bug fixes</a></h3>
 <p><a> </a></p>
-<h4><a class="anchor" href="#p-9229-maas-341-75" name="p-9229-maas-341-75"></a>MAAS 3.4.1</h4>
+<h4><a class="anchor" href="#p-9229-maas-341-66" name="p-9229-maas-341-66"></a>MAAS 3.4.1</h4>
 <ul>
 <li><a href="https://bugs.launchpad.net/maas/+bug/2053033">2053033</a>: Creating MAAS Virsh VM does not work (libvirt: error)</li>
 <li><a href="https://bugs.launchpad.net/maas/+bug/2033505">2033505</a>: Failed to update regiond’s processes and endpoints</li>
@@ -9348,7 +9242,7 @@ s.close()
 <li><a href="https://bugs.launchpad.net/maas/+bug/1996500">1996500</a>: UI: Subnets page pagination - a group can be displayed on two pages</li>
 <li><a href="https://bugs.launchpad.net/maas/+bug/2054672">2054672</a>: Deploying a server with bcache on top of HDD and mdadm can frequently fail</li>
 </ul>
-<h4><a class="anchor" href="#p-9229-maas-340-76" name="p-9229-maas-340-76"></a>MAAS 3.4.0</h4>
+<h4><a class="anchor" href="#p-9229-maas-340-67" name="p-9229-maas-340-67"></a>MAAS 3.4.0</h4>
 <p>Here is the list of bug fixes for all versions of MAAS 3.4, from first Beta through final release:</p>
 <ul>
 <li>(3.4.0)<a href="https://bugs.launchpad.net/maas/+bug/2003745">2038381</a>:	Hardware Sync Docs link in UI leads to a 404</li>
@@ -9923,7 +9817,7 @@ s.close()
 
             <div class="p-notification__content">
               <p class="p-notification__message">
-                Last updated a day ago. <a href="https://discourse.maas.io/t/release-notes-and-upgrade-instructions/5292">Help improve this document in the forum</a>.
+                Last updated 5 minutes ago. <a href="https://discourse.maas.io/t/release-notes-and-upgrade-instructions/5292">Help improve this document in the forum</a>.
               </p>
             </div>
 
@@ -9945,22 +9839,19 @@ s.close()
                 </ul>
               
             
-              <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-version-37-release-notes">Version 3.7 release notes</a></li>
-              
-                <ul class="p-table-of-contents__list">
-                
-                  <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-h-370-beta-1">3.7.0 Beta 1</a></li>
-                  
-                </ul>
-              
-            
               <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-version-36-release-notes">Version 3.6 release notes</a></li>
               
                 <ul class="p-table-of-contents__list">
                 
-                  <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-maas-361-has-been-released">MAAS 3.6.1 has been released</a></li>
+                  <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-maas-36-based-on-ubuntu-2404-lts">MAAS 3.6 based on Ubuntu 24.04 LTS</a></li>
                   
-                  <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-maas-360-has-been-released">MAAS 3.6.0 has been released</a></li>
+                  <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-maas-36-recommends-postgresql-16-maintaining-support-for-14">MAAS 3.6 recommends PostgreSQL 16 maintaining support for 14</a></li>
+                  
+                  <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-reserved-ips">Reserved IPs</a></li>
+                  
+                  <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-kernel-crash-dumps">Kernel crash dumps</a></li>
+                  
+                  <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-o11y-dashboards-for-maas">O11y - dashboards for MAAS</a></li>
                   
                   <li class="p-table-of-contents__item"><a class="p-table-of-contents__link" href="#p-9229-ui">UI</a></li>
                   
@@ -10202,5 +10093,5 @@ s.close()
         </body>
 
       
-<!-- Mirrored from canonical.com/maas/docs/release-notes-and-upgrade-instructions by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:41:00 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/release-notes-and-upgrade-instructions by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:01:35 GMT -->
 </html>

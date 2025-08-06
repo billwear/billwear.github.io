@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
 
   
-<!-- Mirrored from canonical.com/maas/docs/about-deploying-running-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:41:02 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/about-deploying-running-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:02:01 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8" />
@@ -99,7 +99,7 @@
           <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js"
                   defer></script>
 
-          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=62f7ad6" />
+          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=a85ac60" />
         </head>
 
         <body class=" 
@@ -8521,7 +8521,7 @@
 <li>add or remove PCI devices</li>
 <li>add or remove USB devices</li>
 </ul>
-<p>While deploying a machine, you can configure that machine to periodically sync its <a href="https://maas.io/docs/about-deploying-running-machines#p-17466-hardware-sync">hardware configuration</a>.  Deployed machines will also  passively update changes to the BMC and tags for that machine, as these changes are made.</p>
+<p>While deploying a machine, you can configure that machine to periodically sync its <a href="about-deploying-running-machines.html#p-17466-hardware-sync">hardware configuration</a>.  Deployed machines will also  passively update changes to the BMC and tags for that machine, as these changes are made.</p>
 <h2><a class="p-link--anchor-heading" href="#p-17466-hardware-sync" name="p-17466-hardware-sync">Hardware sync</a></h2>
 <p>Updating hardware on a deployed machine works by installing a special binary on the deployed machine.   This binary is configured at a given interval and push hardware info to the MAAS metadata endpoint.  By setting “enable_hw_sync” to true on a machine prior to deployment, MAAS will add configuration to install a systemd service and timer that will download the hardware sync binary.  This binary then authenticates the machine, reads the hardware info from the machine and pushes it to MAAS. The interval is set globally in the MAAS settings.</p>
 <p>Any changes in hardware are written to the machine’s configuration.  Physical hardware changes will be preserved upon release, while virtual changes, such as a SR-IOV interface, will be dropped.</p>
@@ -9042,7 +9042,7 @@ params: {
 
             <div class="p-notification__content">
               <p class="p-notification__message">
-                Last updated 4 months ago. <a href="https://discourse.maas.io/t/about-deploying-running-machines/7903">Help improve this document in the forum</a>.
+                Last updated 10 minutes ago. <a href="https://discourse.maas.io/t/about-deploying-running-machines/7903">Help improve this document in the forum</a>.
               </p>
             </div>
 
@@ -9231,5 +9231,5 @@ params: {
         </body>
 
       
-<!-- Mirrored from canonical.com/maas/docs/about-deploying-running-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:41:02 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/about-deploying-running-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:02:01 GMT -->
 </html>

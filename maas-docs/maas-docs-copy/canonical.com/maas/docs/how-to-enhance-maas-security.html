@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
 
   
-<!-- Mirrored from canonical.com/maas/docs/how-to-enhance-maas-security by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:41:00 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/how-to-enhance-maas-security by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:01:10 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8" />
@@ -99,7 +99,7 @@
           <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js"
                   defer></script>
 
-          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=62f7ad6" />
+          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=a85ac60" />
         </head>
 
         <body class=" 
@@ -8516,7 +8516,7 @@
 
         <p>MAAS security depends on encryption, logging, and user access management.  This document describes how to keep all of these in reliable working order.</p>
 <h2><a class="p-link--anchor-heading" href="#p-9102-use-tls-termination-maas-33" name="p-9102-use-tls-termination-maas-33">Use TLS termination (MAAS 3.3+)</a></h2>
-<p>Learn more about <a href="https://maas.io/docs/ensuring-security-in-maas#p-13983-tls-termination">TLS termination</a>.</p>
+<p>Learn more about <a href="how-to-enhance-maas-security.html#p-13983-tls-termination">TLS termination</a>.</p>
 <h3><a class="p-link--anchor-heading" href="#p-9102-configure-tls-33" name="p-9102-configure-tls-33">Configure TLS (3.3+)</a></h3>
 <p>Manage TLS settings in MAAS with <code>config-tls</code>.</p>
 <pre data-code-wrap="nohighlight"><code class="lang-nohighlight">usage: maas config-tls [-h] COMMAND ...
@@ -8652,7 +8652,7 @@ sudo cp mysite.com.pem /etc/ssl/private/
 </code></pre>
 <p>Include your root and intermediate CA certificates in the same PEM file, if required.</p>
 <h2><a class="p-link--anchor-heading" href="#p-9102-use-tls-termination-32" name="p-9102-use-tls-termination-32">Use TLS termination (3.2-)</a></h2>
-<p>MAAS versions 3.2 and below don’t support native TLS encryption. If you are not interested in <a href="https://maas.io/docs/how-to-enable-high-availability#p-9026-api-ha-with-haproxy">setting up an HAProxy</a>, you can still enable TLS.</p>
+<p>MAAS versions 3.2 and below don’t support native TLS encryption. If you are not interested in <a href="how-to-manage-controllers%23p-9026-enable-ha.html#p-9026-api-ha-with-haproxy">setting up an HAProxy</a>, you can still enable TLS.</p>
 <h3><a class="p-link--anchor-heading" href="#p-9102-configure-nginx" name="p-9102-configure-nginx">Configure nginx</a></h3>
 <pre data-code-wrap="nohighlight"><code class="lang-nohighlight">    server {
      listen 443 SQL;
@@ -8703,7 +8703,7 @@ sudo ufw allow 5250:5270/tcp
 sudo ufw allow 5250:5270/udp
 </code></pre>
 <p>Your specifics may vary, so refer to the relevant firewall documentation and the required MAAS controller port settings.</p>
-<p>See <a href="https://maas.io/docs/configuration-reference#p-17901-controller-port-settings">MAAS network port reference table</a> for a complete active port listing.</p>
+<p>See <a href="configuration-reference.html#p-17901-controller-port-settings">MAAS network port reference table</a> for a complete active port listing.</p>
 <h2><a class="p-link--anchor-heading" href="#p-9102-deploy-haproxy" name="p-9102-deploy-haproxy">Deploy HAProxy</a></h2>
 <pre data-code-wrap="nohighlight"><code class="lang-nohighlight">sudo apt-get update
 sudo apt-get install haproxy
@@ -8740,7 +8740,7 @@ backend maas
 <p>Enable <a href="https://www.digitalocean.com/community/tutorials/how-to-implement-ssl-termination-with-haproxy-on-ubuntu-14-04">HAProxy logging</a> if desired.  Alternatively, bypass SSL without HAProxy.</p>
 <h2><a class="p-link--anchor-heading" href="#p-9102-use-logging" name="p-9102-use-logging">Use logging</a></h2>
 <p>Use MAAS log files to find potential security issues.</p>
-<p>See the <a href="https://maas.io/docs/maas-logging-reference">MAAS logging reference</a> for detailed examples &amp; log file locations.</p>
+<p>See the <a href="maas-logging-reference.html">MAAS logging reference</a> for detailed examples &amp; log file locations.</p>
 <h2><a class="p-link--anchor-heading" href="#p-9102-manage-users" name="p-9102-manage-users">Manage users</a></h2>
 <p>Manage users carefully to maintain strong, proactive security.</p>
 <h3><a class="p-link--anchor-heading" href="#p-9102-add-a-user" name="p-9102-add-a-user">Add a user</a></h3>
@@ -8765,10 +8765,10 @@ backend maas
 <h3><a class="p-link--anchor-heading" href="#p-9102-change-passwords" name="p-9102-change-passwords">Change passwords</a></h3>
 <p><em>Settings</em> &gt; <em>Users</em> &gt; <em>[User]</em> &gt; <em>Pencil</em> &gt; [Follow instructions]</p>
 <blockquote>
-<p><em>Note that administrators can change any user’s password.  Learn more about <a href="https://maas.io/docs/ensuring-security-in-maas#p-13983-strong-passwords">strong passwords</a>.</em></p>
+<p><em>Note that administrators can change any user’s password.  Learn more about <a href="how-to-enhance-maas-security.html#p-13983-strong-passwords">strong passwords</a>.</em></p>
 </blockquote>
 <h2><a class="p-link--anchor-heading" href="#p-9102-manage-vault" name="p-9102-manage-vault">Manage Vault</a></h2>
-<p>Learn more about <a href="https://maas.io/docs/ensuring-security-in-maas#p-13983-hashicorp-vault">MAAS and Hashicorp Vault</a>.</p>
+<p>Learn more about <a href="how-to-enhance-maas-security.html#p-13983-hashicorp-vault">MAAS and Hashicorp Vault</a>.</p>
 <p>To ensure seamless integration between MAAS and Vault, you’ll first need to obtain a <code>role_id</code> and <code>wrapped_token</code> through Vault’s CLI. For detailed guidance, check <a href="https://learn.hashicorp.com/tutorials/vault/approle-best-practices?in=vault/auth-methods#approle-response-wrapping">Hashicorp Vault’s tutorial</a>.</p>
 <p>Here’s an illustrative example on how to set up this integration using the <code>vault</code> CLI:</p>
 <ol>
@@ -9310,7 +9310,7 @@ policies=$MAAS_POLICY token_ttl=5m
 
             <div class="p-notification__content">
               <p class="p-notification__message">
-                Last updated 3 months ago. <a href="https://discourse.maas.io/t/how-to-enhance-maas-security/5196">Help improve this document in the forum</a>.
+                Last updated 6 minutes ago. <a href="https://discourse.maas.io/t/how-to-enhance-maas-security/5196">Help improve this document in the forum</a>.
               </p>
             </div>
 
@@ -9563,5 +9563,5 @@ policies=$MAAS_POLICY token_ttl=5m
         </body>
 
       
-<!-- Mirrored from canonical.com/maas/docs/how-to-enhance-maas-security by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:41:00 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/how-to-enhance-maas-security by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:01:15 GMT -->
 </html>

@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
 
   
-<!-- Mirrored from canonical.com/maas/docs/maas-troubleshooting-guide by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:41:02 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/maas-troubleshooting-guide by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:01:42 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8" />
@@ -99,7 +99,7 @@
           <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js"
                   defer></script>
 
-          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=62f7ad6" />
+          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=a85ac60" />
         </head>
 
         <body class=" 
@@ -8600,7 +8600,7 @@ maas $profile maas set-config name=http_proxy value=""
 </ul>
 <p><strong>Solution:</strong></p>
 <ul>
-<li>Check MAAS and cloud-init logs for more details using the instructions provided in the <a href="https://maas.io/docs/how-to-use-logging">logging documentation</a>.</li>
+<li>Check MAAS and cloud-init logs for more details using the instructions provided in the <a href="how-to-use-logging.html">logging documentation</a>.</li>
 </ul>
 </li>
 </ol>
@@ -8629,7 +8629,7 @@ MAAS restarted after an update, causing DNS to fail due to duplicate subnets and
 <li>
 <p><strong>Identify the issue:</strong></p>
 <ul>
-<li>The issue was identified by errors in the <a href="https://maas.io/docs/how-to-use-logging">MAAS log files</a>, indicating problems with BIND9 due to duplicate subnets.</li>
+<li>The issue was identified by errors in the <a href="how-to-use-logging.html">MAAS log files</a>, indicating problems with BIND9 due to duplicate subnets.</li>
 </ul>
 </li>
 <li>
@@ -8995,7 +8995,7 @@ MAAS 2.9.2 (snap) DHCP services stopped working after memory and disk issues wer
 <li>
 <p><strong>Check logs:</strong></p>
 <ul>
-<li>Look into the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a>.</li>
+<li>Look into the <a href="how-to-use-logging.html">MAAS logs</a>.</li>
 <li>The error log shows something like this:<pre><code class="lang-auto">2021-06-09 08:58:43 maasserver.rack_controller: [critical] Failed configuring DHCP on rack controller 'id:1'.
   File "/snap/maas/12555/lib/python3.8/site-packages/maasserver/dhcp.py", line 864, in configure_dhcp
     config = yield deferToDatabase(get_dhcp_configuration, rack_controller)
@@ -9173,7 +9173,7 @@ nslookup maas-server-ip
 <li>
 <p><strong>Check MAAS logs:</strong></p>
 <ul>
-<li>Review the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a> for any errors or warnings that might provide more context about the issue.</li>
+<li>Review the <a href="how-to-use-logging.html">MAAS logs</a> for any errors or warnings that might provide more context about the issue.</li>
 </ul>
 </li>
 <li>
@@ -9508,7 +9508,7 @@ The MAAS UI was accessible until the network configuration was changed, putting 
 <li>
 <p><strong>Check logs for further issues:</strong></p>
 <ul>
-<li>Review the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a> for any additional errors.</li>
+<li>Review the <a href="how-to-use-logging.html">MAAS logs</a> for any additional errors.</li>
 </ul>
 </li>
 <li>
@@ -9528,7 +9528,7 @@ The MAAS UI was accessible until the network configuration was changed, putting 
 </ul>
 </li>
 </ol>
-<p>By following these steps, you should be able to resolve the “Bad Gateway” error and restore access to the MAAS UI. If the issue persists, consider additional troubleshooting on the network level or consult the <a href="https://maas.io/docs">MAAS documentation</a> for further guidance.</p>
+<p>By following these steps, you should be able to resolve the “Bad Gateway” error and restore access to the MAAS UI. If the issue persists, consider additional troubleshooting on the network level or consult the <a href="../docs.html">MAAS documentation</a> for further guidance.</p>
 <h2><a class="p-link--anchor-heading" href="#p-9297-used-ip-addresses-in-a-subnet-empty-even-though-dhcp-leases-are-given-out" name="p-9297-used-ip-addresses-in-a-subnet-empty-even-though-dhcp-leases-are-given-out">Used IP addresses in a subnet empty even though DHCP leases are given out</a></h2>
 <p><strong>Problem:</strong><br/>
 MAAS is sending out DHCP leases to both a BMC and a machine set to PXE boot, but the MAAS UI does not show any machines or used IP addresses in the subnet. This issue is hindering the auto-discovery and provisioning process.</p>
@@ -9575,13 +9575,13 @@ MAAS is sending out DHCP leases to both a BMC and a machine set to PXE boot, but
 <li>
 <p><strong>Review logs and configuration files:</strong></p>
 <ul>
-<li>Check the <a href="https://maas.io/docs/how-to-use-logging">MAAS log files</a> for any errors or warnings that might indicate issues with DHCP or PXE boot.</li>
+<li>Check the <a href="how-to-use-logging.html">MAAS log files</a> for any errors or warnings that might indicate issues with DHCP or PXE boot.</li>
 </ul>
 </li>
 <li>
 <p><strong>Documentation and guides:</strong></p>
 <ul>
-<li>Refer to the <a href="https://maas.io/docs/about-dhcp-in-maas">official MAAS documentation</a> for detailed information on how MAAS works with DHCP and how to properly configure and troubleshoot it.</li>
+<li>Refer to the <a href="about-maas-networking%23p-20679-dhcp.html">official MAAS documentation</a> for detailed information on how MAAS works with DHCP and how to properly configure and troubleshoot it.</li>
 </ul>
 </li>
 </ol>
@@ -9805,7 +9805,7 @@ You are running a MAAS 3.3 server from an LXD container with two interfaces, eac
 <li>
 <p><strong>Check MAAS logs:</strong></p>
 <ul>
-<li>Look into the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a> for any errors or warnings related to network or DHCP services.</li>
+<li>Look into the <a href="how-to-use-logging.html">MAAS logs</a> for any errors or warnings related to network or DHCP services.</li>
 </ul>
 </li>
 </ol>
@@ -10195,7 +10195,7 @@ The issue is likely due to the limitation that, until MAAS version 3.5, booting 
 <li>
 <p><strong>Check logs for errors:</strong></p>
 <ul>
-<li>Monitor the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a> for any errors related to network configuration.</li>
+<li>Monitor the <a href="how-to-use-logging.html">MAAS logs</a> for any errors related to network configuration.</li>
 </ul>
 </li>
 </ol>
@@ -10223,7 +10223,7 @@ The issue is likely due to the limitation that, until MAAS version 3.5, booting 
 </code></pre>
 </li>
 <li>
-<p>**Monitor the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a>.</p>
+<p>**Monitor the <a href="how-to-use-logging.html">MAAS logs</a>.</p>
 </li>
 </ol>
 <p>By following these steps, you can ensure that machines with legacy BIOS can successfully PXE boot from the first NIC, resolving the “No boot filename received” error and enabling proper commissioning and deployment in MAAS.</p>
@@ -10235,7 +10235,7 @@ To resolve this issue, you need to ensure that TFTP and other necessary services
 <p><strong>Steps to resolve the issue:</strong></p>
 <ol>
 <li>
-<p><strong>Check the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a></strong> to verify that the TFTP requests are being received and to identify any potential issues.</p>
+<p><strong>Check the <a href="how-to-use-logging.html">MAAS logs</a></strong> to verify that the TFTP requests are being received and to identify any potential issues.</p>
 </li>
 <li>
 <p><strong>Verify network configuration:</strong></p>
@@ -10301,7 +10301,7 @@ To resolve this issue, you need to ensure that TFTP and other necessary services
 <p><strong>Example workflow:</strong></p>
 <ol>
 <li>
-<p><strong>Check the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a>:</strong></p>
+<p><strong>Check the <a href="how-to-use-logging.html">MAAS logs</a>:</strong></p>
 </li>
 <li>
 <p><strong>Verify network devices configuration:</strong></p>
@@ -10516,7 +10516,7 @@ This issue could be due to network misconfiguration or incorrect settings in MAA
 <li>
 <p><strong>Check MAAS logs:</strong></p>
 <ul>
-<li>Review <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a> for any errors or warnings that might indicate why the clients are not appearing in the GUI.</li>
+<li>Review <a href="how-to-use-logging.html">MAAS logs</a> for any errors or warnings that might indicate why the clients are not appearing in the GUI.</li>
 </ul>
 </li>
 <li>
@@ -10536,7 +10536,7 @@ This issue could be due to network misconfiguration or incorrect settings in MAA
 </code></pre>
 <p><strong>b. Check MAAS logs:</strong></p>
 <ul>
-<li>Check the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a> for any errors or issues related to DHCP or network configuration.</li>
+<li>Check the <a href="how-to-use-logging.html">MAAS logs</a> for any errors or issues related to DHCP or network configuration.</li>
 </ul>
 <p><strong>c. Verify network interface configuration:</strong></p>
 <ul>
@@ -10574,7 +10574,7 @@ This issue could be due to network misconfiguration or incorrect settings in MAA
 </code></pre>
 </li>
 <li>
-<p><strong>Check the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a></strong>.</p>
+<p><strong>Check the <a href="how-to-use-logging.html">MAAS logs</a></strong>.</p>
 </li>
 <li>
 <p><strong>Verify PXE boot settings:</strong></p>
@@ -10695,7 +10695,7 @@ To resolve issues related to external DHCP configuration in MAAS, follow these s
 <li>
 <p><strong>Check logs:</strong></p>
 <ul>
-<li>Inspect the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a> to verify that the rack controller is detecting the external DHCP server.</li>
+<li>Inspect the <a href="how-to-use-logging.html">MAAS logs</a> to verify that the rack controller is detecting the external DHCP server.</li>
 </ul>
 </li>
 <li>
@@ -10719,7 +10719,7 @@ To resolve issues related to external DHCP configuration in MAAS, follow these s
 </code></pre>
 <p><strong>c. Check logs:</strong></p>
 <ul>
-<li>Review the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a> to ensure the external DHCP server is being detected.</li>
+<li>Review the <a href="how-to-use-logging.html">MAAS logs</a> to ensure the external DHCP server is being detected.</li>
 </ul>
 <p><strong>d. Set static IP configuration:</strong></p>
 <ul>
@@ -11288,7 +11288,7 @@ To troubleshoot and resolve VLAN issues in MAAS, follow these steps:</p>
 <li>
 <p><strong>Check MAAS logs:</strong></p>
 <ul>
-<li>Review the <a href="https://maas.io/docs/how-to-use-logging">MAAS logs</a> for any errors related to VLANs or DHCP:</li>
+<li>Review the <a href="how-to-use-logging.html">MAAS logs</a> for any errors related to VLANs or DHCP:</li>
 </ul>
 </li>
 <li>
@@ -11496,7 +11496,7 @@ lxc network set $LXD_BRIDGE_NAME ipv6.dhcp=false
 <p><strong>Network drivers</strong>: Use Linux-compatible network adaptors if commissioning hangs due to driver issues.</p>
 <p>Feel free to contribute additional issues and solutions.</p>
 <h2><a class="p-link--anchor-heading" href="#p-9297-command-packer-not-found" name="p-9297-command-packer-not-found">Command ‘packer’ not found</a></h2>
-<p>When you try to run <code>packer</code> or execute a <code>make</code> command, you may encounter an error message indicating that <code>packer</code> is not installed. The issue can be resolved by <a href="https://maas.io/docs/how-to-build-custom-images#p-17423-gather-components">referring to this section</a>.</p>
+<p>When you try to run <code>packer</code> or execute a <code>make</code> command, you may encounter an error message indicating that <code>packer</code> is not installed. The issue can be resolved by <a href="how-to-build-custom-images.html#p-17423-gather-components">referring to this section</a>.</p>
 <h2><a class="p-link--anchor-heading" href="#p-9297-error-with-packer" name="p-9297-error-with-packer">Error with <code>packer</code>:</a></h2>
 <pre data-code-wrap="nohighlight"><code class="lang-nohighlight">stormrider@neuromancer:~$ packer
 Command 'packer' not found...
@@ -11506,11 +11506,11 @@ Command 'packer' not found...
 sudo: packer: command not found...
 </code></pre>
 <h2><a class="p-link--anchor-heading" href="#p-9297-no-rule-to-make-target-ovmf_varsfd" name="p-9297-no-rule-to-make-target-ovmf_varsfd">No rule to make target …OVMF_VARS.fd</a></h2>
-<p>Should you see an error like the one below, you’ve forgotten to <a href="https://maas.io/docs/how-to-build-custom-images#p-17423-gather-components">install a needed dependency</a>.</p>
+<p>Should you see an error like the one below, you’ve forgotten to <a href="how-to-build-custom-images.html#p-17423-gather-components">install a needed dependency</a>.</p>
 <pre data-code-wrap="nohighlight"><code class="lang-nohighlight">make: *** No rule to make target '/usr/share/OVMF/OVMF_VARS.fd'...
 </code></pre>
 <h2><a class="p-link--anchor-heading" href="#p-9297-failure-to-create-qemu-driver" name="p-9297-failure-to-create-qemu-driver">Failure to create QEMU driver</a></h2>
-<p>Encountering the following error means you’re missing a dependency. Refer to <a href="https://maas.io/docs/how-to-build-custom-images#p-17423-gather-components">this section</a> for resolution.</p>
+<p>Encountering the following error means you’re missing a dependency. Refer to <a href="how-to-build-custom-images.html#p-17423-gather-components">this section</a> for resolution.</p>
 <pre data-code-wrap="nohighlight"><code class="lang-nohighlight">Failed creating Qemu driver: exec: "qemu-img": executable file not found in $PATH
 </code></pre>
 <h2><a class="p-link--anchor-heading" href="#p-9297-timeout-changes-not-taking-effect" name="p-9297-timeout-changes-not-taking-effect">Timeout changes not taking effect</a></h2>
@@ -12088,7 +12088,7 @@ where key = 'your-leaked-api-key';
 
             <div class="p-notification__content">
               <p class="p-notification__message">
-                Last updated 4 months ago. <a href="https://discourse.maas.io/t/troubleshooting-guide/5333">Help improve this document in the forum</a>.
+                Last updated 8 minutes ago. <a href="https://discourse.maas.io/t/troubleshooting-guide/5333">Help improve this document in the forum</a>.
               </p>
             </div>
 
@@ -12530,5 +12530,5 @@ where key = 'your-leaked-api-key';
         </body>
 
       
-<!-- Mirrored from canonical.com/maas/docs/maas-troubleshooting-guide by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:41:02 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/maas-troubleshooting-guide by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:01:45 GMT -->
 </html>

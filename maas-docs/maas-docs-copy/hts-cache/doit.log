@@ -1,5 +1,5 @@
-https://canonical.com/maas/docs -O /home/stormrider/var/www/maas-docs-copy +*.canonical.com/maas/docs/* -v
-File generated automatically on Wed, 06 Aug 2025 15:35:16, do NOT edit
+https://canonical.com/maas/docs -O /home/stormrider/var/www/maas-docs-copy +*.canonical.com/maas/docs* -v
+File generated automatically on Wed, 06 Aug 2025 16:55:36, do NOT edit
 
 To update a mirror, just launch httrack without any parameters
 The existing cache will be used (and modified)

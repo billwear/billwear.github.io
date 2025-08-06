@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
 
   
-<!-- Mirrored from canonical.com/maas/docs/how-to-manage-networks by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:40:59 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/how-to-manage-networks by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:01:07 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8" />
@@ -99,7 +99,7 @@
           <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js"
                   defer></script>
 
-          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=62f7ad6" />
+          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=a85ac60" />
         </head>
 
         <body class=" 
@@ -8514,7 +8514,7 @@
       <main class="col-6">
         <h1>How to manage networks</h1>
 
-        <p>MAAS provides pre-configured <a href="https://maas.io/docs/about-maas-networking">networks</a> for convenience and efficiency.  Reconfigure these networks to suit your environment.</p>
+        <p>MAAS provides pre-configured <a href="about-maas-networking.html">networks</a> for convenience and efficiency.  Reconfigure these networks to suit your environment.</p>
 <h2><a class="p-link--anchor-heading" href="#p-9070-manage-interfaces" name="p-9070-manage-interfaces">Manage interfaces</a></h2>
 <p>MAAS gives you detailed control over network interfaces for each machine — including physical NICs, VLANs, bonds, and bridges. These interfaces form the backbone of your deployment topology. Learn how to create, view, and manage them using the MAAS UI and CLI.</p>
 <h3><a class="p-link--anchor-heading" href="#p-9070-create-an-interface" name="p-9070-create-an-interface">Create an interface</a></h3>
@@ -8536,7 +8536,7 @@
 <li><code>mac_address=00:16:3e:01:2a:3b</code> – Required if not auto-detected</li>
 <li><code>enabled=true</code> – Whether the interface is active</li>
 </ul>
-<p>Consult the <a href="https://maas.io/docs/interface#p-23244-create-a-physical-interface">CLI reference</a> for details on parameters and usage.</p>
+<p>Consult the <a href="interface.html#p-23244-create-a-physical-interface">CLI reference</a> for details on parameters and usage.</p>
 <h4><a class="anchor" href="#p-9070-create-a-vlan-interface-4" name="p-9070-create-a-vlan-interface-4"></a>Create a VLAN interface</h4>
 <p>You will need VLAN separation for many different purposes:</p>
 <ul>
@@ -8590,7 +8590,7 @@
 maas $PROFILE interfaces read $SYSTEM_ID
 </code></pre>
 <p>Note that you <em>cannot</em> assign a VLAN directly to a physical interface, though once created, this interface can then be bonded, bridged, or assigned IPs just like a physical NIC.</p>
-<p>Consult the <a href="https://maas.io/docs/interface#p-23244-create-a-vlan-interface">CLI help page</a> for more details.</p>
+<p>Consult the <a href="interface.html#p-23244-create-a-vlan-interface">CLI help page</a> for more details.</p>
 <p>Some common mistakes often plague users when creating a VLAN interface:</p>
 <ul>
 <li>Wrong parent ID: Must be a physical interface.</li>
@@ -8610,7 +8610,7 @@ maas $PROFILE interfaces read $SYSTEM_ID
 <li>You are using Wi-Fi or virtual NICs</li>
 <li>You do not control the network switch (and cannot configure LACP)</li>
 </ul>
-<p>Learn more about <a href="https://maas.io/docs/about-maas-networking#p-20679-bonds">bonds</a>, if needed.</p>
+<p>Learn more about <a href="about-maas-networking.html#p-20679-bonds">bonds</a>, if needed.</p>
 <h5><a class="anchor" href="#p-9070-how-to-create-a-bond-6" name="p-9070-how-to-create-a-bond-6"></a>How to create a bond</h5>
 <p><strong>UI:</strong><br/>
 <em>Machines &gt; (Select machine) &gt; Network &gt; (Select 2 physical interface) &gt; Create bond &gt; (Configure details) &gt; Save interface</em></p>
@@ -8619,7 +8619,7 @@ maas $PROFILE interfaces read $SYSTEM_ID
 </code></pre>
 <p>Note that <code>parents</code> refer to the IDs of the physical interfaces you want to bond.</p>
 <p>Every bond must have a mode, though <code>bonding_mode</code> is optional in this command. For MAAS, the default bonding mode is <code>balance_rr</code>, which transmits packets sequentially from the first available slave through the last. This mode is chosen as default because it provides load balancing and fault tolerance.</p>
-<p>Refer to the <a href="https://maas.io/docs/interface#p-23244-create-a-bond-interface">interface CLI reference page</a> for detailed instruction on how to use the CLI command and other bonding mode choices.</p>
+<p>Refer to the <a href="interface.html#p-23244-create-a-bond-interface">interface CLI reference page</a> for detailed instruction on how to use the CLI command and other bonding mode choices.</p>
 <h5><a class="anchor" href="#p-9070-troubleshooting-bond-creation-7" name="p-9070-troubleshooting-bond-creation-7"></a>Troubleshooting bond creation</h5>
 <div class="md-table">
 <table>
@@ -8723,7 +8723,7 @@ maas $PROFILE interface link-subnet $SYSTEM_ID $BRIDGE_ID subnet=$SUBNET_ID mode
 </code></pre>
 <h3><a class="p-link--anchor-heading" href="#p-9070-view-and-maintain-interfaces" name="p-9070-view-and-maintain-interfaces">View and maintain interfaces</a></h3>
 <p>Once created, MAAS interfaces can be listed, reviewed, updated, or deleted. The machine must be in the correct state (<code>Ready</code> or <code>Broken</code>) to allow most changes. Deployed machines can only be updated in limited ways (e.g., changing MAC addresses for replacement).</p>
-<p>See the <a href="https://maas.io/docs/interface">CLI reference</a> for more details.</p>
+<p>See the <a href="interface.html">CLI reference</a> for more details.</p>
 <h4><a class="anchor" href="#p-9070-list-existing-interfaces-13" name="p-9070-list-existing-interfaces-13"></a>List existing interfaces</h4>
 <p>Use the MAAS UI or CLI to list all interfaces for a specific machine.</p>
 <p><strong>UI</strong><br/>
@@ -8749,7 +8749,7 @@ maas $PROFILE interface link-subnet $SYSTEM_ID $BRIDGE_ID subnet=$SUBNET_ID mode
 <pre data-code-wrap="bash"><code class="lang-bash">maas $PROFILE interface update $SYSTEM_ID $INTERFACE_ID (key=value)...
 </code></pre>
 <p>Use the appropriate parameter set for the interface type (physical, bridge, bond, VLAN, etc.).</p>
-<p>See <a href="https://maas.io/docs/interface#p-23244-update-an-interface">the CLI subcommand reference</a> for key options.</p>
+<p>See <a href="interface.html#p-23244-update-an-interface">the CLI subcommand reference</a> for key options.</p>
 <h4><a class="anchor" href="#p-9070-delete-an-interface-16" name="p-9070-delete-an-interface-16"></a>Delete an interface</h4>
 <p>Remove an interface that is no longer needed. This is typically used when rolling back a misconfiguration or cleaning up testing setups.</p>
 <p><strong>CLI</strong></p>
@@ -8779,7 +8779,7 @@ maas $PROFILE interface link-subnet $SYSTEM_ID $BRIDGE_ID subnet=$SUBNET_ID mode
 <li><code>ip_address</code> is optional unless using <code>STATIC</code> mode</li>
 <li>You can link to managed or unmanaged subnets</li>
 </ul>
-<p>See <a href="https://maas.io/docs/interface#p-23244-link-interface-to-a-subnet">Link and interface to a subnet</a> in the CLI reference for full options.</p>
+<p>See <a href="interface.html#p-23244-link-interface-to-a-subnet">Link and interface to a subnet</a> in the CLI reference for full options.</p>
 <h4><a class="anchor" href="#p-9070-unlink-an-interface-from-a-subnet-20" name="p-9070-unlink-an-interface-from-a-subnet-20"></a>Unlink an interface from a subnet</h4>
 <p>Use this command to remove an interface connection to a subnet without deleting the interface itself.</p>
 <p><strong>CLI</strong></p>
@@ -9520,7 +9520,7 @@ maas $PROFILE interface link-subnet $SYSTEM_ID $BRIDGE_ID subnet=$SUBNET_ID mode
 
             <div class="p-notification__content">
               <p class="p-notification__message">
-                Last updated 3 months ago. <a href="https://discourse.maas.io/t/how-to-manage-networks/5164">Help improve this document in the forum</a>.
+                Last updated 5 minutes ago. <a href="https://discourse.maas.io/t/how-to-manage-networks/5164">Help improve this document in the forum</a>.
               </p>
             </div>
 
@@ -9766,5 +9766,5 @@ maas $PROFILE interface link-subnet $SYSTEM_ID $BRIDGE_ID subnet=$SUBNET_ID mode
         </body>
 
       
-<!-- Mirrored from canonical.com/maas/docs/how-to-manage-networks by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:40:59 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/how-to-manage-networks by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:01:07 GMT -->
 </html>

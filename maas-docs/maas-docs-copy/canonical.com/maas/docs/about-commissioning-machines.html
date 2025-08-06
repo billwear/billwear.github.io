@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
 
   
-<!-- Mirrored from canonical.com/maas/docs/about-commissioning-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:41:02 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/about-commissioning-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:02:01 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8" />
@@ -99,7 +99,7 @@
           <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js"
                   defer></script>
 
-          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=62f7ad6" />
+          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=a85ac60" />
         </head>
 
         <body class=" 
@@ -8604,7 +8604,7 @@
 <p>MAAS logs timestamped records of commissioning events for every machine.  If commissioning fails, check the logs first.</p>
 <h2><a class="p-link--anchor-heading" href="#p-17328-debugging-scripts" name="p-17328-debugging-scripts">Debugging scripts</a></h2>
 <p>Scripts log full results regardless of success or failure. For more details, choose the option to leave the machine on after commissioning. You can then connect to the machine and examine its logs.</p>
-<p>If you’ve added your <a href="https://maas.io/docs/sshkey">SSH key</a> to MAAS, you may connect with SSH to the machine’s IP with a username of <code>ubuntu</code>. Enter <code>sudo -i</code> to get root access.</p>
+<p>If you’ve added your <a href="sshkey.html">SSH key</a> to MAAS, you may connect with SSH to the machine’s IP with a username of <code>ubuntu</code>. Enter <code>sudo -i</code> to get root access.</p>
 <h2><a class="p-link--anchor-heading" href="#p-17328-automatic-selection" name="p-17328-automatic-selection">Automatic selection</a></h2>
 <p>When selecting multiple machines, scripts declaring the <code>for_hardware</code> field will run only on machines with matching hardware. To automatically run a script when <em>Update firmware</em> or <em>Configure HBA</em> is selected, you must tag the script appropriately. Command-line scripts that specify <code>for_hardware</code> also run only on matching hardware.</p>
 <h2><a class="p-link--anchor-heading" href="#p-17328-numa-and-sr-iov" name="p-17328-numa-and-sr-iov">NUMA and SR-IOV</a></h2>
@@ -8679,7 +8679,7 @@ testing_scripts=$SCRIPT_NAME,$SCRIPT_TAG
 <h2><a class="p-link--anchor-heading" href="#p-17328-testing-hardware" name="p-17328-testing-hardware">Testing hardware</a></h2>
 <p>You can test machine hardware using any available Linux utility. You can create your own testing scripts and read their logs. MAAS tests machines that that are <strong>Ready</strong>, <strong>Broken</strong>, or <strong>Deployed</strong>. If the hardware tests fail, you can’t deploy the machine. Testing scripts don’t always work with virtual machines.</p>
 <h2><a class="p-link--anchor-heading" href="#p-17328-interpreting-logs" name="p-17328-interpreting-logs">Interpreting logs</a></h2>
-<p>You can also examine log details on any particular tests or just review the raw log output. Help interpreting these logs can be found under the <a href="https://maas.io/docs/about-maas-logging">Logging</a> section of this documentation.</p>
+<p>You can also examine log details on any particular tests or just review the raw log output. Help interpreting these logs can be found under the <a href="about-maas-logging.html">Logging</a> section of this documentation.</p>
 <h2><a class="p-link--anchor-heading" href="#p-17328-testing-networks" name="p-17328-testing-networks">Testing networks</a></h2>
 <p>MAAS can test networks and links, including connection status and link speeds. You can test Internet connectivity against a user-provided list of URLs or IP addresses. Bonded NICS are separated during this testing to check each side of a dual interface. You can also provide custom scxripts with no restrictions.</p>
 <h2><a class="p-link--anchor-heading" href="#p-17328-delayed-nw-config" name="p-17328-delayed-nw-config">Delayed NW config</a></h2>
@@ -9169,7 +9169,7 @@ testing_scripts=$SCRIPT_NAME,$SCRIPT_TAG
 
             <div class="p-notification__content">
               <p class="p-notification__message">
-                Last updated 4 months ago. <a href="https://discourse.maas.io/t/about-commissioning-machines/7853">Help improve this document in the forum</a>.
+                Last updated 9 minutes ago. <a href="https://discourse.maas.io/t/about-commissioning-machines/7853">Help improve this document in the forum</a>.
               </p>
             </div>
 
@@ -9394,5 +9394,5 @@ testing_scripts=$SCRIPT_NAME,$SCRIPT_TAG
         </body>
 
       
-<!-- Mirrored from canonical.com/maas/docs/about-commissioning-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:41:02 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/about-commissioning-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:02:01 GMT -->
 </html>

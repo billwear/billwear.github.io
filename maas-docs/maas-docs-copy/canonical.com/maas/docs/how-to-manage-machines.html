@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
 
   
-<!-- Mirrored from canonical.com/maas/docs/how-to-manage-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:40:59 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/how-to-manage-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:01:07 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8" />
@@ -99,7 +99,7 @@
           <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js"
                   defer></script>
 
-          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=62f7ad6" />
+          <link rel="stylesheet" type="text/css" media="screen" href="https://canonical.com/static/css/styles.css?v=a85ac60" />
         </head>
 
         <body class=" 
@@ -8654,7 +8654,7 @@
 <pre data-code-wrap="bash"><code class="lang-bash">    maas $PROFILE vm-host compose $VM_HOST_ID cores=4 memory=8G disks=1:size=20G
 </code></pre>
 <h4><a class="anchor" href="#p-9078-move-vms-between-lxd-projects-19" name="p-9078-move-vms-between-lxd-projects-19"></a>Move VMs between LXD projects</h4>
-<p>LXD VMs can be moved between <a href="https://maas.io/docs/about-lxd">LXD projects</a>.</p>
+<p>LXD VMs can be moved between <a href="how-to-manage-machines%23p-9078-add-lxd-for-vm-hosts.html">LXD projects</a>.</p>
 <pre data-code-wrap="bash"><code class="lang-bash">    lxc move $VM_NAME $VM_NAME --project default --target-project $PROJECT_NAME
 </code></pre>
 <h4><a class="anchor" href="#p-9078-delete-vms-20" name="p-9078-delete-vms-20"></a>Delete VMs</h4>
@@ -8749,7 +8749,7 @@
 <pre data-code-wrap="bash"><code class="lang-bash">maas $PROFILE machine read $SYSTEM_ID
 </code></pre>
 <h3><a class="p-link--anchor-heading" href="#p-9078-configure-hardware-sync-interval" name="p-9078-configure-hardware-sync-interval">Configure hardware sync interval</a></h3>
-<p>Configure the sync interval in <a href="https://maas.io/docs/configuration-reference#p-17901-maas-behavior-settings">MAAS settings</a>.</p>
+<p>Configure the sync interval in <a href="configuration-reference.html#p-17901-maas-behavior-settings">MAAS settings</a>.</p>
 <h3><a class="p-link--anchor-heading" href="#p-9078-configure-kernels" name="p-9078-configure-kernels">Configure kernels</a></h3>
 <p>Many kernel parameters, including the kernel version, can be specified prior to deployment.</p>
 <h4><a class="anchor" href="#p-9078-set-kernel-version-37" name="p-9078-set-kernel-version-37"></a>Set kernel version</h4>
@@ -8800,7 +8800,7 @@
 <pre data-code-wrap="bash"><code class="lang-bash">maas $PROFILE machine set-storage-layout $SYSTEM_ID storage_layout=flat
 </code></pre>
 <p>The flat layout is ideal for general-purpose filesystems that support large files and volumes.  A flat layout supports a short list of options, including boot size, root size, and root device designation.</p>
-<p><a href="https://maas.io/docs/about-machine-customization#p-17465-flat-storage-layout">About the flat layout</a> | <a href="https://maas.io/docs/reference-maas-storage#p-17455-flat-layout">Flat layout setup reference</a></p>
+<p><a href="about-machine-customization.html#p-17465-flat-storage-layout">About the flat layout</a> | <a href="reference-maas-storage.html#p-17455-flat-layout">Flat layout setup reference</a></p>
 <h4><a class="anchor" href="#p-9078-lvm-layout-41" name="p-9078-lvm-layout-41"></a>LVM layout</h4>
 <p>An LVM layout offers flexible and dynamic disk management, with easier resizing, snapshots, and volume management.  Create an LVM layout with the following commands:</p>
 <p><strong>UI</strong><br/>
@@ -8809,7 +8809,7 @@
 <pre data-code-wrap="bash"><code class="lang-bash">maas $PROFILE machine set-storage-layout $SYSTEM_ID storage_layout=lvm
 </code></pre>
 <p>LVM comes in handy when using multiple physical disks as a single, larger volume – something that a flat layout will not support.  In addition to the <code>flat</code> configuration options, LVM also supports naming volume groups, as well as creating logical volumes with specific names and sizes.</p>
-<p><a href="https://maas.io/docs/about-machine-customization#p-17465-lvm-layout">About the LVM layout</a> | <a href="https://maas.io/docs/reference-maas-storage#p-17455-lvm-layout">LVM layout setup reference</a></p>
+<p><a href="about-machine-customization.html#p-17465-lvm-layout">About the LVM layout</a> | <a href="reference-maas-storage.html#p-17455-lvm-layout">LVM layout setup reference</a></p>
 <h4><a class="anchor" href="#p-9078-bcache-layout-42" name="p-9078-bcache-layout-42"></a>bcache layout</h4>
 <p>The bcache layout uses the boot disk as the backing device and a Solid-State Drive (SSD) as the cache.  This arrangement speeds up read and write operations by caching frequently-access data on the SSD.</p>
 <p>Create a bcache layout with the following commands:</p>
@@ -8821,7 +8821,7 @@
 <p>Note that an SSD device must be available to create this layout.  If SSD is not available when these commands are given, MAAS defaults to the <code>flat</code> layout.</p>
 <p>The <code>bcache</code> layout is useful and cost effective when you want to improve I/O performance by leveraging SSDs as cache for larger, slower disks.  Also, applications that are read-intensive can benefit from <code>bcache</code> as well.</p>
 <p><code>bcache</code> introduces new options: the physical block device to use for caching, and the size of cache partition (or “no partition” to use the whole block device).</p>
-<p><a href="https://maas.io/docs/about-machine-customization#p-17465-bcache-layout">About the bcache layout</a> | <a href="https://maas.io/docs/reference-maas-storage#p-17455-bcache-layout">bcache layout setup reference</a></p>
+<p><a href="about-machine-customization.html#p-17465-bcache-layout">About the bcache layout</a> | <a href="reference-maas-storage.html#p-17455-bcache-layout">bcache layout setup reference</a></p>
 <h4><a class="anchor" href="#p-9078-vmfs6vmfs7-layouts-43" name="p-9078-vmfs6vmfs7-layouts-43"></a>VMFS6/VMFS7 layouts</h4>
 <p>The VMFS6 layout is specifically design for deploying VMWare ESXi hosts.  It automates the creation of the partitions and datastores required for VMWare.  Use the following commands to create a <code>vmfs6</code> or <code>vmfs7</code> layout:</p>
 <p><strong>UI</strong><br/>
@@ -8833,7 +8833,7 @@
 <pre data-code-wrap="bash"><code class="lang-bash">maas $PROFILE machine set-storage-layout $SYSTEM_ID storage_layout=vmfs7
 </code></pre>
 <p>The choice of VMFS6 or VMFS7 depends on the VMWare version being deployed.  Both layouts allow you to specify the root device and root filesystem size. Note that the resultant filesystem layout should not be altered.</p>
-<p><a href="https://maas.io/docs/reference-maas-storage#p-17455-vmfs6-layout">VMFS6/7 layout setup reference</a></p>
+<p><a href="reference-maas-storage.html#p-17455-vmfs6-layout">VMFS6/7 layout setup reference</a></p>
 <h4><a class="anchor" href="#p-9078-blank-layout-44" name="p-9078-blank-layout-44"></a>Blank layout</h4>
 <p>The <code>blank</code> layout removes all existing storage configuration from a machine’s disks.  No actual disk layout is provided, so partitions, filesystems and mount points must be created manually.  Create this layout with the following commands:</p>
 <p><strong>UI</strong><br/>
@@ -8982,7 +8982,7 @@ Spare devices can also be specified.</p>
 </code></pre>
 <h3><a class="p-link--anchor-heading" href="#p-9078-deploy-to-ram-ephemeral-deployment" name="p-9078-deploy-to-ram-ephemeral-deployment">Deploy to RAM (ephemeral deployment)</a></h3>
 <p>Deploy an ephemeral instance (into machine RAM, ignoring any disk drives).</p>
-<p>Learn more about <a href="https://maas.io/docs/about-deploying-machines#p-17464-deploying-ephemeral-os-instances-maas-35-and-higher">ephemeral deployment</a></p>
+<p>Learn more about <a href="about-deploying-machines.html#p-17464-deploying-ephemeral-os-instances-maas-35-and-higher">ephemeral deployment</a></p>
 <p><strong>UI</strong><br/>
 <em>Machines</em> &gt; <em>[machine(s)]</em> &gt; <em>Take action</em> &gt; <em>Deploy</em> &gt; <em>Deploy in memory</em> &gt; <em>Deploy machine</em></p>
 <p><strong>CLI</strong></p>
@@ -9554,7 +9554,7 @@ Spare devices can also be specified.</p>
 
             <div class="p-notification__content">
               <p class="p-notification__message">
-                Last updated 26 days ago. <a href="https://discourse.maas.io/t/how-to-manage-machines/5172">Help improve this document in the forum</a>.
+                Last updated 5 minutes ago. <a href="https://discourse.maas.io/t/how-to-manage-machines/5172">Help improve this document in the forum</a>.
               </p>
             </div>
 
@@ -9851,5 +9851,5 @@ Spare devices can also be specified.</p>
         </body>
 
       
-<!-- Mirrored from canonical.com/maas/docs/how-to-manage-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 20:40:59 GMT -->
+<!-- Mirrored from canonical.com/maas/docs/how-to-manage-machines by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 22:01:10 GMT -->
 </html>
