@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+15:33:41	20691/20691	---MCZ	404	error ('Not%20Found')	text/html	date:Wed,%2006%20Aug%202025%2020:33:40%20GMT	https://canonical.com/robots.txt		(from )
+15:33:42	249/249	---M--	302	error ('Moved%20Temporarily')	text/html	date:Wed,%2006%20Aug%202025%2020:33:41%20GMT	https://canonical.com/maas/docs/	/home/stormrider/var/www/maas-docs-copy/canonical.com/maas/docs/index.html	(from )
