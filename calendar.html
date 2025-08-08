@@ -1,62 +1,57 @@
-<html>
-	<head>
-		<title>tasks</title>
-	</head>
-	<body>
-		<pre style="width: 100%;">
-Aug 08 	Dustin Hoffman born in Los Angeles, 1937
-Aug 08 	Atomic bomb dropped on Nagasaki, 1945
-Aug 08 	Montenegro declares war on Germany, 1914
-Aug 08 	Richard Nixon resigns the US presidency, 1974
-Aug 08 	The Great Train Robbery -- $7,368,000, 1963
-Aug 08 	Fire in the mine 'Le bois du Casier', 263 deaths, 1956
-Aug 08 	Belgian parliament in exile comes back to Bruxelles, 1944
-Aug 08 	Mikolaj Golub <trociny@FreeBSD.org> born in Kharkov, USSR, 1977
-Aug 08 	Juergen Lock <nox@FreeBSD.org> died in Bremen, Germany, 2015
-Aug 08 	N'oubliez pas les Dominique !
-Aug 08 	Bonne fête aux Cyriaque !
-Aug 08 	Friedensfest (Augsburg)
-Aug 08 	Atombombenabwurf auf Nagasaki, 1945
-Aug 08 	László
-Aug 09 	Helter Skelter... the Charles Manson murders take place, 1969
-Aug 09 	Persia defeats Spartan King Leonidas at Thermopylae, 480 BC
-Aug 09 	US/Canada border defined in the Webster-Ashburton Treaty, 1842
-Aug 09 	Atomic bomb dropped on Nagasaki, 1945
-Aug 09 	Singapore secedes from Malaysia, 1965
-Aug 09 	National Day in Singapore
-Aug 09 	National Women's Day in South Africa
-Aug 09 	Dmitri Shostakovich dies of lung cancer in Moscow, Russia, 1975
-Aug 09 	Leopold III meets Hitler which grants freedom to the flemish POW, 1940
-Aug 09 	Stefan Farfeleder <stefanf@FreeBSD.org> died in Wien, Austria, 2015
-Aug 09 	Aujourd'hui, c'est la St(e) Amour.
-Aug 09 	Emõd
-Aug 09 	National Women's Day in South Africa
-Aug 10 	Chicago incorporated as a village of 300 people, 1833
-Aug 10 	Major terrorist plot to destroy aircraft disrupted by
-	Scotland Yard, 2006
-Aug 10 	US and Panama agree to transfer the canal in the year 2000, 1977
-Aug 10 	Independence Day in Ecuador
-Aug 10 	Ian Anderson (Jethro Tull) is born in Edinburgh, Scotland, 1947
-Aug 10 	Alexander Glazunov is born in St. Petersburg, Russia, 1865
-Aug 10 	Puck Faire
-Aug 10 	Julio Merino <jmmv@FreeBSD.org> born in Barcelona, Spain, 1984
-Aug 10 	Peter Pentchev <roam@FreeBSD.org> born in Sofia, Bulgaria, 1977
-Aug 10 	N'oubliez pas les Laurent !
-Aug 10*	En août et vendanges, il n'y a ni fêtes ni dimanches.
-Aug 10 	Qui sème à la saint Laurent
-	Y perd la graine et puis le temps.
-Aug 10 	Lõrinc
-Aug 10*	Құрылысшы күні
-Aug 11 	Dog days end
-Aug 11 	France Ends War in Indochina, 1954
-Aug 11 	Perseid meteor shower (look north; three days)
-Aug 11 	Heroes Day (2 days) in Zimbabwe
-Aug 11 	Independence Day in Chad
-Aug 11 	King Hussein's Accession to the Throne in Jordan
-Aug 11 	Oath of Baudouin, son of Leopold III, 1950
-Aug 11 	Bonne fête aux Claire !
-Aug 11 	Aujourd'hui, c'est la St(e) Philomène.
-Aug 11 	Zsuzsanna, Tiborc
-		</pre>
-	</body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calendar</title>
+<style>
+  :root { --fg:#111; --muted:#6b7280; --bg:#fff; --line:#e5e7eb; --chip:#f1f5f9; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif; color:var(--fg); background:var(--bg); }
+  .wrap { max-width:900px; margin:0 auto; padding:16px; }
+  h1 { font-size:1.25rem; margin:0 0 6px; }
+  .meta { color:var(--muted); font-size:.9rem; margin-bottom:12px; }
+  .card { border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  .day { padding:12px 14px; border-top:1px solid var(--line); }
+  .day:first-child { border-top:0; }
+  .date { font-weight:700; font-size:1rem; margin-bottom:6px; }
+  .items { display:flex; flex-direction:column; gap:8px; }
+  .item { padding:8px 10px; background:var(--chip); border-radius:10px; }
+  .cont { color:var(--muted); margin-left:8px; display:block; }
+  .empty { padding:12px 14px; color:var(--muted); }
+  @media (max-width:560px){ .item { padding:8px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Calendar</h1>
+<div class="meta">Last updated: 2025-08-08 14:59</div>
+<div class="card">
+  <div class="day">
+    <div class="date">Aug 08</div>
+    <div class="items">
+      <div class="item">Dustin Hoffman born in Los Angeles, 1937</div>
+    </div></div>
+  <div class="day">
+    <div class="date">Aug 12</div>
+    <div class="items">
+      <div class="item">Thomas Mann's Death, 1955</div>
+      <div class="item">Zaraday (5th of the Season of Bureaucracy) Festival of Zarathud the Staunch</div>
+    </div></div>
+  <div class="day">
+    <div class="date">Aug 13</div>
+    <div class="items">
+      <div class="item">Alfred Hitchcock born, 1899</div>
+      <div class="item">Annie Oakley born, 1860</div>
+      <div class="item">Fidel Castro born, 1926</div>
+    </div></div>
+  <div class="day">
+    <div class="date">Aug 14</div>
+    <div class="items">
+      <div class="item">First Unix-based mallet created, 1954</div>
+      <div class="item">IBM PC announced, 1981</div>
+    </div></div>
+</div>
+</div>
+</body>
 </html>
