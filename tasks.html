@@ -1,28 +1,66 @@
-<html>
-	<head>
-		<title>tasks</title>
-	</head>
-	<body>
-		<pre style="width: 100%;">
-
-ID Tags       Sch    Due    Description         Urg
--- ---------- ------ ------ ------------------- ----
- 1 pm reno    Aug 8  Aug 8  repl rock           17.6
- 2 reno       Aug 9  Aug 9  finish rock         12.2
- 5 reno       Aug 9  Aug 9  caulk crown         9.06
- 6 reno       Aug 8  Aug 9  varn trans          9.06
- 3 reno       Aug 9  Aug 9  skirt board         4.06
- 7 am pm reno Aug 8  Aug 9  remort brks         9.24
- 4 am pm yard Aug 8  Aug 9  mow grass           9.19
-10 cano              Aug 11 ref lp mock <> live 16.3
-13 cano              Aug 11 brnch expl lp/links 16.3
-14 cano              Aug 11 MP ref lp links?    16.3
- 8 cano       Aug 8  Aug 11 pub lps anyway      13.3
-11 cano              Aug 11 pop expl lp links   11.3
- 9 cano              Aug 11 find ref lp mock    3.32
-12 cano              Aug 11 new expl lp links   3.32
-
-14 tasks
-		</pre>
-	</body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Task List</title>
+<style>
+  :root { --fg:#111; --muted:#666; --bg:#fff; --line:#e5e7eb; --pill:#f1f5f9; }
+  * { box-sizing: border-box; }
+  body { margin:0; font: 16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif; color:var(--fg); background:var(--bg); }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: 1.25rem; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { position: sticky; top: 0; background: #fafafa; font-weight: 600; text-align: left; border-bottom: 1px solid var(--line); }
+  th, td { padding: 10px 12px; vertical-align: top; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  td.desc { white-space: normal; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { display:inline-block; padding: 2px 8px; border-radius: 999px; background: var(--pill); font-size: 0.85rem; color: #0f172a;}
+  .urg { font-variant-numeric: tabular-nums; }
+  .muted { color: var(--muted); }
+  @media (max-width: 560px){
+    .hide-sm { display:none; }
+    th, td { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Task List</h1>
+<div class="meta">Last updated: 2025-08-08 14:50</div>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th class="hide-sm">Due</th>
+      <th class="hide-sm">Sched</th>
+      <th>Urg</th>
+      <th class="hide-sm">Project</th>
+      <th>Tags</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr><td>1</td><td class="hide-sm">2025-08-09</td><td class="hide-sm">2025-08-08</td><td class="urg">17.6018</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">pm</span><span class="tag">reno</span></div></td><td class="desc">repl rock</td></tr>
+<tr><td>10</td><td class="hide-sm">2025-08-11</td><td class="hide-sm"></td><td class="urg">16.3399</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">cano</span></div></td><td class="desc">ref lp mock &lt;&gt; live</td></tr>
+<tr><td>13</td><td class="hide-sm">2025-08-11</td><td class="hide-sm"></td><td class="urg">16.3399</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">cano</span></div></td><td class="desc">brnch expl lp/links</td></tr>
+<tr><td>14</td><td class="hide-sm">2025-08-11</td><td class="hide-sm"></td><td class="urg">16.3399</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">cano</span></div></td><td class="desc">MP ref lp links?</td></tr>
+<tr><td>8</td><td class="hide-sm">2025-08-11</td><td class="hide-sm">2025-08-08</td><td class="urg">13.3399</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">cano</span></div></td><td class="desc">pub lps anyway</td></tr>
+<tr><td>2</td><td class="hide-sm">2025-08-09</td><td class="hide-sm">2025-08-09</td><td class="urg">12.1971</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">reno</span></div></td><td class="desc">finish rock</td></tr>
+<tr><td>11</td><td class="hide-sm">2025-08-11</td><td class="hide-sm"></td><td class="urg">11.3399</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">cano</span></div></td><td class="desc">pop expl lp links</td></tr>
+<tr><td>7</td><td class="hide-sm">2025-08-10</td><td class="hide-sm">2025-08-08</td><td class="urg">9.25421</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">am</span><span class="tag">pm</span><span class="tag">reno</span></div></td><td class="desc">remort brks</td></tr>
+<tr><td>4</td><td class="hide-sm">2025-08-10</td><td class="hide-sm">2025-08-08</td><td class="urg">9.20659</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">am</span><span class="tag">pm</span><span class="tag">yard</span></div></td><td class="desc">mow grass</td></tr>
+<tr><td>5</td><td class="hide-sm">2025-08-09</td><td class="hide-sm">2025-08-09</td><td class="urg">9.07325</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">reno</span></div></td><td class="desc">caulk crown</td></tr>
+<tr><td>6</td><td class="hide-sm">2025-08-09</td><td class="hide-sm">2025-08-08</td><td class="urg">9.07325</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">reno</span></div></td><td class="desc">varn trans</td></tr>
+<tr><td>3</td><td class="hide-sm">2025-08-09</td><td class="hide-sm">2025-08-09</td><td class="urg">4.07325</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">reno</span></div></td><td class="desc">skirt board</td></tr>
+<tr><td>9</td><td class="hide-sm">2025-08-11</td><td class="hide-sm"></td><td class="urg">3.33992</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">cano</span></div></td><td class="desc">find ref lp mock</td></tr>
+<tr><td>12</td><td class="hide-sm">2025-08-11</td><td class="hide-sm"></td><td class="urg">3.33992</td><td class="hide-sm"></td><td><div class="tags"><span class="tag">cano</span></div></td><td class="desc">new expl lp links</td></tr>
+  </tbody>
+</table>
+</div>
+</div>
+</body>
 </html>
