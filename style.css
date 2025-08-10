@@ -11,12 +11,6 @@
 
 
 body {
-  background: linear-gradient(
-  to bottom,
-  #6fb0e9 0%,   /* top sky blue */
-  #cfe9f9 70%,  /* light blue near horizon */
-  #f8f8f4 100%  /* pale off-white base */
-);
   color: var(--text-color);
   font-family: 'EB Garamond', serif;
   font-size: 115%; 
