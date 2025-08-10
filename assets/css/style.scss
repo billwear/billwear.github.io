@@ -1,9 +1,9 @@
 ---
-# Front matter required so Jekyll processes this
+# Required so Jekyll processes this file
 ---
 
-/* Import the current theme's styles */
-@import "jekyll-theme-cayman"; // change this if you use a different theme name
+/* Import Cayman’s base styles */
+@import "jekyll-theme-cayman";
 
 /* ===== Custom palette: Undestroyable Hope Justified ===== */
 :root{
@@ -15,16 +15,13 @@
   --ochre: #E4B363;      /* Golden Ochre (sparingly) */
 }
 
-/* Apply background + text */
 body{ background: var(--bg); color: var(--ink); }
 
-/* Links */
 a{ color: var(--blue); }
 a:hover{ color: var(--clay); }
 
-/* Headings */
 h1, h2, h3{ color: var(--sage); }
 h1 strong, h2 strong{ color: var(--clay); }
 
-/* Ochre for special highlights */
-.callout{ background: #fffaf0; border-left: 6px solid var(--ochre); padding: 1rem 1.2rem; }
+/* Optional callout demo */
+.callout{ background:#fffaf0; border-left:6px solid var(--ochre); padding:1rem 1.2rem; }
