@@ -1,27 +1,222 @@
 <!DOCTYPE html>
-<html><head></head><body><pre>
-      I’m setting out to prove that skill and integrity can inspire others, even when the skill is really a meta-skill. I’ve learned that I can pick up new things quickly, whether they’re academic (calculus), crafty (sewing), design-based (electronics), technical (Emacs), or tools that help me navigate the world (my “ESTJ utility belt,” which you’ll be hearing more about here soon).
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proving that Skill & Integrity Inspire</title>
+  <meta name="description" content="Bill Wear's mission: learn out loud, teach generously, and prove that skill and integrity can inspire others." />
 
-Don’t worry—I’m not going to teach you calculus. That’s for a very specific few. But the others? I’ll be:
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a;           /* slate-900 */
+      --muted: #475569;        /* slate-600 */
+      --card: #f8fafc;         /* slate-50 */
+      --border: #e2e8f0;       /* slate-200 */
+      --accent: #2563eb;       /* blue-600 */
+      --accent-weak: #3b82f6;  /* blue-500 */
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+      --maxw: 820px;
+    }
 
-Learning or improving skills publicly, showing each step along the way.
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;         /* deep navy */
+        --fg: #e5e7eb;         /* slate-200 */
+        --muted: #9ca3af;      /* gray-400 */
+        --card: #0f172a;       /* slate-900 */
+        --border: #1f2937;     /* gray-800 */
+        --accent: #60a5fa;     /* blue-400 */
+        --accent-weak: #93c5fd;/* blue-300 */
+        --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      }
+    }
 
-Cementing that learning by teaching, whether through tutorials, articles, or even books.
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(37,99,235,0.08), transparent 60%), var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
 
-I’m not doing this for money, though mastery often finds its own ways to pay. I’m doing it because it’s what I’m built to do. I’ve never believed in limits on intelligence, and I dislike the labels that ignore a person’s willingness and desire to learn alongside their raw “brainpower.”
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
 
-To that end, I’m rebooting my five main channels:
+    header {
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: calc(var(--radius) + 4px);
+      box-shadow: var(--shadow);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.6rem, 2.4vw + 1rem, 2.4rem);
+      line-height: 1.2;
+      letter-spacing: 0.2px;
+    }
+    .deck {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
 
-billwear.github.io — a log of my experiments in learning how to learn.
+    main { margin-top: 28px; }
 
-solderandsignal.com — brushing up my (rusty) EE degrees and sharing the joy of electronics.
+    .content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
 
-the-way-of-emacs.com — my journey from budding guru to true mastery of this strange, powerful beast.
+    .content p { margin: 0 0 1rem; }
 
-Journal of the Inner Fire (this Substack) — exploring tools for living an INFP life in an ESTJ world.
+    .list {
+      padding-left: 1.2rem;
+      margin: 0.25rem 0 1rem;
+    }
 
-bohobytebags.com — turning my quest for the perfect backpack into an obsession with sewing craftsmanship.
+    .channels {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    @media (min-width: 700px) {
+      .channels { grid-template-columns: repeat(2, 1fr); }
+    }
 
-      No set schedule yet, but I plan to keep them current—now that I have a raison d’être tying these “scattered” projects together. Follow along and join the one(s) that pique your interest.
+    .card {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 18px;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent);
+    }
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent-weak);
+    }
+    .card a:hover { border-bottom-style: solid; }
 
-</pre></body></html>
+    .note {
+      margin-top: 22px;
+      padding: 18px;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(37,99,235,0.06), transparent 65%),
+        var(--card);
+      font-size: 0.98rem;
+    }
+
+    .cta {
+      margin-top: 22px;
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+    .cta:hover { filter: brightness(1.05); }
+
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Proving that Skill &amp; Integrity Inspire</h1>
+      <p class="deck">Learning out loud, teaching generously, and turning curiosity into concrete, public proof.</p>
+    </header>
+
+    <main>
+      <section class="content">
+        <p>I’m setting out to prove that <strong>skill and integrity can inspire others</strong>—even when the skill is really a <em>meta</em>-skill. I’ve learned I can pick up new things quickly: academic (calculus), crafty (sewing), design-based (electronics), technical (Emacs), and even tools that help me navigate the world (my “ESTJ utility belt,” which you’ll hear more about soon).</p>
+
+        <p>Don’t worry—I’m not going to teach you calculus. That’s for a very specific few. But the others? I’ll be:</p>
+        <ul class="list">
+          <li><strong>Learning or improving skills publicly</strong>, showing each step along the way.</li>
+          <li><strong>Cementing that learning by teaching</strong>—tutorials, articles, maybe even books.</li>
+        </ul>
+
+        <p>I’m not doing this for money—though mastery often finds its own ways to pay. I’m doing it because it’s what I’m built to do. I don’t believe in limits on intelligence, and I dislike labels that ignore a person’s willingness and desire to learn alongside their raw “brainpower.”</p>
+
+        <div class="channels">
+          <article class="card">
+            <h3><a href="#" aria-label="billwear.github.io">billwear.github.io</a></h3>
+            <p>A running log of experiments in <em>learning how to learn</em>.</p>
+          </article>
+
+          <article class="card">
+            <h3><a href="#" aria-label="solderandsignal.com">solderandsignal.com</a></h3>
+            <p>Brushing up my (rusty) EE degrees and sharing the joy of electronics.</p>
+          </article>
+
+          <article class="card">
+            <h3><a href="#" aria-label="the-way-of-emacs.com">the-way-of-emacs.com</a></h3>
+            <p>From budding guru to real mastery of this strange, powerful beast.</p>
+          </article>
+
+          <article class="card">
+            <h3><a href="#" aria-label="Journal of the Inner Fire">Journal of the Inner Fire</a></h3>
+            <p>Tools for living an INFP life in an ESTJ world.</p>
+          </article>
+
+          <article class="card">
+            <h3><a href="#" aria-label="bohobytebags.com">bohobytebags.com</a></h3>
+            <p>Turning the perfect-backpack quest into an obsession with sewing craftsmanship.</p>
+          </article>
+        </div>
+
+        <div class="note">
+          <strong>No set schedule (yet):</strong> I’ll keep these current—now that there’s a clear <em>raison d’être</em> tying the “scattered” projects together. Follow along and jump into whatever <em>pique</em>s your interest.
+        </div>
+
+        <!-- Optional CTA: drop your Substack link (or remove this) -->
+        <!-- <a class="cta" href="https://YOUR-SUBSTACK-URL" rel="noopener">Get new posts by email</a> -->
+      </section>
+
+      <footer>
+        &copy; <span id="year"></span> Bill Wear • Made with curiosity, care, and a soldering iron.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
