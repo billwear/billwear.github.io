@@ -30,6 +30,20 @@
       color:var(--text); font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       line-height:1.7; letter-spacing:.2px;
     }
+.pill-link {
+  display:inline-block;
+  margin:.8rem 0 1.2rem;
+  padding:.45rem .95rem;
+  border-radius:999px;
+  font-size:.92rem;
+  font-weight:500;
+  text-decoration:none;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#fff;
+  box-shadow:0 2px 10px var(--ring);
+  transition:transform .15s ease;
+}
+.pill-link:hover { transform:translateY(-2px); }
     .wrap{max-width:min(1200px,96vw); margin-inline:auto; padding:clamp(16px,2vw,24px)}
     header{padding:clamp(20px,4vw,40px) 0; display:grid; gap:clamp(16px,2vw,20px); place-items:center; text-align:center}
     .brand{display:flex; align-items:center; gap:14px; justify-content:center; color:var(--muted); font-size:.95rem}
@@ -104,6 +118,7 @@
         <p class="lead">
           A masque is more than a mask; it’s both a covering and a performance — a deliberate act of stepping into a role. The Masque Protocol is how I frame my INFP core so it shows up clearly in the checklist-heavy world I work in.
         </p>
+<a href="#traits" class="pill-link">See My Personality Traits →</a>
         <div class="motto"><strong>Motto:</strong> Choose the self the moment needs — without losing the self beneath.</div>
 
         <h2>Origin & Intent</h2>
@@ -151,7 +166,30 @@
           </div>
         </div>
       </section>
+<section id="traits" class="card">
+  <h2>Personality Traits</h2>
+  <img src="traits.png" alt="Personality traits chart" style="max-width:100%;border-radius:12px;box-shadow:var(--shadow);margin:1rem 0;">
+  
+  <h3>Strengths</h3>
+  <ul>
+    <li><strong>✅ Insightful Understanding</strong> — You grasp deep emotional nuances, creating genuine connections with coworkers and clients. If empathy were a sport, I’d be a gold medalist… and the referee would probably cry too.</li>
+    <li><strong>✅ Gentle Persuasion</strong> — Your empathetic communication helps you smoothly guide others toward consensus. I don't twist arms — I offer cookies until everyone agrees.</li>
+    <li><strong>✅ Independent Thinking</strong> — You thrive when granted the freedom to innovate and explore ideas creatively.</li>
+    <li><strong>✅ Quiet Determination</strong> — Understated persistence allows you to pursue meaningful goals without unnecessary conflict.</li>
+    <li><strong>✅ Reflective Approach</strong> — Your thoughtful mindset ensures high-quality, meaningful outcomes in your projects.</li>
+    <li><strong>✅ Authentic Presence</strong> — You create trust through honesty and openness, bringing sincerity into the workplace. And a great deal of natural humor: What you see is what you get — minus the parts that haven't had coffee yet.</li>
+  </ul>
 
+  <h3>Weaknesses</h3>
+  <ul>
+    <li><strong>✅ Struggling with Pragmatism</strong> — Your idealistic expectations may hinder practical decision-making and achievable goals. I aim for the stars, but sometimes forget the ladder.</li>
+    <li><strong>✅ Difficulty Networking</strong> — Self-promotion and professional interactions outside your comfort zone may leave you drained. Networking feels like speed dating for extroverts — I bring snacks instead.</li>
+    <li><strong>❌ Reacting Personally to Criticism</strong> — Constructive feedback may trigger deep self-doubt. This one is less of an issue for me: I feel fluent in emotions, so while I always feel anger when receiving criticism, I’ve learned that resistance means I should listen closely for the nugget of truth.</li>
+    <li><strong>❇️ Overlooking Organization</strong> — Your spontaneous workflow style can cause difficulties in maintaining schedules and routines. For me this is cyclical: I swing between craving military precision and preferring to dive deep into one thing, ignoring dirty dishes and trivialities.</li>
+    <li><strong>✅ Reluctant to Advocate</strong> — Your natural humility often prevents you from presenting your contributions effectively. My trumpet has a mute button permanently installed.</li>
+    <li><strong>✳️ Drained by Routine</strong> — Structured repetition demotivates and tires you. For me, I can tolerate routine for about three days before my brain stages a coup.</li>
+  </ul>
+</section>
       <footer>© <span id="y"></span> Bill Wear · <a href="/">Home</a></footer>
     </main>
   </div>
