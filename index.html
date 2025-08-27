@@ -98,6 +98,81 @@
   transition:transform .15s ease;
 }
 .bounceback:hover { transform: translateY(-2px); }
+    /* ==== MASQUE ANIMATIONS ==== */
+
+/* Logo entry + shimmer */
+@keyframes masque-lift-in {
+  0%   { transform: translateY(14px) scale(.96); opacity: 0 }
+  60%  { transform: translateY(-4px) scale(1.02); opacity: 1 }
+  100% { transform: translateY(0) scale(1); opacity: 1 }
+}
+@keyframes masque-glow {
+  0% { filter: drop-shadow(0 10px 24px rgba(0,0,0,.35)) }
+  50% { filter: drop-shadow(0 14px 30px rgba(0,0,0,.45)) }
+  100% { filter: drop-shadow(0 10px 24px rgba(0,0,0,.35)) }
+}
+@keyframes gradient-shift {
+  0%   { stop-color: var(--accent) }
+  50%  { stop-color: var(--accent-2) }
+  100% { stop-color: var(--accent) }
+}
+
+/* Apply to the logo on load */
+.logo-shell .logo {
+  will-change: transform, filter;
+  animation: masque-lift-in .9s cubic-bezier(.2,.8,.2,1) both,
+             masque-glow 4.5s ease-in-out 1s infinite;
+  transform-style: preserve-3d;
+}
+
+/* Animate the first gradient stop for a subtle shimmer */
+.logo-shell .logo defs stop:first-of-type {
+  animation: gradient-shift 6s ease-in-out infinite;
+}
+
+/* Parallax tilt container */
+.logo-shell {
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+
+/* Scroll reveal (attach .reveal to elements you want animated in) */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px) scale(.98);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+.reveal.on {
+  opacity: 1;
+  transform: none;
+}
+
+/* Optional: slightly stagger children inside grids */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.reveal-stagger.on > * {
+  opacity: 1;
+  transform: none;
+}
+.reveal-stagger.on > *:nth-child(1) { transition-delay: .05s }
+.reveal-stagger.on > *:nth-child(2) { transition-delay: .12s }
+.reveal-stagger.on > *:nth-child(3) { transition-delay: .17s }
+.reveal-stagger.on > *:nth-child(4) { transition-delay: .22s }
+.reveal-stagger.on > *:nth-child(5) { transition-delay: .27s }
+.reveal-stagger.on > *:nth-child(6) { transition-delay: .32s }
+.reveal-stagger.on > *:nth-child(7) { transition-delay: .37s }
+
+/* Tiny polish for pills on hover (matches your palette) */
+.pill-link, .bounceback {
+  will-change: transform, box-shadow;
+}
+.pill-link:hover, .bounceback:hover {
+  box-shadow: 0 6px 18px var(--ring);
+}
   </style>
 </head>
 <body>
@@ -129,7 +204,7 @@
     </header>
 
     <main id="content">
-      <article class="card">
+      <article class="card reveal">
         <p class="lead">
           A masque is more than a mask; it’s both a covering and a performance — a deliberate act of stepping into a role. The Masque Protocol is how I frame my INFP core so it shows up clearly in the checklist-heavy world I work in.
         </p>
@@ -141,7 +216,7 @@
       </article>
 <a href="#backstory" class="pill-link">Read My Backstory →</a>
       <!-- NEW: Modules Menu -->
-      <section class="menu" aria-label="Masque modules">
+      <section class="menu reveal-stagger" aria-label="Masque modules">
         <h2>Explore the Seven Modules</h2>
         <div class="grid">
           <div class="tile">
@@ -233,5 +308,41 @@
     </main>
   </div>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+  // Parallax tilt for the logo
+  (function(){
+    const shell = document.querySelector('.logo-shell');
+    const logo  = document.querySelector('.logo-shell .logo');
+    if(!shell || !logo) return;
+
+    let rect = null;
+    function updateRect(){ rect = shell.getBoundingClientRect(); }
+    updateRect(); window.addEventListener('resize', updateRect);
+
+    shell.addEventListener('mousemove', (e) => {
+      if(!rect) return;
+      const x = (e.clientX - (rect.left + rect.width/2)) / (rect.width/2);
+      const y = (e.clientY - (rect.top  + rect.height/2)) / (rect.height/2);
+      const maxTilt = 10; // degrees
+      logo.style.transform = `rotateY(${x*maxTilt}deg) rotateX(${-y*maxTilt}deg) translateZ(6px)`;
+    });
+    shell.addEventListener('mouseleave', () => {
+      logo.style.transform = 'rotateY(0) rotateX(0) translateZ(0)';
+    });
+  })();
+  // IntersectionObserver: reveal on scroll
+  (function(){
+    const IO = new IntersectionObserver((entries)=>{
+      entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('on');
+          IO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el=>IO.observe(el));
+  })();
+</script>
 </body>
 </html>
