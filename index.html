@@ -6,231 +6,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="description" content="The Masque Protocol: a disciplined interface for sublimating INFP traits into superpowers that thrive in an ESTJ world." />
-
-  <!-- Open Graph (optional but nice for sharing) -->
   <meta property="og:title" content="The Masque Protocol — Bill Wear" />
   <meta property="og:description" content="A disciplined interface for sublimating INFP traits into superpowers that thrive in an ESTJ world." />
-  <meta property="og:type" content="website" />
-
   <style>
     :root{
-      --bg: #0b0c10;
-      --panel: #11131a;
-      --text: #e8ecf1;
-      --muted: #a6b0c3;
-      --accent: #7cc7ff;
-      --accent-2: #a78bfa;
-      --ring: rgba(124,199,255,.35);
-      --maxw: 76ch;
-      --radius: 18px;
-      --shadow: 0 8px 28px rgba(0,0,0,.35), 0 2px 10px rgba(0,0,0,.2);
+      --bg:#0b0c10; --panel:#11131a; --text:#e8ecf1; --muted:#a6b0c3;
+      --accent:#7cc7ff; --accent-2:#a78bfa; --ring:rgba(124,199,255,.35);
+      --maxw:76ch; --radius:18px;
+      --shadow:0 8px 28px rgba(0,0,0,.35), 0 2px 10px rgba(0,0,0,.2);
     }
     @media (prefers-color-scheme: light){
       :root{
-        --bg: #f7f9fc;
-        --panel: #ffffff;
-        --text: #0f172a;
-        --muted: #475569;
-        --accent: #2563eb;
-        --accent-2: #7c3aed;
-        --ring: rgba(37,99,235,.25);
-        --shadow: 0 10px 30px rgba(2, 6, 23, .08), 0 2px 10px rgba(2, 6, 23, .06);
+        --bg:#f7f9fc; --panel:#fff; --text:#0f172a; --muted:#475569;
+        --accent:#2563eb; --accent-2:#7c3aed; --ring:rgba(37,99,235,.25);
+        --shadow:0 10px 30px rgba(2,6,23,.08), 0 2px 10px rgba(2,6,23,.06);
       }
     }
-
-    /* Base */
-    html { scroll-behavior:smooth }
+    html{scroll-behavior:smooth}
     body{
-      margin:0;
-      background:
+      margin:0; background:
         radial-gradient(1200px 700px at 10% -10%, rgba(124,199,255,.12), transparent 60%),
-        radial-gradient(900px 500px at 90% -10%, rgba(167,139,250,.10), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji;
-      line-height:1.7;
-      letter-spacing:.2px;
+        radial-gradient(900px 500px at 90% -10%, rgba(167,139,250,.10), transparent 60%), var(--bg);
+      color:var(--text); font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.7; letter-spacing:.2px;
     }
-    .wrap{
-      max-width: min(1200px, 96vw);
-      margin-inline:auto;
-      padding: clamp(16px, 2vw, 24px);
-    }
-
-    /* Header / Hero */
-    header{
-      padding: clamp(20px, 4vw, 40px) 0;
-      display:grid;
-      gap: clamp(16px, 2vw, 20px);
-      grid-template-columns: 1fr;
-      place-items:center;
-      text-align:center;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      justify-content:center;
-      color:var(--muted);
-      font-size:.95rem;
-      letter-spacing:.25px;
-    }
-    .brand a{ color:inherit; text-decoration:none }
-    .hero{
-      display:grid;
-      gap: clamp(12px, 2vw, 16px);
-      place-items:center;
-    }
-    .hero h1{
-      font-weight:800;
-      font-size: clamp(2rem, 2.75rem + 1vw, 3.75rem);
-      line-height:1.1;
-      letter-spacing:.2px;
-      margin:0;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-    }
-    .hero p{
-      max-width: 70ch;
-      margin: 0;
-      color: var(--muted);
-      font-size: clamp(1rem, .95rem + .5vw, 1.125rem);
-    }
-    .logo-shell{
-      width: clamp(120px, 18vw, 200px);
-      aspect-ratio: 1/1;
-      border-radius: 28px;
-      background: linear-gradient(145deg, rgba(124,199,255,.18), rgba(167,139,250,.14));
-      box-shadow: var(--shadow), inset 0 0 0 1px rgba(255,255,255,.06);
-      display:grid; place-items:center;
-      position: relative;
-      isolation:isolate;
-    }
-    .logo-shell::after{
-      content:"";
-      position:absolute; inset:0;
-      border-radius: 28px;
-      background:
-        radial-gradient(140px 80px at 30% 0%, rgba(255,255,255,.18), transparent 60%),
-        radial-gradient(140px 80px at 70% 0%, rgba(255,255,255,.12), transparent 60%);
-      mix-blend-mode: overlay;
-      pointer-events:none;
-    }
-    svg.logo{
-      width: 70%;
-      filter: drop-shadow(0 8px 18px rgba(0,0,0,.35));
-    }
-
-    /* Content Card */
-    .card{
-      background: var(--panel);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: clamp(18px, 3vw, 36px);
-      margin: clamp(16px, 3vw, 28px) auto;
-      max-width: var(--maxw);
-      border: 1px solid color-mix(in oklab, var(--panel) 90%, #ffffff 10%);
-    }
-    .card h2, .card h3{
-      margin: 1.2em 0 .4em;
-      line-height: 1.2;
-      letter-spacing:.2px;
-    }
-    .card h2{ font-size: clamp(1.35rem, 1.2rem + .8vw, 2rem) }
-    .card h3{ font-size: clamp(1.15rem, 1rem + .6vw, 1.35rem) }
-    .lead{
-      font-size: clamp(1.05rem, 1rem + .35vw, 1.2rem);
-      color: var(--muted);
-      margin: .5rem 0 1.25rem;
-    }
-    p{ margin: .6rem 0 1rem }
-    .motto{
-      display:flex; align-items:center; gap:.6rem;
-      padding: .9rem 1rem;
-      border-left: 4px solid var(--accent);
-      background: color-mix(in oklab, var(--panel) 80%, #ffffff 10%);
-      border-radius: 10px;
-      color: var(--muted);
-      margin: 1rem 0 1.6rem;
-    }
-    .motto strong{ color: var(--text) }
-
-    /* Modules grid */
-    .grid{
-      display: grid;
-      gap: clamp(14px, 2.2vw, 22px);
-      grid-template-columns: 1fr;
-      margin: 1.2rem 0 .2rem;
-    }
-    @media (min-width: 760px){
-      .grid{ grid-template-columns: 1fr 1fr }
-    }
-    .mod{
-      padding: clamp(12px, 1.6vw, 18px) clamp(14px, 2vw, 22px);
-      border: 1px solid color-mix(in oklab, var(--panel) 80%, #ffffff 18%);
-      border-radius: 14px;
-      background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 90%, #ffffff 8%), color-mix(in oklab, var(--panel) 94%, #0000 6%));
-    }
-    .mod h4{
-      margin:.2rem 0 .5rem;
-      font-size: clamp(1.02rem, .98rem + .4vw, 1.18rem);
-    }
-    .mod p{ margin:.25rem 0 .6rem }
-    .tag{
-      display:inline-block;
-      padding:.2rem .55rem;
-      border-radius:999px;
-      font-size:.78rem;
-      letter-spacing:.25px;
-      color: var(--text);
-      background: color-mix(in oklab, var(--accent) 55%, var(--accent-2) 45%);
-      box-shadow: 0 2px 10px var(--ring);
-    }
-
-    /* Links */
-    a{ color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: .08em }
-    a:hover{ color: var(--accent-2) }
-
-    /* Footer */
-    footer{
-      color: var(--muted);
-      text-align:center;
-      padding: 40px 0 60px;
-      font-size:.95rem;
-    }
+    .wrap{max-width:min(1200px,96vw); margin-inline:auto; padding:clamp(16px,2vw,24px)}
+    header{padding:clamp(20px,4vw,40px) 0; display:grid; gap:clamp(16px,2vw,20px); place-items:center; text-align:center}
+    .brand{display:flex; align-items:center; gap:14px; justify-content:center; color:var(--muted); font-size:.95rem}
+    .brand a{color:inherit; text-decoration:none}
+    .hero{display:grid; gap:clamp(12px,2vw,16px); place-items:center}
+    .hero h1{font-weight:800; font-size:clamp(2rem,2.75rem + 1vw,3.75rem); line-height:1.1; margin:0;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .hero p{max-width:70ch; margin:0; color:var(--muted); font-size:clamp(1rem,.95rem + .5vw,1.125rem)}
+    .logo-shell{width:clamp(120px,18vw,200px); aspect-ratio:1/1; border-radius:28px;
+      background:linear-gradient(145deg, rgba(124,199,255,.18), rgba(167,139,250,.14));
+      box-shadow:var(--shadow), inset 0 0 0 1px rgba(255,255,255,.06); display:grid; place-items:center; position:relative; isolation:isolate}
+    .logo-shell::after{content:""; position:absolute; inset:0; border-radius:28px;
+      background:radial-gradient(140px 80px at 30% 0%, rgba(255,255,255,.18), transparent 60%),
+                 radial-gradient(140px 80px at 70% 0%, rgba(255,255,255,.12), transparent 60%)}
+    svg.logo{width:70%; filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
+    .card{background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:clamp(18px,3vw,36px); margin:clamp(16px,3vw,28px) auto; max-width:var(--maxw);
+      border:1px solid color-mix(in oklab, var(--panel) 90%, #fff 10%)}
+    .lead{font-size:clamp(1.05rem,1rem + .35vw,1.2rem); color:var(--muted); margin:.5rem 0 1.25rem}
+    .motto{display:flex; align-items:center; gap:.6rem; padding:.9rem 1rem; border-left:4px solid var(--accent);
+      background:color-mix(in oklab, var(--panel) 80%, #fff 10%); border-radius:10px; color:var(--muted); margin:1rem 0 1.6rem}
+    .motto strong{color:var(--text)}
+    a{color:var(--accent); text-underline-offset:3px; text-decoration-thickness:.08em}
+    a:hover{color:var(--accent-2)}
+    /* Modules menu */
+    .menu{max-width:1100px; margin:clamp(16px,3vw,28px) auto}
+    .menu h2{margin:0 0 .6rem; text-align:center; font-size:clamp(1.35rem,1.2rem + .8vw,2rem)}
+    .grid{display:grid; gap:clamp(14px,2.2vw,22px); grid-template-columns:1fr}
+    @media (min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+    @media (min-width:980px){.grid{grid-template-columns:1fr 1fr 1fr}}
+    .tile{background:var(--panel); border-radius:16px; padding:18px; border:1px solid color-mix(in oklab, var(--panel) 80%, #fff 18%);
+      box-shadow:var(--shadow); display:grid; gap:.5rem}
+    .tile h3{margin:.2rem 0 .25rem; font-size:1.05rem}
+    .tile p{margin:0; color:var(--muted); font-size:.95rem}
+    .tile .go{justify-self:end; margin-top:.4rem}
+    .btn{display:inline-block; padding:.5rem .8rem; border-radius:999px; font-size:.92rem; border:1px solid color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%);
+      color:var(--text); background:linear-gradient(90deg, color-mix(in oklab, var(--accent) 70%, #000 0%), color-mix(in oklab, var(--accent-2) 70%, #000 0%));
+      box-shadow:0 2px 10px var(--ring); text-decoration:none}
+    footer{color:var(--muted); text-align:center; padding:40px 0 60px; font-size:.95rem}
   </style>
 </head>
 <body>
   <a href="#content" class="sr-only">Skip to content</a>
-
   <div class="wrap">
     <header>
-      <div class="brand"> <a href="/">billwear.github.io</a> · <span>Notes & Training</span></div>
+      <div class="brand"><a href="/">billwear.github.io</a> · <span>Notes & Training</span></div>
       <div class="hero">
         <div class="logo-shell" aria-hidden="true">
-          <!-- Masque Logo (SVG) -->
           <svg class="logo" viewBox="0 0 512 512" role="img" aria-label="Masque emblem">
             <defs>
               <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#7cc7ff"/>
-                <stop offset="100%" stop-color="#a78bfa"/>
+                <stop offset="0%" stop-color="#7cc7ff"/><stop offset="100%" stop-color="#a78bfa"/>
               </linearGradient>
               <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="6" result="b"/>
-                <feBlend in="SourceGraphic" in2="b" mode="overlay"/>
+                <feGaussianBlur stdDeviation="6" result="b"/><feBlend in="SourceGraphic" in2="b" mode="overlay"/>
               </filter>
             </defs>
-            <!-- Mask body -->
             <path d="M256 120c-66 0-140 16-190 46-25 15-40 36-40 59 0 84 84 128 230 128s230-44 230-128c0-23-15-44-40-59-50-30-124-46-190-46Z" fill="url(#g1)" filter="url(#soft)"/>
-            <!-- Upper contour shine -->
             <path d="M66 192c54-39 126-58 190-58s136 19 190 58" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8" stroke-linecap="round"/>
-            <!-- Eye cuts -->
-            <ellipse cx="172" cy="244" rx="54" ry="32" fill="#0b0c10"/>
-            <ellipse cx="340" cy="244" rx="54" ry="32" fill="#0b0c10"/>
-            <!-- Eye glints -->
-            <ellipse cx="155" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/>
-            <ellipse cx="323" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/>
-            <!-- Lower lip / edge -->
+            <ellipse cx="172" cy="244" rx="54" ry="32" fill="#0b0c10"/><ellipse cx="340" cy="244" rx="54" ry="32" fill="#0b0c10"/>
+            <ellipse cx="155" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/><ellipse cx="323" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/>
             <path d="M86 300c45 24 103 36 170 36s125-12 170-36" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="6" stroke-linecap="round"/>
           </svg>
         </div>
@@ -242,104 +102,59 @@
     <main id="content">
       <article class="card">
         <p class="lead">
-          A masque is more than a mask; it’s both a covering and a performance — a deliberate act of stepping into a role. The Masque Protocol is how I frame my INFP core so it shows up clearly in the checklist-heavy world I work in. I’m not hiding; I’m focusing. I choose which traits to bring forward, which to sublimate, and which to shield.
+          A masque is more than a mask; it’s both a covering and a performance — a deliberate act of stepping into a role. The Masque Protocol is how I frame my INFP core so it shows up clearly in the checklist-heavy world I work in.
         </p>
-        <div class="motto">
-          <strong>Motto:</strong> Choose the self the moment needs — without losing the self beneath.
-        </div>
+        <div class="motto"><strong>Motto:</strong> Choose the self the moment needs — without losing the self beneath.</div>
 
         <h2>Origin & Intent</h2>
-        <p>
-          I’ve lived a life that demanded a “culture of expediency and mercy.” That crucible made me empathetic, resourceful, and quietly determined — but my natural temperament (inward, imaginative, values-driven) doesn’t always translate cleanly into the pragmatic ESTJ environments I inhabit. The Masque Protocol resolves that mismatch. When I “put on the masque,” I activate the disciplines that let colleagues recognize my work as reliable, focused, and effective — without silencing the creativity and values that drive me.
-        </p>
-
-        <h2>Seven Training Modules</h2>
-        <p class="lead">Each book below is a module in the Protocol — a targeted sublimation that converts an INFP tendency into visible leverage.</p>
-
-        <section class="grid" aria-label="Modules grid">
-          <div class="mod">
-            <span class="tag">Module 1</span>
-            <h4>Getting Things Done (David Allen)</h4>
-            <p><em>Translation, not transformation.</em> I use GTD as a <strong>translation layer</strong>: externalizing my intuitive leaps into visible next actions. Lists aren’t monuments; they’re living scaffolds I capture in <strong>tolerable chunks</strong> so I never cross the overwhelm threshold.</p>
-            <p><strong>Sublimation:</strong> ideation → ordered, trustworthy delivery.</p>
-          </div>
-
-          <div class="mod">
-            <span class="tag">Module 2</span>
-            <h4>Deep Work (Cal Newport)</h4>
-            <p>My inwardness is a feature. I carve <strong>distraction-free focus blocks</strong> where that depth becomes output others can see. Short, repeatable sprints or longer morning blocks — either way, I turn quiet intensity into visible progress.</p>
-            <p><strong>Sublimation:</strong> inner landscapes → sharpened productivity weapon.</p>
-          </div>
-
-          <div class="mod">
-            <span class="tag">Module 3</span>
-            <h4>Atomic Habits (James Clear)</h4>
-            <p>I alchemize inspiration into consistency with <strong>tiny, compounding actions</strong>. The reward loop is tuned to my temperament: strong, immediate “yes” when I align with intent; quick, clean “no” when I don’t.</p>
-            <p><strong>Sublimation:</strong> passion → predictable rhythm.</p>
-          </div>
-
-          <div class="mod">
-            <span class="tag">Module 4</span>
-            <h4>Behave (Robert Sapolsky)</h4>
-            <p>The <strong>op-amp brain</strong> metaphor lets me raise the “gain” on circuits I want: I pair desired behaviors with an <strong>intense like</strong> and dampen distractions with a swift <strong>dislike</strong>. It’s DIY neuro-programming, grounded in biology.</p>
-            <p><strong>Sublimation:</strong> empathy & electronics → scientific armor for action.</p>
-          </div>
-
-          <div class="mod">
-            <span class="tag">Module 5</span>
-            <h4>Thinking, Fast and Slow (Daniel Kahneman)</h4>
-            <p>I shift gears on purpose. <strong>System 1</strong> for “android precision” in routines — fluid, efficient, playful motion. <strong>System 2</strong> for typing on phone, studying, or careful writing — slowing down into deliberate clarity.</p>
-            <p><strong>Sublimation:</strong> intuition + reason → radar and compass, by choice.</p>
-          </div>
-
-          <div class="mod">
-            <span class="tag">Module 6</span>
-            <h4>The One Thing (Gary Keller)</h4>
-            <p>I ask: <em>“What’s the one thing such that by doing it, everything else becomes easier or unnecessary?”</em> This lens prevents list-paralysis and keeps my work aimed at leverage.</p>
-            <p><strong>Sublimation:</strong> diffuse curiosity → laser alignment.</p>
-          </div>
-
-          <div class="mod">
-            <span class="tag">Module 7</span>
-            <h4>Essentialism (Greg McKeown)</h4>
-            <p>I prune without apology. Saying no protects the signal. I refine values into boundaries so my best work has room to breathe.</p>
-            <p><strong>Sublimation:</strong> idealism → practical clarity & resilience.</p>
-          </div>
-        </section>
-
-        <h2>Practice Notes</h2>
-        <h3>Capture in Tolerable Chunks</h3>
-        <p>I end capture the moment the list reaches the edge of emotional tolerance. Stopping there preserves momentum and protects focus for the work that matters.</p>
-
-        <h3>Focus via The One Thing</h3>
-        <p>When choices multiply, I ask the focusing question and pick the highest-leverage target. Everything else waits its turn.</p>
-
-        <h3>Channel Depth into Deep Work</h3>
-        <p>Priority chosen → block scheduled → friction removed. I enter, execute, exit, and record a visible artifact.</p>
-
-        <h3>Wire It In with the Op-Amp</h3>
-        <p>Immediate emotional reinforcement — a felt “yes” — raises circuit gain and turns choices into defaults. The wrong moves get a quick “no” and no drama.</p>
-
-        <h3>Toggle Fast/Slow on Purpose</h3>
-        <ul>
-          <li><strong>Fast:</strong> routine tasks become fluid choreography — “android precision.”</li>
-          <li><strong>Slow:</strong> phone typing, careful edits, complex reading — paced, intentional, unhurried.</li>
-        </ul>
-
-        <div class="motto">
-          <strong>Bottom line:</strong> The Masque isn’t for hiding — it’s for becoming visible in a language the world understands.
-        </div>
+        <p>I’ve lived a life that demanded a “culture of expediency and mercy.” The masque is how I reconcile INFP depth with ESTJ environments: I activate disciplines colleagues trust while protecting the creativity and values that drive me.</p>
       </article>
 
-      <footer>
-        © <span id="y"></span> Bill Wear · <a href="/">Home</a>
-      </footer>
+      <!-- NEW: Modules Menu -->
+      <section class="menu" aria-label="Masque modules">
+        <h2>Explore the Seven Modules</h2>
+        <div class="grid">
+          <div class="tile">
+            <h3>Getting Things Done</h3>
+            <p>Translation layer: intuition → visible next actions in tolerable chunks.</p>
+            <a class="btn go" href="gtd.html">Open Module</a>
+          </div>
+          <div class="tile">
+            <h3>Deep Work</h3>
+            <p>Quiet intensity channeled into focused, visible output blocks.</p>
+            <a class="btn go" href="deep-work.html">Open Module</a>
+          </div>
+          <div class="tile">
+            <h3>Atomic Habits</h3>
+            <p>Inspiration alchemized into consistent, compounding actions.</p>
+            <a class="btn go" href="atomic-habits.html">Open Module</a>
+          </div>
+          <div class="tile">
+            <h3>Behave</h3>
+            <p>Op-amp brain: raise the gain on the circuits you want to fire.</p>
+            <a class="btn go" href="behave.html">Open Module</a>
+          </div>
+          <div class="tile">
+            <h3>Thinking, Fast and Slow</h3>
+            <p>Toggling System 1/2: android precision ↔ deliberate clarity.</p>
+            <a class="btn go" href="thinking-fast-and-slow.html">Open Module</a>
+          </div>
+          <div class="tile">
+            <h3>The One Thing</h3>
+            <p>Leverage lens: the one move that makes the rest easier.</p>
+            <a class="btn go" href="the-one-thing.html">Open Module</a>
+          </div>
+          <div class="tile">
+            <h3>Essentialism</h3>
+            <p>Prune ruthlessly. Protect the signal. Stand firm in clarity.</p>
+            <a class="btn go" href="essentialism.html">Open Module</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>© <span id="y"></span> Bill Wear · <a href="/">Home</a></footer>
     </main>
   </div>
-
-  <script>
-    // Year stamp
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
