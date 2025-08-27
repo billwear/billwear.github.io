@@ -2,42 +2,52 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: ["main"]   # <-- change if your default branch is different
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one deploy at a time; cancel older in-progress if a new push arrives
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
+
+      # Prepare a clean publish directory to avoid uploading repo internals
+      - name: Prepare site
+        shell: bash
+        run: |
+          set -euo pipefail
+          SITE_DIR=site
+          mkdir -p "$SITE_DIR"
+          shopt -s extglob dotglob
+          # Copy everything EXCEPT repo guts into ./site
+          cp -r !(site|.git|.github|.gitignore|README.md|node_modules|package.json|package-lock.json) "$SITE_DIR"/ || true
+          # Ensure GitHub Pages skips Jekyll processing
+          touch "$SITE_DIR/.nojekyll"
+
+      - name: Configure Pages
         uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
