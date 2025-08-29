@@ -10,11 +10,10 @@
 
   <!-- Page-local polish -->
   <style>
-    /* === Widen page like your Traits/About pages === */
-    :root{ --page-maxw: 100ch; }                 /* wider paragraphs */
+    /* === Match the wide reading-list feel === */
     .card{
-      max-width: var(--page-maxw);               /* override site default (76ch) */
-      padding: clamp(16px, 2.5vw, 28px);         /* a touch tighter vertically */
+      max-width: 100%;                         /* fill .wrap width */
+      padding: clamp(16px, 2.5vw, 28px);
       margin: clamp(12px, 2vw, 20px) auto;
     }
 
@@ -50,11 +49,22 @@
     details + details{margin-top:.6rem}
     details summary{cursor:pointer;font-weight:600}
 
-    /* === Checklists: remove bullets, align checkboxes inline === */
-    .checklist{list-style:none;padding-left:0;margin:.2rem 0}
-    .checklist li{margin:.45rem 0}
-    .checklist label{display:flex;align-items:flex-start;gap:.6rem;line-height:1.5}
-    .checklist input{margin-top:.15rem;flex:0 0 auto}
+    /* === Checklists: bulletless + grid layout (input | text) === */
+    .checkgrid{list-style:none;padding:0;margin:.2rem 0}
+    .checkgrid li{
+      display:grid;
+      grid-template-columns: 1.25rem 1fr;      /* checkbox column + flexible text */
+      align-items:start; column-gap:.6rem;
+      margin:.45rem 0;
+    }
+    .checkgrid input{
+      width:1rem;height:1rem;margin-top:.2rem;
+      inline-size:1rem; block-size:1rem;       /* avoid browser quirks */
+    }
+    .checkgrid label{
+      line-height:1.5; color:var(--text);      /* keep label text inside card */
+      overflow-wrap:anywhere;
+    }
 
     /* Desk card */
     .desk-card{
@@ -64,7 +74,7 @@
     .desk-card h3{margin:.1rem 0 .35rem;font-size:1rem}
     .desk-card .cols{
       display:grid;gap:.8rem;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* responsive, no crunching */
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* wider min to protect col 3 */
     }
     .mono{
       font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Courier New",monospace;
@@ -198,18 +208,36 @@
         <div class="grid-2">
           <section class="fieldset">
             <h3>Three Gates</h3>
-            <ul class="checklist">
-              <li><label><input type="checkbox"> <strong>Values gate:</strong> My mask never crosses red lines (no deception, no contempt, no harm-for-speed).</label></li>
-              <li><label><input type="checkbox"> <strong>Scope gate:</strong> I wear it in negotiations/reviews/emergencies; I do <em>not</em> wear it in intimacy or play.</label></li>
-              <li><label><input type="checkbox"> <strong>Time gate:</strong> Mask on/off happens at scheduled block boundaries.</label></li>
+            <ul class="checkgrid">
+              <li>
+                <input id="g1" type="checkbox">
+                <label for="g1"><strong>Values gate:</strong> My mask never crosses red lines (no deception, no contempt, no harm-for-speed).</label>
+              </li>
+              <li>
+                <input id="g2" type="checkbox">
+                <label for="g2"><strong>Scope gate:</strong> I wear it in negotiations/reviews/emergencies; I do <em>not</em> wear it in intimacy or play.</label>
+              </li>
+              <li>
+                <input id="g3" type="checkbox">
+                <label for="g3"><strong>Time gate:</strong> Mask on/off happens at scheduled block boundaries.</label>
+              </li>
             </ul>
           </section>
           <section class="fieldset">
             <h3>Signals you’re drifting</h3>
-            <ul class="checklist">
-              <li><label><input type="checkbox"> People flinch or go quiet → reduce volume 20%, increase listening 50%.</label></li>
-              <li><label><input type="checkbox"> Mask follows you home → tighten exit ritual; write two lines and walk.</label></li>
-              <li><label><input type="checkbox"> You feel “off” → rewrite the spec (adjectives/boundaries) and recommit.</label></li>
+            <ul class="checkgrid">
+              <li>
+                <input id="s1" type="checkbox">
+                <label for="s1">People flinch or go quiet → reduce volume 20%, increase listening 50%.</label>
+              </li>
+              <li>
+                <input id="s2" type="checkbox">
+                <label for="s2">Mask follows you home → tighten exit ritual; write two lines and walk.</label>
+              </li>
+              <li>
+                <input id="s3" type="checkbox">
+                <label for="s3">You feel “off” → rewrite the spec (adjectives/boundaries) and recommit.</label>
+              </li>
             </ul>
           </section>
         </div>
@@ -225,26 +253,26 @@
         <div class="grid-2">
           <section class="fieldset">
             <h3>Week 1 — Fit & Feel</h3>
-            <ul class="checklist">
-              <li><label><input type="checkbox"> Day 1: Write your persona spec (name, adjectives, boundaries, cues).</label></li>
-              <li><label><input type="checkbox"> Day 2: Wear it for a low-stakes 15-minute block; exit on time.</label></li>
-              <li><label><input type="checkbox"> Day 3: Add one entry cue (phrase, door, timer).</label></li>
-              <li><label><input type="checkbox"> Day 4: Use the micro-loop twice; write the artifact (decision note or draft).</label></li>
-              <li><label><input type="checkbox"> Day 5: Try in a short meeting; use one polite boundary.</label></li>
-              <li><label><input type="checkbox"> Day 6: Review: what felt natural? What felt like acting? Adjust adjectives.</label></li>
-              <li><label><input type="checkbox"> Day 7: Rest + consolidate; print the desk card.</label></li>
+            <ul class="checkgrid">
+              <li><input id="w1d1" type="checkbox"><label for="w1d1">Day 1: Write your persona spec (name, adjectives, boundaries, cues).</label></li>
+              <li><input id="w1d2" type="checkbox"><label for="w1d2">Day 2: Wear it for a low-stakes 15-minute block; exit on time.</label></li>
+              <li><input id="w1d3" type="checkbox"><label for="w1d3">Day 3: Add one entry cue (phrase, door, timer).</label></li>
+              <li><input id="w1d4" type="checkbox"><label for="w1d4">Day 4: Use the micro-loop twice; write the artifact (decision note or draft).</label></li>
+              <li><input id="w1d5" type="checkbox"><label for="w1d5">Day 5: Try in a short meeting; use one polite boundary.</label></li>
+              <li><input id="w1d6" type="checkbox"><label for="w1d6">Day 6: Review—what felt natural? What felt like acting? Adjust adjectives.</label></li>
+              <li><input id="w1d7" type="checkbox"><label for="w1d7">Day 7: Rest + consolidate; print the desk card.</label></li>
             </ul>
           </section>
           <section class="fieldset">
             <h3>Week 2 — Utility & Range</h3>
-            <ul class="checklist">
-              <li><label><input type="checkbox"> Day 8: Use for a deep block; end with an artifact you can point to.</label></li>
-              <li><label><input type="checkbox"> Day 9: Use in a negotiation or review; keep values gate visible.</label></li>
-              <li><label><input type="checkbox"> Day 10: Try a “difficult” conversation; shorten sentences, ask clearer questions.</label></li>
-              <li><label><input type="checkbox"> Day 11: Teach the loop to a teammate in 3 minutes.</label></li>
-              <li><label><input type="checkbox"> Day 12: Stress test: back-to-back blocks with clean exits.</label></li>
-              <li><label><input type="checkbox"> Day 13: Write the persona’s one-page cheat sheet (below).</label></li>
-              <li><label><input type="checkbox"> Day 14: Decide: keep, tweak, or retire this mask.</label></li>
+            <ul class="checkgrid">
+              <li><input id="w2d8" type="checkbox"><label for="w2d8">Day 8: Use for a deep block; end with an artifact you can point to.</label></li>
+              <li><input id="w2d9" type="checkbox"><label for="w2d9">Day 9: Use in a negotiation or review; keep values gate visible.</label></li>
+              <li><input id="w2d10" type="checkbox"><label for="w2d10">Day 10: Try a “difficult” conversation; shorten sentences, ask clearer questions.</label></li>
+              <li><input id="w2d11" type="checkbox"><label for="w2d11">Day 11: Teach the loop to a teammate in 3 minutes.</label></li>
+              <li><input id="w2d12" type="checkbox"><label for="w2d12">Day 12: Stress test—back-to-back blocks with clean exits.</label></li>
+              <li><input id="w2d13" type="checkbox"><label for="w2d13">Day 13: Write the persona’s one-page cheat sheet (below).</label></li>
+              <li><input id="w2d14" type="checkbox"><label for="w2d14">Day 14: Decide—keep, tweak, or retire this mask.</label></li>
             </ul>
           </section>
         </div>
