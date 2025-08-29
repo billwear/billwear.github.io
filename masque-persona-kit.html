@@ -8,14 +8,31 @@
   <link rel="stylesheet" href="/assets/masque.css">
   <script src="/assets/masque.js" defer></script>
 
-  <!-- Page-local polish (print desk card + tiny utilities) -->
+  <!-- Page-local polish -->
   <style>
-    .subnav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:.5rem 0 1.25rem}
+    /* === Widen page like your Traits/About pages === */
+    :root{ --page-maxw: 100ch; }                 /* wider paragraphs */
+    .card{
+      max-width: var(--page-maxw);               /* override site default (76ch) */
+      padding: clamp(16px, 2.5vw, 28px);         /* a touch tighter vertically */
+      margin: clamp(12px, 2vw, 20px) auto;
+    }
+
+    /* Subnav + section nav */
+    .subnav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:.5rem 0 1.1rem}
     .subnav a{font-size:.9rem}
-    .section-nav{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.25rem 0}
+    .section-nav{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.1rem 0}
+
+    /* Responsive two-column helper */
     .grid-2{display:grid;gap:clamp(12px,2vw,18px);grid-template-columns:1fr}
     @media (min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
-    .fieldset{background:var(--panel);border:1px solid color-mix(in oklab,var(--panel) 80%,#fff 18%);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+
+    /* Fieldset styling */
+    .fieldset{
+      background:var(--panel);
+      border:1px solid color-mix(in oklab,var(--panel) 80%,#fff 18%);
+      border-radius:12px;padding:14px;box-shadow:var(--shadow)
+    }
     .fieldset h3{margin:.1rem 0 .35rem;font-size:1rem}
     .fieldset label{display:block;font-size:.9rem;color:var(--muted);margin:.4rem 0 .2rem}
     .fieldset input,.fieldset textarea{
@@ -24,295 +41,25 @@
       padding:.6rem .7rem;font:inherit
     }
     .fieldset textarea{min-height:90px}
-    details{border:1px solid color-mix(in oklab,var(--panel) 75%,#fff 25%);border-radius:12px;padding:.7rem 1rem;background:color-mix(in oklab,var(--panel) 88%,#fff 12%)}
+
+    /* Details accordions */
+    details{
+      border:1px solid color-mix(in oklab,var(--panel) 75%,#fff 25%);
+      border-radius:12px;padding:.7rem 1rem;background:color-mix(in oklab,var(--panel) 88%,#fff 12%)
+    }
     details + details{margin-top:.6rem}
     details summary{cursor:pointer;font-weight:600}
+
+    /* === Checklists: remove bullets, align checkboxes inline === */
+    .checklist{list-style:none;padding-left:0;margin:.2rem 0}
     .checklist li{margin:.45rem 0}
-    .checklist input{transform:translateY(1px)}
-    /* print-ready desk card */
+    .checklist label{display:flex;align-items:flex-start;gap:.6rem;line-height:1.5}
+    .checklist input{margin-top:.15rem;flex:0 0 auto}
+
+    /* Desk card */
     .desk-card{
       background:var(--panel);border-radius:14px;box-shadow:var(--shadow);
       border:1px solid color-mix(in oklab,var(--panel) 80%,#fff 18%);padding:14px
     }
     .desk-card h3{margin:.1rem 0 .35rem;font-size:1rem}
-    .desk-card .cols{display:grid;gap:.6rem;grid-template-columns:1fr; }
-    @media (min-width:720px){ .desk-card .cols{grid-template-columns:1fr 1fr 1fr} }
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Courier New",monospace;font-size:.92rem}
-    @media print{
-      header,.subnav,.section-nav,footer{display:none !important}
-      main{max-width:100%}
-      .desk-card{box-shadow:none;border:1px solid #999;page-break-inside:avoid}
-      body{background:#fff;color:#000}
-    }
-  </style>
-</head>
-<body id="top">
-  <div class="wrap">
-    <header>
-      <div class="brand"><a href="/">billwear.github.io</a> · <span>Masque Protocol</span></div>
-      <div class="hero">
-        <div class="logo-shell" aria-hidden="true">
-          <!-- same masque logo -->
-          <svg class="logo" viewBox="0 0 512 512" role="img" aria-label="Masque emblem">
-            <defs>
-              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#7cc7ff"/><stop offset="100%" stop-color="#a78bfa"/>
-              </linearGradient>
-            </defs>
-            <path d="M256 120c-66 0-140 16-190 46-25 15-40 36-40 59 0 84 84 128 230 128s230-44 230-128c0-23-15-44-40-59-50-30-124-46-190-46Z" fill="url(#g1)"/>
-            <path d="M66 192c54-39 126-58 190-58s136 19 190 58" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8" stroke-linecap="round"/>
-            <ellipse cx="172" cy="244" rx="54" ry="32" fill="#0b0c10"/>
-            <ellipse cx="340" cy="244" rx="54" ry="32" fill="#0b0c10"/>
-            <ellipse cx="155" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/>
-            <ellipse cx="323" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/>
-            <path d="M86 300c45 24 103 36 170 36s125-12 170-36" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="6" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h1>Masque Persona Kit</h1>
-        <p class="lead">Pick a face with a spine. Switch personas on purpose—rituals, guardrails, and a micro-loop—without betraying your core.</p>
-      </div>
-
-      <nav class="subnav" aria-label="In-page">
-        <a class="pill-link" href="#overview">Overview</a>
-        <a class="pill-link" href="#spec">Persona Spec</a>
-        <a class="pill-link" href="#rituals">Entry/Exit Rituals</a>
-        <a class="pill-link" href="#loop">Micro-Loop</a>
-        <a class="pill-link" href="#guardrails">Guardrails</a>
-        <a class="pill-link" href="#practice">2-Week Plan</a>
-        <a class="pill-link" href="#templates">Templates</a>
-        <a class="pill-link" href="#faq">FAQ</a>
-      </nav>
-    </header>
-
-    <main id="content">
-
-      <!-- Overview -->
-      <article id="overview" class="card reveal">
-        <div class="motto"><strong>Motto:</strong> Choose the self the moment needs — without losing the self beneath.</div>
-        <p>Wearing a masque isn’t pretending—it’s precision. You borrow a response style that fits the room while your values keep the steering lock engaged. The kit below gives you a compact way to define a persona, step into it, act, and step out—leaving no residue of self-betrayal.</p>
-      </article>
-
-      <!-- Persona Spec -->
-      <article id="spec" class="card reveal">
-        <h2>Persona Spec Sheet</h2>
-        <p class="lead">Three adjectives. Three boundaries. Entry/exit phrase. A one-liner of purpose. Keep it short so you can actually use it.</p>
-
-        <div class="grid-2">
-          <section class="fieldset">
-            <h3>Your mask</h3>
-            <label for="p-name">Persona name</label>
-            <input id="p-name" placeholder="e.g., The Calm Operator">
-            <label for="p-adj">Three adjectives</label>
-            <input id="p-adj" placeholder="e.g., calm · candid · prepared">
-            <label for="p-purpose">Purpose (one line)</label>
-            <textarea id="p-purpose" placeholder="e.g., Hold clarity under pressure; turn fog into one concrete next move."></textarea>
-          </section>
-
-          <section class="fieldset">
-            <h3>Boundaries</h3>
-            <label for="p-bounds">Three “won’t do” rules</label>
-            <textarea id="p-bounds" placeholder="e.g., No deception. No contempt. No overpromising."></textarea>
-            <label for="p-cues">Entry / exit cues</label>
-            <input id="p-cues" placeholder="e.g., Entry: close door + ‘steady & clear’; Exit: walk + 2-line debrief.">
-          </section>
-        </div>
-
-        <details>
-          <summary>Example spec (click to expand)</summary>
-          <p class="mono">Name: The Calm Operator<br>
-          Adjectives: calm · candid · prepared<br>
-          Purpose: Maintain clarity and kindness under pressure; land one decisive next action.<br>
-          Boundaries: No deception. No contempt. No overpromising.<br>
-          Entry: Close laptop tabs, set timer, whisper “steady &amp; clear.” Exit: 3-minute walk; write “What I did. What I learned.”</p>
-        </details>
-
-        <nav class="section-nav">
-          <a class="pill-link" href="#rituals">Next: Entry/Exit Rituals</a>
-        </nav>
-      </article>
-
-      <!-- Rituals -->
-      <article id="rituals" class="card reveal">
-        <h2>Entry & Exit Rituals</h2>
-        <p class="lead">Rituals are toggles for attention. Keep them tiny, physical, and repeatable.</p>
-        <ul class="takeaways">
-          <li><strong>Entry (30–60s):</strong> Close loops (tabs, chat), set a timer, say the cue phrase, and write one target outcome for this block.</li>
-          <li><strong>Exit (2–3m):</strong> Stop on time, jot the artifact &amp; next action, run a short state reset (stand, breathe, water, walk).</li>
-          <li><strong>Shutdown (end of day):</strong> One-line summary → “Done. Risks. Next.” Then take the mask off on purpose.</li>
-        </ul>
-        <nav class="section-nav">
-          <a class="pill-link" href="#loop">Next: Micro-Loop</a>
-        </nav>
-      </article>
-
-      <!-- Micro-Loop -->
-      <article id="loop" class="card reveal">
-        <h2>The Micro-Loop (live in 30-second cycles)</h2>
-        <p class="lead">Notice → Name → Choose → Act → Check. That’s it.</p>
-        <ul class="takeaways">
-          <li><strong>Notice:</strong> Breath, body, room. What is actually happening?</li>
-          <li><strong>Name:</strong> “Time pressure,” “decision fog,” “ego spike,” “confusion.” Labels shrink noise.</li>
-          <li><strong>Choose:</strong> Ask, “What would this mask do?” Pick one sentence or move.</li>
-          <li><strong>Act:</strong> Deliver clearly. Short, specific, kind.</li>
-          <li><strong>Check:</strong> Did it help? If not, adjust and keep rolling.</li>
-        </ul>
-        <nav class="section-nav">
-          <a class="pill-link" href="#guardrails">Next: Guardrails</a>
-        </nav>
-      </article>
-
-      <!-- Guardrails -->
-      <article id="guardrails" class="card reveal">
-        <h2>Guardrails (so you stay you)</h2>
-        <div class="grid-2">
-          <section class="fieldset">
-            <h3>Three Gates</h3>
-            <ul class="checklist">
-              <li><label><input type="checkbox"> <strong>Values gate:</strong> My mask never crosses red lines (no deception, no contempt, no harm-for-speed).</label></li>
-              <li><label><input type="checkbox"> <strong>Scope gate:</strong> I wear it in negotiations/reviews/emergencies; I do <em>not</em> wear it in intimacy or play.</label></li>
-              <li><label><input type="checkbox"> <strong>Time gate:</strong> Mask on/off happens at scheduled block boundaries.</label></li>
-            </ul>
-          </section>
-          <section class="fieldset">
-            <h3>Signals you’re drifting</h3>
-            <ul class="checklist">
-              <li><label><input type="checkbox"> People flinch or go quiet → reduce volume 20%, increase listening 50%.</label></li>
-              <li><label><input type="checkbox"> Mask follows you home → tighten exit ritual; write two lines and walk.</label></li>
-              <li><label><input type="checkbox"> You feel “off” → rewrite the spec (adjectives/boundaries) and recommit.</label></li>
-            </ul>
-          </section>
-        </div>
-        <nav class="section-nav">
-          <a class="pill-link" href="#practice">Next: 2-Week Plan</a>
-        </nav>
-      </article>
-
-      <!-- Practice Plan -->
-      <article id="practice" class="card reveal">
-        <h2>Two-Week Practice Plan</h2>
-        <p class="lead">Fifteen minutes a day. Small reps, quick notes, compounding fit.</p>
-        <div class="grid-2">
-          <section class="fieldset">
-            <h3>Week 1 — Fit & Feel</h3>
-            <ul class="checklist">
-              <li><label><input type="checkbox"> Day 1: Write your persona spec (name, adjectives, boundaries, cues).</label></li>
-              <li><label><input type="checkbox"> Day 2: Wear it for a low-stakes 15-minute block; exit on time.</label></li>
-              <li><label><input type="checkbox"> Day 3: Add one entry cue (phrase, door, timer).</label></li>
-              <li><label><input type="checkbox"> Day 4: Use the micro-loop twice; write the artifact (decision note or draft).</label></li>
-              <li><label><input type="checkbox"> Day 5: Try in a short meeting; use one polite boundary.</label></li>
-              <li><label><input type="checkbox"> Day 6: Review: what felt natural? What felt like acting? Adjust adjectives.</label></li>
-              <li><label><input type="checkbox"> Day 7: Rest + consolidate; print the desk card.</label></li>
-            </ul>
-          </section>
-          <section class="fieldset">
-            <h3>Week 2 — Utility & Range</h3>
-            <ul class="checklist">
-              <li><label><input type="checkbox"> Day 8: Use for a deep block; end with an artifact you can point to.</label></li>
-              <li><label><input type="checkbox"> Day 9: Use in a negotiation or review; keep values gate visible.</label></li>
-              <li><label><input type="checkbox"> Day 10: Try a “difficult” conversation; shorten sentences, ask clearer questions.</label></li>
-              <li><label><input type="checkbox"> Day 11: Teach the loop to a teammate in 3 minutes.</label></li>
-              <li><label><input type="checkbox"> Day 12: Stress test: back-to-back blocks with clean exits.</label></li>
-              <li><label><input type="checkbox"> Day 13: Write the persona’s one-page cheat sheet (below).</label></li>
-              <li><label><input type="checkbox"> Day 14: Decide: keep, tweak, or retire this mask.</label></li>
-            </ul>
-          </section>
-        </div>
-        <nav class="section-nav">
-          <a class="pill-link" href="#templates">Next: Templates</a>
-        </nav>
-      </article>
-
-      <!-- Templates -->
-      <article id="templates" class="card reveal">
-        <h2>Templates & Phrasebook</h2>
-        <p class="lead">Print the desk card. Steal the scripts. Make progress legible.</p>
-
-        <div class="desk-card">
-          <h3>Persona Desk Card (print this)</h3>
-          <div class="cols mono">
-            <div>
-              <strong>Name</strong><br>
-              ____________________________<br><br>
-              <strong>Adjectives</strong><br>
-              __________ · __________ · __________<br><br>
-              <strong>Purpose</strong><br>
-              _____________________________________
-            </div>
-            <div>
-              <strong>Boundaries</strong><br>
-              1) _______________________________<br>
-              2) _______________________________<br>
-              3) _______________________________<br><br>
-              <strong>Entry</strong><br>
-              ____________________________<br><br>
-              <strong>Exit</strong><br>
-              ____________________________
-            </div>
-            <div>
-              <strong>Micro-Loop</strong><br>
-              Notice → Name → Choose → Act → Check<br><br>
-              <strong>Go-to Phrases</strong><br>
-              • “Here’s the next concrete step…”<br>
-              • “What outcome do we want by <em>today</em>?”<br>
-              • “Let’s time-box this to 10 minutes.”<br>
-              • “I can’t commit to that—here’s what I <em>can</em> do.”
-            </div>
-          </div>
-        </div>
-
-        <details>
-          <summary>Decision Note (artifact pattern)</summary>
-          <pre class="mono">Decision: ______________________
-Context:  one sentence
-Options:  A / B / C
-Why:      chosen because…
-Risks:    top 1–2, with owners
-Next:     one concrete step + date</pre>
-        </details>
-
-        <details>
-          <summary>Meeting Openers (persona voice)</summary>
-          <pre class="mono">“Here’s our target for this block: _______. If we drift, I’ll call it.”
-“Two options surfaced. I favor __ because __. Objections in two minutes?”
-“Let’s write the next action before we leave: who / what / when.”</pre>
-        </details>
-
-        <details>
-          <summary>Polite Boundaries</summary>
-          <pre class="mono">“I can’t do that honestly; here’s a realistic alternative.”
-“I won’t speak to them without them present. Let’s invite them.”
-“I don’t have the data yet. I’ll return by 3pm with a recommendation.”</pre>
-        </details>
-
-        <nav class="section-nav">
-          <a class="pill-link" href="#faq">Next: FAQ</a>
-          <a class="pill-link" href="#top">Back to top</a>
-        </nav>
-      </article>
-
-      <!-- FAQ -->
-      <article id="faq" class="card reveal">
-        <h2>FAQ</h2>
-        <details>
-          <summary>Isn’t this manipulative?</summary>
-          <p>It’s disciplined empathy. You’re choosing a response style that serves the work and the people—inside non-negotiable values. If it crosses your values gate, it’s not the Masque; it’s theater. Don’t do theater.</p>
-        </details>
-        <details>
-          <summary>What if the mask feels fake?</summary>
-          <p>Reduce volume by 20%, increase listening by 50%, and swap one adjective. The right mask feels like posture, not costume.</p>
-        </details>
-        <details>
-          <summary>How do I know it’s working?</summary>
-          <p>You end blocks with artifacts, tensions de-escalate, and you feel spent but intact when you exit. That last part matters most.</p>
-        </details>
-
-        <nav class="section-nav">
-          <a class="pill-link" href="/">Back to Masque</a>
-        </nav>
-      </article>
-
-      <footer>© <span id="y"></span> Bill Wear · <a href="/">Home</a></footer>
-    </main>
-  </div>
-</body>
-</html>
+    .desk-car
