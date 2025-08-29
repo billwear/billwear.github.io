@@ -105,7 +105,7 @@ svg.logo { width:70%; filter:drop-shadow(0 8px 18px rgba(0,0,0,.35)); }
 .motto strong { color:var(--text); }
 /* place this AFTER the existing .motto block */
 .motto {
-  font-size: clamp(1.05rem, 1rem + 0.35vw, 1.3rem);
+  font-size: clamp(1.3rem, 1rem + 0.55vw, 1.5rem);
 }
 
 a { color:var(--accent); text-underline-offset:3px; text-decoration-thickness:.08em; }
