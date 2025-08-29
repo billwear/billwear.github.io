@@ -1,4 +1,5 @@
 // ==== Masque JavaScript ====
+document.documentElement.classList.remove('no-js');
 
 // Year in footer
 (function(){
