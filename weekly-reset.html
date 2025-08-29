@@ -22,6 +22,39 @@
     details+details{margin-top:.6rem}
     details summary{cursor:pointer;font-weight:600}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Courier New",monospace;font-size:.92rem}
+
+    /* === Lexicon chips === */
+    .chips{display:flex;flex-wrap:wrap;gap:.45rem;margin:.6rem 0}
+    .chip{
+      display:inline-flex;align-items:center;gap:.45rem;
+      padding:.35rem .6rem;border-radius:999px;cursor:pointer;user-select:none;
+      border:1px solid color-mix(in oklab,var(--panel) 70%, #fff 30%);
+      background:color-mix(in oklab,var(--panel) 90%, #fff 10%);color:var(--text);
+      font-size:.92rem;box-shadow:0 1px 3px rgba(0,0,0,.06);
+    }
+    .chip small{opacity:.7;font-size:.8em}
+    .chip[data-selected="true"]{
+      border-color: color-mix(in oklab, var(--accent) 60%, var(--accent-2) 40%);
+      box-shadow:0 2px 10px var(--ring);
+    }
+    .legend{display:flex;flex-wrap:wrap;gap:.5rem;margin:.4rem 0;color:var(--muted);font-size:.9rem}
+    .legend code{opacity:.85}
+
+    /* Builder */
+    .builder{display:grid;gap:clamp(10px,1.5vw,16px)}
+    .builder .row{display:grid;gap:.5rem}
+    @media (min-width:880px){ .builder .row{grid-template-columns:1fr 1fr} }
+    .out{
+      background:var(--panel);border:1px solid color-mix(in oklab,var(--panel)80%,#fff 18%);
+      border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap
+    }
+    .out .template{flex:1 1 auto;min-width:260px}
+    .btns{display:flex;gap:.5rem;flex-wrap:wrap}
+    .btn.small{font-size:.85rem;padding:.4rem .7rem}
+    .scratch{background:var(--panel);border:1px solid color-mix(in oklab,var(--panel)80%,#fff 18%);border-radius:12px;padding:12px}
+    .scratch h4{margin:.1rem 0 .4rem}
+    .scratch ul{margin:0;padding-left:1rem}
+    .scratch li{margin:.25rem 0}
   </style>
 </head>
 <body id="top">
@@ -42,6 +75,7 @@
         <a class="pill-link" href="#overview">Overview</a>
         <a class="pill-link" href="#clear">Clear Inboxes</a>
         <a class="pill-link" href="#scan">Project Scan</a>
+        <a class="pill-link" href="#lexicon">Next-Action Lexicon</a>
         <a class="pill-link" href="#triage">Zombie Triage</a>
         <a class="pill-link" href="#schedule">Schedule Week</a>
         <a class="pill-link" href="#templates">Templates</a>
@@ -86,6 +120,124 @@
             <li><input id="ps2" type="checkbox"><label for="ps2">For each, write <strong>one</strong> concrete next action (“open file and outline sections”).</label></li>
             <li><input id="ps3" type="checkbox"><label for="ps3">Mark stalled items → either delete, delegate, or schedule a 30m unblock block.</label></li>
           </ul>
+        </div>
+      </article>
+
+      <!-- NEW: Next-Action Lexicon & Builder -->
+      <article id="lexicon" class="card reveal">
+        <h2>Next-Action Lexicon (verbs + nouns) & Builder</h2>
+        <p class="lead">Click a <strong>verb</strong> and a <strong>noun</strong>, add a clarifier, and paste. Each chip carries learned tags (archetype, energy, context, duration, signal). Your picks are remembered and bubble up next week.</p>
+
+        <div class="legend">
+          <div>Archetypes: <code>start</code>, <code>shape</code>, <code>ship</code>, <code>ask</code>, <code>sweep</code>, <code>fix</code></div>
+          <div>Energy: <code>low</code>, <code>med</code>, <code>high</code></div>
+          <div>Context: <code>desk</code>, <code>phone</code>, <code>meeting</code>, <code>code</code>, <code>home</code></div>
+          <div>Duration: minutes estimate (e.g., <code>2</code>, <code>15</code>, <code>30</code>)</div>
+          <div>Signal: <code>private</code> vs <code>public</code></div>
+        </div>
+
+        <h3>Verbs</h3>
+        <div class="chips" id="verb-chips" aria-label="Verb chips">
+          <!-- start -->
+          <span class="chip" data-kind="verb" data-key="open" data-arch="start" data-energy="low" data-context="desk" data-duration="2"  data-signal="private">open <small>[start·low·desk·2]</small></span>
+          <span class="chip" data-kind="verb" data-key="list" data-arch="start" data-energy="low" data-context="desk" data-duration="3"  data-signal="private">list <small>[start·low·desk·3]</small></span>
+          <span class="chip" data-kind="verb" data-key="outline" data-arch="start" data-energy="low" data-context="desk" data-duration="10" data-signal="private">outline <small>[start·low·desk·10]</small></span>
+          <span class="chip" data-kind="verb" data-key="stub" data-arch="start" data-energy="low" data-context="code" data-duration="5"  data-signal="private">stub <small>[start·low·code·5]</small></span>
+          <span class="chip" data-kind="verb" data-key="sketch" data-arch="start" data-energy="low" data-context="desk" data-duration="10" data-signal="private">sketch <small>[start·low·desk·10]</small></span>
+          <span class="chip" data-kind="verb" data-key="schedule" data-arch="start" data-energy="low" data-context="desk" data-duration="3" data-signal="private">schedule <small>[start·low·desk·3]</small></span>
+          <!-- shape -->
+          <span class="chip" data-kind="verb" data-key="research" data-arch="shape" data-energy="med" data-context="desk" data-duration="30" data-signal="private">research <small>[shape·med·desk·30]</small></span>
+          <span class="chip" data-kind="verb" data-key="compare" data-arch="shape" data-energy="med" data-context="desk" data-duration="20" data-signal="private">compare <small>[shape·med·desk·20]</small></span>
+          <span class="chip" data-kind="verb" data-key="decide" data-arch="shape" data-energy="med" data-context="desk" data-duration="10" data-signal="public">decide <small>[shape·med·desk·10·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="map" data-arch="shape" data-energy="med" data-context="desk" data-duration="15" data-signal="private">map <small>[shape·med·desk·15]</small></span>
+          <span class="chip" data-kind="verb" data-key="diagram" data-arch="shape" data-energy="med" data-context="desk" data-duration="20" data-signal="public">diagram <small>[shape·med·desk·20·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="prototype" data-arch="shape" data-energy="high" data-context="code" data-duration="45" data-signal="private">prototype <small>[shape·high·code·45]</small></span>
+          <span class="chip" data-kind="verb" data-key="test" data-arch="shape" data-energy="med" data-context="code" data-duration="20" data-signal="public">test <small>[shape·med·code·20·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="estimate" data-arch="shape" data-energy="med" data-context="desk" data-duration="10" data-signal="public">estimate <small>[shape·med·desk·10·pub]</small></span>
+          <!-- ship -->
+          <span class="chip" data-kind="verb" data-key="send" data-arch="ship" data-energy="low" data-context="desk" data-duration="5" data-signal="public">send <small>[ship·low·desk·5·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="commit" data-arch="ship" data-energy="med" data-context="code" data-duration="5" data-signal="public">commit <small>[ship·med·code·5·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="merge" data-arch="ship" data-energy="med" data-context="code" data-duration="5" data-signal="public">merge <small>[ship·med·code·5·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="publish" data-arch="ship" data-energy="med" data-context="desk" data-duration="5" data-signal="public">publish <small>[ship·med·desk·5·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="share" data-arch="ship" data-energy="low" data-context="desk" data-duration="3" data-signal="public">share <small>[ship·low·desk·3·pub]</small></span>
+          <!-- ask/align -->
+          <span class="chip" data-kind="verb" data-key="ask" data-arch="ask" data-energy="low" data-context="desk" data-duration="3" data-signal="public">ask <small>[ask·low·desk·3·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="ping" data-arch="ask" data-energy="low" data-context="phone" data-duration="2" data-signal="public">ping <small>[ask·low·phone·2·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="confirm" data-arch="ask" data-energy="low" data-context="desk" data-duration="5" data-signal="public">confirm <small>[ask·low·desk·5·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="invite" data-arch="ask" data-energy="low" data-context="desk" data-duration="3" data-signal="public">invite <small>[ask·low·desk·3·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="escalate" data-arch="ask" data-energy="med" data-context="meeting" data-duration="10" data-signal="public">escalate <small>[ask·med·meeting·10·pub]</small></span>
+          <!-- sweep/fix -->
+          <span class="chip" data-kind="verb" data-key="tidy" data-arch="sweep" data-energy="low" data-context="desk" data-duration="5" data-signal="private">tidy <small>[sweep·low·desk·5]</small></span>
+          <span class="chip" data-kind="verb" data-key="triage" data-arch="sweep" data-energy="low" data-context="desk" data-duration="10" data-signal="private">triage <small>[sweep·low·desk·10]</small></span>
+          <span class="chip" data-kind="verb" data-key="archive" data-arch="sweep" data-energy="low" data-context="desk" data-duration="5" data-signal="private">archive <small>[sweep·low·desk·5]</small></span>
+          <span class="chip" data-kind="verb" data-key="update" data-arch="fix" data-energy="low" data-context="desk" data-duration="8" data-signal="public">update <small>[fix·low·desk·8·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="refactor" data-arch="fix" data-energy="med" data-context="code" data-duration="30" data-signal="public">refactor <small>[fix·med·code·30·pub]</small></span>
+          <span class="chip" data-kind="verb" data-key="repair" data-arch="fix" data-energy="med" data-context="home" data-duration="20" data-signal="private">repair <small>[fix·med·home·20]</small></span>
+        </div>
+
+        <h3>Nouns</h3>
+        <div class="chips" id="noun-chips" aria-label="Noun chips">
+          <!-- artifacts -->
+          <span class="chip" data-kind="noun" data-key="brief" data-cat="artifact" data-context="desk" data-signal="public">brief <small>[artifact·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="outline" data-cat="artifact" data-context="desk" data-signal="private">outline <small>[artifact]</small></span>
+          <span class="chip" data-kind="noun" data-key="spec" data-cat="artifact" data-context="desk" data-signal="public">spec <small>[artifact·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="diagram" data-cat="artifact" data-context="desk" data-signal="public">diagram <small>[artifact·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="decision note" data-cat="artifact" data-context="desk" data-signal="public">decision note <small>[artifact·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="status" data-cat="artifact" data-context="desk" data-signal="public">status <small>[artifact·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="PR" data-cat="artifact" data-context="code" data-signal="public">PR <small>[artifact·code·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="ticket" data-cat="artifact" data-context="desk" data-signal="public">ticket <small>[artifact·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="deck" data-cat="artifact" data-context="desk" data-signal="public">deck <small>[artifact·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="email" data-cat="artifact" data-context="desk" data-signal="public">email <small>[artifact·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="report" data-cat="artifact" data-context="desk" data-signal="public">report <small>[artifact·pub]</small></span>
+          <!-- surfaces/places -->
+          <span class="chip" data-kind="noun" data-key="inbox" data-cat="surface" data-context="desk" data-signal="private">inbox <small>[surface]</small></span>
+          <span class="chip" data-kind="noun" data-key="calendar" data-cat="surface" data-context="desk" data-signal="private">calendar <small>[surface]</small></span>
+          <span class="chip" data-kind="noun" data-key="repo" data-cat="surface" data-context="code" data-signal="public">repo <small>[surface·code·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="branch" data-cat="surface" data-context="code" data-signal="public">branch <small>[surface·code·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="folder" data-cat="surface" data-context="desk" data-signal="private">folder <small>[surface]</small></span>
+          <span class="chip" data-kind="noun" data-key="backlog" data-cat="surface" data-context="desk" data-signal="private">backlog <small>[surface]</small></span>
+          <span class="chip" data-kind="noun" data-key="board" data-cat="surface" data-context="desk" data-signal="public">board <small>[surface·pub]</small></span>
+          <!-- people -->
+          <span class="chip" data-kind="noun" data-key="reviewer" data-cat="person" data-context="meeting" data-signal="public">reviewer <small>[person·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="stakeholder" data-cat="person" data-context="meeting" data-signal="public">stakeholder <small>[person·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="partner" data-cat="person" data-context="meeting" data-signal="public">partner <small>[person·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="customer" data-cat="person" data-context="meeting" data-signal="public">customer <small>[person·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="team" data-cat="person" data-context="meeting" data-signal="public">team <small>[person·pub]</small></span>
+          <!-- data/infra -->
+          <span class="chip" data-kind="noun" data-key="dataset" data-cat="infra" data-context="desk" data-signal="private">dataset <small>[infra]</small></span>
+          <span class="chip" data-kind="noun" data-key="API" data-cat="infra" data-context="code" data-signal="public">API <small>[infra·code·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="service" data-cat="infra" data-context="code" data-signal="public">service <small>[infra·code·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="build" data-cat="infra" data-context="code" data-signal="public">build <small>[infra·code·pub]</small></span>
+          <span class="chip" data-kind="noun" data-key="environment" data-cat="infra" data-context="code" data-signal="private">environment <small>[infra·code]</small></span>
+        </div>
+
+        <div class="builder">
+          <div class="row">
+            <div class="fieldset">
+              <h3>Clarifier (optional)</h3>
+              <input id="clarifier" placeholder="e.g., ‘sec 2 headers’, ‘PR #123’, ‘Alice re: Option B’" />
+              <label for="clarifier" style="display:block;color:var(--muted);font-size:.9rem;margin-top:.35rem">Tip: keep it concrete—file, person, location, or link.</label>
+            </div>
+            <div class="fieldset">
+              <h3>Context override (optional)</h3>
+              <input id="ctx" placeholder="e.g., phone · desk · meeting · code" />
+              <label for="ctx" style="display:block;color:var(--muted);font-size:.9rem;margin-top:.35rem">Useful when verb/noun tags don’t match your real situation.</label>
+            </div>
+          </div>
+
+          <div class="out">
+            <div class="template mono" id="na-out">Select a verb + noun to generate a next action…</div>
+            <div class="btns">
+              <button class="btn small" id="copy-btn">Copy</button>
+              <button class="btn small" id="add-btn">Add to scratchpad</button>
+              <button class="btn small" id="clear-btn">Clear</button>
+            </div>
+          </div>
+
+          <div class="scratch">
+            <h4>Scratchpad</h4>
+            <ul id="pad"></ul>
+          </div>
         </div>
       </article>
 
@@ -147,5 +299,108 @@ Project blob → “Schedule 30m with X to unblock Y”</pre>
       <footer>© <span id="y"></span> Bill Wear · <a href="/">Home</a></footer>
     </main>
   </div>
+
+  <!-- Page-local JS: lexicon learning + builder -->
+  <script>
+  (function(){
+    const storeKey = 'masqueLexiconUsage_v1';
+    const usage = JSON.parse(localStorage.getItem(storeKey) || '{"verb":{},"noun":{}}');
+
+    const out = document.getElementById('na-out');
+    const pad = document.getElementById('pad');
+    const clar = document.getElementById('clarifier');
+    const ctx   = document.getElementById('ctx');
+
+    let selVerb = null, selNoun = null;
+
+    function bump(kind, key){
+      usage[kind][key] = usage[kind][key] || {count:0, last:0};
+      usage[kind][key].count += 1;
+      usage[kind][key].last = Date.now();
+      localStorage.setItem(storeKey, JSON.stringify(usage));
+    }
+
+    function sortByUsage(container){
+      const items = Array.from(container.children);
+      items.sort((a,b)=>{
+        const ka=a.dataset.key, kb=b.dataset.key, kind=a.dataset.kind;
+        const ua=(usage[kind][ka]?.count||0), ub=(usage[kind][kb]?.count||0);
+        if(ub!==ua) return ub-ua;
+        // tie-break: more recent first
+        const la=(usage[kind][ka]?.last||0), lb=(usage[kind][kb]?.last||0);
+        return lb-la;
+      });
+      items.forEach(el=>container.appendChild(el));
+    }
+
+    function compose(){
+      if(!selVerb || !selNoun){
+        out.textContent = 'Select a verb + noun to generate a next action…';
+        return;
+      }
+      const v = selVerb.textContent.split(' ')[0];
+      const n = selNoun.dataset.key;
+      const dur = selVerb.dataset.duration ? ` (${selVerb.dataset.duration}m)` : '';
+      const context = (ctx.value || selVerb.dataset.context || selNoun.dataset.context || '').trim();
+      const c = (clar.value||'').trim();
+      const ctxNote = context ? ` [${context}]` : '';
+      out.textContent = `${v.charAt(0).toUpperCase()+v.slice(1)} ${n}${c?': '+c:''}.${dur}${ctxNote}`;
+    }
+
+    function selectChip(el){
+      const kind = el.dataset.kind;
+      // clear previous of that kind
+      document.querySelectorAll(`.chip[data-kind="${kind}"][data-selected="true"]`).forEach(e=>e.dataset.selected="false");
+      el.dataset.selected = (el.dataset.selected==="true") ? "false" : "true";
+      if(el.dataset.selected==="true"){
+        if(kind==='verb') selVerb = el; else selNoun = el;
+      }else{
+        if(kind==='verb') selVerb = null; else selNoun = null;
+      }
+      compose();
+    }
+
+    function attach(container){
+      container.addEventListener('click', (e)=>{
+        const el = e.target.closest('.chip');
+        if(!el) return;
+        selectChip(el);
+      });
+      sortByUsage(container);
+    }
+
+    const verbBox = document.getElementById('verb-chips');
+    const nounBox = document.getElementById('noun-chips');
+    attach(verbBox); attach(nounBox);
+
+    [clar, ctx].forEach(i=>i.addEventListener('input', compose));
+
+    document.getElementById('copy-btn').addEventListener('click', ()=>{
+      const txt = out.textContent.trim();
+      if(!txt || txt.startsWith('Select')) return;
+      navigator.clipboard?.writeText(txt);
+      if(selVerb) bump('verb', selVerb.dataset.key);
+      if(selNoun) bump('noun', selNoun.dataset.key);
+      sortByUsage(verbBox); sortByUsage(nounBox);
+    });
+
+    document.getElementById('add-btn').addEventListener('click', ()=>{
+      const txt = out.textContent.trim();
+      if(!txt || txt.startsWith('Select')) return;
+      const li = document.createElement('li'); li.textContent = txt;
+      pad.appendChild(li);
+      if(selVerb) bump('verb', selVerb.dataset.key);
+      if(selNoun) bump('noun', selNoun.dataset.key);
+      sortByUsage(verbBox); sortByUsage(nounBox);
+    });
+
+    document.getElementById('clear-btn').addEventListener('click', ()=>{
+      selVerb = selNoun = null;
+      document.querySelectorAll('.chip[data-selected="true"]').forEach(el=>el.dataset.selected="false");
+      clar.value=''; ctx.value='';
+      compose();
+    });
+  })();
+  </script>
 </body>
 </html>
