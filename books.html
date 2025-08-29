@@ -1,33 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8" />
   <title>Masque · The Reading List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <style>
-    /* same design tokens & styles as index.html for consistency */
-    :root{--bg:#0b0c10;--panel:#11131a;--text:#e8ecf1;--muted:#a6b0c3;--accent:#7cc7ff;--accent-2:#a78bfa;--ring:rgba(124,199,255,.35);--maxw:76ch;--radius:18px;--shadow:0 8px 28px rgba(0,0,0,.35),0 2px 10px rgba(0,0,0,.2)}
-    @media (prefers-color-scheme: light){:root{--bg:#f7f9fc;--panel:#fff;--text:#0f172a;--muted:#475569;--accent:#2563eb;--accent-2:#7c3aed;--ring:rgba(37,99,235,.25);--shadow:0 10px 30px rgba(2,6,23,.08),0 2px 10px rgba(2,6,23,.06)}}
-    html{scroll-behavior:smooth} body{margin:0;background:
-      radial-gradient(1200px 700px at 10% -10%, rgba(124,199,255,.12), transparent 60%),
-      radial-gradient(900px 500px at 90% -10%, rgba(167,139,250,.10), transparent 60%),var(--bg);
-      color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.7;letter-spacing:.2px}
-    .wrap{max-width:min(1200px,96vw);margin-inline:auto;padding:clamp(16px,2vw,24px)}
-    header{padding:clamp(20px,4vw,40px) 0;display:grid;gap:clamp(16px,2vw,20px);place-items:center;text-align:center}
-    .brand{display:flex;align-items:center;gap:14px;justify-content:center;color:var(--muted);font-size:.95rem}.brand a{color:inherit;text-decoration:none}
-    .hero{display:grid;gap:clamp(12px,2vw,16px);place-items:center}
-    .hero h1{font-weight:800;font-size:clamp(1.8rem,2.2rem + .6vw,3rem);line-height:1.1;margin:0;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .logo-shell{width:clamp(110px,16vw,180px);aspect-ratio:1/1;border-radius:28px;background:linear-gradient(145deg, rgba(124,199,255,.18), rgba(167,139,250,.14));box-shadow:var(--shadow), inset 0 0 0 1px rgba(255,255,255,.06);display:grid;place-items:center}
-    svg.logo{width:70%;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
-    .card{background:var(--panel);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(18px,3vw,36px);margin:clamp(16px,3vw,28px) auto;max-width:var(--maxw);border:1px solid color-mix(in oklab, var(--panel) 90%, #fff 10%)}
-    .lead{font-size:clamp(1.05rem,1rem + .35vw,1.2rem);color:var(--muted);margin:.5rem 0 1.25rem}
-    h2{font-size:clamp(1.2rem,1.1rem + .6vw,1.6rem);margin:1.2rem 0 .5rem} h3{margin:1rem 0 .4rem}
-    .motto{display:flex;align-items:center;gap:.6rem;padding:.9rem 1rem;border-left:4px solid var(--accent);background:color-mix(in oklab, var(--panel) 80%, #fff 10%);border-radius:10px;color:var(--muted);margin:1rem 0 1.6rem}
-    a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:.08em} a:hover{color:var(--accent-2)}
-    footer{color:var(--muted);text-align:center;padding:40px 0 60px;font-size:.95rem}
-  </style>
+  <link rel="stylesheet" href="/assets/masque.css">
+  <script src="/assets/masque.js" defer></script>
 </head>
 <body>
   <div class="wrap">
@@ -37,11 +16,17 @@
         <div class="logo-shell" aria-hidden="true">
           <!-- same masque logo -->
           <svg class="logo" viewBox="0 0 512 512" role="img" aria-label="Masque emblem">
-            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7cc7ff"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#7cc7ff"/><stop offset="100%" stop-color="#a78bfa"/>
+              </linearGradient>
+            </defs>
             <path d="M256 120c-66 0-140 16-190 46-25 15-40 36-40 59 0 84 84 128 230 128s230-44 230-128c0-23-15-44-40-59-50-30-124-46-190-46Z" fill="url(#g1)"/>
             <path d="M66 192c54-39 126-58 190-58s136 19 190 58" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8" stroke-linecap="round"/>
-            <ellipse cx="172" cy="244" rx="54" ry="32" fill="#0b0c10"/><ellipse cx="340" cy="244" rx="54" ry="32" fill="#0b0c10"/>
-            <ellipse cx="155" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/><ellipse cx="323" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/>
+            <ellipse cx="172" cy="244" rx="54" ry="32" fill="#0b0c10"/>
+            <ellipse cx="340" cy="244" rx="54" ry="32" fill="#0b0c10"/>
+            <ellipse cx="155" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/>
+            <ellipse cx="323" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/>
             <path d="M86 300c45 24 103 36 170 36s125-12 170-36" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="6" stroke-linecap="round"/>
           </svg>
         </div>
@@ -52,38 +37,36 @@
 
     <main>
       <article>
-  <ul class="takeaways">
-  <li><strong>You’re not broken; the environment changed.</strong> Your brain was built for berries and tigers, not Jira and Slack. That’s why you feel scattered—and why there’s a sane way through it.</li>
+        <ul class="takeaways">
+          <li><strong>You’re not broken; the environment changed.</strong> Your brain was built for berries and tigers, not Jira and Slack. That’s why you feel scattered—and why there’s a sane way through it.</li>
 
-  <li><strong>One pipe for everything.</strong> Stop inventing a new hack for every mess. Work, home, ideas—run it all through a single, trusted flow and the chaos starts organizing itself.</li>
+          <li><strong>One pipe for everything.</strong> Stop inventing a new hack for every mess. Work, home, ideas—run it all through a single, trusted flow and the chaos starts organizing itself.</li>
 
-  <li><strong>Make your imagination work on command.</strong> You already “see” finished things in your head. This turns that daydream into a repeatable sequence you can start anytime.</li>
+          <li><strong>Make your imagination work on command.</strong> You already “see” finished things in your head. This turns that daydream into a repeatable sequence you can start anytime.</li>
 
-  <li><strong>Build a cockpit, not a shrine.</strong> A clean surface, one capture tool, lists you trust, and a small standing time slot. It’s wiring the instruments so takeoff is calm.</li>
+          <li><strong>Build a cockpit, not a shrine.</strong> A clean surface, one capture tool, lists you trust, and a small standing time slot. It’s wiring the instruments so takeoff is calm.</li>
 
-  <li><strong>Free your RAM.</strong> The relief isn’t from finishing everything—it’s from parking everything where you know you’ll come back to it.</li>
+          <li><strong>Free your RAM.</strong> The relief isn’t from finishing everything—it’s from parking everything where you know you’ll come back to it.</li>
 
-  <li><strong>Decide, don’t stash.</strong> Stress is mostly “undecided stuff.” Clear the intake and the windshield clears with it.</li>
+          <li><strong>Decide, don’t stash.</strong> Stress is mostly “undecided stuff.” Clear the intake and the windshield clears with it.</li>
 
-  <li><strong>Clear buckets kill hesitation.</strong> When everything has a home, your brain stops asking “where does this go?” and starts moving.</li>
+          <li><strong>Clear buckets kill hesitation.</strong> When everything has a home, your brain stops asking “where does this go?” and starts moving.</li>
 
-  <li><strong>Keep lists alive with a reset.</strong> Without a simple weekly sweep, lists turn into zombies. A quick reset brings the map back to the territory.</li>
+          <li><strong>Keep lists alive with a reset.</strong> Without a simple weekly sweep, lists turn into zombies. A quick reset brings the map back to the territory.</li>
 
-  <li><strong>Match action to the moment.</strong> No more guilt about “big rocks” at 10 pm. Use a simple filter to pick what fits the slot you’re in.</li>
+          <li><strong>Match action to the moment.</strong> No more guilt about “big rocks” at 10 pm. Use a simple filter to pick what fits the slot you’re in.</li>
 
-  <li><strong>Name the next move and watch the fog lift.</strong> “Fix the docs” is quicksand. “Open the draft and outline sections” is traction.</li>
+          <li><strong>Name the next move and watch the fog lift.</strong> “Fix the docs” is quicksand. “Open the draft and outline sections” is traction.</li>
 
-  <li><strong>Capture it all or second-guess it all.</strong> Trust shows up when every stray thought—from cat litter to launch plan—lands in the same net.</li>
+          <li><strong>Capture it all or second-guess it all.</strong> Trust shows up when every stray thought—from cat litter to launch plan—lands in the same net.</li>
 
-  <li><strong>Work toward a finish line, not a feeling.</strong> “Router reset and online, lights stable” beats “work on router.” A clear end state turns drudgery into progress.</li>
-</ul>
-<p class="muted"><em>If this resonates with you, <a href="https://www.amazon.com/Getting-Things-Done-Stress-Free-Productivity/dp/0143126563/ref=sr_1_1?crid=1J2YU87PI5J8D&dib=eyJ2IjoiMSJ9.JPu08UYkU4zwl38D65fqtHs5WdjMvGXKvCCqQyacQBNJqpIZVrrD5HweYQa0RDIA3rMSemiaZcqdEt_TKJUUq0KedV4uPVH8SCCNkqj2JwUGyoTCWtJeWukza3Nm_gGYbs5H2fOTlvHAX5a7KCjxQ-pAmVzuSb9mhRjFiU3bNgSQ3zE_nyLmT1Zf1U17nVB5E7tfcRd2JSggJu6WzD8U378hgo_ATdJB8FnEzEWakkw.IsYhMWIXbCldpmb792XhM2QaFdm9HlH_gR6RBmNIO7k&dib_tag=se&keywords=getting+things+done&qid=1756486149&sprefix=getting+things+done%2Caps%2C124&sr=8-1">buy the book</a> and read it.</em></p>
-
+          <li><strong>Work toward a finish line, not a feeling.</strong> “Router reset and online, lights stable” beats “work on router.” A clear end state turns drudgery into progress.</li>
+        </ul>
+        <p class="muted"><em>If this resonates with you, <a href="https://www.amazon.com/Getting-Things-Done-Stress-Free-Productivity/dp/0143126563/">buy the book</a> and read it.</em></p>
       </article>
 
       <footer>© <span id="y"></span> Bill Wear · <a href="/">Back to Masque</a></footer>
     </main>
   </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
