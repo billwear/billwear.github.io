@@ -101,9 +101,12 @@ svg.logo { width:70%; filter:drop-shadow(0 8px 18px rgba(0,0,0,.35)); }
   padding:.9rem 1rem; border-left:4px solid var(--accent);
   background:color-mix(in oklab, var(--panel) 80%, #fff 10%);
   border-radius:10px; color:var(--muted); margin:1rem 0 1.6rem;
-  font-size:120%;
 }
 .motto strong { color:var(--text); }
+/* place this AFTER the existing .motto block */
+.motto {
+  font-size: clamp(1.05rem, 1rem + 0.35vw, 1.3rem);
+}
 
 a { color:var(--accent); text-underline-offset:3px; text-decoration-thickness:.08em; }
 a:hover { color:var(--accent-2); }
