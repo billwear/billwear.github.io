@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/assets/masque.css">
   <script src="/assets/masque.js" defer></script>
 </head>
-<body>
+<body id="top">
   <div class="wrap">
     <header>
       <div class="brand"><a href="/">billwear.github.io</a> · <span>Masque Protocol</span></div>
@@ -30,14 +30,19 @@
             <path d="M86 300c45 24 103 36 170 36s125-12 170-36" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="6" stroke-linecap="round"/>
           </svg>
         </div>
-        <h1>Traits · Backstory · Credo</h1>
+        <!-- Title nouns are links to sections -->
+        <h1>
+          <a href="#traits">Traits</a> ·
+          <a href="#backstory">Backstory</a> ·
+          <a href="#credo">Credo</a>
+        </h1>
         <p class="lead">Wiring under the masque: who I am, where I come from, and how I choose to operate.</p>
       </div>
     </header>
 
     <main>
       <!-- ===== Traits ===== -->
-      <article>
+      <article id="traits">
         <h2>Traits</h2>
         <p class="lead">The strengths and edges that helped shape the Masque Protocol.</p>
 
@@ -80,12 +85,17 @@
 
         <h3>✳️ Drained by Routine</h3>
         <p>Repetitive or structured tasks demotivate and tire you, reducing overall productivity. I think this particular trait reveals why I am cyclical in terms of routine. Routine does drain me, but at a much slower rate than the average person of similar personality type. In other words, it may take days or even weeks for me to be drained by routine. In the same way it may take days or weeks for me to decide that my lack of order and organization is painful and needs to be rectified. In short, I can handle routine… for about three days before my brain stages a coup.</p>
+
+        <nav class="section-nav" aria-label="Section navigation" style="margin:1.25rem 0;">
+          <a class="pill-link" href="#top">Back to top</a>
+          <a class="pill-link" href="#backstory">Next: Backstory</a>
+        </nav>
       </article>
 
       <hr />
 
       <!-- ===== Backstory ===== -->
-      <article>
+      <article id="backstory">
         <h2>Backstory</h2>
         <p class="lead">From survival mode → to open source → to writing and growth.</p>
 
@@ -107,12 +117,17 @@
 
         <h3>Where I Am Now</h3>
         <p>Since then, I’ve settled into the role of technical, business, and personal growth writer — bringing the lessons of survival, depth, and play into everything I write. My work is about translation: between worlds, between temperaments, between who I am and what the moment demands. The Masque Protocol is simply the most recent expression of that lifelong pattern.</p>
+
+        <nav class="section-nav" aria-label="Section navigation" style="margin:1.25rem 0;">
+          <a class="pill-link" href="#top">Back to top</a>
+          <a class="pill-link" href="#credo">Next: Credo</a>
+        </nav>
       </article>
 
       <hr />
 
       <!-- ===== Credo ===== -->
-      <article>
+      <article id="credo">
         <h2>Credo</h2>
         <p class="lead">Operating principles I actually try to live—short, sharp, and a little cheeky.</p>
 
@@ -139,6 +154,11 @@
           <li><strong>Abhor violence in all its forms</strong>, even contradicting others. Keep your peace, hold your tongue, and avoid turning into a debate club mascot.</li>
           <li><strong>Practice the Prime Directive</strong>; unless you’re in a sci-fi movie, then totally ignore it.</li>
         </ul>
+
+        <nav class="section-nav" aria-label="Section navigation" style="margin:1.25rem 0;">
+          <a class="pill-link" href="#top">Back to top</a>
+          <a class="pill-link" href="/">Back to Masque</a>
+        </nav>
       </article>
 
       <footer>© <span id="y"></span> Bill Wear · <a href="/">Back to Masque</a></footer>
