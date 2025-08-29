@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <title>Masque · Status Signals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="stylesheet" href="/assets/masque.css">
+  <script src="/assets/masque.js" defer></script>
+  <style>
+    .card{max-width:100%;padding:clamp(16px,2.5vw,28px);margin:clamp(12px,2vw,20px) auto}
+    .subnav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:.5rem 0 1.1rem}
+    .subnav a{font-size:.9rem}
+    .section-nav{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.1rem 0}
+    .grid-2{display:grid;gap:clamp(12px,2vw,18px);grid-template-columns:1fr}
+    @media (min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
+    .fieldset{background:var(--panel);border:1px solid color-mix(in oklab,var(--panel)80%,#fff 18%);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+    .checkgrid{list-style:none;padding:0;margin:.2rem 0}
+    .checkgrid li{display:grid;grid-template-columns:1.25rem 1fr;align-items:start;column-gap:.6rem;margin:.45rem 0}
+    .checkgrid input{width:1rem;height:1rem;margin-top:.2rem}
+    details{border:1px solid color-mix(in oklab,var(--panel)75%,#fff 25%);border-radius:12px;padding:.7rem 1rem;background:color-mix(in oklab,var(--panel)88%,#fff 12%)}
+    details+details{margin-top:.6rem}
+    details summary{cursor:pointer;font-weight:600}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Courier New",monospace;font-size:.92rem}
+    .template{background:var(--panel);border:1px solid color-mix(in oklab,var(--panel)80%,#fff 18%);border-radius:12px;padding:12px}
+  </style>
+</head>
+<body id="top">
+  <div class="wrap">
+    <header>
+      <div class="brand"><a href="/">billwear.github.io</a> · <span>Masque Protocol</span></div>
+      <div class="hero">
+        <div class="logo-shell" aria-hidden="true">
+          <!-- logo -->
+          <svg class="logo" viewBox="0 0 512 512" role="img" aria-label="Masque emblem">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7cc7ff"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+            <path d="M256 120c-66 0-140 16-190 46-25 15-40 36-40 59 0 84 84 128 230 128s230-44 230-128c0-23-15-44-40-59-50-30-124-46-190-46Z" fill="url(#g1)"/><path d="M66 192c54-39 126-58 190-58s136 19 190 58" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8" stroke-linecap="round"/><ellipse cx="172" cy="244" rx="54" ry="32" fill="#0b0c10"/><ellipse cx="340" cy="244" rx="54" ry="32" fill="#0b0c10"/><ellipse cx="155" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/><ellipse cx="323" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/><path d="M86 300c45 24 103 36 170 36s125-12 170-36" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="6" stroke-linecap="round"/></svg>
+        </div>
+        <h1>Status Signals</h1>
+        <p class="lead">Make progress legible: weekly update, standup script, decision log, and PR/commit patterns that managers love.</p>
+      </div>
+
+      <nav class="subnav" aria-label="In-page">
+        <a class="pill-link" href="#overview">Overview</a>
+        <a class="pill-link" href="#friday">Friday Update</a>
+        <a class="pill-link" href="#standup">Standup Script</a>
+        <a class="pill-link" href="#decisions">Decision Log</a>
+        <a class="pill-link" href="#commits">PR/Commit Patterns</a>
+        <a class="pill-link" href="#escalation">Escalation Ladder</a>
+        <a class="pill-link" href="#templates">Templates</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      <article id="overview" class="card reveal">
+        <div class="motto"><strong>Principle:</strong> Ship signals on a cadence so people never have to ask, “What’s going on?”</div>
+        <p>Signals translate creative work into manager-readable snapshots. Keep them short, concrete, and rhythmic.</p>
+      </article>
+
+      <article id="friday" class="card reveal">
+        <h2>Friday Update (Done / Doing / Risks / Requests)</h2>
+        <div class="template mono">
+Done
+• Feature X: PR #123 merged. Diagram v2 posted.
+• Doc rewrite: outline + first section drafted.
+
+Doing
+• Blocked on API spec from team Y (ETA Tue).
+• Deep blocks scheduled: Tue 9–11, Thu 9–11 (artifact = brief + PR).
+
+Risks
+• Timeline tight if API slips.
+• Access to dataset Z pending.
+
+Requests
+• Need approval on Option B by Wed EOD.
+• Intro to owner of service Q.
+        </div>
+      </article>
+
+      <article id="standup" class="card reveal">
+        <h2>Standup Micro-Script (60–90s)</h2>
+        <ul class="takeaways">
+          <li><strong>Outcome:</strong> “Yesterday I shipped ___.”</li>
+          <li><strong>Blocker:</strong> “I’m blocked by ___ from ___.”</li>
+          <li><strong>Next:</strong> “Today I will ___; artifact will be ___.”</li>
+        </ul>
+      </article>
+
+      <article id="decisions" class="card reveal">
+        <h2>Decision Log</h2>
+        <details>
+          <summary>Why keep one?</summary>
+          <p>Prevents circular debates, preserves context, speeds onboarding, and makes ownership visible.</p>
+        </details>
+        <details>
+          <summary>Decision Note pattern</summary>
+          <pre class="mono">Decision: __________
+Context: one sentence
+Options: A/B/C
+Why: chosen because…
+Risks: top 1–2 with owners
+Next: step + date</pre>
+        </details>
+      </article>
+
+      <article id="commits" class="card reveal">
+        <h2>PR/Commit Patterns</h2>
+        <div class="grid-2">
+          <div class="template mono">
+<strong>PR message</strong>
+Intent:
+Approach:
+Evidence:
+Risks:
+Next (review asks):
+          </div>
+          <div class="template mono">
+<strong>Commit message</strong>
+feat(scope): short imperative
+
+Why: _______
+Impact: tests/docs/ops
+          </div>
+        </div>
+      </article>
+
+      <article id="escalation" class="card reveal">
+        <h2>Escalation Ladder</h2>
+        <ul class="checkgrid">
+          <li><input id="el1" type="checkbox"><label for="el1">Flag risk early in Friday update.</label></li>
+          <li><input id="el2" type="checkbox"><label for="el2">If blocked >48h, DM owner with decision note draft.</label></li>
+          <li><input id="el3" type="checkbox"><label for="el3">If still blocked, escalate in channel with options A/B and a date.</label></li>
+          <li><input id="el4" type="checkbox"><label for="el4">If critical path, calendar a 15m decision huddle.</label></li>
+        </ul>
+      </article>
+
+      <article id="templates" class="card reveal">
+        <h2>Templates</h2>
+        <details>
+          <summary>Friday update (Markdown)</summary>
+          <pre class="mono">**Done**
+- …
+
+**Doing**
+- …
+
+**Risks**
+- …
+
+**Requests**
+- …</pre>
+        </details>
+        <details>
+          <summary>Standup one-liner</summary>
+          <pre class="mono">Done: ___ · Blocked: ___ · Today: ___ → artifact ___</pre>
+        </details>
+        <details>
+          <summary>Decision log entry</summary>
+          <pre class="mono">[YYYY-MM-DD] Decision: ___ | Owner: ___ | Next: ___</pre>
+        </details>
+        <nav class="section-nav"><a class="pill-link" href="#top">Back to top</a></nav>
+      </article>
+
+      <footer>© <span id="y"></span> Bill Wear · <a href="/">Home</a></footer>
+    </main>
+  </div>
+</body>
+</html>
