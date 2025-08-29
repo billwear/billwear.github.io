@@ -202,3 +202,9 @@ footer {
 /* Hover polish */
 .pill-link, .bounceback { will-change:transform, box-shadow; }
 .pill-link:hover, .bounceback:hover { box-shadow:0 6px 18px var(--ring); }
+/* If JS is missing, show content instead of hiding it */
+.no-js .reveal,
+.no-js .reveal-stagger > * {
+  opacity: 1 !important;
+  transform: none !important;
+}
