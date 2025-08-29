@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <title>Masque · Weekly Reset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="stylesheet" href="/assets/masque.css">
+  <script src="/assets/masque.js" defer></script>
+  <style>
+    .card{max-width:100%;padding:clamp(16px,2.5vw,28px);margin:clamp(12px,2vw,20px) auto}
+    .subnav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:.5rem 0 1.1rem}
+    .subnav a{font-size:.9rem}
+    .section-nav{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.1rem 0}
+    .grid-2{display:grid;gap:clamp(12px,2vw,18px);grid-template-columns:1fr}
+    @media (min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
+    .fieldset{background:var(--panel);border:1px solid color-mix(in oklab,var(--panel)80%,#fff 18%);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+    .checkgrid{list-style:none;padding:0;margin:.2rem 0}
+    .checkgrid li{display:grid;grid-template-columns:1.25rem 1fr;align-items:start;column-gap:.6rem;margin:.45rem 0}
+    .checkgrid input{width:1rem;height:1rem;margin-top:.2rem}
+    details{border:1px solid color-mix(in oklab,var(--panel)75%,#fff 25%);border-radius:12px;padding:.7rem 1rem;background:color-mix(in oklab,var(--panel)88%,#fff 12%)}
+    details+details{margin-top:.6rem}
+    details summary{cursor:pointer;font-weight:600}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Courier New",monospace;font-size:.92rem}
+  </style>
+</head>
+<body id="top">
+  <div class="wrap">
+    <header>
+      <div class="brand"><a href="/">billwear.github.io</a> · <span>Masque Protocol</span></div>
+      <div class="hero">
+        <div class="logo-shell" aria-hidden="true">
+          <!-- logo -->
+          <svg class="logo" viewBox="0 0 512 512" role="img" aria-label="Masque emblem">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7cc7ff"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+            <path d="M256 120c-66 0-140 16-190 46-25 15-40 36-40 59 0 84 84 128 230 128s230-44 230-128c0-23-15-44-40-59-50-30-124-46-190-46Z" fill="url(#g1)"/><path d="M66 192c54-39 126-58 190-58s136 19 190 58" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8" stroke-linecap="round"/><ellipse cx="172" cy="244" rx="54" ry="32" fill="#0b0c10"/><ellipse cx="340" cy="244" rx="54" ry="32" fill="#0b0c10"/><ellipse cx="155" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/><ellipse cx="323" cy="235" rx="10" ry="6" fill="rgba(255,255,255,.7)"/><path d="M86 300c45 24 103 36 170 36s125-12 170-36" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="6" stroke-linecap="round"/></svg>
+        </div>
+        <h1>Weekly Reset</h1>
+        <p class="lead">A 30-minute review that revives lists, sets focus blocks, and prevents drift—GTD-compatible, Masque-flavored.</p>
+      </div>
+      <nav class="subnav" aria-label="In-page">
+        <a class="pill-link" href="#overview">Overview</a>
+        <a class="pill-link" href="#clear">Clear Inboxes</a>
+        <a class="pill-link" href="#scan">Project Scan</a>
+        <a class="pill-link" href="#triage">Zombie Triage</a>
+        <a class="pill-link" href="#schedule">Schedule Week</a>
+        <a class="pill-link" href="#templates">Templates</a>
+        <a class="pill-link" href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      <article id="overview" class="card reveal">
+        <div class="motto"><strong>Goal:</strong> walk away with a clean head, alive lists, and two deep blocks scheduled.</div>
+        <p>Keep the ritual short and consistent. The map must match the territory or you’ll stop trusting it. Thirty minutes is enough if you follow the script.</p>
+      </article>
+
+      <article id="clear" class="card reveal">
+        <h2>1) Clear Inboxes (7m)</h2>
+        <div class="grid-2">
+          <section class="fieldset">
+            <h3>Gather</h3>
+            <ul class="checkgrid">
+              <li><input id="ci1" type="checkbox"><label for="ci1">Email inbox</label></li>
+              <li><input id="ci2" type="checkbox"><label for="ci2">Slack/IM mentions & DMs</label></li>
+              <li><input id="ci3" type="checkbox"><label for="ci3">Paper notes / screenshots / voice notes</label></li>
+            </ul>
+          </section>
+          <section class="fieldset">
+            <h3>Empty “In” = decide</h3>
+            <ul class="checkgrid">
+              <li><input id="ci4" type="checkbox"><label for="ci4">Delete / Archive (not actionable)</label></li>
+              <li><input id="ci5" type="checkbox"><label for="ci5">Do ≤ 2m</label></li>
+              <li><input id="ci6" type="checkbox"><label for="ci6">Defer with a date</label></li>
+              <li><input id="ci7" type="checkbox"><label for="ci7">Delegate (and note owner)</label></li>
+            </ul>
+          </section>
+        </div>
+      </article>
+
+      <article id="scan" class="card reveal">
+        <h2>2) Project Scan (8m)</h2>
+        <div class="fieldset">
+          <ul class="checkgrid">
+            <li><input id="ps1" type="checkbox"><label for="ps1">List active projects (10–20).</label></li>
+            <li><input id="ps2" type="checkbox"><label for="ps2">For each, write <strong>one</strong> concrete next action (“open file and outline sections”).</label></li>
+            <li><input id="ps3" type="checkbox"><label for="ps3">Mark stalled items → either delete, delegate, or schedule a 30m unblock block.</label></li>
+          </ul>
+        </div>
+      </article>
+
+      <article id="triage" class="card reveal">
+        <h2>3) Zombie List Triage (5m)</h2>
+        <ul class="takeaways">
+          <li><strong>Delete</strong> the “someday” that will never happen.</li>
+          <li><strong>Delegate</strong> the tasks you’re holding out of habit.</li>
+          <li><strong>Date</strong> the few you will do—give them a day/timewindow.</li>
+          <li><strong>Do</strong> no more than two 2-minute items now.</li>
+        </ul>
+      </article>
+
+      <article id="schedule" class="card reveal">
+        <h2>4) Schedule the Week (10m)</h2>
+        <div class="grid-2">
+          <section class="fieldset">
+            <h3>Focus first</h3>
+            <ul class="checkgrid">
+              <li><input id="sw1" type="checkbox"><label for="sw1">Block two deep sessions (AM slots if possible).</label></li>
+              <li><input id="sw2" type="checkbox"><label for="sw2">Attach artifacts to each block (brief/PR/decision).</label></li>
+            </ul>
+          </section>
+          <section class="fieldset">
+            <h3>Contain the busy</h3>
+            <ul class="checkgrid">
+              <li><input id="sw3" type="checkbox"><label for="sw3">Batch shallow work in 2 windows/day.</label></li>
+              <li><input id="sw4" type="checkbox"><label for="sw4">Add one protected admin block.</label></li>
+            </ul>
+          </section>
+        </div>
+      </article>
+
+      <article id="templates" class="card reveal">
+        <h2>Templates</h2>
+        <details>
+          <summary>Weekly Review Sheet</summary>
+          <pre class="mono">INBOXES CLEARED: email / slack / paper / notes
+PROJECTS (next actions added): __/__
+DEEP BLOCKS SCHEDULED: [date/time + artifact]
+RISKS/ESCALATIONS THIS WEEK:
+ASKS I OWE TO OTHERS:</pre>
+        </details>
+        <details>
+          <summary>Project → Next Action translator</summary>
+          <pre class="mono">Project blob → “Open <file> and write <outline line>”
+Project blob → “Draft 3 bullets for recommendation”
+Project blob → “Schedule 30m with X to unblock Y”</pre>
+        </details>
+        <nav class="section-nav"><a class="pill-link" href="#top">Back to top</a></nav>
+      </article>
+
+      <article id="faq" class="card reveal">
+        <h2>FAQ</h2>
+        <details><summary>What if 30 minutes isn’t enough?</summary><p>It is—if you keep scope tight. If you need more, add a second 20-minute pass later that day.</p></details>
+        <details><summary>How do I make this stick?</summary><p>Same time, same place, small reward (coffee/walk). Put it on the calendar with a real title.</p></details>
+      </article>
+
+      <footer>© <span id="y"></span> Bill Wear · <a href="/">Home</a></footer>
+    </main>
+  </div>
+</body>
+</html>
