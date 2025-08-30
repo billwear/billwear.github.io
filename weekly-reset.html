@@ -403,7 +403,7 @@ Project blob → “Schedule 30m with X to unblock Y”</pre>
       const dur = selVerb.dataset.duration ? ` (${selVerb.dataset.duration}m)` : '';
       const context = (ctx.value || selVerb.dataset.context || selNoun.dataset.context || '').trim();
       const c = (clar.value||'').trim();
-      const ctxNote = context ? ` [${context}]` : '';
+      const ctxNote = context ? ` :${context}:` : '';
       out.textContent = `${v.charAt(0).toUpperCase()+v.slice(1)} ${n}${c?': '+c:''}.${dur}${ctxNote}`;
     }
 
