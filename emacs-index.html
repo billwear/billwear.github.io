@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emacs: My .emacs, Explained · Emacs Guide</title>
+<meta name="description" content="Master index for the Emacs init walkthrough.">
+<style>
+:root {
+  --bg: #0b0f14;
+  --fg: #e6edf3;
+  --muted: #9fb3c8;
+  --link: #58a6ff;
+  --note: #3b82f6;
+  --why: #10b981;
+  --term: #f59e0b;
+  --warn: #ef4444;
+  --code: #0f1720;
+  --line: #1f2a37;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 980px; margin: 0 auto; padding: 24px; }
+header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+h1 { margin: 0.2rem 0 0.6rem; }
+h2 { margin-top: 1.6rem; }
+p.lede { color: var(--muted); }
+pre { background: var(--code); border: 1px solid var(--line); border-radius: 10px; padding: 12px; overflow-x: auto; }
+code, kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+.callouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 16px 0; }
+.callout { border: 1px solid var(--line); border-left-width: 6px; border-radius: 10px; padding: 12px; background: #0c141c; }
+.callout h3 { margin: 0 0 6px; font-size: 1rem; color: var(--fg); }
+.note { border-left-color: var(--note); }
+.why { border-left-color: var(--why); }
+.term { border-left-color: var(--term); }
+.warn { border-left-color: var(--warn); }
+.badge { padding: 2px 8px; border:1px solid #2a4158; border-radius: 999px; color: var(--muted); font-size: 0.8rem; }
+.small { color: var(--muted); font-size: 0.92rem; }
+hr { border: none; border-top: 1px solid var(--line); margin: 28px 0; }
+footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
+ul { padding-left: 1.2rem; }
+</style>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <a class="badge" href="https://billwear.github.io" title="back to main site">billwear.github.io</a>
+        <h1>Emacs: My .emacs, Explained</h1>
+        <p class="lede">A practical tour of the init file in small, learnable pieces.</p>
+      </div>
+      <div class="small">Format: short, focused chapters.</div>
+    </header>
+    <nav style="margin-bottom:14px">
+<a href="index.html">Home</a>
+<a href="01-ui-basics.html">UI Basics</a>
+<a href="02-packages.html">Packages</a>
+<a href="03-home-git.html">Home Git</a>
+<a href="04-convenience-funcs.html">Convenience</a>
+<a href="05-journal-emologent.html">Journal</a>
+<a href="06-org-agenda.html">Org/Agenda</a>
+<a href="07-ivy-whichkey-theme.html">Ivy/Which‑Key/Theme</a>
+<a href="08-keys-tour.html">Keybindings</a>
+<a href="09-misc.html">Encoding/Backup</a>
+</nav>
+    
+<p>Each page explains a small part of the init file with the exact code snippet and the rationale behind it. No single page is long or overloaded.</p>
+<ol>
+  <li><a href="01-ui-basics.html">UI Basics & Startup</a></li>
+  <li><a href="02-packages.html">Package Archives & use‑package Bootstrap</a></li>
+  <li><a href="03-home-git.html">Auto‑syncing your Home Repo (home‑git)</a></li>
+  <li><a href="04-convenience-funcs.html">Convenience Functions You’ll Actually Use</a></li>
+  <li><a href="05-journal-emologent.html">Journal + Emologent Workflow</a></li>
+  <li><a href="06-org-agenda.html">Org Settings & Agenda Views</a></li>
+  <li><a href="07-ivy-whichkey-theme.html">Ivy/Counsel, Which‑Key, Theme & Faces</a></li>
+  <li><a href="08-keys-tour.html">Keybindings Tour & Keys Help</a></li>
+  <li><a href="09-misc.html">Encoding, Backups, Quality‑of‑Life</a></li>
+</ol>
+
+    <footer>
+      <hr>
+      <div>CC BY‑NC 2025 stormrider · Emacs init walkthrough</div>
+    </footer>
+  </div>
+</body>
+</html>
