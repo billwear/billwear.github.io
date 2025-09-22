@@ -1,17 +1,120 @@
-<html>
-  <head>
-    <title>
-      bill wear
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>
-      Hello, world!
-    </h1>
-    <p>My name is Bill Wear, and I live in the southern United States, in a legacy family farmhouse that I bought in January 2024. There's some farmland attached that's owned by other family members.</p>
-    <p>I am an Electrical Engineer by training, and a Unix / Emacs aficionado by choice.  <!-- You can follow my EE exploits at <a href="solderandsignal.com">Solder & Signal</a>, and my Emacs tinkering at <a href="the-way-of-emacs.com">The Way of Emacs</a>. -->  I am still growing and learning in my late sixties, and you can follow my personal development studies on my substack, <a href="https://williamwear.substack.com/">Journal of the Inner Fire</a>.</p>
-  </body>
-</html>
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stormrider · Master Index</title>
+<meta name="description" content="Master index for stormrider.io — projects, docs, photos, curiosities.">
+<style>
+:root {
+  --bg: #0b0f14;
+  --fg: #e6edf3;
+  --muted: #9fb3c8;
+  --link: #58a6ff;
+  --note: #3b82f6;
+  --why: #10b981;
+  --term: #f59e0b;
+  --warn: #ef4444;
+  --code: #0f1720;
+  --line: #1f2a37;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 980px; margin: 0 auto; padding: 24px; }
+header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+h1 { margin: 0.2rem 0 0.6rem; }
+h2 { margin-top: 1.4rem; }
+p.lede { color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #0c141c; }
+.card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.card ul { margin: 0; padding-left: 1.1rem; }
+footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
+.badge { padding: 2px 8px; border:1px solid #2a4158; border-radius: 999px; color: var(--muted); font-size: 0.8rem; }
+.small { color: var(--muted); font-size: 0.92rem; }
+</style>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <a class="badge" href="#">stormrider.io</a>
+        <h1>Master Index</h1>
+        <p class="lede">A consolidated home for projects, MAAS docs, software experiments, hardware notes, and family photos.</p>
+      </div>
+      <div class="small">
+        Wayback range: 2020–2025
+      </div>
+    </header>
 
+    <section class="grid">
+      <div class="card">
+        <h3>Radio</h3>
+        <ul>
+          <li><a href="#">SDR w/rPi4 kit</a>: Trying to phone E.T.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Software</h3>
+        <ul>
+          <li><a href="#">GoBear</a>: Go bare, metal.</li>
+          <li><a href="#">Emacs</a>: M-x summon-lost-memories.</li>
+          <li><a href="#">MAAS docs</a>: Treasure map for cloud islands.</li>
+          <li><a href="#">MAAS CLI</a>: Latin MAAS.</li>
+          <li><a href="#">MAAS images</a>: Loose bits on deck.</li>
+          <li><a href="#">MAAS deployment</a>: Killer fridge art.</li>
+          <li><a href="#">Linux OS</a>: Where penguins rule and windows are just glass.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Hardware</h3>
+        <ul>
+          <li><a href="#">Altair 8800</a>: Jurassic Spark.</li>
+          <li><a href="#">rPi4 kit</a>: Tech wizard's treasure chest.</li>
+          <li><a href="#">N/W tutorial</a>: Whispering in TCP/IP.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Curiosities</h3>
+        <ul>
+          <li><a href="#">Text-speak</a>: IRC runes.</li>
+          <li><a href="#">Phreaking</a>: Here's to Jane Barbe.</li>
+          <li><a href="#">.org catalog</a>: Watching digital paint dry.xs</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Personal</h3>
+        <ul>
+          <li><a href="#">About me</a>: Error 404: Personality not programmed yet.</li>
+          <li><a href="#">My credo</a>: Life's instructions – subject to interpretation.</li>
+          <li><a href="#">Knowing myself</a>: Can't find Waldo.</li>
+          <li><a href="#">Geek code</a>: Nerd Rosetta Stone.</li>
+          <li><a href="#">My backpack</a>: Mary Poppins' bag, tech edition.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Photographs</h3>
+        <ul>
+          <li><a href="#">Me</a>: Chronicles of Nerdia: The Early Years.</li>
+          <li><a href="#">Sharan</a>: My ride-or-die.</li>
+          <li><a href="#">My kids</a>: They grew up despite my tech talks.</li>
+          <li><a href="#">Grandchild #1</a>: Tiny human, huge paparazzi potential.</li>
+          <li><a href="#">Family</a>: Can't live with them, can't reprogram them.</li>
+          <li><a href="#">Family, too</a>: Familiar strangers sharing DNA.</li>
+          <li><a href="#">More pics</a>: Digital hoarding, but artistic.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <hr>
+      <div>Copyright © 2020–2025 by stormrider · All Rights Reserved</div>
+    </footer>
+  </div>
+</body>
+</html>
