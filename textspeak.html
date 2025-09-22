@@ -1,570 +1,100 @@
-
-
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
-<head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>textspeak &mdash; billwear 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-
-  
-      <script src="_static/jquery.js?v=5d32c60e"></script>
-      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=f2a433a1"></script>
-      <script src="_static/doctools.js?v=9bcbadda"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="truth" href="truth.html" />
-    <link rel="prev" title="media mindfulness: how what we see becomes a part of us" href="media.html" /> 
-</head>
-
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="index.html" class="icon icon-home">
-            billwear
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="netizen.html">the netizen way</a></li>
-<li class="toctree-l1"><a class="reference internal" href="orgmode.html">life is 90% of my use-cases for org-mode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attention.html">the quiet art of attention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geekcode.html">my geek code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emacs.html">emacs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="credo.html">my credo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="phreak.html">phreak numbers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html">media mindfulness: how what we see becomes a part of us</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">textspeak</a></li>
-<li class="toctree-l1"><a class="reference internal" href="truth.html">truth</a></li>
-<li class="toctree-l1"><a class="reference internal" href="networking/index.html">networking</a></li>
-</ul>
-
-        </div>
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Textspeak · Chatronyms · stormrider</title>
+<meta name="description" content="A living glossary of chat acronyms and shorthand, from classic IRC to modern DMs.">
+<style>
+:root {
+  --bg: #0b0f14;
+  --fg: #e6edf3;
+  --muted: #9fb3c8;
+  --link: #58a6ff;
+  --note: #3b82f6;
+  --why: #10b981;
+  --term: #f59e0b;
+  --warn: #ef4444;
+  --code: #0f1720;
+  --line: #1f2a37;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 980px; margin: 0 auto; padding: 24px; }
+header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+h1 { margin: 0.2rem 0 0.4rem; }
+h2 { margin-top: 1.4rem; }
+p.lede { color: var(--muted); }
+footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
+.badge { padding: 2px 8px; border:1px solid #2a4158; border-radius: 999px; color: var(--muted); font-size: 0.8rem; }
+.small { color: var(--muted); font-size: 0.92rem; }
+.table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; }
+.table th, .table td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: top; }
+.table th { text-align: left; background: #0c141c; }
+.kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+.group { margin-top: 18px; }
+hr { border: none; border-top: 1px solid var(--line); margin: 28px 0; }
+</style>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <a class="badge" href="https://billwear.github.com" title="back to main site">stormrider.io</a>
+        <h1>Textspeak / Chatronyms</h1>
+        <p class="lede">A living glossary of common shorthand — quick to scan, easy to expand. Classic IRC + modern chat.</p>
       </div>
-    </nav>
+      <div class="small">Tip: press <span class="kbd">Ctrl‑F</span> and type an acronym to jump.</div>
+    </header>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">billwear</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">textspeak</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/textspeak.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="textspeak">
-<h1>textspeak<a class="headerlink" href="#textspeak" title="Link to this heading"></a></h1>
-<p>Otherwise known as “chatronynms,” many of these came of age in the IRC era of the 80s.</p>
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><strong>nym</strong></p></td>
-<td><p><strong>expansion</strong></p></td>
-</tr>
-<tr class="row-even"><td><p>&lt;3</p></td>
-<td><p>i like that comment</p></td>
-</tr>
-<tr class="row-odd"><td><p>&lt;g&gt;</p></td>
-<td><p>grin</p></td>
-</tr>
-<tr class="row-even"><td><p>3bs</p></td>
-<td><p>three beers short</p></td>
-</tr>
-<tr class="row-odd"><td><p>aamof</p></td>
-<td><p>as a matter of fact</p></td>
-</tr>
-<tr class="row-even"><td><p>adn</p></td>
-<td><p>any day now</p></td>
-</tr>
-<tr class="row-odd"><td><p>afaiac</p></td>
-<td><p>as far as i am concerned</p></td>
-</tr>
-<tr class="row-even"><td><p>afaict</p></td>
-<td><p>as far as i can tell</p></td>
-</tr>
-<tr class="row-odd"><td><p>afaik</p></td>
-<td><p>as far as i know</p></td>
-</tr>
-<tr class="row-even"><td><p>afair</p></td>
-<td><p>as far as i remember</p></td>
-</tr>
-<tr class="row-odd"><td><p>afk</p></td>
-<td><p>away from the keyboard</p></td>
-</tr>
-<tr class="row-even"><td><p>afpsoagf</p></td>
-<td><p>a few punches short of a good fight</p></td>
-</tr>
-<tr class="row-odd"><td><p>afssoap</p></td>
-<td><p>a few sandwiches short of a picnic</p></td>
-</tr>
-<tr class="row-even"><td><p>aopc</p></td>
-<td><p>reciting local national motto</p></td>
-</tr>
-<tr class="row-odd"><td><p>asap</p></td>
-<td><p>as soon as possible</p></td>
-</tr>
-<tr class="row-even"><td><p>asl pls</p></td>
-<td><p>age sex location please</p></td>
-</tr>
-<tr class="row-odd"><td><p>athyrio</p></td>
-<td><p>and the horse you rode in on</p></td>
-</tr>
-<tr class="row-even"><td><p>atm</p></td>
-<td><p>at the moment</p></td>
-</tr>
-<tr class="row-odd"><td><p>atp</p></td>
-<td><p>at this point</p></td>
-</tr>
-<tr class="row-even"><td><p>aybabtu</p></td>
-<td><p>all your base are belong to us</p></td>
-</tr>
-<tr class="row-odd"><td><p>b4n</p></td>
-<td><p>bye for now</p></td>
-</tr>
-<tr class="row-even"><td><p>bak</p></td>
-<td><p>back at (my) keyboard</p></td>
-</tr>
-<tr class="row-odd"><td><p>bbfn</p></td>
-<td><p>bye bye for now</p></td>
-</tr>
-<tr class="row-even"><td><p>bbiab</p></td>
-<td><p>be back in a bit</p></td>
-</tr>
-<tr class="row-odd"><td><p>bbiaf</p></td>
-<td><p>be back in a few</p></td>
-</tr>
-<tr class="row-even"><td><p>bbl</p></td>
-<td><p>be back later</p></td>
-</tr>
-<tr class="row-odd"><td><p>bbs</p></td>
-<td><p>be back shortly</p></td>
-</tr>
-<tr class="row-even"><td><p>bbs</p></td>
-<td><p>be back soon</p></td>
-</tr>
-<tr class="row-odd"><td><p>beg</p></td>
-<td><p>big evil grin</p></td>
-</tr>
-<tr class="row-even"><td><p>brb</p></td>
-<td><p>be right back/bathroom break</p></td>
-</tr>
-<tr class="row-odd"><td><p>bta</p></td>
-<td><p>but then again</p></td>
-</tr>
-<tr class="row-even"><td><p>btw</p></td>
-<td><p>by the way</p></td>
-</tr>
-<tr class="row-odd"><td><p>c-c-c-combo breaker</p></td>
-<td><p>call a halt to repeated posts</p></td>
-</tr>
-<tr class="row-even"><td><p>cp</p></td>
-<td><p>coder pig</p></td>
-</tr>
-<tr class="row-odd"><td><p>cq…</p></td>
-<td><p>looking for…</p></td>
-</tr>
-<tr class="row-even"><td><p>ctc</p></td>
-<td><p>care to chat?</p></td>
-</tr>
-<tr class="row-odd"><td><p>cya</p></td>
-<td><p>see ya</p></td>
-</tr>
-<tr class="row-even"><td><p>d/c</p></td>
-<td><p>disconnected</p></td>
-</tr>
-<tr class="row-odd"><td><p>djiad</p></td>
-<td><p>darnit jim, i’m a doctor</p></td>
-</tr>
-<tr class="row-even"><td><p>djiad</p></td>
-<td><p>not my area of expertise</p></td>
-</tr>
-<tr class="row-odd"><td><p>e.g.</p></td>
-<td><p>exempli gratia</p></td>
-</tr>
-<tr class="row-even"><td><p>faq</p></td>
-<td><p>frequently asked questions</p></td>
-</tr>
-<tr class="row-odd"><td><p>fb</p></td>
-<td><p>fine business</p></td>
-</tr>
-<tr class="row-even"><td><p>focl</p></td>
-<td><p>falling off chair laughing</p></td>
-</tr>
-<tr class="row-odd"><td><p>ftw</p></td>
-<td><p>for the win</p></td>
-</tr>
-<tr class="row-even"><td><p>fwiw</p></td>
-<td><p>for what it’s worth</p></td>
-</tr>
-<tr class="row-odd"><td><p>fyi</p></td>
-<td><p>for your information</p></td>
-</tr>
-<tr class="row-even"><td><p>ga</p></td>
-<td><p>good afternoon</p></td>
-</tr>
-<tr class="row-odd"><td><p>gm</p></td>
-<td><p>good morning</p></td>
-</tr>
-<tr class="row-even"><td><p>gmta</p></td>
-<td><p>great minds think alike</p></td>
-</tr>
-<tr class="row-odd"><td><p>gmtaasdo</p></td>
-<td><p>great minds think alike, and so do ours</p></td>
-</tr>
-<tr class="row-even"><td><p>gnsdily</p></td>
-<td><p>good night, sweet dreams, i love you</p></td>
-</tr>
-<tr class="row-odd"><td><p>goybwaroc</p></td>
-<td><p>get on your big wheel and ride on, cowboy</p></td>
-</tr>
-<tr class="row-even"><td><p>gtg</p></td>
-<td><p>got to go</p></td>
-</tr>
-<tr class="row-odd"><td><p>hdj</p></td>
-<td><p>irretrievably broken (he’s dead, jim)</p></td>
-</tr>
-<tr class="row-even"><td><p>hth</p></td>
-<td><p>hope that helps</p></td>
-</tr>
-<tr class="row-odd"><td><p>hybs</p></td>
-<td><p>christian greeting</p></td>
-</tr>
-<tr class="row-even"><td><p>hyfj</p></td>
-<td><p>another christian greeting</p></td>
-</tr>
-<tr class="row-odd"><td><p>iaadbnyd</p></td>
-<td><p>i am a doctor, but not your doctor</p></td>
-</tr>
-<tr class="row-even"><td><p>iaalbnyl</p></td>
-<td><p>i am a lawyer, but not your lawyer</p></td>
-</tr>
-<tr class="row-odd"><td><p>ianad</p></td>
-<td><p>i am not a doctor</p></td>
-</tr>
-<tr class="row-even"><td><p>ianaitp</p></td>
-<td><p>i am not an IT person</p></td>
-</tr>
-<tr class="row-odd"><td><p>ianal</p></td>
-<td><p>i am not a lawyer</p></td>
-</tr>
-<tr class="row-even"><td><p>ianyg</p></td>
-<td><p>i am not your guru (don’t ask me)</p></td>
-</tr>
-<tr class="row-odd"><td><p>iapnad</p></td>
-<td><p>i’m a programmer, not a doctor</p></td>
-</tr>
-<tr class="row-even"><td><p>inyitp</p></td>
-<td><p>i’m not your IT person</p></td>
-</tr>
-<tr class="row-odd"><td><p>ic</p></td>
-<td><p>i see</p></td>
-</tr>
-<tr class="row-even"><td><p>ifypfy</p></td>
-<td><p>i fixed your post for you</p></td>
-</tr>
-<tr class="row-odd"><td><p>iha</p></td>
-<td><p>i hate acronyms</p></td>
-</tr>
-<tr class="row-even"><td><p>iirc</p></td>
-<td><p>if i recall correctly</p></td>
-</tr>
-<tr class="row-odd"><td><p>imho</p></td>
-<td><p>in my humble opinion</p></td>
-</tr>
-<tr class="row-even"><td><p>imnsho</p></td>
-<td><p>in my not so humble opinion</p></td>
-</tr>
-<tr class="row-odd"><td><p>imo</p></td>
-<td><p>in my opinion</p></td>
-</tr>
-<tr class="row-even"><td><p>iow</p></td>
-<td><p>in other words</p></td>
-</tr>
-<tr class="row-odd"><td><p>irl</p></td>
-<td><p>in real life</p></td>
-</tr>
-<tr class="row-even"><td><p>isagn</p></td>
-<td><p>i see a great need</p></td>
-</tr>
-<tr class="row-odd"><td><p>istr</p></td>
-<td><p>i seem to recall</p></td>
-</tr>
-<tr class="row-even"><td><p>ito</p></td>
-<td><p>in terms of</p></td>
-</tr>
-<tr class="row-odd"><td><p>itt</p></td>
-<td><p>i think that</p></td>
-</tr>
-<tr class="row-even"><td><p>j/k</p></td>
-<td><p>just kidding</p></td>
-</tr>
-<tr class="row-odd"><td><p>jk</p></td>
-<td><p>just kidding</p></td>
-</tr>
-<tr class="row-even"><td><p>jsia</p></td>
-<td><p>just say it already</p></td>
-</tr>
-<tr class="row-odd"><td><p>kbn</p></td>
-<td><p>gimme a minute to break it</p></td>
-</tr>
-<tr class="row-even"><td><p>kbn</p></td>
-<td><p>klaatu barada nikto</p></td>
-</tr>
-<tr class="row-odd"><td><p>kbn</p></td>
-<td><p>stand down, cowboy ^^</p></td>
-</tr>
-<tr class="row-even"><td><p>kwh</p></td>
-<td><p>kilroy was here</p></td>
-</tr>
-<tr class="row-odd"><td><p>l8r</p></td>
-<td><p>later</p></td>
-</tr>
-<tr class="row-even"><td><p>lahith</p></td>
-<td><p>(i need that) like a hole in the head</p></td>
-</tr>
-<tr class="row-odd"><td><p>le</p></td>
-<td><p>later edit</p></td>
-</tr>
-<tr class="row-even"><td><p>llap</p></td>
-<td><p>live long and prosper</p></td>
-</tr>
-<tr class="row-odd"><td><p>lmao</p></td>
-<td><p>laughing my %%% off</p></td>
-</tr>
-<tr class="row-even"><td><p>lol</p></td>
-<td><p>laughing out loud</p></td>
-</tr>
-<tr class="row-odd"><td><p>ltns</p></td>
-<td><p>long time no see</p></td>
-</tr>
-<tr class="row-even"><td><p>lts</p></td>
-<td><p>laughing to self</p></td>
-</tr>
-<tr class="row-odd"><td><p>ly</p></td>
-<td><p>love you</p></td>
-</tr>
-<tr class="row-even"><td><p>mil</p></td>
-<td><p>mother-in-law</p></td>
-</tr>
-<tr class="row-odd"><td><p>motd</p></td>
-<td><p>message of the day</p></td>
-</tr>
-<tr class="row-even"><td><p>n/a</p></td>
-<td><p>no attachment</p></td>
-</tr>
-<tr class="row-odd"><td><p>n/m</p></td>
-<td><p>nevermind</p></td>
-</tr>
-<tr class="row-even"><td><p>n/p</p></td>
-<td><p>no problem - np also used</p></td>
-</tr>
-<tr class="row-odd"><td><p>n/t</p></td>
-<td><p>no text</p></td>
-</tr>
-<tr class="row-even"><td><p>nhdbof</p></td>
-<td><p>observing a religious holiday/ritual</p></td>
-</tr>
-<tr class="row-odd"><td><p>nmcnmm</p></td>
-<td><p>not my circus, not my monkeys</p></td>
-</tr>
-<tr class="row-even"><td><p>np</p></td>
-<td><p>no problem</p></td>
-</tr>
-<tr class="row-odd"><td><p>oic</p></td>
-<td><p>oh, I see</p></td>
-</tr>
-<tr class="row-even"><td><p>omg</p></td>
-<td><p>oh, my god</p></td>
-</tr>
-<tr class="row-odd"><td><p>op</p></td>
-<td><p>original poster</p></td>
-</tr>
-<tr class="row-even"><td><p>opiahh</p></td>
-<td><p>op is a hose head</p></td>
-</tr>
-<tr class="row-odd"><td><p>otoh</p></td>
-<td><p>on the other hand</p></td>
-</tr>
-<tr class="row-even"><td><p>pal2</p></td>
-<td><p>peace and long life</p></td>
-</tr>
-<tr class="row-odd"><td><p>ppl</p></td>
-<td><p>people</p></td>
-</tr>
-<tr class="row-even"><td><p>re</p></td>
-<td><p>re hi or re hello</p></td>
-</tr>
-<tr class="row-odd"><td><p>rofl</p></td>
-<td><p>rolling on floor laughing</p></td>
-</tr>
-<tr class="row-even"><td><p>roflmao</p></td>
-<td><p>rolling on floor laughing my arse off</p></td>
-</tr>
-<tr class="row-odd"><td><p>rotfl</p></td>
-<td><p>rolling on the floor laughing</p></td>
-</tr>
-<tr class="row-even"><td><p>rtfm</p></td>
-<td><p>read the <strong>***</strong> manual</p></td>
-</tr>
-<tr class="row-odd"><td><p>rtfm</p></td>
-<td><p>read the full manual</p></td>
-</tr>
-<tr class="row-even"><td><p>sahm</p></td>
-<td><p>stay at home mom</p></td>
-</tr>
-<tr class="row-odd"><td><p>sio</p></td>
-<td><p>spit it out</p></td>
-</tr>
-<tr class="row-even"><td><p>shlm</p></td>
-<td><p>jewish greeting</p></td>
-</tr>
-<tr class="row-odd"><td><p>slm</p></td>
-<td><p>muslim greeting</p></td>
-</tr>
-<tr class="row-even"><td><p>smmas</p></td>
-<td><p>sudo make me a sandwich</p></td>
-</tr>
-<tr class="row-odd"><td><p>st</p></td>
-<td><p>spell that</p></td>
-</tr>
-<tr class="row-even"><td><p>ta</p></td>
-<td><p>thanks/again</p></td>
-</tr>
-<tr class="row-odd"><td><p>tafn</p></td>
-<td><p>that’s all for now</p></td>
-</tr>
-<tr class="row-even"><td><p>tam</p></td>
-<td><p>thanks a million</p></td>
-</tr>
-<tr class="row-odd"><td><p>tmi</p></td>
-<td><p>too much information</p></td>
-</tr>
-<tr class="row-even"><td><p>tsta</p></td>
-<td><p>try spelling that again</p></td>
-</tr>
-<tr class="row-odd"><td><p>ttyl</p></td>
-<td><p>talk (type) to you later</p></td>
-</tr>
-<tr class="row-even"><td><p>ttys</p></td>
-<td><p>talk (type) to you soon</p></td>
-</tr>
-<tr class="row-odd"><td><p>ty</p></td>
-<td><p>thank you thx thanks</p></td>
-</tr>
-<tr class="row-even"><td><p>w8</p></td>
-<td><p>wait</p></td>
-</tr>
-<tr class="row-odd"><td><p>wb</p></td>
-<td><p>welcome back</p></td>
-</tr>
-<tr class="row-even"><td><p>wc?</p></td>
-<td><p>are you hungry? (want chinese?)</p></td>
-</tr>
-<tr class="row-odd"><td><p>we</p></td>
-<td><p>whatever</p></td>
-</tr>
-<tr class="row-even"><td><p>w/e</p></td>
-<td><p>whatever</p></td>
-</tr>
-<tr class="row-odd"><td><p>wfm</p></td>
-<td><p>works for me</p></td>
-</tr>
-<tr class="row-even"><td><p>wsof</p></td>
-<td><p>way short of fudge (to give)</p></td>
-</tr>
-<tr class="row-odd"><td><p>wtf</p></td>
-<td><p>what, the fudge?</p></td>
-</tr>
-<tr class="row-even"><td><p>wtf</p></td>
-<td><p>why the face?</p></td>
-</tr>
-<tr class="row-odd"><td><p>wtg</p></td>
-<td><p>way to go</p></td>
-</tr>
-<tr class="row-even"><td><p>ww</p></td>
-<td><p>wire weenie (hardware person)</p></td>
-</tr>
-<tr class="row-odd"><td><p>wx</p></td>
-<td><p>weather</p></td>
-</tr>
-<tr class="row-even"><td><p>wysineutwyg</p></td>
-<td><p>what you see is not entirely unrelated to what you get</p></td>
-</tr>
-<tr class="row-odd"><td><p>wysiwyg</p></td>
-<td><p>what you see is what you get</p></td>
-</tr>
-<tr class="row-even"><td><p>wywtci</p></td>
-<td><p>whatever (you want to call it) [origin of “whatever”?]</p></td>
-</tr>
-<tr class="row-odd"><td><p>ygbkm</p></td>
-<td><p>you gotta be kidding me</p></td>
-</tr>
-<tr class="row-even"><td><p>ymmv</p></td>
-<td><p>your milage may vary</p></td>
-</tr>
-<tr class="row-odd"><td><p>yold</p></td>
-<td><p>year of our lady of discord</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-
-
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="media.html" class="btn btn-neutral float-left" title="media mindfulness: how what we see becomes a part of us" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="truth.html" class="btn btn-neutral float-right" title="truth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2024, Bill Wear.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
-      </div>
+    <section>
+      <h2>How to read this</h2>
+      <p><strong>nym</strong> is the shorthand; the right column expands it and sometimes adds notes. Variants are grouped or mentioned inline.</p>
     </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
 
+    <section>
+      <h2>Classic net shorthand</h2>
+      
+    <div class="group">
+      <h3>Everyday &amp; status</h3>
+      <table class="table">
+        <thead><tr><th>nym</th><th>expansion / note</th></tr></thead>
+        <tbody>
+          <tr><td><code class='kbd'>&lt;3</code></td><td>i like that comment<div class='small'>heart / like</div></td></tr><tr><td><code class='kbd'>&lt;g&gt;</code></td><td>grin<div class='small'>old IRC-style emote; also *g*</div></td></tr><tr><td><code class='kbd'>aamof</code></td><td>as a matter of fact</td></tr><tr><td><code class='kbd'>adn</code></td><td>any day now</td></tr><tr><td><code class='kbd'>afaiac</code></td><td>as far as i am concerned</td></tr><tr><td><code class='kbd'>afaict</code></td><td>as far as i can tell</td></tr><tr><td><code class='kbd'>afaik</code></td><td>as far as i know</td></tr><tr><td><code class='kbd'>afair</code></td><td>as far as i remember</td></tr><tr><td><code class='kbd'>afk</code></td><td>away from keyboard</td></tr><tr><td><code class='kbd'>asap</code></td><td>as soon as possible</td></tr><tr><td><code class='kbd'>atm</code></td><td>at the moment</td></tr><tr><td><code class='kbd'>atp</code></td><td>at this point<div class='small'>context</div></td></tr><tr><td><code class='kbd'>b4n</code></td><td>bye for now</td></tr><tr><td><code class='kbd'>bak</code></td><td>back at (my) keyboard<div class='small'>back</div></td></tr><tr><td><code class='kbd'>bbfn</code></td><td>bye bye for now</td></tr><tr><td><code class='kbd'>bbiab</code></td><td>be back in a bit</td></tr><tr><td><code class='kbd'>bbiaf</code></td><td>be back in a few</td></tr><tr><td><code class='kbd'>bbl</code></td><td>be back later</td></tr><tr><td><code class='kbd'>bbs</code></td><td>be back shortly/soon<div class='small'>two senses</div></td></tr><tr><td><code class='kbd'>beg</code></td><td>big evil grin</td></tr><tr><td><code class='kbd'>brb</code></td><td>be right back<div class='small'>sometimes “bathroom break”</div></td></tr><tr><td><code class='kbd'>bta</code></td><td>but then again</td></tr><tr><td><code class='kbd'>btw</code></td><td>by the way</td></tr><tr><td><code class='kbd'>cya</code></td><td>see ya</td></tr><tr><td><code class='kbd'>d/c</code></td><td>disconnected<div class='small'>lost connection</div></td></tr><tr><td><code class='kbd'>e.g.</code></td><td>for example<div class='small'>latin: exempli gratia</div></td></tr><tr><td><code class='kbd'>faq</code></td><td>frequently asked questions</td></tr><tr><td><code class='kbd'>fwiw</code></td><td>for what it’s worth</td></tr><tr><td><code class='kbd'>fyi</code></td><td>for your information</td></tr><tr><td><code class='kbd'>ga</code></td><td>good afternoon<div class='small'>salutation</div></td></tr><tr><td><code class='kbd'>gm</code></td><td>good morning<div class='small'>salutation</div></td></tr><tr><td><code class='kbd'>gtg</code></td><td>got to go<div class='small'>also g2g</div></td></tr><tr><td><code class='kbd'>hth</code></td><td>hope that helps</td></tr><tr><td><code class='kbd'>ic</code></td><td>i see</td></tr><tr><td><code class='kbd'>iirc</code></td><td>if i recall correctly</td></tr><tr><td><code class='kbd'>imho</code></td><td>in my humble opinion</td></tr><tr><td><code class='kbd'>imnsho</code></td><td>in my not-so-humble opinion</td></tr><tr><td><code class='kbd'>imo</code></td><td>in my opinion</td></tr><tr><td><code class='kbd'>iow</code></td><td>in other words</td></tr><tr><td><code class='kbd'>irl</code></td><td>in real life</td></tr><tr><td><code class='kbd'>istr</code></td><td>i seem to recall</td></tr><tr><td><code class='kbd'>ito</code></td><td>in terms of</td></tr><tr><td><code class='kbd'>itt</code></td><td>in this thread<div class='small'>context marker</div></td></tr><tr><td><code class='kbd'>jk</code></td><td>just kidding<div class='small'>also j/k</div></td></tr><tr><td><code class='kbd'>kwh</code></td><td>kilroy was here<div class='small'>graffiti meme</div></td></tr><tr><td><code class='kbd'>l8r</code></td><td>later</td></tr><tr><td><code class='kbd'>le</code></td><td>later edit<div class='small'>postscript</div></td></tr><tr><td><code class='kbd'>llap</code></td><td>live long and prosper<div class='small'>🖖</div></td></tr><tr><td><code class='kbd'>lmao</code></td><td>laughing my a** off<div class='small'>slang</div></td></tr><tr><td><code class='kbd'>lol</code></td><td>laughing out loud</td></tr><tr><td><code class='kbd'>ltns</code></td><td>long time no see</td></tr><tr><td><code class='kbd'>lts</code></td><td>laughing to self</td></tr><tr><td><code class='kbd'>ly</code></td><td>love you<div class='small'>also ly2, ily</div></td></tr><tr><td><code class='kbd'>mil</code></td><td>mother‑in‑law</td></tr><tr><td><code class='kbd'>motd</code></td><td>message of the day</td></tr><tr><td><code class='kbd'>n/a</code></td><td>no attachment / not applicable<div class='small'>context dependent</div></td></tr><tr><td><code class='kbd'>n/m</code></td><td>nevermind<div class='small'>also nm</div></td></tr><tr><td><code class='kbd'>np</code></td><td>no problem</td></tr><tr><td><code class='kbd'>oic</code></td><td>oh, i see</td></tr><tr><td><code class='kbd'>omg</code></td><td>oh my gosh<div class='small'>alt: god</div></td></tr><tr><td><code class='kbd'>op</code></td><td>original poster<div class='small'>thread starter</div></td></tr><tr><td><code class='kbd'>otoh</code></td><td>on the other hand</td></tr><tr><td><code class='kbd'>ppl</code></td><td>people</td></tr><tr><td><code class='kbd'>re</code></td><td>re‑hi / again<div class='small'>IRC greeting</div></td></tr><tr><td><code class='kbd'>rofl</code></td><td>rolling on floor laughing</td></tr><tr><td><code class='kbd'>rtfm</code></td><td>read the *fine* manual<div class='small'>polite version</div></td></tr><tr><td><code class='kbd'>sahm</code></td><td>stay‑at‑home mom</td></tr><tr><td><code class='kbd'>sio</code></td><td>spit it out<div class='small'>say it plainly</div></td></tr><tr><td><code class='kbd'>st</code></td><td>spell that</td></tr><tr><td><code class='kbd'>ta</code></td><td>thanks / ta again<div class='small'>brit. usage</div></td></tr><tr><td><code class='kbd'>tafn</code></td><td>that’s all for now</td></tr><tr><td><code class='kbd'>tam</code></td><td>thanks a million</td></tr><tr><td><code class='kbd'>tmi</code></td><td>too much information</td></tr><tr><td><code class='kbd'>ttyl</code></td><td>talk to you later</td></tr><tr><td><code class='kbd'>ttys</code></td><td>talk to you soon</td></tr><tr><td><code class='kbd'>ty</code></td><td>thank you<div class='small'>also thx, tnx</div></td></tr><tr><td><code class='kbd'>w8</code></td><td>wait</td></tr><tr><td><code class='kbd'>wb</code></td><td>welcome back</td></tr><tr><td><code class='kbd'>w/e</code></td><td>whatever<div class='small'>also we</div></td></tr><tr><td><code class='kbd'>wfm</code></td><td>works for me</td></tr><tr><td><code class='kbd'>wtg</code></td><td>way to go</td></tr><tr><td><code class='kbd'>ww</code></td><td>wire weenie (hardware person)<div class='small'>tongue‑in‑cheek</div></td></tr><tr><td><code class='kbd'>wx</code></td><td>weather<div class='small'>ham/aviation shorthand</div></td></tr><tr><td><code class='kbd'>wysiwyg</code></td><td>what you see is what you get</td></tr><tr><td><code class='kbd'>ymmv</code></td><td>your mileage may vary<div class='small'>disclaimer</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+      <h2>Net culture & in‑jokes</h2>
+      
+    <div class="group">
+      <h3>Memes, ham radio, and forum slang</h3>
+      <table class="table">
+        <thead><tr><th>nym</th><th>expansion / note</th></tr></thead>
+        <tbody>
+          <tr><td><code class='kbd'>aybabtu</code></td><td>all your base are belong to us<div class='small'>classic meme</div></td></tr><tr><td><code class='kbd'>c‑c‑c‑combo breaker</code></td><td>calling a halt to repeats<div class='small'>arcade meme</div></td></tr><tr><td><code class='kbd'>cp</code></td><td>coder pig<div class='small'>self‑deprecating</div></td></tr><tr><td><code class='kbd'>cq…</code></td><td>seeking contact / looking for…<div class='small'>ham radio Q‑code</div></td></tr><tr><td><code class='kbd'>djiad</code></td><td>dammit jim, i’m a doctor<div class='small'>Star Trek meme; also “not my area”</div></td></tr><tr><td><code class='kbd'>fb</code></td><td>fine business<div class='small'>ham shorthand</div></td></tr><tr><td><code class='kbd'>ftw</code></td><td>for the win</td></tr><tr><td><code class='kbd'>gmta</code></td><td>great minds think alike</td></tr><tr><td><code class='kbd'>gmtaasdo</code></td><td>great minds think alike, and so do ours</td></tr><tr><td><code class='kbd'>goybwaroc</code></td><td>get on your big wheel and ride on, cowboy<div class='small'>playful brush‑off</div></td></tr><tr><td><code class='kbd'>hdj</code></td><td>he’s dead, jim<div class='small'>irretrievably broken</div></td></tr><tr><td><code class='kbd'>ifypfy</code></td><td>i fixed your post for you<div class='small'>lightly snarky</div></td></tr><tr><td><code class='kbd'>iha</code></td><td>i hate acronyms<div class='small'>ironically an acronym</div></td></tr><tr><td><code class='kbd'>isagn</code></td><td>i see a great need</td></tr><tr><td><code class='kbd'>jsia</code></td><td>just say it already</td></tr><tr><td><code class='kbd'>kbn</code></td><td>klaatu barada nikto<div class='small'>also “gimme a minute to break it”</div></td></tr><tr><td><code class='kbd'>pal2</code></td><td>peace and long life<div class='small'>🖖 vulcan reply to LLAP</div></td></tr><tr><td><code class='kbd'>roflmao</code></td><td>rolling on floor laughing my a** off</td></tr><tr><td><code class='kbd'>rotfl</code></td><td>rolling on the floor laughing</td></tr><tr><td><code class='kbd'>smmas</code></td><td>sudo make me a sandwich<div class='small'>xkcd/UNIX joke</div></td></tr><tr><td><code class='kbd'>wsof</code></td><td>way short of f***s (to give)<div class='small'>censor style</div></td></tr><tr><td><code class='kbd'>wysineutwyg</code></td><td>what you see is not entirely unrelated to what you get<div class='small'>tongue‑in‑cheek variant</div></td></tr><tr><td><code class='kbd'>wywtci</code></td><td>whatever (you want to call it)<div class='small'>etymology play</div></td></tr><tr><td><code class='kbd'>ygbkm</code></td><td>you gotta be kidding me</td></tr><tr><td><code class='kbd'>yold</code></td><td>year of our lady of discord<div class='small'>discordian calendar</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+      <h2>Modern chat & gaming</h2>
+      
+    <div class="group">
+      <h3>Current usage (DMs, gaming, socials)</h3>
+      <table class="table">
+        <thead><tr><th>nym</th><th>expansion / note</th></tr></thead>
+        <tbody>
+          <tr><td><code class='kbd'>afaik/imo/ymmv</code></td><td>bundle of hedges<div class='small'>shorthand cluster</div></td></tr><tr><td><code class='kbd'>bff</code></td><td>best friends forever</td></tr><tr><td><code class='kbd'>brt</code></td><td>be right there<div class='small'>logistics</div></td></tr><tr><td><code class='kbd'>dm</code></td><td>direct message<div class='small'>also PM</div></td></tr><tr><td><code class='kbd'>eta</code></td><td>edited to add / estimated time of arrival<div class='small'>context matters</div></td></tr><tr><td><code class='kbd'>fam</code></td><td>close friends / folks<div class='small'>slang</div></td></tr><tr><td><code class='kbd'>fr</code></td><td>for real<div class='small'>emphasis</div></td></tr><tr><td><code class='kbd'>frfr</code></td><td>for real for real<div class='small'>strong emphasis</div></td></tr><tr><td><code class='kbd'>glhf</code></td><td>good luck, have fun<div class='small'>gaming</div></td></tr><tr><td><code class='kbd'>hmu</code></td><td>hit me up<div class='small'>contact me</div></td></tr><tr><td><code class='kbd'>idc</code></td><td>i don’t care</td></tr><tr><td><code class='kbd'>idk</code></td><td>i don’t know</td></tr><tr><td><code class='kbd'>ikr</code></td><td>i know, right?<div class='small'>agreement</div></td></tr><tr><td><code class='kbd'>imoe</code></td><td>in my own experience<div class='small'>variant of imho</div></td></tr><tr><td><code class='kbd'>irl/afk</code></td><td>real life / away<div class='small'>paired status</div></td></tr><tr><td><code class='kbd'>istg</code></td><td>i swear to god<div class='small'>emphasis</div></td></tr><tr><td><code class='kbd'>lfg</code></td><td>looking for group<div class='small'>gaming</div></td></tr><tr><td><code class='kbd'>ngl</code></td><td>not gonna lie<div class='small'>preface to opinion</div></td></tr><tr><td><code class='kbd'>nrn</code></td><td>no reply necessary<div class='small'>email/chat etiquette</div></td></tr><tr><td><code class='kbd'>nsfw/sfl</code></td><td>not safe for work / family‑safe link<div class='small'>content flag</div></td></tr><tr><td><code class='kbd'>nvm</code></td><td>nevermind<div class='small'>modern form of n/m</div></td></tr><tr><td><code class='kbd'>oof</code></td><td>sympathy / wince<div class='small'>reaction</div></td></tr><tr><td><code class='kbd'>opsec</code></td><td>operations security<div class='small'>don’t overshare</div></td></tr><tr><td><code class='kbd'>otp</code></td><td>one true pairing<div class='small'>fandom</div></td></tr><tr><td><code class='kbd'>pm</code></td><td>private message<div class='small'>also DM</div></td></tr><tr><td><code class='kbd'>pov</code></td><td>point of view<div class='small'>meme label</div></td></tr><tr><td><code class='kbd'>rn</code></td><td>right now<div class='small'>time</div></td></tr><tr><td><code class='kbd'>smh</code></td><td>shaking my head<div class='small'>disapproval</div></td></tr><tr><td><code class='kbd'>sus</code></td><td>suspicious<div class='small'>Among Us → mainstream</div></td></tr><tr><td><code class='kbd'>tba/tbd/tbc</code></td><td>to be announced / determined / continued<div class='small'>project status</div></td></tr><tr><td><code class='kbd'>tbf/tbh</code></td><td>to be fair / to be honest<div class='small'>hedges</div></td></tr><tr><td><code class='kbd'>tldr</code></td><td>too long; didn’t read<div class='small'>also TL;DR: summary follows</div></td></tr><tr><td><code class='kbd'>wys</code></td><td>what you said<div class='small'>agreement</div></td></tr><tr><td><code class='kbd'>ytmv</code></td><td>your temperament may vary<div class='small'>playful variant</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    </section>
+
+    <footer>
+      <hr>
+      <div>CC BY‑NC 2025 stormrider · add your favorites and I’ll fold them in</div>
+    </footer>
+  </div>
 </body>
 </html>
