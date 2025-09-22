@@ -26,7 +26,17 @@ header { display: flex; justify-content: space-between; align-items: baseline; g
 h1 { margin: 0.2rem 0 0.6rem; }
 h2 { margin-top: 1.4rem; }
 p.lede { color: var(--muted); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* single column by default */
+  gap: 12px;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* two columns on larger screens */
+  }
+}
 .card { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #0c141c; }
 .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
 .card ul { margin: 0; padding-left: 1.1rem; }
