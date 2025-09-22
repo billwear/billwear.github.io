@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phreaking Numbers · stormrider</title>
+<meta name="description" content="A lightly‑annotated directory of time/temperature lines, intercept recordings, and telecom curios.">
+<style>
+:root {
+  --bg: #0b0f14;
+  --fg: #e6edf3;
+  --muted: #9fb3c8;
+  --link: #58a6ff;
+  --note: #3b82f6;
+  --why: #10b981;
+  --term: #f59e0b;
+  --warn: #ef4444;
+  --code: #0f1720;
+  --line: #1f2a37;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 980px; margin: 0 auto; padding: 24px; }
+header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+h1 { margin: 0.2rem 0 0.4rem; }
+h2 { margin-top: 1.4rem; }
+p.lede { color: var(--muted); }
+footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
+.badge { padding: 2px 8px; border:1px solid #2a4158; border-radius: 999px; color: var(--muted); font-size: 0.8rem; }
+.small { color: var(--muted); font-size: 0.92rem; }
+.table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; }
+.table th, .table td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: top; }
+.table th { text-align: left; background: #0c141c; }
+.code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+.group { margin-top: 18px; }
+hr { border: none; border-top: 1px solid var(--line); margin: 28px 0; }
+.callouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 16px 0; }
+.callout { border: 1px solid var(--line); border-left-width: 6px; border-radius: 10px; padding: 12px; background: #0c141c; }
+.callout h3 { margin: 0 0 6px; font-size: 1rem; color: var(--fg); }
+.note { border-left-color: var(--note); }
+.warn { border-left-color: var(--warn); }
+.term { border-left-color: var(--term); }
+</style>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <a class="badge" href="https://billwear.github.io" title="back to main site">billwear.github.io</a>
+        <h1>Phreaking Numbers</h1>
+        <p class="lede">Recordings, intercepts, time/temperature, and cultural curios. For historians, nostalgics, and switchroom romantics.</p>
+      </div>
+      <div class="small">Note: Availability changes. Treat this as folklore, not a service guarantee.</div>
+    </header>
+
+    <section>
+      
+<div class="callouts">
+  <div class="callout note">
+    <h3>What is this list?</h3>
+    <p>A grab‑bag of test lines, intercept recordings, time/temperature services, and media easter eggs. Many are legacy Bell System artifacts that still answer with recordings.</p>
+  </div>
+  <div class="callout term">
+    <h3>Glossary</h3>
+    <p><strong>Intercept:</strong> A recording that plays when a call can’t be completed (e.g., misdial, disconnected number).</p>
+    <p><strong>ANAC:</strong> Automated Number Announcement Circuit — historically read back the caller’s number for technicians.</p>
+    <p><strong>DMS‑100:</strong> A class‑5 digital switch by Northern Telecom; some exchanges exposed test/ident lines.</p>
+  </div>
+  <div class="callout warn">
+    <h3>Light‑handed etiquette</h3>
+    <p>Numbers are often repurposed, rate‑limited, or local‑chargeable. Don’t abuse automated systems. If a number is reassigned, be kind and take it off your list.</p>
+  </div>
+</div>
+
+      <h2>Time & Temperature / Clocks</h2>
+      <table class='table'><thead><tr><th>number</th><th>description</th></tr></thead><tbody><tr><td class='code'>(202) 762‑1401</td><td>USNO master clock (voice time)</td></tr><tr><td class='code'>(203) 777‑4647</td><td>Time &amp; temp (New Haven, CT)</td></tr><tr><td class='code'>(216) 931‑1212</td><td>WKYC time and weather (Cleveland area)</td></tr><tr><td class='code'>(303) 337‑2500</td><td>Denver Post weather</td></tr><tr><td class='code'>(406) 442‑1730</td><td>Helena, MT time &amp; temp</td></tr><tr><td class='code'>(415) 767‑2676</td><td>“POPCORN” time &amp; temp; today preceded by a brief message</td></tr></tbody></table>
+      <h2>Intercepts, Test Lines & Switch Oddities</h2>
+      <table class='table'><thead><tr><th>number</th><th>description</th></tr></thead><tbody><tr><td class='code'>(202) 965‑9970</td><td>“You have just deactivated this feature.”</td></tr><tr><td class='code'>(206) 343‑0011</td><td>This call requires a coin deposit (test recording)</td></tr><tr><td class='code'>(213) 223‑6101</td><td>RING A BELL (test ring)</td></tr><tr><td class='code'>(213) 621‑0001</td><td>Classic “We’re sorry…” intercept (not Jane Barbe)</td></tr><tr><td class='code'>(213) 621‑0002</td><td>1000 Hz @ 0 dB test tone</td></tr><tr><td class='code'>(412) 885‑0075</td><td>“All test positions are unmanned…”</td></tr><tr><td class='code'>(509) 457‑0044</td><td>This call requires a coin deposit…</td></tr><tr><td class='code'>(509) 457‑0045</td><td>Your call cannot be completed as dialed…</td></tr><tr><td class='code'>(509) 457‑0051</td><td>All circuits are busy now…</td></tr><tr><td class='code'>(540) 829‑9910</td><td>Pat Fleet intercept message (genuine)</td></tr><tr><td class='code'>(570) 387‑0000</td><td>“Due to an emergency condition…”</td></tr><tr><td class='code'>(573) 996‑0002</td><td>Party lines notice (yes, really)</td></tr><tr><td class='code'>(573) 996‑0003</td><td>Remote intercept: cannot be completed as dialed</td></tr><tr><td class='code'>(573) 996‑0005</td><td>Remote intercept: call did not go through</td></tr><tr><td class='code'>(573) 996‑0006</td><td>Remote intercept: number not in service</td></tr><tr><td class='code'>(609) 729‑9928</td><td>Long‑distance carrier unable to complete your call</td></tr><tr><td class='code'>(610) 797‑0014</td><td>Please deposit five cents for the next 3 minutes …</td></tr><tr><td class='code'>(718) 816‑9901</td><td>DMS‑100 ident message + area code list (North Staten Island)</td></tr><tr><td class='code'>(800) 437‑9606</td><td>International call cannot be completed as dialed</td></tr><tr><td class='code'>(845) 354‑9912</td><td>Call cannot be completed as dialed… (fast)</td></tr><tr><td class='code'>(914) 232‑9901</td><td>Pleasant Hills DMS‑100</td></tr><tr><td class='code'>(916) 440‑0031</td><td>Due to facility trouble…</td></tr></tbody></table>
+      <h2>Media, Easter Eggs & Novelty</h2>
+      <table class='table'><thead><tr><th>number</th><th>description</th></tr></thead><tbody><tr><td class='code'>(204) 867‑5309</td><td>The “Jenny” song number (may be reassigned)</td></tr><tr><td class='code'>(205) 867‑5309</td><td>Jenny not in service in Birmingham</td></tr><tr><td class='code'>(505) 503‑4455</td><td>“Better Call Saul”</td></tr><tr><td class='code'>(719) 266‑2837</td><td>Hall &amp; Oates Emergency Song Line</td></tr><tr><td class='code'>(800) 444‑4444</td><td>Automated Number Announcement Circuit (ANAC)</td></tr><tr><td class='code'>(877) 763‑2435</td><td>Odd Squad HQ</td></tr><tr><td class='code'>(888) 447‑5594</td><td>“Congratulations, you found your way here”</td></tr><tr><td class='code'>(270) 301‑5797</td><td>“A maze of twisty little touch tones, all different.”</td></tr></tbody></table>
+    </section>
+
+    <section>
+      <h2>Voices behind the recordings (tiny bios)</h2>
+      <ul>
+        <li><strong>Jane Barbe</strong> — Often called the “Time Lady,” her voice was ubiquitous on intercepts and time services across North America from the 1960s–1990s.</li>
+        <li><strong>Pat Fleet</strong> — Another iconic voice of the Bell System and AT&T; many modern intercepts still feature her clear, measured delivery.</li>
+      </ul>
+      <p class="small">Plenty of local companies also used in‑house voices or regionally contracted talent; that’s part of why lines vary so much in tone.</p>
+    </section>
+
+    <footer>
+      <hr>
+      <div>CC BY‑NC 2025 stormrider · send additions/retirements and I’ll update the list</div>
+    </footer>
+  </div>
+</body>
+</html>
