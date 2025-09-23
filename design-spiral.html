@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Design Spiral · stormrider</title>
+<meta name="description" content="A quick guide to the design spiral in engineering practice.">
+<style>
+:root {
+  --bg: #0b0f14;
+  --fg: #e6edf3;
+  --muted: #9fb3c8;
+  --link: #58a6ff;
+  --line: #1f2a37;
+  --panel:#0c141c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; line-height: 1.65; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 980px; margin: 0 auto; padding: 24px; }
+header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+h1 { margin: 0.2rem 0 0.4rem; }
+h2 { margin-top: 1.2rem; }
+p.lede { color: var(--muted); }
+footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
+.badge { padding: 2px 8px; border:1px solid #2a4158; border-radius: 999px; color: var(--muted); font-size: 0.8rem; }
+.small { color: var(--muted); font-size: 0.92rem; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: clamp(18px, 3vw, 28px); }
+hr { border: none; border-top: 1px solid var(--line); margin: 28px 0; }
+ul, ol { padding-left: 1.2rem; }
+li { margin: 0.35rem 0; }
+pre.code { background: #0b1220; border: 1px solid var(--line); border-radius: 10px; padding: 12px; overflow-x: auto; }
+</style>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <a class="badge" href="https://billwear.github.com" title="back to main site">stormrider.io</a>
+        <h1>The Design Spiral</h1>
+        <p class="lede">Why design never runs in a straight line—and why that’s a feature, not a bug.</p>
+      </div>
+      <div class="small">Updated 2025-09-23</div>
+    </header>
+
+    <main class="card">
+      <h2>What it is</h2>
+      <p>The <strong>design spiral</strong> is the idea that engineering design moves in loops, not lines. You start with rough guesses, circle around to refine them, and with each pass, you tighten accuracy and detail. Rather than aiming for perfection on the first try, you orbit closer to the right answer.</p>
+
+      <h2>Why it matters</h2>
+      <ul>
+        <li><strong>Iterative refinement:</strong> each cycle adds clarity—dimensions firm up, costs sharpen, risks reveal themselves.</li>
+        <li><strong>Feedback built-in:</strong> testing early versions informs later choices, reducing expensive rework.</li>
+        <li><strong>Flexibility:</strong> allows trade-offs to be evaluated as new data arrives.</li>
+      </ul>
+
+      <h2>How it looks in practice</h2>
+      <ol>
+        <li>Sketch the concept (paper, whiteboard, CAD).</li>
+        <li>Estimate feasibility: weight, cost, time, performance.</li>
+        <li>Prototype or simulate.</li>
+        <li>Test, measure, compare to requirements.</li>
+        <li>Adjust assumptions and repeat.</li>
+      </ol>
+
+      <h2>Example</h2>
+      <pre class="code">
+Ship design (classic use case):
+- First spiral: length, beam, displacement, propulsion (rough).
+- Second spiral: refine hull shape, stability analysis, weight balance.
+- Third spiral: structure, detailed systems, safety margins.
+- Final spirals: production drawings, cost checks, build plan.
+      </pre>
+
+      <h2>The engineer’s mindset</h2>
+      <p class="lede">The design spiral is not inefficiency—it’s realism. Every cycle brings surprises. The trick is to expect them, capture them, and spiral toward a better answer, faster.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <div>CC BY‑NC 2025 stormrider</div>
+    </footer>
+  </div>
+</body>
+</html>
