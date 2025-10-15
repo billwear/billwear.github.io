@@ -1,12 +1,6 @@
-<!-- favicon.svg -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0" stop-color="#ff8a00"/>
-      <stop offset="1" stop-color="#7a4f00"/>
-    </linearGradient>
-  </defs>
   <rect width="64" height="64" rx="12" fill="#111"/>
-  <path d="M32 10c6 8-6 10 2 20 6-6 10-1 10 6 0 8-6 12-12 12s-12-4-12-12c0-6 4-11 8-12-2-5 1-9 4-14z"
-        fill="url(#g)"/>
+  <path d="M32 42a10 10 0 0 0 0-20v20z" fill="#ff9f00"/>
+  <path d="M32 18a14 14 0 0 1 0 28" fill="none" stroke="#ff9f00" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 12a20 20 0 0 1 0 40" fill="none" stroke="#7a4f00" stroke-width="3" stroke-linecap="round"/>
 </svg>
