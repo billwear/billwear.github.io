@@ -4,42 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SDR with a Raspberry Pi 4 · stormrider</title>
 <meta name="description" content="A hand-holding, picture-free walkthrough for hooking up a Raspberry Pi 4 to a HackRF One and exploring the radio spectrum.">
-<style>
-:root {
-  --bg: #0b0f14;
-  --fg: #e6edf3;
-  --muted: #9fb3c8;
-  --link: #58a6ff;
-  --note: #3b82f6;
-  --why: #10b981;
-  --term: #f59e0b;
-  --warn: #ef4444;
-  --code: #0f1720;
-  --line: #1f2a37;
-}
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; }
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container { max-width: 980px; margin: 0 auto; padding: 24px; }
-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-h1 { margin: 0.2rem 0 0.4rem; }
-h2 { margin-top: 1.6rem; }
-p.lede { color: var(--muted); }
-pre { background: var(--code); border: 1px solid var(--line); border-radius: 10px; padding: 12px; overflow-x: auto; }
-code, kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-.callouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 16px 0; }
-.callout { border: 1px solid var(--line); border-left-width: 6px; border-radius: 10px; padding: 12px; background: #0c141c; }
-.callout h3 { margin: 0 0 6px; font-size: 1rem; color: var(--fg); }
-.note { border-left-color: var(--note); }
-.why { border-left-color: var(--why); }
-.term { border-left-color: var(--term); }
-.warn { border-left-color: var(--warn); }
-footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
-.badge { padding: 2px 8px; border:1px solid #2a4158; border-radius: 999px; color: var(--muted); font-size: 0.8rem; }
-.small { color: var(--muted); font-size: 0.92rem; }
-ul { padding-left: 1.2rem; }
-</style>
+<link rel="stylesheet" href="/styles.css">
 <body>
   <div class="container">
     <header>
