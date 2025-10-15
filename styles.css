@@ -31,3 +31,23 @@
     a{color:#ffb44d}
     .card{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.12)}
   }
+  /* readability overrides */
+  body{ color:#1b1b1b; }
+  p, li{ font-style: normal; color:#222; }
+  h1, h2{ color:#111; text-shadow:none; }
+
+  /* links: darker, clearer */
+  a{ color:#6d4700; text-decoration-thickness:.1em; }
+  a:hover{ color:#4b3200; }
+
+  /* cards: higher opacity + sharper text */
+  .card{
+    background: rgba(255,255,255,.88);  /* was ~.35 */
+    border-color: rgba(0,0,0,.12);
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    backdrop-filter: none;               /* drop blur = crisper text */
+  }
+  .card p{ color:#444; }
+
+  /* optional: soften the loud gradient a touch */
+  .wrap{ background: rgba(255,255,255,.35); border-radius:.75rem; }
