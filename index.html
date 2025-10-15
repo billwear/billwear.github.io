@@ -26,6 +26,13 @@
         font-size: 2.0em; /* Slightly larger on big screens */
       }
     }
+    .sec { margin: 2.25rem 0 1rem; }
+    .sec h2 { margin: 0 0 .75rem; font-size: 1.9rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: .9rem; }
+    .card { padding: .9rem 1rem; border-radius: .6rem; background: rgba(255,255,255,.35); border: 1px solid rgba(0,0,0,.08); }
+    .card a { font-weight: 700; text-decoration: none; }
+    .card a:hover { text-decoration: underline; }
+    .card p { margin: .35rem 0 0; }
   </style>
 </head>
 <body>
@@ -55,41 +62,73 @@ notes from the same slow fire that fuels my writing — where code, cloth, and c
   </div>
 </section>
 
-      <div class="card">
-        <h3>Engineering</h3>
-        <ul>
-          <li><a href="requirements.html">Writing requirements</a>: Bind it with runes.</li>
-          <li><a href="engineering-tradeoffs.html">Making trade-offs</a>: Winning the lottery is easier.</li>
-	  <li><a href="design-spiral.html">The design spiral</a>: Hopefully it's an updraft....</li>
-        </ul>
-      </div>
+ <section class="sec">
+  <h2>Engineering</h2>
+  <div class="grid">
+    <div class="card">
+      <a href="WRITING-REQS-URL">Writing requirements</a>
+      <p>Bind it with runes.</p>
+    </div>
+    <div class="card">
+      <a href="TRADEOFFS-URL">Making trade-offs</a>
+      <p>Winning the lottery is easier.</p>
+    </div>
+    <div class="card">
+      <a href="DESIGN-SPIRAL-URL">The design spiral</a>
+      <p>Hopefully it's an updraft....</p>
+    </div>
+  </div>
+</section>
 
-      <div class="card">
-        <h3>Software</h3>
-        <ul>
-          <li><a href="gobear.html">GoBear</a>: Go bare, metal.</li>
-          <li><a href="emacs-index.html">Emacs</a>: M-x summon-lost-memories.</li>
-          <li><a href="maas-cli-index.html">MAAS CLI</a>: Latin MAAS.</li>
-          <!-- <li><a href="#">Linux OS</a>: Where penguins rule and windows are just glass.</li> -->
-        </ul>
-      </div>
+<section class="sec">
+  <h2>Software</h2>
+  <div class="grid">
+    <div class="card">
+      <a href="GOBEAR-URL">GoBear</a>
+      <p>Go bare, metal.</p>
+    </div>
+    <div class="card">
+      <a href="EMACS-URL">Emacs</a>
+      <p>M-x summon-lost-memories.</p>
+    </div>
+    <div class="card">
+      <a href="MAAS-CLI-URL">MAAS CLI</a>
+      <p>Latin MAAS.</p>
+    </div>
+  </div>
+</section>
 
-      <div class="card">
-        <h3>Hardware</h3>
-        <ul>
-          <li><a href="#">Altair 8800</a>: Jurassic Spark.</li>
-          <li><a href="#">rPi4 kit</a>: Tech wizard's treasure chest.</li>
-          <li><a href="networking.html">N/W tutorial</a>: Whispering in TCP/IP.</li>
-        </ul>
-      </div>
+<section class="sec">
+  <h2>Hardware</h2>
+  <div class="grid">
+    <div class="card">
+      <a href="ALTAIR-URL">Altair 8800</a>
+      <p>Jurassic Spark.</p>
+    </div>
+    <div class="card">
+      <a href="RPI4-URL">rPi4 kit</a>
+      <p>Tech wizard's treasure chest.</p>
+    </div>
+    <div class="card">
+      <a href="NW-TUTORIAL-URL">N/W tutorial</a>
+      <p>Whispering in TCP/IP.</p>
+    </div>
+  </div>
+</section>
 
-      <div class="card">
-        <h3>Curiosities</h3>
-        <ul>
-          <li><a href="textspeak.html">Text-speak</a>: IRC runes.</li>
-          <li><a href="phreaking-numbers.html">Phreaking</a>: Here's to Jane Barbe.</li>
-        </ul>
-      </div>
+<section class="sec">
+  <h2>Curiosities</h2>
+  <div class="grid">
+    <div class="card">
+      <a href="TEXT-SPEAK-URL">Text-speak</a>
+      <p>IRC runes.</p>
+    </div>
+    <div class="card">
+      <a href="PHREAKING-URL">Phreaking</a>
+      <p>Here's to Jane Barbe.</p>
+    </div>
+  </div>
+</section>
 
       <div class="card">
         <h3>Personal</h3>
