@@ -1,6 +1,12 @@
+<!-- /favicon.svg -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#111"/>
-  <path d="M32 42a10 10 0 0 0 0-20v20z" fill="#ff9f00"/>
-  <path d="M32 18a14 14 0 0 1 0 28" fill="none" stroke="#ff9f00" stroke-width="3" stroke-linecap="round"/>
-  <path d="M32 12a20 20 0 0 1 0 40" fill="none" stroke="#7a4f00" stroke-width="3" stroke-linecap="round"/>
+  <rect width="64" height="64" fill="#111"/>
+  <!-- I -->
+  <rect x="12" y="12" width="10" height="40" rx="2" fill="#ff7a00"/>
+  <!-- F stem -->
+  <rect x="32" y="12" width="10" height="40" rx="2" fill="#ff7a00"/>
+  <!-- F top bar -->
+  <rect x="32" y="12" width="20" height="10" rx="2" fill="#ff7a00"/>
+  <!-- F mid bar -->
+  <rect x="32" y="28" width="16" height="10" rx="2" fill="#ff7a00"/>
 </svg>
