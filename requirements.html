@@ -1,89 +1,78 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Write Engineering Requirements · stormrider</title>
-<meta name="description" content="A practical one-pager on writing clear, testable engineering requirements.">
-<style>
-:root {
-  --bg: #0b0f14;
-  --fg: #e6edf3;
-  --muted: #9fb3c8;
-  --link: #58a6ff;
-  --line: #1f2a37;
-  --panel:#0c141c;
-}
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; line-height: 1.65; }
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container { max-width: 980px; margin: 0 auto; padding: 24px; }
-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-h1 { margin: 0.2rem 0 0.4rem; }
-h2 { margin-top: 1.2rem; }
-p.lede { color: var(--muted); }
-footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
-.badge { padding: 2px 8px; border:1px solid #2a4158; border-radius: 999px; color: var(--muted); font-size: 0.8rem; }
-.small { color: var(--muted); font-size: 0.92rem; }
-.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: clamp(18px, 3vw, 28px); }
-hr { border: none; border-top: 1px solid var(--line); margin: 28px 0; }
-ul { padding-left: 1.2rem; }
-li { margin: 0.35rem 0; }
-pre.code { background: #0b1220; border: 1px solid var(--line); border-radius: 10px; padding: 12px; overflow-x: auto; }
-</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How to Write Engineering Requirements · stormrider</title>
+  <meta name="description" content="A practical one-pager on writing clear, testable engineering requirements.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
 <body>
-  <div class="container">
-    <header>
-      <div>
-        <a class="badge" href="https://billwear.github.io" title="back to main site">billwear.github.io</a>
-        <h1>How to Write Engineering Requirements</h1>
-        <p class="lede">A quick guide to clarity, organization, and sanity checks in requirements writing.</p>
-      </div>
-      <div class="small">Updated 2025-09-23</div>
+  <div class="wrap">
+
+    <header class="sec">
+      <p><a href="/">← back to billwear</a></p>
+      <h1>How to write engineering requirements</h1>
+      <p class="lede">A quick guide to clarity, organization, and sanity checks.</p>
+      <hr>
     </header>
 
-    <main class="card">
-      <h2>The language of requirements</h2>
-      <ul>
-        <li><strong>shall</strong> → binding, testable, mandatory.<br>
-        Example: <em>The system <strong>shall</strong> encrypt all stored passwords using bcrypt.</em></li>
-        <li><strong>should</strong> → desirable but not mandatory.<br>
-        Example: <em>The API <strong>should</strong> respond within 200&nbsp;ms under normal load.</em></li>
-        <li><strong>will</strong> → statement of fact or intent, not a requirement.<br>
-        Example: <em>Data <strong>will</strong> be archived for seven years under company policy.</em></li>
-      </ul>
+    <main>
+      <section class="sec">
+        <h2>The language of requirements</h2>
+        <div class="card">
+          <ul>
+            <li><strong>shall</strong> — binding, testable, mandatory.<br>
+              Example: <em>The system <strong>shall</strong> encrypt all stored passwords using bcrypt.</em></li>
+            <li><strong>should</strong> — desirable but not mandatory.<br>
+              Example: <em>The API <strong>should</strong> respond within 200&nbsp;ms under normal load.</em></li>
+            <li><strong>will</strong> — statement of fact or intent, not a requirement.<br>
+              Example: <em>Data <strong>will</strong> be archived for seven years under company policy.</em></li>
+          </ul>
+        </div>
+      </section>
 
-      <h2>How to organize requirements</h2>
-      <ol>
-        <li><strong>Hierarchy matters:</strong> start with system-level requirements, then decompose into subsystem and component requirements.</li>
-        <li><strong>Unique IDs:</strong> number everything (e.g., REQ‑1.2.3). Don’t delete IDs; mark obsolete instead.</li>
-        <li><strong>Atomic statements:</strong> one thought per requirement. Avoid “and/or.”</li>
-        <li><strong>Traceability:</strong> link each requirement to its source (stakeholder, regulation, standard). Map downward to design and test cases.</li>
-        <li><strong>Verification focus:</strong> every <em>shall</em> must be verifiable by test, analysis, inspection, or demonstration.</li>
-      </ol>
+      <section class="sec">
+        <h2>How to organize requirements</h2>
+        <div class="card">
+          <ol>
+            <li><strong>Hierarchy matters:</strong> start with system-level requirements, then decompose into subsystem and component requirements.</li>
+            <li><strong>Unique IDs:</strong> number everything (e.g., REQ-1.2.3). Don’t delete IDs; mark obsolete instead.</li>
+            <li><strong>Atomic statements:</strong> one thought per requirement. Avoid “and/or.”</li>
+            <li><strong>Traceability:</strong> link each requirement to its source (stakeholder, regulation, standard). Map downward to design and test cases.</li>
+            <li><strong>Verification focus:</strong> every <em>shall</em> must be verifiable by test, analysis, inspection, or demonstration.</li>
+          </ol>
+        </div>
+      </section>
 
-      <h2>Examples</h2>
-      <pre class="code">
-REQ-1.1: The device shall operate continuously for 8 hours on battery power. [Test]
+      <section class="sec">
+        <h2>Examples</h2>
+        <div class="card">
+          <pre><code>REQ-1.1: The device shall operate continuously for 8 hours on battery power. [Test]
 REQ-1.2: The user interface should support dark mode. [Inspection]
-REQ-1.3: The product will be manufactured in Austin, TX. [Context only]
-      </pre>
+REQ-1.3: The product will be manufactured in Austin, TX. [Context only]</code></pre>
+        </div>
+      </section>
 
-      <h2>Checklist before you publish</h2>
-      <ul>
-        <li>Each <em>shall</em> has a clear verification method.</li>
-        <li>No requirement mixes multiple ideas.</li>
-        <li>Numbering and trace links are consistent.</li>
-        <li>Stakeholders can understand it without a decoder ring.</li>
-      </ul>
-
-      <p class="lede">Good requirements are boring to read, but delightful to build and test against.</p>
+      <section class="sec">
+        <h2>Checklist before you publish</h2>
+        <div class="card">
+          <ul>
+            <li>Each <em>shall</em> has a clear verification method.</li>
+            <li>No requirement mixes multiple ideas.</li>
+            <li>Numbering and trace links are consistent.</li>
+            <li>Stakeholders can understand it without a decoder ring.</li>
+          </ul>
+          <p class="lede">Good requirements are boring to read, but delightful to build and test against.</p>
+        </div>
+      </section>
     </main>
 
-    <footer>
+    <footer class="sec">
       <hr>
-      <div>CC BY‑NC 2025 stormrider</div>
+      <p>CC BY-NC 2025 · stormrider</p>
     </footer>
+
   </div>
 </body>
 </html>
