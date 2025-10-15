@@ -44,6 +44,31 @@
   hr{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.15),transparent);}
   body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 </style>
+<style>
+  :root{
+    --accent:#7a4f00;   /* warm amber-brown, slow-burn vibe */
+    --accent-ink:#0f0f0f;
+  }
+
+  /* readable, zero-download system font stack */
+  body{
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+                 Roboto, "Helvetica Neue", Arial, "Noto Sans", Ubuntu, Cantarell, sans-serif;
+    color: var(--accent-ink);
+    font-size: 17px; line-height: 1.6;
+  }
+
+  /* title scales nicely across devices */
+  h1{ font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem); margin:.4rem 0 1rem; }
+  h2{ font-size: clamp(1.3rem, 1.2vw + .9rem, 2rem); margin:1.6rem 0 .6rem; }
+
+  /* links: subtle brand + cleaner underline */
+  a{ color: var(--accent); text-decoration-thickness:.08em; text-underline-offset:.16em; }
+  a:hover{ text-decoration-thickness:.12em; }
+
+  /* cards: gentler corners for cohesion */
+  .card{ border-radius: .75rem; }
+</style>
 </head>
 <body>
   <a href="https://billwear.github.io">billwear</a>
