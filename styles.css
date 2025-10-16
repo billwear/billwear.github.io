@@ -31,7 +31,7 @@
   --muted:      #5A514A;  /* ledes / meta */
 
   /* brand mark — set this to your logo asset */
-  --logo-url: url("/logo-coffee.pbg");
+  --logo-url: url("/logo-coffee.png");
   --logo-bg:  #FFF8F0;           /* small tile background under the logo */
   --logo-size: 46px;             /* base logo box size */
   --logo-pad-top: 68px;          /* extra top room for first row content */
