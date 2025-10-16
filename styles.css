@@ -78,3 +78,17 @@ pre {
     word-break: break-word;
   }
 }
+.hero {
+  display: block;
+  max-width: 420px;   /* was 480 */
+  width: 90%;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 18px rgba(0,0,0,.3);
+}
+
+@media (min-width: 1400px) {
+  .hero { max-width: 480px; } /* gentle upscale on very wide screens */
+}
