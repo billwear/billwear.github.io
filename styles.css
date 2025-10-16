@@ -1,110 +1,183 @@
-/* ========================================================================
-   billwear.github.io — Light Roast (coffee with cream)
-   - Central column uses a faint white veil (better contrast)
-   - Espresso headings (Fraunces), optional hero (Kalam)
-   - Porcelain cards for contrast
-   ===================================================================== */
+/* =========================================================================
+   billwear.github.io — Brand Kit Theme + Corner Logo
+   Palette: Soft Coffee-Cream, Deep Mocha, Amber, Orange-Gold, Sienna
+   Type:    Playfair Display (titles), Lora (subheads), Source Sans (body),
+            Crimson Text Italic (quotes/callouts)
+   Corner logo: CSS-only (body::before). Optional clickable .brand included.
+   ========================================================================= */
 
-/* === Type imports === */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Kalam:wght@700&display=swap');
+/* --- Type imports --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lora:wght@400;600&family=Source+Sans+3:wght@400;600;700&family=Crimson+Text:ital,wght@1,400;1,600&display=swap');
 
-/* === Tokens === */
+/* --- Tokens --- */
 :root{
   /* layout */
   --wrap: 68rem;
   --wrap-xl: 76rem;
 
-  /* coffee palette */
-  --cream-1: #f3e6d6;   /* coffee + plenty of cream (base) */
-  --cream-2: #e2d5c5;   /* slightly deeper swirl */
-  --cream-3: #d1c4b4;   /* warm lowlight */
+  /* brand palette (from sheet) */
+  --cream:      #EADFCC;  /* Soft Coffee-Cream background */
+  --mocha:      #3A2416;  /* Deep Mocha (headings ink) */
+  --amber:      #F56423;  /* Amber (links / CTAs) */
+  --ogold:      #E97425;  /* Orange-Gold (hover / accents) */
+  --sienna:     #A54822;  /* Sienna (active / strong hover) */
 
-  --porcelain: #fffdfa; /* card background */
-  --line: rgba(66,45,30,.14); /* subtle espresso line */
+  --porcelain:  #FFFCF8;  /* card base */
+  --line:       rgba(58,36,22,.14); /* subtle mocha line */
 
-  /* ink + links */
-  --ink:        #1b120d;  /* espresso text */
-  --ink-soft:   #2f1d12;  /* headings (slightly darker for extra snap) */
-  --link:       #7a4f00;  /* caramel */
-  --link-hover: #5c3a00;  /* dark caramel */
+  /* text */
+  --ink:        #1E1611;  /* body text */
+  --ink-soft:   #2E1C13;  /* section headings */
+  --muted:      #5A514A;  /* ledes / meta */
+
+  /* brand mark — set this to your logo asset */
+  --logo-url: url("/logo-coffee.svg");
+  --logo-bg:  #FFF8F0;           /* small tile background under the logo */
+  --logo-size: 46px;             /* base logo box size */
+  --logo-pad-top: 68px;          /* extra top room for first row content */
 }
 
-/* === Base === */
-html{ scroll-behavior:smooth; }
+/* --- Base --- */
+html{ scroll-behavior:smooth; color-scheme: light; }
 *{ box-sizing:border-box; }
 
 body{
   margin:0;
   color:var(--ink);
-  font: 17px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font: 17px/1.65 "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 
-  /* Coffee-with-cream background (gentle, no glare) + faint vignette */
+  /* Soft coffee-cream with a whisper of vignette */
   background:
     radial-gradient(1100px 700px at 12% -8%, rgba(0,0,0,.03), transparent 60%),
-    linear-gradient(165deg, var(--cream-1) 0%, var(--cream-2) 55%, var(--cream-3) 100%);
+    linear-gradient(165deg, var(--cream) 0%, #E5D6C1 55%, #DEC9B1 100%);
 }
 
 a{
-  color:var(--link);
-  text-decoration-thickness:.1em;
+  color:var(--amber);
+  text-decoration-thickness:.095em;
   text-underline-offset:.16em;
 }
-a:hover{
-  color:var(--link-hover);
-  text-decoration-thickness:.12em;
-}
+a:hover{ color:var(--sienna); text-decoration-thickness:.12em; }
+a:active{ color:var(--ogold); }
 
 hr{
   border:0; height:1px;
   background:linear-gradient(90deg,transparent,rgba(0,0,0,.16),transparent);
 }
 
-/* === Central column (subtle white veil for readability) === */
+/* --- Central column --- */
 .wrap{
   max-width:var(--wrap);
   margin:0 auto;
-  padding:0 1.25rem;
-
-  /* A hair of white over the coffee background = higher contrast without a “white box” look */
-  background: linear-gradient(0deg, rgba(255,255,255,.60), rgba(255,255,255,.60));
+  padding: calc(.5rem + var(--logo-pad-top)) 1.25rem 0; /* breathing room below logo */
+  background: linear-gradient(0deg, rgba(255,255,255,.55), rgba(255,255,255,.55));
   border-radius:.75rem;
-  box-shadow: 0 0 0 1px rgba(66,45,30,.06);
+  box-shadow: 0 0 0 1px rgba(58,36,22,.06);
 }
 @media (min-width:1200px){
   .wrap{ max-width:var(--wrap-xl); }
 }
 
-/* === Typography === */
-/* Espresso headings (Fraunces) */
+/* --- Corner brand mark (CSS-only) --- */
+/* Visible on every page, doesn’t require HTML edits */
+body::before{
+  content:"";
+  position: fixed;
+  top: 14px; left: 14px;
+  width: var(--logo-size); height: var(--logo-size);
+  background:
+    var(--logo-url) center/70% no-repeat,
+    linear-gradient(180deg, var(--logo-bg), var(--logo-bg));
+  border-radius: 12px;
+  box-shadow:
+    0 6px 20px rgba(58,36,22,.12),
+    0 0 0 1px rgba(58,36,22,.08) inset;
+  z-index: 1000;
+}
+
+/* Smaller on compact screens */
+@media (max-width: 520px){
+  :root{ --logo-size: 40px; --logo-pad-top: 60px; }
+  body::before{ top: 10px; left: 10px; }
+}
+
+/* Optional: hide logo when printing */
+@media print{
+  body::before{ display:none !important; }
+}
+
+/* --- Optional clickable home link (1 line of HTML) ---
+   Add: <a class="brand" href="/" aria-label="Home"></a>
+   (You can ignore this if you’re happy with the CSS-only mark above.)
+*/
+.brand{
+  position: fixed;
+  inset: 14px auto auto 14px;
+  width: var(--logo-size); height: var(--logo-size);
+  background:
+    var(--logo-url) center/70% no-repeat,
+    linear-gradient(180deg, var(--logo-bg), var(--logo-bg));
+  border-radius: 12px;
+  box-shadow:
+    0 6px 20px rgba(58,36,22,.12),
+    0 0 0 1px rgba(58,36,22,.08) inset;
+  z-index:1001;
+}
+.brand:hover{ filter: saturate(1.05) brightness(1.02); }
+@media (max-width:520px){
+  .brand{ inset: 10px auto auto 10px; }
+}
+
+/* --- Typography --- */
+/* Page/section headings — Playfair */
 h1, h2, h3{
-  font-family:"Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  font-family: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
   color: var(--ink-soft);
   line-height: 1.15;
-  letter-spacing: .1px;        /* micro-polish */
-  margin: 1.2rem 0 .6rem;
+  letter-spacing: .2px;
+  margin: 1.15rem 0 .55rem;
 }
-h1{ font-weight:800; font-size: clamp(1.8rem, 2.1vw + 1rem, 2.5rem); }
+h1{ font-weight:800; font-size: clamp(1.85rem, 2.2vw + 1rem, 2.6rem); }
 h2{ font-weight:700; font-size: clamp(1.28rem, 1.2vw + 1rem, 2rem); }
 h3{ font-weight:700; font-size: clamp(1.06rem, .9vw + .9rem, 1.35rem); }
 
-/* Optional hero line: add class="hero-title" to any heading you want in Kalam */
+/* Subheads/lede — Lora */
+.subhead,
+.lede{
+  font-family: "Lora", ui-serif, Georgia, serif;
+  color: var(--muted);
+}
+.lede{ font-size: 1.02rem; }
+
+/* Hero title (optional, bigger Playfair) */
 .hero-title{
-  font-family:"Kalam", ui-sans-serif, system-ui;
-  font-weight:700;
-  color: var(--ink-soft);
-  font-size: clamp(1.9rem, 2.6vw + 1rem, 3.1rem);
+  font-family:"Playfair Display", ui-serif;
+  font-weight:800;
+  color:var(--mocha);
+  font-size: clamp(2.1rem, 2.6vw + 1rem, 3.1rem);
   margin:.75rem 0 .25rem;
 }
 
-/* Body copy (outside cards) — darker for pop;
-   Card copy stays gentler (set below) */
-p, li{ color:#0f172a; margin-top:0; }   /* slate-900-ish */
-.lede{ color:#475569; }
+/* Quotes / callouts — Crimson Text Italic */
+blockquote, .quote{
+  font-family: "Crimson Text", Georgia, serif;
+  font-style: italic;
+  color: var(--mocha);
+  margin: 1rem 0;
+  padding: .6rem .9rem;
+  background: rgba(255,255,255,.6);
+  border-left: 4px solid var(--amber);
+  border-radius:.25rem;
+}
 
-h2, h3{ display:flex; align-items:center; gap:.35rem; } /* emoji/icons stay calm */
+/* Body copy */
+p, li{ color:#0f172a; margin-top:0; }
 
-/* === Sections, grids, cards === */
+/* Calm emoji/icons inside headings */
+h2, h3{ display:flex; align-items:center; gap:.35rem; }
+
+/* --- Sections, grids, cards --- */
 .sec{ margin:2rem 0 1rem; }
 
 .grid{
@@ -113,39 +186,76 @@ h2, h3{ display:flex; align-items:center; gap:.35rem; } /* emoji/icons stay calm
   gap: 1rem;
 }
 
-/* Porcelain cards for contrast against cream background */
+/* Cards: porcelain cups on cream table */
 .card{
   background: var(--porcelain);
   border: 1px solid var(--line);
   border-radius: .9rem;
   padding: 1rem 1.1rem;
-  box-shadow: 0 8px 22px rgba(66,45,30,.08);
+  box-shadow: 0 8px 22px rgba(58,36,22,.08);
   will-change: transform, box-shadow;
 }
 .card:hover{
   transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(66,45,30,.10);
+  box-shadow: 0 12px 28px rgba(58,36,22,.10);
   transition:.15s ease;
 }
 .card a{ font-weight:700; text-decoration:none; }
 .card a:hover{ text-decoration:underline; }
-
-/* Card body text keeps the softer tone */
 .card p{ margin:.35rem 0 0; color:#334155; font-style:italic; }
 
-/* === Code blocks (width-aware) === */
+/* --- Buttons (brand-y, optional) --- */
+.btn{
+  display:inline-block; padding:.55rem .9rem; border-radius:.55rem;
+  font-weight:600; text-decoration:none; line-height:1;
+  border:1px solid transparent;
+}
+.btn-amber{ background:var(--amber); color:#fff; border-color:transparent; }
+.btn-amber:hover{ background:var(--sienna); }
+.btn-outline{
+  background:transparent; color:var(--amber); border-color:var(--amber);
+}
+.btn-outline:hover{ color:#fff; background:var(--amber); }
+
+/* --- Badges / pills --- */
+.badge{
+  display:inline-block;
+  padding:.18rem .55rem;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:.82rem;
+  color:var(--muted);
+  background: rgba(255,255,255,.6);
+}
+
+/* --- Tables (simple) --- */
+.table{
+  width:100%; border-collapse:collapse; margin: .5rem 0 1rem;
+}
+.table th, .table td{
+  border:1px solid var(--line);
+  padding:.55rem .7rem;
+  vertical-align:top;
+}
+.table th{
+  background:#fff7f0; color:var(--mocha); text-align:left;
+  font-family:"Lora", ui-serif, Georgia, serif;
+}
+
+/* --- Code blocks (width-aware) --- */
 pre{
   max-width:min(80ch,100%);
   overflow-x:auto;
   white-space:pre-wrap;
   word-break:break-word;
   padding:.75rem 1rem;
-  background:#111; color:#eee;
+  background:#0f1420; color:#e9eef7;
   border-radius:.5rem;
+  border:1px solid rgba(0,0,0,.14);
 }
 .card pre{ max-width:100%; }
 
-/* === Images that shouldn’t dominate (diagrams/hero photos) === */
+/* --- Images that shouldn’t dominate --- */
 .hero{
   display:block; width:90%; max-width:420px; height:auto;
   margin:0 auto 1.5rem;
@@ -154,10 +264,7 @@ pre{
 }
 @media (min-width:1400px){ .hero{ max-width:480px; } }
 
-/* === Motion prefs === */
+/* --- Motion prefs --- */
 @media (prefers-reduced-motion: reduce){
   *{ animation:none !important; transition:none !important; }
 }
-
-/* === Force light theme (no dark override) === */
-html{ color-scheme: light; }
