@@ -144,3 +144,6 @@ a:hover{ color:#4b3200; }
 
 /* ==== code stays tidy ==== */
 pre{ max-width:min(80ch,100%); }
+body{
+  background: linear-gradient(160deg,#fafaf7 0%, #f7f4f0 55%, #f3efe9 100%);
+}
