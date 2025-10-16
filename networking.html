@@ -1,188 +1,181 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Intro to Networking · stormrider</title>
-<meta name="description" content="A practical, history‑aware introduction to networking with real troubleshooting steps and modern architectures.">
-<style>
-:root {
-  --bg: #0b0f14;
-  --fg: #e6edf3;
-  --muted: #9fb3c8;
-  --link: #58a6ff;
-  --note: #3b82f6;
-  --why: #10b981;
-  --term: #f59e0b;
-  --warn: #ef4444;
-  --code: #0f1720;
-  --line: #1f2a37;
-}
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; }
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container { max-width: 980px; margin: 0 auto; padding: 24px; }
-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-h1 { margin: 0.2rem 0 0.4rem; }
-h2 { margin-top: 1.4rem; }
-h3 { margin-top: 1.0rem; }
-p.lede { color: var(--muted); }
-footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
-.badge { padding: 2px 8px; border:1px solid #2a4158; border-radius: 999px; color: var(--muted); font-size: 0.8rem; }
-.small { color: var(--muted); font-size: 0.92rem; }
-.callouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 16px 0; }
-.callout { border: 1px solid var(--line); border-left-width: 6px; border-radius: 10px; padding: 12px; background: #0c141c; }
-.callout h3 { margin: 0 0 6px; font-size: 1rem; color: var(--fg); }
-.note { border-left-color: var(--note); }
-.warn { border-left-color: var(--warn); }
-.term { border-left-color: var(--term); }
-.why { border-left-color: var(--why); }
-pre { background: var(--code); border: 1px solid var(--line); border-radius: 10px; padding: 12px; overflow-x: auto; }
-code, kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-hr { border: none; border-top: 1px solid var(--line); margin: 28px 0; }
-ul { padding-left: 1.2rem; }
-.table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; }
-.table th, .table td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: top; }
-.table th { text-align: left; background: #0c141c; }
-kbd { border: 1px solid var(--line); border-radius: 4px; padding: 1px 4px; }
-</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Intro to Networking · stormrider</title>
+  <meta name="description" content="A practical, history-aware introduction to networking with real troubleshooting steps and modern architectures.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
 <body>
-  <div class="container">
-    <header>
-      <div>
-        <a class="badge" href="https://billwear.github.io" title="back to main site">billwear.github.io</a>
-        <h1>Intro to Networking</h1>
-        <p class="lede">From switchboards to spine‑leaf, from ARP to BGP — with field‑ready troubleshooting at every layer.</p>
-      </div>
-      <div class="small">Skimmable sections. Copy‑pasteable commands. No fluff.</div>
-    </header>
-    
-<p>Welcome. I write about networks for a living; this is the friendly version I wish more people had stumbled into early on. If you have fuzzy areas or blind spots, you’re in the right place. We’ll keep jargon minimal, diagrams mental, and the troubleshooting practical.</p>
-<section><h2>How We Got Here</h2>
-<div class="callouts">
-  <div class="callout why">
-    <h3>How we got here (long arc)</h3>
-    <p><strong>1870s–1930s:</strong> Telephony emerges: local exchanges, manual switchboards, then electromechanical step‑by‑step and crossbar switches. The idea: circuits — a dedicated path during a call.</p>
-    <p><strong>1960s–1970s:</strong> Packet switching is proposed (Baran, Davies). ARPANET links UCLA, SRI, Utah, UCSB. Circuits are reliable, but packets are flexible and resilient.</p>
-    <p><strong>1980s:</strong> TCP/IP standardizes across ARPANET (1983). Ethernet becomes the dominant LAN. The OSI model appears (a teaching model), but the pragmatic <em>TCP/IP stack</em> wins deployment.</p>
-    <p><strong>1990s:</strong> NSFNET decommissions; commercial Internet takes over. “NAPs” (Network Access Points) like FIX‑West/East, MAE‑East/West, and CIX facilitate interconnection. <em>Today we call these IXPs</em> (Internet Exchange Points). The web arrives; BGP4 becomes the Internet’s inter‑domain routing glue.</p>
-    <p><strong>2000s–present:</strong> Content delivery networks (CDNs), massive data centers, merchant‑silicon Ethernet switches, and <em>Clos</em> spine‑leaf fabrics replace tall, bespoke hierarchies. Cloud scales by repetition, not snowflakes.</p>
-  </div>
-  <div class="callout term">
-    <h3>Correcting an old myth</h3>
-    <p>There’s no rule that a provider “must connect to three NAPs.” That phrasing came from 1990s interconnect policy and procurement checklists. In practice, networks interconnect at many <strong>IXPs</strong> and private interconnects based on cost, performance, and geography — not a magic number.</p>
-  </div>
-</div>
-</section><section><h2>Modern Network Architecture (Why Clos Took Over)</h2>
-<p>Imagine two hosts: <em>SanDiego</em> and <em>Bangor</em>. Early on you could rent a private line, but one cut and you’re dark. The Internet’s genius was to <em>forward</em> packets hop‑by‑hop until they find a working path. Inside data centers, the most economical way to scale that forwarding is a <strong>Clos (spine‑leaf)</strong> fabric:</p>
-<ul>
-  <li><strong>Leaf/TOR</strong> switches connect servers.</li>
-  <li><strong>Spines</strong> connect leaves. Add more leaves to scale out; add more spines to add bandwidth.</li>
-  <li>Same building blocks, repeated. Snowflake topologies fade; reliability comes from <em>many cheap paths</em> instead of <em>one heroic box</em>.</li>
-</ul>
-<div class="callouts">
-  <div class="callout note">
-    <h3>Merchant silicon + NOS</h3>
-    <p>Modern switches often use Broadcom/Tofino “merchant” ASICs under different brands. A <em>Network Operating System</em> (NOS) provides BGP/OSPF/ISIS, telemetry, and automation hooks. Interop has improved; lock‑in is less absolute than it was.</p>
-  </div>
-</div>
-</section><section><h2>Internet Infrastructure: ASes, BGP, IXPs (and myths)</h2>
-<p>At Internet scale we speak of <em>autonomous systems</em> (ASes) — networks under one admin policy — stitched together with <strong>BGP</strong>. Interconnection happens at:</p>
-<ul>
-  <li><strong>IXPs</strong> (Internet Exchange Points): shared fabrics where many ASes peer.</li>
-  <li><strong>Private interconnects</strong>: direct cross‑connects in a facility.</li>
-  <li><strong>Transit</strong>: you pay an upstream to carry traffic to the rest of the Internet.</li>
-</ul>
-<div class="callouts">
-  <div class="callout term">
-    <h3>Peering vs. transit</h3>
-    <p><strong>Peering</strong> is usually settlement‑free swaps of traffic between networks of roughly equal value; <strong>transit</strong> is paid. CDNs and hyperscalers peer broadly to reduce latency and cost.</p>
-  </div>
-</div>
-</section><section><h2>Layers Without the Hand‑waving (OSI vs. TCP/IP)</h2>
-<p>The OSI 7‑layer model is a teaching aid; the deployed Internet stack is simpler, but OSI gives us a shared vocabulary:</p>
-<table class="table">
-  <thead><tr><th>Layer</th><th>What to know</th><th>Troubleshooting tools</th></tr></thead>
-  <tbody>
-    <tr><td><strong>1 Physical</strong></td><td>Bits on a wire/fiber; power; optics; RF.</td><td><code>ethtool</code>, link LEDs, SFP diagnostics, cable testers; Wi‑Fi analyzers.</td></tr>
-    <tr><td><strong>2 Data Link</strong></td><td>Ethernet, MAC addresses, VLANs, STP.</td><td><code>ip link</code>, <code>brctl</code>/<code>bridge</code>, <code>tcpdump -e</code>, switch MAC tables.</td></tr>
-    <tr><td><strong>3 Network</strong></td><td>IP addressing, routing, ARP/ND.</td><td><code>ip addr</code>, <code>ip route</code>, <code>arp</code>/<code>ip neigh</code>, <code>ping</code>, <code>traceroute</code>/<code>mtr</code>.</td></tr>
-    <tr><td><strong>4 Transport</strong></td><td>TCP/UDP, ports, congestion control, MTU.</td><td><code>ss</code>/<code>netstat</code>, <code>iperf3</code>, <code>tracepath</code>, TCP dumps, <code>ping</code> DF tests.</td></tr>
-    <tr><td><strong>5–7</strong></td><td>Sessions, TLS, HTTP/DNS/SSH, apps.</td><td><code>curl</code>, <code>dig</code>/<code>nslookup</code>, <code>openssl s_client</code>, <code>ssh -v</code>, browser devtools.</td></tr>
-  </tbody>
-</table>
-</section><section><h2>A Practical Toolbelt (CLI &amp; GUI)</h2>
-<div class="callouts">
-  <div class="callout why">
-    <h3>Your everyday toolbelt</h3>
-    <ul>
-      <li><strong>Link & address:</strong> <code>ip link</code>, <code>ip addr</code>, <code>nmcli</code> (NetworkManager), <code>ethtool</code> for speed/duplex.</li>
-      <li><strong>Reachability:</strong> <code>ping</code> (ICMP), <code>traceroute</code>/<code>mtr</code> (path), <code>tracepath</code> (PMTU).</li>
-      <li><strong>Name resolution:</strong> <code>dig</code> (<code>dig +trace</code>, <code>dig @resolver</code>), <code>resolvectl</code>.</li>
-      <li><strong>Ports & sockets:</strong> <code>ss -ltnp</code>, <code>lsof -i</code>, host firewalls (<code>ufw</code>, <code>nft</code>).</li>
-      <li><strong>Traffic capture:</strong> <code>tcpdump</code> (CLI), Wireshark (GUI). Start narrow: host/port/proto.</li>
-      <li><strong>Throughput:</strong> <code>iperf3</code> (end‑to‑end), check duplex and MTU first.</li>
-      <li><strong>HTTP/S:</strong> <code>curl -v</code>, <code>curl --resolve</code> (DNS override), <code>openssl s_client</code> (TLS handshake).</li>
-      <li><strong>Service pokes:</strong> <code>nc</code> (netcat), <code>telnet</code> (legacy), <code>nmap</code> (scan carefully).</li>
-      <li><strong>ARP/ND:</strong> <code>ip neigh</code>, <code>arping</code>, switch CAM tables.</li>
-      <li><strong>BGP look‑glasses:</strong> public LGs, route‑views; <code>whois</code> for ASNs and prefixes.</li>
-    </ul>
-  </div>
-  <div class="callout note">
-    <h3>MTU pain, quick test</h3>
-    <pre><code># find max payload before fragmentation (Linux)
-ping -M do -s 1472 8.8.8.8   # 1472 + 28 = 1500
-# if this fails but -s 1452 works, something en route is at MTU 1472 (PPPoE?)</code></pre>
-  </div>
-</div>
-</section><section><h2>Step‑by‑step Troubleshooting</h2>
-<h3>First principles troubleshooting (outside‑in)</h3>
-<ol>
-  <li><strong>Power & link:</strong> Is the NIC up? LEDs? <code>ip link</code> shows <em>state UP</em>; <code>ethtool</code> shows speed/duplex.</li>
-  <li><strong>Addressing:</strong> Do you have an IP, mask, gateway? <code>ip addr</code>, <code>ip route</code>.</li>
-  <li><strong>Local reach:</strong> <code>ping</code> your gateway; if ARP fails, check switch port/VLAN, <code>ip neigh</code>, <code>tcpdump -e arp</code>.</li>
-  <li><strong>DNS:</strong> <code>dig example.com</code>, then <code>dig @resolver example.com</code>, then <code>dig +trace</code>.</li>
-  <li><strong>Path:</strong> <code>traceroute</code>/<code>mtr</code> to the target and to a known good (e.g., 1.1.1.1). Compare.</li>
-  <li><strong>Ports:</strong> Is the service listening? <code>ss -ltnp</code> on the server; ACL/firewall rules; cloud SGs.</li>
-  <li><strong>Throughput:</strong> <code>iperf3</code> client↔server. If slow, check duplex, MTU, CPU offload, and queue drops.</li>
-  <li><strong>Capture, then hypothesize:</strong> <code>tcpdump</code> with a narrow filter. Confirm, don’t assume.</li>
-</ol>
+  <div class="wrap">
 
-<h3>Wi‑Fi specifics</h3>
-<ul>
-  <li>Survey channels (use your AP’s survey or a scanner). Avoid overlapping 2.4 GHz; prefer 5 GHz/6 GHz when possible.</li>
-  <li>RSSI/SNR matter more than “bars.” Move, re‑orient, or add APs; don’t just boost power.</li>
-  <li>WPA2/WPA3 settings and band‑steering can affect IoT devices — test fast roaming cautiously.</li>
-</ul>
-</section><section><h2>Two Sticky Topics: ARP and DNS</h2>
-<h3>ARP in plain English</h3>
-<p><strong>ARP</strong> maps IP→MAC on IPv4 LANs. When host A wants to send to host B on the same subnet, it broadcasts “Who has 10.0.0.42?” and B replies “10.0.0.42 is at 00:11:22:33:44:55.” Routers do ARP for gateways. Common failure: wrong VLAN or stale cache.</p>
-<pre><code># watch ARP while you try to reach the gateway
+    <header class="sec">
+      <p><a href="/">← back to billwear</a></p>
+      <h1>Intro to networking</h1>
+      <p class="lede">From switchboards to spine-leaf, from ARP to BGP — with field-ready troubleshooting at every layer.</p>
+      <hr>
+      <p class="small">Skimmable sections. Copy-pasteable commands. No fluff.</p>
+    </header>
+
+    <main>
+      <section class="sec">
+        <p>Welcome. I write about networks for a living; this is the friendly version I wish more people had stumbled into early on. If you have fuzzy areas or blind spots, you’re in the right place. We’ll keep jargon minimal, diagrams mental, and the troubleshooting practical.</p>
+      </section>
+
+      <section class="sec">
+        <h2>How we got here</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>The long arc</h3>
+            <p><strong>1870s–1930s:</strong> Telephony emerges: local exchanges, manual switchboards, then electromechanical step-by-step and crossbar switches. The idea: circuits — a dedicated path during a call.</p>
+            <p><strong>1960s–1970s:</strong> Packet switching is proposed (Baran, Davies). ARPANET links UCLA, SRI, Utah, UCSB. Circuits are reliable, but packets are flexible and resilient.</p>
+            <p><strong>1980s:</strong> TCP/IP standardizes across ARPANET (1983). Ethernet becomes the dominant LAN. The OSI model appears (a teaching model), but the pragmatic <em>TCP/IP stack</em> wins deployment.</p>
+            <p><strong>1990s:</strong> NSFNET decommissions; commercial Internet takes over. “NAPs” (Network Access Points) like FIX-West/East, MAE-East/West, and CIX facilitate interconnection. <em>Today we call these IXPs</em> (Internet Exchange Points). The web arrives; BGP4 becomes the Internet’s inter-domain routing glue.</p>
+            <p><strong>2000s–present:</strong> CDNs, massive data centers, merchant-silicon switches, and <em>Clos</em> spine-leaf fabrics replace tall, bespoke hierarchies. Cloud scales by repetition, not snowflakes.</p>
+          </div>
+          <div class="card">
+            <h3>Correcting an old myth</h3>
+            <p>There’s no rule that a provider “must connect to three NAPs.” That phrasing came from 1990s procurement checklists. In practice, networks interconnect at many <strong>IXPs</strong> and private interconnects based on cost, performance, and geography — not a magic number.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>Modern network architecture</h2>
+        <p>Imagine two hosts: <em>SanDiego</em> and <em>Bangor</em>. Early on you could rent a private line, but one cut and you’re dark. The Internet’s genius was to <em>forward</em> packets hop-by-hop until they find a working path. Inside data centers, the most economical way to scale that forwarding is a <strong>Clos (spine-leaf)</strong> fabric:</p>
+        <ul>
+          <li><strong>Leaf/TOR</strong> switches connect servers.</li>
+          <li><strong>Spines</strong> connect leaves. Add leaves to scale out; spines to add bandwidth.</li>
+          <li>Same building blocks, repeated. Reliability comes from <em>many cheap paths</em> instead of <em>one heroic box</em>.</li>
+        </ul>
+        <div class="grid">
+          <div class="card">
+            <h3>Merchant silicon + NOS</h3>
+            <p>Modern switches often use Broadcom or Tofino “merchant” ASICs under different brands. A <em>Network Operating System</em> (NOS) provides BGP/OSPF/ISIS, telemetry, and automation hooks. Interop has improved; lock-in is less absolute than it was.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>Internet infrastructure: ASes, BGP, IXPs</h2>
+        <p>At Internet scale we speak of <em>autonomous systems</em> (ASes) — networks under one admin policy — stitched together with <strong>BGP</strong>. Interconnection happens at:</p>
+        <ul>
+          <li><strong>IXPs</strong>: shared fabrics where many ASes peer.</li>
+          <li><strong>Private interconnects</strong>: direct cross-connects in a facility.</li>
+          <li><strong>Transit</strong>: you pay an upstream to carry traffic to the rest of the Internet.</li>
+        </ul>
+        <div class="grid">
+          <div class="card">
+            <h3>Peering vs. transit</h3>
+            <p><strong>Peering</strong> is usually settlement-free swaps of traffic between networks of roughly equal value; <strong>transit</strong> is paid. CDNs and hyperscalers peer broadly to reduce latency and cost.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>Layers without the hand-waving</h2>
+        <p>The OSI 7-layer model is a teaching aid; the deployed Internet stack is simpler, but OSI gives us a shared vocabulary:</p>
+        <div class="card scroll-x">
+          <table>
+            <thead><tr><th>Layer</th><th>What to know</th><th>Troubleshooting tools</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1 Physical</strong></td><td>Bits on a wire/fiber; power; optics; RF.</td><td><code>ethtool</code>, link LEDs, cable testers, Wi-Fi analyzers.</td></tr>
+              <tr><td><strong>2 Data Link</strong></td><td>Ethernet, MACs, VLANs, STP.</td><td><code>ip link</code>, <code>bridge</code>, <code>tcpdump -e</code>.</td></tr>
+              <tr><td><strong>3 Network</strong></td><td>IP addressing, routing, ARP/ND.</td><td><code>ip addr</code>, <code>ip route</code>, <code>ping</code>, <code>traceroute</code>.</td></tr>
+              <tr><td><strong>4 Transport</strong></td><td>TCP/UDP, ports, MTU, congestion.</td><td><code>ss</code>, <code>iperf3</code>, <code>tracepath</code>.</td></tr>
+              <tr><td><strong>5–7</strong></td><td>Sessions, TLS, HTTP/DNS/SSH, apps.</td><td><code>curl</code>, <code>dig</code>, <code>openssl s_client</code>, browser tools.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>A practical toolbelt</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Your everyday tools</h3>
+            <ul>
+              <li><strong>Link & address:</strong> <code>ip link</code>, <code>nmcli</code>, <code>ethtool</code>.</li>
+              <li><strong>Reachability:</strong> <code>ping</code>, <code>traceroute</code>, <code>mtr</code>.</li>
+              <li><strong>Name resolution:</strong> <code>dig</code>, <code>resolvectl</code>.</li>
+              <li><strong>Ports & sockets:</strong> <code>ss -ltnp</code>, <code>lsof -i</code>.</li>
+              <li><strong>Traffic capture:</strong> <code>tcpdump</code>, Wireshark.</li>
+              <li><strong>Throughput:</strong> <code>iperf3</code>, check duplex and MTU.</li>
+              <li><strong>HTTP/S:</strong> <code>curl -v</code>, <code>openssl s_client</code>.</li>
+              <li><strong>Service pokes:</strong> <code>nc</code>, <code>nmap</code>.</li>
+              <li><strong>ARP/ND:</strong> <code>ip neigh</code>, <code>arping</code>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>MTU pain, quick test</h3>
+            <pre><code># find max payload before fragmentation
+ping -M do -s 1472 8.8.8.8   # 1472 + 28 = 1500
+# if fails, lower until success; path MTU found</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>Step-by-step troubleshooting</h2>
+        <ol>
+          <li><strong>Power & link:</strong> check LEDs, <code>ip link</code>, <code>ethtool</code>.</li>
+          <li><strong>Addressing:</strong> <code>ip addr</code>, <code>ip route</code>.</li>
+          <li><strong>Local reach:</strong> <code>ping</code> gateway; check VLANs, <code>ip neigh</code>, <code>tcpdump -e arp</code>.</li>
+          <li><strong>DNS:</strong> <code>dig</code>, <code>dig +trace</code>.</li>
+          <li><strong>Path:</strong> <code>traceroute</code>, <code>mtr</code>.</li>
+          <li><strong>Ports:</strong> <code>ss -ltnp</code>, firewall/SG rules.</li>
+          <li><strong>Throughput:</strong> <code>iperf3</code>, check duplex, MTU, CPU.</li>
+          <li><strong>Capture, then hypothesize:</strong> <code>tcpdump</code> narrow filters.</li>
+        </ol>
+
+        <h3>Wi-Fi specifics</h3>
+        <ul>
+          <li>Survey channels; avoid overlapping 2.4 GHz.</li>
+          <li>RSSI/SNR > “bars.” Move or add APs if needed.</li>
+          <li>Test WPA2/WPA3 fast-roam carefully.</li>
+        </ul>
+      </section>
+
+      <section class="sec">
+        <h2>Two sticky topics: ARP and DNS</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>ARP in plain English</h3>
+            <p><strong>ARP</strong> maps IP→MAC on IPv4 LANs. When host A wants to reach B, it broadcasts “Who has 10.0.0.42?” and B replies. Common failure: wrong VLAN or stale cache.</p>
+            <pre><code># watch ARP while you ping the gateway
 sudo tcpdump -n -e arp or icmp
 ip neigh show
 sudo arping -I eth0 10.0.0.1</code></pre>
-
-<h3>DNS in plain English</h3>
-<p>Names resolve to IPs through recursive resolvers. Separate “can I reach the resolver?” from “can the resolver answer for this name?”</p>
-<pre><code># does your resolver respond?
+          </div>
+          <div class="card">
+            <h3>DNS in plain English</h3>
+            <p>Names resolve to IPs through recursive resolvers. Separate “can I reach the resolver?” from “can the resolver answer?”</p>
+            <pre><code># does your resolver respond?
 dig @192.0.2.53 example.com
 # follow the chain yourself
 dig +trace example.com
-# HTTPS reachability with DNS override (SNI/Host)
+# HTTPS reachability with DNS override
 curl -sv --resolve example.com:443:203.0.113.10 https://example.com/</code></pre>
-</section>
-<div class="callouts">
-  <div class="callout why">
-    <h3>Keep it simple</h3>
-    <p>The Internet grew not because every path was optimal, but because any one path being broken didn’t matter. Prefer simple, repeated designs; let redundancy and good telemetry carry the weight.</p>
-  </div>
-</div>
-<p class="small">Last updated 2025‑09‑22.</p>
+          </div>
+        </div>
+      </section>
 
-    <footer>
+      <section class="sec">
+        <div class="card">
+          <h3>Keep it simple</h3>
+          <p>The Internet grew not because every path was optimal, but because any one path being broken didn’t matter. Prefer simple, repeated designs; let redundancy and good telemetry carry the weight.</p>
+        </div>
+        <p class="small">Last updated 2025-09-22.</p>
+      </section>
+    </main>
+
+    <footer class="sec">
       <hr>
-      <div>CC BY‑NC 2025 stormrider · corrections welcome</div>
+      <p>CC BY-NC 2025 · stormrider · corrections welcome</p>
     </footer>
+
   </div>
 </body>
 </html>
