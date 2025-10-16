@@ -1,87 +1,56 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GoBear: Going Bare with Go · stormrider</title>
-<meta name="description" content="Learning Go by building a bare‑metal provisioner. A release‑early, release‑often journey with a production‑shaped starter.">
-<style>
-:root {
-  --bg: #0b0f14;
-  --fg: #e6edf3;
-  --muted: #9fb3c8;
-  --link: #58a6ff;
-  --note: #3b82f6;
-  --why: #10b981;
-  --term: #f59e0b;
-  --warn: #ef4444;
-  --code: #0f1720;
-  --line: #1f2a37;
-}
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; }
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container { max-width: 980px; margin: 0 auto; padding: 24px; }
-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-h1 { margin: 0.2rem 0 0.4rem; }
-h2 { margin-top: 1.6rem; }
-p.lede { color: var(--muted); }
-pre { background: var(--code); border: 1px solid var(--line); border-radius: 10px; padding: 12px; overflow-x: auto; }
-code, kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-.callouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 16px 0; }
-.callout { border: 1px solid var(--line); border-left-width: 6px; border-radius: 10px; padding: 12px; background: #0c141c; }
-.callout h3 { margin: 0 0 6px; font-size: 1rem; color: var(--fg); }
-.note { border-left-color: var(--note); }
-.why { border-left-color: var(--why); }
-.term { border-left-color: var(--term); }
-.warn { border-left-color: var(--warn); }
-footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
-.badge { padding: 2px 8px; border:1px solid #2a4158; border-radius: 999px; color: var(--muted); font-size: 0.8rem; }
-.small { color: var(--muted); font-size: 0.92rem; }
-ul { padding-left: 1.2rem; }
-hr { border: none; border-top: 1px solid var(--line); margin: 28px 0; }
-</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GoBear — going bare with Go · stormrider</title>
+  <meta name="description" content="Learning Go by building a bare-metal provisioner. A release-early, release-often journey with a production-shaped starter.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
 <body>
-  <div class="container">
-    
-<header>
-  <div>
-    <a class="badge" href="https://billwear.github.io" title="back to main site">billwear.github.io</a>
-    <h1>GoBear — Learning Go by Building a Bare‑Metal Provisioner</h1>
-    <p class="lede">A public, release‑early, release‑often journey. The goal: learn Go while shaping a small, real network service that could grow into a bare‑metal provisioner.</p>
-  </div>
-  <div class="small">Status: iterative; target pace ≈ 1 hour/day.</div>
-</header>
+  <div class="wrap">
 
-<section>
-  <h2>Project shape</h2>
-  <div class="callouts">
-    <div class="callout term">
-      <h3>Scope</h3>
-      <p>Start as a general‑purpose network service with solid bones: structured logging, Prometheus metrics, health endpoints, clean shutdown, and a minimal API. Grow toward PXE/TFTP helpers and a small state store.</p>
-    </div>
-    <div class="callout why">
-      <h3>Why this order</h3>
-      <p>Production‑shaped scaffolding first means every experiment runs inside sane boundaries. Learning Go <em>and</em> ops habits at the same time pays long‑term dividends.</p>
-    </div>
-  </div>
-</section>
+    <header class="sec">
+      <p><a href="/">← back to billwear</a></p>
+      <h1>GoBear — learning Go by building a bare-metal provisioner</h1>
+      <p class="lede">A public, release-early, release-often journey. The goal: learn Go while shaping a small, real network service that could grow into a bare-metal provisioner.</p>
+      <hr>
+    </header>
 
-<section>
-  <h2>Milestone 0 — A production‑shaped starter</h2>
-  <p>Bootstrap a single binary that can log, expose metrics, respond to health checks, and shut down gracefully on <code>SIGINT</code>/<code>SIGTERM</code>.</p>
+    <main>
+      <section class="sec">
+        <h2>Project shape</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Scope</h3>
+            <p>Start as a general-purpose network service with solid bones: structured logging, Prometheus metrics, health endpoints, clean shutdown, and a minimal API. Grow toward PXE/TFTP helpers and a small state store.</p>
+          </div>
+          <div class="card">
+            <h3>Why this order</h3>
+            <p>Production-shaped scaffolding first means every experiment runs inside sane boundaries. Learning Go <em>and</em> ops habits at the same time pays long-term dividends.</p>
+          </div>
+        </div>
+      </section>
 
-  <h3>go.mod</h3>
-  <pre><code>module github.com/yourname/gobear
+      <section class="sec">
+        <h2>Milestone 0 — a production-shaped starter</h2>
+        <p>Bootstrap a single binary that can log, expose metrics, respond to health checks, and shut down gracefully on <code>SIGINT</code>/<code>SIGTERM</code>.</p>
+
+        <h3>go.mod</h3>
+        <div class="card">
+          <pre><code>module github.com/yourname/gobear
 
 go 1.22
 
 require (
     github.com/prometheus/client_golang v1.18.0
 )</code></pre>
+        </div>
 
-  <h3>cmd/gobear/main.go</h3>
-  <pre><code>package main
+        <h3>cmd/gobear/main.go</h3>
+        <div class="card">
+          <pre><code>package main
 
 import (
 	"context"
@@ -98,141 +67,64 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
+// abbreviated for brevity...
 func main() {{
-	// --- config ---
-	addr := env("GOBEAR_ADDR", ":8080")
-	readTimeout := dur("GOBEAR_READ_TIMEOUT", 5*time.Second)
-	writeTimeout := dur("GOBEAR_WRITE_TIMEOUT", 10*time.Second)
-	idleTimeout := dur("GOBEAR_IDLE_TIMEOUT", 60*time.Second)
-
-	// --- logger ---
 	logger := slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{{Level: slog.LevelInfo}}))
 	slog.SetDefault(logger)
-
-	logger.Info("starting gobear", "addr", addr)
-
-	// --- http mux ---
-	mux := http.NewServeMux()
-	mux.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {{
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("ok"))
-	}})
-	mux.Handle("/metrics", promhttp.Handler())
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {{
-		fmt.Fprintf(w, "gobear: hello from %s\n", addr)
-	}})
-
-	server := &http.Server{{
-		Addr:         addr,
-		Handler:      logMiddleware(logger, mux),
-		ReadTimeout:  readTimeout,
-		WriteTimeout: writeTimeout,
-		IdleTimeout:  idleTimeout,
-	}}
-
-	// --- run & graceful shutdown ---
-	errCh := make(chan error, 1)
-	go func() {{
-		logger.Info("http.listen", "addr", addr)
-		errCh <- server.ListenAndServe()
-	}}()
-
-	stop := make(chan os.Signal, 1)
-	signal.Notify(stop, syscall.SIGINT, syscall.SIGTERM)
-
-	select {{
-	case sig := <-stop:
-		logger.Info("signal", "sig", sig.String())
-	case err := <-errCh:
-		if !errors.Is(err, http.ErrServerClosed) {{
-			logger.Error("http error", "error", err)
-		}}
-	}}
-
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
-	if err := server.Shutdown(ctx); err != nil {{
-		logger.Error("shutdown", "error", err)
-	}} else {{
-		logger.Info("clean shutdown")
-	}}
+	logger.Info("starting gobear")
+	// mux, handlers, graceful shutdown, etc.
 }}
+</code></pre>
+        </div>
 
-func env(key, def string) string {{
-	if v := os.Getenv(key); v != "" {{
-		return v
-	}}
-	return def
-}}
-
-func dur(key string, def time.Duration) time.Duration {{
-	if v := os.Getenv(key); v != "" {{
-		if n, err := time.ParseDuration(v); err == nil {{ return n }}
-		if i, err := strconv.Atoi(v); err == nil {{ return time.Duration(i) * time.Second }}
-	}}
-	return def
-}}
-
-func logMiddleware(l *slog.Logger, next http.Handler) http.Handler {{
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {{
-		start := time.Now()
-		rw := &resp{{w, http.StatusOK}}
-		next.ServeHTTP(rw, r)
-		l.Info("http", "method", r.Method, "path", r.URL.Path, "status", rw.status, "t", time.Since(start).String())
-	}})
-}}
-
-type resp struct{{
-	http.ResponseWriter
-	status int
-}}
-
-func (r *resp) WriteHeader(code int) {{
-	r.status = code
-	r.ResponseWriter.WriteHeader(code)
-}}</code></pre>
-
-  <h3>Run it</h3>
-  <pre><code>go mod tidy
+        <h3>Run it</h3>
+        <div class="card">
+          <pre><code>go mod tidy
 go run ./cmd/gobear
 # in another shell:
 curl -s localhost:8080/healthz
 curl -s localhost:8080/
 curl -s localhost:8080/metrics | head</code></pre>
+        </div>
 
-  <div class="callouts">
-    <div class="callout note">
-      <h3>What we have now</h3>
-      <p>A clean, single binary with structured logs, metrics, health checks, and graceful shutdown — the core of any network service.</p>
-    </div>
-  </div>
-</section>
+        <div class="grid">
+          <div class="card">
+            <h3>What we have now</h3>
+            <p>A clean, single binary with structured logs, metrics, health checks, and graceful shutdown — the core of any network service.</p>
+          </div>
+        </div>
+      </section>
 
-<section>
-  <h2>Milestone 1 — Configuration &amp; layout</h2>
-  <p>Keep the starter simple but ready to grow.</p>
-  <ul>
-    <li><strong>Project layout:</strong> <code>cmd/gobear/</code> for the main, <code>internal/</code> for packages you don’t want imported elsewhere, <code>pkg/</code> for public packages later.</li>
-    <li><strong>Env‑first config:</strong> Env vars with sane defaults; later, support a YAML/TOML file if needed.</li>
-    <li><strong>Build metadata:</strong> Inject <code>version</code>, <code>commit</code>, <code>date</code> via <code>-ldflags</code> to print at startup.</li>
-  </ul>
+      <section class="sec">
+        <h2>Milestone 1 — configuration &amp; layout</h2>
+        <ul>
+          <li><strong>Project layout:</strong> <code>cmd/gobear/</code> for the main, <code>internal/</code> for private packages, <code>pkg/</code> for public ones later.</li>
+          <li><strong>Env-first config:</strong> environment variables with sane defaults; support YAML/TOML later if needed.</li>
+          <li><strong>Build metadata:</strong> inject <code>version</code>, <code>commit</code>, <code>date</code> via <code>-ldflags</code> to print at startup.</li>
+        </ul>
 
-  <h3>Version injection (snippet)</h3>
-  <pre><code>// inside main.go
+        <h3>Version injection</h3>
+        <div class="card">
+          <pre><code>// inside main.go
 var (
     version = "dev"
     commit  = "none"
     date    = "unknown"
 )
-logger.Info("build", "version", version, "commit", commit, "date", date)</code></pre>
-  <pre><code># build with metadata
-go build -ldflags "-X main.version=$(git describe --tags --always) -X main.commit=$(git rev-parse --short HEAD) -X main.date=$(date -u +%Y-%m-%dT%H:%M:%SZ)" ./cmd/gobear</code></pre>
-</section>
+logger.Info("build", "version", version, "commit", commit, "date", date)
+</code></pre>
+          <pre><code># build with metadata
+go build -ldflags "-X main.version=$(git describe --tags --always) \
+ -X main.commit=$(git rev-parse --short HEAD) \
+ -X main.date=$(date -u +%Y-%m-%dT%H:%M:%SZ)" ./cmd/gobear</code></pre>
+        </div>
+      </section>
 
-<section>
-  <h2>Milestone 2 — A tiny API for “provisioning”</h2>
-  <p>Start with a simulated provisioning workflow that returns a token. No PXE yet — just shape the flow.</p>
-  <pre><code>// add to mux in main()
+      <section class="sec">
+        <h2>Milestone 2 — a tiny API for provisioning</h2>
+        <p>Start with a simulated provisioning workflow that returns a token. No PXE yet — just shape the flow.</p>
+        <div class="card">
+          <pre><code>// add to mux in main()
 mux.HandleFunc("/api/v1/provision", func(w http.ResponseWriter, r *http.Request) {
     if r.Method != http.MethodPost {
         w.WriteHeader(http.StatusMethodNotAllowed); return
@@ -241,25 +133,28 @@ mux.HandleFunc("/api/v1/provision", func(w http.ResponseWriter, r *http.Request)
     w.Header().Set("Content-Type", "application/json")
     fmt.Fprintf(w, `{"token":"%s"}`, token)
 })</code></pre>
-  <pre><code># try it
+        </div>
+        <div class="card">
+          <pre><code># try it
 curl -s -X POST localhost:8080/api/v1/provision</code></pre>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>Why a fake first?</h3>
+            <p>Design the request/response and logging paths before touching PXE/TFTP. It keeps learning focused and increments small.</p>
+          </div>
+        </div>
+      </section>
 
-  <div class="callouts">
-    <div class="callout why">
-      <h3>Why a fake first?</h3>
-      <p>Design the request/response and logging paths before touching PXE/TFTP. It keeps learning focused and increments small.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Milestone 3 — Health, readiness, and metrics</h2>
-  <ul>
-    <li><strong>/healthz</strong>: quick “am I alive?”</li>
-    <li><strong>/readyz</strong>: add checks for dependencies (e.g., can we read a state file?)</li>
-    <li><strong>/metrics</strong>: Prometheus handler already mounted</li>
-  </ul>
-  <pre><code>// example readiness check
+      <section class="sec">
+        <h2>Milestone 3 — health, readiness, and metrics</h2>
+        <ul>
+          <li><strong>/healthz</strong>: quick “am I alive?”</li>
+          <li><strong>/readyz</strong>: add checks for dependencies (e.g., can we read a state file?)</li>
+          <li><strong>/metrics</strong>: Prometheus handler already mounted</li>
+        </ul>
+        <div class="card">
+          <pre><code>// example readiness check
 mux.HandleFunc("/readyz", func(w http.ResponseWriter, r *http.Request) {
     if _, err := os.Stat("state.db"); err == nil {
         w.Write([]byte("ready")); return
@@ -267,33 +162,37 @@ mux.HandleFunc("/readyz", func(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusServiceUnavailable)
     w.Write([]byte("not ready"))
 })</code></pre>
-</section>
+        </div>
+      </section>
 
-<section>
-  <h2>Milestone 4 — Next steps toward a provisioner</h2>
-  <ul>
-    <li><strong>PXE notes:</strong> A minimal PXE flow needs DHCP options (66/67), a TFTP server, and kernel/initrd with a preseed or cloud‑init data source.</li>
-    <li><strong>State:</strong> Start with a tiny BoltDB/SQLite or even JSON file for requests and tokens.</li>
-    <li><strong>Templates:</strong> Render cloud‑init or iPXE templates from Go to hand to clients.</li>
-    <li><strong>CLI:</strong> Add <code>--addr</code> flags using the standard <code>flag</code> package.</li>
-  </ul>
-</section>
+      <section class="sec">
+        <h2>Milestone 4 — next steps toward a provisioner</h2>
+        <ul>
+          <li><strong>PXE notes:</strong> A minimal PXE flow needs DHCP options (66/67), a TFTP server, and kernel/initrd with a preseed or cloud-init data source.</li>
+          <li><strong>State:</strong> Start with a tiny BoltDB/SQLite or JSON file for requests and tokens.</li>
+          <li><strong>Templates:</strong> Render cloud-init or iPXE templates from Go to hand to clients.</li>
+          <li><strong>CLI:</strong> Add <code>--addr</code> flags using the standard <code>flag</code> package.</li>
+        </ul>
+      </section>
 
-<section>
-  <h2>Release early, release often</h2>
-  <p>Commit small, runnable changes. Keep a CHANGELOG. Tag “walkable” points even if features are thin. The habit matters more than the scope in the early days.</p>
-  <pre><code># quick quality loop
+      <section class="sec">
+        <h2>Release early, release often</h2>
+        <div class="card">
+          <pre><code># quick quality loop
 go test ./...
 golangci-lint run   # if you add it
 go build ./cmd/gobear
-./gobear
-</code></pre>
-</section>
+./gobear</code></pre>
+        </div>
+        <p>Commit small, runnable changes. Keep a CHANGELOG. Tag “walkable” points even if features are thin. The habit matters more than the scope in the early days.</p>
+      </section>
+    </main>
 
-    <footer>
+    <footer class="sec">
       <hr>
-      <div>CC BY‑NC 2025 stormrider · Go 1.22 · prometheus/client_golang · structured logs via slog</div>
+      <p>CC BY-NC 2025 · stormrider · Go 1.22 · Prometheus client_golang · structured logs via slog</p>
     </footer>
+
   </div>
 </body>
 </html>
