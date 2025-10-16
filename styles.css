@@ -147,3 +147,38 @@ pre{ max-width:min(80ch,100%); }
 body{
   background: linear-gradient(160deg,#fafaf7 0%, #f7f4f0 55%, #f3efe9 100%);
 }
+/* ===== Coffee theme (light roast) ===== */
+:root{
+  --coffee-foam:   #fff6e9; /* cream/foam */
+  --coffee-latte:  #f2e2c9; /* light tan */
+  --coffee-mocha:  #e3cba9; /* medium roast */
+  --coffee-cocoa:  #c8a27a; /* cocoa accent */
+  --coffee-ink:    #1b120d; /* espresso text */
+  --coffee-link:   #7a4f00; /* caramel/amber */
+  --coffee-link-2: #5c3a00;
+}
+
+/* background: subtle barista fade with a tiny vignette */
+body{
+  color:var(--coffee-ink);
+  background:
+    radial-gradient(1200px 800px at 15% -10%, rgba(0,0,0,.05), transparent 60%),
+    linear-gradient(160deg, var(--coffee-foam) 0%, var(--coffee-latte) 55%, var(--coffee-mocha) 100%);
+}
+
+/* links */
+a{ color:var(--coffee-link); text-decoration-thickness:.1em; }
+a:hover{ color:var(--coffee-link-2); }
+
+/* cards: “porcelain cup” tint */
+.card{
+  background: rgba(255,250,244,.92);      /* warm white (foam) */
+  border-color: rgba(75,46,28,.12);       /* espresso line */
+  box-shadow: 0 8px 20px rgba(75,46,28,.08);
+}
+
+/* headings slightly darker for snap */
+h1,h2{ color:#24150d; }
+
+/* optional: wrap gets a faint latte wash */
+.wrap{ background: rgba(255,248,238,.40); }
