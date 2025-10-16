@@ -1,35 +1,35 @@
 /* ========================================================================
-   billwear.github.io — light roast theme
-   - Espresso headings (Fraunces)
-   - Hero line (Kalam)
-   - Porcelain cards, warm latte background
-   - Duplicates removed, contrast tightened
+   billwear.github.io — Light Roast (coffee with cream)
+   - Central column matches page background
+   - Espresso headings (Fraunces), optional hero (Kalam)
+   - Porcelain cards for contrast
    ===================================================================== */
 
-/* === type imports === */
+/* === Type imports === */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Kalam:wght@700&display=swap');
 
-/* === tokens === */
+/* === Tokens === */
 :root{
   /* layout */
-  --wrap: 68rem;               /* comfy width */
+  --wrap: 68rem;
   --wrap-xl: 76rem;
 
   /* coffee palette */
-  --coffee-foam:   #fff6e9;    /* cream/foam */
-  --coffee-latte:  #f3e7d3;    /* light tan */
-  --coffee-mocha:  #e1c7a6;    /* medium roast */
-  --coffee-cocoa:  #c7a077;    /* cocoa accent */
+  --cream-1: #f3e6d6;   /* coffee + plenty of cream (base) */
+  --cream-2: #ead7be;   /* slightly deeper swirl */
+  --cream-3: #dcc3a4;   /* warm lowlight */
 
-  /* inks/lines/links */
-  --ink:           #1b120d;    /* espresso text */
-  --ink-soft:      #2a1b13;    /* headings body balance */
-  --line:          rgba(58,35,22,.14);  /* subtle espresso line */
-  --link:          #7a4f00;    /* caramel */
-  --link-hover:    #5c3a00;    /* darker caramel */
+  --porcelain: #fffdfa; /* card background */
+  --line: rgba(66,45,30,.14); /* subtle espresso line */
+
+  /* ink + links */
+  --ink: #1b120d;             /* espresso text */
+  --ink-soft: #3a2416;        /* heading coffee */
+  --link: #7a4f00;            /* caramel */
+  --link-hover: #5c3a00;      /* dark caramel */
 }
 
-/* === base === */
+/* === Base === */
 html{ scroll-behavior:smooth; }
 *{ box-sizing:border-box; }
 
@@ -39,10 +39,10 @@ body{
   font: 17px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 
-  /* light roast background + faint vignette */
+  /* Coffee-with-cream background (gentle, no glare) */
   background:
-    radial-gradient(1200px 800px at 15% -10%, rgba(0,0,0,.05), transparent 60%),
-    linear-gradient(160deg, var(--coffee-foam) 0%, var(--coffee-latte) 55%, var(--coffee-mocha) 100%);
+    radial-gradient(1100px 700px at 12% -8%, rgba(0,0,0,.03), transparent 60%),
+    linear-gradient(165deg, var(--cream-1) 0%, var(--cream-2) 55%, var(--cream-3) 100%);
 }
 
 a{ color:var(--link); text-decoration-thickness:.1em; text-underline-offset:.16em; }
@@ -53,51 +53,45 @@ hr{
   background:linear-gradient(90deg,transparent,rgba(0,0,0,.16),transparent);
 }
 
-/* === layout container === */
+/* === Central column (same as page background) === */
 .wrap{
   max-width:var(--wrap);
   margin:0 auto;
   padding:0 1.25rem;
-  background: rgba(255,248,238,.40);   /* faint latte wash for readability */
-  border-radius:.75rem;
+  background: transparent;   /* match page background */
 }
 @media (min-width:1200px){
   .wrap{ max-width:var(--wrap-xl); }
 }
 
-/* === typography === */
-/* hero line (first heading on a page) — handwritten vibe */
-.wrap > h1:first-child{
-  font-family: "Kalam", ui-sans-serif, system-ui;
-  font-weight:700;
-  line-height:1.15;
-  margin:.75rem 0 .25rem;
-  font-size: clamp(1.9rem, 2.6vw + 1rem, 3.1rem);
-  color: var(--ink-soft);
-}
-
-/* section headings — espresso serif (Fraunces) */
+/* === Typography === */
+/* Espresso headings (Fraunces) */
 h1, h2, h3{
   font-family:"Fraunces", ui-serif, Georgia, "Times New Roman", serif;
-  line-height:1.15;
-  letter-spacing:.2px;
   color: var(--ink-soft);
+  line-height: 1.15;
+  letter-spacing: .2px;
   margin: 1.2rem 0 .6rem;
 }
-h1{ font-weight:800; font-size: clamp(1.7rem, 2.1vw + 1rem, 2.4rem); }
-h2{ font-weight:700; font-size: clamp(1.25rem, 1.2vw + 1rem, 2rem); }
-h3{ font-weight:700; font-size: clamp(1.05rem, .9vw + .9rem, 1.35rem); }
+h1{ font-weight:800; font-size: clamp(1.8rem, 2.1vw + 1rem, 2.5rem); }
+h2{ font-weight:700; font-size: clamp(1.28rem, 1.2vw + 1rem, 2rem); }
+h3{ font-weight:700; font-size: clamp(1.06rem, .9vw + .9rem, 1.35rem); }
 
-/* body text — neutral, readable */
+/* Optional hero line: add class="hero-title" to any heading you want in Kalam */
+.hero-title{
+  font-family:"Kalam", ui-sans-serif, system-ui;
+  font-weight:700;
+  color: var(--ink-soft);
+  font-size: clamp(1.9rem, 2.6vw + 1rem, 3.1rem);
+  margin:.75rem 0 .25rem;
+}
+
 p, li{ color:#1f2937; margin-top:0; }
-
-/* tiny helper for lede/intros */
 .lede{ color:#475569; }
 
-/* emoji/icons inside headings don’t shout */
-h2, h3{ display:flex; align-items:center; gap:.35rem; }
+h2, h3{ display:flex; align-items:center; gap:.35rem; } /* emoji/icons stay calm */
 
-/* === sections, grids, cards === */
+/* === Sections, grids, cards === */
 .sec{ margin:2rem 0 1rem; }
 
 .grid{
@@ -106,24 +100,25 @@ h2, h3{ display:flex; align-items:center; gap:.35rem; }
   gap: 1rem;
 }
 
+/* Porcelain cards for contrast against cream background */
 .card{
-  background: rgba(255,250,244,.95);     /* porcelain cup */
+  background: var(--porcelain);
   border: 1px solid var(--line);
-  border-radius: .85rem;
-  padding: .95rem 1.05rem;
-  box-shadow: 0 8px 22px rgba(75,46,28,.08);
+  border-radius: .9rem;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 8px 22px rgba(66,45,30,.08);
   will-change: transform, box-shadow;
 }
 .card:hover{
   transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(75,46,28,.10);
-  transition: .15s ease;
+  box-shadow: 0 12px 28px rgba(66,45,30,.10);
+  transition:.15s ease;
 }
 .card a{ font-weight:700; text-decoration:none; }
 .card a:hover{ text-decoration:underline; }
 .card p{ margin:.35rem 0 0; color:#334155; font-style:italic; }
 
-/* === code blocks (width-aware) === */
+/* === Code blocks (width-aware) === */
 pre{
   max-width:min(80ch,100%);
   overflow-x:auto;
@@ -133,80 +128,21 @@ pre{
   background:#111; color:#eee;
   border-radius:.5rem;
 }
-
-/* keep code inside cards tame */
 .card pre{ max-width:100%; }
 
-/* === images that shouldn’t dominate (diagrams/hero photos) === */
+/* === Images that shouldn’t dominate (diagrams/hero photos) === */
 .hero{
   display:block; width:90%; max-width:420px; height:auto;
   margin:0 auto 1.5rem;
   border-radius:12px; border:1px solid var(--line);
-  box-shadow:0 6px 18px rgba(0,0,0,.30);
+  box-shadow:0 6px 18px rgba(0,0,0,.28);
 }
 @media (min-width:1400px){ .hero{ max-width:480px; } }
 
-/* === accessibility niceties === */
+/* === Motion prefs === */
 @media (prefers-reduced-motion: reduce){
   *{ animation:none !important; transition:none !important; }
 }
 
-/* === dark mode === */
-@media (prefers-color-scheme: dark){
-  :root{
-    --ink: #e8e8e8;
-  }
-  body{
-    color:var(--ink);
-    background:
-      radial-gradient(1200px 800px at 15% -10%, rgba(0,0,0,.35), transparent 60%),
-      linear-gradient(160deg, #1a130f 0%, #241a14 55%, #2c2018 100%);
-  }
-  a{ color:#ffb44d; }
-  .wrap{ background: rgba(0,0,0,.18); }
-  .card{
-    background: rgba(28,22,18,.85);
-    border-color: rgba(255,255,255,.10);
-    box-shadow: 0 8px 22px rgba(0,0,0,.35);
-  }
-  .card p{ color:#d8d8d8; }
-  h1, h2, h3{ color:#ffe9cf; }  /* crema on dark */
-}
-/* --- Force LIGHT theme, always --- */
-html { color-scheme: light; }     /* ignore OS dark mode */
-@media (prefers-color-scheme: dark){
-  /* keep the same light palette even if user prefers dark */
-  body{
-    color:#1b120d;
-    background:
-      radial-gradient(1200px 800px at 15% -10%, rgba(0,0,0,.05), transparent 60%),
-      linear-gradient(160deg, #fff6e9 0%, #f3e7d3 55%, #e1c7a6 100%);
-  }
-  .wrap{ background: rgba(255,248,238,.40); }
-  .card{
-    background: rgba(255,250,244,.95);
-    border-color: rgba(58,35,22,.14);
-    box-shadow: 0 8px 22px rgba(75,46,28,.08);
-  }
-  .card p{ color:#334155; }
-}
-
-/* --- Espresso headings --- */
-:root{
-  --coffee-heading: #3a2416;   /* dark roast */
-}
-h1, h2, h3 { color: var(--coffee-heading) !important; }
-.wrap > h1:first-child { color: var(--coffee-heading) !important; }
-/* Slightly darker cream (reduce glare) */
-:root{
-  --coffee-foam:  #f9f0df; /* was #fff6e9 */
-  --coffee-latte: #ead7be; /* was #f2e2c9 */
-  --coffee-mocha: #d7b892; /* was #e3cba9 */
-}
-
-/* gentler vignette + warmer tilt */
-body{
-  background:
-    radial-gradient(1200px 800px at 15% -10%, rgba(0,0,0,.035), transparent 60%),
-    linear-gradient(165deg, var(--coffee-foam) 0%, var(--coffee-latte) 55%, var(--coffee-mocha) 100%);
-}
+/* === Force light theme (no dark override) === */
+html{ color-scheme: light; }
