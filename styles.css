@@ -1,185 +1,174 @@
-/* ====== tokens ====== */
+/* ========================================================================
+   billwear.github.io — light roast theme
+   - Espresso headings (Fraunces)
+   - Hero line (Kalam)
+   - Porcelain cards, warm latte background
+   - Duplicates removed, contrast tightened
+   ===================================================================== */
+
+/* === type imports === */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Kalam:wght@700&display=swap');
+
+/* === tokens === */
 :root{
-  --accent:#7a4f00;
-  --ink:#0f0f0f;
-  --wrap:46rem;               /* slightly wider for breathing room */
-  --line:rgba(0,0,0,.12);
+  /* layout */
+  --wrap: 68rem;               /* comfy width */
+  --wrap-xl: 76rem;
+
+  /* coffee palette */
+  --coffee-foam:   #fff6e9;    /* cream/foam */
+  --coffee-latte:  #f3e7d3;    /* light tan */
+  --coffee-mocha:  #e1c7a6;    /* medium roast */
+  --coffee-cocoa:  #c7a077;    /* cocoa accent */
+
+  /* inks/lines/links */
+  --ink:           #1b120d;    /* espresso text */
+  --ink-soft:      #2a1b13;    /* headings body balance */
+  --line:          rgba(58,35,22,.14);  /* subtle espresso line */
+  --link:          #7a4f00;    /* caramel */
+  --link-hover:    #5c3a00;    /* darker caramel */
 }
 
-/* ====== base ====== */
+/* === base === */
 html{ scroll-behavior:smooth; }
+*{ box-sizing:border-box; }
+
 body{
-  margin:0; color:var(--ink);
-  background: linear-gradient(160deg, #dfeef5 0%, #f6e8ef 60%, #fce9e2 100%); /* softer */
-  font:17px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  margin:0;
+  color:var(--ink);
+  font: 17px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-}
-a{ color:#6d4700; text-decoration-thickness:.1em; text-underline-offset:.16em; }
-a:hover{ color:#4b3200; text-decoration-thickness:.12em; }
-hr{ border:0; height:1px;
-    background:linear-gradient(90deg,transparent,rgba(0,0,0,.15),transparent); }
 
-/* ====== layout ====== */
-.wrap{
-  max-width:var(--wrap);
-  margin:0 auto;
-  padding:0 1rem;
-  background:rgba(255,255,255,.35);    /* subtle container veil (readability) */
-  border-radius:.75rem;
-}
-
-/* ====== typography ====== */
-/* Stop the global italics + raise text contrast */
-p, li{ font-style:normal; color:#222; margin-top:0; }
-body{ color:#1b1b1b; }
-
-/* Use Kalam ONLY for the very first heading on a page (your hero line).
-   All other section headings use the clean system stack. */
-.wrap > :is(h1,h2,h3,h4):first-child{
-  font-family:"Kalam", ui-sans-serif, system-ui;
-  line-height:1.15;
-  margin:.75rem 0 .25rem;
-  font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
-}
-h1,h2,h3{ font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:#111; text-shadow:none; }
-h2{ font-size: clamp(1.25rem, 1.2vw + 1rem, 2rem); margin:1.6rem 0 .6rem; line-height:1.15; }
-h3{ font-size: clamp(1.05rem, .9vw + .9rem, 1.35rem); margin:1.1rem 0 .4rem; }
-
-/* Optional: if you have emoji in headings, make them less shouty */
-h2, h3 { display: flex; align-items: center; gap:.35rem; }
-h2 img, h2 svg, h2 span, h3 img, h3 svg, h3 span { font-size:.9em; opacity:.9; }
-
-/* ====== cards & grids ====== */
-.sec{ margin:2rem 0 1rem; }
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap: .9rem;
-}
-.card{
-  padding: .9rem 1rem;
-  border-radius: .75rem;
-  background: rgba(255,255,255,.88);   /* higher opacity = crisper text */
-  border: 1px solid var(--line);
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
-  backdrop-filter: none;               /* no blur = sharper, Emacs-like */
-}
-.card a{ font-weight:700; text-decoration:none; }
-.card a:hover{ text-decoration:underline; }
-.card p{ margin:.35rem 0 0; color:#444; }
-
-/* ====== code blocks (readable, width-aware) ====== */
-pre{
-  max-width:100%;
-  overflow-x:auto;
-  white-space:pre;
-  word-wrap:normal;
-  padding:.75rem 1rem;
-  background:#111; color:#eee;
-  border-radius:.5rem; box-sizing:border-box;
-}
-.card pre{ max-width:100%; overflow-x:auto; }
-@media (min-width:768px){
-  pre{ max-width:80ch; white-space:pre-wrap; word-break:break-word; }
-}
-
-/* ====== images that should not dominate (hero photos/diagrams) ====== */
-.hero{
-  display:block; width:90%; max-width:420px; height:auto;
-  margin:0 auto 1.5rem;
-  border-radius:12px; border:1px solid var(--line);
-  box-shadow:0 6px 18px rgba(0,0,0,.3);
-}
-@media (min-width:1400px){ .hero{ max-width:480px; } }
-
-/* ====== dark preference ====== */
-@media (prefers-color-scheme: dark){
-  body{ color:#e8e8e8; }
-  a{ color:#ffb44d; }
-  .wrap{ background: rgba(0,0,0,.16); }
-  .card{ background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.12); }
-  .card p{ color:#d8d8d8; }
-}
-/* ==== layout width + breathing room ==== */
-:root{ --wrap:64rem; }                 /* was 42–46rem */
-@media (min-width:1200px){
-  :root{ --wrap:72rem; }               /* comfy on big screens */
-}
-
-/* ==== background: lighter, less pink ==== */
-body{
-  background: linear-gradient(160deg,#eef6fb 0%,#f7f7fb 55%,#fbf5ef 100%);
-}
-
-/* ==== container: remove the dim veil ==== */
-.wrap{
-  max-width: var(--wrap);
-  margin: 0 auto;
-  padding: 0 1.25rem;
-  background: transparent;             /* ← was rgba(255,255,255,.35) */
-  border-radius: 0;                     /* let cards provide structure */
-}
-
-/* ==== headings & text: clearer contrast ==== */
-p, li{ color:#1f2937; }                /* slate-ish body text */
-h1, h2{ color:#0b1320; }
-.grid{ gap:1rem; }                      /* a touch more whitespace */
-
-/* ==== cards: bright + crisp ==== */
-.card{
-  background:#ffffff;                   /* full white = max legibility */
-  border:1px solid rgba(15,23,42,.08);
-  box-shadow:0 8px 22px rgba(0,0,0,.06);
-  border-radius:.85rem;
-}
-.card p{ color:#334155; }               /* readable inside cards */
-.card:hover{ transform:translateY(-1px); box-shadow:0 10px 26px rgba(0,0,0,.08); transition:.15s ease; }
-
-/* ==== links: keep the warm accent, increase contrast a hair ==== */
-a{ color:#6d4700; text-decoration-thickness:.1em; text-underline-offset:.16em; }
-a:hover{ color:#4b3200; }
-
-/* ==== section subtitles / ledes (optional polish) ==== */
-.lede{ color:#475569; }
-
-/* ==== code stays tidy ==== */
-pre{ max-width:min(80ch,100%); }
-body{
-  background: linear-gradient(160deg,#fafaf7 0%, #f7f4f0 55%, #f3efe9 100%);
-}
-/* ===== Coffee theme (light roast) ===== */
-:root{
-  --coffee-foam:   #fff6e9; /* cream/foam */
-  --coffee-latte:  #f2e2c9; /* light tan */
-  --coffee-mocha:  #e3cba9; /* medium roast */
-  --coffee-cocoa:  #c8a27a; /* cocoa accent */
-  --coffee-ink:    #1b120d; /* espresso text */
-  --coffee-link:   #7a4f00; /* caramel/amber */
-  --coffee-link-2: #5c3a00;
-}
-
-/* background: subtle barista fade with a tiny vignette */
-body{
-  color:var(--coffee-ink);
+  /* light roast background + faint vignette */
   background:
     radial-gradient(1200px 800px at 15% -10%, rgba(0,0,0,.05), transparent 60%),
     linear-gradient(160deg, var(--coffee-foam) 0%, var(--coffee-latte) 55%, var(--coffee-mocha) 100%);
 }
 
-/* links */
-a{ color:var(--coffee-link); text-decoration-thickness:.1em; }
-a:hover{ color:var(--coffee-link-2); }
+a{ color:var(--link); text-decoration-thickness:.1em; text-underline-offset:.16em; }
+a:hover{ color:var(--link-hover); text-decoration-thickness:.12em; }
 
-/* cards: “porcelain cup” tint */
-.card{
-  background: rgba(255,250,244,.92);      /* warm white (foam) */
-  border-color: rgba(75,46,28,.12);       /* espresso line */
-  box-shadow: 0 8px 20px rgba(75,46,28,.08);
+hr{
+  border:0; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(0,0,0,.16),transparent);
 }
 
-/* headings slightly darker for snap */
-h1,h2{ color:#24150d; }
+/* === layout container === */
+.wrap{
+  max-width:var(--wrap);
+  margin:0 auto;
+  padding:0 1.25rem;
+  background: rgba(255,248,238,.40);   /* faint latte wash for readability */
+  border-radius:.75rem;
+}
+@media (min-width:1200px){
+  .wrap{ max-width:var(--wrap-xl); }
+}
 
-/* optional: wrap gets a faint latte wash */
-.wrap{ background: rgba(255,248,238,.40); }
+/* === typography === */
+/* hero line (first heading on a page) — handwritten vibe */
+.wrap > h1:first-child{
+  font-family: "Kalam", ui-sans-serif, system-ui;
+  font-weight:700;
+  line-height:1.15;
+  margin:.75rem 0 .25rem;
+  font-size: clamp(1.9rem, 2.6vw + 1rem, 3.1rem);
+  color: var(--ink-soft);
+}
 
+/* section headings — espresso serif (Fraunces) */
+h1, h2, h3{
+  font-family:"Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  line-height:1.15;
+  letter-spacing:.2px;
+  color: var(--ink-soft);
+  margin: 1.2rem 0 .6rem;
+}
+h1{ font-weight:800; font-size: clamp(1.7rem, 2.1vw + 1rem, 2.4rem); }
+h2{ font-weight:700; font-size: clamp(1.25rem, 1.2vw + 1rem, 2rem); }
+h3{ font-weight:700; font-size: clamp(1.05rem, .9vw + .9rem, 1.35rem); }
+
+/* body text — neutral, readable */
+p, li{ color:#1f2937; margin-top:0; }
+
+/* tiny helper for lede/intros */
+.lede{ color:#475569; }
+
+/* emoji/icons inside headings don’t shout */
+h2, h3{ display:flex; align-items:center; gap:.35rem; }
+
+/* === sections, grids, cards === */
+.sec{ margin:2rem 0 1rem; }
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap: 1rem;
+}
+
+.card{
+  background: rgba(255,250,244,.95);     /* porcelain cup */
+  border: 1px solid var(--line);
+  border-radius: .85rem;
+  padding: .95rem 1.05rem;
+  box-shadow: 0 8px 22px rgba(75,46,28,.08);
+  will-change: transform, box-shadow;
+}
+.card:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(75,46,28,.10);
+  transition: .15s ease;
+}
+.card a{ font-weight:700; text-decoration:none; }
+.card a:hover{ text-decoration:underline; }
+.card p{ margin:.35rem 0 0; color:#334155; font-style:italic; }
+
+/* === code blocks (width-aware) === */
+pre{
+  max-width:min(80ch,100%);
+  overflow-x:auto;
+  white-space:pre-wrap;
+  word-break:break-word;
+  padding:.75rem 1rem;
+  background:#111; color:#eee;
+  border-radius:.5rem;
+}
+
+/* keep code inside cards tame */
+.card pre{ max-width:100%; }
+
+/* === images that shouldn’t dominate (diagrams/hero photos) === */
+.hero{
+  display:block; width:90%; max-width:420px; height:auto;
+  margin:0 auto 1.5rem;
+  border-radius:12px; border:1px solid var(--line);
+  box-shadow:0 6px 18px rgba(0,0,0,.30);
+}
+@media (min-width:1400px){ .hero{ max-width:480px; } }
+
+/* === accessibility niceties === */
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important; }
+}
+
+/* === dark mode === */
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink: #e8e8e8;
+  }
+  body{
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 800px at 15% -10%, rgba(0,0,0,.35), transparent 60%),
+      linear-gradient(160deg, #1a130f 0%, #241a14 55%, #2c2018 100%);
+  }
+  a{ color:#ffb44d; }
+  .wrap{ background: rgba(0,0,0,.18); }
+  .card{
+    background: rgba(28,22,18,.85);
+    border-color: rgba(255,255,255,.10);
+    box-shadow: 0 8px 22px rgba(0,0,0,.35);
+  }
+  .card p{ color:#d8d8d8; }
+  h1, h2, h3{ color:#ffe9cf; }  /* crema on dark */
+}
