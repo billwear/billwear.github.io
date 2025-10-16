@@ -51,3 +51,30 @@
 
   /* optional: soften the loud gradient a touch */
   .wrap{ background: rgba(255,255,255,.35); border-radius:.75rem; }
+
+  /* keep code readable within layout */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+  padding: .75rem 1rem;
+  background: #111;
+  color: #eee;
+  border-radius: .5rem;
+  box-sizing: border-box;
+}
+
+/* optional: avoid giant horizontal scrollbars inside narrow cards */
+.card pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (min-width: 768px) {
+  pre {
+    max-width: 80ch;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
