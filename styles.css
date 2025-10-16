@@ -197,3 +197,16 @@ html { color-scheme: light; }     /* ignore OS dark mode */
 }
 h1, h2, h3 { color: var(--coffee-heading) !important; }
 .wrap > h1:first-child { color: var(--coffee-heading) !important; }
+/* Slightly darker cream (reduce glare) */
+:root{
+  --coffee-foam:  #f9f0df; /* was #fff6e9 */
+  --coffee-latte: #ead7be; /* was #f2e2c9 */
+  --coffee-mocha: #d7b892; /* was #e3cba9 */
+}
+
+/* gentler vignette + warmer tilt */
+body{
+  background:
+    radial-gradient(1200px 800px at 15% -10%, rgba(0,0,0,.035), transparent 60%),
+    linear-gradient(165deg, var(--coffee-foam) 0%, var(--coffee-latte) 55%, var(--coffee-mocha) 100%);
+}
