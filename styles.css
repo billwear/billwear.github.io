@@ -94,11 +94,20 @@ body::before{
     0 6px 20px rgba(58,36,22,.12),
     0 0 0 1px rgba(58,36,22,.08) inset;
   z-index: 1000;
+  transition: filter .15s ease, transform .15s ease;
+}
+/* subtle “heat” when you hover the mark */
+body:hover::before{
+  filter: drop-shadow(0 0 6px rgba(245,100,35,.25));
 }
 
-/* Smaller on compact screens */
+/* Responsive logo scaling */
+@media (max-width: 768px){
+  :root{ --logo-size: 38px; --logo-pad-top: 58px; } /* ~80% scale */
+  body::before{ top: 12px; left: 12px; }
+}
 @media (max-width: 520px){
-  :root{ --logo-size: 40px; --logo-pad-top: 60px; }
+  :root{ --logo-size: 34px; --logo-pad-top: 52px; }
   body::before{ top: 10px; left: 10px; }
 }
 
@@ -123,8 +132,15 @@ body::before{
     0 6px 20px rgba(58,36,22,.12),
     0 0 0 1px rgba(58,36,22,.08) inset;
   z-index:1001;
+  transition: filter .15s ease, transform .15s ease;
 }
-.brand:hover{ filter: saturate(1.05) brightness(1.02); }
+.brand:hover{
+  filter: drop-shadow(0 0 6px rgba(245,100,35,.25))
+          saturate(1.05) brightness(1.02);
+}
+@media (max-width:768px){
+  .brand{ inset: 12px auto auto 12px; }
+}
 @media (max-width:520px){
   .brand{ inset: 10px auto auto 10px; }
 }
@@ -141,6 +157,11 @@ h1, h2, h3{
 h1{ font-weight:800; font-size: clamp(1.85rem, 2.2vw + 1rem, 2.6rem); }
 h2{ font-weight:700; font-size: clamp(1.28rem, 1.2vw + 1rem, 2rem); }
 h3{ font-weight:700; font-size: clamp(1.06rem, .9vw + .9rem, 1.35rem); }
+
+/* Baseline spacing for the very first heading (so it never collides with logo) */
+.wrap > :is(h1,h2,h3):first-child{
+  margin-top: 1.25rem;
+}
 
 /* Subheads/lede — Lora */
 .subhead,
@@ -194,11 +215,11 @@ h2, h3{ display:flex; align-items:center; gap:.35rem; }
   padding: 1rem 1.1rem;
   box-shadow: 0 8px 22px rgba(58,36,22,.08);
   will-change: transform, box-shadow;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 .card:hover{
   transform: translateY(-1px);
   box-shadow: 0 12px 28px rgba(58,36,22,.10);
-  transition:.15s ease;
 }
 .card a{ font-weight:700; text-decoration:none; }
 .card a:hover{ text-decoration:underline; }
@@ -210,8 +231,16 @@ h2, h3{ display:flex; align-items:center; gap:.35rem; }
   font-weight:600; text-decoration:none; line-height:1;
   border:1px solid transparent;
 }
-.btn-amber{ background:var(--amber); color:#fff; border-color:transparent; }
-.btn-amber:hover{ background:var(--sienna); }
+.btn-amber{
+  background:var(--amber); color:#fff; border-color:transparent;
+  transition: filter .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.btn-amber:hover{
+  background:var(--sienna);
+  /* subtle flame glow */
+  box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 0 8px rgba(245,100,35,.25);
+  filter: drop-shadow(0 0 6px rgba(245,100,35,.25));
+}
 .btn-outline{
   background:transparent; color:var(--amber); border-color:var(--amber);
 }
