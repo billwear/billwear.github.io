@@ -172,3 +172,28 @@ pre{
   .card p{ color:#d8d8d8; }
   h1, h2, h3{ color:#ffe9cf; }  /* crema on dark */
 }
+/* --- Force LIGHT theme, always --- */
+html { color-scheme: light; }     /* ignore OS dark mode */
+@media (prefers-color-scheme: dark){
+  /* keep the same light palette even if user prefers dark */
+  body{
+    color:#1b120d;
+    background:
+      radial-gradient(1200px 800px at 15% -10%, rgba(0,0,0,.05), transparent 60%),
+      linear-gradient(160deg, #fff6e9 0%, #f3e7d3 55%, #e1c7a6 100%);
+  }
+  .wrap{ background: rgba(255,248,238,.40); }
+  .card{
+    background: rgba(255,250,244,.95);
+    border-color: rgba(58,35,22,.14);
+    box-shadow: 0 8px 22px rgba(75,46,28,.08);
+  }
+  .card p{ color:#334155; }
+}
+
+/* --- Espresso headings --- */
+:root{
+  --coffee-heading: #3a2416;   /* dark roast */
+}
+h1, h2, h3 { color: var(--coffee-heading) !important; }
+.wrap > h1:first-child { color: var(--coffee-heading) !important; }
