@@ -183,23 +183,3 @@ h1,h2{ color:#24150d; }
 /* optional: wrap gets a faint latte wash */
 .wrap{ background: rgba(255,248,238,.40); }
 
-@media (prefers-color-scheme: dark){
-  :root{
-    --coffee-ink:   #efe9e2;
-    --coffee-link:  #ffb457;
-    --coffee-link-2:#ff9a1e;
-  }
-  body{
-    background:
-      radial-gradient(1200px 800px at 85% -20%, rgba(255,255,255,.05), transparent 60%),
-      linear-gradient(160deg,#130c08 0%, #1b120d 60%, #24150d 100%);
-    color:var(--coffee-ink);
-  }
-  .card{
-    background: rgba(36,21,13,.78);       /* crema-on-espresso */
-    border-color: rgba(255,255,255,.10);
-    box-shadow: 0 10px 24px rgba(0,0,0,.45);
-  }
-  h1,h2{ color:#fff3e0; }
-  .wrap{ background: rgba(255,255,255,.04); }
-}
