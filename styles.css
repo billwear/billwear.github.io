@@ -1,94 +1,102 @@
-  :root{ --accent:#7a4f00; --ink:#0f0f0f; --wrap:42rem; }
-  /* background + base */
-  html{scroll-behavior:smooth}
-  body{
-    margin:0; color:var(--ink);
-    background:linear-gradient(135deg,#B0E0E6,#FFC0CB);
-    font:17px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-  }
-  a{color:var(--accent); text-decoration-thickness:.08em; text-underline-offset:.16em}
-  a:hover{ text-decoration-thickness:.12em }
-  hr{border:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.15),transparent)}
-  /* layout */
-  .wrap{max-width:var(--wrap); margin:0 auto; padding:0 1rem}
-  /* headings */
-  h1,h2{font-family:"Kalam",ui-sans-serif}
-  h1{font-size:clamp(1.8rem,2.5vw+1rem,3rem); margin:.75rem 0 .25rem; line-height:1.15}
-  h2{font-size:clamp(1.25rem,1.2vw+1rem,2rem); margin:1.6rem 0 .6rem; line-height:1.15}
-  /* cards/grid */
-  .sec{margin:2rem 0 1rem}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.9rem}
-  .card{padding:.9rem 1rem;border-radius:.75rem;background:rgba(255,255,255,.35);
-        border:1px solid rgba(0,0,0,.08); box-shadow:0 6px 18px rgba(0,0,0,.06);
-        backdrop-filter:saturate(120%) blur(1.5px)}
-  .card a{font-weight:700;text-decoration:none}
-  .card a:hover{text-decoration:underline}
-  .card p{margin:.35rem 0 0; font-style:italic}
-  /* dark preference */
-  @media (prefers-color-scheme: dark){
-    body{color:#e8e8e8}
-    a{color:#ffb44d}
-    .card{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.12)}
-  }
-  /* readability overrides */
-  body{ color:#1b1b1b; }
-  p, li{ font-style: normal; color:#222; }
-  h1, h2{ color:#111; text-shadow:none; }
-
-  /* links: darker, clearer */
-  a{ color:#6d4700; text-decoration-thickness:.1em; }
-  a:hover{ color:#4b3200; }
-
-  /* cards: higher opacity + sharper text */
-  .card{
-    background: rgba(255,255,255,.88);  /* was ~.35 */
-    border-color: rgba(0,0,0,.12);
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
-    backdrop-filter: none;               /* drop blur = crisper text */
-  }
-  .card p{ color:#444; }
-
-  /* optional: soften the loud gradient a touch */
-  .wrap{ background: rgba(255,255,255,.35); border-radius:.75rem; }
-
-  /* keep code readable within layout */
-pre {
-  max-width: 100%;
-  overflow-x: auto;
-  white-space: pre;
-  word-wrap: normal;
-  padding: .75rem 1rem;
-  background: #111;
-  color: #eee;
-  border-radius: .5rem;
-  box-sizing: border-box;
+/* ====== tokens ====== */
+:root{
+  --accent:#7a4f00;
+  --ink:#0f0f0f;
+  --wrap:46rem;               /* slightly wider for breathing room */
+  --line:rgba(0,0,0,.12);
 }
 
-/* optional: avoid giant horizontal scrollbars inside narrow cards */
-.card pre {
-  max-width: 100%;
-  overflow-x: auto;
+/* ====== base ====== */
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background: linear-gradient(160deg, #dfeef5 0%, #f6e8ef 60%, #fce9e2 100%); /* softer */
+  font:17px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+a{ color:#6d4700; text-decoration-thickness:.1em; text-underline-offset:.16em; }
+a:hover{ color:#4b3200; text-decoration-thickness:.12em; }
+hr{ border:0; height:1px;
+    background:linear-gradient(90deg,transparent,rgba(0,0,0,.15),transparent); }
+
+/* ====== layout ====== */
+.wrap{
+  max-width:var(--wrap);
+  margin:0 auto;
+  padding:0 1rem;
+  background:rgba(255,255,255,.35);    /* subtle container veil (readability) */
+  border-radius:.75rem;
 }
 
-@media (min-width: 768px) {
-  pre {
-    max-width: 80ch;
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
+/* ====== typography ====== */
+/* Stop the global italics + raise text contrast */
+p, li{ font-style:normal; color:#222; margin-top:0; }
+body{ color:#1b1b1b; }
+
+/* Use Kalam ONLY for the very first heading on a page (your hero line).
+   All other section headings use the clean system stack. */
+.wrap > :is(h1,h2,h3,h4):first-child{
+  font-family:"Kalam", ui-sans-serif, system-ui;
+  line-height:1.15;
+  margin:.75rem 0 .25rem;
+  font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
 }
-.hero {
-  display: block;
-  max-width: 420px;   /* was 480 */
-  width: 90%;
-  height: auto;
-  margin: 0 auto 1.5rem;
-  border-radius: 12px;
+h1,h2,h3{ font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:#111; text-shadow:none; }
+h2{ font-size: clamp(1.25rem, 1.2vw + 1rem, 2rem); margin:1.6rem 0 .6rem; line-height:1.15; }
+h3{ font-size: clamp(1.05rem, .9vw + .9rem, 1.35rem); margin:1.1rem 0 .4rem; }
+
+/* Optional: if you have emoji in headings, make them less shouty */
+h2, h3 { display: flex; align-items: center; gap:.35rem; }
+h2 img, h2 svg, h2 span, h3 img, h3 svg, h3 span { font-size:.9em; opacity:.9; }
+
+/* ====== cards & grids ====== */
+.sec{ margin:2rem 0 1rem; }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap: .9rem;
+}
+.card{
+  padding: .9rem 1rem;
+  border-radius: .75rem;
+  background: rgba(255,255,255,.88);   /* higher opacity = crisper text */
   border: 1px solid var(--line);
-  box-shadow: 0 6px 18px rgba(0,0,0,.3);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  backdrop-filter: none;               /* no blur = sharper, Emacs-like */
+}
+.card a{ font-weight:700; text-decoration:none; }
+.card a:hover{ text-decoration:underline; }
+.card p{ margin:.35rem 0 0; color:#444; }
+
+/* ====== code blocks (readable, width-aware) ====== */
+pre{
+  max-width:100%;
+  overflow-x:auto;
+  white-space:pre;
+  word-wrap:normal;
+  padding:.75rem 1rem;
+  background:#111; color:#eee;
+  border-radius:.5rem; box-sizing:border-box;
+}
+.card pre{ max-width:100%; overflow-x:auto; }
+@media (min-width:768px){
+  pre{ max-width:80ch; white-space:pre-wrap; word-break:break-word; }
 }
 
-@media (min-width: 1400px) {
-  .hero { max-width: 480px; } /* gentle upscale on very wide screens */
+/* ====== images that should not dominate (hero photos/diagrams) ====== */
+.hero{
+  display:block; width:90%; max-width:420px; height:auto;
+  margin:0 auto 1.5rem;
+  border-radius:12px; border:1px solid var(--line);
+  box-shadow:0 6px 18px rgba(0,0,0,.3);
+}
+@media (min-width:1400px){ .hero{ max-width:480px; } }
+
+/* ====== dark preference ====== */
+@media (prefers-color-scheme: dark){
+  body{ color:#e8e8e8; }
+  a{ color:#ffb44d; }
+  .wrap{ background: rgba(0,0,0,.16); }
+  .card{ background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.12); }
+  .card p{ color:#d8d8d8; }
 }
