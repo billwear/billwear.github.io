@@ -100,3 +100,47 @@ pre{
   .card{ background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.12); }
   .card p{ color:#d8d8d8; }
 }
+/* ==== layout width + breathing room ==== */
+:root{ --wrap:64rem; }                 /* was 42–46rem */
+@media (min-width:1200px){
+  :root{ --wrap:72rem; }               /* comfy on big screens */
+}
+
+/* ==== background: lighter, less pink ==== */
+body{
+  background: linear-gradient(160deg,#eef6fb 0%,#f7f7fb 55%,#fbf5ef 100%);
+}
+
+/* ==== container: remove the dim veil ==== */
+.wrap{
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  background: transparent;             /* ← was rgba(255,255,255,.35) */
+  border-radius: 0;                     /* let cards provide structure */
+}
+
+/* ==== headings & text: clearer contrast ==== */
+p, li{ color:#1f2937; }                /* slate-ish body text */
+h1, h2{ color:#0b1320; }
+.grid{ gap:1rem; }                      /* a touch more whitespace */
+
+/* ==== cards: bright + crisp ==== */
+.card{
+  background:#ffffff;                   /* full white = max legibility */
+  border:1px solid rgba(15,23,42,.08);
+  box-shadow:0 8px 22px rgba(0,0,0,.06);
+  border-radius:.85rem;
+}
+.card p{ color:#334155; }               /* readable inside cards */
+.card:hover{ transform:translateY(-1px); box-shadow:0 10px 26px rgba(0,0,0,.08); transition:.15s ease; }
+
+/* ==== links: keep the warm accent, increase contrast a hair ==== */
+a{ color:#6d4700; text-decoration-thickness:.1em; text-underline-offset:.16em; }
+a:hover{ color:#4b3200; }
+
+/* ==== section subtitles / ledes (optional polish) ==== */
+.lede{ color:#475569; }
+
+/* ==== code stays tidy ==== */
+pre{ max-width:min(80ch,100%); }
