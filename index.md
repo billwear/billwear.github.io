@@ -5,7 +5,9 @@ title: home
 
 ## burn slow. build deep. tune true.
 
-this is a minimal site with no theme and no magic. you control the html, css, and structure.
+Hi, I'm Bill, and I'm a maker.
+I build things out of words, bits, cloth, and silicon.
+Come watch me work.
 
 - edit `_layouts/default.html` to change the chrome
 - edit `assets/css/main.css` to change the look
