@@ -3,7 +3,7 @@ layout: default
 title: home
 ---
 
-# start simple. see everything.
+# burn slow. build deep. be the proof.
 
 this is a minimal site with no theme and no magic. you control the html, css, and structure.
 
