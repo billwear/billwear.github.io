@@ -5,8 +5,8 @@ title: home
 
 ## burn slow. build deep. tune true.
 
-Words, bits, cloth and code.
-I shape what hums, moves, or holds.
+Words, bits, cloth and code.   
+I shape what hums, moves, or holds.   
 Come watch me work.
 
 ---
