@@ -3,7 +3,7 @@ layout: default
 title: home
 ---
 
-# burn slow. build deep. tune true.
+## burn slow. build deep. tune true.
 
 this is a minimal site with no theme and no magic. you control the html, css, and structure.
 
