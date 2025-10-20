@@ -5,13 +5,10 @@ title: home
 
 ## burn slow. build deep. tune true.
 
-Hi, I'm Bill.
-I'm a maker.  
-I build things out of words, bits, cloth, and silicon.  
+Words, bits, cloth and code.
+I shape what hums, moves, or holds.
 Come watch me work.
 
-- edit `_layouts/default.html` to change the chrome
-- edit `assets/css/main.css` to change the look
-- edit this `index.md` to change the home content
+---
 
 want a post? there is a sample: [_first post_](/blog/first-post/).
