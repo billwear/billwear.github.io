@@ -1,0 +1,21 @@
+title: bill wear
+description: "plain, readable, fast. understand it all the way down."
+url: "https://billwear.github.io"
+baseurl: ""
+
+# build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: /blog/:title/
+timezone: America/Chicago
+
+# exclude stuff from the build
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+  - .gitignore
+  - .github
+  - .vscode

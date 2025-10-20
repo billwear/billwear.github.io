@@ -1,0 +1,96 @@
+:root{
+  --cream: #eadfcc;
+  --mocha: #6a4b3a;
+  --amber: #d39b2a;
+  --ink: #1f2328;
+  --muted: #555;
+  --wrap: 70ch;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin:0; padding:0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height:1.6;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 880px){
+  body{ font-size: 18px; } /* larger on laptop/desktop */
+}
+
+.wrap{
+  max-width: var(--wrap);
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.site-header, .site-footer{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+  padding: .75rem 1rem;
+  background: #fff7ef;
+  border-bottom: 1px solid #e8d9c6;
+}
+
+.site-footer{
+  border-top: 1px solid #e8d9c6;
+  border-bottom:none;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.brand{
+  font-weight: 700;
+  color: var(--mocha);
+  text-decoration:none;
+}
+
+.nav a{
+  margin-left: 1rem;
+  text-decoration:none;
+  color: var(--mocha);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.nav a:hover{ border-color: var(--amber); }
+
+h1,h2,h3{
+  font-family: "Crimson Text", Georgia, "Times New Roman", serif;
+  margin: 1.2rem 0 .5rem 0;
+}
+
+h1{ font-size: clamp(1.6rem, 2.2vw + 1rem, 2.4rem); }
+h2{ font-size: clamp(1.3rem, 1.6vw + 1rem, 1.8rem); }
+h3{ font-size: clamp(1.1rem, 1.2vw + 1rem, 1.4rem); }
+
+.post-list{
+  list-style:none; padding:0;
+}
+.post-list li{
+  margin:.75rem 0;
+}
+.post-list a{ font-weight:600; }
+.post-list time{
+  color: var(--muted);
+  margin-left:.5rem;
+  font-size:.9rem;
+}
+
+code, pre{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, Liberation Mono, monospace;
+  background:#fff;
+  border:1px solid #eee2d4;
+  border-radius:6px;
+  padding:.1rem .4rem;
+}
+
+pre{ padding: .75rem; overflow:auto; }
+a{ color: var(--mocha); }
+a:hover{ color: var(--amber); }
