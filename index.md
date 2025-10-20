@@ -5,8 +5,9 @@ title: home
 
 ## burn slow. build deep. tune true.
 
-Hi, I'm Bill, and I'm a maker.
-I build things out of words, bits, cloth, and silicon.
+Hi, I'm Bill.
+I'm a maker.  
+I build things out of words, bits, cloth, and silicon.  
 Come watch me work.
 
 - edit `_layouts/default.html` to change the chrome
