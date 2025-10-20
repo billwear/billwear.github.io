@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>billwear</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>burn slow. build deep. be the proof.</h1>
+    <p>Welcome to my makerspace, powered by the <a href="https://williamwear.substack.com" rel="noopener">Inner Fire</a>.</p>
+    <hr><!-- four-card hub -->
+<section class="sec">
+  <h2>maker hub</h2>
+  <div class="grid">
+    <!-- boho byte bags -->
+    <div class="card">
+      <h3><a href="https://bohobytebags.com" rel="noopener">BohoByteBags</a></h3>
+      <p>Hand‑made bags, patterns, and sewing notes from the bench.</p>
+    </div>
+
+    <!-- solder & signal -->
+    <div class="card">
+      <h3><a href="https://solderandsignal.com" rel="noopener">Solder & Signal</a></h3>
+      <p>Electronics lab notebook: circuits, RF experiments, and build logs.</p>
+    </div>
+
+    <!-- the way of emacs -->
+    <div class="card">
+      <h3><a href="https://the-way-of-emacs.com" rel="noopener">The Way of Emacs</a></h3>
+      <p>Workflows, Org‑mode systems, and practical Lisp for real work.</p>
+    </div>
+
+    <!-- personal -->
+    <div class="card">
+      <h3>Personal</h3>
+      <ul>
+        <li><a href="about.html">About me</a>: 404: Personality not found.</li>
+        <li><a href="credo.html">My credo</a>: Rules to ignore.</li>
+        <li><a href="traits-modern.html">Knowing myself</a>: Can’t find Waldo.</li>
+        <li><a href="geekcode-modern.html">Geek code</a>: Nerd Rosetta Stone.</li>
+        <li><a href="my-backpack.html">My backpack</a>: Mary Poppins’ bag, tech edition.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <hr>
+  <div>Copyright © 2020–2025 by stormrider<br>All Rights Reserved</div>
+</footer>
+
+  </div>
+</body>
+</html>
