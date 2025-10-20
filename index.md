@@ -7,7 +7,7 @@ title: home
 
 Words, bits, cloth and code.   
 I shape what hums, moves, or holds.   
-Come watch me work.
+Come and watch me work.
 
 ---
 
