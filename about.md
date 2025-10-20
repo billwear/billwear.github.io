@@ -1,0 +1,107 @@
+qx<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About · stormrider</title>
+  <meta name="description" content="A plain-spoken origin story: UNIX, Emacs, org-mode, and the rules that keep the work honest.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="sec">
+      <p><a href="/">← back to billwear</a></p>
+      <h1>
+	  
+## About me<
+#### A long time ago, in an IRC far, far away.
+      <hr>
+      <p class="small">
+        @ack: “tables are 90% of my use-cases for org-mode.”<br>
+        @stormrider: “life is 90%.”
+      </p>
+    </header>
+
+    <main>
+      <section class="sec">
+        <h2>Switchgear, language, and a grocery-store lesson</h2>
+        <p>There’s an old MIT story about the Tech Model Railroad Club. Some members loved scenery and trains; the ones who changed my life loved the <em>switchgear</em>. They wired logic into motion. When a hulking mainframe arrived — paper tape, overnight slots — they learned to shave instructions until a program was a poem.</p>
+        <p>Legend has it one of them began to speak like a compiler. Each Saturday his wife returned from the store and asked, “Do you want to help me bring in the groceries?” He answered, “No,” and went back to debugging. On week four she exploded. He replied, perfectly literal: “You asked if I <em>wanted</em> to. You didn’t ask if I <em>would</em>.”</p>
+        <p>It’s a joke with a barb: our tools shape our language, and our language shapes our lives. Spend enough time with machines and you learn to be exact — and sometimes you forget how generous human speech can be.</p>
+      </section>
+
+      <section class="sec">
+        <h2>First login</h2>
+        <p>I toured MIT once — seventh grade, prize from the state science fair. My father, a Navy CIC officer turned professor, asked me to pick a college closer to home. He pulled strings instead: community-college computer classes at fourteen, university courses folded into my high-school day.</p>
+        <p>One summer in 1974 I logged into UNIX at Calhoun Community College in Decatur, Alabama. I’d been a reader since six; text was my native medium. Here was a world where plain text was the raw material and pipes carried thought. I was done for.</p>
+      </section>
+
+      <section class="sec">
+        <h2>UNIX rules for life</h2>
+        <p>Years of technical writing and light programming left me with a handful of rules. They turned out to be a map to org-mode — and to my people.</p>
+        <ul>
+          <li><strong>Keep it simple.</strong> You can carry it farther when it’s light.</li>
+          <li><strong>Do one thing well (at a time).</strong> Multitasking is mostly loss disguised as motion.</li>
+          <li><strong>Network.</strong> You were born to connect.</li>
+          <li><strong>Say what you mean.</strong> Nothing is truer than the truth.</li>
+          <li><strong>Hack carefully.</strong> Trial and error teaches; keep a “voltmeter” handy so the lesson isn’t you.</li>
+          <li><strong>Be who you are.</strong> Even a bent wire carries a good light.</li>
+          <li><strong>Use leverage.</strong> A bigger hammer isn’t always the answer.</li>
+          <li><strong>Use what you have.</strong> Don’t dig diamonds with a brick of gold.</li>
+          <li><strong>Have faith.</strong> Almost anything is possible — maybe not skiing through a revolving door.</li>
+          <li><strong>Think ahead, loosely.</strong> Plans serve today’s learning, not the other way around.</li>
+        </ul>
+      </section>
+
+      <section class="sec">
+        <h2>ed → vi → Emacs</h2>
+        <p>I didn’t begin with org-mode. My first file was edited with <code>ed</code> on a PDP-11/40 in September 1974; <em>vi</em> hadn’t been written yet. I’m not the genius in the room — Bs in math and EE, As in languages, programming, organic chemistry. My father did the math magic. I learned to love the place where math meets language and logic: code.</p>
+      </section>
+
+      <section class="sec">
+        <h2>Research UNIX and the joy of abstraction</h2>
+        <p>Fifth-edition UNIX had just been licensed to schools. Running ASM and FORTRAN wasn’t new; what was new was the radical <em>simplicity</em> on top of deep complexity. Files for everything. Small is beautiful. Do one thing well. It dumped my programs often enough, but it also let me <em>think</em> in pieces — <code>ls</code>, <code>cat</code>, <code>awk</code>, <code>sed</code> — and assemble wishes into working scripts.</p>
+        <blockquote>Abstraction is mercy: you don’t need to see the whole machine to do honest work with it.</blockquote>
+      </section>
+
+      <section class="sec">
+        <h2>Paper journals, plain text, and the problem of tomorrow</h2>
+        <p>By the 1990s I kept daily journals as plain text: <em>YYYY-MM-DD</em> under a personal <code>/var/log</code>. Appointments, todos, notes, weather, fortune, a timestamped diary. It worked — until it didn’t. Repeating tasks. Carrying things forward by hand. Too much friction meant gaps, sticky notes, and palmtops.</p>
+      </section>
+
+      <section class="sec">
+        <h2>Finding Emacs, then finding org-mode</h2>
+        <p>In the mid-nineties, a colleague at HP suggested Emacs. It stuck. Outline mode helped me think. Before Katrina I stumbled into org-mode, and everything clicked: text as data, data as agenda, agenda as memory. I tried to bend phones to org; sometimes I succeeded, partly. The center held on the laptop.</p>
+        <p>Much later I sent a job application as an org document — requirements as headings, evidence as drawers. The team lived in Emacs. I joined, happily. I tag most work “foss” now. It feels accurate.</p>
+      </section>
+
+      <section class="sec">
+        <h2>Principles, revisited in org-mode</h2>
+        <ul>
+          <li><strong>Simplicity after fluency.</strong> Emacs looks complex until muscle memory makes it kind. Then one line of text does ten jobs.</li>
+          <li><strong>Single-tasking without fear.</strong> Buffers let you pause a thought and return to it intact. The agenda tells the truth without drama.</li>
+          <li><strong>Connected in context.</strong> Mail, chat, issues — captured next to the work so you don’t lose the thread.</li>
+          <li><strong>Say what you mean.</strong> Outlines are honest. They leave less room for mythology.</li>
+          <li><strong>Hack, but back up.</strong> Customize, extend, and if you must, write the Lisp — after you make a copy.</li>
+          <li><strong>Leverage plain text.</strong> Tags, timestamps, properties: readable by humans, scriptable by anything.</li>
+          <li><strong>Own your tools.</strong> No gatekeepers, no subscriptions. It even prints.</li>
+          <li><strong>Plan lightly.</strong> The agenda is a promise to future-you, not a contract against surprise.</li>
+        </ul>
+      </section>
+
+      <section class="sec">
+        <h2>A weird kind of heaven</h2>
+        <p>If we get to choose the scenery in heaven, I want a paneled office off a raised-floor machine room: stained carpet squares, squeaky chair, reluctant fluorescents. On the desk: a terminal that runs nothing but Emacs and org-mode. And every Saturday, a car full of groceries — the question asked the right way.</p>
+      </section>
+    </main>
+
+    <footer class="sec">
+      <hr>
+      <p>CC BY-NC 2025 stormrider</p>
+    </footer>
+
+  </div>
+</body>
+</html>
