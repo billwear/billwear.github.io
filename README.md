@@ -1,4 +1,4 @@
-### burn slow. build deep. be the proof.
+##### burn slow. build deep. be the proof.
 
 Welcome to my makerspace, powered by [The Journal of the Inner Fire](https://williamwear.substack.com).
 
