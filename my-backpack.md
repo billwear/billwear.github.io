@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # My EDC (every-day carry)
 
 ## Technology
