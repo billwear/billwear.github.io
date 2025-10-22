@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # 12 · Notes and Metadata
 
 - [Home](index.html)
