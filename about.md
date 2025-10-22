@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # About me
 
 **A long time ago, in an IRC far, far away.**
