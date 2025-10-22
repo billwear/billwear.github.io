@@ -1,5 +1,5 @@
 <style>
-.site-title{ display:none !important }
+.site-title{ display:none; !important }
 body {background-color: linen;}
 </style>
 
