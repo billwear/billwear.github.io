@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # The quiet art of attention
 
 *Order the mind, slow the moment, choose the self the moment needs — without losing the self beneath.*
