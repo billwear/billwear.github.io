@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # 11 · Pools, Zones, and Tags
 
 - [Home](index.html)
