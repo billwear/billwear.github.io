@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # 01 · Install and Initialize MAAS
 
 - [Home](index.html)
