@@ -1,4 +1,6 @@
 # _config.yml
 title: billwear.github.io
-# (optional) keep a simple built-in theme
-theme: jekyll-theme-minimal
+theme: null
+defaults:
+	- scope: {path: "" }
+	  values: { layout: defaults }
