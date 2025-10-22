@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # 06 · Networking and DHCP
 
 - [Home](index.html)
