@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 <head>
 # SDR with a Raspberry Pi 4
       
