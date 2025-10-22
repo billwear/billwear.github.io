@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # How engineers manage projects and make trade-offs
 
 ## The classic triangle
