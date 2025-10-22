@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # 05 · Compose VMs
 
 - [Home](index.html)
