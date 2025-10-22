@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # The design spiral
 
 *Why design never runs in a straight line — and why that’s a feature, not a bug.*
