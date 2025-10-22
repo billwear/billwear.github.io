@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # Chatronyms
 
 ## How to read this
