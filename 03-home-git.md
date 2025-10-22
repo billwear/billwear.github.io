@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # 03 · Auto‑sync Home Repo (home‑git)
     
 ## What this does
