@@ -9,15 +9,6 @@ Format: short, focused chapters.
 
 Each page explains a small part of the init file with the exact code snippet and the rationale behind it. No single page is long or overloaded.
 
-1. [UI Basics & Startup](01-ui-basics.md)  
-2. [Package Archives & use-package Bootstrap](02-packages.md)  
-3. [Auto-syncing your Home Repo (home-git)](03-home-git.md)  
-4. [Convenience Functions You’ll Actually Use](04-convenience-funcs.md)  
-5. [Journal + Emologent Workflow](05-journal-emologent.md)  
-6. [Org Settings & Agenda Views](06-org-agenda.md)  
-7. [Ivy/Counsel, Which-Key, Theme & Faces](07-ivy-whichkey-theme.md)  
-8. [Keybindings Tour & Keys Help](08-keys-tour.md)  
-9. [Encoding, Backups, Quality-of-Life](09-misc.md)
 
 ---
 

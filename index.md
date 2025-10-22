@@ -6,6 +6,13 @@ body {background-color: linen;}
 - [About](about.md)
 - [More backstory](backstory.md)
 - [Books I'm reading](books.md)
+- [My geek code](geekcode-modern.md)
+- [My backpack](my-backpack.md)
+
+## Curiosities
+- [Chatronyms](textspeak.md)
+- [Phreaking numbers](phreading-numbers.md)
+- [Software defined radio on a raspberry Pi 4](srd-pi4.md)
 
 ## Emacs
 - [UI basics & startup](01-ui-basics.md)  
@@ -18,9 +25,25 @@ body {background-color: linen;}
 - [Keybindings tour & keys help](08-keys-tour.md)  
 - [Encoding, backups, quality-of-life](09-misc.md)
 
+## MAAS
+- [Installation](01-install.md)
+- [Login and configure](02-login-config.md)
+- [Set up LXD](03-lxd-host.md)
+- [Set up a KVM](04-vm-host.md)
+- [Create a VM](05-compose.md)
+- [Confirm DHCP](06-network-dhcp.md)
+- [Commission and deploy a machine](07-commission-deploy.md)
+- [Make JSON output easier to read](08-jq-ops.md)
+- [Customize storage](09-storage.md)
+- [Advanced networking](10-net-advanced.md)
+- [Pools, zones, and tags](11-pools-zones-tags.md)
+- [Notes](12-notes.md)
+- [Dynamic annotations](13-annotations.md)
 
 ## How engineering is done
 - [Design spiral](design-spiral.md)
+- [Engineering tradeoffs](engineering-tradeoffs.md)
+- [How to write requirements](requirements.md)
 
 ## Random essays
 - [The quiet art of attention](art-of-attention.md)

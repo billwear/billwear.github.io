@@ -1,0 +1,56 @@
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+      <a href="/">← back to billwear</a>
+# How engineers manage projects and make trade-offs
+
+    <main>
+## The classic triangle
+          Every project lives under three constraints: **time**, <strong>cost</strong>, and <strong>scope/quality</strong>. “Pick any two,” as the saying goes — engineers spend their lives negotiating the third.
+      </section>
+
+## How engineers actually manage projects
+          <ol>
+          * **Requirements first:** clear, testable “shall” statements form the baseline.
+          * **Break down the work:** decompose into systems, subsystems, and tasks; assign IDs and owners.
+          * **Iterate and integrate:** build, test, fix, repeat — don’t wait for perfection to move forward.
+          * **Continuous risk scanning:** ask daily, “what can sink us?” and “what’s our mitigation?”
+          * **Verification planning:** decide early how you’ll prove each requirement was met (test, analysis, demo).
+          </ol>
+      </section>
+
+## Real-time trade-offs
+          Projects rarely run in straight lines. Engineers make constant trade-offs under pressure. Typical levers:
+          * **Performance vs. cost:** a stronger material might add reliability but wreck the budget.
+          * **Schedule vs. thoroughness:** ship today with known gaps, or delay for a full test cycle?
+          * **Features vs. simplicity:** adding “just one more option” often multiplies integration headaches.
+          * **Innovation vs. proven tech:** bleeding-edge can impress, but also bleed resources.
+      </section>
+
+## Tools of the trade
+          * **Checklists & Kanban boards:** keep the team aligned and tasks visible.
+          * **Version control (git, etc.):** every change logged, reversible, traceable.
+          * **Simulations & prototypes:** test early assumptions before committing dollars.
+          * **Daily stand-ups:** short syncs to surface blockers and reprioritize quickly.
+          * **Metrics dashboards:** time, burn-down, defect counts, throughput — quantify reality.
+      </section>
+
+## Examples of live trade-offs
+          ```Scenario: Thermal system runs hotter than predicted.
+Trade-off: Add a fan (cost + noise), or derate performance (schedule impact)?
+Decision: Add fan; log requirement deviation; update BOM and test plan.
+
+Scenario: Customer asks for a new feature late.
+Trade-off: Include now (delay ship), or push to next release?
+Decision: Document as "should" requirement; plan for v2.0.```
+      </section>
+
+## The mindset
+      </section>
+    </main>
+
+      CC BY-NC 2025 · stormrider
+
+**CC BY-NC 2025 stormrider**
