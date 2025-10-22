@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # 08 · Keybindings Tour & Keys Help
 
 ## Global keys, grouped
