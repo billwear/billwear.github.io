@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # Emacs: My .emacs, Explained
 
 *A practical tour of the init file in small, learnable pieces.*  

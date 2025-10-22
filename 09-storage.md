@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 09 · Storage (CLI)
 
 - [Home](index.html)

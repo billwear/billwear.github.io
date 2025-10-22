@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 04 · Register the LXD VM-host
 
 - [Home](index.html)

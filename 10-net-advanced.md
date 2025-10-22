@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 10 · Advanced Networking
 
 - [Home](index.html)

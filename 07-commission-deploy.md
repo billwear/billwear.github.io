@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 07 · Commission and Deploy
 
 - [Home](index.html)

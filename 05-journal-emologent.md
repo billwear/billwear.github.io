@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 05 · Journal + Emologent
 
 ## What this gives you

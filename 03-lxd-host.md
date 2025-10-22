@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 03 · Prepare the LXD Host
 
 - [Home](index.html)

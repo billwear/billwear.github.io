@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 08 · jq for Operations
 
 - [Home](index.html)

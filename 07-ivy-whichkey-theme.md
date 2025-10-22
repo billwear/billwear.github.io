@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 07 · Ivy, Counsel, Which‑Key, Theme
 
 ## Completion & discovery

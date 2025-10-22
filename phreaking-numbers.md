@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # Phreaking Numbers
 
 ## What this is

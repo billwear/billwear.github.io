@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # My Backstory
 
 *Who I am, where I come from, and how I choose to operate*

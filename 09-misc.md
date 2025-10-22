@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 09 · Encoding, Backups, and QoL
 
 ## Quality‑of‑life defaults

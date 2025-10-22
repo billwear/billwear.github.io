@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 <head>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">

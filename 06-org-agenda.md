@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 06 · Org Settings & Agenda
     
 ## Readable agendas

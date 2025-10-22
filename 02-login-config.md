@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 02 · Log In and Configure
 
 - [Home](index.html)

@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # billwear.github.io — minimal, fully-transparent starter
 
 this is a bare-bones github pages site using jekyll with **no external theme**,

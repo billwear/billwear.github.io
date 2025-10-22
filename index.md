@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-</style>
+<style>
 
 ## About me
 - [About](about.md)
@@ -11,8 +11,8 @@ body {background-color: linen;}
 
 ## Curiosities
 - [Chatronyms](textspeak.md)
-- [Phreaking numbers](phreading-numbers.md)
-- [Software defined radio on a raspberry Pi 4](srd-pi4.md)
+- [Phreaking numbers](phreaking-numbers.md)
+- [Software defined radio on a raspberry Pi 4](sdr-pi4.md)
 
 ## Emacs
 - [UI basics & startup](01-ui-basics.md)  

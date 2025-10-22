@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 13 · Dynamic Annotations
 
 - [Home](index.html)

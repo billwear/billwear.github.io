@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 <head>
     /* ——— Masque tokens ——— */
     }

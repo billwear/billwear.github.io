@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # My Geek Code
 
 *A lovingly literal self-portrait, rendered in Geek Code and translated into plain English with a wink.*

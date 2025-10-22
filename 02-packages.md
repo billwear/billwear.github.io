@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 02 · Package Archives & use‑package
 
 ## Why this bootstrap?

@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # How to write engineering requirements
 
 ## The language of requirements

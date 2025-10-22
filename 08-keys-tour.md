@@ -1,3 +1,6 @@
+<style>
+body {background-color: linen;}
+<style>
 # 08 · Keybindings Tour & Keys Help
 
 ## Global keys, grouped
@@ -30,7 +33,7 @@
 (global-set-key (kbd "C-c m S") 'my/insert-seasonal-header)
 (global-set-key (kbd "C-c m s") 'my/insert-shell-command-results)
 (global-set-key (kbd "C-c m x") 'my/draw-ascii-box-around-region)
-      (global-set-key (kbd "C-c m u") 'my/uncapitalize-region)
-      ```
+(global-set-key (kbd "C-c m u") 'my/uncapitalize-region)
+```
 
 **CC BY-NC 2025 stormrider**
