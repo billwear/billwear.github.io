@@ -1,6 +1,10 @@
 # _config.yml
 title: billwear.github.io
-theme: null
+# turn off bundled themes
+theme:
+# apply our custom layout to every page
 defaults:
-	- scope: {path: "" }
-	  values: { layout: defaults }
+  - scope:
+      path: ""
+    values:
+      layout: default
