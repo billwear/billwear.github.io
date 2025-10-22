@@ -1,6 +1,6 @@
 <style>
 body {background-color: linen;}
-<style>
+</style>
 # Books I'm Reading
 
 *Explaining how seven+one books are changing me, and encouraging you to seek them out if they fit.*
