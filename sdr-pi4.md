@@ -1,7 +1,7 @@
 <style>
 body {background-color: linen;}
 </style>
-<head>
+
 # SDR with a Raspberry Pi 4
       
 Hook up a HackRF One, catch your first signals, then explore. No photos yet; reshoot pending.
