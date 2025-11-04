@@ -1,5 +1,0 @@
-#+TITLE: Sitemap
-
-- [[file:index.org][Bill Wear]]
-- posts
-  - [[file:posts/2025-11-04-hello-world.org][Hello world]]
