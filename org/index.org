@@ -5,7 +5,7 @@
 
 Welcome to my maker bench on the web.
 
-- [[file:posts/][Posts]]
+- [[file:posts/index.org][Posts]]
 - [[file:sitemap.html][Sitemap]]
 
 * Recent
