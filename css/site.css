@@ -1,0 +1,8 @@
+body{max-width:72ch;margin:3rem auto;padding:0 1rem;font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial}
+main{display:block}
+header,footer{margin:2rem 0;color:#666}
+h1,h2,h3{line-height:1.25}
+pre,code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+pre{overflow:auto;padding:.75rem;border:1px solid #ddd;border-radius:6px;background:#fafafa}
+a{color:#0366d6;text-decoration:none} a:hover{text-decoration:underline}
+nav.sitemap ul{list-style:none;padding:0}
