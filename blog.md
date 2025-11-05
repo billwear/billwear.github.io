@@ -29,7 +29,7 @@ Over the last two days, I've washed all my laundry, as well as half a footlocker
 
 * Florloren: using a failed attempt at a dress from floral upholstery material.
 
-* Couchure: made from fairly obnoxious faux-floral upholstery material.
+* Couchure: made from fairly obnoxious faux-floral shoulda-been-but-isn't-upholstery material.
 
 * Gabardinal Sin: an entire set of highly-articulated everyday carry items from 12 yards of boring grey gabardeenish material (think "lots of pockets"). 
 
