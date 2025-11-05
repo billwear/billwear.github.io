@@ -49,11 +49,15 @@ Over the last two days, I've washed all my laundry, as well as half a footlocker
 
 * Stitchuation: a larger purse made from somebody's really weird idea of a pair of ladies pants.
 
-	![stitchuation](img/stituation.jpg)
+	![stitchuation](img/stitchuation.jpg)
 
 * Aubergenius: a complete kit (phone sling, backpack, purse, et al) made from bias pinstribed aubergine material.
 
 	![aubergenius](img/aubergenius.jpg)
+
+* Normecoreum: another complete kit, in a more casual boho style, made from this comfy but foregettable fabric-that-looks-like-bad-linoleum.
+
+	![normecoreum](img/normcoreum.jpg)
 
 * Botanomaly: let's make a sling bag from this doesn't-quite-fit-any-category fabric print.
 
@@ -61,7 +65,7 @@ Over the last two days, I've washed all my laundry, as well as half a footlocker
 
 * Fishin Statement: a beach bag covered in weird-looking fish.
 
-	![fishin-statement](fishin-statement.jpg)
+	![fishin-statement](img/fishin-statement.jpg)
 
 Don't worry, if this wasn't enough, there's (apparently) much more of this potluck available.
 
@@ -69,11 +73,11 @@ Don't worry, if this wasn't enough, there's (apparently) much more of this potlu
 
 Other than a bit of work on the kitchen under-cabinet plugs (just gluing the modular plugs in place in the enclosures), the rest of the day so far has been spent on my coffee-themed quilt, which I'm calling "Brew-Hemian Rhapsody."  The center stripe (already sewn) is 6-inch squares.  Everything is four-inch squares,
 
-	![four-inch-quilt-squares](four-inch-quilt-squares.jpg)
+	![four-inch-quilt-squares](img/four-inch-quilt-squares.jpg)
 
 with two 2"x4" rectangles moving randomly down the line to make it big enough:
 
-	![two-inch-spacer-squares](two-inch-spacer-squares.jpg)
+	![two-inch-spacer-squares](img/two-inch-spacer-squares.jpg)
 
 I'm making the most of material I already have.
 
