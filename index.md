@@ -2,6 +2,8 @@
 body {background-color: linen;}
 </style>
 
+#### The man. The myth. [The blog](blog.md)
+
 ## About me
 - [About](about.md)
 - [More backstory](backstory.md)
