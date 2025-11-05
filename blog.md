@@ -13,3 +13,24 @@ As always, I fed the cat and made some tea, then curled back up under the covers
 Feeling enlivened and ambitious, I penned a post completely freehand (aka, no soak time revisions), about why [you're never too old](https://open.substack.com/pub/williamwear/p/youre-never-too-old?utm_source=share&utm_medium=android&r=5l1qei). 
 
 Now I'm lying in bed still, swilling cold tea and cuddling the cat. And considering a revelation of the early waking moments: I should wait to start posting to my maker websites until I've got a little more progress in the making. Hmm.
+
+## Thin wispy clouds, sunny and cold
+The dollar-store clock on the wall regulates my heartbeat while I lie here, using the cat to excuse my laziness. A sneeze. A sigh.
+
+Over the last two days, I've washed all my laundry, as well as half a footlocker of old sewing material I inherited from my mother-in-law. Lots of different whimsical fabrics, for which I currently have no idea. And a ton of corduroy, which gave me the idea to make theme purses around the designs:
+
+* Corderroneous: Corduroy fabric in a quilted pattern of odd wale angles and semi-incompatible colors.
+
+* Scrummage: Rugby shirt material in a big sling bag.
+
+* Plaiditude: Made from plaid with boxy attitude.
+
+* Tartangular: from tartan material on a slant.
+
+* Florloren: using a failed attempt at a dress from floral upholstery material.
+
+* Couchure: made from fairly obnoxious faux-floral upholstery material.
+
+* Gabardinal Sin: an entire set of highly-articulated everyday carry items from 12 yards of boring grey gabardeenish material (think "lots of pockets"). 
+
+These would all be geared around electronics (phones, tablets, laptops, etc.) and treated to resist moisture and stiffen the material a bit. Whaddaya think?
