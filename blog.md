@@ -19,22 +19,62 @@ The dollar-store clock on the wall regulates my heartbeat while I lie here, usin
 
 Over the last two days, I've washed all my laundry, as well as half a footlocker of old sewing material I inherited from my mother-in-law. Lots of different whimsical fabrics, for which I currently have no idea. And a ton of corduroy, which gave me the idea to make theme purses, backpacks, phone cases, or even baby blankets around the designs:
 
-* Corderroneous: Corduroy fabric in a quilted pattern of odd wale angles and semi-incompatible colors.
+* Corderroneous: Corduroy fabric daypack in a quilted pattern of odd wale angles and semi-incompatible colors.
 
 	![corderroneous](img/corderroneous.jpg)
 
-* Scrummage: Rugby shirt material in a big sling bag.
+* Scrummage: Rugby shirt material made into a big sling bag.
 
 	![scrummage](img/scrummage.jpg)
 
-* Plaiditude: Made from plaid with boxy attitude.
+* Plaiditude: a boxy purse made from plaid with boxy attitude.
 
-* Tartangular: from tartan material on a slant.
+	![plaiditude](img/plaiditude.jpg)
 
-* Florloren: using a failed attempt at a dress from floral upholstery material.
+* Tartangular: an odd little purse from tartan material on a slant.
 
-* Couchure: made from fairly obnoxious faux-floral shoulda-been-but-isn't-upholstery material.
+	![tartangular](img/tartangular.jpg)
 
-* Gabardinal Sin: an entire set of highly-articulated everyday carry items from 12 yards of boring grey gabardeenish material (think "lots of pockets").
+* Florlorn: a laptop bag using a failed attempt at a dress from floral upholstery material.
 
-These would all be geared around electronics (phones, tablets, laptops, etc.) and treated to resist moisture and stiffen the material a bit. Whaddaya think?
+	![florlorn](img/florlorn.jpg)
+
+* Couchure: a boho crossbody bag made from fairly obnoxious faux-floral, shoulda-been-but-isn't-upholstery material.
+
+	![couchure](img/couchure.jpg)
+
+* Subdueful: a small, inconspicuous purse made from, well, small, inconspicuous material.
+
+	![subduful](img/subdueful.jpg)
+
+* Stitchuation: a larger purse made from somebody's really weird idea of a pair of ladies pants.
+
+	![stitchuation](img/stituation.jpg)
+
+* Aubergenius: a complete kit (phone sling, backpack, purse, et al) made from bias pinstribed aubergine material.
+
+	![aubergenius](img/aubergenius.jpg)
+
+* Botanomaly: let's make a sling bag from this doesn't-quite-fit-any-category fabric print.
+
+	![botanomaly](img/botanomaly.jpg)
+
+* Fishin Statement: a beach bag covered in weird-looking fish.
+
+	![fishin-statement](fishin-statement.jpg)
+
+Don't worry, if this wasn't enough, there's (apparently) much more of this potluck available.
+
+## 17:15 a decent day of sewing stuff
+
+Other than a bit of work on the kitchen under-cabinet plugs (just gluing the modular plugs in place in the enclosures), the rest of the day so far has been spent on my coffee-themed quilt, which I'm calling "Brew-Hemian Rhapsody."  The center stripe (already sewn) is 6-inch squares.  Everything is four-inch squares,
+
+	![four-inch-quilt-squares](four-inch-quilt-squares.jpg)
+
+with two 2"x4" rectangles moving randomly down the line to make it big enough:
+
+	![two-inch-spacer-squares](two-inch-spacer-squares.jpg)
+
+I'm making the most of material I already have.
+
+At the moment, I'm eating salted brown butter cookie ice cream and chilling.  Maybe more will get done later.
