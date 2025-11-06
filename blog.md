@@ -67,11 +67,35 @@ Over the last two days, I've washed all my laundry, as well as half a footlocker
 
 	![fishin-statement](img/fishin-statement.jpg)
 
+* Biasic Park: a small purse with many pockets, shaped a lot like a T-Rex.
+
+	![biasic-park](img/biasic-park.jpg)
+
+* Suedegeist: a larger daypack with this eclectic-electric brown suede.  Don't step on it.
+
+	![suedegeist](img/suedegeist.jpg)
+
 Don't worry, if this wasn't enough, there's (apparently) much more of this potluck available.
 
-## 17:15 a decent day of sewing stuff
+## 17:15 a decent day of sewing stuff & odd things
 
-Other than a bit of work on the kitchen under-cabinet plugs (just gluing the modular plugs in place in the enclosures), the rest of the day so far has been spent on my coffee-themed quilt, which I'm calling "Brew-Hemian Rhapsody."  The center stripe (already sewn) is 6-inch squares.  Everything is four-inch squares,
+Did a bit of prep work on the kitchen under-cabinet plugs.  They are modular plugs that I'm putting into small enclosures that hide underneath the cabinet.
+
+	![electrical-plugs](img/electrical-plugs.jpg)
+
+### Repurposing modular plugs
+
+I made holes for the modular plugs (on the front) and the wires to exit (on the back) using a plastic-cutting tip on my soldering iron.  The plugs have little clips to help hold them into the enclosures that you can buy for them, which were too big for the application.
+
+I cut the holes and used a dremel tool to thin out the material, so the clips will catch, but they don't catch all that well, so I used some heavy caulk to seal them into place.  I put a second coat of caulk on today, just to be sure.  The first coat was holding the plugs well enough to push and pull plugs, but I want to be absolutely sure.
+
+### Brew-hemian Rhapsody
+
+The rest of the day so far has been spent on my coffee-themed quilt, which I'm calling "Brew-Hemian Rhapsody."  The center stripe (already sewn) is 6-inch squares.
+
+	![center-stripe](img/center-stripe.jpg)
+
+Everything is four-inch squares,
 
 	![four-inch-quilt-squares](img/four-inch-quilt-squares.jpg)
 
