@@ -89,7 +89,8 @@ Did a bit of prep work on the kitchen under-cabinet plugs.  They are modular plu
 I made holes for the modular plugs (on the front) and the wires to exit (on the back) using a plastic-cutting tip on my soldering iron.  The plugs have little clips to help hold them into the enclosures that you can buy for them, which were too big for the application.
 
 I cut the holes and used a dremel tool to thin out the material, so the clips will catch, but they don't catch all that well, so I used some heavy caulk to seal them into place.  I put a second coat of caulk on today, just to be sure.  The first coat was holding the plugs well enough to push and pull plugs, but I want to be absolutely sure.
-![plug-caulking](plug-caulking.jpg)
+
+![electrical-plugs](img/electrical-plugs.jpg)
 
 ### Brew-hemian Rhapsody
 
