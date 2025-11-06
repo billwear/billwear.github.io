@@ -90,7 +90,7 @@ I made holes for the modular plugs (on the front) and the wires to exit (on the 
 
 I cut the holes and used a dremel tool to thin out the material, so the clips will catch, but they don't catch all that well, so I used some heavy caulk to seal them into place.  I put a second coat of caulk on today, just to be sure.  The first coat was holding the plugs well enough to push and pull plugs, but I want to be absolutely sure.
 
-![electrical-plugs](img/electrical-plugs.jpg)
+![plug-caulking](img/plug-caulking.jpg)
 
 ### Brew-hemian Rhapsody
 
