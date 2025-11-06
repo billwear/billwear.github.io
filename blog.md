@@ -75,13 +75,14 @@ Over the last two days, I've washed all my laundry, as well as half a footlocker
 
 	![suedegeist](img/suedegeist.jpg)
 
+
 Don't worry, if this wasn't enough, there's (apparently) much more of this potluck available.
 
 ## 17:15 a decent day of sewing stuff & odd things
 
 Did a bit of prep work on the kitchen under-cabinet plugs.  They are modular plugs that I'm putting into small enclosures that hide underneath the cabinet.
 
-	![electrical-plugs](img/electrical-plugs.jpg)
+![electrical-plugs](img/electrical-plugs.jpg)
 
 ### Repurposing modular plugs
 
@@ -93,15 +94,15 @@ I cut the holes and used a dremel tool to thin out the material, so the clips wi
 
 The rest of the day so far has been spent on my coffee-themed quilt, which I'm calling "Brew-Hemian Rhapsody."  The center stripe (already sewn) is 6-inch squares.
 
-	![center-stripe](img/center-stripe.jpg)
+![center-stripe](img/center-stripe.jpg)
 
 Everything is four-inch squares,
 
-	![four-inch-quilt-squares](img/four-inch-quilt-squares.jpg)
+![four-inch-quilt-squares](img/four-inch-quilt-squares.jpg)
 
 with two 2"x4" rectangles moving randomly down the line to make it big enough:
 
-	![two-inch-spacer-squares](img/two-inch-spacer-squares.jpg)
+![two-inch-spacer-squares](img/two-inch-spacer-squares.jpg)
 
 I'm making the most of material I already have.
 
