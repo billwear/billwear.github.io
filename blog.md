@@ -1,111 +1,26 @@
 *This is a blog remniscient of John Carmack's web log that started it all.*
 
-## Wed, Nov 5, 2025
-Third weekday of my new retirement life. This week is not as productive as I'd like, mostly because the time change ("fall back") has thrown me off a bit. I'm rolling with it.
+([yesterday's blog](blog.20251105.md))
 
-### 08:55 Still, a good start
-I woke from vivid dreams I can't remember clearly, tho there was a food theme.
+## Thu, Nov 6, 2025
+*Today is Setting Orange, the 18th day of The Aftermath in the YOLD 3191*
+**You are deeply attached to your friends and acquaintances.**
 
-As always, I fed the cat and made some tea, then curled back up under the covers to write my [substack](https://williamwear.substack.com/). Today was extra productive: I wrote a note to this effect:
+Later blogging today, but not later starting, by any means. Took a little more time with my inner fire post today, looking for deeper meaning in my emotional log entry. For those who don't know, I largely write my blog from insights picked up in my emotional log entry. Here's what today's looks like:
 
-> Some of my posts don’t garner many views. I used to worry and look for “the formula.” Then, a few days ago, someone DM’d me about one of the weaker ones: “You always seem to know just what I need to hear when I’m depressed: this one really lifted me.” It’s humbling to be reminded why I’m doing this.
+```
+*** 06:40 emologent
 
-Feeling enlivened and ambitious, I penned a post completely freehand (aka, no soak time revisions), about why [you're never too old](https://open.substack.com/pub/williamwear/p/youre-never-too-old?utm_source=share&utm_medium=android&r=5l1qei).
+- mood: My mood today is *fiercely independent*. I've *enjoyed* these last few days of /following my nose/ and DOING WHAT SEEMS RIGHT, and I'VE GOTTEN A LOT DONE. I may not have gotten everything done that my planning mind would think i should do in a perfect sequence or order, but that's probably NOT WHAT ONE CAN DO OR SHOULD DO. There are always ways to /force yourself into a corner/ and try to do things in an intellectual way, but there's THE REALITY OF GETTING THINGS DONE ACCORDING TO YOUR MOOD, ABILITIES, FOCUS, AND WILLINGNESS TO COOPERATE WITH YOURSELF. You're a lot /more complex than just a machine/, and /trying to PROGRAM YOURSELF LIKE A MACHINE/ DOESN'T WORK AND LEAVES YOU BASICALLY CONFUSED AND /SPINNING/ AND GETTING NOTHING ACCOMPLISHED.
+- energy: My ENERGY this first week on retirement HAS BEEN SURPRISINGLY POWERFUL. *It's something I can rely on.* I DON'T FIND MYSELF SITTING AROUND A LOT, AND WHEN I DO, I'M WONDERING IF I SHOULDN'T BE UP AND MOVING. IT'S NOT A SELF-INCRIMINATION SORT OF THING. IT'S MORE LIKE I FEEL LIKE I NEED TO GET UP, GET GOING, KEEP MOVING, BECAUSE I WANT TO KEEP MOVING. I WANT TO GET THINGS DONE. I WANT TO SHOW SOME PROGRESS, AND I THINK THAT'S THE FIRST TIME IN MY LIFE THAT I'VE ACTUALLY FELT THAT WAY, BECAUSE I'M NOT DOING IT FOR SOMEBODY ELSE. I think I should have found a way to do this sooner, but I'M HERE NOW, SO THAT'S GOOD.
+- mental wx: My MENTAL WEATHER IS CLEAR. /Not a cloud in the sky, not a trace of fog on the ground./ /Sunshine, cool, nice, perfect weather like Carmel-by-the-Sea, California./ ONE OF THE MOST PERFECT WEATHERS I'VE EVER EXPERIENCED. I Need To Use This Mental Weather Wisely. It's something I have now, and I Need To Hold On To It. I Need To Keep It Where It Needs To Be, /Keep Myself Centered, And Keep Moving Forward/. *I think I'm making progress.* I Do Need To Do /A Little More Polish/ On My Websites, but I think that'll come as I keep working on them.
+- loop:Surprisingly, THERE'S NOTHING REALLY ON LOOP TODAY. I'VE BEEN TRUSTING IN THE UNIVERSE, GOD, WHATEVER YOU WANT TO CALL IT, TO PROVIDE, AND IT HAS. *It's been a little surprising.* A lot of things came around that I didn't expect sooner than I expected and have pushed me into getting started on some things that I think might actually be a place I can provide rare value.
+- gravity: The gravity of the day, and perhaps of the week, the month, and maybe even the year, or the years, is to keep going, keep doing, keep delivering, keep making things, keep moving things forward, keep finding ways to use the things I have to create the things I want. And I think that's really important. That might be the biggest lesson.
+- pivot: The pivot then is discovering what those things are and figuring out how to access them and how to access them more consistently. I'm trying to learn from the books I have. I bought the books because I wanted to learn these things, but then I didn't want to read the books, partly because it's a lot of effort to read, but mostly because it means a lot of change. It means you have to think about what's being said and decide whether you think you want to do it or not. Try it and see if it works. Keep what's for you. Throw out the rest. That's a difficult process. That is a process of reexamining your values. And when you think you /have your values nailed down/ and you want to hold on to them, it's hard to do that. But in fact, we are /growing and learning machines/. We are people. We are humans. We learn continuously whether we want to or not. So it's better to focus that learning on things that will help us and find things that work for us. Our own personality, our own experience, our own /zeitgeist/, our own /soul/.
+- signal boost: I think my real problem here is how I model this in Org Mode. /Org Mode could be a signal booster/ for me if I use it right. But in fact, /I try to use it as a microcontroller/. I try to create little tiny steps that I must follow. And I don't even look to see where those steps are leading or what they're producing. Or whether they're part of the zeitgeist or whether they're just stuff to do to make myself feel better. Am I /arranging deck chairs on the Titanic? Or am I building lifeboats?/ It's a good question. Or am I /going beyond building lifeboats and actually building a ship that will take me reliably across the sea?/ Good questions.
+- reground: The answers, of course, have always been similar. /Tear the tinsel's halo from your head. Plant your sandals firmly on the ground. Stand up tall. Wake the eyes that see./ I've always wondered exactly what that meant, but more than that, I've wondered where that poem came from. I've never actually seen it published anywhere. And it's an interesting approach, /Let the Sun Shine In/. And I'd like to know more about who wrote it and what was their philosophy of life because they may have something to teach me. So maybe the regrounding is to actually /get to ground for the first time/ with a lot of these ideas that I've bought in books that I wasn't willing to read.
+- rare value: What's the rare value here? I don't know yet. I'll have to actually reread this and work through it and see what it was. Or get my friend to help me look at it and find it. We'll see.
+- blockers: And blockers? Don't talk to me about blockers. I have too much to do to be blocked.
+```
 
-Now I'm lying in bed still, swilling cold tea and cuddling the cat. And considering a revelation of the early waking moments: I should wait to start posting to my maker websites until I've got a little more progress in the making. Hmm.
-
-## Thin wispy clouds, sunny and cold
-The dollar-store clock on the wall regulates my heartbeat while I lie here, using the cat to excuse my laziness. A sneeze. A sigh.
-
-Over the last two days, I've washed all my laundry, as well as half a footlocker of old sewing material I inherited from my mother-in-law. Lots of different whimsical fabrics, for which I currently have no idea. And a ton of corduroy, which gave me the idea to make theme purses, backpacks, phone cases, or even baby blankets around the designs:
-
-* Corderroneous: Corduroy fabric daypack in a quilted pattern of odd wale angles and semi-incompatible colors.
-
-	![corderroneous](img/corderroneous.jpg)
-
-* Scrummage: Rugby shirt material made into a big sling bag.
-
-	![scrummage](img/scrummage.jpg)
-
-* Plaiditude: a boxy purse made from plaid with boxy attitude.
-
-	![plaiditude](img/plaiditude.jpg)
-
-* Tartangular: an odd little purse from tartan material on a slant.
-
-	![tartangular](img/tartangular.jpg)
-
-* Florlorn: a laptop bag using a failed attempt at a dress from floral upholstery material.
-
-	![florlorn](img/florlorn.jpg)
-
-* Couchure: a boho crossbody bag made from fairly obnoxious faux-floral, shoulda-been-but-isn't-upholstery material.
-
-	![couchure](img/couchure.jpg)
-
-* Subdueful: a small, inconspicuous purse made from, well, small, inconspicuous material.
-
-	![subduful](img/subdueful.jpg)
-
-* Stitchuation: a larger purse made from somebody's really weird idea of a pair of ladies pants.
-
-	![stitchuation](img/stitchuation.jpg)
-
-* Aubergenius: a complete kit (phone sling, backpack, purse, et al) made from bias pinstribed aubergine material.
-
-	![aubergenius](img/aubergenius.jpg)
-
-* Normecoreum: another complete kit, in a more casual boho style, made from this comfy but foregettable fabric-that-looks-like-bad-linoleum.
-
-	![normecoreum](img/normcoreum.jpg)
-
-* Botanomaly: let's make a sling bag from this doesn't-quite-fit-any-category fabric print.
-
-	![botanomaly](img/botanomaly.jpg)
-
-* Fishin Statement: a beach bag covered in weird-looking fish.
-
-	![fishin-statement](img/fishin-statement.jpg)
-
-* Biasic Park: a small purse with many pockets, shaped a lot like a T-Rex.
-
-	![biasic-park](img/biasic-park.jpg)
-
-* Suedegeist: a larger daypack with this eclectic-electric brown suede.  Don't step on it.
-
-	![suedegeist](img/suedegeist.jpg)
-
-
-Don't worry, if this wasn't enough, there's (apparently) much more of this potluck available.
-
-## 17:15 a decent day of sewing stuff & odd things
-
-Did a bit of prep work on the kitchen under-cabinet plugs.  They are modular plugs that I'm putting into small enclosures that hide underneath the cabinet.
-
-![electrical-plugs](img/electrical-plugs.jpg)
-
-### Repurposing modular plugs
-
-I made holes for the modular plugs (on the front) and the wires to exit (on the back) using a plastic-cutting tip on my soldering iron.  The plugs have little clips to help hold them into the enclosures that you can buy for them, which were too big for the application.
-
-I cut the holes and used a dremel tool to thin out the material, so the clips will catch, but they don't catch all that well, so I used some heavy caulk to seal them into place.  I put a second coat of caulk on today, just to be sure.  The first coat was holding the plugs well enough to push and pull plugs, but I want to be absolutely sure.
-
-![plug-caulking](img/plug-caulking.jpg)
-
-### Brew-hemian Rhapsody
-
-The rest of the day so far has been spent on my coffee-themed quilt, which I'm calling "Brew-Hemian Rhapsody."  The center stripe (already sewn) is 6-inch squares.
-
-![center-stripe](img/center-stripe.jpg)
-
-Everything else is four-inch squares,
-
-![four-inch-quilt-squares](img/four-inch-quilt-squares.jpg)
-
-with two 2"x4" rectangles moving randomly down the line to make it big enough:
-
-![two-inch-spacer-squares](img/two-inch-spacer-squares.jpg)
-
-I'm making the most of material I already have.
-
-At the moment, I'm eating salted brown butter cookie ice cream and chilling.  Maybe more will get done later.
+The caps, title case, "/" & "*" are how i highlight claims, feelings, commitments, etc. I then spend the next hour or so finding the deeper message and turning it into a universal essay. Fun, huh?
