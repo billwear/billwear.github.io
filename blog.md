@@ -1,4 +1,4 @@
-*This is a blog remniscient of John Carmack's web log that started it all.*
+*I'm on vacation today, but here's a late update to yesterday's blog.*
 
 ([yesterday's blog](blog.20251105.md))
 
@@ -24,3 +24,11 @@ Later blogging today, but not later starting, by any means. Took a little more t
 ```
 
 The caps, title case, "/" & "*" are how i highlight claims, feelings, commitments, etc. I then spend the next hour or so finding the deeper message and turning it into a universal essay. Fun, huh?
+
+### 21:25 Stations set up
+
+Went to town today to get an oversize, carbon-fiber sewing bench -- heavy, solid, and built to accommodate sewing machine pedals. 
+
+![seewing table](20251107_073552.jpg)
+
+Now I have stations for each of my retirement maker roles.  More details Saturday!
