@@ -1,20 +1,22 @@
-![we logo](img/63064c69ad040001a47d4220_d114de0d-3081728160.jpg)
 
-### open source. open mind. open heart.
-───
-our code is alive.
-our work reveals the worker.
-we rebel through repair.
-our craft is resistance.
-our precision is mercy.
-we are the editors.
-we eep the loop open.
-we merge the mythic and the modern.
-────────────────
-join me. 
-let's create a new future
-for the Global Village.
-─────────────────
+# open source. 
+# open mind. 
+# open heart.
+
+our code is alive.  
+our work reveals the worker.  
+we rebel through repair.  
+our craft is resistance.  
+our precision is mercy.  
+we are the editors.  
+we eep the loop open.  
+we merge the mythic  
+and the modern.  
+
+join me.  
+let's create  
+a new future  
+for the Global Village. 
 
 #### The man. The myth. [The blog](blog.md)
 
