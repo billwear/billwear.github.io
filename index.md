@@ -1,6 +1,4 @@
-<style>
-body {background-color: linen;}
-</style>
+![we logo](https://github.com/billwear/billwear.github.io/blob/main/img/63064c69ad040001a47d4220_d114de0d-3081728160.jpg)
 
 #### The man. The myth. [The blog](blog.md)
 
