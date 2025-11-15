@@ -1,74 +1,205 @@
 <style>
 body {background-color: linen;}
 </style>
-# About me
+# ABOUT ME
 
-**A long time ago, in an IRC far, far away.**
-*@ack: “tables are 90% of my use-cases for org-mode.”*
-*@stormrider: “* **life** *is 90% my use-cases for org-mode.”*
+i work best when i function like an OS — not a productivity system, not a planner, not a GTD clone. i use a scheduler that matches how my mind actually runs. something that feels natural, humane, and frictionless instead of forced.
 
-## Switchgear, language, and a grocery-store lesson
+---
 
-There’s an old MIT story about the Tech Model Railroad Club. Some members loved scenery and trains; the ones who changed my life loved the *switchgear*. They wired logic into motion. When a hulking mainframe arrived — paper tape, overnight slots — they learned to shave instructions until a program was a poem.
+## MY HUMAN TIME-SHARING ALGORITHM
 
-Legend has it one of them began to speak like a compiler. Each Saturday his wife returned from the store and asked, “Do you want to help me bring in the groceries?” He answered, “No,” and went back to debugging. On week four she exploded. He replied, perfectly literal: “You asked if I *wanted* to. You didn’t ask if I *would*.”
+(working name: stormrider/rr)
 
-It’s a joke with a barb: our tools shape our language, and our language shapes our lives. Spend enough time with machines and you learn to be exact — and sometimes you forget how generous human speech can be.
+this is a real operating model. not metaphor. not theory. not a wild hair in a stiff breeze. this runs my day.
 
-## First login
+it's built in layers.
 
-I toured MIT once — seventh grade, prize from the state science fair. My father, a Navy CIC officer turned professor, asked me to pick a college closer to home. He pulled strings instead: community-college computer classes at fourteen, university courses folded into my high-school day.
+---
 
-One summer in 1974 I logged into UNIX at Calhoun Community College in Decatur, Alabama. I’d been a reader since six; text was my native medium. Here was a world where plain text was the raw material and pipes carried thought. I was done for.
+### LAYER 0: THE TRUTH
 
-## UNIX rules for life
+i am a multi-core, interrupt-driven, round-robin mind.
 
-Years of technical writing and light programming left me with a handful of rules. They turned out to be a map to org-mode — and to my people.
+i do not do one thing at a time.
+i do not stick with a task until it’s done.
+i naturally:
 
-* **Keep it simple.** You can carry it farther when it’s light.
-* **Do one thing well (at a time).** Multitasking is mostly loss disguised as motion.
-* **Network.** You were born to connect.
-* **Say what you mean.** Nothing is truer than the truth.
-* **Hack carefully.** Trial and error teaches; keep a “voltmeter” handy so the lesson isn’t you.
-* **Be who you are.** Even a bent wire carries a good light.
-* **Use leverage.** A bigger hammer isn’t always the answer.
-* **Use what you have.** Don’t dig diamonds with a brick of gold.
-* **Have faith.** Almost anything is possible — maybe not skiing through a revolving door.
-* **Think ahead, loosely.** Plans serve today’s learning, not the other way around.
+* context switch
+* hop
+* preempt
+* juggle
+* incubate
+* rediscover momentum
+* finish in waves
 
-## ed → vi → Emacs
 
-I didn’t begin with org-mode. My first file was edited with `ed` on a PDP-11/40 in September 1974; `vi` hadn’t been written yet. I’m apparently the designated genius in my family, but I learned to really love the place where math meets language and logic: code.
+this is not a problem. this is a design feature.
 
-## Research UNIX and the joy of abstraction
+everything below is about giving that native pattern structure instead of shame.
 
-Fifth-edition UNIX had just been licensed to schools. Running ASM and FORTRAN wasn’t new; what was new was the radical *simplicity* on top of deep complexity. Files for everything. Small is beautiful. Do one thing well. It dumped my programs often enough, but it also let me *think* in pieces — `>ls`, `>cat`, `>awk`, `>sed` — and assemble wishes into working scripts.
+---
 
-> Abstraction is mercy: you don’t need to see the whole machine to do honest work with it.
+### LAYER 1: PROCESS CLASSES (PCs)
 
-## Paper journals, plain text, and the problem of tomorrow
+i don’t have “projects.” i have process classes — repeating types of work that recur across my life.
 
-By the 1990s I kept daily journals as plain text: *YYYY-MM-DD* under a personal `>/var/log`. Appointments, todos, notes, weather, fortune, a timestamped diary. It worked — until it didn’t. Repeating tasks. Carrying things forward by hand. Too much friction meant gaps, sticky notes, and palmtops.
+1. PC-DEV – making (solder, sew, code, tinker)
 
-## Finding Emacs, then finding org-mode
+2. PC-WRITE – jotif, book, website copy
 
-In the mid-nineties, a colleague at HP suggested Emacs. It stuck. Outline mode helped me think. Before Katrina I stumbled into org-mode, and everything clicked: text as data, data as agenda, agenda as memory. I tried to bend phones to org; sometimes I succeeded, partly. The center held on the laptop.
+3. PC-HOUSE – renovation, fixes, errands
 
-Much later I sent a job application as an org document — requirements as headings, evidence as drawers. The team lived in Emacs. I joined, happily. I tag most work “foss” now. It feels accurate.
+4. PC-LIFE – finances, docs, bills, planning
 
-## Principles, revisited in org-mode
+5. PC-MIND – reading, reflecting, learning
 
-* **Simplicity after fluency.** Emacs looks complex until muscle memory makes it kind. Then one line of text does ten jobs.
-* **Single-tasking without fear.** Buffers let you pause a thought and return to it intact. The agenda tells the truth without drama.
-* **Connected in context.** Mail, chat, issues — captured next to the work so you don’t lose the thread.
-* **Say what you mean.** Outlines are honest. They leave less room for mythology.
-* **Hack, but back up.** Customize, extend, and if you must, write the Lisp — after you make a copy.
-* **Leverage plain text.** Tags, timestamps, properties: readable by humans, scriptable by anything.
-* **Own your tools.** No gatekeepers, no subscriptions. It even prints.
-* **Plan lightly.** The agenda is a promise to future-you, not a contract against surprise.
+6. PC-CARE – health, rest, exercising the body
 
-## A weird kind of heaven
+7. PC-SOCIAL – connections, convos, collaboration
 
-If we get to choose the scenery in heaven, I want a paneled office off a raised-floor machine room: stained carpet squares, squeaky chair, reluctant fluorescents. On the desk: a terminal that runs nothing but Emacs and org-mode. And every Saturday, a car full of groceries — the question asked the right way.
-      
+that’s myvuniverse. anything i do falls into one.
+
+i never choose the next task. i choose the class.
+
+
+---
+
+### LAYER 2: QUANTUM (Q)
+
+my natural “quantum” — how long one core stays on a process before switching — is 20–30 minutes.
+
+why? because:
+
+* i warm up fast
+* i lose interest right after the first insight
+* i love micro-closure
+* i accelerate by switching, not stagnating
+
+so: Q = 25 minutes.
+
+so i set a timer. when it dings: i switch processes, not tasks.
+
+---
+
+### LAYER 3: PROCESS QUEUES (PQs)
+
+each process class has a ready queue:
+
+PC-DEV
+PC-WRITE
+PC-HOUSE
+PC-LIFE
+PC-MIND
+PC-CARE
+PC-SOCIAL
+
+each queue holds 1–3 active tasks.
+not the whole universe. just the ones in the queue at the moment.
+
+i do NOT pick from the entire backlog. backlog doesn't even make any sense.
+i pick from the ready queue of the class i'm currently running.
+
+this stops overwhelm instantly.
+
+---
+
+### LAYER 4: THE SCHEDULER LOOP (SL)
+
+here’s the entire loop in four steps:
+
+1. pick the next process class
+round-robin across the seven classes unless energy dictates otherwise.
+
+2. run Q = 25 minutes
+deep enough to progress, short enough to avoid burnout.
+
+3. mark one thing as “advanced”
+not done. just moved forward by one step.
+
+4. enqueue notes, switch class, repeat. no guilt. switching is progress.
+
+the cycle takes ~3 hours to run through once. i can successfully run 1–3 cycles per day. four if things are urgent or emergent.
+
+
+---
+
+### LAYER 5: PREEMPTION RULES
+
+i don’t stay on a process:
+
+* when my energy drops below 40%
+* if my interest snaps
+* if an idea sparks for a different class
+* when a real-world dependency blocks
+* after Q < 25 min if stalled
+
+preemption isn’t failure.
+it’s the OS doing its job.
+
+---
+
+### LAYER 6: THE “DONE” MODEL
+
+this is the piece that fixes my fear.
+
+in stormrider/rr, “done” means: i advanced the process one quantum.
+not “i finished the project.”
+not “i completed the whole thing.”
+not “i wrapped it with a bow.”
+
+a process is “done for now” when the timer rings.
+
+this removes existential pressure.
+and my brain instantly calms.
+
+---
+
+### LAYER 7: DAILY BOOT SEQUENCE
+
+when i wake up, you run three checks:
+
+1. energy: high, medium, or low
+
+2. gravity: which process class is tugging on mecemotionally
+
+3. context: what the day demands (appointments, errands, obligations)
+
+i combine these and select my starting class.
+
+examples?
+
+* energy low → PC-MIND
+* gravity high on writing → PC-WRITE
+* context: errands → PC-LIFE
+
+---
+
+### LAYER 8: WEEKLY MAINTENANCE
+
+once per week:
+
+* i empty each PQ into a backlog file
+* choose 1–3 tasks per class for next week
+* rebuild PQs clean
+* archive momentum, not guilt
+
+this is my “garbage collection” cycle.
+
+---
+
+### WHAT THIS SYSTEM GIVES ME
+
+* no more half-finished shame
+* no more forcing serial focus
+* predictable switching
+* momentum through rotation
+* guilt-free preemption
+* clear queues
+* stable weekly rhythm
+* a definition of “done” that matches my nervous system
+* a way to juggle without chaos
+* a way to finish things in waves, not marathons
+* an OS that honors who i actually am
+
 **CC BY-NC 2025 stormrider**
