@@ -1,3 +1,5 @@
+Next: [Stranger's Dream](strangers-dream.md) 
+
 # Field Engineer’s Log — Cycle 511.16
 
 Sixteen cycles ago, while returning to the *Ardent* aboard a service skiff, I crossed an uncharted molecular shear front. I didn’t suffer damage myself, but the skiff’s systems began collapsing in cascading failure: stabilizers drifting out of tune, processors dropping into recursive error states, energy routing degrading cell by cell. Nothing responded to override.
