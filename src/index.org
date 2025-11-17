@@ -59,3 +59,33 @@ Fixing up this farmhouse is good cover, since moderately wealthy retirees (how I
 I started a project last week to add electrical plugs underneath the kitchen cabinets. They have very lightly used circuits, which will give me additional power ports. One of their normal circuits won't provide me with enough power to drive all the equipment I'll need. Finishing the job will look natural and normal to the neighbors.
 
 I don't /want/ to do it today, but it's very simple work and I need to get it done, so food hangover or not, time to make it happen.
+
+* Monday, 1:30pm: Plugs in a holding pattern
+
+I finished the undercabinet plugs today as far as possible.  The actual plugs themselves need painting, which is a one-at-the-time-then-dry-for-24-hours thing.  I've added some pictures for the historical record.
+
+[[file://junction-boxes.jpg]]
+
+[[file://junction-box.jpg]]
+
+[[file://wires-1.jpg]]
+
+[[file://wires-2.jpg]]
+
+[[file://wires-3.jpg]]
+
+[[file://spoon-leverage.jpg]]
+
+[[file://plug-read-to-paint.jpg]]
+
+[[file://nw-cabinet.jpg]]
+
+[[file://ne-cabinet.jpg]]
+
+[[file://nc-cabinet.jpg]]
+
+I debated on whether to do workmanship which is typical of DIY work here (functional, who cares what it looks like) or to do mg field quality work (precise).  I opted to go for a bit of a mix, leaning heavily toward precise, but allowing the odd slip here are there to make it look more "homemade."  That seemed like a good idea, since my mg training will come out when I'm not focusing heavily on making it look amateurish, so best to not put myself in that position.  I guess you could say, "above average."
+
+* 13:44pm: Emacs as a crude supercomputer
+
+I doubt I'll be able to get much use from the AI of this world, but I can at least get one of the systems up and running roughly at speed.  I acquired a high-end laptop computer with the maximum amount of processing memory available.  I loaded the most effective base OS, Ubuntu (primitive, but it will serve).  I've now added Emacs and I'm planning to start in the next few minutes coding up a rudimentary computer helper.  We'll see how it goes.
