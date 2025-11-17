@@ -1,64 +1,30 @@
+# Field Engineer’s Log — Cycle 511.16
 
-### open source.  
-### open mind. 
-### open heart.
+Sixteen cycles ago, while returning to the *Ardent* aboard a service skiff, I crossed an uncharted molecular shear front. I didn’t suffer damage myself, but the skiff’s systems began collapsing in cascading failure: stabilizers drifting out of tune, processors dropping into recursive error states, energy routing degrading cell by cell. Nothing responded to override.
 
-our code is alive.  
-our work reveals the worker.  
-we rebel through repair.  
-our craft is resistance.  
-our precision is mercy.  
-we are the editors.  
-we keep the 'Net open.  
-we merge the mythic and the modern.  
+With no hope of rejoining the *Ardent*, I shifted to **Protocol Greyfall**: emergency descent to the nearest habitable world. I brought the skiff into a high drift orbit, anchored its position, and transferred to the surface from a sensor-blind vantage point. Whether the craft still holds together is impossible to know; its telemetry dissolved before the jump.
 
-we are the Global Village. 
-____
+I’ve taken on the identity of a mid-life drifter settling into semi-retirement on a quiet patch of marshland. The locals suspect nothing. Their assumptions are a convenient shield.
 
-#### The man. The myth. [The blog](blog.md)
+## Local Civilization Assessment
 
-## About me
-- [About](about.md)
-- [More backstory](backstory.md)
-- [Books I'm reading](books.md)
-- [My geek code](geekcode-modern.md)
-- [My backpack](my-backpack.md)
+This species is resourceful and unevenly advanced — clever with improvisation, clumsy with infrastructure, and shockingly inventive within their constraints. Their identification systems were easy to replicate, and their digital finance protocols, while breakable, are widely trusted among them.
 
-## Curiosities
-- [Chatronyms](textspeak.md)
-- [Phreaking numbers](phreaking-numbers.md)
-- [Software defined radio on a raspberry Pi 4](sdr-pi4.md)
+Within two weeks, I secured a farmhouse, enough supplies to operate without raising eyebrows, and a sense of the technological baseline of this region. Their electronics rely on coarse fabrication techniques; their communications run on planetary networks full of noise and redundancy; their tools swing wildly between elegant mechanical simplicity and precarious overdesign.
 
-## Emacs
-- [UI basics & startup](01-ui-basics.md)  
-- [Package archives & use-package bootstrap](02-packages.md)  
-- [Auto-syncing your home directory to a git repo (home-git)](03-home-git.md)  
-- [Convenience functions you’ll actually use](04-convenience-funcs.md)  
-- [Journal + emologent workflow](05-journal-emologent.md)  
-- [Org settings & agenda views](06-org-agenda.md)  
-- [Ivy/counsel, which-key, theme & faces](07-ivy-whichkey-theme.md)  
-- [Keybindings tour & keys help](08-keys-tour.md)  
-- [Encoding, backups, quality-of-life](09-misc.md)
+Still, their creativity is far ahead of their hardware. That’s a pattern worth noting.
 
-## MAAS
-- [Installation](01-install.md)
-- [Login and configure](02-login-config.md)
-- [Set up LXD](03-lxd-host.md)
-- [Set up a KVM](04-vm-host.md)
-- [Create a VM](05-compose.md)
-- [Confirm DHCP](06-network-dhcp.md)
-- [Commission and deploy a machine](07-commission-deploy.md)
-- [Make JSON output easier to read](08-jq-ops.md)
-- [Customize storage](09-storage.md)
-- [Advanced networking](10-net-advanced.md)
-- [Pools, zones, and tags](11-pools-zones-tags.md)
-- [Notes](12-notes.md)
-- [Dynamic annotations](13-annotations.md)
+## Current Mandate
 
-## How engineering is done
-- [Design spiral](design-spiral.md)
-- [Engineering tradeoffs](engineering-tradeoffs.md)
-- [How to write requirements](requirements.md)
+Cross-Contact Rule Six forbids me from introducing knowledge that would warp this civilization’s natural technological curve. That means anything I reconstruct or analyze from the shear front must be built using only the tools and materials already native to this world.
 
-## Random essays
-- [The quiet art of attention](art-of-attention.md)
+The data is stored in my own short-term memory — unstable, fading, and irreplaceable — so the only path is slow reconstruction. Careful experiments disguised as hobby work. Small-scale prototypes built from local components. A workshop that looks like a retiree’s pastime from the outside but functions as a covert laboratory.
+
+Eventually, I will find a way to extract meaning from what I witnessed in the shear front. Eventually, I will send it up to anyone still listening.
+
+But until then, I blend in, work quietly, and build what I can. I must also develop independent means, since too much fiddling with their digital currency would introduce astable fluctuations, which would also violate Rule Six. In short, I will have to develop some salable products.
+
+For now, the world believes I’m simply a solitary retiree learning to live beside a swamp.
+
+It’s a good cover. I intend to use it well.
+
