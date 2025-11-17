@@ -1,4 +1,4 @@
-Next: [Stranger's Dream](strangers-dream.md) 
+Prev: *At Top* | \| Next: [Stranger's Dream](strangers-dream.md) |
 
 # Field Engineer’s Log — Cycle 511.16
 
