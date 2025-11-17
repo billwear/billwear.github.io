@@ -88,4 +88,4 @@ I debated on whether to do workmanship which is typical of DIY work here (functi
 
 * 13:44pm: Emacs as a crude supercomputer
 
-I doubt I'll be able to get much use from the AI of this world, but I can at least get one of the systems up and running roughly at speed.  I acquired a high-end laptop computer with the maximum amount of processing memory available.  I loaded the most effective base OS, Ubuntu (primitive, but it will serve).  I've now added Emacs and I'm planning to start in the next few minutes coding up a rudimentary computer helper.  We'll see how it goes.
+I doubt I'll be able to get much use from the AI of this world, but I can at least get one of the systems up and running roughly at speed.  I acquired a high-end laptop computer with the maximum amount of processing memory available.  I loaded the most effective base OS, Ubuntu (primitive, but it will serve).  I've now added Emacs and I'm planning to start in the next few minutes coding up a rudimentary computer helper.  We'll see how it goes over the next week or two.
