@@ -4,7 +4,7 @@ Next: *Pending* || Prev: [Current Mandate](index.md)
 
 Gotta scrub my language.  Too clean and lab-grade; out here, it tags you as the wrong kind of strange.  Locals listen for that stuff -- the sterile edges, the precision.  Does you no good.  Gets you flagged before you even know they're listening.
 
-So I killed the morning reading *Neuromancer*, by someone named William Gibson.  He must have had a hard life.  Feels less like reading and more like being rewired by a stranger's dream.  Still, it gave me a good download on more casual speech.
+So I killed the morning reading *Neuromancer*, by someone named William Gibson.  He must have had a hard life.  Feels less like reading and more like being rewired by a stranger's dream.  Still, it gave me a good download on more casual speech.  Unfortunately, now I need to use it consistently, otherwise, I'll suddenly sound weird.
 
 ## Extra Power Plugs
 
@@ -15,6 +15,8 @@ Second?  Equipment needs power, mine will need more than most.  Chose this place
 No hurry.  Inside, there are two very light circuits (each with just a small LED light on it), and one that isn't even used yet.  Not ramping up that fast.  Simple enough to equip the two light circuits with plugs, three each, spread out under the cabinets.  Little flat project boxes with modular plugs; romex buried in cable conduit in the back of the cabinets. "For my mixer and crock pots."  Made sure to buy those first and leave them out on display.  These six plugs should keep my lab running for at least a year. Nice to have plenty of spare capacity, though.
 
 Nearly finished them today. They need painting, the plugs are black, everything else is white.  Don't need sore thumbs.  Takes a while for the paint to dry, and I only have enough masking material for one at a time.  Don't want to insulate the inside with spray paint.
+
+Debated on whether I should copy the locals ("chewing gum and baling wire," they say), or continue to keep kosher on my training, precise, clean, neat, measured, etc.  Decided to stick with old habits, but fuzz it up just a bit, so it's not *perfect.*  Out here, that *would* be suspicious.  As it is, I'm just a guy that "pays a lot of attention to detail and cares about his work."  Not doing cabinets, though, unless it pays really well.  Hate sawdust.
 
 ## Weird Sky
 
