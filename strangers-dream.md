@@ -2,7 +2,7 @@ Next: *Pending* || Prev: [Current Mandate](index.md)
 
 # Stranger's Dream — 511.17
 
-Gotta scrub my language.  Too clean and lab-grade, out here, it tags you as the wrong kind of strange.  Locals listen for that stuff -- the sterile edges, the precision.  Does you know good.  Gets you flagged before you even know they're listening.
+Gotta scrub my language.  Too clean and lab-grade; out here, it tags you as the wrong kind of strange.  Locals listen for that stuff -- the sterile edges, the precision.  Does you no good.  Gets you flagged before you even know they're listening.
 
 So I killed the morning reading *Neuromancer*, by someone named William Gibson.  He must have had a hard life.  Feels less like reading and more like being rewired by a stranger's dream.  Still, it gave me a good download on more casual speech.
 
