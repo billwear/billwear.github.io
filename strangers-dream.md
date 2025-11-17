@@ -1,4 +1,4 @@
-Next: *Pending* Prev: [Current Mandate](index.md)
+Next: *Pending* || Prev: [Current Mandate](index.md)
 
 # Stranger's Dream — 511.17
 
