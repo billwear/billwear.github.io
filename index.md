@@ -5,7 +5,7 @@ This site is for the second group.
 
 I’m rebuilding this space around a simple idea:
 
-- nSome minds integrate information before it becomes language.
+- Some minds integrate information before it becomes language.
 - They think at the edge of words.
 - For them, discipline and hustle don’t help much.
 - Alignment does.
