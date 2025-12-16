@@ -18,8 +18,7 @@ If this resonates, you’re in the right place.
 
 For now, start here:
 
-Why some people have no choice but to work deeply
-(a working theory of alignment, deep work, and the edge ego)
+[Why some people have no choice but to work deeply](think-differently.md) (a working theory of alignment, deep work, and the edge ego)
 
 More soon. Quietly. Carefully.
 
