@@ -28,11 +28,11 @@ The cat is very much my close companion.  She comes to my chair when I'm journal
 
 ### Unfinished
 
-The "unfinished" label seems ludicrous, if only because I have barely started.  Though, I suppose, I could count up the renovation projects that are not quite finished.  Perhaps I should focus on those in a dedicated way in the new year, perhaps alloting a specific amount of time each day to work on closure.  Simple steps are much easier to execute than grand plans, and we are certainly down to the craftsmanship phase of our work.  I do need to complete some projects, though, it is certainly not my wife's wish to live in an unfinished home.
+The "unfinished" label seems ludicrous, if only because I have barely started.  Though, I suppose, I could count up the renovation projects that are not quite finished.  Perhaps I should focus on those in a dedicated way in the new year, perhaps allocating a specific amount of time each day to work on closure.  Simple steps are much easier to execute than grand plans, and we are certainly down to the craftsmanship phase of our work.  I do need to complete some projects, though, it is certainly not my wife's wish to live in an unfinished home.
 
 ### Gravity
 
-I seem to have five or six suns, so the gravity could be complex.  If the three-body problem is unsolveable, a seven-body problem is completely unpredictable and chaotic.  Still, there are principles and mathematics for dealing with chaos in a productive way.  Perhaps step one is to learn those and try to apply them to my situation.
+I seem to have five or six suns, so the gravity could be complex.  If the three-body problem is unsolvable, a seven-body problem is completely unpredictable and chaotic.  Still, there are principles and mathematics for dealing with chaos in a productive way.  Perhaps step one is to learn those and try to apply them to my situation.
 
 ### Anchor
 
@@ -40,7 +40,7 @@ I am anchored in the firm belief that I understand the realities of the universe
 
 ### Resisting
 
-I am resisting the idea of continuing to berate myself and treat myself with disrespect.  This is partly because my body has started reacting to these choices with what feel like attacks of dizziness and Meniere's disorientation.  I can confirm that I am not imaginging this, it is strongly correlated, both because it sets on not long after non-self-supporting behavior begins, and fades quickly when the behavior is aborted.  And using the correct antidote, meclizine, does not have a major effect on this dizziness -- only cessation of the behavior.
+I am resisting the idea of continuing to berate myself and treat myself with disrespect.  This is partly because my body has started reacting to these choices with what feel like attacks of dizziness and Meniere's disorientation.  I can confirm that I am not imagining this, it is strongly correlated, both because it sets on not long after non-self-supporting behavior begins, and fades quickly when the behavior is aborted.  And using the correct antidote, meclizine, does not have a major effect on this dizziness -- only cessation of the behavior.
 
 ### Idea Pressure
 
@@ -48,7 +48,7 @@ I have many designs for today, but I also have concerns that there are many fami
 
 ### Creative Current
 
-In the back of my mind, my subconscious is telling me there are five or six forks I will eventually want to pursue.  In other words, the electronics, radio, and Emacs hobbies -- and the public performance of same -- have not been cancelled, simply put on hold so that I can learn sewing and crochet well.  I get the distinct impression that the fabric arts will initially be the most lucrative, so they should be mastered first.  Electronics, radio, Emacs, and novel-writing will probably eclipse them off-and-on, but I feel strongly that the combination, added to my regular JOTIF posts, will be a very strong brand with enough of a following to provide me with the things I need and desire to have.
+In the back of my mind, my subconscious is telling me there are five or six forks I will eventually want to pursue.  In other words, the electronics, radio, and Emacs hobbies -- and the public performance of same -- have not been canceled, simply put on hold so that I can learn sewing and crochet well.  I get the distinct impression that the fabric arts will initially be the most lucrative, so they should be mastered first.  Electronics, radio, Emacs, and novel-writing will probably eclipse them off-and-on, but I feel strongly that the combination, added to my regular JOTIF posts, will be a very strong brand with enough of a following to provide me with the things I need and desire to have.
 
 ### Pivot
 
