@@ -1,4 +1,4 @@
-| ## blogroll | # billwear.github.io, the blog |
+| top | next > [some work in noise](some-work-in-noise.md) |
 
 ## Some people can work in noise.
 Others must work deeply — or not work at all.
