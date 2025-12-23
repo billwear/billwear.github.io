@@ -1,4 +1,4 @@
-| [top](https://billwear.github.io) | next > [deep work or bust](think-differently.md) |
+| [top](https://billwear.github.io) | *end of tree* |
 
 ## Some people can work in noise.
 Others must work deeply — or not work at all.
@@ -18,10 +18,3 @@ I’m writing about that mechanism here — what I call the *edge ego* — and w
 
 If this resonates, you’re in the right place.
 
-For now, start here:
-
-[Why some people have no choice but to work deeply](think-differently.md) (a working theory of alignment, deep work, and the edge ego)
-
-More soon. Quietly. Carefully.
-
-— Bill 
