@@ -24,7 +24,7 @@ Loops are beginning to close.  My wife has finally put up the Christmas tree, af
 
 ### Lingering
 
-The cat is very much my close companion.  She comes to my chair when I'm journaling in the morning to simply be petted for a moment, to engage in mutual affection.  Beautiful moments.  She usually follows it up with a trip to the treat dish, but that may be proximity as much as anything.  Who can really figure out cats?  I am always suspect when someone describes the sensory inputs or the mental processes of animals.  How can they determine this?  I have my doubts.  Cats are suitably complex to essentially opaque to humans, which is why we adore them.  Something which we cannot control or even completely understand makes life rich and interesting.  I believe this is why so many people cling to *religion*.  It is simpler and perhaps more rewarding to get to know God and adopt a cat.
+The cat is very much my close companion.  She comes to my chair when I'm journaling in the morning to simply be petted for a moment, to engage in mutual affection.  Beautiful moments.  She usually follows it up with a trip to the treat dish, but that may be proximity as much as anything.  Who can really figure out cats?  I am always suspect when someone describes the sensory inputs or the mental processes of animals.  How can they determine this?  I have my doubts.  Cats are suitably complex, essentially opaque to humans, which is why we adore them.  Something which we cannot control or even completely understand makes life rich and interesting.  I believe this is why so many people cling to *religion*.  It is simpler and perhaps more rewarding to simply read your Bible and adopt a cat.
 
 ### Unfinished
 
