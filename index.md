@@ -1,122 +1,173 @@
-| *top* | next > [23DEC25](23-dec-25.md) |
+| *top* | [24DEC25](24-dec-25.md) |
 
-## Emologent for December 24, 2025
+# personal journal of stormrider
 
-### Mood 
- 
-Today is undefinable, or perhaps just undefined.  I woke up but didn't want to get up, or to be sure, wasn't sure if I /should/ get up ("It's too early." "Did I really sleep that well?" "Why is the cat signing 'get up' except maybe she knows it's time to get fed?")  Also weird in that I took the time to wander around in the near-dark, laying things out for my shower and laying out my clothes & things (after quickly up my bed) to remove friction from the 'getting ready' process and try to avoid just sliding back into bed.  Weird at least because I don't particularly have to get up this early.  Even made tea, but that was too early.  It cooled too much in the open Yeti cup while I was showering.  From now on I can set it up, but I don't need to push the button until I'm absolutely ready to brew it, mix it, and put the lid on.  The Yeti lid keeps it hot for a couple of hours at least, if not longer.  Still, I was ready to go within thirty-forty minutes or so.  Just no idea where today needs to go.
+Sat Dec 27 11:51:00 AM CST 2025 Q: Why did Menachem Begin invade
+Lebanon? A: To impress Jodie Foster. Today is Sweetmorn, the 69th day of
+The Aftermath in the YOLD 3191 day of crafting / the pull season
 
-### Energy 
- 
-My energy through this little virus week has been predictable.  In the morning's, I'm good.  I'm not saying I'm ready to jump up and carry heavy things; that's a little tougher, as I experienced yesterday carrying a very heavy kitchen garbage bag out to the trash.  What was in that thing, anyway?  It's like somebody emptied the fridge into it.  Oh, yeah, that was actually me.  How soon we forget.  The cat has been contributing her usual diva act to the morning's festivities.  She's walked across the desk a couple of times, once stopping by the laptop.  So the head of my bed is next to my writing desk on the west wall.  The carbon-fiber sewing table is up against window #1 on the north wall, so it's an easy walk for her from the bed (low jump) to the desk to the sewing table to the window.  Also on the north wall is my filing cabinet and a heavy old desk I use as a cutting table (in front of window #2).  Sometimes she wanders across the sewing tools, laid out on a quilted mat I sewed, to get to the other window.  I don't know what she sees, but apparently it's two entirely different universes.  Anyway, I try to keep a clear path from the bed --> across the desk --> and to a spot on the sewing table in front of the window, where she likes to snooze and gaze.
+## emologent
 
-### Mental WX 
- 
-My mental weather is interesting today.  It's like a bunch of different weather coming in from all directions.  The funeral for my sister-in-law's father is Friday at 10, not tomorrow, so that's an after-Christmas thing.  That brings up the question of whether her family (all here for the funeral) will want to come to the house for Christmas.  We're already expecting most of the family, so a few more would fit right in.  But there's the uncertainty of it all, and not wanting to lean in and sway people who are feeling their way anyway.  My wife's "away brother," who's been in Nashville for decades, will be here sometime tonight.  People from this part of the country don't get too hung up on exact times.  Were it not for the preacher's wife, who starts church early just to try to get people there on time, we'd be like the African tribes that celebrate the sabbath "whenever enough of us get here" and run the service on "until we're done."  There's Christmas eve communion, I know my wife has things to cook today (and probably more decorating on the tree, which is looking nice now, by the way).  And I always have the urge to do as much as I can to further my creative work.
+### mood
 
-### Actual WX 
- 
-The actual weather, on the other hand, is completely uncooperative.  For a half-hour this morning, I thought we'd been ejected into outer space without losing our envelope.  Totally black outside at six-thirty, which is really late to be dead dark.  But then again, it's /never/ dead dark around here, there are little lights everywhere: our new neighbors' garage light, footlights in several of our plug covers, my weather station, and so on.  These usually give a glow to the curtains, seen from outside.  Today?  No glow.  When the sun finally managed to break through, it was obvious: heavy fog, the can't-see'-ten-feet kind.  Hopefully my neice doesn't have to go into work today, that's a long drive in heavy fog.
+Today my mood is mostly about relief. The greats were all over the place
+last night after present opening, which was delayed a day by one of the
+grands having to work Christmas. An overload of presents, and lots of
+"joyful" running around and screaming. I bowed out about 9:45 PM. My
+wife came home later. It's pretty simple, since we live a five-minute
+walk away, and this was very much a shirt-sleeve Christmas. Just before
+I left last night, I wouldn't have given you ten cents for my mood, but
+today, it's better. I walked over and had breakfast with the Nashville
+relatives before they left at about 10:30. Hung around for a while,
+talked a little politics, and left. Then I walked back. My wife is still
+sleeping soundly, no intent to bother her until she wakes on her own.
+Back to some normalcy, I guess.
 
-### Loop 
- 
-The loops in my head are less about "How am I gonna survive this retirement thing?" and way more about "How do I get good at all this stuff I want to get good at, before I get too old to be able to get good at it?"  Neither one was a serious, life-threatening concern.  My retirement was not planned to be this early, but I was prepared, so when I realized that my heart just wasn't in the corporate dance any more, it was easy to step away.  And my health isn't terrible.  It's nowhere near where my healthcare team wants it, and sometimes I'm only marginally cooperative (carb binges, too much diet soda), but I don't have particular troubles to worry about.  So the loops have settled.
+### energy
 
-### Lingering 
- 
-Loitering around are some of the old ideas: "I'm not good enough."  "I'll never get this retirement thing off the ground."  "I have such a grand idea of visiting craft fairs and showing my quilts and other goods, and selling items for fun money, and...but do people ever actually do that any more?"  I know all of these answers, and more, but the doubts never exactly go completely away.  But two things: they're getting quieter, and my mind and body are beginning to react negatively to them when they push too hard, which means they're on their way out.  Good riddance.
+My energy is suprisingly good. I managed to snag a book called "Emacs as
+Your Operating System" and was intending to go through it in detail, but
+it turns out that it will be a slower thing. Lots of the suggestions are
+at the same level of expertise as my current init files, just different,
+and the suggestions don't match me. I did do some updates from the
+startup section and implemented an early-init.el, but not much beyond
+that. I initially drove over to the father-in-law's house to visit and
+have breakfast, but brought the car back to the house and walked back
+over to leave a vehicle for my wife. Both the walk over and the walk
+back created no exertion whatsoever, so a couple of observations: the 53
+pounds I've lost this year make a big difference in stamina and
+mobility, and the weather this time of year is nearly perfect, at least
+this year.
 
-### Unfinished 
- 
-I really need to change the heading here.  "Unfinished" doesn't even mean anything any more.  Not even sure what needs to go here.  There's still a phone number out there in the world that plays a recording more or less like this: "This is Pleasant Hills DMS. Someone told me to put a message on here.  Not sure what it's supposed to say, so I'll just leave it at that."  That'll do for me on this prompt today.
+### mental wx
 
-### Gravity 
- 
-Today's gravity definitely feels like a twelve-body problem.  All sorts of potential inputs and interruptions and things that nobody tells me (I usually hear about plans at the last minute; drives me nuts).  
+My mental weather is similarly clear: a few clouds still, and a threat
+of indecision, but nothing on the immediate radar. Nice.
 
-### Anchor 
- 
-Running at root level.  I've always felt like life is a collection of things you've picked up, either from your lineage or your experience, but in all this, you're the root user.  You're the one who has write and execute permission, not all those other sources of "wisdom." I need to remember that.
+### actual wx
 
-### Resisting 
- 
-I'm resisting being an idiot lately.  It's incredibly easy to do.  I'm also getting to the point that I don't want to be so distracted by my phone.  I'm not promoting it or fighting it, just trying to let it develop on it's own.  I think I need to go back to yantra or something (a command line phone app).  Actually, it only took five minutes to do that; no problem.
+The actual weather is a mix of clouds and bobbing temps, betweemn 74 and
+75 over time. Rain later? Not concerned enough to look at the forecast,
+anyway.
 
-### Idea Pressure 
- 
-If you know me, you know I have literally hundreds of ideas an hour go through my head.  Trying to capture and use them all would be impossible.  What I'm just beginning to understand, though, is that with all these things going through my head, there's a much higher probability that one of them will be "the one."  IYKYK.
+### loop
 
-### Creative Current 
- 
-The creative current is strongly interrupted by Baby the cat today.  She's everywhere and all over me.  Wants me to come open the door so she can explore outside.  Then wants me to close it.  Wants to be by the window, wants to be on the bed.  Wants me to just stand in the living room.  She's having a very creative day, too, I'd guess.
+The usual loops of worry and gotta-dos are suspended still. I guess the
+holiday weekend – or maybe the period between Christmas and New Year's –
+has that whole stress thing suppressed. I don't know, but I'm willing to
+be grateful for it and let it go at that.
 
-### Pivot 
- 
-When Doctor Strange looked at 15 million possible futures to find the one where the Avengers win, it reminds me of how my mind works.   or some people, deep work is a strategy. For others, it is a preference. For a smaller group, it is neither. It is the only way work happens at all. I am in that third group.
+### lingering
 
-I can't work from hustle, discipline, or raw drive. I can only work from alignment. That is not a stylistic preference. It is a structural necessity. When I ignore it, I do not merely become less productive. I become internally noisy, fragmented, and eventually unreliable to myself. For people like me, shallow work does not just reduce output; it actually disables the system.
+There's still this lingering dichotomy between focusing on one public
+hobby and focusing on several. I could just sew for a while, and see how
+far that will take me, or I could work on more hobbies. The trouble is
+the way it splits my time, or maybe I should say, splits my mode of
+being. I sort of get into a hobby and start viewing life from those
+angles, and switching keeps me caught up in recalibration time. It's
+kind of disconcerting to be always switching modes. It feels better and
+more continuous to live full-time in just one gestalt. I think I'm just
+gonna have to accept that for awhile. I do know that I'm well equipped
+for other hobbies if I should decide to switch.
 
-Most people experience a fairly clean division between reason and intuition. Thoughts happen, then feelings intrude, then judgment weighs in. The pieces are separate enough that they can be managed in sequence. That structure tolerates interruption. It allows multitasking and makes background noise survivable.
+### unfinished
 
-My mind doesn't work that way. There is no hard wall. There is not even a thin one. Ideas, impulses, emotions, and plans arrive together. And yet, somehow, I function. I build things. I make decisions. I ship work. For a long time, I assumed this made me unusual. Possibly exceptional.
+That said, I have some unfinished things in my electronics hobby that
+will have to just remain ideas now. I have the components for a great
+shortwave antenna, including a very natural, lightning-protected
+telephone post in my yard, and all the cable and adapters to create a
+balanced HF antenna. I've got several shortwave receivers I can listen
+to any time, and I still maintain a workable transmitter, license and
+callsign, but it's sort of become a back-of-the-stove thing. No
+reasoning why, just preferences. I think the lesson for me is let some
+unfinished things stay unfinished until they really want to be
+completed.
 
-But if the physicist J. Richard Gott is right, I am probably far more ordinary than I would pridefully like to think. His work rests on a simple assumption: unless you have strong evidence otherwise, you should assume you are not living at a special point in time or experience. Applied to minds instead of centuries, that suggests something humbling. When you notice a pattern in yourself, odds are good many others share it quietly and without language.
+### gravity
 
-So rather than treating this as a personal anomaly, it makes more sense to explain it using ideas people already recognize. Most people have heard the classic Freudian trio: The id supplies drive: desire, fear, appetite, avoidance. The ego manages reality: planning, sequencing, execution. The superego supplies rules: values, expectations, “shoulds.” In simplified form, these are often described as arguing voices. The id wants. The superego judges. The ego mediates and moves forward.
+My gravity is very strongly influenced by things I'm spending money on.
+I have spent a lot of "little money" on sewing gadgets, books, patterns,
+and material. I will probably need some different material for some of
+the things I have in mind, but there's a lot that I can make with the
+stuff that I have. I should work hard to keep that learning going. Also,
+I'm thinking about turning my substack into more of a blog, for now, and
+less of an essay run. I might be essayed out in the short term, or maybe
+not. I get ideas, and I seem to run with them for the short term, but
+then I let them fade a little. I guess you just have to test ideas to
+see if they work for you, and keep moving and morphing until the groove
+finds you.
 
-For many people, this arrangement works well enough. The parts are distinct. You can interrupt ego thinking, switch contexts, take new input, and resume without losing the thread. Work can happen amid noise. That separation creates order, though it also creates friction.
+### anchor
 
-What the three-part model does not explain well is what happens at moments of uncertainty, identity change, or creative synthesis. Moments where the question is not what should I do, but what wants to happen here. This is where a fourth function comes into play. I call it the Edge Ego. The edge ego is not about desire (id), control (ego), or rules (superego). It operates at the boundary between what is known and what is not yet formed. It integrates patterns before they become language.
+I think words are a good anchor for me. It's very pleasant to sit in
+front of a laptop and type thoughts like this, mostly just reporting
+what I'm feeling and seeing, without judgment or teaching. I probably
+need to remember that.
 
-Here is what that feels like from the inside. I do not have a single internal dialogue. I have two. One is familiar: words forming in my head, sentences I can hear and follow. That is ordinary ego thinking. But just ahead of it, there is something faster. Thoughts arrive there first not as words, but as compressed concepts, directional pulls, or fleeting images. They move too quickly to catch directly. When I try to focus on them, they vanish. But when I slow down and begin thinking in language, I realize I am translating something that has already passed through.
+### resisting
 
-The words are echoes of that faster layer, which is the edge ego. It is not mystical. It is not rare. It is simply operating closer to pattern recognition, before narration and judgment engage. Most people experience this occasionally. Some rely on it constantly because it simply cannot be suppressed. Those people cannot tolerate fragmentation.
+I'm resisting letting the pressures of industry creep into my
+retirement. Yes, I need to do some things that will earn me extra money,
+if I'd like to maintain a little larger lifestyle. No, I will not go
+hungry or be without shelter, water, electricity, or broadband. But I'm
+not the kind of person to sit back and work crossword puzzles to while
+away the hours. Not my style.
 
-Discipline assumes the ego is fully in charge and simply needs more pressure. But when the edge ego is active, pressure creates interference. It’s like trying to build a ceiling antenna loop three inches below live wires: all you get is an ugly, repulsive buzz. Noise drowns signal. Fragmentation replaces integration.
+### idea pressure
 
-For people like me, repeated resistance is not evidence of laziness. It is evidence of misalignment between the fast integrative layer and the slower managerial layer. Pushing just destabilizes the system. So I work differently. I build slowly where others rush. I simplify where others optimize. I remove friction instead of adding pressure. From the outside, this can look inefficient. In practice, it is the only way my work holds together.
+The D&D ideas about sewing don't go away, really. I like the idea of
+being able to create costumes and accessories for D&D, and there is a
+thriving community of D&D lovers on the threads platform. I really
+should get more involved. One of my hobbies is configuring emacs, but I
+think I've probably got a configuration that I'm not really interested
+in changing much. Yeah, I could do to-do lists more, but they repel me
+at the moment. Go figure.
 
-Coherence Is the output. I value coherence over scale, depth over reach, and durability over speed. I make things with my hands and my mind: sewn objects, written words, systems that help people feel oriented again. The medium changes. The signal does not.  When I give value freely, it is not bait, but proof. What I sell is rare not because it is scarce, but because it is integrated. It comes from one mind, one aesthetic, one way of seeing.
+### creative current
 
-This is not hustle culture, grind, or self-serving optimization. It’s simply work that depends on integration. If you recognize the fast layer I have been describing, the goal is not to strengthen it. It is already active. The goal is to optimize the conditions under which it functions, and to choose a mode of work that matches how active the edge ego is in your mind. This is where many people go wrong. They assume there is one correct way to do deep work, usually measured in hours. But the type of deep work you can do depends directly on how dominant the edge ego is.
+My creative current is a little low-key right now; maybe it's the end of
+the year. Maybe it's just a resting phase. Dunno, we'll just let it play
+itself out.
 
-### Signal Boost 
- 
-I can boost this idea by using Cal Newport's revolutionary idea "deep work."  It usefully describes four modes of deep work. Seen through this lens, they are not moral choices. They are compatibility layers.
+### pivot
 
-Monastic mode works when the edge ego is quiet or backgrounded. The problem space is well-defined. Progress is deductive. Long, uninterrupted stretches are possible. This mode collapses when the edge ego is highly active. Instead of clarity, you get overload.
+In that vein, no pivots today, much. Thinking about driving to town to
+see what after-Christmas bargains are out there. Probably ought to pay a
+few more bills, maybe. I dunno.
 
-Bimodal mode works when the edge ego integrates slowly in the background. Large blocks alternate with ordinary life. Patterns carry across days.
+### signal boost
 
-Rhythmic mode works when the edge ego is steady but bounded. Daily 60–90 minute sessions allow depth to accumulate without saturation.
+I think part of the signal boost is about being comfortable without
+stress and anxiety.
 
-Journalistic deep work happens in short, intense pulses: 10, 15, sometimes 20 minutes at a time. It looks shallow from the outside. It is not. This mode is required when the edge ego is highly active, ideas arrive rapidly and pre-verbally, insight comes as synthesis rather than deduction, and clarity degrades if you stay too long.
+### rare value
 
-In this mode, the work is not maintained, but captured. You enter with a clear surface, translate what arrives, and exit before the signal blurs. Trying to force 90-minute or multi-hour sessions in this state leads to diminishing returns, confusion, and eventual shutdown. The edge ego floods the system with pattern, but the ego cannot keep translating at that rate. Short pulses, on the other hand, can produce disproportionate value. Ten aligned minutes can outperform hours of forced concentration because they respect the tempo of integration. This is not about stamina. It is about bandwidth.
+One of the places where I can bring rare value is being sensible. I'm
+beginning to really see through the scams of other people. I think
+another place where there's rare value is doing things without any
+particular needs or wants at all: just doing something that seems like
+something I ought to be doing and letting it take over your life until
+you find something you really needed. Sounds like a plan.
 
-For minds like mine, journalistic deep work is not a fallback or a compromise. It is the primary mode. Indeed, it is the only viable mode. It is how rare and coherent results emerge without self-destruction. Short does not mean shallow. It means precise.
+### points of friction
 
-### Rare Value 
- 
-So my ability to do massive work in a 20-minute burst is probably more rare, and certainly valuable.  I just need to keep reminding myself that it's okay to /be/ myself.
+None ATM. And I'm glad for that.
 
-### Friction Points 
- 
-My physical sensations and emotions have a lot to do with how effectively I can access my edge ego.  Sometimes it's pushing me to nap when I really just want to finish.  Sometimes it keeps me awake because it isn't done.  If I'm not feeling 100% (energy, virus, whatever), it seems to misfire, sometimes weirdly.  Not sure how to deal with those yet.
+### quest pulse
 
-### Quest Pulse 
- 
-So my big quest is to figure out how to use the edge ego to design the life I want.  Period.  That's the main pulse these days.
+It's kindof like just roaming the village outside the dungeon, looking
+for interesting stories to pursue.
 
-### Today's Ember 
- 
-Today is Christmas Eve, and there are lots of family things pulling in all sorts of directions, almost like a compact zoo or a fun house.  Gotta figure that out.
+### todays ember
 
-### What Wants to Live 
- 
-See above.
+Let's see what's out there.
 
-### What Can Fall Away 
- 
-Also see above.
+### what wants to live
 
+No judgment. It can all kinda keep today.
+
+### what can fall away
+
+Meh. Let it fall away on its own.
+
+## daily journal
