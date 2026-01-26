@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-26 Mon 14:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SSH/SCP with MAAS machines</title>
+<meta name="author" content="stormrider" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="icon" href="https://stormrider.io/emacs-dragon.png">
+<link rel="stylesheet" type="text/css" href="https://stormrider.io/css/stylesheet.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">SSH/SCP with MAAS machines</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4b24799">1. jq is not UNIX (jqNU?)</a></li>
+<li><a href="#org6af8e2c">2. So how does "sortby()" work?</a></li>
+<li><a href="#org311abd0">3. Checking our work</a></li>
+<li><a href="#orgd668224">4. Sorting by more than one parameter</a></li>
+<li><a href="#org6aed92a">5. Summary</a></li>
+</ul>
+</div>
+</div>
+<hr />
+<p>
+MAAS: <a href="https://stormrider.io/maas-cli-1.html">Install</a> ~ <a href="https://stormrider.io/maas-cli-2.html">Configure</a> ~ <a href="https://stormrider.io/maas-cli-3.html">DHCP</a> ~ <a href="https://stormrider.io/maas-cli-4.html">Commission</a> ~ <a href="https://stormrider.io/maas-cli-5.html">Deploy</a> ~ <a href="https://stormrider.io/maas-cli-6.html">jq</a> ~ <a href="https://stormrider.io/maas-cli-7.html">SSH</a> ~ <a href="https://stormrider.io/maas-cli-8.html">More jq</a><br />
+</p>
+<hr />
+
+<p>
+<i>More neat things to do with jq</i><br />
+</p>
+
+<p>
+I previously covered basic usage of jq with MAAS a couple of posts ago. Now I want to dig in a little bit, and see what else I can do with it.<br />
+sorting natively with jq<br />
+</p>
+
+<p>
+In my previous jq post, I showed how to use Linux command line utilities to sort lines in a multi-record jq output. It's not the only way &#x2013; nor maybe even the easiest way. The jq tool has a native sort capability. Let's take a look.<br />
+</p>
+
+<p>
+Suppose we have a random list of machines that I quickly created on one of my local MAAS installs &#x2013; haven't even bothered to commission them, since that doesn't matter here. If I run the command:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="4">
+maas admin machines read | jq -r '(["HOSTNAME","SYSID",
+"TAGS", "POOL","ZONE"] | (., map(length*"-"))),
+(.[] | [.hostname, .system_id, .tag_names[0] // "-", 
+.pool.name,.zone.name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+on my very casually defined set of new machines, I'll get a listing something like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="12">
+HOSTNAME       SYSID   TAGS      POOL      ZONE
+--------       -----   ----      ----      ----
+nearby-louse   ed8pda  plover    swimming  defense
+novel-cod      4ds3eh  dunnet    swimming  fault
+nearby-koala   k6cagg  xyzzy     car       twilight
+superb-koi     6sqads  xyzzy     swimming  twilight
+amazed-hermit  mehgsk  xyzzy     swimming  twilight
+daring-minnow  ceamb4  plover    car       demilitarized
+ace-colt       hfm84c  zork      tidal     defense
+unique-donkey  tsf8tk  plover    tidal     demilitarized
+mutual-cod     sxbkyp  bedquilt  tidal     defense
+fun-ibex       8pq6qx  zork      car       fault</textarea>
+</p>
+
+<p>
+These aren't really sorted by anything, in particular, so let's just start at the front and work our way in, shall we?<br />
+sorting by one parameter<br />
+</p>
+
+<p>
+Rather than passing our output through an awk script, we can just use the jq construct for sorting, which is:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+sort_by(<fieldname>)</textarea>
+</p>
+
+<p>
+For example, if we wanted to sort by HOSTNAME, we could try:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="4">
+maas admin machines read | jq -r '(["HOSTNAME","SYSID",
+"TAGS", "POOL","ZONE"] | (., map(length*"-"))),
+(.[] | [.hostname, .system_id, .tag_names[0] // "-", 
+.pool.name,.zone.name] | sort_by(.hostname)) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+This doesn't give us anything like what we want, just a mysterious error:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="3">
+jq: error (at <stdin>:2911): Cannot index string with string "hostname"
+HOSTNAME  SYSID  TAGS  POOL  ZONE
+--------  -----  ----  ----  ----</textarea>
+</p>
+
+<p>
+Huh? Don't you just link pipes together, and they work?<br />
+</p>
+<div id="outline-container-org4b24799" class="outline-2">
+<h2 id="org4b24799"><span class="section-number-2">1.</span> jq is not UNIX (jqNU?)</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+No, that's UNIX, but that's not necessarily jq. Too see what's wrong, we have to break down the earlier jq statement a little more &#x2013; you know, the one that just gives us the unsorted list:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="4">
+maas admin machines read | jq -r '(["HOSTNAME","SYSID",
+"TAGS", "POOL","ZONE"] | (., map(length*"-"))),
+(.[] | [.hostname, .system_id, .tag_names[0] // "-", 
+.pool.name,.zone.name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+If we read it from left to right, we have the MAAS command that generates the JSON to begin with:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+maas admin machines read</textarea>
+</p>
+
+<p>
+We pipe that through jq, with raw output:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+| jq -r</textarea>
+</p>
+
+<p>
+We give jq some series of commands, between the single quotes:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+'(["HOSTNAME", blah, blah, blah | @tsv'</textarea>
+</p>
+
+<p>
+Finally, we pipe that to column to make the columns line up nicely:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+| column -t</textarea>
+</p>
+
+<p>
+So essentially, from a UNIX perspective, we have a data source and two filters:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+maas <options> | jq <options> | column <options></textarea>
+</p>
+
+<p>
+The options we give to jq most definitely don't work like UNIX.<br />
+where's the data coming from?<br />
+</p>
+
+<p>
+A great question to ask yourself when building jq blocks is, "Where's the data coming from?" Let's take a closer look at the jq options:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="5">
+'(["HOSTNAME","SYSID","TAG","POOL","ZONE"] |
+(.,map(length*"-"))),
+(.[]  |
+[.hostname, .system_id, .tag_names[0] // "-",.pool.name,.zone.name]) |
+@tsv'</textarea>
+</p>
+
+<p>
+Ask yourself where the array data is coming from. Does anything in this line retrieve data?<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+'(["HOSTNAME","SYSID","TAG","POOL","ZONE"] |</textarea>
+</p>
+
+<p>
+Nope. Those are literals, which don't retrieve any data at all. How about the next line?<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+(.,map(length*"-"))),</textarea>
+</p>
+
+<p>
+No, that line acts on data it gets, but it doesn't get data. And the next one?<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+(.[] |</textarea>
+</p>
+
+<p>
+Yep, that's it. The .[] command tells jq to iterate over what it gets. The rest of the line just tells jq which of the fields in the .[] iteration to actually retrieve.<br />
+</p>
+
+<p>
+So by process of elimination, there's only one place we could sort data &#x2013; where it comes into the command, that is, where we currently iterate over the incoming JSON arrays, .[].<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org6af8e2c" class="outline-2">
+<h2 id="org6af8e2c"><span class="section-number-2">2.</span> So how does "sortby()" work?</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The "sortby()" subcommand operates on whatever it gets. In this case, we're sending it a JSON array of machine datasets. So there are two things wrong with our first attempt:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="4">
+maas admin machines read | jq -r '(["HOSTNAME","SYSID",
+"TAGS", "POOL","ZONE"] | (., map(length*"-"))),
+(.[] | [.hostname, .system_id, .tag_names[0] // "-", 
+.pool.name,.zone.name] | sort_by(.hostname)) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+First, it's set up to handle a single JSON dataset, and sort it by a single parameter &#x2013; sort<sub>by</sub>(.hostname) &#x2013; so there's actually nothing to sort, hence an error. Second, we trying to pipe a formatted entry from an array of JSON datasets through it, which doesn't even make any sense: you can't sort one thing.<br />
+</p>
+
+<p>
+To make the command work, we have to make sort<sub>by</sub> itself the data source. In other words, we want jq to sort the record stream before it gets our field list, like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+maas admin machines read | jq -r '(["HOSTNAME","SYSID","TAG","POOL","ZONE"] | (., map(length*"-"))),(sort_by(.hostname)[] | [.hostname,.system_id,.tag_names[0],.pool.name,.zone.name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+As we can see, this command works as we expect:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="12">
+HOSTNAME       SYSID   TAG       POOL      ZONE
+--------       -----   ---       ----      ----
+ace-colt       hfm84c  zork      tidal     defense
+amazed-hermit  mehgsk  xyzzy     swimming  twilight
+daring-minnow  ceamb4  plover    car       demilitarized
+fun-ibex       8pq6qx  zork      car       fault
+mutual-cod     sxbkyp  bedquilt  tidal     defense
+nearby-koala   k6cagg  xyzzy     car       twilight
+nearby-louse   ed8pda  plover    swimming  defense
+novel-cod      4ds3eh  dunnet    swimming  fault
+superb-koi     6sqads  xyzzy     swimming  twilight
+unique-donkey  tsf8tk  plover    tidal     demilitarized</textarea>
+</p>
+
+<p>
+Reading the new command from left to right helps understand it. Basically, it reads: "Take the data for all machines from MAAS, display a heading line and a horizontal rule line; then sort the machine data by hostname, and show the following 5 parameters, in tab-separated rows, lined up in neat columns."<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org311abd0" class="outline-2">
+<h2 id="org311abd0"><span class="section-number-2">3.</span> Checking our work</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+We can check our work by trying different sorts:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+maas admin machines read | jq -r '(["HOSTNAME","SYSID","TAG","POOL","ZONE"] | (., map(length*"-"))),(sort_by(.system_id)[] | [.hostname,.system_id,.tag_names[0],.pool.name,.zone.name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+This command sorts by system ID:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="12">
+HOSTNAME       SYSID   TAG       POOL      ZONE
+--------       -----   ---       ----      ----
+novel-cod      4ds3eh  dunnet    swimming  fault
+superb-koi     6sqads  xyzzy     swimming  twilight
+fun-ibex       8pq6qx  zork      car       fault
+daring-minnow  ceamb4  plover    car       demilitarized
+nearby-louse   ed8pda  plover    swimming  defense
+ace-colt       hfm84c  zork      tidal     defense
+nearby-koala   k6cagg  xyzzy     car       twilight
+amazed-hermit  mehgsk  xyzzy     swimming  twilight
+mutual-cod     sxbkyp  bedquilt  tidal     defense
+unique-donkey  tsf8tk  plover    tidal     demilitarized</textarea>
+</p>
+
+<p>
+We can also try pool name:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+maas admin machines read | jq -r '(["HOSTNAME","SYSID","TAG","POOL","ZONE"] | (., map(length*"-"))),(sort_by(.pool.name)[] | [.hostname,.system_id,.tag_names[0],.pool.name,.zone.name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+which also works as we'd expect:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="12">
+HOSTNAME       SYSID   TAG       POOL      ZONE
+--------       -----   ---       ----      ----
+nearby-koala   k6cagg  xyzzy     car       twilight
+daring-minnow  ceamb4  plover    car       demilitarized
+fun-ibex       8pq6qx  zork      car       fault
+nearby-louse   ed8pda  plover    swimming  defense
+novel-cod      4ds3eh  dunnet    swimming  fault
+superb-koi     6sqads  xyzzy     swimming  twilight
+amazed-hermit  mehgsk  xyzzy     swimming  twilight
+ace-colt       hfm84c  zork      tidal     defense
+unique-donkey  tsf8tk  plover    tidal     demilitarized
+mutual-cod     sxbkyp  bedquilt  tidal     defense</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-orgd668224" class="outline-2">
+<h2 id="orgd668224"><span class="section-number-2">4.</span> Sorting by more than one parameter</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+To sort by more than one parameter, simply include a comma-separated list of parameters for the sort, in order. For example, to sort by tag first and pool next, use this incantation:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+maas admin machines read | jq -r '(["HOSTNAME","SYSID","TAG","POOL","ZONE"] | (., map(length*"-"))),(sort_by(.tag_names[0],.pool.name)[] | [.hostname,.system_id,.tag_names[0],.pool.name,.zone.name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+This will give you:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="10">
+mutual-cod     sxbkyp  bedquilt  tidal     defense
+novel-cod      4ds3eh  dunnet    swimming  fault
+daring-minnow  ceamb4  plover    car       demilitarized
+nearby-louse   ed8pda  plover    swimming  defense
+unique-donkey  tsf8tk  plover    tidal     demilitarized
+nearby-koala   k6cagg  xyzzy     car       twilight
+superb-koi     6sqads  xyzzy     swimming  twilight
+amazed-hermit  mehgsk  xyzzy     swimming  twilight
+fun-ibex       8pq6qx  zork      car       fault
+ace-colt       hfm84c  zork      tidal     defense</textarea>
+</p>
+
+<p>
+You can even try three parameters. Note that I set this up with the two hosts "superb-koi" and "amazed-hermit" &#x2013; so we can use a command like this to see how multiple parameters work:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+maas admin machines read | jq -r '(["HOSTNAME","SYSID","TAG","POOL","ZONE"] | (., map(length*"-"))),(sort_by(.tag_names[0],.pool.name,.hostname)[] | [.hostname,.system_id,.tag_names[0],.pool.name,.zone.name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+Note that "superb-koi" and "amazed-hermit" have changed places in the listing below:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="12">
+HOSTNAME       SYSID   TAG       POOL      ZONE
+--------       -----   ---       ----      ----
+mutual-cod     sxbkyp  bedquilt  tidal     defense
+novel-cod      4ds3eh  dunnet    swimming  fault
+daring-minnow  ceamb4  plover    car       demilitarized
+nearby-louse   ed8pda  plover    swimming  defense
+unique-donkey  tsf8tk  plover    tidal     demilitarized
+nearby-koala   k6cagg  xyzzy     car       twilight
+amazed-hermit  mehgsk  xyzzy     swimming  twilight
+superb-koi     6sqads  xyzzy     swimming  twilight
+fun-ibex       8pq6qx  zork      car       fault
+ace-colt       hfm84c  zork      tidal     defense</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-org6aed92a" class="outline-2">
+<h2 id="org6aed92a"><span class="section-number-2">5.</span> Summary</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+So there's a little more jq for you, but still a lot more to learn. Might as well keep going with this, it seems to be useful to some folks &#x2013; so more jq to come.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: stormrider</p>
+<p class="date">Created: 2026-01-26 Mon 14:01</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

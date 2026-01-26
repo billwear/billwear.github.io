@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-26 Mon 13:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Configuring MAAS with the CLI</title>
+<meta name="author" content="stormrider" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="icon" href="https://stormrider.io/emacs-dragon.png">
+<link rel="stylesheet" type="text/css" href="https://stormrider.io/css/stylesheet.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Configuring MAAS with the CLI</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8f8f07e">1. Logging in</a></li>
+<li><a href="#orgce8b583">2. Getting real help</a></li>
+<li><a href="#orgc56db69">3. Setting dns</a></li>
+<li><a href="#org06b15b9">4. Importing images</a></li>
+<li><a href="#org3690456">5. Enter jq</a></li>
+</ul>
+</div>
+</div>
+<hr />
+<p>
+MAAS: <a href="https://stormrider.io/maas-cli-1.html">Install</a> ~ <a href="https://stormrider.io/maas-cli-2.html">Configure</a> ~ <a href="https://stormrider.io/maas-cli-3.html">DHCP</a> ~ <a href="https://stormrider.io/maas-cli-4.html">Commission</a> ~ <a href="https://stormrider.io/maas-cli-5.html">Deploy</a> ~ <a href="https://stormrider.io/maas-cli-6.html">jq</a> ~ <a href="https://stormrider.io/maas-cli-7.html">SSH</a> ~ <a href="https://stormrider.io/maas-cli-8.html">More jq</a><br />
+</p>
+<hr />
+
+<p>
+<i>Configuring MAAS via the CLI only</i><br />
+</p>
+
+<p>
+Now that <a href="https://stormrider.io/maas-cli-1.html">MAAS is up and running</a>, it's time to configure it. Normally, this would be accomplished through the MAAS configuration journey, but since I'm using the CLI for this, I want to avoid the UI as much as possible.<br />
+</p>
+<div id="outline-container-org8f8f07e" class="outline-2">
+<h2 id="org8f8f07e"><span class="section-number-2">1.</span> Logging in</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The first step in the config journey is logging in. In the CLI, that's a two-stepper:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="2">
+stormrider@wintermute:~$  sudo maas apikey --username=admin > api-key-file 
+sudo maas apikey --username=admin > api-key-file</textarea>
+</p>
+
+<p>
+You can make sure you got a valid API key by displaying the contents of api-key-file:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="2">
+stormrider@wintermute:~$  cat api-key-file 
+XXEjkeeqM:zXb7LkuPY7VxShFNhCFDaD8WnP8gLVL8V64GbSn:tTKdwWV64GbSn:tTKdwW</textarea>
+</p>
+
+<p>
+Note that string isn't an actual API key, just characters I made up.<br />
+Anyway, I can now login to MAAS &#x2013; but first, let's try maas &#x2013;help &#x2013; there's an important distinction that gets skipped over, causing some grief:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="22">
+stormrider@wintermute:~$  maas --help 
+usage: maas [-h] COMMAND ...
+
+optional arguments:
+   -h, --help      show this help message and exit
+
+drill down:
+   COMMAND
+      login         Log in to a remote API, and remember its description and credentials.
+      logout        Log out of a remote API, purging any stored credentials.
+      list          List remote APIs that have been logged-in to.
+      refresh       Refresh the API descriptions of all profiles.
+      init          Initialise MAAS in the specified run mode.
+      config        View or change controller configuration.
+      status        Status of controller services.
+      migrate       Perform migrations on connected database.
+      apikey        Used to manage a user's API keys. Shows existing keys unless --generate or --delete is passed.
+      configauth    Configure external authentication.
+      createadmin   Create a MAAS administrator account.
+      changepassword
+                    Change a MAAS user's password.
+      admin         Interact with http://192.168.43.251:5240/MAAS/api/2.0/</textarea>
+</p>
+
+
+<p>
+This is the help you get (a) if you're not logged in, or (b) if you don't type a logged-in username after maas - which is a little annoying to me, but it's just how we do it. What you see above isn't even half of what the MAAS CLI will do, but it's all you get as an unrecognized user.<br />
+</p>
+
+<p>
+So now, let's login and try that help again:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="8">
+stormrider@wintermute:~$  maas login admin http://192.168.43.251:5240/MAAS/api/2.0/ < api-key-file 
+
+You are now logged in to the MAAS server at
+http://192.168.43.251:5240/MAAS/api/2.0/ with the profile name 'admin'.
+
+For help with the available commands, try:
+
+maas admin --help</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-orgce8b583" class="outline-2">
+<h2 id="orgce8b583"><span class="section-number-2">2.</span> Getting real help</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Now, having done that, I can get a much better idea what the CLI will do:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="125">
+stormrider@wintermute:~$ maas admin --help 
+
+usage: maas admin [-h] COMMAND ...
+
+Issue commands to the MAAS region controller at http://192.168.43.251:5240/MAAS/api/2.0/.
+
+optional arguments:
+   -h, --help            show this help message and exit
+
+drill down:
+   COMMAND
+      account             Manage the current logged-in user.
+      bcache-cache-set    Manage bcache cache set on a machine.
+      bcache-cache-sets   Manage bcache cache sets on a machine.
+      bcache              Manage bcache device on a machine.
+      bcaches             Manage bcache devices on a machine.
+      block-device        Manage a block device on a machine.
+      block-devices       Manage block devices on a machine.
+      boot-resource       Manage a boot resource.
+      boot-resources      Manage the boot resources.
+      boot-source         Manage a boot source.
+      boot-source-selection
+                          Manage a boot source selection.
+      boot-source-selections
+                          Manage the collection of boot source selections.
+      boot-sources        Manage the collection of boot sources.
+      commissioning-script
+                          Manage a custom commissioning script.
+      commissioning-scripts
+                          Manage custom commissioning scripts.
+      dhcpsnippet         Manage an individual DHCP snippet.
+      dhcpsnippets        Manage the collection of all DHCP snippets in MAAS.
+      dnsresource         Manage dnsresource.
+      dnsresource-record  Manage dnsresourcerecord.
+      dnsresource-records
+                          Manage DNS resource records (e.g. CNAME, MX, NS, SRV, TXT)
+      dnsresources        Manage dnsresources.
+      device              Manage an individual device.
+      devices             Manage the collection of all the devices in the MAAS.
+      discoveries         Query observed discoveries.
+      discovery           Read or delete an observed discovery.
+      domain              Manage domain.
+      domains             Manage domains.
+      events              Retrieve filtered node events.
+      fabric              Manage fabric.
+      fabrics             Manage fabrics.
+      fan-network         Manage Fan Network.
+      fan-networks        Manage Fan Networks.
+      file                Manage a FileStorage object.
+      files               Manage the collection of all the files in this MAAS.
+      ipaddresses         Manage IP addresses allocated by MAAS.
+      iprange             Manage IP range.
+      ipranges            Manage IP ranges.
+      interface           Manage a node's or device's interface.
+      interfaces          Manage interfaces on a node.
+      license-key         Manage a license key.
+      license-keys        Manage the license keys.
+      maas                Manage the MAAS server.
+      machine             Manage an individual machine.
+      machines            Manage the collection of all the machines in the MAAS.
+      network             Manage a network.
+      networks            Manage the networks.
+      node                Manage an individual Node.
+      node-results        Read the collection of commissioning script results.
+      node-script         Manage or view a custom script.
+      node-script-result  Manage node script results.
+      node-script-results
+                          Manage node script results.
+      node-scripts        Manage custom scripts.
+      nodes               Manage the collection of all the nodes in the MAAS.
+      notification        Manage an individual notification.
+      notifications       Manage the collection of all the notifications in MAAS.
+      package-repositories
+                          Manage the collection of all Package Repositories in MAAS.
+      package-repository  Manage an individual package repository.
+      partition           Manage partition on a block device.
+      partitions          Manage partitions on a block device.
+      pod                 Manage an individual pod.
+      pods                Manage the collection of all the pod in the MAAS.
+      rack-controller     Manage an individual rack controller.
+      rack-controllers    Manage the collection of all rack controllers in MAAS.
+      raid                Manage a specific RAID (Redundant Array of Independent
+                          Disks) on a machine.
+      raids               Manage all RAIDs (Redundant Array of Independent Disks) on
+                          a machine.
+      region-controller   Manage an individual region controller.
+      region-controllers  Manage the collection of all region controllers in MAAS.
+      resource-pool       Manage a resource pool.
+      resource-pools      Manage resource pools.
+      sshkey              Manage an SSH key.
+      sshkeys             Manage the collection of all the SSH keys in this MAAS.
+      sslkey              Manage an SSL key.
+      sslkeys             Operations on multiple keys.
+      space               Manage space.
+      spaces              Manage spaces.
+      static-route        Manage static route.
+      static-routes       Manage static routes.
+      subnet              Manage subnet.
+      subnets             Manage subnets.
+      tag                 Tags are properties that can be associated with a Node and
+                          serve as criteria for selecting and allocating nodes.
+      tags                Manage all tags known to MAAS.
+      user                Manage a user account.
+      users               Manage the user accounts of this MAAS.
+      version             Information about this MAAS instance.
+      virtual-machine     Manage individual virtual machines.
+      virtual-machines    Manage a collection of virtual machines.
+      vlan                Manage a VLAN on a fabric.
+      vlans               Manage VLANs on a fabric.
+      vm-host             Manage an individual vm-host.
+      vm-hosts            Manage the collection of all the vm-hosts in the MAAS.
+      vmfs-datastore      Manage VMFS datastore on a machine.
+      vmfs-datastores     Manage VMFS datastores on a machine.
+      volume-group        Manage volume group on a machine.
+      volume-groups       Manage volume groups on a machine.
+      zone                Manage a physical zone.
+      zones               Manage physical zones.
+
+      This is a profile.  Any commands you issue on this profile will
+      operate on the MAAS region server.
+
+      The command information you see here comes from the region server's
+      API; it may differ for different profiles.  If you believe the API may
+      have changed, use the command's 'refresh' sub-command to fetch the
+      latest version of this help information from the server.</textarea>
+</p>
+
+<p>
+Wowee! Look at all the commands! The very first time I tried to use the MAAS API (before I actually hired on at Canonical), I was using various commands I could find in the documentation that actually returned things I wanted, and then digging it out of the JSON output. Not fun. Then someone reminded me about <code>jq</code> (we'll come to that in a minute), and things got a little easier. Eventually, I asked one of the developers what the deal was, and learned that I just missed a the section called "Get help" in the CLI introduction. After that, a whole new world opened up.<br />
+</p>
+
+<p>
+But we came here to configure MAAS, not tell stories, so let me see what I can do with this beast.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgc56db69" class="outline-2">
+<h2 id="orgc56db69"><span class="section-number-2">3.</span> Setting dns</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The very first blank line you encounter in the MAAS UI is the DNS server IP address. In the UI, I just type "8.8.8.8" (Google's DNS server) and forget about it. But the CLI has no box, so how do I get there? Well, there is a subcommand called &lt;code&gt;dnsresource~, let's see what that does.<br />
+</p>
+
+<p>
+<textarea cols="80" rows="13">
+stormrider@wintermute:~$  maas admin dnsresource --help 
+Usage: maas admin dnsresource [-h] COMMAND ...
+
+Manage dnsresource.
+
+optional arguments:
+   -h, --help  show this help message and exit
+
+drill down:
+   COMMAND
+      read      Read a DNS resource
+      update    Update a DNS resource
+      delete    Delete a DNS resource</textarea>
+</p>
+
+<p>
+Okay, let's be naive and try that:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="16">
+stormrider@wintermute:~$  maas admin dnsresource read 
+Usage: maas admin dnsresource read [--help] [-d] [-k] id [data [data ...]]
+
+Read a DNS resource
+
+positional arguments:
+   id
+   data
+
+optional arguments:
+   --help, -h      Show this help message and exit.
+   -d, --debug     Display more information about API responses.
+   -k, --insecure  Disable SSL certificate check
+
+Read a DNS resource by id.
+   the following arguments are required: id, data</textarea>
+</p>
+
+<p>
+Well, that isn't going to help me, I don't have any idea what the "dnsresource id" would be. Hmmm. Oh, wait. This CLI follows the "collection-instance" rule, that is, listing DNS resources would be part of a collection, so would be pluralized. So, for example, I can read &lt;code&gt;dnsresources~ (plural) and maybe find out something:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="4">
+stormrider@wintermute:~$  maas admin dnsresources read 
+Success.
+Machine-readable output follows:
+[]</textarea>
+</p>
+
+<p>
+Well. Maybe I should try the CLI documentation. Looking at the "Quick questions" under common tasks, I see there's one about setting a DNS forwarder. Let me check that out. Hmmm, yeah, that might be what I want. There's a easy way to tell: I can check the DNS setting in the MAAS dashboard in the UI, run the CLI command I found, and see if that sets it.<br />
+</p>
+
+<p>
+Okay, actually, I cheated first. I went and asked my friend Lee, who knows how this works, and I kept asking until I annoyed him. But it's useful to illustrate that there was a way to get this from the doc and experimentation, which I should have done. * Sorry, Lee. Owe you lunch. Maybe that's two lunches. *<br />
+</p>
+
+<p>
+Hey, in that field, it even says "DNS forwarder" &#x2013; so let me try it:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="4">
+stormrider@wintermute:~$  maas admin maas set-config name=upstream_dns value="8.8.8.8" 
+Success.
+Machine-readable output follows:
+OK</textarea>
+</p>
+
+<p>
+And it sets it! Woo-hoo, it worked! It wasn't obvious whether I needed to type the IP address with quotes, but I did, and it paid off. I guess I could try it without quotes to see what happens:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="4">
+stormrider@wintermute:~$ maas admin maas set-config name=upstream_dns value=9.9.9.9 
+Success.
+Machine-readable output follows:
+OK</textarea>
+</p>
+
+<p>
+And that works, too, so I'll change it back real fast before weird things start to happen, since I have no idea what "9.9.9.9" is.<br />
+</p>
+
+<p>
+note to self:  <i>always</i> RTFM. before annoying my friend Lee.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org06b15b9" class="outline-2">
+<h2 id="org06b15b9"><span class="section-number-2">4.</span> Importing images</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The next thing would be to import images. When I look at the dashboard, it's already been done, but TBH it was already synched when I logged in and opened the dashboard, so it must be automatic for at least one default image. Dunno. But I can bring in some other image (like Ubuntu 16.04 LTS) just to see how that works, and I can figure out how to confirm that the 18.04 (default) image is actually here.<br />
+</p>
+
+<p>
+Well, this time actually consulting the manual, it says I can confirm 18.04 by entering the following command:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$  maas admin boot-resources read </textarea>
+</p>
+
+<p>
+The JSON resulting from this command is rather lengthy:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="80">
+Success.
+Machine-readable output follows:
+[
+    {
+        "id": 7,
+        "type": "Synced",
+        "name": "grub-efi-signed/uefi",
+        "architecture": "amd64/generic",
+        "resource_uri": "/MAAS/api/2.0/boot-resources/7/"
+    },
+    {
+        "id": 8,
+        "type": "Synced",
+        "name": "grub-efi/uefi",
+        "architecture": "arm64/generic",
+        "resource_uri": "/MAAS/api/2.0/boot-resources/8/"
+    },
+    {
+        "id": 9,
+        "type": "Synced",
+        "name": "grub-ieee1275/open-firmware",
+        "architecture": "ppc64el/generic",
+        "resource_uri": "/MAAS/api/2.0/boot-resources/9/"
+    },
+    {
+        "id": 10,
+        "type": "Synced",
+        "name": "pxelinux/pxe",
+        "architecture": "i386/generic",
+        "resource_uri": "/MAAS/api/2.0/boot-resources/10/"
+    },
+    {
+        "id": 1,
+        "type": "Synced",
+        "name": "ubuntu/bionic",
+        "architecture": "amd64/ga-18.04",
+        "resource_uri": "/MAAS/api/2.0/boot-resources/1/",
+        "subarches": "generic,hwe-p,hwe-q,hwe-r,hwe-s,hwe-t,hwe-u,hwe-v,hwe-w,ga-16.04,ga-16.10,ga-17.04,ga-17.10,ga-18.04"
+    },
+    {
+        "id": 2,
+        "type": "Synced",
+        "name": "ubuntu/bionic",
+        "architecture": "amd64/ga-18.04-lowlatency",
+        "resource_uri": "/MAAS/api/2.0/boot-resources/2/",
+        "subarches": "generic,hwe-p,hwe-q,hwe-r,hwe-s,hwe-t,hwe-u,hwe-v,hwe-w,ga-16.04,ga-16.10,ga-17.04,ga-17.10,ga-18.04"
+    },
+    {
+        "id": 3,
+        "type": "Synced",
+        "name": "ubuntu/bionic",
+        "architecture": "amd64/hwe-18.04",
+        "resource_uri": "/MAAS/api/2.0/boot-resources/3/",
+        "subarches": "generic,hwe-p,hwe-q,hwe-r,hwe-s,hwe-t,hwe-u,hwe-v,hwe-w,ga-16.04,ga-16.10,ga-17.04,ga-17.10,ga-18.04"
+    },
+    {
+        "id": 4,
+        "type": "Synced",
+        "name": "ubuntu/bionic",
+        "architecture": "amd64/hwe-18.04-edge",
+        "resource_uri": "/MAAS/api/2.0/boot-resources/4/",
+        "subarches": "generic,hwe-p,hwe-q,hwe-r,hwe-s,hwe-t,hwe-u,hwe-v,hwe-w,ga-16.04,ga-16.10,ga-17.04,ga-17.10,ga-18.04,hwe-18.10,hwe-19.04"
+    },
+    {
+        "id": 5,
+        "type": "Synced",
+        "name": "ubuntu/bionic",
+        "architecture": "amd64/hwe-18.04-lowlatency",
+        "resource_uri": "/MAAS/api/2.0/boot-resources/5/",
+        "subarches": "generic,hwe-p,hwe-q,hwe-r,hwe-s,hwe-t,hwe-u,hwe-v,hwe-w,ga-16.04,ga-16.10,ga-17.04,ga-17.10,ga-18.04"
+    },
+    {
+        "id": 6,
+        "type": "Synced",
+        "name": "ubuntu/bionic",
+        "architecture": "amd64/hwe-18.04-lowlatency-edge",
+        "resource_uri": "/MAAS/api/2.0/boot-resources/6/",
+        "subarches": "generic,hwe-p,hwe-q,hwe-r,hwe-s,hwe-t,hwe-u,hwe-v,hwe-w,ga-16.04,ga-16.10,ga-17.04,ga-17.10,ga-18.04,hwe-18.10,hwe-19.04"
+    }
+]</textarea>
+</p>
+
+<p>
+Okay, that's a lot of information, but it looks like I have a bunch of 18.04 images downloaded and synched. Let me try to get a little fancy with a grep and see if I can make that list shorter:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$  maas admin boot-resources read | grep architecture </textarea>
+</p>
+
+<p>
+This produces a quick list of the images I've successfully downloaded:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="10">
+"architecture": "amd64/generic",
+"architecture": "arm64/generic",
+"architecture": "ppc64el/generic",
+"architecture": "i386/generic",
+"architecture": "amd64/ga-18.04",
+"architecture": "amd64/ga-18.04-lowlatency",
+"architecture": "amd64/hwe-18.04",
+"architecture": "amd64/hwe-18.04-edge",
+"architecture": "amd64/hwe-18.04-lowlatency",
+"architecture": "amd64/hwe-18.04-lowlatency-edge",</textarea>
+</p>
+
+<p>
+That definitely confirms 18.04. But what are those three or four on top? Looking at the massive JSON output, I can see that they have names like "open-firmware," "uefi," and "pxe." Okay, so those are images that can PXE-boot machines, basically. But how could I sort this information out in a neat way?<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org3690456" class="outline-2">
+<h2 id="org3690456"><span class="section-number-2">5.</span> Enter jq</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+If you're going to use the MAAS CLI &#x2013; or anything with JSON-based output &#x2013; you'll want to consider learning the command line tool <a href="https://stedolan.github.io/jq/">jq</a>. It's quite handy for parsing the JSON output of the MAAS CLI. So, for example, if I want a (sorta) formatted table of names and architectures, I can run my last command through jq like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$  maas admin boot-resources read | jq -r '.[] | "\(.name)\t\(.architecture)"' </textarea>
+</p>
+
+<p>
+This gives me a clean image list that looks something like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="10">
+grub-efi-signed/uefi         amd64/generic
+grub-efi/uefi                arm64/generic
+grub-ieee1275/open-firmware  ppc64el/generic
+pxelinux/pxe                 i386/generic
+ubuntu/bionic                amd64/ga-18.04
+ubuntu/bionic                amd64/ga-18.04-lowlatency
+ubuntu/bionic                amd64/hwe-18.04
+ubuntu/bionic                amd64/hwe-18.04-edge
+ubuntu/bionic                amd64/hwe-18.04-lowlatency
+ubuntu/bionic                amd64/hwe-18.04-lowlatency-edge</textarea>
+</p>
+
+<p>
+Okay, I cheated just a little there, too: I cleaned up the tabs a little, which wouldn't be quite as well lined-up unless you have a really wide tab setting (which is possible). Even what I did isn't enough to straighten it out totally, but the output is still readable, anyway.<br />
+</p>
+
+<p>
+So you can see that I basically have (a) the images I need to boot machines, and (b) an 18.04 image (set) to deploy. That's a good start, but let me see if I can pull down another image with the CLI. I know I can select images with the boot-source-selections command, so let me try that with "Trusty" (Xenial Xerus, aka 16.04):<br />
+</p>
+
+<p>
+<textarea cols="80" rows="3">
+stormrider@wintermute:~$ maas admin boot-source-selections create 1 \
+  > os="ubuntu" release="trusty" arches="amd64" subarches="*" \
+  > labels="*"
+</textarea>
+</p>
+
+<p>
+The results look like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="18">
+Success.
+Machine-readable output follows:
+{
+    "os": "ubuntu",
+    "release": "trusty",
+    "arches": [
+        "amd64"
+    ],
+    "subarches": [
+        "*"
+    ],
+    "labels": [
+        "*"
+    ],
+    "boot_source_id": 1,
+    "id": 2,
+    "resource_uri": "/MAAS/api/2.0/boot-sources/1/selections/2/"
+}</textarea>
+</p>
+
+<p>
+And that appeared to work, which is good, because that was a long command to type correctly! Sure enough, if I look back at my "Images" tab in the UI, 14.04 LTS is now "Selected for download." Okay, this CLI seems to be working fairly well, let me just keep going and see if I can get it to download, now.<br />
+</p>
+
+<p>
+In reality, downloading them &#x2013; ahem, I mean "importing" them &#x2013; is a fairly simple command:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="4">
+stormrider@wintermute:~$ maas admin boot-resources import 
+Success.
+Machine-readable output follows:
+Import of boot resources started</textarea>
+</p>
+
+<p>
+Now when I switch back to the Images screen, I can see that 14.04 LTS is downloading, which is fantastic. I'll just let that download for a while and then move on to <a href="https://stormrider.io/maas-cli-3.html">enabling DHCP</a>.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: stormrider</p>
+<p class="date">Created: 2026-01-26 Mon 13:59</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

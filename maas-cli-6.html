@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-26 Mon 14:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>jq tricks</title>
+<meta name="author" content="stormrider" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="icon" href="https://stormrider.io/emacs-dragon.png">
+<link rel="stylesheet" type="text/css" href="https://stormrider.io/css/stylesheet.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">jq tricks</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org98b54fc">1. Basic jq usage</a></li>
+<li><a href="#orgd56dda1">2. Improved formatting</a></li>
+<li><a href="#org6771859">3. Making real tables</a></li>
+<li><a href="#org8abc39c">4. Extending the list</a></li>
+<li><a href="#org3060865">5. Nested arrays</a></li>
+<li><a href="#org2326c09">6. Nested keys</a></li>
+<li><a href="#org333d2ca">7. Chaining Ubuntu CLI commands</a></li>
+<li><a href="#org61cbf18">8. Summary</a></li>
+</ul>
+</div>
+</div>
+<hr />
+<p>
+MAAS: <a href="https://stormrider.io/maas-cli-1.html">Install</a> ~ <a href="https://stormrider.io/maas-cli-2.html">Configure</a> ~ <a href="https://stormrider.io/maas-cli-3.html">DHCP</a> ~ <a href="https://stormrider.io/maas-cli-4.html">Commission</a> ~ <a href="https://stormrider.io/maas-cli-5.html">Deploy</a> ~ <a href="https://stormrider.io/maas-cli-6.html">jq</a> ~ <a href="https://stormrider.io/maas-cli-7.html">SSH</a> ~ <a href="https://stormrider.io/maas-cli-8.html">More jq</a><br />
+</p>
+<hr />
+
+<p>
+<i>Using <code>jq</code> to make CLI output readable</i><br />
+</p>
+
+<p>
+In my previous few posts, it is very evident that the JSON output from the allocate and deploy commands was very lengthy for even one machine — so you can imagine how large a list of 10 or 12 machines might be. Traditional JSON output is both consistent and comprehensive, but sometimes hard for humans to process.<br />
+</p>
+
+<p>
+Enter jq, a command-line tool dedicated to filtering and formatting JSON output, so that you can more easily summarize data. For instance, consider a small MAAS install with 12 virtual machines. Six of these machines are lxd VMs, and six are libvirt VMs. Suppose I enter the MAAS CLI command to list all those machines:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$ maas admin machines read</textarea>
+</p>
+
+<p>
+The listing would be many pages long, and likely very time-consuming to pick through. On the other hand, I can apply the jq command, a couple of other Ubuntu CLI commands, and just a little bit of finesse to get something conventional-looking:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="6">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","SYSID",
+"POWER","STATUS","OWNER", "TAGS", "POOL","VLAN","FABRIC",
+"SUBNET"] | (., map(length*"-"))),(.[] | [.hostname, .system_id, 
+.power_state, .status_name, .owner // "-",.tag_names[0] // "-", 
+.pool.name,.boot_interface.vlan.name,.boot_interface.vlan.fabric,
+.boot_interface.links[0].subnet.name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+In fact, with this command,we can produce an useful and compact machine listing that serves 99% of my routine MAAS information needs:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      SYSID   POWER  STATUS     OWNER  TAGS                 POOL     VLAN      FABRIC    SUBNET
+ --------      -----   -----  ------     -----  ----                 ----     ----      ------    ------
+ lxd-vm-1      r8d6yp  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+ lxd-vm-2      tfftrx  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+ lxd-vm-3      grwpwc  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+ lxd-vm-4      6s8dt4  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+ lxd-vm-5      pyebgm  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+ lxd-vm-6      ebnww6  off    New        -      pod-console-logging  default  untagged  fabric-1  
+ libvirt-vm-1  m7ffsg  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+ libvirt-vm-2  kpawad  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+ libvirt-vm-3  r44hr6  error  Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+ libvirt-vm-4  s3sdkw  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+ libvirt-vm-5  48dg8m  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+ libvirt-vm-6  bacx77  on     Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24</textarea>
+</p>
+
+<p>
+Here we have a clean text table listing the machine hostnames, along with the system IDs, power states, machines statuses, tags, pools, and networking information. These parameters represent only a small fraction of the available JSON output, of course. Let's break this command down, piece by piece, and see how it works.<br />
+</p>
+<div id="outline-container-org98b54fc" class="outline-2">
+<h2 id="org98b54fc"><span class="section-number-2">1.</span> Basic jq usage</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+First, we'll just pull the hostnames from these machines, with no qualifiers or formatting rules, like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$ maas admin machines read | jq '(.[] | [.hostname])'</textarea>
+</p>
+
+<p>
+This command returns output that looks something like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="36">
+[
+  "lxd-vm-1"
+]
+[
+  "lxd-vm-2"
+]
+[
+  "lxd-vm-3"
+]
+[
+  "lxd-vm-4"
+]
+[
+  "lxd-vm-5"
+]
+[
+  "lxd-vm-6"
+]
+[
+  "libvirt-vm-1"
+]
+[
+  "libvirt-vm-2"
+]
+[
+  "libvirt-vm-3"
+]
+[
+  "libvirt-vm-4"
+]
+[
+  "libvirt-vm-5"
+]
+[
+  "libvirt-vm-6"
+]</textarea>
+</p>
+
+<p>
+Note a couple of things about this command:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$ maas admin machines read | jq '(.[] | [.hostname])'</textarea>
+</p>
+
+<p>
+First, the jq instructions are enclosed in single quotes. As such, they can span lines if necessary, without any line continuations (\), like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="2">
+stormrider@wintermute:~$ maas admin machines read | jq '(.[]
+| [.hostname])'</textarea>
+</p>
+
+<p>
+Second, notice the structure of the jq instructions. The .[] tells jq that it's decoding an array of data sets — in this case, an array of machine data sets — and that it should iterate through each of the outer data sets (each machine) individually. The pipe symbol (|) completes the “for each” construct, so this command basically says, “for each set of machine data you get, pull out (and return) the value associated with the JSON key hostname. The return value reflects this structure:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="6">
+[
+   "libvirt-vm-5"
+]
+[
+   "libvirt-vm-6"
+]</textarea>
+</p>
+
+<p>
+The outer square brackets represent the boundaries of each machine's data set, and the value in quotes corresponds to the value of the key hostname in successive machine data sets. It can get a little complicated sometimes, but that's basically the way to parse JSON with jq.<br />
+</p>
+
+<p>
+For practice let's try pulling the value of the key that holds machine status, again with no qualifiers or special formatting:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$ maas admin machines read | jq '(.[] | [.hostname, .status_name])'</textarea>
+</p>
+
+<p>
+This command essentially tells jq to do the same thing as last time, but also collect the value of the key “statusname” for each machine. The results looks something like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="48">
+[
+  "lxd-vm-1",
+  "Deployed"
+]
+[
+  "lxd-vm-2",
+  "Allocated"
+]
+[
+  "lxd-vm-3",
+  "Ready"
+]
+[
+  "lxd-vm-4",
+  "Deployed"
+]
+[
+  "lxd-vm-5",
+  "Allocated"
+]
+[
+  "lxd-vm-6",
+  "New"
+]
+[
+  "libvirt-vm-1",
+  "Ready"
+]
+[
+  "libvirt-vm-2",
+  "Ready"
+]
+[
+  "libvirt-vm-3",
+  "Ready"
+]
+[
+  "libvirt-vm-4",
+  "Ready"
+]
+[
+  "libvirt-vm-5",
+  "Ready"
+]
+[
+  "libvirt-vm-6",
+  "Deployed"
+]</textarea>
+</p>
+
+<p>
+So much for printing the values of JSON keys. There are still some nuances (arrays, nested keys, …), but this is the lion's share of the syntax. Let's divert for a minute and look at how to format the output in a more human-readable way.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd56dda1" class="outline-2">
+<h2 id="orgd56dda1"><span class="section-number-2">2.</span> Improved formatting</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Most of the Ubuntu text-processing commands use tabs as field delimiters, which is a trait inherited from grandfather UNIX. Currently, the output is clean, but relatively hard to format into lines. Luckily jq has a filter for this: the “tab-separated values” filter, known as @tsv. This filter transforms the output records into individual lines with values separated by tabs.<br />
+</p>
+
+<p>
+Adding @tsv to the mix:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$ maas admin machines read | jq '(.[] | [.hostname, .status_name]) | @tsv'</textarea>
+</p>
+
+<p>
+we get something like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="12">
+"lxd-vm-1\tDeployed"
+"lxd-vm-2\tAllocated"
+"lxd-vm-3\tReady"
+"lxd-vm-4\tDeployed"
+"lxd-vm-5\tAllocated"
+"lxd-vm-6\tNew"
+"libvirt-vm-1\tReady"
+"libvirt-vm-2\tReady"
+"libvirt-vm-3\tReady"
+"libvirt-vm-4\tReady"
+"libvirt-vm-5\tReady"
+"libvirt-vm-6\tDeployed"</textarea>
+</p>
+
+<p>
+That's a step in the right direction, but it's still pretty far from human-readable output. If only there were some way to get rid of the quotes and just do the tab, instead of representing it as a regex character. In fact, the jq “raw” output option (-r) takes care of this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(.[] | [.hostname, .status_name]) | @tsv'</textarea>
+</p>
+
+<p>
+Feeding the raw output into our three-filter set gives us a more readable result:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="12">
+lxd-vm-1	Deployed
+lxd-vm-2	Allocated
+lxd-vm-3	Ready
+lxd-vm-4	Deployed
+lxd-vm-5	Allocated
+lxd-vm-6	New
+libvirt-vm-1	Ready
+libvirt-vm-2	Ready
+libvirt-vm-3	Ready
+libvirt-vm-4	Ready
+libvirt-vm-5	Ready
+libvirt-vm-6	Deployed</textarea>
+</p>
+
+<p>
+This is tabulated, but the number of spaces between the columns is a little big, and, if there's an unusually long value in one of the fields, it may throw the tabulation off for that line. Something could have been added to jq for that, but there is no need, since Ubuntu already has the column utility. Piping the output of the command so far to column -t (-t for “tabs”) will normalize the tab spacing to the data and ensure that each column is exactly long enough for the longest value in that column:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(.[] | [.hostname, .status_name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+This command result is very similar to the previous output, though you'll notice that the field spacing is neatly optimized to the data itself:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="12">
+lxd-vm-1      Deployed
+lxd-vm-2      Allocated
+lxd-vm-3      Ready
+lxd-vm-4      Deployed
+lxd-vm-5      Allocated
+lxd-vm-6      New
+libvirt-vm-1  Ready
+libvirt-vm-2  Ready
+libvirt-vm-3  Ready
+libvirt-vm-4  Ready
+libvirt-vm-5  Ready
+libvirt-vm-6  Deployed</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-org6771859" class="outline-2">
+<h2 id="org6771859"><span class="section-number-2">3.</span> Making real tables</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+So far, so good, but this still isn't a presentable data table. First of all, there are no headings. These can be added by passing a literal row to jq, like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","STATUS"]), (.[] | [.hostname, .status_name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+You'll note that there are two expressions in parenthesis (representing individual lines or rows). The first just contains the two column headings, while the second contains the “for each” construct that pulls the hostname and status out of the JSON. In essence, the first expression evaluates to just one row, since there's nothing to tell it to iterate. The second expression evaluates to one row per machine, since that's the level of data we're reading. Here's what we get from this command:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="13">
+HOSTNAME      STATUS
+lxd-vm-1      Deployed
+lxd-vm-2      Allocated
+lxd-vm-3      Ready
+lxd-vm-4      Deployed
+lxd-vm-5      Allocated
+lxd-vm-6      New
+libvirt-vm-1  Ready
+libvirt-vm-2  Ready
+libvirt-vm-3  Ready
+libvirt-vm-4  Ready
+libvirt-vm-5  Ready
+libvirt-vm-6  Deployed</textarea>
+</p>
+
+<p>
+Nice, but it needs a horizontal rule, like a line of dashes, to separate the headings from the data. We can do this by essentially turning the one header row into two, using some jq macros to generate dashes lines of appropriate length:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="2">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","STATUS"] | 
+(.,map(length*"-"))), (.[] | [.hostname, .status_name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+The expression | (.,) tells jq to convert the foregoing header row into two rows: the first contains the two headers, as in the previous row, and the second contains the result of a couple of macros (map and length). We won't detail those here, but the use of this construct produces the following output:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      STATUS
+--------      ------
+lxd-vm-1      Deployed
+lxd-vm-2      Allocated
+lxd-vm-3      Ready
+lxd-vm-4      Deployed
+lxd-vm-5      Allocated
+lxd-vm-6      New
+libvirt-vm-1  Ready
+libvirt-vm-2  Ready
+libvirt-vm-3  Ready
+libvirt-vm-4  Ready
+libvirt-vm-5  Ready
+libvirt-vm-6  Deployed</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-org8abc39c" class="outline-2">
+<h2 id="org8abc39c"><span class="section-number-2">4.</span> Extending the list</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Let's add a couple more fields, owner (which is sometimes blank), and systemid (which is never blank), to the output:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="3">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","STATUS", "OWNER", "SYSTEM-ID"] 
+| (.,map(length*"-"))), (.[] | [.hostname, .status_name,.owner,.system_id]) 
+| @tsv' | column -t</textarea>
+</p>
+
+<p>
+This gives us the following result:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      STATUS     OWNER   SYSTEM-ID
+--------      ------     -----   ---------
+lxd-vm-1      Deployed   admin   r8d6yp
+lxd-vm-2      Allocated  admin   tfftrx
+lxd-vm-3      Ready      grwpwc  
+lxd-vm-4      Deployed   admin   6s8dt4
+lxd-vm-5      Allocated  admin   pyebgm
+lxd-vm-6      New        ebnww6  
+libvirt-vm-1  Ready      m7ffsg  
+libvirt-vm-2  Ready      kpawad  
+libvirt-vm-3  Ready      r44hr6  
+libvirt-vm-4  Ready      s3sdkw  
+libvirt-vm-5  Ready      48dg8m  
+libvirt-vm-6  Deployed   admin   bacx77</textarea>
+</p>
+
+<p>
+You'll notice right away there's a problem with the columns. Remember that only machines in the “Allocated” or “Deployed” state are owned by anyone, since that's what allocate/acquire means. The lines for the deployed and allocated machines lay out correctly, but the lines for the unowned machines are incorrectly formatted. We can fix this by using the jq “alternate value” construct (a // "b"), which can be loosely read, “if not a, then b.” We add it to the owner key like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="3">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","STATUS", "OWNER", "SYSTEM-ID"] 
+| (.,map(length*"-"))), (.[] | [.hostname, .status_name,.owner // "-",.system_id]) 
+| @tsv' | column -t</textarea>
+</p>
+
+<p>
+Then the results line up nicely, based on the longest value in each key column:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      STATUS     OWNER  SYSTEM-ID
+--------      ------     -----  ---------
+lxd-vm-1      Deployed   admin  r8d6yp
+lxd-vm-2      Allocated  admin  tfftrx
+lxd-vm-3      Ready      -      grwpwc
+lxd-vm-4      Deployed   admin  6s8dt4
+lxd-vm-5      Allocated  admin  pyebgm
+lxd-vm-6      New        -      ebnww6
+libvirt-vm-1  Ready      -      m7ffsg
+libvirt-vm-2  Ready      -      kpawad
+libvirt-vm-3  Ready      -      r44hr6
+libvirt-vm-4  Ready      -      s3sdkw
+libvirt-vm-5  Ready      -      48dg8m
+libvirt-vm-6  Deployed   admin  bacx77</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-org3060865" class="outline-2">
+<h2 id="org3060865"><span class="section-number-2">5.</span> Nested arrays</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Machines have a nested array (of indeterminate length) for machine tags. In JSON terms, instead of having a single key-value pair at the top level, like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+"hostname": "libvirt-vm-6",</textarea>
+</p>
+
+<p>
+tags are represented by nested arrays, like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="4">
+"tag_names": [
+    "pod-console-logging",
+    "virtual"
+],</textarea>
+</p>
+
+<p>
+Incorporating a random number of tags per machine into a neat table is beyond the scope of this particular post, but we can show the first tag in the table rows:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="3">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","STATUS", "OWNER", "SYSTEM-ID",
+"FIRST TAG"] | (.,map(length*"-"))), (.[] | [.hostname, .status_name,
+.owner // "-",.system_id,.tag_names[0] // "-"]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+Where we would use .json-key-name for a non-nested value, we need only use .json-key-name[0] to refer to the first element of the nested array. Doing this produces the following result:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      STATUS     OWNER  SYSTEM-ID  FIRST                TAG
+--------      ------     -----  ---------  ---------            
+lxd-vm-1      Deployed   admin  r8d6yp     pod-console-logging  
+lxd-vm-2      Allocated  admin  tfftrx     pod-console-logging  
+lxd-vm-3      Ready      -      grwpwc     pod-console-logging  
+lxd-vm-4      Deployed   admin  6s8dt4     pod-console-logging  
+lxd-vm-5      Allocated  admin  pyebgm     pod-console-logging  
+lxd-vm-6      New        -      ebnww6     pod-console-logging  
+libvirt-vm-1  Ready      -      m7ffsg     pod-console-logging  
+libvirt-vm-2  Ready      -      kpawad     pod-console-logging  
+libvirt-vm-3  Ready      -      r44hr6     pod-console-logging  
+libvirt-vm-4  Ready      -      s3sdkw     pod-console-logging  
+libvirt-vm-5  Ready      -      48dg8m     pod-console-logging  
+libvirt-vm-6  Deployed   admin  bacx77     pod-console-logging</textarea>
+</p>
+
+<p>
+That's almost right, but notice that the heading separates on spaces between words. Let's try a better way, with an underscore:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="3">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","STATUS", "OWNER", "SYSTEM-ID",
+"FIRST_TAG"] | (.,map(length*"-"))), (.[] | [.hostname, .status_name,
+.owner // "-",.system_id,.tag_names[0] // "-"]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+This version of the command produces the expected output:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      STATUS     OWNER  SYSTEM-ID  FIRST_TAG
+--------      ------     -----  ---------  ---------
+lxd-vm-1      Deployed   admin  r8d6yp     pod-console-logging
+lxd-vm-2      Allocated  admin  tfftrx     pod-console-logging
+lxd-vm-3      Ready      -      grwpwc     pod-console-logging
+lxd-vm-4      Deployed   admin  6s8dt4     pod-console-logging
+lxd-vm-5      Allocated  admin  pyebgm     pod-console-logging
+lxd-vm-6      New        -      ebnww6     pod-console-logging
+libvirt-vm-1  Ready      -      m7ffsg     pod-console-logging
+libvirt-vm-2  Ready      -      kpawad     pod-console-logging
+libvirt-vm-3  Ready      -      r44hr6     pod-console-logging
+libvirt-vm-4  Ready      -      s3sdkw     pod-console-logging
+libvirt-vm-5  Ready      -      48dg8m     pod-console-logging
+libvirt-vm-6  Deployed   admin  bacx77     pod-console-logging</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-org2326c09" class="outline-2">
+<h2 id="org2326c09"><span class="section-number-2">6.</span> Nested keys</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+These aren't all the routine key-value pairs we want in the table, though. It would also be nice to print the pool to which each machine is assigned. Just asking for .pool as a single key-value pair:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="3">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","STATUS", "OWNER", "SYSTEM-ID",
+"FIRST_TAG","POOL"] | (.,map(length*"-"))), (.[] | [.hostname, .status_name,
+.owner // "-",.system_id,.tag_names[0] // "-", .pool]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+produces an error:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="1">
+jq: error (at <stdin>:5639): object ({"name":"de...") is not valid in a csv row</textarea>
+</p>
+
+<p>
+Looking at the JSON output, we see that .pool is a nested key, not a key-value pair:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="6">
+"pool": {
+    "name": "default",
+    "description": "Default pool",
+    "id": 0,
+    "resource_uri": "/MAAS/api/2.0/resourcepool/0/"
+},</textarea>
+</p>
+
+<p>
+What we really want is the pool name, so we need to add one level of indirection to that particular key to reach the actual key-value pair, like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="3">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","STATUS", "OWNER", "SYSTEM-ID",
+"FIRST_TAG","POOL"] | (.,map(length*"-"))), (.[] | [.hostname, .status_name,
+.owner // "-",.system_id,.tag_names[0] // "-", .pool.name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+which gives us what we want:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      STATUS     OWNER  SYSTEM-ID  FIRST_TAG            POOL
+--------      ------     -----  ---------  ---------            ----
+lxd-vm-1      Deployed   admin  r8d6yp     pod-console-logging  default
+lxd-vm-2      Allocated  admin  tfftrx     pod-console-logging  default
+lxd-vm-3      Ready      -      grwpwc     pod-console-logging  default
+lxd-vm-4      Deployed   admin  6s8dt4     pod-console-logging  default
+lxd-vm-5      Allocated  admin  pyebgm     pod-console-logging  default
+lxd-vm-6      New        -      ebnww6     pod-console-logging  default
+libvirt-vm-1  Ready      -      m7ffsg     pod-console-logging  default
+libvirt-vm-2  Ready      -      kpawad     pod-console-logging  default
+libvirt-vm-3  Ready      -      r44hr6     pod-console-logging  default
+libvirt-vm-4  Ready      -      s3sdkw     pod-console-logging  default
+libvirt-vm-5  Ready      -      48dg8m     pod-console-logging  default
+libvirt-vm-6  Deployed   admin  bacx77     pod-console-logging  default</textarea>
+</p>
+
+<p>
+It's also useful to list the VLAN and fabric names in the output table. Looking at the JSON again, these values present like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="16">
+"boot_interface": {
+            "vlan": {
+                "vid": 0,
+                "mtu": 1500,
+                "dhcp_on": true,
+                "external_dhcp": null,
+                "relay_vlan": null,
+                "secondary_rack": null,
+                "name": "untagged",
+                "id": 5001,
+                "fabric_id": 1,
+                "space": "undefined",
+                "fabric": "fabric-1",
+                "primary_rack": "wnmkpn",
+                "resource_uri": "/MAAS/api/2.0/vlans/5001/"
+             },</textarea>
+</p>
+
+<p>
+This means they are doubly-nested. No problem; just use double indirection (two levels of . separators) to retrieve them:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="5">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","SYSID","POWER","STATUS","OWNER", 
+"TAGS", "POOL", "VLAN","FABRIC"] | (., map(length*"-"))), (.[] | [.hostname, 
+.system_id, .power_state, .status_name, .owner // "-", .tag_names[0] // "-", 
+.pool.name, .boot_interface.vlan.name, .boot_interface.vlan.fabric]) 
+| @tsv' | column -t</textarea>
+</p>
+
+<p>
+The modified command yields the desired results:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      SYSID   POWER  STATUS     OWNER  TAGS                 POOL     VLAN      FABRIC
+--------      -----   -----  ------     -----  ----                 ----     ----      ------
+lxd-vm-1      r8d6yp  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1
+lxd-vm-2      tfftrx  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1
+lxd-vm-3      grwpwc  off    Ready      -      pod-console-logging  default  untagged  fabric-1
+lxd-vm-4      6s8dt4  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1
+lxd-vm-5      pyebgm  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1
+lxd-vm-6      ebnww6  off    New        -      pod-console-logging  default  untagged  fabric-1
+libvirt-vm-1  m7ffsg  off    Ready      -      pod-console-logging  default  untagged  fabric-1
+libvirt-vm-2  kpawad  off    Ready      -      pod-console-logging  default  untagged  fabric-1
+libvirt-vm-3  r44hr6  error  Ready      -      pod-console-logging  default  untagged  fabric-1
+libvirt-vm-4  s3sdkw  off    Ready      -      pod-console-logging  default  untagged  fabric-1
+libvirt-vm-5  48dg8m  off    Ready      -      pod-console-logging  default  untagged  fabric-1
+libvirt-vm-6  bacx77  on     Deployed   admin  pod-console-logging  default  untagged  fabric-1</textarea>
+</p>
+
+<p>
+There's just one more (deeply nested) value we want to retrieve, and that's the fully-qualified subnet address in CIDR form. That's a little trickier, because it's buried in JSON like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="20">
+"boot_interface": {
+     "vlan": {
+         "vid": 0,
+         "mtu": 1500,
+         "dhcp_on": true,
+         ...
+         "resource_uri": "/MAAS/api/2.0/vlans/5001/"
+     },
+     "parents": [],
+     "product": null,
+     ...
+     "link_connected": true,
+     "type": "physical",
+     "links": [
+         {
+             "id": 79,
+             "mode": "auto",
+             "ip_address": "10.124.141.4",
+             "subnet": {
+                 "name": "10.124.141.0/24",</textarea>
+</p>
+
+<p>
+So the value we want is in the nested key bootinterface, in a nested array links[], which contains the doubly-nested key subnet.name. We can finish our basic CLI machine list — the one we started with — by adding this complex formulation to the command:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="6">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","SYSID","POWER","STATUS",
+"OWNER", "TAGS", "POOL", "VLAN","FABRIC","SUBNET"] | (., map(length*"-"))),
+(.[] | [.hostname, .system_id, .power_state, .status_name, .owner // "-", 
+.tag_names[0] // "-", .pool.name,
+.boot_interface.vlan.name, .boot_interface.vlan.fabric,
+.boot_interface.links[0].subnet.name]) | @tsv' | column -t</textarea>
+</p>
+
+<p>
+Sure enough, this command gives us the same table we had at the beginning of this post:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      SYSID   POWER  STATUS     OWNER  TAGS                 POOL     VLAN      FABRIC    SUBNET
+--------      -----   -----  ------     -----  ----                 ----     ----      ------    ------
+lxd-vm-1      r8d6yp  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-2      tfftrx  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-3      grwpwc  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-4      6s8dt4  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-5      pyebgm  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-6      ebnww6  off    New        -      pod-console-logging  default  untagged  fabric-1  
+libvirt-vm-1  m7ffsg  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-2  kpawad  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-3  r44hr6  error  Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-4  s3sdkw  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-5  48dg8m  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-6  bacx77  on     Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-org333d2ca" class="outline-2">
+<h2 id="org333d2ca"><span class="section-number-2">7.</span> Chaining Ubuntu CLI commands</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Although the machine list above looks fairly neat, it's actually not sorted by hostname, exactly. To accomplish this, we'd need to add a couple of Ubuntu CLI commands to the mix. Sorting on hostname means we want to sort on field 1 of the current command's output. We can try just feeding that to sort like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="6">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","SYSID","POWER","STATUS", "OWNER", 
+"TAGS", "POOL", "VLAN","FABRIC","SUBNET"] | (., map(length*"-"))), (.[] | 
+[.hostname, .system_id, .power_state, .status_name, .owner // "-", 
+.tag_names[0] // "-", .pool.name, .boot_interface.vlan.name, 
+.boot_interface.vlan.fabric, .boot_interface.links[0].subnet.name]) 
+| @tsv' | column -t | sort -k 1</textarea>
+</p>
+
+<p>
+This command does indeed sort by hostname:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+--------      -----   -----  ------     -----  ----                 ----     ----      ------    ------
+HOSTNAME      SYSID   POWER  STATUS     OWNER  TAGS                 POOL     VLAN      FABRIC    SUBNET
+libvirt-vm-1  m7ffsg  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-2  kpawad  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-3  r44hr6  error  Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-4  s3sdkw  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-5  48dg8m  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-6  bacx77  on     Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-1      r8d6yp  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-2      tfftrx  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-3      grwpwc  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-4      6s8dt4  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-5      pyebgm  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-6      ebnww6  off    New        -      pod-console-logging  default  untagged  fabric-1</textarea>
+</p>
+
+<p>
+but it has the unintended side-effect of sorting the header lines into the output. There are probably at least a dozen Ubuntu CLI solutions for this, so we'll just pick one of the most elegant here, using awk:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="6">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","SYSID","POWER","STATUS","OWNER", 
+"TAGS", "POOL", "VLAN","FABRIC","SUBNET"] | (., map(length*"-"))),(.[] | 
+[.hostname, .system_id, .power_state, .status_name, .owner // "-", 
+.tag_names[0] // "-", .pool.name, .boot_interface.vlan.name, 
+.boot_interface.vlan.fabric,.boot_interface.links[0].subnet.name]) 
+| @tsv' | column -t | awk 'NR<3{print $0;next}{print $0| "sort -k 1"}'</textarea>
+</p>
+
+<p>
+This command gives us the desired output:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      SYSID   POWER  STATUS     OWNER  TAGS                 POOL     VLAN      FABRIC    SUBNET
+--------      -----   -----  ------     -----  ----                 ----     ----      ------    ------
+libvirt-vm-1  m7ffsg  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-2  kpawad  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-3  r44hr6  error  Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-4  s3sdkw  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-5  48dg8m  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-6  bacx77  on     Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-1      r8d6yp  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-2      tfftrx  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-3      grwpwc  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-4      6s8dt4  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-5      pyebgm  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-6      ebnww6  off    New        -      pod-console-logging  default  untagged  fabric-1</textarea>
+</p>
+
+<p>
+Note that by changing the numerical “-k” argument to “sort,” you can change which field controls the sort:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="6">
+stormrider@wintermute:~$ maas admin machines read | jq -r '(["HOSTNAME","SYSID","POWER","STATUS","OWNER", 
+"TAGS", "POOL", "VLAN","FABRIC","SUBNET"] | (., map(length*"-"))),(.[] | 
+[.hostname, .system_id, .power_state, .status_name, .owner // "-", 
+.tag_names[0] // "-", .pool.name, .boot_interface.vlan.name, 
+.boot_interface.vlan.fabric,.boot_interface.links[0].subnet.name]) 
+| @tsv' | column -t | awk 'NR<3{print $0;next}{print $0| "sort -k 4"}'</textarea>
+</p>
+
+<p>
+This command sorts by machine state, which is the fourth field:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="14">
+HOSTNAME      SYSID   POWER  STATUS     OWNER  TAGS                 POOL     VLAN      FABRIC    SUBNET
+--------      -----   -----  ------     -----  ----                 ----     ----      ------    ------
+lxd-vm-2      tfftrx  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-5      pyebgm  off    Allocated  admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-6  bacx77  on     Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-1      r8d6yp  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-4      6s8dt4  off    Deployed   admin  pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-6      ebnww6  off    New        -      pod-console-logging  default  untagged  fabric-1  
+libvirt-vm-1  m7ffsg  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-2  kpawad  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-4  s3sdkw  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-5  48dg8m  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+lxd-vm-3      grwpwc  off    Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24
+libvirt-vm-3  r44hr6  error  Ready      -      pod-console-logging  default  untagged  fabric-1  10.124.141.0/24</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-org61cbf18" class="outline-2">
+<h2 id="org61cbf18"><span class="section-number-2">8.</span> Summary</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+At this point, it should be clear that jq is a relatively simple, powerful tool for formatting output from the MAAS CLI. You should also remember that, like any Ubuntu CLI command, jq simply outputs text — so anything you can do with text output, you can do with the output from jq. In the next post, we'll look at some ways to use jq to automatically write CLI scripts to automate various routine MAAS operations.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: stormrider</p>
+<p class="date">Created: 2026-01-26 Mon 14:01</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

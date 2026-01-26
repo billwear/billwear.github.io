@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-26 Mon 14:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deploying machines</title>
+<meta name="author" content="stormrider" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="icon" href="https://stormrider.io/emacs-dragon.png">
+<link rel="stylesheet" type="text/css" href="https://stormrider.io/css/stylesheet.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Deploying machines</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4e175ae">1. Step 1: Acquiring a machine using the CLI</a></li>
+<li><a href="#org90cdcaf">2. Deploying a machine with the CLI</a></li>
+</ul>
+</div>
+</div>
+<hr />
+<p>
+MAAS: <a href="https://stormrider.io/maas-cli-1.html">Install</a> ~ <a href="https://stormrider.io/maas-cli-2.html">Configure</a> ~ <a href="https://stormrider.io/maas-cli-3.html">DHCP</a> ~ <a href="https://stormrider.io/maas-cli-4.html">Commission</a> ~ <a href="https://stormrider.io/maas-cli-5.html">Deploy</a> ~ <a href="https://stormrider.io/maas-cli-6.html">jq</a> ~ <a href="https://stormrider.io/maas-cli-7.html">SSH</a> ~ <a href="https://stormrider.io/maas-cli-8.html">More jq</a><br />
+</p>
+<hr />
+
+<p>
+<i>Deploying machines with the MAAS CLI</i><br />
+</p>
+<div id="outline-container-org4e175ae" class="outline-2">
+<h2 id="org4e175ae"><span class="section-number-2">1.</span> Step 1: Acquiring a machine using the CLI</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+When it's finished commissioning, I can acquire a machine like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="493">
+stormrider@wintermute:~$ maas admin machines allocate system_id=bhxws3
+
+Success.
+Machine-readable output follows:
+{
+    "raids": [],
+    "zone": {
+        "name": "default",
+        "description": "",
+        "id": 1,
+        "resource_uri": "/MAAS/api/2.0/zones/default/"
+    },
+    "current_commissioning_result_id": 8,
+    "storage_test_status": 2,
+    "current_testing_result_id": 9,
+    "bcaches": [],
+    "ip_addresses": [
+        "192.168.123.190"
+    ],
+    "pool": {
+        "name": "default",
+        "description": "Default pool",
+        "id": 0,
+        "resource_uri": "/MAAS/api/2.0/resourcepool/0/"
+    },
+    "physicalblockdevice_set": [
+        {
+            "firmware_version": "2.5+",
+            "id_path": "/dev/disk/by-id/ata-QEMU_HARDDISK_QM00001",
+            "system_id": "bhxws3",
+            "partition_table_type": "GPT",
+            "type": "physical",
+            "block_size": 512,
+            "id": 3,
+            "numa_node": 0,
+            "partitions": [
+                {
+                    "uuid": "8aa1164c-8a91-41d7-92e3-c411634355bb",
+                    "size": 5360320512,
+                    "bootable": false,
+                    "tags": [],
+                    "id": 3,
+                    "used_for": "ext4 formatted filesystem mounted at /",
+                    "device_id": 3,
+                    "system_id": "bhxws3",
+                    "path": "/dev/disk/by-dname/sda-part2",
+                    "type": "partition",
+                    "filesystem": {
+                        "fstype": "ext4",
+                        "label": "root",
+                        "uuid": "68487852-7e38-4605-a84e-d787532fd443",
+                        "mount_point": "/",
+                        "mount_options": null
+                    },
+                    "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/partition/3"
+                }
+            ],
+            "filesystem": null,
+            "available_size": 0,
+            "size": 5368709120,
+            "storage_pool": null,
+            "model": "QEMU HARDDISK",
+            "used_size": 5366611968,
+            "tags": [
+                "ssd"
+            ],
+            "used_for": "GPT partitioned with 1 partition",
+            "uuid": null,
+            "name": "sda",
+            "path": "/dev/disk/by-dname/sda",
+            "serial": "QM00001",
+            "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/"
+        }
+    ],
+    "swap_size": null,
+    "storage": 5368.70912,
+    "node_type_name": "Machine",
+    "system_id": "bhxws3",
+    "owner_data": {},
+    "special_filesystems": [],
+    "tag_names": [
+        "virtual"
+    ],
+    "cpu_test_status_name": "Unknown",
+    "locked": false,
+    "cpu_count": 1,
+    "volume_groups": [],
+    "storage_test_status_name": "Passed",
+    "hardware_info": {
+        "system_vendor": "QEMU",
+        "system_product": "Standard PC (i440FX + PIIX, 1996)",
+        "system_family": "Unknown",
+        "system_version": "pc-i440fx-focal",
+        "system_sku": "Unknown",
+        "system_serial": "Unknown",
+        "cpu_model": "Intel Core Processor (Skylake, IBRS)",
+        "mainboard_vendor": "Unknown",
+        "mainboard_product": "Unknown",
+        "mainboard_serial": "Unknown",
+        "mainboard_version": "Unknown",
+        "mainboard_firmware_vendor": "SeaBIOS",
+        "mainboard_firmware_date": "04/01/2014",
+        "mainboard_firmware_version": "1.13.0-1ubuntu1",
+        "chassis_vendor": "QEMU",
+        "chassis_type": "Other",
+        "chassis_serial": "Unknown",
+        "chassis_version": "pc-i440fx-focal"
+    },
+    "node_type": 0,
+    "other_test_status": -1,
+    "hostname": "ace-swan",
+    "interface_test_status": -1,
+    "boot_interface": {
+        "link_speed": 0,
+        "params": "",
+        "vendor": "Red Hat, Inc.",
+        "firmware_version": null,
+        "system_id": "bhxws3",
+        "enabled": true,
+        "type": "physical",
+        "links": [
+            {
+                "id": 15,
+                "mode": "auto",
+                "subnet": {
+                    "name": "192.168.123.0/24",
+                    "description": "",
+                    "vlan": {
+                        "vid": 0,
+                        "mtu": 1500,
+                        "dhcp_on": true,
+                        "external_dhcp": null,
+                        "relay_vlan": null,
+                        "fabric": "fabric-2",
+                        "id": 5003,
+                        "secondary_rack": null,
+                        "primary_rack": "8dwnne",
+                        "name": "untagged",
+                        "fabric_id": 2,
+                        "space": "undefined",
+                        "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+                    },
+                    "cidr": "192.168.123.0/24",
+                    "rdns_mode": 2,
+                    "gateway_ip": null,
+                    "dns_servers": [],
+                    "allow_dns": true,
+                    "allow_proxy": true,
+                    "active_discovery": false,
+                    "managed": true,
+                    "id": 4,
+                    "space": "undefined",
+                    "resource_uri": "/MAAS/api/2.0/subnets/4/"
+                }
+            }
+        ],
+        "id": 10,
+        "discovered": [
+            {
+                "subnet": {
+                    "name": "192.168.123.0/24",
+                    "description": "",
+                    "vlan": {
+                        "vid": 0,
+                        "mtu": 1500,
+                        "dhcp_on": true,
+                        "external_dhcp": null,
+                        "relay_vlan": null,
+                        "fabric": "fabric-2",
+                        "id": 5003,
+                        "secondary_rack": null,
+                        "primary_rack": "8dwnne",
+                        "name": "untagged",
+                        "fabric_id": 2,
+                        "space": "undefined",
+                        "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+                    },
+                    "cidr": "192.168.123.0/24",
+                    "rdns_mode": 2,
+                    "gateway_ip": null,
+                    "dns_servers": [],
+                    "allow_dns": true,
+                    "allow_proxy": true,
+                    "active_discovery": false,
+                    "managed": true,
+                    "id": 4,
+                    "space": "undefined",
+                    "resource_uri": "/MAAS/api/2.0/subnets/4/"
+                },
+                "ip_address": "192.168.123.190"
+            }
+        ],
+        "numa_node": 0,
+        "children": [],
+        "parents": [],
+        "link_connected": true,
+        "effective_mtu": 1500,
+        "tags": [],
+        "sriov_max_vf": 0,
+        "interface_speed": 0,
+        "name": "ens3",
+        "mac_address": "52:54:00:15:36:f2",
+        "product": null,
+        "vlan": {
+            "vid": 0,
+            "mtu": 1500,
+            "dhcp_on": true,
+            "external_dhcp": null,
+            "relay_vlan": null,
+            "fabric": "fabric-2",
+            "id": 5003,
+            "secondary_rack": null,
+            "primary_rack": "8dwnne",
+            "name": "untagged",
+            "fabric_id": 2,
+            "space": "undefined",
+            "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+        },
+        "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/interfaces/10/"
+    },
+    "memory": 1024,
+    "memory_test_status_name": "Unknown",
+    "default_gateways": {
+        "ipv4": {
+            "gateway_ip": null,
+            "link_id": null
+        },
+        "ipv6": {
+            "gateway_ip": null,
+            "link_id": null
+        }
+    },
+    "blockdevice_set": [
+        {
+            "id_path": "/dev/disk/by-id/ata-QEMU_HARDDISK_QM00001",
+            "size": 5368709120,
+            "block_size": 512,
+            "tags": [
+                "ssd"
+            ],
+            "system_id": "bhxws3",
+            "partition_table_type": "GPT",
+            "type": "physical",
+            "id": 3,
+            "numa_node": 0,
+            "partitions": [
+                {
+                    "uuid": "8aa1164c-8a91-41d7-92e3-c411634355bb",
+                    "size": 5360320512,
+                    "bootable": false,
+                    "tags": [],
+                    "id": 3,
+                    "used_for": "ext4 formatted filesystem mounted at /",
+                    "device_id": 3,
+                    "system_id": "bhxws3",
+                    "path": "/dev/disk/by-dname/sda-part2",
+                    "type": "partition",
+                    "filesystem": {
+                        "fstype": "ext4",
+                        "label": "root",
+                        "uuid": "68487852-7e38-4605-a84e-d787532fd443",
+                        "mount_point": "/",
+                        "mount_options": null
+                    },
+                    "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/partition/3"
+                }
+            ],
+            "filesystem": null,
+            "available_size": 0,
+            "storage_pool": null,
+            "model": "QEMU HARDDISK",
+            "used_size": 5366611968,
+            "used_for": "GPT partitioned with 1 partition",
+            "uuid": null,
+            "name": "sda",
+            "path": "/dev/disk/by-dname/sda",
+            "serial": "QM00001",
+            "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/"
+        }
+    ],
+    "interface_set": [
+        {
+            "link_speed": 0,
+            "params": "",
+            "vendor": "Red Hat, Inc.",
+            "firmware_version": null,
+            "system_id": "bhxws3",
+            "enabled": true,
+            "type": "physical",
+            "links": [
+                {
+                    "id": 15,
+                    "mode": "auto",
+                    "subnet": {
+                        "name": "192.168.123.0/24",
+                        "description": "",
+                        "vlan": {
+                            "vid": 0,
+                            "mtu": 1500,
+                            "dhcp_on": true,
+                            "external_dhcp": null,
+                            "relay_vlan": null,
+                            "fabric": "fabric-2",
+                            "id": 5003,
+                            "secondary_rack": null,
+                            "primary_rack": "8dwnne",
+                            "name": "untagged",
+                            "fabric_id": 2,
+                            "space": "undefined",
+                            "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+                        },
+                        "cidr": "192.168.123.0/24",
+                        "rdns_mode": 2,
+                        "gateway_ip": null,
+                        "dns_servers": [],
+                        "allow_dns": true,
+                        "allow_proxy": true,
+                        "active_discovery": false,
+                        "managed": true,
+                        "id": 4,
+                        "space": "undefined",
+                        "resource_uri": "/MAAS/api/2.0/subnets/4/"
+                    }
+                }
+            ],
+            "id": 10,
+            "discovered": [
+                {
+                    "subnet": {
+                        "name": "192.168.123.0/24",
+                        "description": "",
+                        "vlan": {
+                            "vid": 0,
+                            "mtu": 1500,
+                            "dhcp_on": true,
+                            "external_dhcp": null,
+                            "relay_vlan": null,
+                            "fabric": "fabric-2",
+                            "id": 5003,
+                            "secondary_rack": null,
+                            "primary_rack": "8dwnne",
+                            "name": "untagged",
+                            "fabric_id": 2,
+                            "space": "undefined",
+                            "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+                        },
+                        "cidr": "192.168.123.0/24",
+                        "rdns_mode": 2,
+                        "gateway_ip": null,
+                        "dns_servers": [],
+                        "allow_dns": true,
+                        "allow_proxy": true,
+                        "active_discovery": false,
+                        "managed": true,
+                        "id": 4,
+                        "space": "undefined",
+                        "resource_uri": "/MAAS/api/2.0/subnets/4/"
+                    },
+                    "ip_address": "192.168.123.190"
+                }
+            ],
+            "numa_node": 0,
+            "children": [],
+            "parents": [],
+            "link_connected": true,
+            "effective_mtu": 1500,
+            "tags": [],
+            "sriov_max_vf": 0,
+            "interface_speed": 0,
+            "name": "ens3",
+            "mac_address": "52:54:00:15:36:f2",
+            "product": null,
+            "vlan": {
+                "vid": 0,
+                "mtu": 1500,
+                "dhcp_on": true,
+                "external_dhcp": null,
+                "relay_vlan": null,
+                "fabric": "fabric-2",
+                "id": 5003,
+                "secondary_rack": null,
+                "primary_rack": "8dwnne",
+                "name": "untagged",
+                "fabric_id": 2,
+                "space": "undefined",
+                "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+            },
+            "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/interfaces/10/"
+        }
+    ],
+    "numanode_set": [
+        {
+            "index": 0,
+            "memory": 985,
+            "cores": [
+                0
+            ]
+        }
+    ],
+    "min_hwe_kernel": "",
+    "memory_test_status": -1,
+    "power_type": "virsh",
+    "power_state": "off",
+    "status": 10,
+    "testing_status_name": "Passed",
+    "interface_test_status_name": "Unknown",
+    "cache_sets": [],
+    "constraints_by_type": {},
+    "domain": {
+        "authoritative": true,
+        "ttl": null,
+        "id": 0,
+        "resource_record_count": 0,
+        "name": "maas",
+        "is_default": true,
+        "resource_uri": "/MAAS/api/2.0/domains/0/"
+    },
+    "network_test_status": -1,
+    "current_installation_result_id": null,
+    "bios_boot_method": "pxe",
+    "status_name": "Allocated",
+    "address_ttl": null,
+    "fqdn": "ace-swan.maas",
+    "cpu_speed": 0,
+    "hwe_kernel": null,
+    "description": "",
+    "commissioning_status_name": "Passed",
+    "pod": null,
+    "network_test_status_name": "Unknown",
+    "hardware_uuid": "F677A842-571C-4E65-ADC9-11E2CF92D363",
+    "commissioning_status": 2,
+    "status_message": "Ready",
+    "owner": "admin",
+    "distro_series": "",
+    "status_action": "",
+    "testing_status": 2,
+    "cpu_test_status": -1,
+    "architecture": "amd64/generic",
+    "netboot": true,
+    "iscsiblockdevice_set": [],
+    "disable_ipv4": false,
+    "virtualblockdevice_set": [],
+    "osystem": "",
+    "boot_disk": {
+        "firmware_version": "2.5+",
+        "id_path": "/dev/disk/by-id/ata-QEMU_HARDDISK_QM00001",
+        "system_id": "bhxws3",
+        "partition_table_type": "GPT",
+        "type": "physical",
+        "block_size": 512,
+        "id": 3,
+        "numa_node": 0,
+        "partitions": [
+            {
+                "uuid": "8aa1164c-8a91-41d7-92e3-c411634355bb",
+                "size": 5360320512,
+                "bootable": false,
+                "tags": [],
+                "id": 3,
+                "used_for": "ext4 formatted filesystem mounted at /",
+                "device_id": 3,
+                "system_id": "bhxws3",
+                "path": "/dev/disk/by-dname/sda-part2",
+                "type": "partition",
+                "filesystem": {
+                    "fstype": "ext4",
+                    "label": "root",
+                    "uuid": "68487852-7e38-4605-a84e-d787532fd443",
+                    "mount_point": "/",
+                    "mount_options": null
+                },
+                "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/partition/3"
+            }
+        ],
+        "filesystem": null,
+        "available_size": 0,
+        "size": 5368709120,
+        "storage_pool": null,
+        "model": "QEMU HARDDISK",
+        "used_size": 5366611968,
+        "tags": [
+            "ssd"
+        ],
+        "used_for": "GPT partitioned with 1 partition",
+        "uuid": null,
+        "name": "sda",
+        "path": "/dev/disk/by-dname/sda",
+        "serial": "QM00001",
+        "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/"
+    },
+    "other_test_status_name": "Unknown",
+    "resource_uri": "/MAAS/api/2.0/machines/bhxws3/"
+}</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-org90cdcaf" class="outline-2">
+<h2 id="org90cdcaf"><span class="section-number-2">2.</span> Deploying a machine with the CLI</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Having once acquired the machine, which basically gives my username control, I can deploy the machine this way:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="492">
+stormrider@wintermute:~$  maas admin machine deploy bhxws3 
+
+Success.
+Machine-readable output follows:
+{
+    "architecture": "amd64/generic",
+    "cpu_speed": 0,
+    "tag_names": [
+        "virtual"
+    ],
+    "boot_interface": {
+        "mac_address": "52:54:00:15:36:f2",
+        "links": [
+            {
+                "id": 15,
+                "mode": "auto",
+                "subnet": {
+                    "name": "192.168.123.0/24",
+                    "description": "",
+                    "vlan": {
+                        "vid": 0,
+                        "mtu": 1500,
+                        "dhcp_on": true,
+                        "external_dhcp": null,
+                        "relay_vlan": null,
+                        "fabric_id": 2,
+                        "id": 5003,
+                        "fabric": "fabric-2",
+                        "secondary_rack": null,
+                        "name": "untagged",
+                        "space": "undefined",
+                        "primary_rack": "8dwnne",
+                        "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+                    },
+                    "cidr": "192.168.123.0/24",
+                    "rdns_mode": 2,
+                    "gateway_ip": null,
+                    "dns_servers": [],
+                    "allow_dns": true,
+                    "allow_proxy": true,
+                    "active_discovery": false,
+                    "managed": true,
+                    "id": 4,
+                    "space": "undefined",
+                    "resource_uri": "/MAAS/api/2.0/subnets/4/"
+                }
+            }
+        ],
+        "numa_node": 0,
+        "enabled": true,
+        "params": "",
+        "firmware_version": null,
+        "sriov_max_vf": 0,
+        "type": "physical",
+        "children": [],
+        "vendor": "Red Hat, Inc.",
+        "system_id": "bhxws3",
+        "parents": [],
+        "vlan": {
+            "vid": 0,
+            "mtu": 1500,
+            "dhcp_on": true,
+            "external_dhcp": null,
+            "relay_vlan": null,
+            "fabric_id": 2,
+            "id": 5003,
+            "fabric": "fabric-2",
+            "secondary_rack": null,
+            "name": "untagged",
+            "space": "undefined",
+            "primary_rack": "8dwnne",
+            "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+        },
+        "link_connected": true,
+        "id": 10,
+        "effective_mtu": 1500,
+        "discovered": [
+            {
+                "subnet": {
+                    "name": "192.168.123.0/24",
+                    "description": "",
+                    "vlan": {
+                        "vid": 0,
+                        "mtu": 1500,
+                        "dhcp_on": true,
+                        "external_dhcp": null,
+                        "relay_vlan": null,
+                        "fabric_id": 2,
+                        "id": 5003,
+                        "fabric": "fabric-2",
+                        "secondary_rack": null,
+                        "name": "untagged",
+                        "space": "undefined",
+                        "primary_rack": "8dwnne",
+                        "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+                    },
+                    "cidr": "192.168.123.0/24",
+                    "rdns_mode": 2,
+                    "gateway_ip": null,
+                    "dns_servers": [],
+                    "allow_dns": true,
+                    "allow_proxy": true,
+                    "active_discovery": false,
+                    "managed": true,
+                    "id": 4,
+                    "space": "undefined",
+                    "resource_uri": "/MAAS/api/2.0/subnets/4/"
+                },
+                "ip_address": "192.168.123.190"
+            }
+        ],
+        "link_speed": 0,
+        "name": "ens3",
+        "product": null,
+        "interface_speed": 0,
+        "tags": [],
+        "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/interfaces/10/"
+    },
+    "ip_addresses": [
+        "192.168.123.190"
+    ],
+    "testing_status_name": "Passed",
+    "osystem": "ubuntu",
+    "bcaches": [],
+    "owner": "admin",
+    "special_filesystems": [],
+    "numanode_set": [
+        {
+            "index": 0,
+            "memory": 985,
+            "cores": [
+                0
+            ]
+        }
+    ],
+    "node_type": 0,
+    "cpu_test_status": -1,
+    "storage_test_status_name": "Passed",
+    "locked": false,
+    "disable_ipv4": false,
+    "status_message": "Deploying",
+    "other_test_status_name": "Unknown",
+    "interface_test_status_name": "Unknown",
+    "status_name": "Deploying",
+    "commissioning_status": 2,
+    "hardware_uuid": "F677A842-571C-4E65-ADC9-11E2CF92D363",
+    "fqdn": "ace-swan.maas",
+    "min_hwe_kernel": "",
+    "network_test_status": -1,
+    "iscsiblockdevice_set": [],
+    "current_testing_result_id": 9,
+    "interface_test_status": -1,
+    "status_action": "",
+    "pool": {
+        "name": "default",
+        "description": "Default pool",
+        "id": 0,
+        "resource_uri": "/MAAS/api/2.0/resourcepool/0/"
+    },
+    "netboot": true,
+    "distro_series": "bionic",
+    "current_installation_result_id": 10,
+    "memory_test_status_name": "Unknown",
+    "cpu_count": 1,
+    "hwe_kernel": "ga-18.04",
+    "description": "",
+    "current_commissioning_result_id": 8,
+    "cpu_test_status_name": "Unknown",
+    "storage_test_status": 2,
+    "hardware_info": {
+        "system_vendor": "QEMU",
+        "system_product": "Standard PC (i440FX + PIIX, 1996)",
+        "system_family": "Unknown",
+        "system_version": "pc-i440fx-focal",
+        "system_sku": "Unknown",
+        "system_serial": "Unknown",
+        "cpu_model": "Intel Core Processor (Skylake, IBRS)",
+        "mainboard_vendor": "Unknown",
+        "mainboard_product": "Unknown",
+        "mainboard_serial": "Unknown",
+        "mainboard_version": "Unknown",
+        "mainboard_firmware_vendor": "SeaBIOS",
+        "mainboard_firmware_date": "04/01/2014",
+        "mainboard_firmware_version": "1.13.0-1ubuntu1",
+        "chassis_vendor": "QEMU",
+        "chassis_type": "Other",
+        "chassis_serial": "Unknown",
+        "chassis_version": "pc-i440fx-focal"
+    },
+    "bios_boot_method": "pxe",
+    "storage": 5368.70912,
+    "blockdevice_set": [
+        {
+            "id_path": "/dev/disk/by-id/ata-QEMU_HARDDISK_QM00001",
+            "size": 5368709120,
+            "block_size": 512,
+            "tags": [
+                "ssd"
+            ],
+            "numa_node": 0,
+            "partition_table_type": "GPT",
+            "storage_pool": null,
+            "type": "physical",
+            "filesystem": null,
+            "model": "QEMU HARDDISK",
+            "used_size": 5366611968,
+            "serial": "QM00001",
+            "system_id": "bhxws3",
+            "uuid": null,
+            "available_size": 0,
+            "path": "/dev/disk/by-dname/sda",
+            "id": 3,
+            "name": "sda",
+            "partitions": [
+                {
+                    "uuid": "8aa1164c-8a91-41d7-92e3-c411634355bb",
+                    "size": 5360320512,
+                    "bootable": false,
+                    "tags": [],
+                    "path": "/dev/disk/by-dname/sda-part2",
+                    "device_id": 3,
+                    "type": "partition",
+                    "id": 3,
+                    "system_id": "bhxws3",
+                    "filesystem": {
+                        "fstype": "ext4",
+                        "label": "root",
+                        "uuid": "68487852-7e38-4605-a84e-d787532fd443",
+                        "mount_point": "/",
+                        "mount_options": null
+                    },
+                    "used_for": "ext4 formatted filesystem mounted at /",
+                    "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/partition/3"
+                }
+            ],
+            "used_for": "GPT partitioned with 1 partition",
+            "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/"
+        }
+    ],
+    "system_id": "bhxws3",
+    "boot_disk": {
+        "firmware_version": "2.5+",
+        "tags": [
+            "ssd"
+        ],
+        "numa_node": 0,
+        "partition_table_type": "GPT",
+        "size": 5368709120,
+        "storage_pool": null,
+        "type": "physical",
+        "block_size": 512,
+        "filesystem": null,
+        "model": "QEMU HARDDISK",
+        "used_size": 5366611968,
+        "serial": "QM00001",
+        "system_id": "bhxws3",
+        "uuid": null,
+        "available_size": 0,
+        "path": "/dev/disk/by-dname/sda",
+        "id": 3,
+        "id_path": "/dev/disk/by-id/ata-QEMU_HARDDISK_QM00001",
+        "name": "sda",
+        "partitions": [
+            {
+                "uuid": "8aa1164c-8a91-41d7-92e3-c411634355bb",
+                "size": 5360320512,
+                "bootable": false,
+                "tags": [],
+                "path": "/dev/disk/by-dname/sda-part2",
+                "device_id": 3,
+                "type": "partition",
+                "id": 3,
+                "system_id": "bhxws3",
+                "filesystem": {
+                    "fstype": "ext4",
+                    "label": "root",
+                    "uuid": "68487852-7e38-4605-a84e-d787532fd443",
+                    "mount_point": "/",
+                    "mount_options": null
+                },
+                "used_for": "ext4 formatted filesystem mounted at /",
+                "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/partition/3"
+            }
+        ],
+        "used_for": "GPT partitioned with 1 partition",
+        "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/"
+    },
+    "default_gateways": {
+        "ipv4": {
+            "gateway_ip": null,
+            "link_id": null
+        },
+        "ipv6": {
+            "gateway_ip": null,
+            "link_id": null
+        }
+    },
+    "raids": [],
+    "cache_sets": [],
+    "domain": {
+        "authoritative": true,
+        "ttl": null,
+        "is_default": true,
+        "id": 0,
+        "name": "maas",
+        "resource_record_count": 0,
+        "resource_uri": "/MAAS/api/2.0/domains/0/"
+    },
+    "hostname": "ace-swan",
+    "virtualblockdevice_set": [],
+    "memory": 1024,
+    "owner_data": {},
+    "zone": {
+        "name": "default",
+        "description": "",
+        "id": 1,
+        "resource_uri": "/MAAS/api/2.0/zones/default/"
+    },
+    "power_state": "off",
+    "status": 9,
+    "address_ttl": null,
+    "other_test_status": -1,
+    "volume_groups": [],
+    "power_type": "virsh",
+    "pod": null,
+    "testing_status": 2,
+    "physicalblockdevice_set": [
+        {
+            "firmware_version": "2.5+",
+            "tags": [
+                "ssd"
+            ],
+            "numa_node": 0,
+            "partition_table_type": "GPT",
+            "size": 5368709120,
+            "storage_pool": null,
+            "type": "physical",
+            "block_size": 512,
+            "filesystem": null,
+            "model": "QEMU HARDDISK",
+            "used_size": 5366611968,
+            "serial": "QM00001",
+            "system_id": "bhxws3",
+            "uuid": null,
+            "available_size": 0,
+            "path": "/dev/disk/by-dname/sda",
+            "id": 3,
+            "id_path": "/dev/disk/by-id/ata-QEMU_HARDDISK_QM00001",
+            "name": "sda",
+            "partitions": [
+                {
+                    "uuid": "8aa1164c-8a91-41d7-92e3-c411634355bb",
+                    "size": 5360320512,
+                    "bootable": false,
+                    "tags": [],
+                    "path": "/dev/disk/by-dname/sda-part2",
+                    "device_id": 3,
+                    "type": "partition",
+                    "id": 3,
+                    "system_id": "bhxws3",
+                    "filesystem": {
+                        "fstype": "ext4",
+                        "label": "root",
+                        "uuid": "68487852-7e38-4605-a84e-d787532fd443",
+                        "mount_point": "/",
+                        "mount_options": null
+                    },
+                    "used_for": "ext4 formatted filesystem mounted at /",
+                    "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/partition/3"
+                }
+            ],
+            "used_for": "GPT partitioned with 1 partition",
+            "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/blockdevices/3/"
+        }
+    ],
+    "interface_set": [
+        {
+            "mac_address": "52:54:00:15:36:f2",
+            "links": [
+                {
+                    "id": 15,
+                    "mode": "auto",
+                    "subnet": {
+                        "name": "192.168.123.0/24",
+                        "description": "",
+                        "vlan": {
+                            "vid": 0,
+                            "mtu": 1500,
+                            "dhcp_on": true,
+                            "external_dhcp": null,
+                            "relay_vlan": null,
+                            "fabric_id": 2,
+                            "id": 5003,
+                            "fabric": "fabric-2",
+                            "secondary_rack": null,
+                            "name": "untagged",
+                            "space": "undefined",
+                            "primary_rack": "8dwnne",
+                            "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+                        },
+                        "cidr": "192.168.123.0/24",
+                        "rdns_mode": 2,
+                        "gateway_ip": null,
+                        "dns_servers": [],
+                        "allow_dns": true,
+                        "allow_proxy": true,
+                        "active_discovery": false,
+                        "managed": true,
+                        "id": 4,
+                        "space": "undefined",
+                        "resource_uri": "/MAAS/api/2.0/subnets/4/"
+                    }
+                }
+            ],
+            "numa_node": 0,
+            "enabled": true,
+            "params": "",
+            "firmware_version": null,
+            "sriov_max_vf": 0,
+            "type": "physical",
+            "children": [],
+            "vendor": "Red Hat, Inc.",
+            "system_id": "bhxws3",
+            "parents": [],
+            "vlan": {
+                "vid": 0,
+                "mtu": 1500,
+                "dhcp_on": true,
+                "external_dhcp": null,
+                "relay_vlan": null,
+                "fabric_id": 2,
+                "id": 5003,
+                "fabric": "fabric-2",
+                "secondary_rack": null,
+                "name": "untagged",
+                "space": "undefined",
+                "primary_rack": "8dwnne",
+                "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+            },
+            "link_connected": true,
+            "id": 10,
+            "effective_mtu": 1500,
+            "discovered": [
+                {
+                    "subnet": {
+                        "name": "192.168.123.0/24",
+                        "description": "",
+                        "vlan": {
+                            "vid": 0,
+                            "mtu": 1500,
+                            "dhcp_on": true,
+                            "external_dhcp": null,
+                            "relay_vlan": null,
+                            "fabric_id": 2,
+                            "id": 5003,
+                            "fabric": "fabric-2",
+                            "secondary_rack": null,
+                            "name": "untagged",
+                            "space": "undefined",
+                            "primary_rack": "8dwnne",
+                            "resource_uri": "/MAAS/api/2.0/vlans/5003/"
+                        },
+                        "cidr": "192.168.123.0/24",
+                        "rdns_mode": 2,
+                        "gateway_ip": null,
+                        "dns_servers": [],
+                        "allow_dns": true,
+                        "allow_proxy": true,
+                        "active_discovery": false,
+                        "managed": true,
+                        "id": 4,
+                        "space": "undefined",
+                        "resource_uri": "/MAAS/api/2.0/subnets/4/"
+                    },
+                    "ip_address": "192.168.123.190"
+                }
+            ],
+            "link_speed": 0,
+            "name": "ens3",
+            "product": null,
+            "interface_speed": 0,
+            "tags": [],
+            "resource_uri": "/MAAS/api/2.0/nodes/bhxws3/interfaces/10/"
+        }
+    ],
+    "node_type_name": "Machine",
+    "commissioning_status_name": "Passed",
+    "network_test_status_name": "Unknown",
+    "memory_test_status": -1,
+    "swap_size": null,
+    "resource_uri": "/MAAS/api/2.0/machines/bhxws3/"
+}</textarea>
+</p>
+
+<p>
+Okay, done with that much. I have installed and configured MAAS, started DHCP, created a machine, commissioned it, acquired it, and deployed it without touching the UI. Next, I'm going to get a large number of machines online &#x2013; both LXD VMs and libvirt VMs &#x2013; and see if I can do a little jq magic to get some more human-readable output from the MAAS CLI.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: stormrider</p>
+<p class="date">Created: 2026-01-26 Mon 14:00</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
