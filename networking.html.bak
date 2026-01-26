@@ -1,0 +1,1518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-26 Mon 14:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>networking tutorial</title>
+<meta name="author" content="stormrider" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">networking tutorial</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org67bbe4c">1. Channels of sharing are complicated</a></li>
+<li><a href="#org4f1f22f">2. Adversarial beginnings</a></li>
+<li><a href="#orgbd83c45">3. Focusing on architecture</a>
+<ul>
+<li><a href="#org3bee1f8">3.1. Network architecture</a></li>
+<li><a href="#org06a5da1">3.2. The AAC network model</a></li>
+<li><a href="#org6470fac">3.3. Yesterday’s phone network is today’s Internet</a>
+<ul>
+<li><a href="#org98d0a14">3.3.1. Reusing what already works</a></li>
+<li><a href="#orgb9efcea">3.3.2. Long distance and T1</a></li>
+<li><a href="#orge14611a">3.3.3. On the shoulders of giants</a></li>
+<li><a href="#org4840272">3.3.4. To be fair&#x2026;</a></li>
+</ul>
+</li>
+<li><a href="#org8cb0161">3.4. The Internet infrastructure</a></li>
+<li><a href="#org1600ab5">3.5. About Internet network traffic</a></li>
+</ul>
+</li>
+<li><a href="#orga9e00c3">4. The OSI model</a>
+<ul>
+<li><a href="#org6ad11c9">4.1. The physical layer (L1)</a>
+<ul>
+<li><a href="#org609c843">4.1.1. Variable latency</a></li>
+<li><a href="#orge28d3b5">4.1.2. The physical layer is not very interesting</a></li>
+</ul>
+</li>
+<li><a href="#org38b3661">4.2. The datalink layer (L2)</a>
+<ul>
+<li><a href="#orgdb11420">4.2.1. MAC frames</a></li>
+<li><a href="#org1d3ee6a">4.2.2. Ethernet</a></li>
+<li><a href="#org9040a50">4.2.3. Media Access Control (MAC)</a></li>
+<li><a href="#orgaf92635">4.2.4. Trunking VLANs</a></li>
+<li><a href="#org3f246d0">4.2.5. Visualising the link layer</a></li>
+</ul>
+</li>
+<li><a href="#orgc0c1ce3">4.3. Interlayer addressing: ARP</a>
+<ul>
+<li><a href="#org3737763">4.3.1. TCP/IP does not use MAC addresses</a></li>
+<li><a href="#org86da6c8">4.3.2. Fixed versus assigned addressing</a></li>
+<li><a href="#org066e2b0">4.3.3. Address resolution</a></li>
+<li><a href="#org412a442">4.3.4. Messages are sent to MAC addresses</a></li>
+<li><a href="#org496a5f0">4.3.5. The ARP frame</a></li>
+<li><a href="#org71b9f90">4.3.6. The ARP cache</a></li>
+<li><a href="#org80e1168">4.3.7. More about ARP</a></li>
+</ul>
+</li>
+<li><a href="#orgbe3b2f6">4.4. The network layer</a>
+<ul>
+<li><a href="#org9cf6a99">4.4.1. What is this "packets" you speak of, Kimosabe?</a></li>
+<li><a href="#org7ce9839">4.4.2. Fixed packet lengths and segmented messaging</a></li>
+<li><a href="#orge996205">4.4.3. IP packets</a></li>
+<li><a href="#org586192b">4.4.4. Routing</a></li>
+</ul>
+</li>
+<li><a href="#org23cd9e1">4.5. The transport layer</a></li>
+<li><a href="#org38cbb24">4.6. TCP: Transmission Control Protocol</a>
+<ul>
+<li><a href="#org0b44350">4.6.1. The TCP header</a></li>
+<li><a href="#org4747a7a">4.6.2. TCP is like a phone call</a></li>
+<li><a href="#org6a360ae">4.6.3. There's a lot more here</a></li>
+</ul>
+</li>
+<li><a href="#orgd238426">4.7. The session layer</a></li>
+<li><a href="#orgb0a423e">4.8. The presentation layer</a></li>
+<li><a href="#orga443af0">4.9. The application layer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a href="https://stormrider.io/networking.html">Networks</a> ~ <a href="https://stormrider.io/maas.html">MAAS</a> ~ <a href="https://stormrider.io/pi4.html">Raspberry Pi</a> ~ <a href="https://stormrider.io/warsurfing.html">Warsurfing</a> ~ <a href="https://stormrider.io/org-mode.html">Org-mode</a><br />
+</p>
+
+<p>
+Centuries ago, John Milton wrote, "I cannot praise a fugitive and cloistered virtue," referring, at least in part, to those who keep their intelligence to themselves.  Without some form of communication &#x2013; without manifesting that intelligence in word or deed &#x2013; there is generally no evidence of intelligence or intelligent life.  Our knowledge must create ripples in space and time if it is to be shared, and it must be shared to benefit others.<br />
+</p>
+
+<p>
+For this reason, we create networks, which might be defined as "channels of sharing".  All virtue and all goodness is valued only in sharing, whether by having mercy on another person or communicating the answer to life, the universe, and everything.  Only by sharing do we come to the notice of others, and only with the help of others do we share the load of living.<br />
+</p>
+<div id="outline-container-org67bbe4c" class="outline-2">
+<h2 id="org67bbe4c"><span class="section-number-2">1.</span> Channels of sharing are complicated</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Sharing involves risk.  Will the other person understand?  Will they accept what I've shared, or turn against me?  Will they appreciate what I have shared, or judge me harshly?  All communication involves the risks of misunderstanding, judgement, and ridicule.  We must choose carefully when sharing information, tools, knowledge &#x2013; even compassion, love, loyalty, and devotion.  In a way, that's one of the "equations" of living in a society, although public social media platforms have made that more, er, interesting.<br />
+</p>
+
+<p>
+Often we segregate our sharing based on some measurable characteristic.  For example, we share with people of our own race, gender, color, or national origin, but not with the "others".  And we share in different ways with different social groups.  In fact, you might say that the average person has as many personalities as there are groups of people whose opinions they care about: we are one person at home, another at the office, still another on the Internet, and yet another when we're golfing, as examples.  Each of these channels can have different rules, mores, idioms, dialects, and vocabulary.<br />
+</p>
+
+<p>
+As we grow up, we learn to be <i>one</i> self, sharing with everyone in very much the same way, restricting only <i>what</i> we share, not <i>how</i> we share it.  You begin to deeply understand the basics of human communication.  If you're serious about it, you begin to try to normalise your messaging to include less moody prejudice and more honest opinion, modulated only by personal privacy.<br />
+</p>
+
+<p>
+Thus it has been with computer networks.  For a very long time, there were at least as many network protocols &#x2013; <i>selves</i> &#x2013; as there were brands and styles of computers.  Different methods were needed to share information from one system to another, sometimes even involving specially-crafted physical interface cables to handle the translation.<br />
+</p>
+
+<p>
+Eventually, though, computer networks began to gravitate toward a standard approach, "one self to rule them all", as it were.  This singular personality is known as TCP/IP.  Learning how the TCP/IP protocols work will serve you well in understanding, designing, and debugging computer networks.<br />
+</p>
+
+<p>
+Let's get started.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org4f1f22f" class="outline-2">
+<h2 id="org4f1f22f"><span class="section-number-2">2.</span> Adversarial beginnings</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+If you're going to learn a new language, it's probably important to get an idea of the culture.  After all, culture defines the vocabulary and the level of abstraction of a country's language.  Certainly that's true of networking.<br />
+</p>
+
+<p>
+Computer networks began largely because of the ways humans segregate their sharing, not out of a desire to share freely.  TCP/IP &#x2013; and a lot of its underlying structure &#x2013; evolved to meet a specific need: how can we keep a computer network functioning in the event of a nuclear war? When nodes go offline, randomly, how can surviving nodes keep the communication going?  If Boise is destroyed, how can we still communicate with Seattle?  Wiping out Kansas should not imply that we can't connect with Nebraska.<br />
+</p>
+
+<p>
+Gruesome beginnings, indeed.  Over time, though, those same TCP/IP networks evolved to meet a less bellicose need: How can we keep a network functioning efficiently if some of the paths are bottle-necked or even out-of-service?  Well, the answer is, "build the ARPAnet" – now called the Internet – which relies heavily on TCP/IP networks. The OSI model underlying TCP/IP can adapt to changing loads, handle significant failures, and strictly limit the network “blast radius” (yes, sadly, that’s what it’s called) when things go wrong.  TCP/IP networks distil the core of human sharing into (arguably) a much simpler and more predictable form.<br />
+</p>
+
+<p>
+Happily, the threat of nuclear war has dropped off substantially in the meantime, though it sometimes raises an ugly eyebrow.  Also happily, the TCP/IP network has survived even the loss of its original purpose. This tutorial is about the surviving network.  Full disclosure: I used to work in the WMD industry, but one day, I walked away and chose to promote sharing with other humans, instead of dividing and cloistering them.  And I changed my official term for network failures from "blast radius" to "cone of silence" (CoS), probably my happiest choice of all.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgbd83c45" class="outline-2">
+<h2 id="orgbd83c45"><span class="section-number-2">3.</span> Focusing on architecture</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+With complicated subjects, it's always hard to know where to start. There's a huge chicken-and-egg problem with TCP/IP when trying to define terms. I prefer to take Isaac Newton's approach to physics, as he did in the Principia &#x2013; create some definitions that start from common things we're all likely to understand.<br />
+</p>
+
+<p>
+For example, Newton begins with mass; slightly paraphrasing his definition:<br />
+</p>
+
+<ul class="org-ul">
+<li>The quantity of matter is defined as the density of that matter and the volume that it takes up, conjointly.<br /></li>
+</ul>
+
+<p>
+In other words, m = ρ x V, or "mass equals density times volume". That doesn't seem like much, but it's an astounding starting point. Hint: If you haven't read an English translation of the Principia (it's natively in Latin), you should take the time out to do so: it'll change your understanding. Anyway, back to our story.<br />
+</p>
+</div>
+<div id="outline-container-org3bee1f8" class="outline-3">
+<h3 id="org3bee1f8"><span class="section-number-3">3.1.</span> Network architecture</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+It's very easy to just dive in, of course, and some fair percentage of my readers will get what I'm saying, but that isn't good enough for this tutorial. Instead, imagine two computers, "SanDiego" and "Bangor", located at opposite corners of the country. They want to communicate via available networks. How do they do it?<br />
+</p>
+
+<p>
+Well, we could just hook up a wire between SanDiego and Bangor:<br />
+</p>
+
+
+<div id="orgb73c108" class="figure">
+<p><img src="images/sandiego-bangor.jpg" alt="sandiego-bangor.jpg" /><br />
+</p>
+</div>
+
+<p>
+People probably did that, at one point, back in the day. It might have even worked, until someone with a backhoe cut a cable.  No problem! We'll just use two wires.  Surely we can get the first one fixed before somebody cuts the second one, right?<br />
+</p>
+
+
+<div id="orgb11038f" class="figure">
+<p><img src="images/sandiego-bangor-2.jpg" alt="sandiego-bangor-2.jpg" /><br />
+</p>
+</div>
+
+<p>
+Of course, it wouldn't take long to figure out that messages are getting lost and garbled.  After all, it's a long wire, which has lots of impedance. Some signals will disappear into the noise long before they get there. No problem!  We'll just build repeaters, little boxes that read the incoming signal and duplicate it at full voltage on the outgoing line:<br />
+</p>
+
+
+<div id="org37c5391" class="figure">
+<p><img src="images/sandiego-bangorA.jpg" alt="sandiego-bangorA.jpg" /><br />
+</p>
+</div>
+
+<p>
+(Forgive the weird choice of cities, but I'm trying to work from memory here.) And if memory serves, leasing this space all over the country to add repeaters &#x2013; especially at military bases like Redstone (Huntsville), Fort Hood, and Point Mugu &#x2013; can get really expensive, really fast.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org06a5da1" class="outline-3">
+<h3 id="org06a5da1"><span class="section-number-3">3.2.</span> The AAC network model</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+By far a much easier way is to create and use the Internet. As the Internet became "the network", it evolved into what some call the "access-aggregation-core" network.<br />
+</p>
+
+<p>
+In the AAC model, SanDiego sends a message, labelled for Bangor, to some router on the Internet (which one doesn't matter so much). If this router doesn't know where Bangor is, it just sends it on to another router, until the message finds a router that knows where to forward the message:<br />
+</p>
+
+
+<div id="org9f25f70" class="figure">
+<p><img src="images/sandiego-bangor-3.jpg" alt="sandiego-bangor-3.jpg" /><br />
+</p>
+</div>
+
+<p>
+Theoretically, this works great, but from a practical standpoint, there are "short circuits" all over this network:<br />
+</p>
+
+
+<div id="orgaf3b845" class="figure">
+<p><img src="images/network-shortcuts.jpg" alt="network-shortcuts.jpg" /><br />
+</p>
+</div>
+
+<p>
+These "sideways paths" are there mostly for performance reasons, like latency, redundancy, and so on. Sometimes they're there because someone can get a better deal, so the reasoning is financial, too. Later on in this tutorial, we'll talk about some of these issues &#x2013; and why network architectures have evolved. For now, though, let's just say that they have evolved to a more monochromatic design known at the Clos architecture:<br />
+</p>
+
+
+<div id="orgca0df07" class="figure">
+<p><img src="images/clos-network-topology.jpg" alt="clos-network-topology.jpg" /><br />
+</p>
+</div>
+
+<p>
+This more scalable architecture can basically use the same switch for everything. There are leaf switches, known as "top of rack" (TOR) switches, and spine switches. As I've ghosted into the diagram, you scale horizontally by adding more racks, and vertically by adding more levels of spine switches. This architectural model is more economical to scale, so it discourages these little "side bets" that plagued the early Internet.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org6470fac" class="outline-3">
+<h3 id="org6470fac"><span class="section-number-3">3.3.</span> Yesterday’s phone network is today’s Internet</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+When learning a language, it also helps to get into some of the <i>history</i> of the people who speak that language.  For instance, you may have noticed that a lot of Cajuns &#x2013; who live in the humid swamps of the southern United States &#x2013; often build houses in a unique way.  They build a very sloped main roof, surrounding the house with a somewhat-elevated, wraparound porch.<br />
+</p>
+
+<p>
+To be honest, this design makes <i>no</i> sense for a people living in "hurricane alley".  They'd be better off building houses out of concrete block, with a metal and concrete roof tied to the base with welded steel girders, and small windows instead of French doors.  But they don't, because of their <i>history</i>.<br />
+</p>
+
+<p>
+The word "Cajun" is a lazy contraction of <i>Acadian</i>, the people who lived in Acadia, or "New France" in the 17th and 18th centuries.  If you look it up, you'll find that Acadia included New Brunswick, Maine, and lots of Canadian maritime islands.  They built houses with high-pitched roofs, with wraparound porches, so that the heavy <i>snow load</i> of winter would slide down the sloped roof, scoot off the porch roof, and land in the yard.  This gave them a clear outside area to take care of outside business, such as chopping wood or skinning animals, without having to wade through the snow.<br />
+</p>
+
+<p>
+As a homework assignment, you can Google how the Acadians got to South Louisiana and South Mississippi; Wikipedia is largely accurate, if local folklore means anything.<br />
+</p>
+</div>
+<div id="outline-container-org98d0a14" class="outline-4">
+<h4 id="org98d0a14"><span class="section-number-4">3.3.1.</span> Reusing what already works</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<p>
+In the same way, most of today’s modern networking is just a direct translation of the landline telephone system &#x2013; <a href="https://networkencyclopedia.com/plain-old-telephone-service-pots/">the "Plain Old Telephone Service (POTS)</a>" &#x2013; into the digital space. Network switching is really just an outgrowth of crossbar, which is how local phone calls were “switched” or “routed” to the correct telephone line. In most cases, every number dialled closed one more relay, with all seven relays making a connection to the target phone line.<br />
+</p>
+
+<p>
+Small exchanges often “swallowed” dialled digits. For example, if every local phone number had the exchange “881”, those numbers wouldn’t trigger any relays beyond just sending the call to the “881” frameset. In some small exchanges, it wasn’t even necessary to dial the exchange, just the four digits of the phone number, if the caller had the same exchange. My grandparents had such an arrangement for many years, as did my partner's parents.<br />
+</p>
+
+<p>
+Essentially, these "shorthand numbers" were the early <i>subnets</i>.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgb9efcea" class="outline-4">
+<h4 id="orgb9efcea"><span class="section-number-4">3.3.2.</span> Long distance and T1</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<p>
+In order to maintain call quality, the very early telephone system (about 1908) began to use repeaters and loading coils.  A repeater receives a signal and regenerates a new signal of the same frequency, raising the signal back to the same power level.  A loading coil adds inductance to the line, which resists changes in current, keeping the transmitted waveform more stable, that is, reducing the distortion introduced by the impedance of the long wires.<br />
+</p>
+
+<p>
+The next evolution, T1 lines, couldn’t compete with today’s fibre<br />
+connections, but they did provide a speedy (at the time) 1.5Mbps<br />
+connection. For example, in the oil and gas industry of the early<br />
+1990s, many of the city offices in New Orleans had wall after wall of<br />
+T1 lines wired directly into the building, so that they could get<br />
+high-speed data from the offshore oil platforms just a few miles away.<br />
+</p>
+
+<p>
+T1 wasn’t originally designed for network traffic.  The idea was to<br />
+multiplex phone calls on one line via Time-Division Multiplexing. TDM<br />
+split up the call traffic into little <i>digital</i> packets that were sent<br />
+on a rotating basis. The first T1 lines, which showed up around 1962,<br />
+could handle about 24 calls without the average telephone user<br />
+noticing. Telephone linemen, on the other hand, could usually tell by<br />
+the “clipped” nature of the call, as there is a distinctive flatness<br />
+to the conversation over a digital TDM circuit.<br />
+</p>
+
+<p>
+My first real job was telephone lineman, so I can attest to this<br />
+"flatness".  In fact, I recall an actual training session in which we listened to the same call on two different lines in stereo headphones.  In one ear, we heard the T1 call; in the other, the analog output of the same conversation.  Listening to them in stereo, in sync, made it easy to learn the subtle differences.<br />
+</p>
+
+<p>
+The real point is that these “little digital packets” formed the model<br />
+for the <i>packet networking</i> we have today.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orge14611a" class="outline-4">
+<h4 id="orge14611a"><span class="section-number-4">3.3.3.</span> On the shoulders of giants</h4>
+<div class="outline-text-4" id="text-3-3-3">
+<p>
+Especially in the computer field, people who come up with new ideas<br />
+love to pretend that they invented it.  But as Newton said (him<br />
+again?), we are "standing on the shoulders of giants".  In fact, it<br />
+actually helps if you realise that today's networking technology<br />
+evolved from telephone technology, which evolved from carbon fibres<br />
+and cups of acid, which evolved from telegraph clickers, which evolved<br />
+from cans and strings&#x2026;.  If you look back far enough, everything<br />
+about modern networks makes perfect sense, because you can see the<br />
+original problems that drove today's designs.<br />
+</p>
+
+<p>
+For example, telephone connections have used balanced or twisted pair wiring for more than 100 years.  Twisted pairs resist interference from other pairs of wires <i>because</i> they are twisted together.  I have <i>read</i> that in the very early days, the called party transmitted on one wire, and the calling party transmitted on the other, but I've never been able to make much mathematical sense of that, so take that with a small box of salt.<br />
+</p>
+
+<p>
+T1 lines just used ordinary, <i>double</i>-twisted-pair copper wiring.  When WAN and MAN networking became a thing, the phone company just repurposed some of those pairs to carry data traffic. Many other key elements of TCP/IP, like twisted-pair Ethernet cables, packet-based messaging, and multiplexing (like TDM), are all just holdovers of the original telephone system, repurposed for computer networking. Why invent something when you have a working model? Just rename it.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org4840272" class="outline-4">
+<h4 id="org4840272"><span class="section-number-4">3.3.4.</span> To be fair&#x2026;</h4>
+<div class="outline-text-4" id="text-3-3-4">
+<p>
+Actually, in many cases, renaming isn't actually a <i>terrible</i> idea, because it often conveys the repurposing aspect of the new technology.  You can buy t-shirts that say, "It's not really a cloud, it's just someone else's server," but it's actually <i>useful</i> to say "cloud".  That implies that it's out there somewhere (you don't care where), it may change randomly (as with the weather, you still don't care), and you don't have to do anything about it.<br />
+</p>
+
+<p>
+Using the word "cloud" also kind of forces the providers to guarantee the promise that you won't ever have to know anything about it except an address where you can get to it, and maybe a handy script to upload changes every time you save.  The new name carries implications that can't be drawn so easily from the term "someone else's server", and that helps to set expectations and standards.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8cb0161" class="outline-3">
+<h3 id="org8cb0161"><span class="section-number-3">3.4.</span> The Internet infrastructure</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+There's an idea floating around that the Internet is survivable because any and every computer can connect any and every other computer. While that might be possible, that's not generally how it works. There's actually a hierarchy which we refer to as the Internet Infrastructure:<br />
+</p>
+
+<ul class="org-ul">
+<li>Internet Infrastructure<br />
+&#x2013; a hierarchy of computers used to transfer messages from one computer to another.<br /></li>
+</ul>
+
+<p>
+Yes, the Internet is <i>theoretically</i> survivable because every computer can connect to every other computer, but that’s not standard operating procedure. High-level networks (Network Service Providers, NSPs) connect to at least three top level nodes called Network Access Points (NAPs), aka Internet Exchange Points. At these points, packets to jump from one NSP to another. NAPs are public access points, Metropolitan Area Exchanges are private. These are virtually indistinguishable for the purposes of this discussion:<br />
+</p>
+
+
+<div id="org3b1120a" class="figure">
+<p><img src="images/sandiego-bangor-4.jpg" alt="sandiego-bangor-4.jpg" /><br />
+</p>
+</div>
+
+<p>
+And, of course, by now you've probably guessed that many of the MAEs are the residue of the phone company’s early T1 nodes, which was the initial backbone for the Internet. These MAEs act just like a NAP for the purposes of this discussion.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org1600ab5" class="outline-3">
+<h3 id="org1600ab5"><span class="section-number-3">3.5.</span> About Internet network traffic</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+On-the-fly, Internet network paths can become very complicated and somewhat unpredictable. As a result, there’s rarely a reason to even count how many hops a message takes, or where it hops, unless you’re trying to debug a broken route with, say, <code>traceroute</code>. From a TCP/IP point of view, it’s much easier to ignore the specific network, since each one is custom built, so to speak. The path can theoretically change every time a message is sent, even between the same two computers.<br />
+</p>
+
+<p>
+When it comes to designing and troubleshooting networks, knowing the specific route (almost) never helps. What we do want to know about is the network traffic between computers. We have to understand what kind of data travels between computers, besides just the data we send. The structure and grouping of message traffic in TCP/IP is governed by the <b>OSI model</b>.  Let's take a look.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga9e00c3" class="outline-2">
+<h2 id="orga9e00c3"><span class="section-number-2">4.</span> The OSI model</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+No, that's not referring to the WWII forerunner of the CIA (which was the <i><a href="https://en.wikipedia.org/wiki/Office_of_Strategic_Services">OSS</a></i> anyway), but to the <i>Open Systems Interconnect</i> model, once called "<a href="https://en.wikipedia.org/wiki/Government_Open_Systems_Interconnection_Profile">GOSIP</a>".  Networks are really just continuous wires. We need to understand what travels on those wires, which depends on our perspective – our level of magnification.<br />
+</p>
+
+<p>
+At the highest “zoom” level, all we’ll see are electrons travelling<br />
+down the wire; that’s a level of abstraction that isn’t comprehensible<br />
+for debugging purposes. About all we can tell is whether or not the<br />
+circuit’s dead &#x2013; and not even that, if we don't pick a low range on the voltmeter.<br />
+</p>
+
+<p>
+The Open Systems Interconnection model was created to standardise on a few, well-defined levels. It defines how the data should be <i>encapsulated</i>, how the transmission "dance" is carried out, and what to do when things go wrong.  Collectively, this <i>interface definition</i> is called a <i>protocol</i>.  As long as you follow the protocol, it doesn't matter how you build your network device.<br />
+</p>
+
+<p>
+The OSI model looks something like this:<br />
+</p>
+
+
+<div id="org93aa76e" class="figure">
+<p><img src="images/osi-model.jpeg" alt="osi-model.jpeg" /><br />
+</p>
+</div>
+
+<p>
+This model starts just <i>above</i> the raw physics, with the <b>physical layer</b>, also known as <b>Layer 1</b>.<br />
+</p>
+
+<p>
+The choice of “1” makes sense, because this is the lowest level we consider. Layers are normally added on top of each other. For example, if you put six coats of varnish on a piece of furniture, you’re going to have six layers. The first layer you put on wouldn’t sensibly be called “layer 6”; neither does network layering work that way.<br />
+</p>
+
+<p>
+Here’s a quick rundown of what each layer does. Most likely, we won’t get into details about all the layers, because the higher you go, the more widely they vary with the user application. Higher layers don’t really help us better understand networking, any more than watching electrons travel through a wire help us debug a missing packet.<br />
+</p>
+</div>
+<div id="outline-container-org6ad11c9" class="outline-3">
+<h3 id="org6ad11c9"><span class="section-number-3">4.1.</span> The physical layer (L1)</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+The phrase “physical layer” may conjure up notions of physics, but don’t worry: we look at <i>signals</i>, not <i>electrons</i>. At the physical layer, we’re looking for binary (on/off) signals, set to the cadence of a clock. Every computer brings its own clock to the party, so we definitely need a way to “synchronise our watches”. NTP, the network time protocol, does the trick.<br />
+</p>
+
+<p>
+NTP is probably the oldest Internet protocol in use.  It synchronises subscriber computers to within a few milliseconds of UTC (Coordinated Universal Time).  That acronym is <i>not</i> out of order, by the way.  English speakers wanted CUT (for "coordinated universal time"), while French speakers preferred TUC (for "temps universel coordonné").  "UTC" was picked because, (1) it was a compromise between those two proposals, and (2) there was already a "UT" (Universal Time) that is based on a measure of the Earth's current angle of rotation and the International Celestial Reference Frame&#x2026;.<br />
+</p>
+
+<p>
+Yeah, it really <i>is</i> better if you don't ask.<br />
+</p>
+
+<p>
+You could say that NTP only has one job: keeping time.  Like all the moving parts of a clock, though, keeping computer clocks in sync is very difficult.  If your curiosity is stronger than your fear of complexity, you might <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol">take a look at this NTP article on Wikipedia</a>.  It'll tell you more than you need to know about the protocol.<br />
+</p>
+</div>
+<div id="outline-container-org609c843" class="outline-4">
+<h4 id="org609c843"><span class="section-number-4">4.1.1.</span> Variable latency</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+Variable latency is the important thing to know about the physical layer, because it affects the timing of network traffic. In order to understand variable latency, we need to understand network latency. Packets aren’t sent without some delay, because of:<br />
+</p>
+
+<ul class="org-ul">
+<li>The processing delay - how long it takes the router to process the packet header.<br /></li>
+<li>A queuing delay - how long the packet sits idle in routing queues.<br /></li>
+<li>Transmission delay - how long it takes layer 1 to push the packet’s bits onto the link.<br /></li>
+<li>Propagation delay - how long it takes the bits to travel through the wire to the other end.<br /></li>
+</ul>
+
+<p>
+The size of the queue directly influences how fast data can get onto the link. The processing and transmission delays are real, though relatively constant. The propagation delay doesn’t just depend on the speed of light, because there may be lots of other “relay” computers in the link. Propagation depends on network architecture, network congestion, and the number of hops (how many routers between source and destination), among other things. As we’ll see later on, within your enterprise, modern cloud architectures usually create significantly less propagation delay.<br />
+</p>
+
+<p>
+Variable-latency networks are “variable” because of the density of network traffic and the complexity of the route between hosts. We can’t predict congestion or routing, although we can influence local routing by choosing the right network architecture. We can’t predict transmission delays, though we can statistically bound them. Almost all digital networks are considered “variable-latency”.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orge28d3b5" class="outline-4">
+<h4 id="orge28d3b5"><span class="section-number-4">4.1.2.</span> The physical layer is not very interesting</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+In spite of the complexities given above, the physical layer really<br />
+doesn't do much for us when it comes to building and debugging<br />
+networks.  Other than verifying that signals are flowing, the physical<br />
+layer doesn’t usually tell us much about what happened to that DHCP<br />
+request that never made it to the router. Consequently, we really<br />
+won’t talk that much about the physical layer.<br />
+</p>
+
+<p>
+Just know that it’s the thing that’s passing bits back and forth<br />
+between hosts, and very occasionally, we need to scan it to find network breakage.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org38b3661" class="outline-3">
+<h3 id="org38b3661"><span class="section-number-3">4.2.</span> The datalink layer (L2)</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+The <b>datalink layer</b> (the <b>link layer</b>, <b>Layer 2</b> or <b>L2</b>) also has one purpose: send and receive IP datagrams. L2 doesn’t maintain a connection with the target host; it’s intentionally “connectionless”, and it doesn’t guarantee delivery or integrity of packets. It just ships them between source and destination.  Give it a message, give it a MAC address, and it sends it; that's all.<br />
+</p>
+
+<p>
+At first, this message-agnostic approach may seem a little weird. L2 is not without error-checking and recovery code, but it functions efficiently <i>precisely</i> because it isn’t concerned with the data, or even the message containing the data. That might surprise you, especially since the word "datagram" is sometimes used a little too freely with respect to L2.<br />
+</p>
+
+<p>
+A datagram is just a basic network transfer unit – the indivisible<br />
+unit for a given layer &#x2013; <i>any</i> given layer. If we’re talking about<br />
+L2, it’s an IEEE 802.xx frame. At the network layer (L3, we'll come to<br />
+that in a minute), it’s a data packet. For the transport layer (L4), it<br />
+would be called a segment.<br />
+</p>
+
+<p>
+By now, you're probably wondering what the indivisible units in the<br />
+<i>physical layer</i> are called.  <i>Chips</i>; they're called chips. Beats me.<br />
+But I do know that they are <a href="https://en.wikipedia.org/wiki/Spread_spectrum">spread-spectrum</a> pulses in the CDMA,<br />
+noise-utilising transmission system that operates at that layer.  My advice?  Unless you're a EE with some communications training, you might not need to go there.<br />
+</p>
+
+<p>
+Since datagram isn’t carefully used by everyone (think of User Datagram Protocol), we’ll agree to call these indivisible layer units PDUs (protocol data units). This avoids conflation with other uses and reminds you that it’s the atomic unit at the current network layer. Just remember that, at the link layer (L2), it’s a frame.<br />
+</p>
+</div>
+<div id="outline-container-orgdb11420" class="outline-4">
+<h4 id="orgdb11420"><span class="section-number-4">4.2.1.</span> MAC frames</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<p>
+A MAC frame, or just “frame”, encapsulates the packets from the network layer so that they can be transmitted on the physical layer. A frame can be small or big, anywhere from 5 bytes up to the kilobyte range. The upper size limit is called the maximum transmission unit (MTU) or maximum frame size. This size is set by the particular network technology in use.<br />
+</p>
+
+<p>
+This last observation brings up a good point: In order to talk sensibly about frames, we’d need to say what kind of frame. We’re almost always talking about packet-switched networks, so there are potentially four frame types to consider: Ethernet, fibre channel, V.42, and PPP (point-to-point protocol).<br />
+</p>
+
+<p>
+Happily, Internet networks almost exclusively use Ethernet, as defined in the IEEE 802 standards, so we’ll stick to that particular frame type for this discussion. Where other frame types may come into play, we’ll discuss those as special cases.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org1d3ee6a" class="outline-4">
+<h4 id="org1d3ee6a"><span class="section-number-4">4.2.2.</span> Ethernet</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<p>
+Before explaining an Ethernet Frame, we need to give a little background information about how Ethernet works; otherwise a lot of the frame components either won’t make sense, or you’ll wonder how it works at all.<br />
+</p>
+
+<p>
+Remember earlier, when we talked about voice radio, and the need to say “over”? Well, Ethernet at the link layer is all about controlling the conversation, so that computers don’t “talk over each other”. Ethernet implements an algorithm called CSMA/CD, which stands for “carrier sense multiple access with collision detection.” This algorithm controls which computers can access the shared medium (an Ethernet cable) without any special synchronisation requirements.<br />
+</p>
+
+<p>
+“Carrier sense” means that every NIC does what humans (should) do when we’re talking: it waits for quiet. In this case, it’s waiting for the network to be quiet, that is, when no signal is being sent on the network.<br />
+</p>
+
+<p>
+“Collision detection” means that, should two NICs both start to send on a shared network at the same time (because the network was quiet), they each receive a jam signal. This signal tells them to wait a specific, randomly-generated amount of time before attempting again. Every time subsequent messages collide, the NIC waits twice the amount of time it previously waited. When it waits some maximum number of times, the NIC will declare a failure and report that the message didn’t go. This ensures that only one frame is traversing the network at any given time.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org9040a50" class="outline-4">
+<h4 id="org9040a50"><span class="section-number-4">4.2.3.</span> Media Access Control (MAC)</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<p>
+Systems like CSMA/CD are a subset of the Media Access Control (MAC) protocol kit. MAC is one-half of the link layer, with Logical Link Control (LLC) being the other half – though these are sometimes called sub-layers. LLC mostly just defines the frame format for the 802.xx protocols, like WiFi, so we can safely ignore it for the moment.<br />
+</p>
+
+<p>
+If you’ve worked with networks at all, you’ve heard of MAC addresses. Those are basically unique serial numbers assigned to network interface devices (like NICs) at the time of manufacture. Theoretically, they are unique in the world, not counting virtual NICs in virtual machine environments. MAC address collisions do happen when using VMs, and there are ways to fix it, assuming that your VMs are confined to a subnet.<br />
+</p>
+
+<p>
+The MAC sub-layer is connected to the physical layer by a media-independent interface (MII), independent of the actual link protocol (e.g, cellular broadband, Wi-Fi radio, Bluetooth, Cat5e, T1, …). You can learn more about the MII if you’re so inclined, but we won’t address it again in the context of this tutorial.<br />
+</p>
+
+<p>
+Essentially, the MAC sub-layer grabs higher-level frames and makes them digestible by the physical layer, by encoding them into an MII format. It adds some synchronisation info and pads the message (if needed). The MAC sub-layer also adds a frame check sequence that makes it easier to identify errors.<br />
+</p>
+
+<p>
+In conventional Ethernet networks, all this looks something like the following:<br />
+</p>
+
+
+<div id="org4fe9fe5" class="figure">
+<p><img src="images/mac-frame.jpeg" alt="mac-frame.jpeg" /><br />
+</p>
+</div>
+
+<p>
+Let’s decode those blocks of bits:<br />
+</p>
+
+<ul class="org-ul">
+<li>The Preamble is 7 bytes of clock sync, basically just zeroes and ones like this: …0101010101… This gives the receiving station a chance to catch up and sync their clock, so the following data isn’t out of sync (and thus misinterpreted). To delve just a little deeper, the Preamble helps the receiving NIC figure out the exact amount of time between encoded bits (it’s called clock recovery). NTP is nice, but Ethernet is an asynchronous LAN protocol, meaning it doesn’t expect perfectly synchronised clocks between any two NICs. The Preamble is similar to the way an orchestra conductor might “count the players in” so they all get the same rhythm to start. Before clock recovery, there was MPE. Clock recovery is much more reliable than trying to get computers all over the world synced up to the same clock frequency and the same downbeat (starting point). Ethernet actually started out that way with something called Manchester Encoding or Manchester Phase Encoding (MPE). This was important because electrical frequency varies not only across the world, but also from moment to moment when the power is slightly “dirty”. MPE involved bouncing a bit between two fractional voltages using a 20MHz oscillator to generate a reference square wave. It works, but it’s not very efficient, so MPE was scrapped in favour of using the Preamble, the way that projectionists use alignment marks on reels of movie film.<br /></li>
+
+<li>The Start Frame Delimiter (SFD) is the last chance for clock sync. It is exactly 10101011, where the “11” tells the receiving station that the real header content starts next. The receiving NIC has to recover the clock by the time it hits the SFD, or abandon the frame to the bit bucket.<br /></li>
+
+<li>The Destination Address (DAddr) is six bytes long, and gives the physical address – the MAC address – of the next hop. Be aware that the next hop might be the destination, but it’s also possible that the next hop might be a NAP, MAE, NSP, or intermediate ISP. It’s basically the next address in the direction of the destination that the sender knows about. Unlike the Source Address, the Destination Address can be in a broadcast format (similar to a subnet like 192.18.0.0, but using MAC addresses).<br /></li>
+
+<li>The Source Address (SAddr) is also a six-byte MAC address, this time the MAC address of the sender, which does not change as long as the message is traversing only layer-2 (Ethernet) switches and routers.<br /></li>
+
+<li>The PDU Length (PDULen) gives the byte length of the entire frame, assuming that it’s 1500 or less. If it’s longer than that, it indicates a message type, like IPv4, ARP, or a “q-tagged” frame, which carries a VLAN ID.<br /></li>
+
+<li>The DSAP, SSAP, and Control elements are each one byte in length, and help define devices and protocols. For the most part, we won’t be worried about these with typical networks. Just know that as more and more 802 point-standards come out (e.g., 802.11, WiFi), these elements get longer and more complex.<br /></li>
+
+<li>The Data or “Payload” is the actual packet being sent, which in the case of TCP/IP, is just a TCP header attached to a fixed-length chunk of the application’s data. It’s passed on from the layer above. It cannot be less than 46 bytes, and in conventional Ethernet, it cannot be larger than 1500 bytes. If the actual data is too small, it’s padded out to 46 bytes.<br /></li>
+
+<li>The CRC or “Frame Checksum” (FCS) is a standard checksum, used to verify that the message hasn’t been corrupted along the way.<br /></li>
+</ul>
+
+<p>
+The Preamble and SFD are often considered to be part of the IEEE “packet”, so some people start counting the “frame” at the Destination Address. That distinction shouldn’t affect anything meaningful that we do with networks, but it’s nice to keep in mind, in case you run into someone who groups packets differently than you do.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgaf92635" class="outline-4">
+<h4 id="orgaf92635"><span class="section-number-4">4.2.4.</span> Trunking VLANs</h4>
+<div class="outline-text-4" id="text-4-2-4">
+<p>
+There is a crucial modification to the basic frame format called a P/Q or VLAN Tag. This allows something called VLAN trunking, which means sending all the VLAN data over the same wire and port, but giving the NICs a field (the P/Q tag) to control access. On paper, it looks something like this:<br />
+</p>
+
+
+<div id="org60f5733" class="figure">
+<p><img src="images/vlan-trunking.jpeg" alt="vlan-trunking.jpeg" /><br />
+</p>
+</div>
+
+<p>
+As you can see in the modified P/Q frame, the following fields replace part of the frame:<br />
+</p>
+
+<ul class="org-ul">
+<li>Sixteen bits of tags or a protocol ID.<br /></li>
+
+<li>Three bits representing a priority.<br /></li>
+
+<li>One bit is used as a Canonical Format Indicator (CFI), which is 0 if the following VLAN ID is in Ethernet format, or 1 if it’s in Token Ring format.<br /></li>
+
+<li>Twelve bits of VLAN ID.<br /></li>
+</ul>
+
+<p>
+This matters when we’re building complex networks with lots of VLANS that probably cross over switches. After all, VLANs were initially controlled with ports and switches, although they more commonly use tags now. When more than one VLAN spans multiple switches, frames need to carry VLAN information that can be used by switches to sort or “trunk” the traffic.<br />
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org551b2b2"></a>The origin of “trunking”<br />
+<div class="outline-text-5" id="text-4-2-4-1">
+<p>
+The word “trunking” is derived from the telephone network term trunk lines, which are lines connecting switchboards.<br />
+</p>
+
+<p>
+In the original telephone company model, each telephone had a subscriber line, which was a wire that went straight from the local Central Office (CO) to that subscriber’s telephone. Each CO had one switchboard, though it might have many seats.<br />
+</p>
+
+<p>
+Connections between Central Offices were handled by trunk lines, because they ran between phone company facilities. You’d have a thick cable with lots of pairs running from CO to CO, basically enough wires to handle something like 35% of the possible calls. If you ever got the message, “All circuits are busy now; please try your call again later”, you’ve heard what happens when the system is “trunking above capacity” or “TAC’d”, as it was called.<br />
+</p>
+
+<p>
+At the CO, the wires would “branch” and run all over the place: First to junction points (those five-foot-tall boxes you see from time to time on the road), then to interface points (the square cans beside the road every half mile or so, also called “pedestals”) and from there to subscriber homes. When you draw out this network, it looks like a tree, where the bundles of cables between COs look like the trunks of trees.<br />
+</p>
+</div>
+</li>
+<li><a id="org9d45efd"></a>Multiplexing LAN channels, actually<br />
+<div class="outline-text-5" id="text-4-2-4-2">
+<p>
+With VLAN trunking, by the way, we’re not just multiplexing packets, we’re actually multiplexing LAN channels, so to speak.<br />
+</p>
+
+<p>
+In the parlance of networks, especially VLANs, the term “trunking” is used to indicate the sharing of network routes. This sharing is made possible by the Ethernet VLAN tags, which make the VLAN-bound messages less dependent on switches and routers to get the traffic to the right place. Otherwise, you’d have to designate complicated port configurations for switches, which is particularly easy to misconfigure.<br />
+</p>
+
+<p>
+Note that the MAC sub-layer is responsible for managing CDMA/CD, that is, detecting a clear line, initiating re-transmission if there’s a jam signal, etc. On the way in, the MAC sub-layer verifies the CRC/FCS and removes frame elements before passing the data up to the higher layers. Basically, anything that some other MAC layer did to encapsulate the message for sending, the receiving MAC layer un-does on the way in.<br />
+</p>
+</div>
+</li>
+<li><a id="org30730a5"></a>VLANs, subnets, and fabrics<br />
+<div class="outline-text-5" id="text-4-2-4-3">
+<p>
+When working with networks, you will frequently be concerned with VLANs, subnets, and fabrics, which are all network groupings:<br />
+</p>
+
+<ul class="org-ul">
+<li>Subnets define (group) a range of IP addresses.<br /></li>
+
+<li>VLANs group subnets.<br /></li>
+
+<li>Fabrics group VLANs.<br /></li>
+</ul>
+
+<p>
+Let’s give each of these terms their due.<br />
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgaae93fc"></a>Subnets<br />
+<div class="outline-text-6" id="text-4-2-4-3-1">
+<p>
+A subnet is a range or collection of IP addresses. A subnet just means “sub-network,” and that’s exactly what it is: a subset of IP addresses that can be treated like a single block for some operations.<br />
+</p>
+
+<p>
+Subnets are defined in CIDR (Classless Inter-Domain Routing) notation. If you want to use the addresses from 192.168.13.0 to 192.168.13.255 in a subnet, you can specify that with 192.168.13.0/24. The “24” refers to the number of bits in the subnet address, with the remainder out of 32 bits free to address hosts. Since 8 bits can represent 256 things, that means /24 gives you the last octet, or 255 host IP addresses.<br />
+</p>
+
+<p>
+Whatever happened to subnet classes? Subnets used to be defined in terms of subnet classes, like A, B, and C. That got to be a limitation, because those three classes define a fixed number of bits of the IP address that represent the split between subnet addresses and host addresses. In other words, the class defined how many hosts could be in the network, and three classes wasn’t really adequate to address all the possible permutations that network architects needed. The change to CIDR notation made subnets more granular, allowing many more subnets from the same network.<br />
+</p>
+</div>
+</li>
+<li><a id="org31eeba5"></a>VLANs<br />
+<div class="outline-text-6" id="text-4-2-4-3-2">
+<p>
+A VLAN used to be a series of IP addresses that could access a given port on a specific switch, generally the switch that gated some protected resource. With the advent of VLAN trunking (see above), VLANs are marked with the 802.1Q (P/Q) bits in the MAC frame. In theory, any set of addresses can be associated with any VLAN.<br />
+</p>
+
+<p>
+Let me strongly encourage a correspondence of subnets to VLANs. Every IP should be in exactly one subnet, and every subnet should be part of exactly one VLAN. You don’t have to do that: you could, for example, have two different subnets that overlap, like 192.168.43.0/24 and 192.168.43.0/26. The “.26” subnet would use fewer bits for the host addresses, so only some of the addresses would overlap. A decent network designer generally avoids this kind of address overlap.<br />
+</p>
+
+<p>
+Likewise, putting one subnet in two different VLANs might be possible, but it isn’t practical or easy to debug when conflicts happen. You should endeavour to enforce a clean “fan-out” across the network, with no possibility of conflicting IP addresses.<br />
+</p>
+</div>
+</li>
+<li><a id="org73e6d6a"></a>Fabrics<br />
+<div class="outline-text-6" id="text-4-2-4-3-3">
+<p>
+A fabric just collects VLANs together. If you stick to the clean fan-out, that also means that a fabric collects subnets. A fabric provides a higher level grouping.<br />
+</p>
+
+<p>
+Consider an example: Suppose you have one VLAN for HR, and one VLAN for payroll, so that nobody else can see HR’s private files, and likewise you’ve got payroll data limited to just those people who should see it.<br />
+</p>
+
+<p>
+Some executives are entitled to see anything and everything about the corporation. An “executive” fabric would group all VLANs together, so that people admitted to that fabric can access the VLANs without having to be explicitly added to each one. That’s very handy in really large organisations, saving a lot of time and effort.<br />
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div id="outline-container-org3f246d0" class="outline-4">
+<h4 id="org3f246d0"><span class="section-number-4">4.2.5.</span> Visualising the link layer</h4>
+<div class="outline-text-4" id="text-4-2-5">
+<p>
+Let’s start with a message coming on Layer 1 from SanDiego to Bangor. When the message comes in, the link layer does the following things:<br />
+</p>
+
+<ul class="org-ul">
+<li>It synchronises the NIC, so that bits will indeed be recognised as bits and the message can be properly decoded.<br /></li>
+
+<li>It handles the source and destination addresses, using ARP as necessary.<br /></li>
+
+<li>It interprets the length/type bytes and uses them, which means it must judge the length of a frame, and of the data in a frame, or, alternatively, decide whether a frame is IPv4, ARP, or VLAN (“q-tagged”).<br /></li>
+
+<li>It processes VLAN tags, which means, at the very least, dealing with the message priority, deciding whether the VLAN frame is Ethernet or Token Ring, and capturing and using the VLAN ID. The layer handles messages by priority, knows how and when to send Ethernet or Token Ring frames, and knows how to route traffic to a specific VLAN.<br /></li>
+
+<li>It computes the checksum to make sure the message is valid.<br /></li>
+</ul>
+
+<p>
+Next, we’ll take a look at the network layer, where most of the message transactions take place, and where most of our debugging will be done.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc0c1ce3" class="outline-3">
+<h3 id="orgc0c1ce3"><span class="section-number-3">4.3.</span> Interlayer addressing: ARP</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+One frequently asked question is this: Is ARP a layer 2 or layer 3 protocol? Actually, it’s both, as you’ll discover later, but it does all of its work at L2. One way to distinguish L2 from L3 is to find out what happens inside the firmware of the Network Interface Card (NIC), and that’s usually where ARP takes place. ARP maps MAC addresses, which is how things are addressed in L2, into other addresses (e.g., IP addresses), which is how L3 finds things.<br />
+</p>
+
+<p>
+In theory, every NIC card in the world has a unique identifier, called a <i>MAC address</i>. “MAC” stands for “Media Access Control” – you can find a little history of this on Wikipedia, if you’re interested.<br />
+</p>
+
+<p>
+When you’re assigning MAC addresses with virtual machines, of course, you may be re-using one that’s actually assigned to a network device out there somewhere. Inside your Layer 2 network, that isn’t a problem, because only devices connected to a physical switch – that’s actually connected to the physical Internet – care about unique MAC addresses. Inside your network, the only conflicts you need to worry about are the ones you create by hand-assigning MAC addresses.<br />
+</p>
+
+<p>
+The shorter answer to that implied question is this: MAC addresses must be unique across the domain where they’re used.<br />
+</p>
+</div>
+<div id="outline-container-org3737763" class="outline-4">
+<h4 id="org3737763"><span class="section-number-4">4.3.1.</span> TCP/IP does not use MAC addresses</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<p>
+If we look at the IP datagram again, we see that it doesn’t know about MAC addresses at all:<br />
+</p>
+
+<p>
+TCP, UDP, and a number of other protocol stacks are written to use IP addresses. Routers depend on IP addresses, as we’ve already seen. This creates a bit of a conundrum: How do we map between MAC and IP addresses, and what does the mapping? Is it a layer 2 or layer 3 operation?<br />
+</p>
+
+<p>
+The first thing to remember is that the MAC address is “ROM-burned” into the NIC card. IP addresses, on the other hand, are assigned to a NIC by a DHCP server or an administrator. This intentional separation of addressing schemes is what makes the Internet flexible.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org86da6c8" class="outline-4">
+<h4 id="org86da6c8"><span class="section-number-4">4.3.2.</span> Fixed versus assigned addressing</h4>
+<div class="outline-text-4" id="text-4-3-2">
+<p>
+Here’s an analogy. Your postal address doesn’t <i>actually</i> define where your house is located. There are two layers of other addressing schemes that are actually used by government organisations, like your county tax assessor or the local air ambulance company.<br />
+</p>
+
+<p>
+One is your land survey location. Depending on where you live, this is defined by a series of coordinates that go something like this: county, township, section, plat, lot, etc. If you’ve ever looked at your property tax bill, it will have your postal address on it, but it will not actually use your postal address to define the taxable property. Instead, it uses this unique set of (rather obscure) coordinates to place you exactly on land survey maps.<br />
+</p>
+
+<p>
+But that’s not good enough for the air ambulance, for two reasons. First, the survey maps are huge, complex, and hard to interpret, and they change somewhat as property is bought or sold. Second, helicopter navigation is intentionally independent of political boundaries. Instead, the air ambulance will use your latitude and longitude, which allows them to uniquely locate you on the earth. Granted, the ambulance company has a tool somewhere that automatically does the maths of translating your postal address to lat/long coordinates, but the principle holds.<br />
+</p>
+
+<p>
+In terms of your local network, each of these “address levels” applies. Your postal address corresponds to the IP address of a machine. That IP address may or may not be unique, depending on the domain. For example, you can use Google Maps to try and locate something like “20 Main Street”, and you’ll get a really long list of responses that vary by city.<br />
+</p>
+
+<p>
+Likewise, there are probably hundreds of thousands of local networks using addresses in the “192.168…” subnet, since it’s so common for local IP addressing. As mentioned above, routers at the network layer take care of protecting these unique local addresses when going out on the Internet. On the other hand, your NIC’s MAC address is like the GPS lat/long coordinates; it’s unique across the entire world.<br />
+</p>
+
+<p>
+What about the analogue of survey maps? Well, it’s not hard to argue that these are more like the MAC addresses that you assign to your VMs. Every county in a state like, say, Mississippi has the coordinates Township 1, Section 1, Parcel 1 – but the outer domain (the county) makes those coordinates unique. Granted, we don’t use a different format for MAC addresses for VMs than we do for Internet-connected NICs, but you get the idea.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org066e2b0" class="outline-4">
+<h4 id="org066e2b0"><span class="section-number-4">4.3.3.</span> Address resolution</h4>
+<div class="outline-text-4" id="text-4-3-3">
+<p>
+Address resolution is what we call the process of mapping between IP addresses and MAC addresses. It’s done with something called ARP, which stands for “Address Resolution Protocol”. Oddly enough, ARP takes on a life of its own, so you may hear it discussed in unusual ways. Some people call it “the ARP”, others speak of “arpd” (the ARP daemon), although if you look at the man page for arpd, you’ll see those characterisations are not precisely correct.<br />
+</p>
+
+<p>
+A frequent question is, “Where does ARP take place?” Maybe the better question is, “Where is ARP implemented?” As always with Internet-related things, the answer can vary, but normally, ARP is implemented as part of the embedded code in the NIC. Technically, this means that ARP operates at Layer 2. More often, you’ll see vendors hedge their bets on this, with phrases such as “operates below the Network Layer”, as in this explanation.<br />
+</p>
+
+<p>
+In reality, in order to work correctly, ARP has to map IP and MAC addresses, since the ARP message looks something like this:<br />
+</p>
+
+<p>
+To better understand, let’s walk an ARP call. It begins in say, a Web browser, when the browser makes a call to parse the URL. In most cases, that URL contains a hostname (not an IP address), so the following sort of dance takes place:<br />
+</p>
+
+<p>
+We won’t go into this in much detail now, just know that the browser is able to gather an IP address, if it exists. To make the walk-through less confusing, let’s assume that we’re looking for a host with IP 192.168.17.4.<br />
+</p>
+
+<p>
+Next, the browser requests a connection with 192.168.17.4, using the TCP protocol, which sends a connection request, as an IP packet, to 192.168.17.4. Along the way, there is probably more than one router hop.<br />
+</p>
+
+<p>
+ARP sends a broadcast request to everything on the relevant subnet. This request looks like the ARP message above, but it’s encoded as a MAC frame, which helps to answer the often-fuzzy question, “Is ARP Layer 2 or Layer 3?” As you see, this is an L2 message. Incidentally, ARP only works as a broadcast, by the way; that is, it only works on a broadcast network.<br />
+</p>
+
+<p>
+A very important note for some systems like MAAS: ARP requests don’t typically span VLANs.<br />
+</p>
+
+<p>
+Essentially, this ARP message contains the IP address 192.168.17.4, but no corresponding MAC address in the message. This tells the owner of 192.168.17.4 that it should reply with a similar ARP message, including its MAC address. When the sender receives the ARP reply, it can send the datagram directly to the destination host, embedded in an Ethernet frame, using the MAC address.<br />
+</p>
+
+<p>
+By the way, for efficiency, the sending host and the intermediate routers are all doing ARP caching. They copy down the mapping between IP and MAC addresses, holding onto it for about twenty minutes. In terms of most network transactions, twenty minutes is an eternity.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org412a442" class="outline-4">
+<h4 id="org412a442"><span class="section-number-4">4.3.4.</span> Messages are sent to MAC addresses</h4>
+<div class="outline-text-4" id="text-4-3-4">
+<p>
+We often speak of TCP/IP as if messages are sent from one IP address to another, but that’s actually not strictly true. Messages are sent to MAC addresses. IP addresses are only used to get MAC addresses, so the message can go through.<br />
+</p>
+
+<p>
+We can return to the air ambulance company to see a practical analogy. A 911 call comes in for “20 Main Street, Yourtown, Yourstate, Yourpostalcode”. The address is sent to the pilot of the helicopter, who punches the address into his GPS. The GPS uses the postal address to retrieve the lat/long coordinates, which are then used to guide the helicopter, via satellite navigation.<br />
+</p>
+
+<p>
+The same sort of thing happens when you use the GPS navigator in your car. The navigator is translating a logical (postal) address to a physical (lat/long) address on the surface of the earth, calculating a route, and translating that route back to logical landmarks (street names) to let you know how to get there.<br />
+</p>
+
+<p>
+By the way, You should also note that ARP only works with IPv4. Certain other protocols, like Point-to-Point Protocol (PPP), don’t make use of ARP at all.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org496a5f0" class="outline-4">
+<h4 id="org496a5f0"><span class="section-number-4">4.3.5.</span> The ARP frame</h4>
+<div class="outline-text-4" id="text-4-3-5">
+<p>
+ARP sends requests as an Ethernet frame, using the MAC address. If you remember the MAC frame from earlier:<br />
+</p>
+
+<p>
+The ARP frame is just a special case of the MAC frame, replacing everything the DSAP, SSAP, control bits, and data with the ARP message shown above. The resulting ARP frame looks something like this:<br />
+</p>
+
+<p>
+Based on the above diagram, you can see how the ARP request fits into the Ethernet frame to make an ARP frame.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org71b9f90" class="outline-4">
+<h4 id="org71b9f90"><span class="section-number-4">4.3.6.</span> The ARP cache</h4>
+<div class="outline-text-4" id="text-4-3-6">
+<p>
+Let’s take a look at the ARP cache on a local system, <code>cloudburst</code>. We can do that like this:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="37">
+stormrider@cloudburst:~$ arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+192.168.1.24             ether   0c:8b:7d:f1:51:d3   C                     wlo1
+10.250.204.17                    (incomplete)                              mpqemubr0
+192.168.1.24             ether   0c:8b:7d:f1:51:d3   C                     enx606d3c645a57
+192.168.117.16                   (incomplete)                              virbr0
+#+END_SRC bash
+
+The columns are mostly obvious, but just in case:
+
+- Address: the IP address that’s been cached.
+- HWtype: the Hardware Type field, which is blank when there’s no MAC address (as is the case in a number of these entries).
+- HWaddress: the MAC address of the device. The “incomplete” entries are meant to indicate that an ARP request was sent for that address, but no response was received.
+- Flags Mask: this field can have three values: “C” indicates that ARP learned this on its own, based on ARP responses; “M” means that the data was manually entered in the ARP table by a user; and “P” means “Publish,” which just tells the host how to respond to incoming ARP packets.
+- Iface: the interface name.
+
+In this case, ~virbr0~ and ~mpqemubr0~ are virtual bridges used for different sets of libvirsh VMs that haven’t been used for anything in a while. Also note that something called ~lxdbr0~, which is an LXD bridge, doesn’t even show up.
+
+Let’s see if we can influence that. First, let’s take a look using ~ip a~:
+
+#+ATTR_HTML: :textarea t :width 80
+#+BEGIN_SRC bash
+stormrider@cloudburst:~$ ip a show up
+5: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 52:54:00:d6:70:6c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.117.1/24 brd 192.168.117.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+6: mpqemubr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 52:54:00:84:0a:4c brd ff:ff:ff:ff:ff:ff
+    inet 10.250.204.1/24 brd 10.250.204.255 scope global mpqemubr0
+       valid_lft forever preferred_lft forever
+7: lxdbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 00:16:3e:e4:2b:fe brd ff:ff:ff:ff:ff:ff
+    inet 10.90.195.1/24 scope global lxdbr0
+       valid_lft forever preferred_lft forever
+    inet6 fd42:1fc6:f588:d0b8::1/64 scope global 
+       valid_lft forever preferred_lft forever</textarea>
+</p>
+
+<p>
+You’ll see that all three bridges are in a DOWN state, and again, <code>lxdbr0</code> is so cold that it doesn’t even show up in the ARP table. Let’s bring up a LXD VM connected to <code>lxdbr0</code> and look at the ARP table again:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="7">
+stormrider@cloudburst:~$ arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+192.168.1.24             ether   0c:8b:7d:f1:51:d3   C                     wlo1
+10.250.204.17                    (incomplete)                              mpqemubr0
+192.168.1.24             ether   0c:8b:7d:f1:51:d3   C                     enx606d3c645a57
+192.168.117.16                   (incomplete)                              virbr0
+10.90.195.16             ether   00:16:3e:fc:71:98   C                     lxdbr0</textarea>
+</p>
+
+<p>
+Note that the <code>lxdbr0</code> bridge now shows up and has a MAC address, too – no incomplete entry here. If we look at the MAC address of <code>lxdbr0</code> in the <code>ip</code> listing, we’ll see it matches up.<br />
+</p>
+
+<p>
+Those “(incomplete)” entries are old. They’ve been cached, but no traffic has passed through those bridges in a really long time. The cache is just persistent in holding onto the IP addresses, but not the MAC addresses (since they could be stale). We can prove this to ourselves by clearing the cache:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="5">
+stormrider@cloudburst:~$ sudo ip -s neigh flush all
+[sudo] password for stormrider: 
+
+*Round 1, deleting 18 entries ***
+*Flush is complete after 1 round ***</textarea>
+</p>
+
+<p>
+…and rebuilding the ARP table:<br />
+</p>
+
+<p>
+<textarea cols="80" rows="5">
+stormrider@cloudburst:~$ arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+192.168.1.24             ether   0c:8b:7d:f1:51:d3   C                     wlo1
+192.168.1.24             ether   0c:8b:7d:f1:51:d3   C                     enx606d3c645a57
+10.90.195.16             ether   00:16:3e:fc:71:98   C                     lxdbr0</textarea>
+</p>
+</div>
+</div>
+<div id="outline-container-org80e1168" class="outline-4">
+<h4 id="org80e1168"><span class="section-number-4">4.3.7.</span> More about ARP</h4>
+<div class="outline-text-4" id="text-4-3-7">
+<p>
+Another form of ARP is promiscuous ARP, in which some proxy host pretends to be the destination host and provides an ARP response on behalf of the actual destination host. You shouldn’t use this form of ARP unless there’s no other choice. You can Google it (and use it at your own risk), but it won’t be described here.<br />
+</p>
+
+<p>
+There is also gratuitous ARP, when the source and destination IP addresses are the same. This can be used for at least two purposes:<br />
+</p>
+
+<ol class="org-ol">
+<li>To find out if someone else already has the source machine’s IPv4 address, a technique called Address Conflict Detection by some references.<br /></li>
+
+<li>To update the source machine’s new MAC address (e.g., a new NIC card was installed) in upstream ARP cache entries. This is something akin to pre-caching MAC addresses before they’re actually needed.<br /></li>
+</ol>
+
+<p>
+You can read more about these (and many more) nuances of ARP, but this introduction should answer most of the immediate questions.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbe3b2f6" class="outline-3">
+<h3 id="orgbe3b2f6"><span class="section-number-3">4.4.</span> The network layer</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+You might have noticed in the original OSI model that “IP” was part of Layer 3, and protocol stacks like UDP and TCP were part of Layer 4. It’s a little bit confusing that we say “TCP/IP” when the “IP” really applies to so many other protocols like UDP and ICMP. There are certainly other protocols and protocol stacks, but for the purposes of these networks, we’re talking almost exclusively about TCP/IP.<br />
+</p>
+
+<p>
+The network layer does not guarantee delivery. Essentially, it makes every effort to deliver IP datagrams (packets) to the destination, but it’s error-handling is pretty simple: just toss the packet into the bit-bucket.<br />
+</p>
+
+<p>
+It’s also a connectionless layer, meaning the packets making up a message aren’t part of an ongoing conversation. They can be split up, encoded, and sent separately, by different routes, and arrive completely out of order. And packets can get duplicated or corrupted. Figuring all this out is the job of the protocol stack (e.g., TCP) in layer 4. The network layer, L3, just delivers packets.<br />
+</p>
+
+<p>
+Network byte order: A rarely needed (but useful) fact is that the network sends bytes in big endian order. That means bytes are transmitted starting with bit 0 and working down to bit 31, usually eight bits at a time. A lot of the computers on the Internet use little endian encoding, which starts at the other end of the word. In those cases, the byte order has to be reversed somewhere between the computer’s memory and Layer 3. For most situations, that fact isn’t particularly useful, but there is the occasional fault that involves failure to reverse byte order along the path from RAM to NIC.<br />
+</p>
+</div>
+<div id="outline-container-org9cf6a99" class="outline-4">
+<h4 id="org9cf6a99"><span class="section-number-4">4.4.1.</span> What is this "packets" you speak of, Kimosabe?</h4>
+<div class="outline-text-4" id="text-4-4-1">
+<p>
+Packets are basic Internet Protocol (IP) message units. A message will probably be split into multiple packets by L4 (the transport layer) so it can be efficiently sent.<br />
+</p>
+
+<p>
+For example, imagine that you’re sending a very long letter to your friend, and all you have are lots of envelopes and first-class stamps. If you’ve ever done a lot of mailing, you’ll know that mailing a one-ounce letter costs you, say, fifty-eight cents. If you add another ounce of paper to it, that second ounce only costs you, say, twenty cents. But all you have are first class (i.e., fifty-eight-cent) stamps.<br />
+</p>
+
+<p>
+If you don’t want to waste your money, you can either cram more pages in the envelope, until you’re at three ounces (the most you can get with two stamps), or send two letters, each with one ounce in it. The way envelopes go through the mailing system, you’re better off not over-stuffing an envelope. So what do you do?<br />
+</p>
+
+<p>
+You sit down and write the letter to your friend, carefully numbering the pages. Then you divide it into piles of pages that are just under one ounce. Finally, you put each pile into an addressed, stamped envelope and mail each letter separately. When your friend gets the letters, it doesn’t matter which one gets there first, because they can reassemble your message, using the page numbers.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org7ce9839" class="outline-4">
+<h4 id="org7ce9839"><span class="section-number-4">4.4.2.</span> Fixed packet lengths and segmented messaging</h4>
+<div class="outline-text-4" id="text-4-4-2">
+<p>
+We could have designed computer networks to take messages of indeterminate lengths, but that presents some unique challenges when trying to manage network traffic. For example, suppose you send seven overstuffed letters to your friend, and so does everyone else on your block? All these huge letters aren’t going to fit in one letter-carrier’s bag, so they’ll have to either send out two delivery people, or wait until tomorrow to send out someone’s letters.<br />
+</p>
+
+<p>
+Choosing a fixed (relatively short) length makes it statistically possible for everyone’s letters (everyone’s messages) to be delivered at a fairly constant, reliable rate. That rate will vary with the size of the overall message, not with who threw their message on the Internet first. A larger message takes longer to send.<br />
+</p>
+
+<p>
+Messages are split into packets of consistent length before they’re passed to L3, so larger messages take longer. It’s statistically more efficient to split messages into equally-sized packets than any other arrangement – the method that gets the highest count of complete messages through the network in a given amount of time. In network terminology, it’s the highest-throughput approach to network traffic. Specifically, this technique is called multiplexing.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orge996205" class="outline-4">
+<h4 id="orge996205"><span class="section-number-4">4.4.3.</span> IP packets</h4>
+<div class="outline-text-4" id="text-4-4-3">
+<p>
+The IP datagram (packet) is the backbone of most modern networks. The following diagram depicts an IPv4 header, which attaches to the front of data packets up to about 65K long:<br />
+</p>
+
+
+<div id="org89e7b8e" class="figure">
+<p><img src="images/ip-packets.jpeg" alt="ip-packets.jpeg" /><br />
+</p>
+</div>
+
+<p>
+Note that IPv6 headers have only the version field in common with IPv4 headers; otherwise, they are completely different. Here are the header fields and what information they carry:<br />
+</p>
+
+<ul class="org-ul">
+<li>IP Protocol Version: This is “4” for IPv4 and “6” for IPv6. There are lots of others, but they generally don’t touch a typical network.<br /></li>
+<li>Internet Header Length: The number of 32-bit words in the header, including the options (but not including the data, since it’s just the header). Most of the time, this will have the value “5”, but options do exist and are sometimes included.<br /></li>
+<li>Differentiated Services Code Point: This is used to specify special classes of service. Normally, IP packets are delivered on a “best-effort” basis, that is, Layer 3 will try everything possible to make sure a packet gets delivered. You can cause L3 to deliver packets with higher priority (implying more certainty) by using a different DSCP.<br /></li>
+<li>ECN = Explicit Congestion Notification: These bits are both set by an ECN-capable router when that router is above a certain traffic threshold. They are there to alert a sender to slow down (or expect delays) when the network segment in use is particularly congested.<br /></li>
+<li>Total Length of IP Packet: This field indicates the length of the entire packet, including the data. This makes it possible to calculate the byte offset of the data within the datagram.<br /></li>
+<li>Identification: This is a serial number, generated by the sending NIC, that helps the participants uniquely identify the datagram. In a sense, it works like the little “take-a-number” tickets you get at the hamburger stand: Eventually, the number will repeat, but the repeat cycle is so long that there’s no chance of confusing packets. The sequential nature of this field, when used in concert with the Flags and Fragmentation Offset field, helps the protocol stack correctly reassemble the message.<br /></li>
+<li>Flags: This field is basically used to indicate that a packet is a fragment of a longer message.<br /></li>
+<li>Fragmentation Offset: Used with the Identification sequence number, this field allows the system to know which packets precede or follow this one when re-assembling the message.<br /></li>
+<li>Time to Live (TTL): This indicates the number of routers that a datagram can pass through before it’s discarded. Since routers function by replacing their own destination address with the IP address of the next hop, this essentially limits the number of times a packet’s destination IP can be changed. Most RFC documents suggest keeping this number at 64, it’s more often set to something like 255 without any real bottlenecks.<br /></li>
+<li>Protocol: This field indicates the higher level protocol (the protocol stack) that generated this message. Examples are given for TCP and UDP in the figure.<br /></li>
+<li>Header Checksum: This calculates a checksum for the header only. It’s only used in IPv4. Doing integrity-checking on the data is the responsibility of Layer 4.<br /></li>
+<li>Source Address: This is the IP address of the sender of the packet, for this hop only. As shown in the figure below, routers will change this address so they can get the answer back.<br /></li>
+<li>Destination Address: This is the IP address of the destination, for this hop only. As shown below, routers change this address to act as brokers in the IP chain.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org586192b" class="outline-4">
+<h4 id="org586192b"><span class="section-number-4">4.4.4.</span> Routing</h4>
+<div class="outline-text-4" id="text-4-4-4">
+<p>
+We now have enough concepts in play to talk about routing. Routing takes place at the network layer, by changing the source and destination addresses (without losing track of the replaced address). The process looks something like this:<br />
+</p>
+
+
+<div id="org5793bf5" class="figure">
+<p><img src="images/routing.jpeg" alt="routing.jpeg" /><br />
+</p>
+</div>
+
+<p>
+The router typically assigns a unique port number to the outbound message, and records the source IP against that port number. When the message comes back to it on that port number, it can look up the IP address of the NIC that sent the packet and route the answer back.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org23cd9e1" class="outline-3">
+<h3 id="org23cd9e1"><span class="section-number-3">4.5.</span> The transport layer</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+Layer 4 brings us to protocols implemented only by the end hosts (i.e., not by the routers or other switching gear that connect the network). This layer handles things like redundancy, confirmed delivery, managing packets on an unreliable network, and so forth. This is the last layer that TCP/IP has anything to say about; layers above this are unique to specific applications. Troubleshooting this level would involve knowing about entire protocol sets, like UDP or TCP.<br />
+</p>
+
+<p>
+If the Internet Protocol (IP) is connectionless, the transport layer is all about connections. The transport-layer protocol in use – we’ll talk exclusively about Transmission Control Protocol or TCP here – the L4 protocol is the last place in the stack where the entire message exists in one piece. L4 breaks up larger messages into segments. Each segment gets a TCP header, and gets passed on to L3 where it becomes an IP packet.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org38cbb24" class="outline-3">
+<h3 id="org38cbb24"><span class="section-number-3">4.6.</span> TCP: Transmission Control Protocol</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+I mentioned above the Layer 4 is all about connections, but the situation's not always that simple.  UDP, for example does not have any mechanisms for delivering data reliably. I have a t-shirt that says, "I'd tell you a joke about UDP, but you might not get it."  The pun turns on the fact that UDP is sort of a <i>fire and forget</i> protocol.<br />
+</p>
+
+<p>
+The problem of making sure the message got delivered is as old as time.  There are many logic problems that involve an army sending a message between battalions, indicating the time of a planned attack.  But if the messenger has to sneak through enemy lines to deliver it, how do we know it got there?  Error-correcting codes help, but at the end of the day, nothing beats the Automatic Repeat Request, cleverly abbreviated <b>ARQ</b>.<br />
+</p>
+
+<p>
+ARQ simply means we keep sending the message until we know for sure it got there, intact.  We need two mechanisms in order to make this work: an ACK (I got the message) and a CRC (Cyclic Redundancy Check).  If the message gets there, and it passes the CRC, an ACK is sent.<br />
+</p>
+
+<p>
+Returning to the sneaky messenger, what if the messenger got there and delivered the message, but didn't get back to tell the sender that the message got through?  That's a more complicated problem.  In the networking world, we deal with that by waiting a set amount of time for an ACK before re-sending: The recipient has to know how to deal with duplicate messages.<br />
+</p>
+
+<p>
+How long do we want?  That's a really complex topic called "timeout and re-transmission", and I'm going to skip over that here.  You can find a lot of great sources in Google that will help you with that.<br />
+</p>
+
+<p>
+The most important things to take away from timeouts, though, are that (1) messages may arrive out of order, so the ACK signal needs to be tagged with the ID of the message received, and (2) the recipient has to be able to reassemble the messages in the correct order.<br />
+</p>
+
+<p>
+Oh, and there has to be a limit on how many unacknowledged messages a sender is willing to leave hanging.  If the sender sends three messages and gets no ACKs, it might not send out sequence number four until the other end catches up.  This number of outstanding, unacknowledged messages is called a "sliding window".  If the sliding window is three messages, and number four hasn't been acknowledged, number 8 won't be sent yet.<br />
+</p>
+
+<p>
+Sometimes it helps to think of it like jelly beans in a jar with a small opening; only three or four jelly beans can pop through the mouth of the jar at any given time &#x2013; the rest will have to wait.  One falls out, another one gets to the edge of the jar, and the whole muddle of beans moves one bean closer to freedom.  Okay, weird, but it does help sometimes.<br />
+</p>
+
+<p>
+The simplest way to envision how it works, is, well, to actually look at how it works, hence the next section on the TCP header.<br />
+</p>
+</div>
+<div id="outline-container-org0b44350" class="outline-4">
+<h4 id="org0b44350"><span class="section-number-4">4.6.1.</span> The TCP header</h4>
+<div class="outline-text-4" id="text-4-6-1">
+<p>
+Here’s a diagram of the L4-to-L3 hand-off:<br />
+</p>
+
+
+<div id="org73164f2" class="figure">
+<p><img src="images/tcp-header.jpeg" alt="tcp-header.jpeg" /><br />
+</p>
+</div>
+
+<p>
+We can get a pretty good idea what happens at Layer 4 just by decoding the contents of the TCP header. It contains the following fields:<br />
+</p>
+
+<ul class="org-ul">
+<li>Source port: the application port number of the host sending the data. For example, if this is an FTP message, the source port would probably be 21.<br /></li>
+
+<li>Destination port: the port number of the application requested on the destination host. If this is FTP, again this port would likely be 21.<br /></li>
+
+<li>Sequence number: the sequence number of this segment of data, to help the other end put the data back together in the correct order, as well as help Level 4 on the receiving end know whether a packet’s been dropped or lost.  This handles the fact that segments don't necessarily arrive in order.<br /></li>
+
+<li>Acknowledgement number: essentially, the next sequence number the destination host is expecting; used to “gate” packets through the connection. This is a smart way to ACK packets so that the recipient knows which messages have been received.<br /></li>
+
+<li>TCP header length: given to know where the data begins.<br /></li>
+
+<li>Reserved: reserved for future use, basically; currently always set to 0.<br /></li>
+
+<li>Code bits: essentially a set of flags; see the list below.<br /></li>
+
+<li>Window: used to negotiate the “window” size, that is, how many bytes the destination host is willing to receive at once; this allows for the most efficient transmission possible, based on the characteristics of the two communicating hosts.  This is the sliding window that defines how many messages can be sent (but not acknowledged) before the sender pauses.  The "negotiable" part is what makes for efficient networks: the sender and receiver can quickly get to know each other and know how many messages they can "trust" to be delivered without an ACK.<br /></li>
+
+<li>Checksum (CRC): used to check the integrity of the segment.<br /></li>
+
+<li>Urgent pointer: data byte count where urgent data ends; used if the urgent flag is set (see below).<br /></li>
+</ul>
+
+<p>
+The code bits can indicate the following things:<br />
+</p>
+
+<ul class="org-ul">
+<li>URG: indicates that the urgent pointer field is meaningful, used to prioritise this message over other messages.<br /></li>
+
+<li>ACK: used to acknowledge successful delivery of the previous segment.<br /></li>
+
+<li>PSH: push notification; tells the receiving host the message is complete, you can push the data to the application.<br /></li>
+
+<li>RST: request a connection reset when the error level reaches a certain threshold; basically, “let’s try that again from the top.” This is considered an abnormal termination of the TCP connection.<br /></li>
+
+<li>SYN: used for a three-way TCP handshake; this handshake is how sender and receiver sync up; it serves a purpose similar to the preamble in a MAC frame, but at a different level of synchronisation.<br /></li>
+
+<li>FIN: we’re done, close the connection. This is considered a normal termination of a TCP connection.<br /></li>
+
+<li>NS/CWR/ECE: used to provide Explicit Congestion Notification; note that OSI provides several methods for endpoints to know that the network is congested.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4747a7a" class="outline-4">
+<h4 id="org4747a7a"><span class="section-number-4">4.6.2.</span> TCP is like a phone call</h4>
+<div class="outline-text-4" id="text-4-6-2">
+<p>
+As you can see from the bytes above, TCP is all about the state of a connection, which is basically the same as a phone call. When you pick up the receiver, you and the caller exchange information. You say “bye” when the call is over. If it’s a bad connection or one end suddenly gets noisy (think jack-hammers outside), one of you can reset the connection by saying, “Let me call you back in a minute.” Take a minute and try to see how the other header bytes fit this analogy.<br />
+</p>
+
+<p>
+Also like a telephone call, TCP provides a connection (the call, however long it lasts), flow control (provided by the two parties on the call), multiplexing (handled by the two handsets, basically letting through multiple frequencies and sounds, so that you can get the tone and breath sounds of the other person, not just their raw words). Likewise, the two parties try to handle the reliability of the connection by making sure you understand each other.<br />
+</p>
+
+<p>
+The analogy spreads a little because some of the items (connection, multiplexing) are handled by the telephone, and some are handled by the people operating the telephone (flow control, reliability). In the network, the Level 4 protocol stack handles it all.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org6a360ae" class="outline-4">
+<h4 id="org6a360ae"><span class="section-number-4">4.6.3.</span> There's a lot more here</h4>
+<div class="outline-text-4" id="text-4-6-3">
+<p>
+There is a lot more to know about TCP, like:<br />
+</p>
+
+<ul class="org-ul">
+<li>Variable windows<br /></li>
+<li>Flow and congestion control<br /></li>
+<li>Reliability and the TCP service model<br /></li>
+<li>Encapsulation<br /></li>
+<li>Connection management<br /></li>
+<li>Etc.<br /></li>
+</ul>
+
+<p>
+You should now have enough basic knowledge to transition to the <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">excellent Wikipedia article about TCP</a>.  A word of warning, though: this rabbit hole is very deep, so weigh what you're learning with what you actually need to know from this point on.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd238426" class="outline-3">
+<h3 id="orgd238426"><span class="section-number-3">4.7.</span> The session layer</h3>
+<div class="outline-text-3" id="text-4-7">
+<p>
+Layer 5, the session layer, is where ongoing interactions between applications happen. The data is couched in terms of things an application might understand (e.g., cookies for a Web browser). This is also the layer where check-pointing (i.e., saving work finished so far) happens. At this layer, we’d discuss things like RPC, SQL, or NetBIOS.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgb0a423e" class="outline-3">
+<h3 id="orgb0a423e"><span class="section-number-3">4.8.</span> The presentation layer</h3>
+<div class="outline-text-3" id="text-4-8">
+<p>
+The presentation layer converts data between formats and ensures standard encodings are used to present the information to the application. This layer is all about file formats: ASCII, EBCDIC, JPEG, GIF, and HTML, to name just a few.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orga443af0" class="outline-3">
+<h3 id="orga443af0"><span class="section-number-3">4.9.</span> The application layer</h3>
+<div class="outline-text-3" id="text-4-9">
+<p>
+The top layer, layer 7, is totally the province of the application(s) involved in processing messages. Two techs talking about this layer would be swapping stories about application protocols, like FTP, DNS, SMTP, or NFS. Almost nothing that happens at this layer – except for throughput estimates or fouled daemon code – filters into designing or debugging networks.<br />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: stormrider</p>
+<p class="date">Created: 2026-01-26 Mon 14:22</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
