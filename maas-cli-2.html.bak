@@ -212,7 +212,7 @@
 </div>
 <hr />
 <p>
-MAAS: <a href="https://billwear.github.io/maas-cli-1.html">Install</a> ~ <a href="https://billwear.github.io/maas-cli-2.html">Configure</a> ~ <a href="https://billwear.github.io/maas-cli-3.html">DHCP</a> ~ <a href="https://billwear.github.io/maas-cli-4.html">Commission</a> ~ <a href="https://billwear.github.io/maas-cli-5.html">Deploy</a> ~ <a href="https://billwear.github.io/maas-cli-6.html">jq</a> ~ <a href="https://billwear.github.io/maas-cli-7.html">SSH</a> ~ <a href="https://billwear.github.io/maas-cli-8.html">More jq</a><br />
+MAAS: <a href="https://stormrider.io/maas-cli-1.html">Install</a> ~ <a href="https://stormrider.io/maas-cli-2.html">Configure</a> ~ <a href="https://stormrider.io/maas-cli-3.html">DHCP</a> ~ <a href="https://stormrider.io/maas-cli-4.html">Commission</a> ~ <a href="https://stormrider.io/maas-cli-5.html">Deploy</a> ~ <a href="https://stormrider.io/maas-cli-6.html">jq</a> ~ <a href="https://stormrider.io/maas-cli-7.html">SSH</a> ~ <a href="https://stormrider.io/maas-cli-8.html">More jq</a><br />
 </p>
 <hr />
 
@@ -221,7 +221,7 @@ MAAS: <a href="https://billwear.github.io/maas-cli-1.html">Install</a> ~ <a href
 </p>
 
 <p>
-Now that <a href="https://billwear.github.io/maas-cli-1.html">MAAS is up and running</a>, it's time to configure it. Normally, this would be accomplished through the MAAS configuration journey, but since I'm using the CLI for this, I want to avoid the UI as much as possible.<br />
+Now that <a href="https://stormrider.io/maas-cli-1.html">MAAS is up and running</a>, it's time to configure it. Normally, this would be accomplished through the MAAS configuration journey, but since I'm using the CLI for this, I want to avoid the UI as much as possible.<br />
 </p>
 <div id="outline-container-org8f8f07e" class="outline-2">
 <h2 id="org8f8f07e"><span class="section-number-2">1.</span> Logging in</h2>
@@ -770,7 +770,7 @@ Import of boot resources started</textarea>
 </p>
 
 <p>
-Now when I switch back to the Images screen, I can see that 14.04 LTS is downloading, which is fantastic. I'll just let that download for a while and then move on to <a href="https://billwear.github.io/maas-cli-3.html">enabling DHCP</a>.<br />
+Now when I switch back to the Images screen, I can see that 14.04 LTS is downloading, which is fantastic. I'll just let that download for a while and then move on to <a href="https://stormrider.io/maas-cli-3.html">enabling DHCP</a>.<br />
 </p>
 </div>
 </div>

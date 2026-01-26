@@ -211,7 +211,7 @@
 </div>
 <hr />
 <p>
-MAAS: <a href="https://billwear.github.io/maas-cli-1.html">Install</a> ~ <a href="https://billwear.github.io/maas-cli-2.html">Configure</a> ~ <a href="https://billwear.github.io/maas-cli-3.html">DHCP</a> ~ <a href="https://billwear.github.io/maas-cli-4.html">Commission</a> ~ <a href="https://billwear.github.io/maas-cli-5.html">Deploy</a> ~ <a href="https://billwear.github.io/maas-cli-6.html">jq</a> ~ <a href="https://billwear.github.io/maas-cli-7.html">SSH</a> ~ <a href="https://billwear.github.io/maas-cli-8.html">More jq</a><br />
+MAAS: <a href="https://stormrider.io/maas-cli-1.html">Install</a> ~ <a href="https://stormrider.io/maas-cli-2.html">Configure</a> ~ <a href="https://stormrider.io/maas-cli-3.html">DHCP</a> ~ <a href="https://stormrider.io/maas-cli-4.html">Commission</a> ~ <a href="https://stormrider.io/maas-cli-5.html">Deploy</a> ~ <a href="https://stormrider.io/maas-cli-6.html">jq</a> ~ <a href="https://stormrider.io/maas-cli-7.html">SSH</a> ~ <a href="https://stormrider.io/maas-cli-8.html">More jq</a><br />
 </p>
 <hr />
 
@@ -404,7 +404,7 @@ Import SSH keys [] (lp:user-id or gh:user-id): xxxxxxxxxxx</textarea>
 <h2 id="org51278f4"><span class="section-number-2">4.</span> Onward</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-Next, I'm going to try getting <a href="https://billwear.github.io/maas-cli-2.html">MAAS configured with the CLI</a>. Should be fun!<br />
+Next, I'm going to try getting <a href="https://stormrider.io/maas-cli-2.html">MAAS configured with the CLI</a>. Should be fun!<br />
 </p>
 </div>
 </div>
