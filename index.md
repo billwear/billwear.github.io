@@ -134,3 +134,6 @@ That took longer than I planned, but I also had a conversation with my wife, res
 ##### 12:30
 Realized I didn't take my meds, and needed some Motrin+Tylenol anyway, weather is giving me a sinus headache (and Motrin+Tylenol has the same effect on pain without narcotics; believe me, I've tried it for tooth pain, and it clearly works). CoQ10, fluoxetine, olmesartin, atenolol, HCTZ, and 81mg aspirin as a prophylactic (no heart issues, but murmur, so....).
 
+##### 12:48
+Fired off a message to my Virta coach about restarting Mounjaro after a few weeks off.  I have 7.5, though they've recommended 10mg (have to wait on the Medicare Part D for that).  Waiting to hear; this coach has been very responsive.
+
