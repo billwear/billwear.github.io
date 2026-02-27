@@ -109,4 +109,17 @@ A bunch of other apps and planners and journals. Too many distractions. They all
 |---------|-------|---------|---------|
 | 2/27/26 | 09:20 | Fasting | 292     |
 
+## daily journal
+
+##### 05:19
+
+Woke up early-ish. Turned up the A/C (too cold in here) and jumped into Obsidian on my iPhone to run my daily journal (you’re looking at it).  Got about halfway through my emologent before I realized that I was nodding off, so I put the phone down and slept until about 08:45.  Nice.
+
+##### 08:45
+
+Got up and fed the cat.  She was happy, and came back to cuddle my feet for while.  Worked for another 45 minutes in bed, just doing typical social things and systems checks and such as that.  Phones could make us really lazy, if they haven’t already.
+
+##### 10:05
+
+Decided to keep my journal live on [Substack](https://open.substack.com/pub/williamwear/p/journal-of-the-inner-fire?r=5l1qei&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true) and here. I wonder if I’ll update this through the day?  Maybe, or just resort to posting before I go to sleep so you see the whole thing.  Nothing to hide here.
 
