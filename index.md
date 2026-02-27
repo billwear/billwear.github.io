@@ -127,3 +127,6 @@ Slow shower, prep, dress time.  Semi-lazy up till this point, but now I need to 
 Breakfast.  Cold meatballs and double-buttered butter beans.  It's my Virta diet, supposed to help me lose weight (that part has worked) and control Type 2 Diabetes without so much medication (that part we're still working on.)  Feels like you're in a POW camp eating out of a small bowl of rice, but that's the SuperSizeMe American diet talking.
 ##### 11:31
 Pinged my wife.  She's been staying with her best friend (8 minutes away, basically a neighbor).  Best friend's husband is in the hospital / rehab for an extended recovery, so my wife is there for various types of support through this.  
+
+##### 12:25
+That took longer than I planned, but I also had a conversation with my wife, restarted the dryer, brought in the groceries and put them away, brought in the bottled water and cat litter left by Amazon, and cleaned up some trash around the porch.  So functional functioning, I suppose.
