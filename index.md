@@ -104,8 +104,9 @@ A bunch of other apps and planners and journals. Too many distractions. They all
 - [ ] Paying bills #numerical #gottado 
 - [ ] Deciding when and what on the SDR card, soldering and circuit-building. #hardchoices #rarevalue #gottado 
 ## Vitals
+
 | Date    | Time  | Type    | Glucose |
-| ------- | ----- | ------- | ------- |
+|---------|-------|---------|---------|
 | 2/27/26 | 09:20 | Fasting | 292     |
 
 
