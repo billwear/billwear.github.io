@@ -1,11 +1,8 @@
 ## Journal of the Inner Fire
 ***Stormrider***
 Fri Feb 27 05:59:22 -06:00 2026, 1772193562, 58/9
-
 Pungenday, Chaos 58, 3192
-
 Ouch!  That felt good!
-
 ### Emologent
 #### Mood
 I’m feeling very happy about yesterday: significant, meaningful progress with no angst or resistance. The right mix of work and play and thoughtfulness and craft work and house stuff. Even some silliness and screwing around. At the end of the day, though the most important things were moved far forward.
@@ -52,7 +49,7 @@ A bunch of other apps and planners and journals. Too many distractions. They all
 - [ ] Check on tonight's lotto tickets #placeyourbets #prep
 - [x] Take a shower, shave, all that stuff #hygiene #prep
 - [x] Get dressed and load my pockets on up #hygiene #prep
-- [ ] Eat a healthy breakfast, with the scale, from already cooked things #healthyeating #prep
+- [x] Eat a healthy breakfast, with the scale, from already cooked things #healthyeating #prep
 - [ ] Eat a healthy lunch, with the scale, from already cooked things #healthyeating #prep 
 - [ ] Eat a healthy dinner, with the scale, from already cooked things #healthyeating #prep
 - [ ] Get Diet Coke and an 8 pack of nutty bar cones at the DG. #concessions #penance #prep 
@@ -107,7 +104,6 @@ A bunch of other apps and planners and journals. Too many distractions. They all
 - [ ] Paying bills #numerical #gottado 
 - [ ] Deciding when and what on the SDR card, soldering and circuit-building. #hardchoices #rarevalue #gottado 
 ## Vitals
-
 | Date    | Time  | Type    | Glucose |
 |---------|-------|---------|---------|
 | 2/27/26 | 09:20 | Fasting | 292     |
@@ -115,23 +111,19 @@ A bunch of other apps and planners and journals. Too many distractions. They all
 ## daily journal
 
 ##### 05:19
-
 Woke up early-ish. Turned up the A/C (too cold in here) and jumped into Obsidian on my iPhone to run my daily journal (you’re looking at it).  Got about halfway through my emologent before I realized that I was nodding off, so I put the phone down and slept until about 08:45.  Nice.
 
 ##### 08:45
-
 Got up and fed the cat.  She was happy, and came back to cuddle my feet for while.  Worked for another 45 minutes in bed, just doing typical social things and systems checks and such as that.  Phones could make us really lazy, if they haven’t already.
 
 ##### 10:05
-
 Decided to keep my journal live on [Substack](https://open.substack.com/pub/williamwear/p/journal-of-the-inner-fire?r=5l1qei&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true) and here. I wonder if I’ll update this through the day?  Maybe, or just resort to posting before I go to sleep so you see the whole thing.  Nothing to hide here.
 
 ##### 10:31
-
 Got the daily journal up and running on my GitHub page (you're looking at it).  First coffee's almost done, so shower time.
-
 ##### 11:14
 Slow shower, prep, dress time.  Semi-lazy up till this point, but now I need to get serious about stuff.
-
 ##### 11:23
 Breakfast.  Cold meatballs and double-buttered butter beans.  It's my Virta diet, supposed to help me lose weight (that part has worked) and control Type 2 Diabetes without so much medication (that part we're still working on.)  Feels like you're in a POW camp eating out of a small bowl of rice, but that's the SuperSizeMe American diet talking.
+##### 11:31
+Pinged my wife.  She's been staying with her best friend (8 minutes away, basically a neighbor).  Best friend's husband is in the hospital / rehab for an extended recovery, so my wife is there for various types of support through this.  
