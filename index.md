@@ -130,3 +130,7 @@ Pinged my wife.  She's been staying with her best friend (8 minutes away, basica
 
 ##### 12:25
 That took longer than I planned, but I also had a conversation with my wife, restarted the dryer, brought in the groceries and put them away, brought in the bottled water and cat litter left by Amazon, and cleaned up some trash around the porch.  So functional functioning, I suppose.
+
+##### 12:30
+Realized I didn't take my meds, and needed some Motrin+Tylenol anyway, weather is giving me a sinus headache (and Motrin+Tylenol has the same effect on pain without narcotics; believe me, I've tried it for tooth pain, and it clearly works). CoQ10, fluoxetine, olmesartin, atenolol, HCTZ, and 81mg aspirin as a prophylactic (no heart issues, but murmur, so....).
+
