@@ -137,3 +137,8 @@ Realized I didn't take my meds, and needed some Motrin+Tylenol anyway, weather i
 ##### 12:48
 Fired off a message to my Virta coach about restarting Mounjaro after a few weeks off.  I have 7.5, though they've recommended 10mg (have to wait on the Medicare Part D for that).  Waiting to hear; this coach has been very responsive.
 
+#### 13:12
+Laundry fired off a few minutes ago, but it really seems like it took a long time to get through that.  Oh, maybe not, that's only 25m.  Nevermind. I have no natural sense of time or direction, which means being lost in a fog is not terrifying for me, since I don't know what time it is or which way I'm going anyway.
+
+##### 14:47
+Went over to the old house to look through the stuff stored over there and bring back some salable skunks (camping supplies, an unused drone, that sort of stuff).  While there, I found some sewing stuff that will help me, including a massive volume of white plasticized fabric that would make great purses, phone slings, and backpacks.  And a half a box of 11x14 greenbar computer paper I've been saving for decades.  No yellowing!  Don't know how they made this stuff, but it's apparently immune to indoor paper eaters.
