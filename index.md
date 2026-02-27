@@ -130,3 +130,5 @@ Decided to keep my journal live on [Substack](https://open.substack.com/pub/will
 
 Got the daily journal up and running on my GitHub page (you're looking at it).  First coffee's almost done, so shower time.
 
+##### 11:14
+Slow shower, prep, dress time.  Semi-lazy up till this point, but now I need to get serious about stuff.
