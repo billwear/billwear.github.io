@@ -1,8 +1,11 @@
 ## Journal of the Inner Fire
 ***Stormrider***
 Fri Feb 27 05:59:22 -06:00 2026, 1772193562, 58/9
+
 Pungenday, Chaos 58, 3192
+
 Ouch!  That felt good!
+
 ### Emologent
 #### Mood
 I’m feeling very happy about yesterday: significant, meaningful progress with no angst or resistance. The right mix of work and play and thoughtfulness and craft work and house stuff. Even some silliness and screwing around. At the end of the day, though the most important things were moved far forward.
@@ -45,8 +48,8 @@ A bunch of other apps and planners and journals. Too many distractions. They all
 ### To Do List
 - [ ] Note: Purge done items from the daily template as often as they start to really annoy you.
 #### #prep 
-- [ ] Start coffee, do morning BSR #hygiene #prep
-- [ ] Check on last night's lotto tickets #placeyourbets #prep
+- [x] Start coffee, do morning BSR #hygiene #prep
+- [ ] Check on tonight's lotto tickets #placeyourbets #prep
 - [ ] Take a shower, shave, all that stuff #hygiene #prep
 - [ ] Get dressed and load my pockets on up #hygiene #prep
 - [ ] Eat a healthy breakfast, with the scale, from already cooked things #healthyeating #prep
@@ -122,4 +125,8 @@ Got up and fed the cat.  She was happy, and came back to cuddle my feet for whil
 ##### 10:05
 
 Decided to keep my journal live on [Substack](https://open.substack.com/pub/williamwear/p/journal-of-the-inner-fire?r=5l1qei&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true) and here. I wonder if I’ll update this through the day?  Maybe, or just resort to posting before I go to sleep so you see the whole thing.  Nothing to hide here.
+
+##### 10:31
+
+Got the daily journal up and running on my GitHub page (you're looking at it).  First coffee's almost done, so shower time.
 
