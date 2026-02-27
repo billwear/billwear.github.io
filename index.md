@@ -132,3 +132,6 @@ Got the daily journal up and running on my GitHub page (you're looking at it).  
 
 ##### 11:14
 Slow shower, prep, dress time.  Semi-lazy up till this point, but now I need to get serious about stuff.
+
+##### 11:23
+Breakfast.  Cold meatballs and double-buttered butter beans.  It's my Virta diet, supposed to help me lose weight (that part has worked) and control Type 2 Diabetes without so much medication (that part we're still working on.)  Feels like you're in a POW camp eating out of a small bowl of rice, but that's the SuperSizeMe American diet talking.
