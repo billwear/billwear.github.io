@@ -50,8 +50,8 @@ A bunch of other apps and planners and journals. Too many distractions. They all
 #### #prep 
 - [x] Start coffee, do morning BSR #hygiene #prep
 - [ ] Check on tonight's lotto tickets #placeyourbets #prep
-- [ ] Take a shower, shave, all that stuff #hygiene #prep
-- [ ] Get dressed and load my pockets on up #hygiene #prep
+- [x] Take a shower, shave, all that stuff #hygiene #prep
+- [x] Get dressed and load my pockets on up #hygiene #prep
 - [ ] Eat a healthy breakfast, with the scale, from already cooked things #healthyeating #prep
 - [ ] Eat a healthy lunch, with the scale, from already cooked things #healthyeating #prep 
 - [ ] Eat a healthy dinner, with the scale, from already cooked things #healthyeating #prep
