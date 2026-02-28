@@ -1,7 +1,7 @@
 ## Journal of the Inner Fire
-***Stormrider***
+***Stormrider*** 
 Fri Feb 27 05:59:22 -06:00 2026, 1772193562, 58/9
-Pungenday, Chaos 58, 3192
+Pungenday, Chaos 58, 3192 
 Ouch!  That felt good!
 ### Emologent
 #### Mood
