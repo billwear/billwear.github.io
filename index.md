@@ -1,95 +1,97 @@
 ## Journal of the Inner Fire
-***Stormrider***\
-Fri Feb 27 05:59:22 -06:00 2026, 1772193562, 58/9\
-Pungenday, Chaos 58, 3192\
-Ouch!  That felt good!
+***Stormrider***  
+Sat Feb 28 07:12:48 -06:00 2026  
+
+[previous](20260227.md) - next(none)
+
+Epoch 1772284368, Day 59, Week 9 Prickle-Prickle, Chaos 59, 3192  
+PLUG IT IN!!!
 ### Emologent
 #### Mood
-I’m feeling very happy about yesterday: significant, meaningful progress with no angst or resistance. The right mix of work and play and thoughtfulness and craft work and house stuff. Even some silliness and screwing around. At the end of the day, though the most important things were moved far forward.
+Yesterday’s severe attack of Meniere’s — only classified as severe by the fact that Meclizine took some time to arrest it, not by the intensity of the vertigo — nevertheless hangs on in my mind, coloring my perceptions and giving me the uneasy, restless mood of a potential hypochondriac. All the signs, from weird spring weather to the wobbly disposition, seem to simply identify the reality. Still, the fidgety escape mode won’t settle.
 #### Energy
-Energy yesterday was a direct product of eating a lot healthier. That in turn because I took an hour and cooked the other day and put it all in the fridge. Late in the evening I binged on ice cream and regretted it later. I doubt I’ll make that mistake again. Yesterday was probably my best day ever. I really earned every minute and every result.
+Obviously the energy is there, and if I take the high road in my interpretation, it’s good energy. In the last two days, I filed my taxes for the year, which will result in a larger refund than I expected; I took care of my prescription drug policy to go along with Medicare, which removes most of my medicine costs; and I came up with a killer, small purse design, that can be morphed into a dozen different specific sewing products. So the week is clearly a win. But like most humans, I focus on the negative. 
 #### Mental Weather
-My mental weather is good. The weird spring weather has me stumbling a bit more (Meniere’s), but nothing I haven’t managed before. It’s more often an aggravation to have a built in weather station, but maybe I just need to learn how to operate it. 
+And my mental weather is guarded. Am I imagining the slightly unstable pressure situation in my head, simply because I had some strong vertigo yesterday, or is it hanging on still?
 #### Actual Weather
-It rained, as predicted. Brief, heavy, weird time of day, but rain.
+Outside, it’s foggy, which makes me wonder what all kinds of weather can we cram into one weekend?
 #### Loop
-Nothing’s looping except the theme from Superman. I’ve always considered that song bad karma because it can make you lean towards thinking you can defy physics, but sometimes it just sticks in your head. About the only way to turn it off is to replace it with the oompa-loompa song from Willy Wonka, which is like instant karmic punishment. ,,,,,chameleon, if you ask me.
+The loop is extraordinarily positive. Sitting down with Sharan Last night for 10 minutes, looking at my prototype small purse, produced a whole bunch of variations and a fix for the closure problem. I like these kind of loops.
 #### Lingering
-Fell back to sleep here, with the dark skies and my cat cuddling my feet and encouraging a nap. And honestly, isn’t that the way it should be? If I moved the needle that far forward yesterday, clearly I can do it again today. Part of it has to do with this file, which I started using as a daily journal weeks ago, but yesterday it organically morphed into a comprehensive, single-source life management system. Sounds like hyperbole, but I kid you not. Gonna put more in it today.
+Also lingering is the idea that I need to find another life-changing action for today. In the last two days I found three. In fact, on Thursday, I found one. On Friday, I found two. So if I keep that street going, today I should find three. That’s aspirational, but if you’re honest about it, aspirations are all that drives us.
 #### Unfinished
-What does finished even mean? If you don’t have an open project, who even are you?
+It would be easy to hang around in bed and say that my nap is unfinished, but I went to sleep at 8:45 last night, was only awake for about an hour in the middle of the night, and then finally picked up my phone at 6:20, so there’s no conceivable excuse for going back to sleep at this point.
 #### Gravity
-For the first time in my life, I actually figured something out with no reference points. Just said, “You know, let me start where I am now and just go from there.” Really good day. Kinda expecting the same today.
+I think for maybe the first time in my life, or at least the first time that I can remember, clearly, I am actually pushing myself out of devotion to valuable ideas and things I actually want to do, rather than discipline and obligation. Clearly, the obligations are there, but I’m not addressing them in the same old way anymore.
 #### Anchor
-And this journal is my anchor. When I first started writing files like this in vi on Unix decades ago, it didn’t work because it wasn’t ubiquitous. Now with cell phones and seamless sync and programmable templates, here we are. 
+You might say I’m anchored in possibility instead of responsibility at this moment. It would be nice to retain that.
 #### Mokuatsu
-I’m determined to let fear, uncertainty and doubt die by ignoring them. More than ignorance, actually disinviting them from my psyche. 
+And it’s weird. It’s almost like I’m resisting continuing to lie here in the bed and actually write this journal entry, because I know there are things that I need to get up and do, come Hell or high water.
 #### Idea Pressure
-Yesterday, I found $7700 I didn’t know I had; I properly prioritized dozens of longstanding tasks and important projects, and even gave the commercial ones catchy names. I made major decisions, like selling off my professional dungeon master kit (very well articulated kit with its own handmade carry sling, see FB marketplace). It was just time; as Thoreau said, “I have other lives to live and I have no more time for this one.”
+The purse I’m calling the basic phone sling, with the tagline “The Mini Purse for Maxi Use,“ is suddenly a real thing. I’ve got more than enough denim, canvas, and durable upholstery material that’s suitable for the outside, and probably three or four dozen choices for lining material. Got a ton of the dun-colored, upholstery thread that I’d like to use, which permits, narrow, or seam allowances. I’ve got the machine, space, and time to work on this. Yeah, I’ve got a lingering sinus headache, or maybe what I would call a Meniere’s Migraine, but I’m already certain I can work around that. That’s kind of the hell or high water part.
 #### Creative Current
-I suppose I should be perfecting tiny salables, but I seem to want to work on my coffee-themed quilt (“Brewhemian Rhapsody”). I’m leaning into my gut feelings here.
+And I should be able to nail other epic tasks today. Will I find three of them? Good question. And of course, at some point, they search for escalating epic counts becomes a waste of time.
 #### Gains
-Yesterday was a win until the very end of the day, when I binged on ice cream. I got that close, y’all. Not many steps further today and it might be nearly perfect.
+Of course, I’m overlooking the very first epic result of today: I’m chomping at the bit to get up and get things done because I’m devoted to the kind of results that I’ve gotten in the last couple of days. This feels like where I want to be.
 #### Pivot
-The pivot is not to question myself, just make good notes and rolling plans and keep moving.
+One might say the pivot, then, it’s a jump up and get moving. Another might say that the pivot is to gate this impulse in the way that one contains steam to produce energy. Another good question.
 #### Signal Boost
-I just need to add more life tracking to this file. Be unafraid to share. 
+Either way, the signal boost is to stick with a task long enough to bring it to an epic stopping point. And that might be the real pivot
 #### Rare Value
-My rare value might be living my life in the open. Jennicam pioneered this in pictures. Maybe I can pioneer it in words.
+Today’s rare value, of course, is that I’m having this internal debate at all. And not trying to make a list of the things I can do to make myself feel like I’ve done enough to then loaf for the rest of the day. May not be rare for you, but it feels rare for me
 #### Friction
-My only regret so far is lying in bed too long, but I can use the clingy cat as a source of friction.
+So here’s the day we’re all the friction is internal. Which way are we gonna go? What are we gonna get started? How can we get back to this productive activity that now feels like addictive candy? You don’t see that kind of friction every day.
 #### What wants to stay?
-This file format, with its template. Seems like a win.
+Clearly, keeping this dichotomy open is the main thing to keep alive. It’s not fully definable in words, but it is completely comprehensible in emotional terms.
 #### What needs to go?
-A bunch of other apps and planners and journals. Too many distractions. They all need to go.
+And I think what needs to fall away is already on the floor and can’t get back on the table. I’m not gonna help it.
 ### To Do List
-- [ ] Note: Purge done items from the daily template as often as they start to really annoy you.
+Note: Purge done items from the daily template as often as they start to really annoy you.
 #### #prep 
-- [x] Start coffee, do morning BSR #hygiene #prep
-- [ ] Check on tonight's lotto tickets #placeyourbets #prep
-- [x] Take a shower, shave, all that stuff #hygiene #prep
-- [x] Get dressed and load my pockets on up #hygiene #prep
-- [x] Eat a healthy breakfast, with the scale, from already cooked things #healthyeating #prep
+- [ ] Start coffee, do morning BSR, take AM meds, get BP #hygiene #prep
+- [ ] Check on last night's lotto tickets #placeyourbets #prep
+- [ ] Coffee, emologent essay #writing #firstthing #prep
+- [ ] Take a shower, shave, all that stuff #hygiene #prep
+- [ ] Get dressed and load my pockets on up #hygiene #prep
+- [ ] Eat a healthy breakfast, with the scale, from already cooked things #healthyeating #prep
 - [ ] Eat a healthy lunch, with the scale, from already cooked things #healthyeating #prep 
 - [ ] Eat a healthy dinner, with the scale, from already cooked things #healthyeating #prep
-- [x] Get Diet Coke and an 8 pack of nutty bar cones at the DG. #concessions #penance #prep 
-- [ ] Go to Labcorp and do bloodwork #healthyliving #prep
 #### #deepwork #projects
-- [x] Master Dungeon Master Kit (Dice, Spellcards, Dicebag, Learning/teaching games, Dungeon Builder kit, Dungeon Master's Guide, Player's Guide, D&D Cookbook (for preparing suitable meals for hosting a D&D campaign)) #deepwork #profitable #projects
-- [x] Selling Salable Sideways Skunks #profitable #deepwork #projects
+- [ ] Master Dungeon Master Kit (Dice, Spellcards, Dicebag, Learning/teaching games, Dungeon Builder kit, Dungeon Master's Guide, Player's Guide, D&D Cookbook (for preparing suitable meals for hosting a D&D campaign)) #deepwork #profitable #projects
+- [ ] Selling Salable Sideways Skunks #profitable #deepwork #projects
 - [ ] Brewhemian Rhapsody #profitable #deepwork #projects
-- [x] Very Simple Phone Slings, the Mini Purse for Maxi Use #profitable #deepwork #projects
+- [ ] Very Simple Phone Slings, the Mini Purse for Maxi Use #profitable #deepwork #projects
 - [ ] Spiritual Coffee Support Kits #profitable #deepwork #projects
 - [ ] Sensible Singular Web Presence #profitable #deepwork #artisanship #projects
 - [ ] Zero Defects #creative #rarevalue #profitable #deepwork #projects
 - [ ] Deconstructed Sewing #creative #rarevalue #research #deepwork #projects
 
 #### #mechanical
-- [x] Restart the laundry; use timers to keep that rolling; wash the material when clothes are done #mechanical
-- [x] Get trash bags in all the trash cans #mechanical 
+- [ ] Deal with the "deal with" pile; this will include making a reading list #mechanical
+- [ ] Deal with the "put away" pile; may have to find places #mechanical
+- [ ] Restart the laundry; use timers to keep that rolling; wash the material when clothes are done #mechanical
+- [ ] Get trash bags in all the trash cans #mechanical 
 - [ ] Swamp out the dishes #mechanical
-- [x] Bring in the water and the litter #mechanical
+- [ ] Bring in the water and the litter #mechanical
 - [ ] Clean my glasses #mechanical 
-- [x] Clean the litter box #mechanical 
-- [x] Get the trash out of the car #mechanical
+- [ ] Cleaning the litter box #mechanical 
+- [ ] Getting the trash out of the car #mechanical
 - [ ] Sweeping the floor #mechanical
-
-#### #renovation #projects
 - [ ] Getting the litter stand up and running #mechanical
 - [ ] Painting the bathroom corner #mechanical
 - [ ] Sanding out the pantry doors #mechanical
 - [ ] Cleaning up the porch more #mechanical
 - [ ] Getting the litter stand up and running #mechanical 
 - [ ] Replace the weirdly-acting dining dimmer switch #mechanical
-
 #### #designwork #research  #reading #vespercouch
 - [ ] Copy down the general design of the leather bag to reproduce in canvas #designwork #vespercouch 
-- [x] Check on Mounjaro restart #research #vespercouch
+- [ ] Check on Mounjaro restart #research #vespercouch
 - [ ] Finding the right adaptor for my shortwave radio (Claude help) #research #vespercouch
-- [x] Getting signed up for Medicare Part D #research #administrivia #vespercouch
+- [ ] Getting signed up for Medicare Part D #research #administrivia #vespercouch
 - [ ] Filling out the forms for the remainder of my 401(k) #research #administrivia #vespercouch
 - [ ] Learning crochet, finally #research #artisanship #vespercouch
 - [ ] Revisiting my runway to cement it more #research #vespercouch
+- [ ] Running my taxes for this year to get a clue, maybe buy a program to do this (complicated) #research #administrivia #profitable #vespercouch
 - [ ] Deconstructed sewing #duplicate #vespercouch
 - [ ] Reading list vv
 - [ ] - Artist's Side Hustle (review due) #reading #vespercouch
@@ -103,71 +105,11 @@ A bunch of other apps and planners and journals. Too many distractions. They all
 - [ ] - Mistborn 2 #reading #vespercouch 
 - [ ] - Mistborn 3 #reading #vespercouch 
 #### #gottado 
-- [ ] Picking up the car when it's ready. #errands #gottado
+- [ ] Picking up the car when it's ready, and getting more diet at Rouse's while out there #errands #gottado
 - [ ] Paying bills #numerical #gottado 
 - [ ] Deciding when and what on the SDR card, soldering and circuit-building. #hardchoices #rarevalue #gottado 
-## vitals
+## Vitals
 | Date    | Time  | Type    | Glucose |
-|--------|-----|-------|-------|
+| ------- | ----- | ------- | ------- |
 | 2/27/26 | 09:20 | Fasting | 292     |
 
-## daily journal
-
-##### 05:19
-Woke up early-ish. Turned up the A/C (too cold in here) and jumped into Obsidian on my iPhone to run my daily journal (you’re looking at it).  Got about halfway through my emologent before I realized that I was nodding off, so I put the phone down and slept until about 08:45.  Nice.
-
-##### 08:45
-Got up and fed the cat.  She was happy, and came back to cuddle my feet for while.  Worked for another 45 minutes in bed, just doing typical social things and systems checks and such as that.  Phones could make us really lazy, if they haven’t already.
-
-##### 10:05
-Decided to keep my journal live on [Substack](https://open.substack.com/pub/williamwear/p/journal-of-the-inner-fire?r=5l1qei&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true) and here. I wonder if I’ll update this through the day?  Maybe, or just resort to posting before I go to sleep so you see the whole thing.  Nothing to hide here.
-
-##### 10:31
-Got the daily journal up and running on my GitHub page (you're looking at it).  First coffee's almost done, so shower time.
-##### 11:14
-Slow shower, prep, dress time.  Semi-lazy up till this point, but now I need to get serious about stuff.
-##### 11:23
-Breakfast.  Cold meatballs and double-buttered butter beans.  It's my Virta diet, supposed to help me lose weight (that part has worked) and control Type 2 Diabetes without so much medication (that part we're still working on.)  Feels like you're in a POW camp eating out of a small bowl of rice, but that's the SuperSizeMe American diet talking.## daily journal
-
-##### 05:19
-Woke up early-ish. Turned up the A/C (too cold in here) and jumped into Obsidian on my iPhone to run my daily journal (you’re looking at it).  Got about halfway through my emologent before I realized that I was nodding off, so I put the phone down and slept until about 08:45.  Nice.
-
-##### 08:45
-Got up and fed the cat.  She was happy, and came back to cuddle my feet for while.  Worked for another 45 minutes in bed, just doing typical social things and systems checks and such as that.  Phones could make us really lazy, if they haven’t already.
-
-##### 10:05
-Decided to keep my journal live on [Substack](https://open.substack.com/pub/williamwear/p/journal-of-the-inner-fire?r=5l1qei&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true) and here. I wonder if I’ll update this through the day?  Maybe, or just resort to posting before I go to sleep so you see the whole thing.  Nothing to hide here.
-
-##### 10:31
-Got the daily journal up and running on my GitHub page (you're looking at it).  First coffee's almost done, so shower time.
-##### 11:14
-Slow shower, prep, dress time.  Semi-lazy up till this point, but now I need to get serious about stuff.
-##### 11:23
-Breakfast.  Cold meatballs and double-buttered butter beans.  It's my Virta diet, supposed to help me lose weight (that part has worked) and control Type 2 Diabetes without so much medication (that part we're still working on.)  Feels like you're in a POW camp eating out of a small bowl of rice, but that's the SuperSizeMe American diet talking.
-##### 11:31
-Pinged my wife.  She's been staying with her best friend (8 minutes away, basically a neighbor).  Best friend's husband is in the hospital / rehab for an extended recovery, so my wife is there for various types of support through this.  
-##### 11:34
-Time to hit the local DG grocery for a few odds and ends we're low on.  Back in a few.
-##### 12:25
-That took longer than I planned, but I also had a conversation with my wife, restarted the dryer, brought in the groceries and put them away, brought in the bottled water and cat litter left by Amazon, and cleaned up some trash around the porch.  So functional functioning, I suppose
-##### 12:30
-Realized I didn't take my meds, and needed some Motrin+Tylenol anyway, weather is giving me a sinus headache (and Motrin+Tylenol has the same effect on pain without narcotics; believe me, I've tried it for tooth pain, and it clearly works). CoQ10, fluoxetine, olmesartin, atenolol, HCTZ, and 81mg aspirin as a prophylactic (no heart issues, but murmur, so....).
-##### 12:48
-Fired off a message to my Virta coach about restarting Mounjaro after a few weeks off.  I have 7.5, though they've recommended 10mg (have to wait on the Medicare Part D for that).  Waiting to hear; this coach has been very responsive.
-#### 13:12
-Laundry fired off a few minutes ago, but it really seems like it took a long time to get through that.  Oh, maybe not, that's only 25m.  Nevermind. I have no natural sense of time or direction, which means being lost in a fog is not terrifying for me, since I don't know what time it is or which way I'm going anyway.
-##### 14:47
-Got back from a trip to the old house to look through the stuff stored over there and bring back some salable skunks (camping supplies, an unused drone, that sort of stuff).  While there, I found some sewing stuff that will help me, including a massive volume of white plasticized fabric that would make great purses, phone slings, and backpacks.  And a half a box of 11x14 greenbar computer paper I've been saving for decades.  No yellowing!  Don't know how they made this stuff, but it's apparently immune to indoor paper eaters.
-#### 15:10
-Took apart my sample phone sling that I thrifted and made my own pattern from the idea. Solid design, so I went ahead and used denim and some Mardi Gras material to make a prototype. 
-##### 17:45
-Hit with a very strong attack of Meniere’s, a genetic vestibular syndrome that makes you dizzy to the point of nausea. Luckily I felt it coming on and downed two Meclizine to counter it. I should have been better prepared: change of seasons, been wobbly for a couple of days, weird head feelings, optical migraines, including one stationary line that lasted 20m or so. 
-##### 18:00 
-It calmed down enough that I could finish. Made a nice prototype, really amazing base for nicely articulated phone purses.
-
-##### 18:25
-Called it a day, nausea and headache still lingering slightly. Sharan called and asked me to bring her some things. Told her she’d need to come get them, as I had just laid down to rest off the attack. She dropped by. We had a good chat about her day at the hospital and did some joint design work on the purse; she actually solved a couple of problems that I couldn’t figure out. 
-##### 20:00
-Spent the rest of the evening playing phone solitaire.
-##### 20:45
-Crashed out. Good day anyway. Look at what I accomplished.
