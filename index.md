@@ -4,9 +4,7 @@ Sat Feb 28 07:12:48 -06:00 2026
 
 [previous](20260227.md) - next(none)
 
-## Journal of the Inner Fire
-***Stormrider***  
-Sat Feb 28 07:12:48 -06:00 2026  
+
 Epoch 1772284368, Day 59, Week 9 Prickle-Prickle, Chaos 59, 3192  
 PLUG IT IN!!!
 ### Emologent
