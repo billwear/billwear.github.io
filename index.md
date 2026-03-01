@@ -1,10 +1,6 @@
 ## Journal of the Inner Fire
 ***Stormrider***  
 Sat Feb 28 07:12:48 -06:00 2026  
-
-[previous](20260227.md) - next(none)
-
-
 Epoch 1772284368, Day 59, Week 9 Prickle-Prickle, Chaos 59, 3192  
 PLUG IT IN!!!
 ### Emologent
@@ -149,11 +145,11 @@ Note: Purge done items from the daily template as often as they start to really 
 - [x] Start coffee, do morning BSR, take AM meds, get BP #hygiene #prep
 - [x] Check on last night's lotto tickets #placeyourbets #prep
 - [x] Coffee, emologent essay #writing #firstthing #prep
-- [ ] Take a shower, shave, all that stuff #hygiene #prep
-- [ ] Get dressed and load my pockets on up #hygiene #prep
+- [x] Take a shower, shave, all that stuff #hygiene #prep
+- [x] Get dressed and load my pockets on up #hygiene #prep
 - [x] Eat a healthy breakfast, with the scale, from already cooked things #healthyeating #prep
-- [ ] Eat a healthy lunch, with the scale, from already cooked things #healthyeating #prep 
-- [ ] Eat a healthy dinner, with the scale, from already cooked things #healthyeating #prep
+- [x] Eat a healthy lunch, with the scale, from already cooked things #healthyeating #prep 
+- [x] Eat a healthy dinner, with the scale, from already cooked things #healthyeating #prep
 #### #deepwork #projects
 - [ ] Master Dungeon Master Kit (Dice, Spellcards, Dicebag, Learning/teaching games, Dungeon Builder kit, Dungeon Master's Guide, Player's Guide, D&D Cookbook (for preparing suitable meals for hosting a D&D campaign)) #deepwork #profitable #projects
 - [ ] Selling Salable Sideways Skunks #profitable #deepwork #projects
@@ -183,13 +179,8 @@ Note: Purge done items from the daily template as often as they start to really 
 - [ ] Replace the weirdly-acting dining dimmer switch #mechanical
 #### #designwork #research  #reading #vespercouch
 - [ ] Copy down the general design of the leather bag to reproduce in canvas #designwork #vespercouch 
-- [ ] Check on Mounjaro restart #research #vespercouch
 - [ ] Finding the right adaptor for my shortwave radio (Claude help) #research #vespercouch
-- [ ] Getting signed up for Medicare Part D #research #administrivia #vespercouch
-- [ ] Filling out the forms for the remainder of my 401(k) #research #administrivia #vespercouch
 - [ ] Learning crochet, finally #research #artisanship #vespercouch
-- [ ] Revisiting my runway to cement it more #research #vespercouch
-- [ ] Running my taxes for this year to get a clue, maybe buy a program to do this (complicated) #research #administrivia #profitable #vespercouch
 - [ ] Deconstructed sewing #duplicate #vespercouch
 - [ ] Reading list vv
 - [ ] - Artist's Side Hustle (review due) #reading #vespercouch
@@ -220,3 +211,56 @@ On to coffee, and a morning journal of the inner fire essay. I quit doing them e
 Chatted with my wife while eating "breakfast:" a small piece of sausage from a pig my sister-in-law had butchered, some fresh speckled butter beanscooked in butter, and a big pile of yellow squash (also fresh) cooked in olive oil and Parmesan cheese.  That's kinda the diet for those who don't want metabolic issues with the terrible food we have available these days.
 ##### 10:59
 Time to shower, shave, dress, and all that stuff.  I mean, it's fun hanging around in pajamas, robe, and slippers, but can't go to town that way, if I decide to go to town.
+##### 11:35
+Nothing I can really do in town today, per sei, but I do kinda feel like getting out of the house.  Wonder what I could take with me to do at the coffee shop? Well:
+- [x] I could take art pencils and sketch out the Brewhemian Fantasy quilt, since I have that range of colors, on a sketchpad I can put in my bag (surely I have at least one).  
+- [x] I could take the prototype phone sling, a tape measure, and my old Samsung phone to lay out a better design. 
+- [x] I could rip down some of the purses and build complementary patterns.
+- [x] I could write a few inspirational messages for Spiritual Coffee Support Kits, to test printing when I get back. 
+- [x] I could figure out how to deal with The Way of Emacs and Solder and Signal that will free up later income and not get me charged for another year. 
+- [ ] I could work on Zero Defects some more, see if I can make it conform to the essay I wrote this morning. 
+- [x] I could find the right adaptor for my shortwave radio to go to the loop antenna. 
+- [ ] I could take the some crochet thread and a needle to figure out how to get that first knot going.
+- [ ] I could read that "Artist's Side Hustle" book I've been promising to review, and actually post a review.
+
+###### Things to take with me
+- [x] Art pencils for coffee colors
+- [x] Photos of material on iPhone / Mac
+- [x] Larger sketchbook (or buy one)
+- [x] Phone sling
+- [x] Tape measure
+- [x] Large Samsung phone
+- [x] Photos of antenna and radio connectors
+- [x] Crochet thread & needle (small sizes)
+- [x] I could take a couple of purses to rip and measure & draw them.
+- [x] Artist's Side Hustle book
+#### 13:30
+Amazing that it took two hours to get thru a 30m trip, but that’s with prep, planning, and other stops on my way to the bookstore. Anyway, getting started sketching my Bohemian Fantasy quilt.
+
+#### 13:57
+Working with the various tones an patterns, it looks like a “Courthouse Steps” kinda thing, alternating dark and light expanding rows, and alternating prints and solids within those rows.
+
+![[IMG_0212.jpeg]]
+
+#### 14:15
+Came up with an improved design for my Basic Phone Sling and sketched it out, with sizes.
+#### 14:40
+Diagrammed one of my example purses, with sketches and measurements.  I suspect I'll just use some of the general ideas for the BPS, there's not much to this unbranded flea that would justify copying it, and I don't do that anyway.
+#### 14:58
+Moved on to writing inspirational messages for cards for my Scriptural Coffee Support Kits.
+
+1. "I will lift up mine eyes unto the hills, from whence cometh my help." (PSA 121:1)   The KJV version of this scripture does not end in a question mark, but most other translations do, and it makes sense.  When we're in trouble, we start looking around for something, anything we can grab onto, any source of help whatsoever.  But verse 2 is almost a rebuke for this question: "My help comes from the LORD, the Maker of heaven and earth."  It reads like, "You're looking in the wrong place when you start scanning the landscape for an approaching friendly army or a guy on a white horse." This doesn't mean God won't send someone to help you, usually from a place you didn't expect.  It just means that God wants you to turn to him first, and let him handle the details and pick the messenger. What would it take for you to stop right now and tell Him what's troubling you?  
+2. "We acknowledege our wickedness, LORD, and the guilt of our ancestors; we have indeed sinned against you.  For the sake of your name do not despise us; do not dishonor your glorious throne.  Remember your covenant with us and do not break it." (Jeremiah 14:20-21) This is Jeremiah responding to one of God's harshest evaluations of the Israelites.  It echoes Nehemiah's prayer that takes full responsibility for the sinful situation in Israel.  We'd like to think that "it wasn't us." We pray, we tithe, we read our Bibles faithfully, we never miss a church service, but somehow, things just don't get better.  It would never cross our mind to apologize for the sins of everyone.  In Nehemiah's case, God blessed him and sent him on a decade-long mission to restore Jerusalem.  It's a miraculous story from beginning to end (worth reading this neglected book).  And it all started by admitting that "we have all sinned and disobeyed."  Have you tried it?
+3. Ezekiel 22:30 makes a dour pronouncement on the nation: "I looked for someone among them who would build up the wall and stand before me in the gap of behalf of the land so I would not have to destroy it, but I found no one." We often look to the preacher, or the deacons, or maybe our Sunday School teacher to stand up and stand for God.  After all, we think, if they aren't doing it, why should I, a lesser member of God's church, take that risk?  But we're misunderstanding how God sees us.  No member of the church is any better or worse than any other.  "For all have sinned and fall short of the glory of God," Paul tells us.  If you feel led to stand up for something that you feel is wrong, or that needs changing, that is the only qualification you need.  Should you take some time and pray about something now, and see what God has for you?
+
+That's a very good start.  I have no idea who needs to hear any of this, but I'm willing to put it out there.
+#### 15:37
+Spent the last half hour trying to find my domain registration for my websites, and they're trivial to maintain the domain names, something like $20 every three years.  No need to mess with this right now.  I did drop my subscription to the website (not the domain) for jotif.xxx, which is costing me $300 a year, and can be handled from GitHub with no issues.
+#### 15:41
+Okay, time for quick break and maybe something to eat and drink.
+#### 16:00
+After a brief chat with my wife, realized I need to go get cash for a church fundraiser. That’s a trip, so I’d better go now.
+#### 18:22
+After a long trip to another city to use my bank’s ATM, I’m now able to pay for lunch tomorrow at the church fundraiser. And what’s left on my list I can do while lounging around the house. I think I’ll start by ordering the SW adapter I need.
+#### 18:20
+Done with that. And that feels like a good stopping point for today. A whole lot of things accomplished.
