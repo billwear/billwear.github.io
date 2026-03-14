@@ -265,6 +265,34 @@ body {
   line-height: 1.7;
 }
 
+/* Post navigation */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.post-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.post-nav a:hover {
+  color: var(--accent-glow);
+}
+
+.post-nav-prev {
+  margin-right: auto;
+}
+
+.post-nav-next {
+  margin-left: auto;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   html {
