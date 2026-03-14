@@ -1,0 +1,18 @@
+title: Stormrider
+tagline: "Burn slow. Build deep. Be the proof."
+description: "Journal of the Inner Fire"
+url: "https://billwear.github.io"
+baseurl: ""
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Build settings
+exclude:
+  - README.md
+  - LICENSE
+  - "*.bak"
+
+# RSS feed
+plugins:
+  - jekyll-feed
