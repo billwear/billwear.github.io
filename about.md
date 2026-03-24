@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I'm Bill Wear. I've spent most of my working life writing — technical documents, tutorials, reference guides, ghostwritten books, training courses, business literature, and more code than I expected to when I started out. I've written in C, C++, Python, PHP, Perl, and bash. I've managed big IT products for big banks and managed engineering programs that probably should have come with a warning label.
+I’m Bill Wear. I’ve spent most of my working life writing — technical documents, tutorials, reference guides, ghostwritten books, training courses, and more code than I expected to when I started out. I’ve written in C, C++, Python, PHP, Perl, and bash. I’ve managed big IT products for big banks and managed engineering programs that probably should have come with a warning label. Through all of it, the thing that kept me hooked was the same: finding the shortest path from “this is complicated” to “oh, I get it.”
 
 I've also butchered meat, delivered pianos, and run a cash register in my dad's grocery store as a kid. I researched cancer drugs in college before realizing my chemistry advisor couldn't afford to file a tax return, at which point I changed my major to EE/CS and never looked back.
 
