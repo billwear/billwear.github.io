@@ -5,42 +5,34 @@ excerpt: "Looks like everyone's praying these days."
 date: 2026-03-22
 ---
 
-My naive six-year-old self was fascinated. Snuggling into our family table at the Saturday night diner, I spotted an anomaly at the adjacent table. 
+My naive six-year-old self was fascinated.
 
-“Look daddy,” I said, “those people are sleeping!” 
+Snuggling into our family table at the Saturday night diner, I spotted an anomaly at the adjacent table.
 
-He shushed me with a finger and explained The Saying of Grace. Why do we only do that at home? A more impatient finger. Should we do that here? Before we eat the table crackers? A slap on my leg closed the discussion.
+"Look daddy," I said, "those people are sleeping!"
 
-Sixty years later, my wife and I were settling down to our own restaurant table when I noticed heads bowed at every table. Diners hunched over their phones, praying fervently to the God of Gorilla Glass. A lifetime later, and only the favored deity had changed.[](https://substackcdn.com/image/fetch/$s_!tEzh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1f94016d-12dc-4a0c-b700-53c1a87cf237_1536x1024.png)
+He shushed me with a finger and explained the Saying of Grace. Why do we only do that at home? A more impatient finger. Should we do that here? Before we eat the table crackers? A slap on my leg closed the discussion.
 
-I wanted to call my wife’s attention to this, but out of respect for her prayers to Facebook, I kept my silence.
+Sixty years later, my wife and I were settling into our own restaurant table when I noticed heads bowed at every table. Diners hunched over their phones, praying fervently to the God of Gorilla Glass. A lifetime later, and only the favored deity had changed.
 
-## A beam in my eye
+I wanted to call my wife's attention to this, but out of respect for her prayers to Facebook, I kept my silence.
 
-Society is a mass of immediate, pervasive, and persistent distractions, though I don’t think it’s new. Attention has become a more potent currency for all demographics, moving well beyond the older, ninety-second television tax.
+---
 
-We can surreptitiously observe a more personal kind of make-believe, real-time, in the carefully-curated stream of instagram moments that stand in for the lives of our friends and acquaintances. 
+Attention has been capital forever. Newspapers were slower, radio and television more sporadic, but our own attention has been weaponized against us in a much more pernicious way lately -- and it isn't new, just faster. The ninety-second television tax has been replaced by the nanosecond algorithm that reads the difference in how long you paused on a cat video versus a political meltdown and adjusts accordingly.
 
-We can doomscroll endless streams of weird tricks and $10-a-month miracle cures. And we can ride the reels of fifteen-second loops that adapt themselves to our attention patterns by reading nanosecond differences in pause time, getting us into a weird space when the cat wants a few pets or we have to grab a soda.
+We doomscroll weird tricks and miracle cures. We ride fifteen-second reels calibrated to our nervous systems. We get interrupted from our distractions by notifications about four-day-old posts we missed because we were already distracted. The whole stack is designed to keep us just engaged enough to show us one more thing.
 
-Even more pervasive is the “notify when staring” algorithm that tries to distract you from your distraction with four-day-old posts you neglected to look at because you were actually interacting with the unreal world of TikTok. 
+And then there's me.
 
-## Stranger from a strange land
+I'm staring at my phone too. Except I'm logged into my home server, typing text into Emacs, reading plain-text email, surfing the web with no graphics or ads, connecting with people over secured channels that have been around since the eighties. Dressed in tribal garb, war paint in place, conversing with others in the mothership about things that would be incomprehensible to anyone who could actually hear my voice.
 
-And then there’s me. I’m staring at my phone as well, except that I’m logged into my private home server typing text into Emacs, reading plain-text email and surfing the Web with no grapics or ads, connecting with people over secured text-only channels that have been around since the 80s. 
+I am the alien in the room. Quietly disguised as a Gorilla Glass worshipper, apparently stroking my idol to summon the Blessed Dopamine. In fact I'm inhabiting a world where simple truth is revered, complexity is earned, and all claims for the One True Way are treated with the suspicion they deserve -- which is principle sixteen, if you're counting.
 
-Whose side am I on?
+The irony is that from the outside we look identical. Both hunched. Both scrolling. Both somewhere else entirely.
 
-To be honest, attention has been capital forever. Newspapers were slower, radio and television more sporadic, but our own attention has been weaponized against us in a much more pernicious way lately. 
+The difference is I know where I am.
 
-By the same token, I can now connect to my supercomputer at home from nearly anywhere and live in a very focused and ancient subculture, while emulating the natives. Dressed in tribal garb, war paint in place, I can converse with others in the mothership about things which would be mysterious to those people who could hear my voice.
+The zeitgeist feels like being one of the few teflon lifeboats in a sea of molasses. Whether that's wisdom or just a different flavor of delusion, I genuinely can't tell you. The jury is still out.
 
-There are no sides here, but there *is* a real danger, though I can’t seem to care. Others are vicariously living their dreams, while I am *actually* enjoying my preferred lifestyle in the midst of the cult, in cognito and unnoticed. Or is that the other way around?
-
-I am, in effect, the alien in the room, quietly disguised as a Gorilla-glass worshipper, apparently reverently stroking my idol to bring forth the Blessed Dopamine. In fact, I’m inhabiting a world where simple truth is revered, and all claims for the One True Way are treated with profound disrespect.
-
-But in Their minds, so are They.
-
-It’s a weird existence. I currently don’t know how to judge it. The zeitgeist feels like being one of the few teflon lifeboats in a sea of molasses. 
-
-And the jury, if there even is one, is still out. Looking at their phones.
+Looking at their phones.
