@@ -1,18 +1,55 @@
 ---
 layout: default
+title: The Accidental Physicist
 ---
-<div class="home-intro">
-  <p>Essays on craft, devotion, and the vision‑devotion‑craft cycle that keeps the fire burning. By <a href="{{ '/about' | relative_url }}">Stormrider</a>.</p>
-</div>
 
-<ul class="post-list">
-  {% for post in site.posts %}
-  <li class="post-item">
-    <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
-    <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-    {% if post.excerpt %}
-    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
-    {% endif %}
-  </li>
-  {% endfor %}
-</ul>
+<div class="home">
+
+  <header class="site-header-block">
+    <p class="site-byline">Bill Wear</p>
+    <h1 class="site-headline">The Accidental Physicist</h1>
+    <p class="site-tagline">The physics of living.</p>
+  </header>
+
+  <div class="intro">
+    <p>I didn't set out to be a physicist. I set out to understand things — machines, systems, people, language, why some structures hold and others collapse. Turns out the same principles keep showing up everywhere. I've been working out <a href="/about">seventeen of them</a>. This is where I write about that.</p>
+  </div>
+
+  <section class="orbit">
+    <h2 class="section-label">In orbit</h2>
+    <div class="satellites">
+      <a class="sat" href="https://thewarofemacs.com" target="_blank" rel="noopener">
+        <span class="sat-tag">Tools &amp; Workflow</span>
+        <span class="sat-title">The Way of Emacs</span>
+        <span class="sat-sub">Physics of modular tools</span>
+      </a>
+      <a class="sat" href="https://billwear.substack.com" target="_blank" rel="noopener">
+        <span class="sat-tag">Society &amp; Meaning</span>
+        <span class="sat-title">Journal of the Inner Fire</span>
+        <span class="sat-sub">Physics of society and meaning</span>
+      </a>
+      <a class="sat" href="https://bohobytebags.etsy.com" target="_blank" rel="noopener">
+        <span class="sat-tag">Making</span>
+        <span class="sat-title">Boho Byte Bags</span>
+        <span class="sat-sub">Physics of making your own stuff</span>
+      </a>
+      <a class="sat" href="/solder-and-signal">
+        <span class="sat-tag">Connection</span>
+        <span class="sat-title">Solder &amp; Signal</span>
+        <span class="sat-sub">Physics of connecting with others</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="recent-posts">
+    <h2 class="section-label">Recent writing</h2>
+    {% for post in site.posts limit:5 %}
+    <article class="post-item">
+      <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+      <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+    </article>
+    {% endfor %}
+  </section>
+
+</div>

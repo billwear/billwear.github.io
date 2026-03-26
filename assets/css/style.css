@@ -312,3 +312,168 @@ body {
     font-size: 1.6rem;
   }
 }
+
+/* -----------------------------------------------
+   The Accidental Physicist — homepage styles
+   Add to assets/css/main.scss or equivalent
+   ----------------------------------------------- */
+
+.home {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Header block */
+.site-header-block {
+  margin-bottom: 2rem;
+}
+
+.site-byline {
+  font-size: 13px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: $grey-color;
+  margin-bottom: 0.25rem;
+}
+
+.site-headline {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 0.25rem;
+  border: none;
+  padding: 0;
+}
+
+.site-tagline {
+  font-size: 15px;
+  font-style: italic;
+  color: $brand-color;
+  margin: 0 0 1.5rem;
+}
+
+/* Intro paragraph */
+.intro {
+  font-size: 16px;
+  line-height: 1.75;
+  color: $grey-color-dark;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $grey-color-light;
+}
+
+/* Section labels */
+.section-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: $grey-color;
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+  border: none;
+}
+
+/* Satellite grid */
+.orbit {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $grey-color-light;
+}
+
+.satellites {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.sat {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $grey-color-light;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.sat:hover {
+  border-color: $brand-color;
+  text-decoration: none;
+}
+
+.sat-tag {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $brand-color;
+  margin-bottom: 0.4rem;
+}
+
+.sat-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: $text-color;
+  margin-bottom: 0.2rem;
+}
+
+.sat-sub {
+  font-size: 12px;
+  font-style: italic;
+  color: $grey-color;
+}
+
+/* Recent posts */
+.recent-posts {
+  margin-bottom: 2rem;
+}
+
+.post-item {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid $grey-color-light;
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.post-date {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $grey-color;
+  margin-bottom: 0.4rem;
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.post-title a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  color: $brand-color;
+}
+
+.post-excerpt {
+  font-size: 14px;
+  color: $grey-color-dark;
+  line-height: 1.65;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .satellites {
+    grid-template-columns: 1fr;
+  }
+  .site-headline {
+    font-size: 32px;
+  }
+}
