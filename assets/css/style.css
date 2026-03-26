@@ -471,3 +471,9 @@ body {
     font-size: 32px;
   }
 }
+
+.site-title-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

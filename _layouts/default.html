@@ -19,19 +19,19 @@
 </head>
 <body>
   <div class="site-wrap">
-    <header class="site-header">
-      <a href="{{ '/' | relative_url }}" class="site-header-link">
-	<p class="site-byline">Bill Wear</p>
-	<h1 class="site-title">{{ site.title }}</h1>
-	<p class="site-tagline">{{ site.description }}</p>
-      </a>
-      <nav class="site-nav">
-	<a href="{{ '/' | relative_url }}">Writing</a>
-	<a href="{{ '/about' | relative_url }}">About</a>
-	<a href="{{ '/feed.xml' | relative_url }}">RSS</a>
-	<a href="{{ '/about#work-with-me' | relative_url }}">Work With Me</a>
-      </nav>
-    </header>
+<header class="site-header">
+  <a href="mailto:williamowear@gmail.com" class="site-byline">Bill Wear</a>
+  <a href="{{ '/' | relative_url }}" class="site-title-link">
+    <h1 class="site-title">{{ site.title }}</h1>
+  </a>
+  <p class="site-tagline">{{ site.description }}</p>
+  <nav class="site-nav">
+    <a href="{{ '/' | relative_url }}">Writing</a>
+    <a href="{{ '/about' | relative_url }}">About</a>
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    <a href="{{ '/about#work-with-me' | relative_url }}">Work With Me</a>
+  </nav>
+</header>
 
     <main>
       {{ content }}
