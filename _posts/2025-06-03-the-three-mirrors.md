@@ -3,94 +3,58 @@ layout: post
 title: "The Three Mirrors"
 date: 2025-06-03
 ---
+Who are you when you're not looking?
 
-*Who are you when you’re not looking*?
+Here's a five-minute test. Answer quickly. Don't deliberate. The inner critic is slower than the inner fire -- you want to outrun it.
 
-Here’s a five-minute test that may help you find your inner fire.  Answer quickly. Don’t deliberate.
+---
 
-## Three people
+**Three people**
 
-First, name these people:
-- 
+Name them:
 
-Someone you admire but don’t really like.
-- 
+Someone you admire but don't really like. Someone you trust but don't know that well. Someone deeply flawed that you idolize anyway.
 
-Someone you trust but don’t know that well.
-- 
+Write down the names. Don't explain them yet.
 
-Someone flawed that you idolize anyway.
+---
 
-Write down the names.
+**Three traits**
 
-## Three traits
+Now, one word each:
 
-Now, in ***one word***, answer the following questions:
-- 
+If you don't like them, why do you admire them? If you don't know them that well, why do you trust them? If they're so flawed, why do you idolize them?
 
-If you don’t like them, why do you admire them?
-- 
+One word per answer. Write them down.
 
-If you don’t know them that well, why do you trust them?
-- 
+---
 
-If they’re so flawed, why do you idolize them?
+**Three roles**
 
-Write down those three words. Just one word each.
+Take each pair of those words and find a single word that holds both traits. Could be a job, a personality type, a social role. Architect. Hothead. Peacekeeper. One word per pair.
 
-## Three roles
+---
 
-Take each pair of those words, and write down a ***one-word*** role that has both traits. Could be a job (architect), personality (hothead), or social role (peacekeeper). 
+**One archetype**
 
-Just one word for each role.
+Look at the three roles. Write down whatever words come -- a few or a dozen, doesn't matter. Then read back through the list slowly until one hits back. Makes you point at the air. Makes you say yes out loud.
 
-## One archetype
+That's your fireline. Where the flames start.
 
-Now look at those three roles and come up with some words that capture all three. A few or a dozen, it doesn’t matter.
+---
 
-Now read slowly through the list until you hit one that hits back. Makes you exclaim, pump your fist in the air, or point at the air like you just got the answer.
+Here's my own example, so you can see how the logic works -- or doesn't, which is also the point.
 
-That’s your “fireline,” where the flames start.
+I admire a senior manager I worked with who I didn't much like. I completely trust an acquaintance I barely know. My hero is Batman -- deeply flawed emotionally, but capable of holding his own with people a hundred times more powerful than him.
 
-Now that you know, what will you do differently?
+The traits: the manager was brilliant. The acquaintance is relentlessly realistic. Batman is fiercely moral.
 
-## Bonus: My example
+The roles: brilliant plus real equals mastermind. Real plus moral equals steward. Brilliant plus moral equals sovereign.
 
-As an example, here’s my own exercise.
-- 
+Put those together and I get architect -- not the building designer, but the general role. The one who sees the whole structure and knows where the load-bearing walls are.
 
-I admire a senior manager that I worked with in the past, but didn’t like very much (“S”).
-- 
+You might get something completely different. My path through this exercise won't be yours. That's not a bug -- it's the whole point. You have to misdirect your inner critic just enough to slide past them.
 
-I completely trust an acquaintance that I don’t really know that well (“C”).
-- 
+But when you see the answer, you'll know it.
 
-My hero is Batman, who is deeply flawed emotionally, but can hold his own with heroes and villians alike, all a hundred times more powerful than him.
-
-The traits?
-- 
-
-S was brilliant.
-- 
-
-C is incredibly realistic.
-- 
-
-Batman is fiercely moral.
-
-The roles?
-- 
-
-Brilliant + real = mastermind
-- 
-
-Real + moral = steward
-- 
-
-Brilliant + moral = sovereign
-
-Putting these together, I get “architect” (the general role, not the building designer).
-
-You might not get that at all. My way of answering this might not make sense, given the answers to the questions.
-
-And that’s the point. You have to misdirect your inner critic just enough to slide past them. Bur when you see the answer, you’ll know it.
+Principle seven: be who you are. This exercise is just a way to catch yourself being it before you have time to perform something else instead.

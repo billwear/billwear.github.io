@@ -8,6 +8,7 @@ permalink: /:year/:month/:day/:title/
 
 # Build settings
 exclude:
+  - freezer/
   - README.md
   - LICENSE
   - "*.bak"
