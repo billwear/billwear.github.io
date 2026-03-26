@@ -378,49 +378,43 @@ body {
 .orbit {
   margin-bottom: 2.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid $grey-color-light;
+  border-bottom: 1px solid #3a3a3a;
 }
-
 .satellites {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-
 .sat {
   display: flex;
   flex-direction: column;
-  border: 1px solid $grey-color-light;
+  border: 1px solid #3a3a3a;
   border-radius: 8px;
   padding: 1rem 1.2rem;
   text-decoration: none;
   transition: border-color 0.2s;
 }
-
 .sat:hover {
-  border-color: $brand-color;
+  border-color: #BA7517;
   text-decoration: none;
 }
-
 .sat-tag {
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: $brand-color;
+  color: #BA7517;
   margin-bottom: 0.4rem;
 }
-
 .sat-title {
   font-size: 14px;
   font-weight: 500;
-  color: $text-color;
+  color: #e8e6e0;
   margin-bottom: 0.2rem;
 }
-
 .sat-sub {
   font-size: 12px;
   font-style: italic;
-  color: $grey-color;
+  color: #888780;
 }
 
 /* Recent posts */
