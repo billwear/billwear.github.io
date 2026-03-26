@@ -27,6 +27,7 @@ html {
 }
 
 body {
+  font-size: 18px;
   font-family: 'Literata', Georgia, serif;
   background-color: var(--bg);
   color: var(--text);
@@ -476,4 +477,13 @@ body {
   text-decoration: none;
   color: inherit;
   display: block;
+}
+a {
+  color: #EF9F27;
+}
+a:visited {
+  color: #BA7517;
+}
+a:hover {
+  color: #FCDE5A;
 }
