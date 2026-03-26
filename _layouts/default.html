@@ -20,14 +20,16 @@
 <body>
   <div class="site-wrap">
     <header class="site-header">
-      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-      <div class="site-tagline">{{ site.tagline }}</div>
+      <a href="{{ '/' | relative_url }}" class="site-header-link">
+	<p class="site-byline">Bill Wear</p>
+	<h1 class="site-title">{{ site.title }}</h1>
+	<p class="site-tagline">{{ site.description }}</p>
+      </a>
       <nav class="site-nav">
-        <a href="{{ '/' | relative_url }}">Writing</a>
-        <a href="{{ '/about' | relative_url }}">About</a>
-        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
-        <a href="{{ '/about#work-with-me' | relative_url }}">Work With Me</a>
-
+	<a href="{{ '/' | relative_url }}">Writing</a>
+	<a href="{{ '/about' | relative_url }}">About</a>
+	<a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+	<a href="{{ '/about#work-with-me' | relative_url }}">Work With Me</a>
       </nav>
     </header>
 
