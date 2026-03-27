@@ -1,7 +1,7 @@
 ---
 layout: page
-title: New Indewx
-permalink: /xedni/
+title: New Index
+permalink: /xedin/
 ---
 
 ## personal
