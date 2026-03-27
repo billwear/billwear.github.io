@@ -1,1 +1,2 @@
-# welcome to billwear's github pages
+## about me
+### my geek code: **nerd rosetta stone**
