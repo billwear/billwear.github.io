@@ -1,0 +1,23 @@
+* welcome
+welcome to billwear's github pages
+** radio
+*** eton 750 w/active loop antenna: /QSL for the world/
+*** SDR w/rPi4 kit: /trying to phone ET/
+** software
+*** Emacs: /M-x summon-lost-memories/
+*** MAAS documentation: /still just like i left it/
+*** MAAS CLI: /latin maas/
+*** MAAS image anatomy: /loose bits on deck/
+*** MAAS deployment process: /killer fridge art/
+** hardware
+*** Altair 8800 kit: /jurassic spark/
+*** rPi4 kit: /treasure island redux/
+*** networking tutorial: /whispering in tcp/ip/
+** curiosities
+*** text-speak: /IRC runes/
+*** phreaking: /here's to Jane Barbe/
+** personal
+*** about me: /error 404: personality not found/
+*** my credo: /life's little manpage/
+*** my geek code: /nerd rosetta stone/
+** blog (deep and wide for sure)
