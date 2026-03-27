@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: default
 title: Bill Wear's Homepage
-permalink: /about/
+permalink: /index2/
 ---
 
 ## about me
