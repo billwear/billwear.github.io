@@ -84,7 +84,7 @@ The OSI model starts just above the raw physics, with the physical layer (Layer 
 
 ### The physical layer (L1)
 
-At the physical layer, we're looking for binary (on/off) signals set to the cadence of a clock. Every computer brings its own clock, so we need a way to synchronise. NTP (Network Time Protocol) handles this.
+At the physical layer, we're looking for binary (on/off) signals set to the cadence of a clock. Every device brings its own oscillator, so there are actually two distinct synchronisation problems to solve. The first is wall-clock time — knowing that it's 14:32:07 UTC — which NTP (Network Time Protocol) handles across the network. The second is bit-level clock recovery — knowing exactly when each transmitted bit starts and ends so the receiving NIC can decode the signal correctly. NTP doesn't help with that; it's handled by the preamble in each Ethernet frame, which we'll get to shortly.
 
 **Variable latency** is the most important thing to know about the physical layer. Packets aren't sent without delay:
 
@@ -115,6 +115,8 @@ Ethernet implements CSMA/CD: **Carrier Sense Multiple Access with Collision Dete
 
 - **Carrier sense** — every NIC waits for the network to be quiet before transmitting
 - **Collision detection** — if two NICs start simultaneously, both receive a jam signal and wait a randomly-generated amount of time before retrying. Each subsequent collision doubles the wait time. After a maximum number of retries, the NIC declares failure.
+
+A note on CSMA/CD and modern networks: this collision-detection mechanism was essential for classic shared-medium Ethernet, where multiple devices contended for the same wire. Modern switched Ethernet operates differently — each device gets a dedicated full-duplex link to a switch port, so there's no shared medium and no collision domain. CSMA/CD is effectively inactive on modern switched infrastructure. The framing and addressing described below still apply; the collision-avoidance dance mostly doesn't. It's worth understanding CSMA/CD anyway, because you'll encounter it in documentation, older hardware, and any network that still uses hubs rather than switches.
 
 #### Media Access Control (MAC)
 
@@ -231,7 +233,7 @@ The IPv4 header attaches to the front of data packets up to about 65K long. Key 
 - **Identification** — serial number from the sending NIC, helps uniquely identify the datagram; works like a take-a-number ticket
 - **Flags** — indicates packet is a fragment of a longer message
 - **Fragmentation Offset** — used with Identification to reassemble message order
-- **Time to Live (TTL)** — number of routers a datagram can pass through before being discarded; limits the number of times a packet's destination IP can be changed
+- **Time to Live (TTL)** — number of routers a datagram can pass through before being discarded; limits the number of times a packet's destination IP can be changed. The field maxes out at 255. Most operating systems default to 64 as the initial TTL value — Linux and macOS use 64, Windows uses 128. You'll see these numbers when running `ping` or `traceroute`. The "time to live" name is historical; it was originally conceived as seconds, but in practice each router hop decrements it by 1 regardless of actual time elapsed.
 - **Protocol** — indicates the higher-level protocol (TCP, UDP, etc.)
 - **Header Checksum** — integrity check for the header only (IPv4 only)
 - **Source Address** — IP address of the sender for this hop
