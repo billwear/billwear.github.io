@@ -491,3 +491,12 @@ a:hover {
 main p + p {
   margin-top: 1.2em;
 }
+
+.cta-button {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+}

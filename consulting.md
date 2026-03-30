@@ -41,7 +41,7 @@ I'm based in south Mississippi (Central time), work async-first, and am comforta
 
 The fastest path is a 30-minute intro call. No agenda required — just tell me what you're working on and I'll tell you honestly whether I can help.
 
-[Book a 30-minute intro call](https://calendly.com/YOUR-CALENDLY-LINK){: .cta-button }
+[Book a 30-minute intro call](https://calendly.com/williamowear/30min){: .cta-button }
 
 Or reach me directly at [williamowear@gmail.com](mailto:williamowear@gmail.com).
 
