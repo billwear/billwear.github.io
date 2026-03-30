@@ -13,7 +13,7 @@ I’m Bill Wear. I’ve spent most of my working life writing — technical docu
 
 ---
 
-I've also butchered meat, delivered pianos, and run a cash register in my dad's grocery store as a kid. I researched cancer drugs in college before realizing my biochemistry advisor couldn't afford to file a tax return, at which point I changed my major to EE/CS and never looked back.  [And a lot of other things](/things-ive-done-well-enough-to-pay-my-bills).
+I've also butchered meat, delivered pianos, and run a cash register in my dad's grocery store as a kid. I researched cancer drugs in college before realizing my biochemistry advisor couldn't afford to file a tax return, at which point I changed my major to EE/CS and never looked back.  [And a lot of other things](/things/).
 
 These days I write essays, sew things, tinker with shortwave radio, and try to spend as much of my time as possible on work that actually matters to me. I live in south Mississippi with my wife and a Bombay cat named Baby who showed up one day and never left.
 
