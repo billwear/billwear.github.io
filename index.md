@@ -1,9 +1,9 @@
 ---
-layout: home
+layout: default
 title: "DevRel & Tech Writer"
 ---
 
-I didn't set out to be a physicist. I set out to understand things — machines, systems, people, language, why some structures hold and others collapse. Turns out the same principles keep showing up everywhere. I've been working out [seventeen of them](https://billwear.github.io/about). This is where I write about that.
+I didn't set out to be a physicist. I set out to understand things — machines, systems, people, language, why some structures hold and others collapse. Turns out the same principles keep showing up everywhere. I've been working out [seventeen of them](/about). This is where I write about that.
 
 I'm also an independent DevRel consultant and technical writer — 30 years in the field, six at Canonical as developer advocate for MAAS. [Work with me.](/consulting/)
 
@@ -32,3 +32,12 @@ I'm also an independent DevRel consultant and technical writer — 30 years in t
 ---
 
 ## Recent writing
+
+{% for post in site.posts limit:5 %}
+{{ post.date | date: "%B %-d, %Y" }}
+
+### [{{ post.title }}]({{ post.url }})
+
+{{ post.excerpt }}
+
+{% endfor %}
