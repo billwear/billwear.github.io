@@ -487,3 +487,7 @@ a:visited {
 a:hover {
   color: #FCDE5A;
 }
+
+main p + p {
+  margin-top: 1.2em;
+}
