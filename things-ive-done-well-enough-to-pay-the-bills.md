@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Things I've done well enough to pay my bills
+title: How I've paid my bills
 permalink: /things/
 ---
 
-# Things I have done well enough to pay my bills
+Things I have done well enough to pay my bills:
 
 - Write and teach training classes about C and X-Windows coding
 - Prepare proposals, articles, and brochures- Write business literature
