@@ -23,12 +23,12 @@ Independent consultant now. [Work with me.](https://billwear.github.io/consultin
 ## What I'm into right now
 
 **Tailscale**
-- [MagicDNS on macOS: The Missing Fifteen Minutes](https://billwear.github.io/2026/04/15/tailscale-magicdns-on-macos/)
-- [NFS Over Tailscale: Old-School File Sharing, Zero Exposure](https://billwear.github.io/2026/04/15/nfs-over-tailscale/)
+[MagicDNS on macOS: The Missing Fifteen Minutes](https://billwear.github.io/2026/04/15/tailscale-magicdns-on-macos/)
+
+[NFS Over Tailscale: Old-School File Sharing, Zero Exposure](https://billwear.github.io/2026/04/15/nfs-over-tailscale/)
 
 **Emacs**
-- [My Emacs Configuration](https://billwear.github.io/emacs-config/)
-- [the-way-of-emacs.com](https://the-way-of-emacs.com)
+[My Emacs Configuration](https://billwear.github.io/emacs-config/)
 
 ---
 
