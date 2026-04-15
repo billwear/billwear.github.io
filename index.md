@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DevRel & Tech Writer"
+title: "Coder, DevRel & Tech Writer"
 ---
 
 At four years old, I set out to understand things — machines, systems, people, language, why some structures hold and others collapse. Once I understood them, I found immense pleasure in helping others understand and use them.
 
 
-I'm also an independent DevRel consultant and technical writer — 30 years in the field, six at Canonical as developer advocate for MAAS. [Work with me.](/consulting/)
+I'm also an experienced developer, and independent DevRel consultant and a technical writer — 30 years in the field, six at Canonical as developer advocate for MAAS. [Work with me.](/consulting/)
 
 ---
 
