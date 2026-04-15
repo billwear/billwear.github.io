@@ -3,46 +3,40 @@ layout: default
 title: "Coder, DevRel & Tech Writer"
 ---
 
-At four years old, I set out to understand things — machines, systems, people, language, why some structures hold and others collapse. Once I understood them, I found immense pleasure in helping others understand and use them.
+Making systems usable and legible for the people who need them.
 
-
-I'm also an experienced developer, and independent DevRel consultant and a technical writer — 30 years in the field, six at Canonical as developer advocate for MAAS. [Work with me.](/consulting/)
+30 years in the field. Six at Canonical as developer advocate for MAAS. 
+Independent consultant now. [Work with me.](https://billwear.github.io/consulting/)
 
 ---
 
 ## Proof of work
 
-### Making technical systems legible
+**[MAAS from the CLI](https://billwear.github.io/maas-cli-1/)** — Eight-part walkthrough of bare metal provisioning infrastructure from the command line.
 
-**[MAAS from the CLI](/maas-cli-1/)** — Eight-part walkthrough of installing, configuring, and operating bare metal provisioning infrastructure using only the command line. Covers PostgreSQL setup, DHCP, machine commissioning, deployment, SSH/SCP, and two deep-dives into jq for human-readable CLI output. Written while working as developer advocate at Canonical. Includes a [live show-and-tell session](https://discourse.maas.io/t/maas-show-and-tell-using-jq-to-make-human-readable-maas-cli-output/3738) recorded for the MAAS community.
+**[Networking Tutorial](https://billwear.github.io/networking/)** — Ground-up TCP/IP and OSI for operators, not theorists.
 
-
-**[Networking Tutorial](/networking/)** — Ground-up explanation of TCP/IP and the OSI model for people who want to understand what's actually happening on the wire. Covers network architecture, Ethernet framing, ARP, IP packets, routing, and TCP — written for operators, not theorists.
-
-
-**[My Emacs Configuration](/emacs-config/)** — Annotated init.el covering 21 sections: org-roam networked notes, org-babel literate programming in ten languages, org-super-agenda, org-clock, a custom journaling system, and the design philosophy behind all of it. Self-installing on a fresh machine.
+**[My Emacs Configuration](https://billwear.github.io/emacs-config/)** — Annotated, modular, self-installing init system covering 21 sections.
 
 ---
 
-### Making complex systems legible to everyone else
+## What I'm into right now
 
-**[How to think like a grandmaster](https://williamwear.substack.com/p/how-to-think-like-a-grandmaster)** — Chess mastery as a model for pattern compression and working memory management. A grandmaster doesn't think faster — they think in larger pieces of time. The same cognitive architecture applies to any domain where expertise looks like intuition.
+**Tailscale**
+- [MagicDNS on macOS: The Missing Fifteen Minutes](https://billwear.github.io/2026/04/15/tailscale-magicdns-on-macos/)
+- [NFS Over Tailscale: Old-School File Sharing, Zero Exposure](https://billwear.github.io/2026/04/15/nfs-over-tailscale/)
 
-
-**[How to think like an ER physician](https://williamwear.substack.com/p/how-to-think-like-an-er-physician-715)** — Slow thinking in the fastest room on Earth. How emergency physicians build composure under pressure, triage attention, and make irreversible decisions with incomplete information — and what that discipline looks like when you take it out of the ER.
-
-
-**[How to think like a professional novelist](https://williamwear.substack.com/p/how-to-think-like-a-professional)** — A novelist doesn't track every sentence — they think in shapes of intention. Pattern compression applied to creative work: how to hold an entire structure in working memory and still have bandwidth left to make art.
+**Emacs**
+- [My Emacs Configuration](https://billwear.github.io/emacs-config/)
+- [the-way-of-emacs.com](https://the-way-of-emacs.com)
 
 ---
 
 ## Recent writing
 
-{% for post in site.posts limit:5 %}
-{{ post.date | date: "%B %-d, %Y" }}
-
+{% for post in site.posts limit:3 %}
 ### [{{ post.title }}]({{ post.url }})
-
-{{ post.excerpt }}
-
+{{ post.date | date: "%B %d, %Y" }} — {{ post.excerpt | strip_html | truncatewords: 30 }}
 {% endfor %}
+
+[All posts →](https://billwear.github.io/archive/)
