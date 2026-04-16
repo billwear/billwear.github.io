@@ -5,25 +5,25 @@
 
 i used a chunk of my retirement money to invest in capital equipment needed to get business going.  so far, all of it is earning its keep.
 
-| investment          |   | cost  |   | return path                        |
-|---------------------|---|-------|---|------------------------------------|
-| macbook pro         |   | $2000 |   | improved creative work             |
-| iphone              |   | $0    |   | vastly improved communication      |
-| ^^^^^^              |   |       |   | improved productivity/tracking     |
-| airpods             |   | $200  |   | much better audio for telecons     |
-| color laser printer |   | $600  |   | greatly improved output            |
-| ^^^^^^^^^^^^^^^^^^^ |   |       |   | professional quality salables      |
-| portable battery    |   | $40   |   | improves battery reach for iphone  |
-| various material    |   | $200  |   | better range of sewing products    |
-| helper books        |   | $200  |   | increased skillset in progress     |
-| bags & purses       |   | $150  |   | better examples for new designs    |
-| omnifocus 4         |   | $164  |   | didn't pay off; refunded           |
-| claude 4 AI         |   | $132  |   | overblown; downgraded to $20 model |
-| chatGPT AI          |   | $20   |   | useless; refunded                  |
-| Etsy                |   | $20   |   | one-time setup fee; gateway value  |
-| Amazon KDP          |   | $0    |   | reaching a wider audience          |
-| ^^^^^^^^^^          |   |       |   | witnessing for Christ in public    |
-| Morris Agency       |   | $0    |   | assigned agent exceedingly helpful |
+| investment          | cost  | return path                        |
+|---------------------|-------|------------------------------------|
+| macbook pro         | $2000 | improved creative work             |
+| iphone              | $0    | vastly improved communication      |
+| ^^^^^^              |       | improved productivity/tracking     |
+| airpods             | $200  | much better audio for telecons     |
+| color laser printer | $600  | greatly improved output            |
+| ^^^^^^^^^^^^^^^^^^^ |       | professional quality salables      |
+| portable battery    | $40   | improves battery reach for iphone  |
+| various material    | $200  | better range of sewing products    |
+| helper books        | $200  | increased skillset in progress     |
+| bags & purses       | $150  | better examples for new designs    |
+| omnifocus 4         | $164  | didn't pay off; refunded           |
+| claude 4 AI         | $132  | overblown; downgraded to $20 model |
+| chatGPT AI          | $20   | useless; refunded                  |
+| Etsy                | $20   | one-time setup fee; gateway value  |
+| Amazon KDP          | $0    | reaching a wider audience          |
+| ^^^^^^^^^^          |       | witnessing for Christ in public    |
+| Morris Agency       | $0    | assigned agent exceedingly helpful |
 
 all the $0 investments have been incredibly valuable. what can i learn from this?  start looking for $0 investments that pay off, going forward.
 
@@ -56,6 +56,14 @@ Etsy shop up and running as of April, that's a decent start on a larger audience
 | crosses                | on tap for shoeboxes |
 
 ## finding a job
+
+### becoming highly visible
+
+in addition to the job and freelance search below, i've been doing thing to make myself visible to potential employers:
+
+* [revamping my website](https://billwear.github.io) to focus on salable skills
+* [starting a podcast called Tuesday After Lunch](https://youtu.be/_T7tfBYqLpE) to discuss broader topics around software development and managing developers
+* posting articles about technologies I want to work on, to show interest and enthusiasm (such as [this one](https://billwear.github.io/2026/04/15/tailscale-magicdns-on-macos/) and [this one](https://billwear.github.io/2026/04/15/nfs-over-tailscale/))
 
 ### summary table
 
