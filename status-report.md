@@ -1,4 +1,3 @@
-# progress on bringing in more money
 
 **updated as often as possible**
 
@@ -7,7 +6,7 @@
 i used a chunk of my retirement money to invest in capital equipment needed to get business going.  so far, all of it is earning its keep.
 
 | investment          | cost  | return path                        |
-|---------------------|-------|------------------------------------|
+| --------------------- | ------- | ------------------------------------ |
 | macbook pro         | $2000 | improved creative work             |
 | iphone              | $0    | vastly improved communication      |
 | ^^^^^^              |       | improved productivity/tracking     |
