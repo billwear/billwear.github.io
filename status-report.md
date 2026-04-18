@@ -1,11 +1,18 @@
+## Status Report
 
-**updated as often as possible**
+### Week of April 12-18, 2026
 
-## investments made vs. payoff
+ - Finished & published "101 Astonishing and Useful Things you can do with Claude Opus 4.7"
+ - Stuffed first cross and evaluated poly-fill; some modifications necessary
+ - Two Substack posts: [Plan anyway](https://open.substack.com/pub/williamwear/p/plan-anyway) on Proverbs 16:9, and [Merimna](https://williamwear.substack.com/p/merimna) on Matthew 6:34, both focused on whole-Bible approaches to planning.
 
-i used a chunk of my retirement money to invest in capital equipment needed to get business going.  so far, all of it is earning its keep.
+## Supporting Data
 
-| investment          | cost  | return path                        |
+### Investments Made Vs. Payoff
+
+I used a chunk of my retirement money to invest in capital equipment needed to get business going.  So far, all of it is earning its keep.
+
+| Investment          | Cost  | Return Path                        |
 |---------------------|-------|------------------------------------|
 | macbook pro         | $2000 | improved creative work             |
 | iphone              | $0    | vastly improved communication      |
@@ -27,7 +34,7 @@ i used a chunk of my retirement money to invest in capital equipment needed to g
 
 all the $0 investments have been incredibly valuable. what can i learn from this?  start looking for $0 investments that pay off, going forward.
 
-## publishing books
+### publishing books
 
 this is a slower income growth path, so not putting too much daily time into it, but moving it forward.
 
@@ -36,7 +43,7 @@ this is a slower income growth path, so not putting too much daily time into it,
 | The Servant's Goal | published | $3.63           |
 | The Missing Manual | revision  | (not published) |
 
-## sewing & selling
+### sewing & selling
 
 this is also a slower income growth path, but needs dedicated daily time to take off.  also needs better marketing channels, need to explore how to do this better.
 
@@ -47,7 +54,7 @@ Etsy shop up and running as of April, that's a decent start on a larger audience
 | mug rugs w/devo card | selling locally | $350      |
 |                      |                 |           |
 
-#### products considered or explored
+##### products considered or explored
 
 | product                | status               |
 |------------------------|----------------------|
@@ -55,9 +62,9 @@ Etsy shop up and running as of April, that's a decent start on a larger audience
 | phone slings           | design tweaks needed |
 | crosses                | on tap for shoeboxes |
 
-## finding a job
+### finding a job
 
-### becoming highly visible
+#### becoming highly visible
 
 in addition to the job and freelance search below, i've been doing thing to make myself visible to potential employers:
 
@@ -65,7 +72,7 @@ in addition to the job and freelance search below, i've been doing thing to make
 * [starting a podcast called Tuesday After Lunch](https://youtu.be/_T7tfBYqLpE) to discuss broader topics around software development and managing developers
 * posting articles about technologies I want to work on, to show interest and enthusiasm (such as [this one](https://billwear.github.io/2026/04/15/tailscale-magicdns-on-macos/) and [this one](https://billwear.github.io/2026/04/15/nfs-over-tailscale/))
 
-### summary table
+#### summary table
 
 i've been applying for any open position i find, and pitching freelance / consulting work to other bare-metal providers i discover or know about.  details about each company and status follow the table.
 
