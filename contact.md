@@ -4,8 +4,6 @@ title: Contact
 permalink: /contact/
 ---
 
-# Contact
-
 For consulting inquiries, writing work, reader mail, or just to say hello:
 
 **[wowear@gmail.com](mailto:wowear@gmail.com)**
