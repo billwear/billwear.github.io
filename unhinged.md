@@ -4,8 +4,6 @@ title: The Unhinged iPhone
 permalink: /unhinged/
 ---
 
-# The Unhinged iPhone
-
 ## *How to Get By Nicely Out of the Box*
 
 ![The Unhinged iPhone book cover](/assets/unhinged-iphone-cover.jpg){: .book-cover }
