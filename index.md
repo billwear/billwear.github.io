@@ -25,7 +25,7 @@ else
 fi
 ```
 
-[pwd source on GitHub](https://github.com/billwear/cli-improved/bin/pwd) | [pwd manpage](https://github.com/billwear/cli-improved/man/pwd.1)
+[pwd source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/pwd) | [pwd manpage](https://github.com/billwear/cli-improved/blob/main/man/pwd.1)
 
 ---
 
@@ -46,7 +46,7 @@ which() {
 #### Why I chose this approach
 Using the internal shell builtin `type -a` is faster and more accurate than spawning an external binary like `/usr/bin/which`. It asks the current shell directly how it intends to execute a command. If you have multiple versions of a tool installed (e.g., a system version and a homebrew version), this function lists all of them in order, rather than stopping at the first match. Because this is declared as a function, the shell naturally prioritizes it over the system binary without requiring you to destructively overwrite or modify your local path configuration.
 
-[which source on GitHub](https://github.com/billwear/cli-improved/bin/which.bashrc) | [which manpage](https://github.com/billwear/cli-improved/man/which.1)
+[which source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/which.bashrc) | [which manpage](https://github.com/billwear/cli-improved/blob/main/man/which.1)
 
 ---
 
@@ -75,7 +75,7 @@ When switching contexts, like moving from a messy compilation log to a clean Git
 
 Adding the cls alias removes the operational friction of an accidental cross-platform keystroke, keeping your momentum moving forward without error interrupts.
 
-[clear source on GitHub](https://github.com/billwear/cli-improved/bin/clear.bashrc) | [clear manpage](https://github.com/billwear/cli-improved/blob/man/clear.1)
+[clear source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/clear.bashrc) | [clear manpage](https://github.com/billwear/cli-improved/blob/main/man/clear.1)
 
 ---
 
