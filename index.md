@@ -2,6 +2,8 @@
 
 [What is this site all about?](https://github.com/billwear/cli-improved/blob/847b6f4c81ec1bbae6edc59bd4659ada0d285e7a/README.md)
 
+---
+
 #### pwd (The Smart-Link Version)
 Standard pwd often suffers from "path-blindness." When you are working in environments that rely heavily on symbolic links—like complex development builds or nested cloud directories—it is easy to lose track of where you logically are versus where the files physically exist. Standard output only gives you one or the other, forcing you to run extra commands to verify your actual location.
 
@@ -23,4 +25,7 @@ else
 fi
 ```
 
-[View Source on GitHub](https://github.com/billwear/cli-improved/blob/bcb6c8d7e73ae9fb799aa762c00d1976c61d36d2/bin/pwd) | [Read the Manpage](https://github.com/billwear/cli-improved/blob/bcb6c8d7e73ae9fb799aa762c00d1976c61d36d2/man/pwd.1)
+[pwd Source on GitHub](https://github.com/billwear/cli-improved/blob/bcb6c8d7e73ae9fb799aa762c00d1976c61d36d2/bin/pwd) | [pwd manpage](https://github.com/billwear/cli-improved/blob/bcb6c8d7e73ae9fb799aa762c00d1976c61d36d2/man/pwd.1)
+
+---
+
