@@ -25,7 +25,7 @@ else
 fi
 ```
 
-[pwd source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/pwd) | [pwd manpage](https://github.com/billwear/cli-improved/blob/main/man/pwd.1)
+[pwd source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/pwd) | [pwd manpage](https://github.com/billwear/cli-improved/blob/main/man/pwd.1) | [pwd PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/pwd.pdf)
 
 ---
 
@@ -46,7 +46,7 @@ which() {
 #### Why I chose this approach
 Using the internal shell builtin `type -a` is faster and more accurate than spawning an external binary like `/usr/bin/which`. It asks the current shell directly how it intends to execute a command. If you have multiple versions of a tool installed (e.g., a system version and a homebrew version), this function lists all of them in order, rather than stopping at the first match. Because this is declared as a function, the shell naturally prioritizes it over the system binary without requiring you to destructively overwrite or modify your local path configuration.
 
-[which source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/which.bashrc) | [which manpage](https://github.com/billwear/cli-improved/blob/main/man/which.1)
+[which source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/which.bashrc) | [which manpage](https://github.com/billwear/cli-improved/blob/main/man/which.1) | [which PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/which.pdf)
 
 ---
 
@@ -75,7 +75,45 @@ When switching contexts, like moving from a messy compilation log to a clean Git
 
 Adding the cls alias removes the operational friction of an accidental cross-platform keystroke, keeping your momentum moving forward without error interrupts.
 
-[clear source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/clear.bashrc) | [clear manpage](https://github.com/billwear/cli-improved/blob/main/man/clear.1)
+[clear source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/clear.bashrc) | [clear manpage](https://github.com/billwear/cli-improved/blob/main/man/clear.1) | [clear PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/clear.pdf)
 
 ---
 
+### man2pdf (manpage prettifier)
+
+Standard UNIX manual source files (`roff`) are highly structured and elegant, but they are difficult to read in a standard web browser without a specialized terminal wrapper or local rendering setup. Expecting a potential user to clone a repository and manually run complex compiler commands just to view documentation creates unnecessary operational friction.
+
+A local automation script that compiles raw `roff` files into standard, high-fidelity PDFs. By leveraging the system's underlying document formatting engine, it instantly outputs perfectly formatted documents that match the classic, iconic UNIX manual layout, ensuring your project's documentation is universally accessible via any standard web browser.  Note that sometimes some inconsequential errors pop up, depending on the version of `groff` you're using, but so far, it hasn't affected the quality of the output.
+
+#### The implementation
+```bash
+#!/bin/bash
+
+# Ensure an input file was provided
+if [[ -z "$1" ]]; then
+    echo "Usage: man2pdf <path_to_manpage_file>"
+    exit 1
+fi
+
+MAN_FILE="$1"
+FILENAME=$(basename "$MAN_FILE")
+BASE_NAME="${FILENAME%.*}"
+
+# Ensure the output directory exists
+mkdir -p man-pdf
+
+# Compile the roff file directly to a pristine PDF
+if groff -man -Tpdf "$MAN_FILE" > "man-pdf/${BASE_NAME}.pdf"; then
+    echo "Success: Generated man-pdf/${BASE_NAME}.pdf"
+else
+    echo "Error: Failed to compile $MAN_FILE"
+    exit 1
+fi
+```
+
+#### Toolmaker's notes
+**Self-Documenting Architecture**: Rather than treating repository maintenance as an out-of-band chore, this tool internalizes the build process. Anyone cloning the repository inherits the exact same toolchain used to generate and maintain the project's outward-facing assets.
+
+**Dependency Awareness** The tool leans explicitly on the standard system groff layout engine. To ensure smooth execution across varied developer environments (like a bare-bones macOS setup), it documents its environmental prerequisites explicitly within its own manual entry.
+
+[man2pdf source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/man2pdf) | [man2pdf manpage](https://github.com/billwear/cli-improved/blob/main/man/man2pdf.1) | [man2pdf PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/man2pdf.pdf)
