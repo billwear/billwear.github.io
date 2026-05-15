@@ -121,3 +121,52 @@ fi
 **Dependency Awareness** The tool leans explicitly on the standard system groff layout engine. To ensure smooth execution across varied developer environments (like a bare-bones macOS setup), it documents its environmental prerequisites explicitly within its own manual entry.
 
 [man2pdf source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/man2pdf) | [man2pdf manpage](https://github.com/billwear/cli-improved/blob/main/man/man2pdf.1) | [man2pdf PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/man2pdf.pdf)
+
+---
+
+### comm (Fail-safe matcher)
+
+The `comm` utility is an excellent tool for comparing two files line-by-line, but it carries a frustrating, implicit prerequisite: **both input files must be lexically sorted.** If you feed it unsorted files, it will not throw an error or warn you; it blithely outputs corrupted, incomplete results. This leads to silent failures and forces the developer to manually run `sort` on both files before running the comparison, usually after re-reading the manpage a couple of times.
+
+This intercept script turns `comm` into a robust, fail-safe tool. It scans the inputs, and if either file isn't sorted, it dynamically sorts them on the fly using native bash process substitution (`<()`). This guarantees 100% accurate comparison results on any text file, completely removing the pre-sorting friction while leaving your original files untouched.
+
+#### The implementation
+```bash
+#!/bin/bash
+
+# Ensure two files are passed
+if [[ $# -ne 2 ]]; then
+    echo "Usage: comm <file1> <file2>"
+    exit 1
+fi
+
+FILE1="$1"
+FILE2="$2"
+
+# Check if file1 is sorted lexically
+sort -C "$FILE1" 2>/dev/null
+SORTED1=$?
+
+# Check if file2 is sorted lexically
+sort -C "$FILE2" 2>/dev/null
+SORTED2=$?
+
+# If both are sorted, run standard comm. Otherwise, sort on the fly.
+if [[ $SORTED1 -eq 0 && $SORTED2 -eq 0 ]]; then
+    /usr/bin/comm "$FILE1" "$FILE2"
+elif [[ $SORTED1 -ne 0 && $SORTED2 -eq 0 ]]; then
+    /usr/bin/comm <(sort "$FILE1") "$FILE2"
+elif [[ $SORTED1 -eq 0 && $SORTED2 -ne 0 ]]; then
+    /usr/bin/comm "$FILE1" <(sort "$FILE2")
+else
+    /usr/bin/comm <(sort "$FILE1") <(sort "$FILE2")
+fi
+```
+
+#### Toolmaker's notes
+
+**Defensive Engineering**: Using `sort -C` allows the script to check if a file is already sorted without consuming heavy memory or processing time. If the files are already prepared, it transparently passes them straight to the system binary.
+
+**Process Substitution Efficiency**: By utilizing standard bash process substitution (<()), the script streams the sorted data directly into comm through anonymous named pipes. This eliminates the need to create, manage, or clean up messy temporary files on the disk.
+
+comm source on GitHub | comm manpage | comm PDF manual page
