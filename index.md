@@ -1,7 +1,4 @@
----
-layout: default
-title: "Coder, DevRel & Tech Writer"
----
+
 
 Making systems usable and legible for the people who need them.
 
