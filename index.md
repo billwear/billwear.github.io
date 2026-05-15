@@ -12,7 +12,7 @@ Smart **pwd** command: prints out full-chain symbolic link if that's how you got
       /bin/pwd
     fi
 
- Must alias "pwd" to <script-path> for it to replace system pwd command. Runs system pwd if no symlink.
+ Must alias "pwd" to <script-path> for it to replace system **pwd** command. Runs system pwd if no symlink.
 
 
 
