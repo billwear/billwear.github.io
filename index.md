@@ -10,7 +10,7 @@ Standard pwd often suffers from "path-blindness." When you are working in enviro
 This wrapper automatically compares the logical path (-L) and the physical path (-P). If they differ, it displays the full chain with a visual indicator (=>). If the paths are identical, it stays transparent and executes the system default, keeping your terminal output clean.
 
 ##### The implementation
-```
+```bash
 #!/bin/bash
 
 # Capture logical and physical paths
@@ -36,15 +36,19 @@ By shadowing the binary with a native shell function that utilizes type -a, we f
 
 #### The implementation
 
-```
+```bash
 which() {
     # Force the shell to audit the command name completely
     type -a "$@"
 }
 ```
 
-#### Why I chose this approach
-Using the internal shell builtin `type -a` is faster and more accurate than spawning an external binary like `/usr/bin/which`. It asks the current shell directly how it intends to execute a command. If you have multiple versions of a tool installed (e.g., a system version and a homebrew version), this function lists all of them in order, rather than stopping at the first match. Because this is declared as a function, the shell naturally prioritizes it over the system binary without requiring you to destructively overwrite or modify your local path configuration.
+#### Toolmaker's notes
+**Substitution**: Using the internal shell builtin `type -a` is faster and more accurate than spawning an external binary like `/usr/bin/which`. It asks the current shell directly how it intends to execute a command. 
+
+**Finding all versions**: If you have multiple versions of a tool installed (e.g., a system version and a homebrew version), this function lists all of them in order, rather than stopping at the first match. 
+
+**Functions take priority**: Because this is declared as a function, the shell naturally prioritizes it over the system binary without requiring you to destructively overwrite or modify your local path configuration.  I won't repeat this again, but it applies to everywhere I've chosen a function over a script.
 
 [which source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/which.bashrc) | [which manpage](https://github.com/billwear/cli-improved/blob/main/man/which.1) | [which PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/which.pdf)
 
@@ -70,10 +74,10 @@ clear() {
 alias cls='clear'
 ```
 
-#### Why I chose this approach
-When switching contexts, like moving from a messy compilation log to a clean Git workflow, a partial clear leaves historical noise in your field of vision if you scroll up. This function guarantees that the only history present is the history of your current task.  Command history using the arrow key isn't affected.
+#### Toolmaker's notes
+**Removing clutter**: When switching contexts, like moving from a messy compilation log to a clean Git workflow, a partial clear leaves historical noise in your field of vision if you scroll up. This function guarantees that the only history present is the history of your current task.  Command history using the arrow key isn't affected.
 
-Adding the cls alias removes the operational friction of an accidental cross-platform keystroke, keeping your momentum moving forward without error interrupts.
+**Countering bad habits**: Adding the `cls` alias removes the operational friction of an accidental cross-platform keystroke, keeping your momentum moving forward without error interrupts.
 
 [clear source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/clear.bashrc) | [clear manpage](https://github.com/billwear/cli-improved/blob/main/man/clear.1) | [clear PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/clear.pdf)
 
