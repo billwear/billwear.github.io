@@ -1,6 +1,6 @@
 ### Fifty-two years of Unix CLI
 
-[What is this site all about?](https://github.com/billwear/cli-improved/blob/847b6f4c81ec1bbae6edc59bd4659ada0d285e7a/README.md)
+[What is this site all about?](https://github.com/billwear/cli-improved/)
 
 ---
 
