@@ -1,6 +1,6 @@
 ### Fifty-two years of Unix CLI
 
-• Smart **pwd** command: prints out full-chain symbolic link if that's how you got to the working directory:
+Smart **pwd** command: prints out full-chain symbolic link if that's how you got to the working directory:
 
     #!/bin/bash
 
@@ -12,6 +12,7 @@
       /bin/pwd
     fi
 
+ Must alias *pwd* to <script-path> for it to replace system **pwd** command. Runs system **pwd** if no symlink.
 
 
 
