@@ -174,3 +174,16 @@ which() {
 
 ---
 
+
+## xdate
+`xdate` prints a long date string that includes the normal date output, the epoch number, and information about the days of the year. For example:
+    Sat May 16 13:04:20 CDT 2026, 1778954660; Day 136 of 365; 229 days remain.
+
+### The implementation
+```bash
+#!/bin/zsh
+y=$(date +%Y) 
+d=$(date +%-j) 
+t=$(( (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 ? 366 : 365 )) 
+echo "$(date '+%a %b %d %H:%M:%S %Z %Y, %s'); Day $d of $t; $((t - d)) days remain."
+```
