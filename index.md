@@ -1,15 +1,30 @@
-### Fifty-two years of Unix CLI
+# [Fifty-two years of *nix CLI](https://github.com/billwear/cli-improved/)
 
-[What is this site all about?](https://github.com/billwear/cli-improved/)
+## calendar (scripted version)
+All the `calendar` C code I can find is brittle and highly system-dependent.  Nevermind, the core functionality is really just a simple script.
+
+### The implementation
+```bash
+#!/bin/zsh
+date '+%A, %B %e, %Y'
+echo '---'
+todate=$(date +"%b %e|%m/%d|%m-%d|%a|%A")
+grep -E "^($todate)|^daily" ~/.calendar | cut -s -f 2-
+```
+
+### Toolmaker's notes
+This implementation allows me to use most of the date formats (including "Tuesday"), and adds a "daily" date indicator to let me put all my habits in here.  Four lines of shell code doing the core work of 1400 lines or so of C.  I like that trade.
+
+[calendar source on GitHub]() | [calendar manpage]() | [calendar PDF manual page]()
 
 ---
 
-#### pwd (The link-smart version)
-Standard pwd often suffers from "path-blindness." When you are working in environments that rely heavily on symbolic links—like complex development builds or nested cloud directories—it is easy to lose track of where you logically are versus where the files physically exist. Standard output only gives you one or the other, forcing you to run extra commands to verify your actual location.
+## pwd (link-smart version)
+Standard `pwd` is path blind: it doesn't warn you about symbolic links.  Easy enough to fix.
 
-This wrapper automatically compares the logical path (-L) and the physical path (-P). If they differ, it displays the full chain with a visual indicator (=>). If the paths are identical, it stays transparent and executes the system default, keeping your terminal output clean.
+This wrapper compares the logical (-L) and physical (-P). Only when they differ, it displays the full chain with a visual indicator (=>). Otherwise no difference.
 
-##### The implementation
+### The implementation
 ```bash
 #!/bin/bash
 
@@ -29,12 +44,10 @@ fi
 
 ---
 
-### which (The visibility version)
-The standard system which utility has a massive, often frustrating blind spot: it only searches for executable binaries located on your $PATH. If you have a custom shell function or an alias intercepting a command name in your current session, standard which will ignore it completely and point to the binary on the disk. This creates "path-blindness" and leads to the "Wrong Tool" syndrome, where you think you are running one version of a tool, but a hidden configuration is actually running another.
+## which (visibility version)
+Standard `which` only searches for executable binaries located on your `$PATH`, ignoring aliases, et al.  You get better results from substituting a `type -a` for the command, allowing you to see every version of a given command in the order they're called.
 
-By shadowing the binary with a native shell function that utilizes type -a, we force the shell to reveal its entire command-resolution chain. This version acts as a true environment audit, identifying if a command is an alias, a shell builtin, a function, or a file on the disk, and listing them all in their exact order of execution precedence.
-
-#### The implementation
+### The implementation
 
 ```bash
 which() {
@@ -43,7 +56,7 @@ which() {
 }
 ```
 
-#### Toolmaker's notes
+### Toolmaker's notes
 **Substitution**: Using the internal shell builtin `type -a` is faster and more accurate than spawning an external binary like `/usr/bin/which`. It asks the current shell directly how it intends to execute a command. 
 
 **Finding all versions**: If you have multiple versions of a tool installed (e.g., a system version and a homebrew version), this function lists all of them in order, rather than stopping at the first match. 
@@ -54,13 +67,11 @@ which() {
 
 ---
 
-### clear (clean slate version)
+## clear (clean slate version)
 
-The standard `clear` utility is visually deceptive. It moves the terminal cursor to the top of the window, but leaves all your old command output intact in the terminal's scrollback buffer. A quick flick of the mouse wheel reveals the old clutter, failing to provide a true, distraction-free reset when you need to switch tasks or clear your cognitive space.
+Out of the box, `clear` is a cheat; it just runs the terminal buffer up so you don't see it.  On modern, scroll-aware terminals, this can lead to confusion.  This `.zsh` function still executes the standard system clear, but follows it with hardware-level ANSI escape sequences (`\033c` and `\033[3J`) that reset the terminal and clear the scroll buffer.  It also clears the screen when you accidentally type the Windows variant, `cls`.
 
-This function overrides the default behavior. It executes the standard system clear, but immediately follows it with hardware-level ANSI escape sequences (`\033c` and `\033[3J`) that flush the scrollback buffer entirely from the terminal emulator’s memory. It forces a genuine, pristine blank slate.
-
-#### The implementation
+### The implementation
 
 ```bash
 clear() {
@@ -74,20 +85,15 @@ clear() {
 alias cls='clear'
 ```
 
-#### Toolmaker's notes
-**Removing clutter**: When switching contexts, like moving from a messy compilation log to a clean Git workflow, a partial clear leaves historical noise in your field of vision if you scroll up. This function guarantees that the only history present is the history of your current task.  Command history using the arrow key isn't affected.
-
-**Countering bad habits**: Adding the `cls` alias removes the operational friction of an accidental cross-platform keystroke, keeping your momentum moving forward without error interrupts.
-
 [clear source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/clear.bashrc) | [clear manpage](https://github.com/billwear/cli-improved/blob/main/man/clear.1) | [clear PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/clear.pdf)
 
 ---
 
 ### man2pdf (manpage prettifier)
 
-Standard UNIX manual source files (`roff`) are highly structured and elegant, but they are difficult to read in a standard web browser without a specialized terminal wrapper or local rendering setup. Expecting a potential user to clone a repository and manually run complex compiler commands just to view documentation creates unnecessary operational friction.
+Standard UNIX manual source files (`roff`) are hard to read without a man parser.  `man2pdf` will convert manual pages to PDF for easier portability. All of the functions here have both a man page (**command**.1) and a PDF manual page (**command**.pdf), kept in separate directories in the repository.
 
-A local automation script that compiles raw `roff` files into standard, high-fidelity PDFs. By leveraging the system's underlying document formatting engine, it instantly outputs perfectly formatted documents that match the classic, iconic UNIX manual layout, ensuring your project's documentation is universally accessible via any standard web browser.  Note that sometimes some inconsequential errors pop up, depending on the version of `groff` you're using, but so far, it hasn't affected the quality of the output.
+Note: This requires that you install groff, which is not a default package.
 
 #### The implementation
 ```bash
@@ -115,22 +121,15 @@ else
 fi
 ```
 
-#### Toolmaker's notes
-**Self-Documenting Architecture**: Rather than treating repository maintenance as an out-of-band chore, this tool internalizes the build process. Anyone cloning the repository inherits the exact same toolchain used to generate and maintain the project's outward-facing assets.
-
-**Dependency Awareness** The tool leans explicitly on the standard system groff layout engine. To ensure smooth execution across varied developer environments (like a bare-bones macOS setup), it documents its environmental prerequisites explicitly within its own manual entry.
-
 [man2pdf source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/man2pdf) | [man2pdf manpage](https://github.com/billwear/cli-improved/blob/main/man/man2pdf.1) | [man2pdf PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/man2pdf.pdf)
 
 ---
 
-### comm (Fail-safe matcher)
+## comm (Fail-safe matcher)
 
-The `comm` utility is an excellent tool for comparing two files line-by-line, but it carries a frustrating, implicit prerequisite: **both input files must be lexically sorted.** If you feed it unsorted files, it will not throw an error or warn you; it blithely outputs corrupted, incomplete results. This leads to silent failures and forces the developer to manually run `sort` on both files before running the comparison, usually after re-reading the manpage a couple of times.
+The `comm` utility is a great tool for comparing two files line-by-line. It just has a prerequisite that it shouldn't: you have to first sort the files in lexical order.  That's an easy fix, as seen below.
 
-This intercept script turns `comm` into a robust, fail-safe tool. It scans the inputs, and if either file isn't sorted, it dynamically sorts them on the fly using native bash process substitution (`<()`). This guarantees 100% accurate comparison results on any text file, completely removing the pre-sorting friction while leaving your original files untouched.
-
-#### The implementation
+### The implementation
 ```bash
 #!/bin/bash
 
@@ -163,10 +162,4 @@ else
 fi
 ```
 
-#### Toolmaker's notes
-
-**Defensive Engineering**: Using `sort -C` allows the script to check if a file is already sorted without consuming heavy memory or processing time. If the files are already prepared, it transparently passes them straight to the system binary.
-
-**Process Substitution Efficiency**: By utilizing standard bash process substitution (<()), the script streams the sorted data directly into comm through anonymous named pipes. This eliminates the need to create, manage, or clean up messy temporary files on the disk.
-
-comm source on GitHub | comm manpage | comm PDF manual page
+[comm source on GitHub]() | [comm manpage]() | [comm PDF manual page]()
