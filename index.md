@@ -15,7 +15,7 @@ grep -E "^($todate)|^daily" ~/.calendar | cut -s -f 2-
 ### Toolmaker's notes
 This implementation allows me to use most of the date formats (including "Tuesday"), and adds a "daily" date indicator to let me put all my habits in here.  Four lines of shell code doing the core work of 1400 lines or so of C.  I like that trade.
 
-[calendar source on GitHub]() | [calendar manpage]() | [calendar PDF manual page]()
+[calendar source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/calendar) | [calendar manpage](https://github.com/billwear/cli-improved/blob/main/man/calendar.1) | [calendar PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/calendar.pdf)
 
 ---
 
@@ -78,7 +78,10 @@ else
 fi
 ```
 
-[comm source on GitHub]() | [comm manpage]() | [comm PDF manual page]()
+[comm source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/comm) | [comm manpage](https://github.com/billwear/cli-improved/blob/main/man/comm.1) | [comm PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/comm.pdf)
+
+---
+
 ## man2pdf
 
 Standard UNIX manual source files (`roff`) are hard to read without a man parser.  `man2pdf` will convert manual pages to PDF for easier portability. All of the functions here have both a man page (**command**.1) and a PDF manual page (**command**.pdf), kept in separate directories in the repository.
@@ -126,6 +129,11 @@ mkdir() {
     command mkdir -p "$@"
 }
 ```
+
+[mkdir source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/mkdir.zshrc) | [mkdir manpage](https://github.com/billwear/cli-improved/blob/main/man/mkdir.1) | [mkdir PDF manual page]()
+
+---
+
 ## pwd
 Standard `pwd` is path blind: it doesn't warn you about symbolic links.  Easy enough to fix.
 
@@ -187,3 +195,5 @@ d=$(date +%-j)
 t=$(( (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 ? 366 : 365 )) 
 echo "$(date '+%a %b %d %H:%M:%S %Z %Y, %s'); Day $d of $t; $((t - d)) days remain."
 ```
+
+[xdate source on GitHub](https://github.com/billwear/cli-improved/blob/main/bin/xdate) | [xdate manpage](https://github.com/billwear/cli-improved/blob/main/man/xdate.1) | [xdate PDF manual page](https://github.com/billwear/cli-improved/blob/main/man-pdf/xdate.pdf)
