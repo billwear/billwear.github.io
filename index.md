@@ -3,7 +3,8 @@
 ---
 ## manpage index
 
-[xcalendar](#xcalendar)
+[xcalendar](#xcalendar) ~ [xclear](#xclear) ~ [xcomm](#xcomm) ~ [xdate](#xdate) ~ [xman2pdf](#xman2pdf) ~ [xmkdir](#xmkdir) ~ [xpwd](#xpwd) ~ [xwhich](#xwhich) 
+
 ---
 
 ## xcalendar
