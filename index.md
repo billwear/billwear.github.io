@@ -3,7 +3,7 @@
 ---
 ## manpage index
 
-[xcalendar]()
+[xcalendar](#xcalendar)
 ---
 
 ## xcalendar
