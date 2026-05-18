@@ -1,9 +1,8 @@
 # [Fifty-two years of *nix CLI](https://github.com/billwear/cli-improved/)
 
 ---
-## Page directory
+## manpage index
 
-[xcalendar](#xcalendar)
 
 ---
 
