@@ -1,0 +1,27 @@
+.TH XWHICH 1 "2026-05-15" "User Commands" "CLI-Improved Manual"
+.SH NAME
+xwhich \- locate a command and identify its type
+.SH SYNOPSIS
+.B xwhich
+[\fINAME\fR]...
+.SH DESCRIPTION
+A high-visibility replacement for the standard \fBwhich\fR utility.
+.PP
+Standard \fBwhich\fR often fails to report shell aliases and functions, 
+creating a "blind spot" for the user. This refined version utilizes the 
+shell's internal \fBtype \-a\fR mechanism to provide a complete audit 
+of how a command name is resolved.
+.SH ADVANTAGES
+.IP \(bu 3
+\fBVisibility:\fR Identifies if a command is an alias, a function, or a 
+binary on the disk.
+.IP \(bu 3
+\fBCompleteness:\fR Lists all occurrences of the name in the user's 
+\fB$PATH\fR, not just the first one.
+.IP \(bu 3
+\fBOrderly:\fR Displays results in the order of precedence used by the 
+current shell.
+.SH INSTALLATION
+Copy the script from the GitHub repository to your $PATH, typically /usr/local/bin.
+.SH AUTHOR
+William Orian Wear (Bill Wear)

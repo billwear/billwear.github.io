@@ -1,0 +1,19 @@
+.TH XPWD 1 "2026-05-15" "User Commands" "CLI-Improved Manual"
+.SH NAME
+xpwd \- print name of current/working directory (smart-link version)
+.SH SYNOPSIS
+.B xpwd
+[\fIOPTION\fR]...
+.SH DESCRIPTION
+Print the full filename of the current working directory. 
+.PP
+This version is a "reduced-friction" wrapper designed to identify symbolic link 
+paths. If the logical path (where you think you are) differs from the physical 
+path (where the disk says you are), it displays both joined by an arrow.
+.SH INSTALLATION
+Copy the script from the GitHub repository to your $PATH, typically /usr/local/bin.
+.SH NOTES
+If no symbolic link is detected, the script transparently executes the 
+standard system \fB/bin/pwd\fR.
+.SH AUTHOR
+William Orian Wear (Bill Wear)
