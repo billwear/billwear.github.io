@@ -1,6 +1,11 @@
 # [Fifty-two years of *nix CLI](https://github.com/billwear/cli-improved/)
 
 ---
+## Page directory
+
+[xcalendar](#xcalendar)
+
+---
 
 ## xcalendar
 ### NAME
