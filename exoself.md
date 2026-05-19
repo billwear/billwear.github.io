@@ -32,11 +32,11 @@ For me at least, and for most Emacs users, org-mode can help a lot, if you defin
 
 Because of my personal nature, I need five common objects:
 
-•	A pipe, to channel my creative resources into a coherent workflow.
-•	An axle, to give me a center of rotation and induce artificial gravity around what matters to me.
-•	A clothesline, to give me meaningful endpoints, and just enough flex to wobble without losing it.
-•	A telescope, to keep me focused on the end goal, and not distracted by lesser things.
-•	And a ground wire, to drain off my digressive thoughts into a storage battery without losing them.
+* A pipe, to channel my creative resources into a coherent workflow.
+* An axle, to give me a center of rotation and induce artificial gravity around what matters to me.
+* A clothesline, to give me meaningful endpoints, and just enough flex to wobble without losing it.
+* A telescope, to keep me focused on the end goal, and not distracted by lesser things.
+* And a ground wire, to drain off my digressive thoughts into a storage battery without losing them.
 
 You may need different metaphors, but I encourage you to pick old-fashioned, common objects, because they anchor you in the mundane -- which is the antidote to the kryptonite of anxiety.
 
@@ -51,13 +51,13 @@ Org is a super-smart outline with folding. It also permits easy rearrangement, l
 
 Org is also a personal organizer, with to-do items that can have:
 
-•	TODO states,
-•	[#A] and priorities,
-•	And tags, :work:urgent:
-•	And can be scheduled by date, SCHEDULED: <2022-03-12 Sat>
-•	And time, SCHEDULED: <2022-03-12 Sat 09:00>
-•	And repeated every so many units of time, SCHEDULED: <2022-03-12 Sat +4d>
-•	Or on the next unit of time after it's completed, SCHEDULED: <2022-03-12 Sat .+4d>
+* TODO states,
+* [#A] and priorities,
+* And tags, :work:urgent:
+* And can be scheduled by date, SCHEDULED: <2022-03-12 Sat>
+* And time, SCHEDULED: <2022-03-12 Sat 09:00>
+* And repeated every so many units of time, SCHEDULED: <2022-03-12 Sat +4d>
+* Or on the next unit of time after it's completed, SCHEDULED: <2022-03-12 Sat .+4d>
 
 ### Tables, Too
 
@@ -86,10 +86,10 @@ But, saving the day, these tables can also be used as spreadsheets, like this bo
 
 Org also has an agenda, which shows me a whole day, and where I can type shortcuts directly to execute my workflow:
 
-•	e to set effort
-•	, to set priority
-•	: to set tags
-•	t to set to-do states (using a lisp function I wrote myself)
+* e to set effort
+* , to set priority
+* : to set tags
+* t to set to-do states (using a lisp function I wrote myself)
 
 Like, for example, cancelling a task.
 
