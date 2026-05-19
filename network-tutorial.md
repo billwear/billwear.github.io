@@ -1,12 +1,3 @@
-```{=org}
-#+DUNSEL: this just touches the file: flip
-```
-[Networks](https://stormrider.io/networking.html) \~
-[MAAS](https://stormrider.io/maas.html) \~ [Raspberry
-Pi](https://stormrider.io/pi4.html) \~
-[Warsurfing](https://stormrider.io/warsurfing.html) \~
-[Org-mode](https://stormrider.io/org-mode.html)
-
 I really want to write about networks. I\'m happy that it pays my bills,
 but I\'m going to write about them anyway, so it just makes sense to
 share.

@@ -1,12 +1,3 @@
-```{=org}
-#+DUNSEL: this just touches the file: flop
-```
-[Networks](https://stormrider.io/networking.html) \~
-[MAAS](https://stormrider.io/maas.html) \~ [Raspberry
-Pi](https://stormrider.io/pi4.html) \~
-[Warsurfing](https://stormrider.io/warsurfing.html) \~
-[Org-mode](https://stormrider.io/org-mode.html)
-
 Centuries ago, John Milton wrote, \"I cannot praise a fugitive and
 cloistered virtue,\" referring, at least in part, to those who keep
 their intelligence to themselves. Without some form of communication --

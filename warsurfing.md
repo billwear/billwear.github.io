@@ -1,25 +1,14 @@
-```{=org}
-#+DUNSEL: this just touches the file: flip
-```
-[Networks](https://stormrider.io/networking.html) \~
-[MAAS](https://stormrider.io/maas.html) \~ [Raspberry
-Pi](https://stormrider.io/pi4.html) \~
-[Warsurfing](https://stormrider.io/warsurfing.html) \~
-[Org-mode](https://stormrider.io/org-mode.html)
-
 *Keep asking why, because repeated questioning will eventually get to
 the truth; but again, keep that voltmeter handy.*
 
 Here, you will find curious things I\'ve discovered and curated over the
 years, mostly by \"Warsurfing.\" I define that phrase to cover:
 
-- [*Interesting websites*]{.spurious-link
-  target="* Interesting websites"} found by walking through the alphabet
+- [*Interesting websites*](#interesting-websites) found by walking through the alphabet
   and making up domain names.\
-- [*Chatronyms*]{.spurious-link target="* Chatronyms"} - \"textspeak\"
+- [*Chatronyms*](#chatronyms) - \"textspeak\"
   for IRC chat, found by hanging out in lots of chat spaces.\
-- [*Curious phone numbers*]{.spurious-link
-  target="* Curious phone numbers"} - mostly phone numbers with
+- [*Curious phone numbers*](#curious-phone-numbers) - mostly phone numbers with
   lingering phone company intercept messages or unusual recordings,
   found by \"wardialing\", that is, randomly dialing numbers to see
   who/what picks up. No live numbers here, just sayin.
@@ -238,8 +227,9 @@ domain\" page. Here\'s my list so far:
 
 ## Curious phone numbers
 
-These phone numbers all call a recording of some kind. Some of them are
-leftover Bell System intercept (error) messages.
+These phone numbers all call a recording of some kind. Some of them are leftover
+Bell System intercept (error) messages. They go in and out of service, so your
+mileage may vary.
 
   number               description
   -------------------- -------------------------------------------------------------------------------------

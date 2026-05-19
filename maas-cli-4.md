@@ -1,17 +1,20 @@
-```{=org}
-#+DUNSEL: this just touches the file: flip
-```
+# MAAS via the CLI
 
-------------------------------------------------------------------------
+[Install](maas-cli-1.md)
 
-MAAS: [Install](https://stormrider.io/maas-cli-1.html) \~
-[Configure](https://stormrider.io/maas-cli-2.html) \~
-[DHCP](https://stormrider.io/maas-cli-3.html) \~
-[Commission](https://stormrider.io/maas-cli-4.html) \~
-[Deploy](https://stormrider.io/maas-cli-5.html) \~
-[jq](https://stormrider.io/maas-cli-6.html) \~
-[SSH](https://stormrider.io/maas-cli-7.html) \~ [More
-jq](https://stormrider.io/maas-cli-8.html)
+[Configure](maas-cli-2.md)
+
+[DHCP](maas-cli-3.md)
+
+[Commission](maas-cli-4.md)
+
+[Deploy](maas-cli-5.md)
+
+[jq](maas-cli-6.md)
+
+[SSH](maas-cli-7.md)
+
+[More jq](maas-cli-8.md)
 
 ------------------------------------------------------------------------
 
