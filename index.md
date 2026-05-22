@@ -21,5 +21,5 @@ It covers business and life, from the everyday to the corporate, including codin
 
 Here’s one of the better pictures:
 <div>
-<img src=“images/south-rim.jpeg”>
+<img src=“/images/south-rim.jpeg”>
 </div>
