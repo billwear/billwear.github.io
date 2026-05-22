@@ -20,13 +20,6 @@ It covers business and life, from the everyday to the corporate, including codin
 ## I went to the Grand Canyon
 
 Here’s one of the better pictures:
-<div style="background-image: url('/images/south-rim.jpeg'); background-size: cover; background-position: center; padding: 100px 40px; color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
-
-
-
-
-
-
-
-
+<div>
+<img src=“images/south-rim.jpep”>
 </div>
