@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Command-Line Data Engine // jq Masterclass</title>
+    <link rel="stylesheet" href="/maas-style.css">
+</head>
+<body>
+
+<div class="header-nav">
+    <a href="/">← Gateway</a>
+    <a href="/about.html">The Story</a>
+    <a href="/maas-1.html">MAAS CLI Tutorial</a>
+    <a href="/jq-master.html" class="active">jq Masterclass</a>
+    <a href="/networking.html">Channels of Sharing</a>
+    <a href="/warsurfing.html">Warsurfing Log</a>
+</div>
+
+<div class="content">
+    <h1>The Command-Line Data Engine: An Authoritative Guide to jq</h1>
+    <span class="subtitle">Transforming raw, deeply nested JSON text streams into structured arrays.</span>
+
+    <p>When you deal with modern technical APIs or command-line server tools, you are constantly hit with massive walls of raw JSON output. Digging variables out of an unformatted string stream by eye is a massive drain on momentum.</p>
+    
+    <p>The solution isn't to click back into a graphical dashboard. The solution is <span class="highlight">jq</span>—a lightweight, high-performance command-line processor built to slice, filter, and restructure text data on-the-fly directly inside your shell pipeline.</p>
+
+    <h2>1. Establishing the Mental Model</h2>
+    <p>The absolute most important question to ask yourself whenever building a data filter is: <span class="highlight">"Where is the data coming from at this exact point in the pipeline?"</span>. Unlike standard UNIX text tools that evaluate rows lines by lines, `jq` reads data as distinct, nested structural objects.</p>
+
+    <p>Consider a typical unformatted machine array block emitted by a backend query:</p>
+    <div class="code-header">Raw JSON Input Payload</div>
+    <pre>[
+  {
+    "hostname": "nearby-louse",
+    "system_id": "ed8pda",
+    "tag_names": ["plover", "virtual"],
+    "pool": { "name": "swimming" },
+    "zone": { "name": "defense" }
+  },
+  {
+    "hostname": "novel-cod",
+    "system_id": "4ds3eh",
+    "tag_names": ["dunnet"],
+    "pool": { "name": "swimming" },
+    "zone": { "name": "fault" }
+  }
+]</pre>
+
+    <h2>2. Base Iteration and Identity Filtering</h2>
+    <h3>The Identity Filter (`.`)</h3>
+    <p>The simplest filter is `.`. It takes the input text payload and outputs it exactly as it came in, formatted cleanly for human eyes (pretty-printed).</p>
+
+    <h3>The Array Iterator (`.[]`)</h3>
+    <p>When an API returns data wrapped inside a top-level JSON array `[...]`, you cannot query inner keys directly. The `.[]` parameter tells `jq` to unpack the container wrapper and iterate down over each individual internal record item sequentially.</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>maas admin machines read | jq '.[]'</pre>
+
+    <h2>3. Field Extraction and Fallback Mechanics</h2>
+    <p>Once you are iterating over the objects, you pull out targets by chaining their key pathways together using dot notation (e.g., `.hostname` or `.pool.name`).</p>
+
+    <h3>Handling Null Traps with the Alternative Operator (`//`)</h3>
+    <p>If an API field is optional or empty, a standard query will drop a barren `null` literal right into the middle of your clean output text. To prevent this, use the `//` fallback operator to dictate a safe default value if the target property doesn't exist:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>maas admin machines read | jq '.[] | .tag_names[0] // "-"'</pre>
+    <p>If `.tag_names[0]` returns an empty string or null record, the pipeline smoothly catches the exception and outputs a clean text hyphen `"-"` instead.</p>
+
+    <h2>4. Constructing Custom Outputs and Tab-Separated Arrays</h2>
+    <p>To turn raw properties into a clean, human-readable terminal matrix table, wrap your comma-separated targets inside explicit brackets `[...]` to map them into a fresh array structure, then pipe them directly into the `@tsv` (Tab-Separated Values) formatting engine:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>maas admin machines read | jq -r '.[] | [.hostname, .system_id, .pool.name] | @tsv'</pre>
+    <p>The `-r` command-line flag is critical here. It strips away all JSON string quotes and formatting syntax escapes, emitting raw text strings directly to standard stdout output.</p>
+
+    <h2>5. Injecting Dynamic Header Margins</h2>
+    <p>To make terminal data genuinely professional, you need matching header titles and dynamic underline dividers that scale with your columns. We pass these definitions as hardcoded array strings layered cleanly before our record execution parameters:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>maas admin machines read | jq -r '(["HOSTNAME","SYSID","POOL"] | (., map(length*"-"))), (.[] | [.hostname, .system_id, .pool.name]) | @tsv' | column -t</pre>
+    
+    <p>The `map(length*"-")` mechanic reads each text header block string, counts its precise character length, and dynamically spawns a perfectly matching line of dash delimiters underneath it. We then pipe the raw stdout block into the standard Linux `column -t` terminal utility to calculate clean margin offsets instantly.</p>
+
+    <h2>6. Multi-Parameter Sorting Operations</h2>
+    <p>You can force `jq` to arrange records natively using the `sort_by(...)` function block before iterating down into custom table formats. The input inside the sort function must match the base incoming data structure layout accurately.</p>
+
+    <h3>Single Parameter Sort</h3>
+    <p>To organize your whole environment listing alphabetically by the machine's primary hostname string properties:</p>
+    <div class="code-header">terminal $</div>
+    <pre>maas admin machines read | jq -r '(["HOSTNAME","SYSID","POOL"] | (., map(length*"-"))), (sort_by(.hostname)[] | [.hostname, .system_id, .pool.name]) | @tsv' | column -t</pre>
+
+    <h3>Deep Nested Sort</h3>
+    <p>To organize records based on properties buried inside sub-object trees (like sorting by the inner name key inside the pool object metadata):</p>
+    <div class="code-header">terminal $</div>
+    <pre>maas admin machines read | jq -r '(["HOSTNAME","SYSID","POOL"] | (., map(length*"-"))), (sort_by(.pool.name)[] | [.hostname, .system_id, .pool.name]) | @tsv' | column -t</pre>
+
+    <h3>Advanced Multi-Key Sorting Matrices</h3>
+    <p>When dealing with vast enterprise infrastructures, a single parameter sort leaves trailing duplicate blocks clumped randomly together. You handle this by passing an explicit comma-separated tie-breaker prioritization chain inside your sorting function arguments:</p>
+    
+    <div class="code-header">terminal $</div>
+    <pre>maas admin machines read | jq -r '(["HOSTNAME","SYSID","TAG","POOL"] | (., map(length*"-"))), (sort_by(.tag_names[0], .pool.name, .hostname)[] | [.hostname, .system_id, .tag_names[0], .pool.name]) | @tsv' | column -t</pre>
+    <p>This tells the engine to index everything by the primary system tag array strings first. If multiple machines share the exact same tag parameters, it breaks the tie by sorting those specific records by their inner pool names. If those are identical too, it drops back to sorting individual hostnames alphabetically.</p>
+
+    <div class="terminal-box">
+        // Final Operational Reality<br>
+        No UI maps required. Just deterministic strings, nested data pipelines, and raw terminal execution.
+    </div>
+</div>
+
+</body>
+</html>
