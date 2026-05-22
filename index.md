@@ -1,4 +1,6 @@
-# Fifty-two years of *nix
+> "Kill all the lawyers."  —Shakespeare
+>
+> "Forget the lawyers. Kill all the side quests."  —Stormrider
 
 [life is 90% of my use-cases for org-mode](ninety-pct.md)
 
