@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stormrider</title>
+    <title>stormrider // independent toolmaker</title>
     <style>
         html, body {
             margin: 0;
@@ -17,43 +17,94 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-color: #121214;
+            background-color: #0c0c0e;
             display: flex;
             justify-content: flex-start;
-            align-items: flex-start; /* Changed from center to push content to the top */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            align-items: flex-start;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            overflow-x: hidden;
         }
-        .title-container {
-            padding: 60px 40px; /* Increased top padding slightly for a clean breathing room from the screen edge */
-            max-width: 800px;
+        .container {
+            padding: 80px 40px;
+            max-width: 850px;
             width: 100%;
             box-sizing: border-box;
         }
+        .manifesto {
+            margin-bottom: 60px;
+        }
         h1 {
             color: #ffffff;
-            font-size: 2.5rem;
-            line-height: 1.3;
-            margin: 0 0 30px 0; /* Slightly more space between the two quotes */
-            font-weight: 600;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            
+            font-size: 2.8rem;
+            line-height: 1.25;
+            margin: 0 0 25px 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.85);
             opacity: 0;
-            transform: translateX(-30px);
-            animation: slideIn 0.8s ease-out forwards;
+            transform: translateX(-25px);
+            animation: slideIn 0.6s ease-out forwards;
         }
-
+        h1.delayed {
+            animation-delay: 0.2s;
+        }
+        nav {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.6s forwards;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            background: rgba(18, 18, 22, 0.8);
+            padding: 20px;
+            border-radius: 6px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            max-width: fit-content;
+        }
+        nav a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        nav a:hover {
+            background: rgba(56, 189, 248, 0.15);
+            color: #f8fafc;
+            transform: translateY(-1px);
+        }
         @keyframes slideIn {
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @media(max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 40px 20px; }
+            nav { flex-direction: column; width: 100%; }
+        }
     </style>
 </head>
 <body>
 
-<div class="title-container">
-    <h1>Stormrider's homepage</h1>
+<div class="container">
+    <div class="manifesto">
+        <h1>"Kill all the lawyers."<br><span style="color: #94a3b8; font-size: 1.5rem; font-weight: 400;">— Shakespeare</span></h1>
+        <h1 class="delayed">"Forget the lawyers. Kill all the side quests."<br><span style="color: #38bdf8; font-size: 1.5rem; font-weight: 500;">— stormrider</span></h1>
+    </div>
+
+    <nav>
+        <a href="/about.html">The Story</a>
+        <a href="/networking.html">Channels of Sharing</a>
+        <a href="/warsurfing.html">Warsurfing Log</a>
+    </nav>
 </div>
 
 </body>
