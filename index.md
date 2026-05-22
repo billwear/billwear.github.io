@@ -1,3 +1,14 @@
+---
+layout: default
+title: Home
+---
+
+<div style="background-image: url('/images/stormrider.png'); background-size: cover; background-position: center; padding: 100px 40px; color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+
+> # "Kill all the lawyers." —Shakespeare
+>
+> # "Forget the lawyers. Kill all the side quests." —Me
+
 > "Kill all the lawyers."  —Shakespeare
 >
 > "Forget the lawyers. Kill all the side quests."  —Stormrider
@@ -15,4 +26,6 @@
 [using MAAS from the CLI](maas-cli-1.md)
 
 [extended CLI command replacements](https://github.com/billwear/cli-improved)
+
+</div>
 
