@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAAS CLI // chapter 4</title>
+    <link rel="stylesheet" href="/maas-style.css">
+</head>
+<body>
+
+<div class="header-nav">
+    <a href="/">← Gateway</a>
+    <a href="/maas-1.html">1: Init & Ingest</a>
+    <a href="/maas-2.html">2: Network Topology</a>
+    <a href="/maas-3.html">3: The Virtual Machine</a>
+    <a href="/maas-4.html" class="active">4: Provision & Scripting</a>
+</div>
+
+<div class="content">
+    <h1>Chapter 4: Provisioning & Payload Scripting</h1>
+    <span class="subtitle">Injecting access keys, allocating resources, and executing scripts.</span>
+
+    <p>Commissioning a raw machine node provides zero utility if the target stays powered off or missing cryptographic authorization fields. We resolve this by forcing execution rules directly across our targets.</p>
+
+    <h2>1. Forcing Access Key Propagation</h2>
+    <p>We re-run the diagnostic commissioning phase, forcing MAAS to inject our local public keys into the root user structure, while maintaining active system power:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>maas admin machine commission xttpfx enable_ssh=1</pre>
+
+    <h2>2. Locating Node Network Endpoints</h2>
+    <p>We execute standard container listing lookups to pull down the dynamic IP address lease given to our virtual machine environment:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>lxc list</pre>
+    <p>Our target container endpoint registers as active and readable across our subnet network:</p>
+    <pre>| native-cub | RUNNING | 10.38.31.202 (eth0) | VIRTUAL-MACHINE |</pre>
+
+    <h2>3. Secure Copy Payload Ingestion</h2>
+    <p>With an active, reachable route running, we use `scp` to pass configured automation scripts straight into the remote user filesystem namespace:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>scp ./motd.sh ubuntu@10.38.31.202:</pre>
+
+    <h2>4. Allocating and Deploying across Production</h2>
+    <p>To bind this system to production ownership and kick off the final operating system deployment phase, we execute the direct master commands:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>maas admin machines allocate system_id=xttpfx
+maas admin machine deploy xttpfx</pre>
+
+    <h2>5. Advanced Telemetry Sort Tuning</h2>
+    <p>When scaling out across hundreds of bare-metal servers, un-ordered logs introduce massive operational noise. We structure our reporting layout arrays by running native multi-parameter sorting matrices inside `jq` before building table views:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>maas admin machines read | jq -r '(["HOSTNAME","SYSID","TAG","POOL","ZONE"] | (., map(length*"-"))),(sort_by(.tag_names[0],.pool.name,.hostname)[] | [.hostname,.system_id,.tag_names[0],.pool.name,.zone.name]) | @tsv' | column -t</pre>
+
+    <div class="step-nav">
+        <a href="/maas-3.html">← Chapter 3: The VM</a>
+        <span></span>
+    </div>
+</div>
+
+</body>
+</html>

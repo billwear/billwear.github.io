@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAAS CLI // chapter 1</title>
+    <link rel="stylesheet" href="/maas-style.css">
+</head>
+<body>
+
+<div class="header-nav">
+    <a href="/">← Gateway</a>
+    <a href="/maas-1.html" class="active">1: Init & Ingest</a>
+    <a href="/maas-2.html">2: Network Topology</a>
+    <a href="/maas-3.html">3: The Virtual Machine</a>
+    <a href="/maas-4.html">4: Provision & Scripting</a>
+</div>
+
+<div class="content">
+    <h1>Chapter 1: Initialization & Ingestion</h1>
+    <span class="subtitle">Bypassing the dashboard setup journey entirely.</span>
+
+    <p>MAAS features a clean browser dashboard interface, backed by an authoritative REST API. We are bypassing the graphic dashboard interface. Our objective is deterministic bare-metal control straight from the system terminal prompt.</p>
+
+    <h2>1. Ingesting the Snap</h2>
+    <p>The installation target is <span class="highlight">wintermute</span>—a local testbed environment. We pull down the core packages via the snap channel:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>sudo snap install maas --channel=2.8</pre>
+
+    <h2>2. Establishing Production Database Parameters</h2>
+    <p>Rather than relying on ephemeral proof-of-concept storage setups, we deploy a production-grade PostgreSQL role schema to backing memory. We spin up the user role and target database payload directly:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>sudo apt update -y && sudo apt install -y postgresql
+sudo -u postgres psql -c "CREATE USER \"maascli\" WITH ENCRYPTED PASSWORD 'maascli'"
+sudo -u postgres createdb -O "maascli" "maasclidb"</pre>
+
+    <p>To secure local role identification, we append our database permission policy into the host HBA tracking configuration:</p>
+    <div class="code-header">/etc/postgresql/12/main/pg_hba.conf</div>
+    <pre>host    maasclidb       maascli         0/0                     md5</pre>
+
+    <h2>3. Firing the Engine</h2>
+    <p>We bind the region and rack services directly to our freshly engineered database URI connection string:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>sudo maas init region+rack --database-uri "postgres://maascli:maascli@localhost/maasclidb"</pre>
+
+    <p>Once the migration registers successfully, we inject our administrative master profile credentials right through the CLI mechanism:</p>
+    <div class="code-header">terminal $</div>
+    <pre>sudo maas createadmin</pre>
+
+    <h2>4. Logging In</h2>
+    <p>We extract our secure token directly from the local administrative key repository and authenticate our active shell session:</p>
+    <div class="code-header">terminal $</div>
+    <pre>sudo maas apikey --username=admin > api-key-file
+maas login admin http://192.168.43.251:5240/MAAS/api/2.0/ < api-key-file</pre>
+
+    <div class="step-nav">
+        <span></span>
+        <a href="/maas-2.html">Chapter 2: Topology →</a>
+    </div>
+</div>
+
+</body>
+</html>

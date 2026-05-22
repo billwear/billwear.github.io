@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAAS CLI // chapter 2</title>
+    <link rel="stylesheet" href="/maas-style.css">
+</head>
+<body>
+
+<div class="header-nav">
+    <a href="/">← Gateway</a>
+    <a href="/maas-1.html">1: Init & Ingest</a>
+    <a href="/maas-2.html" class="active">2: Network Topology</a>
+    <a href="/maas-3.html">3: The Virtual Machine</a>
+    <a href="/maas-4.html">4: Provision & Scripting</a>
+</div>
+
+<div class="content">
+    <h1>Chapter 2: Network Topology Control</h1>
+    <span class="subtitle">Configuring subnets, forwarders, and IP address scopes.</span>
+
+    <p>With an active regional server connection running, we establish our routing parameters and lookups entirely using the `set-config` collection utilities.</p>
+
+    <h2>1. Establishing Upstream Lookup Loops</h2>
+    <p>To avoid manual configuration loops inside the browser, we tell the regional server layout exactly where to forward external lookup traffic:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>maas admin maas set-config name=upstream_dns value="8.8.8.8"</pre>
+
+    <h2>2. Ingesting Operating System Templates</h2>
+    <p>We query the collection endpoints to ensure our foundational image arrays are properly indexed on local disk storage:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>maas admin boot-resources read | jq -r '.[] | "\(.name)\t\(.architecture)"'</pre>
+
+    <p>To add alternative operating systems into our deploy pipeline target lists, we register our selection variables and force a local synchronization pull:</p>
+    <div class="code-header">terminal $</div>
+    <pre>maas admin boot-source-selections create 1 os="ubuntu" release="trusty" arches="amd64" subarches="*" labels="*"
+maas admin boot-resources import</pre>
+
+    <h2>3. Activating Dynamic DHCP Allocation</h2>
+    <p>We pinpoint our local fabric interface by reading parameters from our active bridge target range:</p>
+
+    <div class="code-header">terminal $</div>
+    <pre>maas admin subnet read 192.168.123.0/24 | grep fabric_id</pre>
+
+    <p>MAAS will refuse to activate DHCP switches on an untagged VLAN if a clear dynamic IP pool baseline does not exist. We execute our pool boundary allocation first:</p>
+    <div class="code-header">terminal $</div>
+    <pre>maas admin ipranges create type=dynamic start_ip=192.168.123.190 end_ip=192.168.123.253</pre>
+
+    <p>Now, we drop the hammer and spin DHCP tracking live across our environment:</p>
+    <div class="code-header">terminal $</div>
+    <pre>maas admin vlan update 2 untagged dhcp_on=True primary_rack=wintermute</pre>
+
+    <div class="step-nav">
+        <a href="/maas-1.html">← Chapter 1: Init</a>
+        <a href="/maas-3.html">Chapter 3: The VM →</a>
+    </div>
+</div>
+
+</body>
+</html>
