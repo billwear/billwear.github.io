@@ -19,41 +19,42 @@
             background-attachment: fixed;
             background-color: #121214;
             display: flex;
-            justify-content: flex-start; /* Aligns content to the left side */
-            align-items: center;
+            justify-content: flex-start;
+            align-items: flex-start; /* Changed from center to push content to the top */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
-        .container {
-            padding: 40px;
+        .title-container {
+            padding: 60px 40px; /* Increased top padding slightly for a clean breathing room from the screen edge */
             max-width: 800px;
+            width: 100%;
+            box-sizing: border-box;
         }
         h1 {
-            color: #ffffff; /* White text */
+            color: #ffffff;
             font-size: 2.5rem;
             line-height: 1.3;
-            margin: 0 0 20px 0;
+            margin: 0 0 30px 0; /* Slightly more space between the two quotes */
             font-weight: 600;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Ensures legibility over the clouds */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
             
-            /* The Slide-In Animation Mechanics */
             opacity: 0;
-            transform: translateX(-30px); /* Starts 30 pixels to the left */
-            animation: slideIn 0.8s ease-out forwards; /* Runs once for 0.8 seconds */
+            transform: translateX(-30px);
+            animation: slideIn 0.8s ease-out forwards;
         }
 
-        /* Define the animation keyframes */
         @keyframes slideIn {
             to {
                 opacity: 1;
-                transform: translateX(0); /* Moves to its natural position */
+                transform: translateX(0);
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Stormrider's homStormrider's homepage</h1>
+<div class="title-container">
+    <h1>"Kill all the lawyers."<br>— Shakespeare</h1>
+    <h1>"Forget the lawyers. Kill all the side quests."<br>— Me</h1>
 </div>
 
 </body>
