@@ -1,0 +1,39 @@
+/* Baseline System Overhaul */
+body {
+    background-color: #121212; /* Deep, low-glare dark mode */
+    color: #e0e0e0;            /* Soft white to mitigate eye strain */
+    font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 80ch;           /* Strictly limit line length to 80 characters for optimal reading */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Hyperlinks as Data Utilities */
+a {
+    color: #A0C4FF;            /* High-contrast soft blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    background-color: #262626; /* Subtle prompt highlights */
+}
+
+/* Structural Formatting */
+hr {
+    border: none;
+    border-top: 1px dashed #444444; /* Clean terminal-style dividers */
+    margin: 2rem 0;
+}
+
+h2, h3 {
+    color: #E59866;            /* Accent color for structural headings */
+    margin-top: 2rem;
+}
+
+/* Utilities */
+.prompt {
+    color: #76D7C4;            /* Mint green for command-line inputs */
+}

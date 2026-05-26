@@ -3,125 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>stormrider // independent toolmaker</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-        }
-        body {
-            background-image: url('/images/stormrider.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-color: #0c0c0e;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Pushes navigation row down to the absolute bottom baseline */
-            align-items: flex-start;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-            overflow-x: hidden;
-            box-sizing: border-box;
-        }
-        .container {
-            padding: 80px 40px;
-            max-width: 850px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .manifesto {
-            margin-bottom: 40px;
-        }
-        h1 {
-            color: #ffffff;
-            font-size: 2.8rem;
-            line-height: 1.25;
-            margin: 0 0 25px 0;
-            font-weight: 700;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.85);
-            opacity: 0;
-            transform: translateX(-25px);
-            animation: slideIn 0.6s ease-out forwards;
-        }
-        h1.delayed {
-            animation-delay: 0.2s;
-        }
-        .nav-row {
-            width: 100%;
-            padding: 0 40px 60px 40px; /* Positions navigation neatly on the second row of the screen */
-            box-sizing: border-box;
-            opacity: 0;
-            animation: fadeIn 0.8s ease-out 0.6s forwards;
-        }
-        nav {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            background: rgba(18, 18, 22, 0.8);
-            padding: 16px 20px;
-            border-radius: 6px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-            max-width: fit-content;
-        }
-        nav a {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-        }
-        nav a:hover {
-            background: rgba(56, 189, 248, 0.15);
-            color: #f8fafc;
-            transform: translateY(-1px);
-        }
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        @media(max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 40px 20px; }
-            .nav-row { padding: 0 20px 40px 20px; }
-            nav { flex-direction: column; width: 100%; }
-        }
-    </style>
+    <title>stormrider</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="manifesto">
-        <h1>"Kill all the lawyers."<br><span style="color: #94a3b8; font-size: 1.5rem; font-weight: 400;">— Shakespeare</span></h1>
-        <h1 class="delayed">"Forget the lawyers. Kill all the side quests."<br><span style="color: #38bdf8; font-size: 1.5rem; font-weight: 500;">— stormrider</span></h1>
-    </div>
-</div>
+<pre>
+========================================================================
+ stormrider // independent toolmaker & author
+========================================================================
 
-<div class="nav-row">
-<div class="nav-row">
-    <nav>
-        <a href="/about.html">The Story</a>
-        <a href="https://github.com/billwear/cli-improved">Improved *NIX CLI</a>
-        <a href="/maas-1.html">MAAS CLI Tutorial</a>
-        <a href="/jq-master.html">jq Masterclass</a>
-        <a href="/networking.html">Channels of Sharing</a>
-        <a href="/essays.html">Essays</a>
-        <a href="/phreaks-ear.html">The Phreak's Ear</a>
-        <a href="/geek-code.html">Geek Code</a>
-        <a href="/chatronyms.html">Chatronyms</a>
-        <a href="/warsurfing.html">Warsurfing Log</a>
-    </nav>
-</div></div>
+"Kill all the lawyers." — Shakespeare
+"Forget the lawyers. Kill all the scrolling baloney." — stormrider
+
+------------------------------------------------------------------------
+$ cat manifest.txt
+This site is a zero-dopamine, infinite-scroll-free zone. Everything 
+here is structured text-as-data, designed for long-form utility and 
+deliberate reading. No algorithms, no corporate tracking.
+
+------------------------------------------------------------------------
+$ ls -la /utilities/  [The Coder]
+------------------------------------------------------------------------
+- <a href="https://github.com/billwear/cli-improved">cli-improved</a>   :: Enhanced Unix utilities for a streamlined shell.
+- <a href="#">jq-masterclass</a> :: Slicing and dicing text-as-data efficiently.
+
+------------------------------------------------------------------------
+$ ls -la /monographs/ [The Author]
+------------------------------------------------------------------------
+- <a href="#">Anchoring Kites</a> :: Structural focus for complex creative setups.
+  [<a href="https://amazon.com">Kindle Edition</a>] | [<a href="https://books.apple.com">Apple Books</a>]
+
+------------------------------------------------------------------------
+$ ls -la /material-design/ [The Craft]
+------------------------------------------------------------------------
+- <a href="https://square.link">StitchesByBill</a> :: Precision fabric layouts built by hand.
+                    [Explore Storefront via Square Online]
+</pre>
+
 </body>
 </html>
