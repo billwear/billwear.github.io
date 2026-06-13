@@ -1,7 +1,9 @@
-# billwear.github.io
-you've found stormrider's personal site. enjoy.
+# This Terminal Life
+You may or may not have used a computer terminal in your life. Doesn't matter -- there's something here for everyone.  For those of you who lean toward the command-line interface (CLI), you know that the CLI strips away the bloat of modern computing so you can actually get things done.
 
-## about me
+But life requires the same discipline.  We are all terminal, and time is too short for balloons and confetti and doomscrolling.  This is a space for practical living, sharp focus, and plain living, whether you work from the shell prompt or just try to get by on a weekly basis.
+
+## About me
 
 i first used 'nix over 50 years ago, and it's been my passion and my go-to since. i've tried lots of other tools, but they leave me feeling flat and immobile and wanting to get back to the command line.  eventually, i just gave in.
 
