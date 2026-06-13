@@ -52,5 +52,5 @@ C.  so there's your cousin.
 
 the other reason i code in C is that i've been using that language
 since 1974.  my first access to unix was at a community college near
-Huntsville, AL, the year I turned 15.  i've done other languages for
-money, but i don't write my own stuff in anything but C.
+Huntsville, AL, the year I turned 15.  i've done many other languages
+for money, but i don't write my own stuff in anything but C.
