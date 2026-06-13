@@ -1,0 +1,56 @@
+#+TITLE: why i code in C
+#+AUTHOR: bill wear
+#+DATE: Sat Jun 13 01:11:19 PM CDT 2026
+#+OPTIONS: toc:nil
+
+* why i code in C
+let's take stock of what's written in C.  or better yet, let's ask a
+slightly different question.
+
+** what's *not* written in C?
+this list isn't exhaustive, but it gets the point across:
+
+- FORTRAN
+- COBOL
+- Lisp
+- ALGOL
+- Pure assembly language
+  
+nearly everything else that dominates GitHub today is either a child,
+grandchild, or cousin of C -- meaning that the language is either
+compiled or interpreted by code written in C, or the language in which
+it's written was compiled or interpreted by code written in C.  here's
+my list of these:
+
+- Python
+- JavaScript
+- PHP
+- Ruby
+- Lua
+- Perl
+- R
+- C++
+- Java
+- C#/.NET
+- Node.js
+- Go
+- Rust
+- Clojure
+- Scala
+- Kotlin
+- Mojo
+
+you'll notice i left out ada.  that's because Ada was designed
+explicitly to *not* be C. Ada treats the compiler as a strict guardian
+to prevent runtime catastrophes, rather than, for example, allowing
+the programmer to cast pointers arbitrarily.  and those compile-time
+safety checks are written in pure Ada.  but once it decides your code
+is safe, it compiles to machine code with the GCC, which is written in
+C.  so there's your cousin.
+
+** one other reason
+
+the other reason i code in C is that i've been using that language
+since 1974.  my first access to unix was at a community college near
+Huntsville, AL, the year I turned 15.  i've done other languages for
+money, but i don't write my own stuff in anything but C.

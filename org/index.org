@@ -1,6 +1,7 @@
 #+TITLE: THIS TERMINAL LIFE
 #+AUTHOR: bill wear
-#+DATE: Sat Jun 13 12:19:49 PM CDT 2026
+#+DATE: Sat Jun 13 12:55:27 PM CDT 2026
+#+OPTIONS: toc:nil
 
 * This terminal life
 We are all terminal.  And 99% of us pay taxes.
@@ -8,9 +9,9 @@ We are all terminal.  And 99% of us pay taxes.
 A somewhat lesser percentage of us work strictly at the computer
 terminal, an arcane tool known as the *Command-Line Interface (CLI)*.
 
-If CLI seems mysterious, you're not lost -- you just need to read the
-*odd* major sections of this website, because the even chapters will
-seem, well, truly odd. You can use this table of contents to get around:
+If CLI seems mysterious, you're not lost -- just follow the links that
+are in *ALL CAPS* to stay away from the geekspeak.  I promise there's
+plenty of stuff here for everyone, developer or not.
 
 #+INCLUDE: "sitemap.org" :lines "3-"
 
