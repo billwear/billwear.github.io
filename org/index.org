@@ -10,7 +10,11 @@ terminal, an arcane tool known as the *Command-Line Interface (CLI)*.
 
 If CLI seems mysterious, you're not lost -- you just need to read the
 *odd* major sections of this website, because the even chapters will
-seem, well, truly odd.
+seem, well, truly odd. You can use this table of contents to get around:
+
+#+INCLUDE: "sitemap.org" :lines "3-"
+
+** what's here, now?
 
 This site encourages clear thinking, sharp focus, careful
 decision-making, and wherever possible, plain living.  For those who

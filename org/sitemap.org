@@ -1,0 +1,3 @@
+#+TITLE: Table of Contents
+
+- [[file:index.org][this terminal life]]
