@@ -1,8 +1,8 @@
-#+TITLE: this terminal life
+#+TITLE: THIS TERMINAL LIFE
 #+AUTHOR: bill wear
 #+DATE: Sat Jun 13 12:19:49 PM CDT 2026
 
-* this terminal life
+* This terminal life
 We are all terminal.  And 99% of us pay taxes.
 
 A somewhat lesser percentage of us work strictly at the computer
