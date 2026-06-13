@@ -200,9 +200,9 @@
 you've found stormrider's personal site. enjoy.
 </p>
 
-<h2>
-about me
-</h2>
+<p>
+## about me
+</p>
 
 <p>
 i first used 'nix over 50 years ago, and it's been my passion and my go-to since. i've tried lots of other tools, but they leave me feeling flat and immobile and wanting to get back to the command line.  eventually, i just gave in.
@@ -212,9 +212,9 @@ i first used 'nix over 50 years ago, and it's been my passion and my go-to since
 i use a loaded hp elitebook running debian 13, no graphical interface. if i have to use javascript on a site, i just use my phone.  otherwise, i generally use emacs.
 </p>
 
-<h2>
-things i do
-<h2>
+<p>
+## things i do
+</p>
 
 <p>
 i retired in late 2025.  since then, i sew (it's a hobby), write books (you can find them on amazon.com), and do a few other odd things to make up the shortfall in my social security.  will work for money.
