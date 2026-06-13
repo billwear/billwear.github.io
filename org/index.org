@@ -3,3 +3,23 @@
 #+DATE: Sat Jun 13 12:19:49 PM CDT 2026
 
 * this terminal life
+We are all terminal.  And 99% of us pay taxes.
+
+A somewhat lesser percentage of us work strictly at the computer
+terminal, an arcane tool known as the *Command-Line Interface (CLI)*.
+
+If CLI seems mysterious, you're not lost -- you just need to read the
+*odd* major sections of this website, because the even chapters will
+seem, well, truly odd.
+
+This site encourages clear thinking, sharp focus, careful
+decision-making, and wherever possible, plain living.  For those who
+embrace CLI, I will be coding lots of tools to help; for those who
+don't, the same tools are available for your favorite text editor,
+though you might have to do a little more work.
+
+There's also going to be a tutorial for those who want to learn CLI.
+It takes time and patience, but it's honestly worth it.
+
+Join me as we discover a rich life without filters and distractions.
+
