@@ -1,7 +1,7 @@
 #+TITLE: THIS TERMINAL LIFE
 #+AUTHOR: bill wear
 #+DATE: Sat Jun 13 12:55:27 PM CDT 2026
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil num:nil
 
 * This terminal life
 We are all terminal.  And 99% of us pay taxes.
