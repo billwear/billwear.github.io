@@ -196,198 +196,62 @@
 </head>
 <body>
 <div id="content" class="content">
-<a href="yesterday.html">yesterday &gt;&gt;</a>
 <pre>
-##############################
-#          M O T D           #
-##############################
+#################################
+# PERSONAL JOURNAL OF BILL WEAR #
+#################################
 
-### E P H E M E R I S
+### TODAY'S DATE
+Mon Jun 15 12:47:26 CDT 2026
+UNIX Epoch: 1781545646 
+Day 166 of 365; 199 days remain
 
-Tue Jun 16 16:36 2026
-Epoch: 1781645760
-Day 167 of 365; 198 remain.
-Boomtime, Confusion the 21st
-Dawn: 05:26 :: Dusk: 20:31
-Rise: 05:56 :: Set:  20:02
-Noon: 12:59
+### DISCORDIAN DATE
+Today is Sweetmorn, the 20th day
+of Confusion in the YOLD 3192
 
-### W E A T H E R
+### TODAY'S FORTUNE
+Love is in the offing.  Be very
+affectionate to one who adores 
+you.
 
- Thunderstorm In Vicinity
- Light Rain
- +76°F; +80°F; 94%; ↗2mph
- 1012hPa; 0.00 in; uv: 1
+### LOCAL WEATHER
+Weather: overcast +82°F +90°F 
+72% ↑2mph 1016hPa 0.00 in uv 3
+Dawn: 05:26   Sunrise: 05:56
+Noon: 12:59   Sunset:  20:02
+Dusk: 20:31
 
-### F O R T U N E
+#################################
+#         DAILY JOURNAL         #
+#################################
 
-You will never know hunger.
+12:50: feeling a definite pull to 
+spend all my time in the next few 
+weeks learning the two UNIX books
+"The Standard C Library" and "The 
+UNIX Programming Environment."  I 
+have lots of experience coding in
+C, but I've never had these books
+available to me until now. It's a
+very strong, definitive direction
+in my head. I've had these before
+and they always work out well.  
 
-### D A I L Y   J O U R N A L
-
-16:36 took my neice, kyrsten,
-to work this morning, because
-very heavy rain, and she has 
-trouble driving in when it's
-really coming down. probably
-doing this the whole week, 
-since it's a brewing tropical
-storm out there; it may go
-into the gulf and become an
-actual tropical storm. 
-
-### C O D I N G   L O G
-
-so let me catch you up on 
-what i've been doing the
-last couple of days:
-
-1. revamped my homedir
-
-my homedir looks like this,
-now, matching hier(1):
-   
- /bin  /boot  /dev /etc  
- /lib  /media /mnt /opt  
- /proc /root  /run /sbin
- /src  /srv   /tmp /usr
- /var
-
-haven't decided exactly what
-goes in everything, but here
-are a few examples so far:
-
- /bin - binaries that i write
- /boot - my habit checklists
- /dev - stuff re my hardware
- /lib - all of my free ebooks
- /media - photos, music, vids
- /tmp - temp files
- /usr/share - my writing, etc
- /var/log - my journal files
-
-i use the standard 'nix hier
-structure because it's easier
-for me to remember where i put
-things.
-
-
-2: improved CLI scripts
-
-i wrote a lot of bash scripts
-to speed me up at the CLI. in
-some cases, i replaced regular
-system commands, like so:
-
- - calendar: takes more date
-   designations ("weekend")
- - clear: clears back the 
-   scroll buffer
- - date: prints a three-line
-   date, epoch, julian count
- - mkdir: mkdir -p, always
- - pwd: reports symlinks
- - which: uses "type" to show
-   all versions of a command,
-   in calling order
-
-these, i keep in ~/bin, which
-is set first in my $PATH
-
-there're also quite a few that
-i wrote myself to augment the 
-shell; these are kept in dir
-~/usr/bin, which is second in
-my $PATH: 
- 
- - daylight: sunrise/set, etc
- - journal: journal header for
-   my daily journal files
- - man2pdf: manpages > PDF
- - miltime: returns HH:MM 
-   military time (for my 
-   journal entries)
- - www: opens lynx with the
-   duckduckgo non-javascript
-   search engine pulled up
- - wx: a three-line weather
-   report for today
-
-
-3. tailscale working all over
- 
-my main box is a debian 13 
-console-only laptop; with the
-tailscale server running, it 
-has a worldwide vpn i can get
-to from wherever (a hardware
-passkey is required, so don't 
-get any ideas; yes, i have 
-more than one of them, just 
-in case).
-##############################
-
-much to the (probable) chagrin
-of the FSF, i also make lots
-of use of a MacBook Pro and an
-iPhone, because there are many
-graphical things i need to do
-that 'nix requires very great
-effort to do with FOSS tools.
-
-all of these are on my passkey
-tailscale, so any of them can 
-get to any other, as long as i
-have a hardware token with me.
-so i'm basically mobile 'nix
-everywhere there's a cellular
-or usable wi-fi signal.
-
-
-4. advanced iSH setup iPhone
-
-cellular and usable wi-fi is
-not available everywhere for 
-me, even five minutes from my
-house, because rural.  so i 
-have a duplicated backup on
-iSH on my iPhone.  i can run
-as long as there's battery, 
-and sync up when i can get a
-decent 'Net connection.
-
-
-5. homedir GitHub repo
-
-this syncing is done via a 
-homedir GitHub repo (which
-is private).  any time i 
-want to sync iSH with my 
-main set, i just have to 
-use git.  i still need to 
-set up auto-push, which may
-mean i'll have to first log
-into my debian 13 when i get
-signal again, do a push, and
-then reconcile the changes, 
-but i've gotten fluent 
-enough with git to pull this
-off now.
-
-
-6. started "The C Std Lib"
-
-started working through PJ
-Plauger's "The C Standard
-Library" this week, although
-i didn't get very far yet. 
-there are some things about
-pointers in C that i've 
-forgotten, so i need to take
-the time to brush up first, 
-but it's my main reading 
-focus for the next month or
-so.
+The first few pages of standard C
+library were getting boring, since
+I don't have all the background it
+needs to follow everything needed,
+but if that's what it takes to get
+boned up here, I'm willing. I have
+to take frequent breaks, which I'm
+using to clean up my homdir to get
+it looking more like the UNIX base
+directory.  Those designations are
+really useful in a personal set of 
+files.  Getting everything cleaned
+up and in place; for what, I don't
+know yet, but I'm doing it.
 
 Copyright (C) 2026 by Bill Wear
 All Rights Reserved
