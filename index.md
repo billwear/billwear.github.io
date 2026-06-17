@@ -24,3 +24,5 @@ I'm keeping the code in my [stdlin.h](https://github.com/billwear/stdlin.h), you
 Here are the steps so far, in order:
 
 1. [Get a C program up and running](c-program-up-and-running.md): Basic stuff you have to do before you can run C.  Assumes a MacBook Pro, but you can use anything, really -- just know that some of the loading instructions will be different.
+
+2. [Build a robust stub program](02-building-a-stub-for-calendar.md): Just me doing what I've been doing for about 50 years, building a framework that minimizes stupid before coding said stupid.
