@@ -35,7 +35,7 @@ To confirm that your compiler and make utility are ready to go, run these two co
 
 (You should see output indicating GNU Make.)
 
-### Choosing a Text Editor
+## 2. Choosing a Text Editor
 To write C code, you need a plain text editor. Do not use generic word processors like TextEdit or Microsoft Word, as they inject hidden formatting characters that break code compilation. Popular, lightweight choices for modern development on macOS include:
 
 • VS Code (Visual Studio Code): Highly customizable with excellent C/C++ extensions.
@@ -43,7 +43,7 @@ To write C code, you need a plain text editor. Do not use generic word processor
 
 Pick your preferred editor, install it, and you're ready to write some code.
 
-### Writing "Hello, World!"
+## 3. Writing "Hello, World!"
 Now let's test the environment by creating a classic "Hello, World!" program.
 
 1. In your Terminal, create a dedicated directory for your C projects and navigate into it: mkdir -p ~/Developer/c_projects cd ~/Developer/c_projects
@@ -62,13 +62,13 @@ Now let's test the environment by creating a classic "Hello, World!" program.
 
 4. Save and close the file.
 
-### Compiling and Running
+## 4. Compiling and Running
 C is a compiled language. This means your human-readable .c file must be translated into a machine-readable binary executable before it can run.
 
-#### Method A: Compiling Directly with Clang
+### Method A: Compiling Directly with Clang
 To compile your file directly, use the compiler command in the Terminal:
 
-	```
+	```bash
 	clang hello.c -o hello
 	```
 
@@ -76,27 +76,27 @@ To compile your file directly, use the compiler command in the Terminal:
 • hello.c: Specifies the source code file.
 • -o hello: Tells the compiler to output a binary file named hello (instead of the default a.out).
 
-#### Method B: Compiling with Make (Faster)
+### Method B: Compiling with Make (Faster)
 Because macOS includes make, you can take advantage of its built-in implicit rules for C. You don't even need a Makefile for a single-file project. Simply type:
 
-	```
+	```bash
 	make hello
 	```
 
 make automatically looks for a file named hello.c in the current directory and invokes the compiler to build an executable named hello.
 
-### Executing the Program
+## 5. Executing the Program
 Once compiled by either method, you will see a new executable file named hello in your folder. Run it by typing:
 
-	```
+	```bash
 	./hello
 	```
 
 (The ./ tells the Terminal to look for the executable in the current directory.)
 
-#### Expected Output:
+### Expected Output:
 
-	```
+	```bash
 	Hello, World!
 	```
 
