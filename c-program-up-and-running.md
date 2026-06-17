@@ -21,14 +21,12 @@ You do **not** need to install the massive, multi-gigabyte Xcode IDE from the Ap
 5. Wait for the download and installation to complete.
 
 ### Verify the Installation
-To confirm that your compiler and make utility are ready to go, run these two commands in your Terminal:
-	
+To confirm that your compiler and make utility are ready to go, run these two commands in your Terminal:	
 	```bash
 	clang --version
 	```
 
 (You should see output indicating the Apple clang version.)
-
 	```bash
 	make --version
 	```
@@ -49,7 +47,6 @@ Now let's test the environment by creating a classic "Hello, World!" program.
 1. In your Terminal, create a dedicated directory for your C projects and navigate into it: mkdir -p ~/Developer/c_projects cd ~/Developer/c_projects
 2. Create and open a new file named hello.c using your text editor.
 3. Paste the following C source code into the file:
-
 	```bash
 	#include <stdio.h>
 
@@ -67,7 +64,6 @@ C is a compiled language. This means your human-readable .c file must be transla
 
 ### Method A: Compiling Directly with Clang
 To compile your file directly, use the compiler command in the Terminal:
-
 	```bash
 	clang hello.c -o hello
 	```
@@ -78,7 +74,6 @@ To compile your file directly, use the compiler command in the Terminal:
 
 ### Method B: Compiling with Make (Faster)
 Because macOS includes make, you can take advantage of its built-in implicit rules for C. You don't even need a Makefile for a single-file project. Simply type:
-
 	```bash
 	make hello
 	```
@@ -87,7 +82,6 @@ make automatically looks for a file named hello.c in the current directory and i
 
 ## 5. Executing the Program
 Once compiled by either method, you will see a new executable file named hello in your folder. Run it by typing:
-
 	```bash
 	./hello
 	```
@@ -95,7 +89,6 @@ Once compiled by either method, you will see a new executable file named hello i
 (The ./ tells the Terminal to look for the executable in the current directory.)
 
 ### Expected Output:
-
 	```bash
 	Hello, World!
 	```
