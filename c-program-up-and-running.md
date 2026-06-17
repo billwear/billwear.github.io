@@ -13,9 +13,11 @@ You do **not** need to install the massive, multi-gigabyte Xcode IDE from the Ap
 ### Step-by-Step Installation:
 1. Open the **Terminal** app (Press `Cmd + Space` to open Spotlight, type "Terminal", and press `Enter`).
 2. Type the following command and press `Enter`:
-   ```bash
-   xcode-select --install
-   ```
+
+```bash
+xcode-select --install
+```
+
 3. A software update popup window will appear asking: "The xcode-select command requires the command line developer tools. Would you like to install the tools now?"
 4. Click Install and agree to the License Agreement.
 5. Wait for the download and installation to complete.
