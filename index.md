@@ -1,8 +1,26 @@
-# hello, world
+# Walking through the C language
 
-this is a test
+What do these books have in common? 
 
-## heading two
-this is a second level heading with /italic/ and *bold*.
+ - The K&R whitebook
+ - The UNIX Programming Environment
+ - The C Standard Library
+ - Advanced Programming in the UNIX Environment 
 
-### heading three
+Well, a couple of things:
+
+ - They're all good books on the C language and how to use it in a UNIX/Linux OS.
+ - They're just about all you need to thoroughly learn C programming under UNIX/Linux.
+ - They're not the best starting point for really learning C.
+
+I have programmed in C for years, but now that I've retired, I'm trying to get scary good.  I plan to walk all four of those books, but first I want to actually *do* something significant in C and learn by knockabout education.  Then the books will make more sense and I can learn some of the theory I've missed out on during my career.
+
+## The BSD calendar program
+
+I'm starting by trying to build *my* version of the BSD calendar program.  I'm not looking at their code at all, just trying to create a similar program, including a great deal of additional functionality that the original program doesn't include.  I don't even have a good inventory of what all that functionality actually is right now, except that I think the calendar CLI program can approximate a lot of the stuff that **Emacs org-mode** will do, and even some of the stuff it won't do (weekdays/weekends, 3rd Wednesday, etc.). 
+
+I'm keeping the code in my [stdlin.h](https://github.com/billwear/stdlin.h), you can also watch it evolve from there.
+
+Here are the steps so far, in order:
+
+1. [Get a C program up and running](c-program-up-and-running.md): Basic stuff you have to do before you can run C.  Assumes a MacBook Pro, but you can use anything, really -- just know that some of the loading instructions will be different.
