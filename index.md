@@ -27,4 +27,6 @@ Here are the steps so far, in order:
 
 2. [Build a robust stub program](02-building-a-stub-for-calendar.md): Just me doing what I've been doing for about 50 years, building a framework that minimizes stupid before coding said stupid.
 
-3. [Add code to tokenize the input lines for parsing](03-stream-tokens-and-string-tokenization.md): It feels a lot more effective to pull two tokens, one before the tab (the "when" token) and one after the tab (the "what to do" token). 
+3. [Add code to tokenize the input lines for parsing](03-stream-tokens-and-string-tokenization.md): It feels a lot more effective to pull two tokens, one before the tab (the "when" token) and one after the tab (the "what to do" token).
+
+4. [Match basic calendar dates](04-matching-basic-dates.md): Time to start working on the actual *application* logic: How do we parse out mm/dd/yyyy, mm/dd, dd, and dd?
