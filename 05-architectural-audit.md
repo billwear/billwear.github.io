@@ -261,4 +261,4 @@ Date: 06/18      | Event: Yearly Match
 Date: 18         | Event: Day 18 Match
 Date: 06 *       | Event: Full Month June Match
 ```
-Everything parses perfectly without colliding. My technical debt is paid, my docs are tight, and I'm ready to move onto Step 6 for real command line flags.
+Everything parses perfectly without colliding. My technical debt is paid, my docs are tight, and I'm ready to move onto Step 6, which I'll document in a couple of weeks: dogfooding the software for a while before upgrading it.  This way, I can make better decisions about future features and their priority.
