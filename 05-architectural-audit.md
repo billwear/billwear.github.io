@@ -227,7 +227,7 @@ I went back and cleaned up my changelog so it actually reflects the real milesto
 - Initialized project directory structure and basic "Hello World" build targets.
 ```
 
-5. Testing the Fixes
+## 5. Testing the Fixes
 
 I updated my Makefile variable to track the real semantic version:
 
