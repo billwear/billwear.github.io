@@ -142,8 +142,8 @@ To verify that the infrastructure is functioning correctly, I need some mocks. L
 I can run the following commands in my terminal to initialize my local ~/.calendar file with a couple of mock records:
 
 ```bash
-echo "06/20\tSystem Architecture Review" > ~/.calendar
-echo "07/04\tIndependence Day Holiday" >> ~/.calendar
+printf "06/20\tSystem Architecture Review\n" > ~/.calendar
+printf "07/04\tIndependence Day Holiday\n" >> ~/.calendar
 ```
 
 ### Build and Run
