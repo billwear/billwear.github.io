@@ -30,3 +30,5 @@ Here are the steps so far, in order:
 3. [Add code to tokenize the input lines for parsing](03-stream-tokens-and-string-tokenization.md): It feels a lot more effective to pull two tokens, one before the tab (the "when" token) and one after the tab (the "what to do" token).
 
 4. [Match basic calendar dates](04-matching-basic-dates.md): Time to start working on the actual *application* logic: How do we parse out mm/dd/yyyy, mm/dd, dd, and dd?
+
+5. [Do an architectural audit](05-architectural-audit.md): I made three mistakes up to this point, one forgetful, one lazy, and one because I was careless.  Time to fix those as best I can.
