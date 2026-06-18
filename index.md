@@ -26,3 +26,5 @@ Here are the steps so far, in order:
 1. [Get a C program up and running](c-program-up-and-running.md): Basic stuff you have to do before you can run C.  Assumes a MacBook Pro, but you can use anything, really -- just know that some of the loading instructions will be different.
 
 2. [Build a robust stub program](02-building-a-stub-for-calendar.md): Just me doing what I've been doing for about 50 years, building a framework that minimizes stupid before coding said stupid.
+
+3. [Add code to tokenize the input lines for parsing](03-stream-tokens-and-string-tokenization.md): It feels a lot more effective to pull two tokens, one before the tab (the "when" token) and one after the tab (the "what to do" token). 
