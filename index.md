@@ -1,4 +1,4 @@
-# Walking through the C language
+# Learning C all over again
 
 *Preamble: There's already lots of code here, and if all goes well, there will be a whole lot more.  Just bear with me for a few scrolls while I tell you how I got here and where I'm trying to go.*
 
