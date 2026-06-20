@@ -1,14 +1,12 @@
 # Step 2: Architecture and the Stub Program
 
-Every enduring piece of software begins not with a sprawling codebase, but with a structural skeleton. In professional software engineering, we call this a **stub program**. 
-
-A stub program maps out the application's logical flow and defines the critical interface boundaries (APIs) before I commit to writing the underlying business logic. For my upgraded calendar utility, this approach should help to make sure that my  resource lifecycle management (allocations, file handles, and error conditions) is rock-solid from day one.
+Decent software begins with a stub. This one's no different.  I want to set up the logical flow before writing the "business" logic.  Helps me run rock-solid from day one. 
 
 ---
 
 ## 1. Architectural Blueprint
 
-Before writing the code, I need to understand the logical flow of data through the tool. The application follows a linear, predictable lifecycle: initialization, stream processing, parsing, and cleanup.
+Before bending code, I need to understand how data flows through the tool. This one feels like a linear, predictable lifecycle: initialization, stream processing, parsing, and cleanup.
 
 By isolating the line-parsing logic into a discrete predicate function, I can decouple data extraction from I/O operations, adhering to the principle of single responsibility (aka, keep it simple).
 
@@ -16,7 +14,7 @@ By isolating the line-parsing logic into a discrete predicate function, I can de
 
 ## 2. The Calendar Skeleton (`calendar.c`)
 
-Below is the architectural stub for my modern calendar utility. It introduces formal C99 boolean types, handles dynamic path resolution safely via the environment, and stubs out the parsing engine with clear verification paths.  Yeah, I know, who does this for hobby code, right? Well, me, for one.
+Below is the architectural stub for my modern calendar utility. It introduces formal C99 boolean types, handles dynamic path resolution safely via the environment, and stubs out the parsing engine with clear verification paths.  Yeah, I know, who talks like that, and who does this for hobby code, right? Well, me, for one.
 
 ```c
 /**
@@ -106,11 +104,9 @@ int main(void)
 
 ## 3. The Automation Layer (Makefile)
 
-If I can help it, I never compile complex applications manually. Instead, I use a declarative Makefile to formalize my compilation parameters, strict static analysis flags, and standard compliance targets (-std=c99).
+If I can help it, I never compile manually. Instead, I use a Makefile.  Here's how I loaded my first Makefile for this project:
 
-Let's create a file named Makefile in the same directory:
-
-```bash
+```makefile
 # Compiler configuration
 CC      := clang
 CFLAGS  := -std=c99 -Wall -Wextra -Wpedantic -Wshadow -O2
@@ -136,10 +132,10 @@ clean:
 
 ## 4. Verification and Execution Workflow
 
-To verify that the infrastructure is functioning correctly, I need some mocks. Let me  generate dummy data inside the hidden runtime configuration file that our application expects.
+To verify that the infrastructure is functioning correctly, I need some mocks. Let me generate dummy data inside the `~/.calendar` file.
 
 ### Seed Test Data
-I can run the following commands in my terminal to initialize my local ~/.calendar file with a couple of mock records:
+I can run the following commands in my terminal to initialize my local `~/.calendar` file with a couple of mock records:
 
 ```bash
 printf "06/20\tSystem Architecture Review\n" > ~/.calendar
