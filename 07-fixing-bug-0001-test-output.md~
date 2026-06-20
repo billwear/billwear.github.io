@@ -1,0 +1,11 @@
+# Fixing Bug 0001: Test Output vs. Production Output
+
+When I run calendar now, here's the kind of output I get:
+
+```text
+Date: 6 *        | Event: check laundry
+Date: 6 *        | Event: sweep
+Date: 6 *        | Event: refill baby's water
+```
+
+This is great for debugging, but it isn't what a CLI user expects.  
