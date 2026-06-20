@@ -88,3 +88,7 @@ Here's the informal TOC -- which grows from day to day -- so far:
 8. [Comparing date tokens to dates in lowercase](08-lowercase-date-token.md): I'm going to start adding text dates ('daily', 'weekend', 'tuesday') and I don't want the user to have to read the manpage to enter "TuESDay" in the correct case.  I added code to always make the date token lowercase before any comparisons take place.
 
 9. [Added a "daily" date token](09-implement-daily-date-variant-parsing.md): Anything I do every day can be flagged "daily" so it shows up every day, when I run the calendar.
+
+10. [Add "weekend" and "weekday" date tokens](10-add-weekend-weekday-variants.md): Add the ability to parse date tokens "weekend" and "weekday" correctly, based on the day of the week.
+
+11. [Add day-of-week date variants](11-add-day-of-week-date-variants.md): Allow the user to input "TuESDay," "tues", "tue", "SUNDAY", and any other variant casing or abbreviation of the days of the week.
