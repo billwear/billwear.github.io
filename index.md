@@ -80,3 +80,9 @@ Here's the informal TOC -- which grows from day to day -- so far:
 4. [Match basic calendar dates](04-matching-basic-dates.md): Time to start working on the actual *application* logic: How do we parse out mm/dd/yyyy, mm/dd, dd, and dd?
 
 5. [Do an architectural audit](05-architectural-audit.md): I made three mistakes up to this point, one forgetful, one lazy, and one because I was careless.  Time to fix those as best I can.  Probably need to do that every four or five bumps, TBH.
+
+6. [Build a bug list](06-building-a-buglist.md): I built a bug list, which is more like a bughancement list here, but it's a hobby project, so I don't want to overthink it.
+
+7. [Making test outcome a CLI option](07-fixing-bug-001-test-output.md): I changed the code to take the `-d` option, which gives the test output (both tokens with labels).  No option, normal `calendar` style output.
+
+8. [Comparing date tokens to dates in lowercase](08-lowercase-date-token.md): I'm going to start adding text dates ('daily', 'weekend', 'tuesday') and I don't want the user to have to read the manpage to enter "TuESDay" in the correct case.  I added code to always make the date token lowercase before any comparisons take place.
