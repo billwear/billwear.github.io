@@ -1,4 +1,0 @@
-#+TITLE: Table of Contents
-
-- [[file:index.org][THIS TERMINAL LIFE]]
-- [[file:why-i-code-in-c.org][why i code in C]]
