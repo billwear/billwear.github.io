@@ -17,11 +17,11 @@ here's the ~~code~~ script:
 curl "wttr.in?format=%C+%t;+%f;+%h;+%w+%P;+%p;%20uv:+%u\nDawn:+%D%20Sunrise:+%S%20Zenith:+%z%20Sunset:+%s%20Dusk:+%d\n" 2>/dev/null
 ```
 
-mine runs just fine using `ip geo-lookup > geoip database`, but that's weak. you might try using your city, zipcode, or latlon in the call instead if you're not getting sensible results:
+mine runs just fine using `ip geo-lookup > geoip database`, but that's weak. you might try using your city+state to get sensible results:
 
 ```
 curl "wttr.in/Necaise+MS?...."
 ```
 
-you might have to pick a nearby city if `wttr.in` can't find you. exercise left to the reader.
+you might also have to pick a nearby city if `wttr.in` can't find you. exercise left to the reader.
 
