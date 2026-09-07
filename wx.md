@@ -25,3 +25,5 @@ curl "wttr.in/Necaise+MS?...."
 
 you might also have to pick a nearby city if `wttr.in` can't find you. exercise left to the reader.
 
+MIT License for the script. Use this script as you will, with the understanding that`wx` belongs to somebody else, so i can't speak for it.
+

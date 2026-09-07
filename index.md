@@ -9,6 +9,18 @@ Mon Sep 07 17:29 2026 ~ Epoch 1788820169 ~ Day 250 of 365; 115 remain
 ```
 ---
 
+[man2pdf](https://billwear.github.io/man2pdf) - manpage *file* to pdf.
+
+---
+
+[mdforce](https://billwear.github.io/mdforce) - always creates entire path when making a directory.
+
+---
+
+[witch](https://billwear.github.io/witch) - gives a clearer and more robust accounting of executable path.
+
+---
+
 [wx](https://billwear.github.io/wx) - retrieves and prints weather:
 
 ```
