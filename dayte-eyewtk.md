@@ -87,7 +87,9 @@ this single line solves a subtle race condition and performance bottleneck:
 -  %s: seconds since the Unix epoch.
 4. eval $(...) mechanics: the subshell output looks like:
 
-```y=2026 d=250 fmt="Mon Sep 07 17:29 2026 ~ Epoch 1788820169"```
+```
+y=2026 d=250 fmt="Mon Sep 07 17:29 2026 ~ Epoch 1788820169"
+```
    
 eval evaluates that string in the current shell context, setting the shell variables y, d, and fmt simultaneously.
 
