@@ -22,16 +22,16 @@ it packs four distinct temporal perspectives into one scan:
 
 `epoch 1788820169` represents the exact number of non-leap seconds elapsed since 00:00:00 UTC on January 1, 1970 (the Unix epoch).
 
-⚬ epoch time is continuous, monotonically increasing (aside from leap-second quirks), and timezone-agnostic.
-⚬ it is the *lingua franca* of log files, file modification timestamps (mtime), database records, and distributed synchronization.
-⚬ tangent: the epoch was chosen somewhat arbitrarily by early unix engineers at bell labs as a convenient recent reference point. on 32-bit systems storing time as a signed 32-bit integer (time_t), the epoch rolls over on january 19, 2038 (the Y2038 problem). on 64-bit systems, the clock will run safely for approximately 292 billion years.
+- epoch time is continuous, monotonically increasing (aside from leap-second quirks), and timezone-agnostic.
+- it is the *lingua franca* of log files, file modification timestamps (mtime), database records, and distributed synchronization.
+- tangent: the epoch was chosen somewhat arbitrarily by early unix engineers at bell labs as a convenient recent reference point. on 32-bit systems storing time as a signed 32-bit integer (time_t), the epoch rolls over on january 19, 2038 (the Y2038 problem). on 64-bit systems, the clock will run safely for approximately 292 billion years.
 
 ### day of the year (ordinal date)
 
 `day 250 of 365` tracks progress through the astronomical cycle.
 
-⚬ standard calendars chop time into irregular 28-to-31-day bins, which obscure linear progression. ordinal dates make it trivial to calculate duration across months without reciting “thirty days hath september.”
-⚬ tangent: this is often called a "julian day" in casual programming parlance, but formally, Julian Day Number (JDN) is an astronomical count running continuously since january 1, 4713 BCE (Day 0). what date +%j produces is *properly* called an ordinal date (standardized in ISO 8601 as YYYY-DDD).
+- standard calendars chop time into irregular 28-to-31-day bins, which obscure linear progression. ordinal dates make it trivial to calculate duration across months without reciting “thirty days hath september.”
+- tangent: this is often called a "julian day" in casual programming parlance, but formally, Julian Day Number (JDN) is an astronomical count running continuously since january 1, 4713 BCE (Day 0). what date +%j produces is *properly* called an ordinal date (standardized in ISO 8601 as YYYY-DDD).
 
 ### the countdown
 
@@ -45,9 +45,9 @@ because unix command resolution follows your `$PATH` environment variable from l
 
 by naming the script dayte:
 
-⚬ it avoids all name collisions with `/bin/date`.
-⚬ it tabs out cleanly in interactive shells (day<TAB> auto-completes immediately).
-⚬ it can live comfortably in `/usr/local/bin`.
+- it avoids all name collisions with `/bin/date`.
+- it tabs out cleanly in interactive shells (day<TAB> auto-completes immediately).
+- it can live comfortably in `/usr/local/bin`.
 
 ### the system directory sanctity rule
 
@@ -57,9 +57,9 @@ the manpage notes:
 
 In modern unix and unix-like environments (macOS, Debian, Ubuntu, Fedora):
 
-⚬ `/bin`, `/sbin`, `/usr/bin`, and `/usr/lib` belong strictly to the operating system package manager or system vendor. Modern macOS, for example, enforces this via SIP (System Integrity Protection) and a cryptographically signed, read-only root volume (SSV). you can `su` all you like, but you can't add files to `/bin` on a Mac. Linux distributions achieve this via `/usr-merge` systems managed by `apt`, `dnf`, or `pacman`.
-⚬ `/usr/local/bin` is reserved specifically by the Filesystem Hierarchy Standard (FHS) for host-specific, site-admin-installed binaries and personal scripts that must be accessible to all users on the machine.
-⚬ When you touch `/bin`, OS updates will overwrite your changes, or security mechanisms will refuse your write. When you use `/usr/local/bin`, your tools survive system upgrades untouched.
+- `/bin`, `/sbin`, `/usr/bin`, and `/usr/lib` belong strictly to the operating system package manager or system vendor. Modern macOS, for example, enforces this via SIP (System Integrity Protection) and a cryptographically signed, read-only root volume (SSV). you can `su` all you like, but you can't add files to `/bin` on a Mac. Linux distributions achieve this via `/usr-merge` systems managed by `apt`, `dnf`, or `pacman`.
+- `/usr/local/bin` is reserved specifically by the Filesystem Hierarchy Standard (FHS) for host-specific, site-admin-installed binaries and personal scripts that must be accessible to all users on the machine.
+- When you touch `/bin`, OS updates will overwrite your changes, or security mechanisms will refuse your write. When you use `/usr/local/bin`, your tools survive system upgrades untouched.
 
 ## code breakdown: mechanics and edge cases
 
@@ -89,7 +89,7 @@ this single line solves a subtle race condition and performance bottleneck:
 
 ```y=2026 d=250 fmt="Mon Sep 07 17:29 2026 ~ Epoch 1788820169"```
    
-   eval evaluates that string in the current shell context, setting the shell variables y, d, and fmt simultaneously.
+eval evaluates that string in the current shell context, setting the shell variables y, d, and fmt simultaneously.
 
 d=$((10#$d))
 
