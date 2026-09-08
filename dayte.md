@@ -134,6 +134,7 @@ printf "%s ~ Day %d of %d; %d remain\n" "$fmt" "$d" "$t" "$((t - d))"
 
 - printf over echo: echo behaves inconsistently across different shells and unix variants (some interpret -n or escape codes like \n by default, others do not). printf is defined by POSIX to behave reliably, mirroring the classic C library routine.
 - formats strings (%s) and integers (%d), interpolating the remaining days calculation $((t - d)) inline, and appends a clean trailing newline (\n).
+
 </details>
 
 here's the code:
