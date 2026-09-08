@@ -10,7 +10,7 @@ when `dayte` runs, it emits a single line:
 
 ```text
 Mon Sep 07 17:29 2026 ~ Epoch 1788820169 ~ Day 250 of 365; 115 remain
-
+```
 
 it packs four distinct temporal perspectives into one scan:
 
