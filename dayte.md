@@ -1,4 +1,4 @@
-## dayte <sub>*([eyewtk](https://billwear.github.com/dayte-eyewtk.md))*</sub>
+## dayte <sub>*([eyewtk](https://billwear.github.io/dayte-eyewtk.md))*</sub>
 
 **dayte** prints a more robust dateline:
 
