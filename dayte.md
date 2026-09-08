@@ -1,6 +1,6 @@
-# dayte
+#* dayte
 
-> *[eyewtk](https://billwear.github.io/dayte-eyewtk)*
+> *[eyewtk](https://billwear.github.io/dayte-eyewtk) about dayte*
 
 **dayte** prints a more robust dateline:
 
