@@ -1,9 +1,12 @@
+# dayte
+
+> *[eyewtk](https://billwear.github.io/dayte-eyewtk)*
+
 **dayte** prints a more robust dateline:
 
 ```
 Mon Sep 07 17:29 2026 ~ Epoch 1788820169 ~ Day 250 of 365; 115 remain
 ```
-> **[eyewtk](https://billwear.github.io/dayte-eyewtk)**: everything you ever wanted to know about dayte & all its tangents.
 
 d-a-y-t-e spelling lets you root it into ```/usr/local/bin``` and run it anywhere without conflicting with ```date```. 
 
