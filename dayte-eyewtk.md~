@@ -1,3 +1,8 @@
+---
+layout: default
+title: dayte - tangential stuff
+---
+
 # dayte: the tangential breakdown
 
 here's a dissection of what `dayte` does, why it does it that way, and every twisted concept tucked inside its twelve lines of shell code.
