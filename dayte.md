@@ -26,6 +26,6 @@ t=$(( (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 ? 366 : 365 ))
 printf "%s ~ Day %d of %d; %d remain\n" "$fmt" "$d" "$t" "$((t - d))"
 ```
 
-This is free and unencumbered software released into the public domain.
-For more information, please refer to <https://unlicense.org/>
+<small>*This is free and unencumbered software released into the public domain.
+For more information, please refer to <https://unlicense.org/>.*</small>
 

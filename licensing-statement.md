@@ -1,11 +1,2 @@
-**week* prints the ordinal week of the year.
-
-here's the code:
-
-```
-#!/bin/zsh
-/bin/date +%U
-```
-
 <small>*This is free and unencumbered software released into the public domain.
 For more information, please refer to <https://unlicense.org/>.*</small>

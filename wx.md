@@ -25,8 +25,8 @@ curl "wttr.in/Necaise+MS?...."
 
 you might also have to pick a nearby city if `wttr.in` can't find you. exercise left to the reader.
 
-This script is free and unencumbered software released into the public domain.
-For more information, please refer to <https://unlicense.org/>
+<small>*This is free and unencumbered software released into the public domain.
+For more information, please refer to <https://unlicense.org/>.*</small>
 
 `wx` belongs to somebody else. check their license for yourself.
 

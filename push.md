@@ -11,6 +11,6 @@ git push
 
 <small>(1) note that every `git commit` is controlled by the `.gitignore` file, so "everything" actually means "whatever is allowed to be committed by `.gitignore`.</small>
 
-This is free and unencumbered software released into the public domain.
-For more information, please refer to <https://unlicense.org/>
+<small>*This is free and unencumbered software released into the public domain.
+For more information, please refer to <https://unlicense.org/>.*</small>
 

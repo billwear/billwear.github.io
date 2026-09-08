@@ -11,6 +11,6 @@ here's the code:
 /bin/date +%s
 ```
 
-This is free and unencumbered software released into the public domain.
-For more information, please refer to <https://unlicense.org/>
+<small>*This is free and unencumbered software released into the public domain.
+For more information, please refer to <https://unlicense.org/>.*</small>
 
