@@ -1,4 +1,5 @@
-## dayte <small>*[eyewtk]*</small>
+## dayte 
+<small>*[eyewtk]*</small>
 
 **dayte** prints a more robust dateline:
 
@@ -6,7 +7,7 @@
 Mon Sep 07 17:29 2026 ~ Epoch 1788820169 ~ Day 250 of 365; 115 remain
 ```
 
-'d-a-y-t-e' lets you root it into ```/usr/local/bin``` and run it anywhere without conflicting with ```date```. 
+'d-a-y-t-e' lets you root it into ```/usr/local/bin``` and run it anywhere. 
 
 **rule 0**: never monkey with *sealed* dirs like ```/bin```.
 
