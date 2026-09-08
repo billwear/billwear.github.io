@@ -80,10 +80,11 @@ this single line solves a subtle race condition and performance bottleneck:
 1. the race condition: calling `/bin/date` three or four separate times in a script allows the clock to tick between calls. if run at 23:59:59.999, one call could yield day 250 and the next call day 251. by invoking `/bin/date` exactly once, all values are derived from a single atomic clock read.
 2. hardcoded binary path: calling `/bin/date` directly bypasses any user shell aliases, wrapper functions, or `$PATH` lookups.
 3. format directives:
-  ⚬ %Y: 4-digit calendar year (e.g., 2026).
-  ⚬ %j: 3-digit day of the year padded with zeroes (001 to 366).
-  ⚬ %a %b %d %H:%M %Y: Formatted human time components.
-  ⚬ %s: seconds since the Unix epoch.
+
+- %Y: 4-digit calendar year (e.g., 2026).
+- %j: 3-digit day of the year padded with zeroes (001 to 366).
+- %a %b %d %H:%M %Y: Formatted human time components.
+-  %s: seconds since the Unix epoch.
 4. eval $(...) mechanics: the subshell output looks like:
 
 ```y=2026 d=250 fmt="Mon Sep 07 17:29 2026 ~ Epoch 1788820169"```
@@ -94,11 +95,11 @@ d=$((10#$d))
 
 this line fixes one of the oldest, nastiest footguns in shell scripting: the octal trap.
 
-⚬ in POSIX arithmetic expansion $(( ... )), any integer literal with a leading zero is interpreted as an octal (base-8) number.
-⚬ for days 001 through 007, base-8 and base-10 are identical.
-⚬ on day 008 (august 8th) and 009 (august 9th), the shell tries to parse 008 as octal. because the digits 8 and 9 do not exist in base-8, the shell throws a fatal runtime error:
+- in POSIX arithmetic expansion $(( ... )), any integer literal with a leading zero is interpreted as an octal (base-8) number.
+- for days 001 through 007, base-8 and base-10 are identical.
+- on day 008 (august 8th) and 009 (august 9th), the shell tries to parse 008 as octal. because the digits 8 and 9 do not exist in base-8, the shell throws a fatal runtime error:
   ```zsh: invalid octal number: 008```
-⚬ The syntax 10#$d explicitly forces the radix (base) to 10. 10#008 is safely parsed as decimal 8.
+- The syntax 10#$d explicitly forces the radix (base) to 10. 10#008 is safely parsed as decimal 8.
 
 ```
 t=$(( (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 ? 366 : 365 ))
@@ -118,6 +119,6 @@ the ancient julian calendar only applied the "divisible by 4" rule. over centuri
 printf "%s ~ Day %d of %d; %d remain\n" "$fmt" "$d" "$t" "$((t - d))"
 ```
 
-⚬ printf over echo: echo behaves inconsistently across different shells and unix variants (some interpret -n or escape codes like \n by default, others do not). printf is defined by POSIX to behave reliably, mirroring the classic C library routine.
-⚬ formats strings (%s) and integers (%d), interpolating the remaining days calculation $((t - d)) inline, and appends a clean trailing newline (\n).
+- printf over echo: echo behaves inconsistently across different shells and unix variants (some interpret -n or escape codes like \n by default, others do not). printf is defined by POSIX to behave reliably, mirroring the classic C library routine.
+- formats strings (%s) and integers (%d), interpolating the remaining days calculation $((t - d)) inline, and appends a clean trailing newline (\n).
 
