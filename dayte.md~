@@ -8,7 +8,7 @@ the odd spelling? so you can root it into ```/usr/local/bin``` and run it anywhe
 
 **strong recommendation**: never monkey with *sealed* system directories, like ```/bin```.
 
-here's the code:
+here's the ~~code~~ script:
 
 ```bash
 #!/bin/zsh
@@ -26,5 +26,5 @@ t=$(( (y % 4 == 0 && y % 100 != 0) || y % 400 == 0 ? 366 : 365 ))
 printf "%s ~ Day %d of %d; %d remain\n" "$fmt" "$d" "$t" "$((t - d))"
 ```
 
-MIT License applies. Useas you will.
+MIT License applies. Use as you will.
 

@@ -1,11 +1,10 @@
-**witch** is a version of `which` that substitutes `type`, which gives clearer and more comprehensive output on most systems.
+**week* prints the ordinal week of the year.
 
 here's the code:
 
 ```
-#!/bin/sh
-
-type -a "$@"
+#!/bin/zsh
+/bin/date +%U
 ```
 
 This is free and unencumbered software released into the public domain.

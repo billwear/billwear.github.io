@@ -1,0 +1,10 @@
+**julian** prints the ordinal week of the year.
+
+here's the ~~code~~ script:
+
+```
+#!/bin/zsh
+/bin/date +%j
+```
+
+MIT License. Use as you will.

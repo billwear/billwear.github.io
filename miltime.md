@@ -1,12 +1,13 @@
-**witch** is a version of `which` that substitutes `type`, which gives clearer and more comprehensive output on most systems.
+**miltime** prints the current time in 24-hour format as "HH:MM".
 
 here's the code:
 
 ```
-#!/bin/sh
+#!/bin/zsh
 
-type -a "$@"
+echo "$(/bin/date '+%H:%M ')"
 ```
 
 This is free and unencumbered software released into the public domain.
 For more information, please refer to <https://unlicense.org/>
+

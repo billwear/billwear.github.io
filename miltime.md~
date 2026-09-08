@@ -1,0 +1,9 @@
+**miltime** prints the current time in 24-hour format as "HH:MM".
+
+here's the code:
+
+```
+#!/bin/zsh
+
+echo "$(/bin/date '+%H:%M ')"
+```

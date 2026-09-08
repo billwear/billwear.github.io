@@ -1,14 +1,10 @@
-**epoch** prints just the unix epoch from date, like this:
+**julian** prints the ordinal week of the year.
 
-```
-1788825595
-```
-
-here's the code:
+here's the ~~code~~ script:
 
 ```
 #!/bin/zsh
-/bin/date +%s
+/bin/date +%j
 ```
 
 This is free and unencumbered software released into the public domain.
