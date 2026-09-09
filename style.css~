@@ -1,0 +1,151 @@
+/* --- reset & responsive layout --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #fbfbf9;              /* warm paper tone */
+  --text: #1d1f21;            /* deep charcoal, not pure black */
+  --muted: #5c6370;           /* secondary commentary */
+  --border: #e2e4e8;          /* subtle structural rules */
+  --link: #0969da;            /* readable technical blue */
+  --link-hover: #1f2328;
+  --code-bg: #f0f2f5;         /* soft block background */
+  --quote-border: #abb2bf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181a;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --link: #58a6ff;
+    --link-hover: #ffffff;
+    --code-bg: #0d1117;
+    --quote-border: #484f58;
+  }
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  max-width: 680px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+/* --- typography & headers --- */
+h1.title, h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem 0;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+}
+
+p {
+  margin: 0.75rem 0;
+}
+
+/* --- the tagline / blockquote --- */
+blockquote {
+  margin: 1.25rem 0 2rem 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 3px solid var(--quote-border);
+  color: var(--muted);
+  font-style: normal;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* --- horizontal dividing rules --- */
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* --- links --- */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* --- definition lists & items (tools index) --- */
+dl {
+  margin: 1rem 0;
+}
+
+dt {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: 0.75rem;
+  color: var(--muted);
+}
+
+/* --- code blocks & interactive snippets --- */
+pre.src, pre.example, pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.85rem 1.1rem;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88em;
+  background-color: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* --- verse & footer styling --- */
+.verse {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* --- clean up default org-mode artifacts --- */
+#postamble, .footpara {
+  display: none;
+}

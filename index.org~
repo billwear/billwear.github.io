@@ -1,0 +1,9 @@
+#+title: bill wear
+#+options: num:nil toc:nil html-postable:nil
+#+html_head: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#+html_head: <link rel="stylesheet" href="style.css">
+
+* bill wear
+#+begin_quote
+living in buffers, pipelines, and standard libraries since 143161750
+#+end_quote

@@ -1,0 +1,45 @@
+#+options: title:nil num:nil toc:nil html-postamble:nil
+#+html_head: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#+html_head: <link rel="stylesheet" href="style.css">
+
+* bill wear
+
+#+begin_quote
+living in buffers, pipelines, and standard libraries since 143161750.
+#+end_quote
+
+-----
+
+** tools
+
+#+begin_src text
+$ witch -v grep
+/usr/bin/grep  (ELF 64-bit LSB pie executable, x86-64)
+#+end_src
+
+#+begin_export html
+<div class="tool-grid">
+  <div class="cmd"><a href="https://github.com/billwear/dayte">dayte</a></div>
+  <div class="desc">clean, robust dateline for scripts and logs.</div>
+
+  <div class="cmd"><a href="https://github.com/billwear/witch">witch</a></div>
+  <div class="desc">diagnostic binary locator; verbose <code>which</code>.</div>
+
+  <div class="cmd"><a href="https://github.com/billwear/julian">julian</a></div>
+  <div class="desc">ordinal day calculation.</div>
+
+  <div class="cmd"><a href="https://github.com/billwear/man2pdf">man2pdf</a></div>
+  <div class="desc">typeset manual page to clean pdf via troff.</div>
+
+  <div class="cmd"><a href="https://github.com/billwear/wx">wx</a></div>
+  <div class="desc">terse terminal weather report.</div>
+</div>
+#+end_export
+
+-----
+
+** colophon
+
+#+begin_verse
+plain text · generated with emacs org-mode · source on [[https://github.com/billwear][github]]
+#+end_verse
