@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-09-08 Tue 19:12 -->
+<!-- 2026-09-11 Fri 16:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -193,53 +193,213 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="logo.svg">
-<link rel="stylesheet" href="style.css">
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
-<img src="logo.svg" alt="site mark" class="site-logo">
-<div id="outline-container-org54dcbeb" class="outline-2">
-<h2 id="org54dcbeb">bill wear</h2>
-<div class="outline-text-2" id="text-org54dcbeb">
-<blockquote>
 <p>
-living in buffers, pipelines, and stdlib since 143161750.
+Title: Extracting Config Values with grep
+Target Length: 90 seconds
+Word Count: 149 words
 </p>
-</blockquote>
 
-<hr />
-</div>
-<div id="outline-container-orgf514a73" class="outline-3">
-<h3 id="orgf514a73">tools</h3>
-<div class="outline-text-3" id="text-orgf514a73">
-<div class="org-src-container">
-<pre class="src src-text">$ witch -v grep
-/usr/bin/grep  (ELF 64-bit LSB pie executable, x86-64)
-</pre>
-</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<dl class="org-dl">
-<dt><a href="https://github.com/billwear/dayte">dayte</a></dt><dd>clean, robust dateline for scripts and logs.</dd>
-<dt><a href="https://github.com/billwear/witch">witch</a></dt><dd>diagnostic binary locator; verbose <code>which</code>.</dd>
-<dt><a href="https://github.com/billwear/julian">julian</a></dt><dd>ordinal day calculation.</dd>
-<dt><a href="https://github.com/billwear/man2pdf">man2pdf</a></dt><dd>typeset manual page to clean pdf via troff.</dd>
-<dt><a href="https://github.com/billwear/wx">wx</a></dt><dd>terse terminal weather report.</dd>
-</dl>
 
-<hr />
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Time</th>
+<th scope="col" class="org-left">Visual / Screen Action</th>
+<th scope="col" class="org-left">Audio (Narration)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0:00</td>
+<td class="org-left">Terminal window. Type: cat config.ini. The</td>
+<td class="org-left">Ever need to extract a specific value</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">screen shows a few lines, highlighting</td>
+<td class="org-left">from a config file? Let's say we need</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">db<sub>password</sub> = su-per-se-cret-%1</td>
+<td class="org-left">to pull just the database password out</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">of this file.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-right">0:30</td>
+<td class="org-left">grep db<sub>password</sub> config.ini \</td>
+<td class="org-left">Typically, we'd grep for the key name,</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">awk -F' = ' '{print $2}'</td>
+<td class="org-left">in this case, "db<sub>password</sub>," and then</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">feed the output through awk to pull out</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">just the key value.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-right">0:60</td>
+<td class="org-left">grep -o "db<sub>password</sub>" config.ini</td>
+<td class="org-left">We could also try grepping for just the</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">key name, but all we'd get back is just</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">the key name, not the value we need.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-right">0:80</td>
+<td class="org-left">ggrep -oP "db<sub>password</sub> = \K.*" config.ini</td>
+<td class="org-left">To get just the value, we need the -P</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">flag for "Perl-compatible regex," and a</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">special regex sequence: backslash K. It</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">tells grep: "Match everything up to this</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">point, but then drop it from the final</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">output, and only keep what comes next."</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-right">1:10</td>
+<td class="org-left">sup-er-se-cret-%1</td>
+<td class="org-left">The terminal outputs only the password,</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">which is perfectly isolated input for</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">your bash scripts. Note that we're using</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">ggrep here, because I'm running on BSD</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Unix, which doesn't support grep -P. No</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">worries there.</td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-<div id="outline-container-org3e2cf5b" class="outline-3">
-<h3 id="org3e2cf5b">colophon</h3>
-<div class="outline-text-3" id="text-org3e2cf5b">
-<p class="verse">
-plain text · generated with emacs org-mode · source on <a href="https://github.com/billwear">github</a><br />
-</p>
-</div>
-</div>
-</div>
+<div id="postamble" class="status">
+<p class="author">Author: William Orian Wear</p>
+<p class="date">Created: 2026-09-11 Fri 16:16</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

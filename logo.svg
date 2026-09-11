@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <!-- prompt glyph -->
+  <polyline points="18,22 28,32 18,42" fill="none" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- pipeline / cursor terminal node -->
+  <line x1="34" y1="42" x2="46" y2="42" stroke="#79c0ff" stroke-width="4" stroke-linecap="round"/>
+</svg>
