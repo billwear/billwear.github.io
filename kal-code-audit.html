@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-09-13 Sun 21:03 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>kal.c: A Resilient Terminal Calendar</title>
+<meta name="author" content="William Wear" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">kal.c: A Resilient Terminal Calendar</h1>
+<div id="outline-container-orgfd7737e" class="outline-2">
+<h2 id="orgfd7737e">The Philosophy of <code>kal</code></h2>
+<div class="outline-text-2" id="text-orgfd7737e">
+<p>
+The standard BSD <code>calendar</code> utility is a testament to the Unix philosophy: it reads plain text files, matches dates, and prints strings. It is simple, unpretentious, and enduring. 
+</p>
+
+<p>
+However, real life is rarely bound entirely by fixed dates like "Jan 16." Real life is routines, daily habits, weekday work blocks, and rolling anniversaries. I built <code>kal.c</code> to maintain the strict text-as-data ethos of the original BSD tool while injecting modern pragmatism: custom repetition macros, dynamic age calculation, and context filtering, all without requiring complex cron syntax or external preprocessors.
+</p>
+
+<p>
+Here is a code audit that explains how the engine works, block by block.
+</p>
+</div>
+</div>
+<div id="outline-container-org6427444" class="outline-2">
+<h2 id="org6427444">The Code, Explained</h2>
+<div class="outline-text-2" id="text-org6427444">
+</div>
+<div id="outline-container-org3ab8e86" class="outline-3">
+<h3 id="org3ab8e86">1. Dependencies and String Manipulation</h3>
+<div class="outline-text-3" id="text-org3ab8e86">
+<p>
+C requires you to build your own tools for handling text. These helper functions ensure our calendar file is resilient against typos, case-shifting, and invisible trailing spaces.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;time.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;stdbool.h&gt;
+#include &lt;limits.h&gt;
+
+/* Helper to convert a string to lowercase for case-insensitive matching */
+void str_tolower(char *str) {
+    for (; *str; ++str) {
+        *str = tolower((unsigned char)*str);
+    }
+}
+
+/* Helper to strip the newline character from the end of a string */
+void strip_newline(char *str) {
+    str[strcspn(str, "\n")] = 0;
+}
+</pre>
+</div>
+
+<p>
+<i>The Rationale:</i> When you edit a text file quickly, it is easy to type <code>JAN</code> one day and <code>Jan</code> the next, or accidentally leave a trailing space before the tab. <code>str_tolower</code> and the strip helpers guarantee that the matching engine evaluates raw, clean data regardless of how hastily it was typed.
+</p>
+</div>
+</div>
+<div id="outline-container-org28f50a2" class="outline-3">
+<h3 id="org28f50a2">2. The Dynamic %AGE% Macro</h3>
+<div class="outline-text-3" id="text-org28f50a2">
+<p>
+Plain text is inherently static, but time is not. If I write down a birthday or a system installation date, I do not want to update the file every year. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">/* Helper to replace the first instance of %AGE% with a calculated integer */
+void replace_age(char *str, int age) {
+    char *pos = strstr(str, "%AGE%");
+    if (pos) {
+        char temp[1024];
+        int prefix_len = pos - str;
+        strncpy(temp, str, prefix_len);
+        temp[prefix_len] = '\0';
+        sprintf(temp + prefix_len, "%d%s", age, pos + 5);
+        strcpy(str, temp);
+    }
+}
+</pre>
+</div>
+
+<p>
+<i>The Rationale:</i> This function scans the event description for the exact string <code>%AGE%</code>. If found, it splices the calculated integer into the text buffer before printing. A line written as <code>1959-01-16  Birthday (Turning %AGE%)</code> will dynamically print out as "Turning 67" or "Turning 68" depending on the year the command is run. 
+</p>
+</div>
+</div>
+<div id="outline-container-org5501798" class="outline-3">
+<h3 id="org5501798">3. Target Dates and Time Math</h3>
+<div class="outline-text-3" id="text-org5501798">
+<p>
+To simulate running the calendar on future dates, we need a way to parse continuous numeric strings (like <code>250913</code> for September 13, 2025) and forcefully override the system clock.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">/* Helper to parse -t string in [[[cc]yy]mm]dd format and override target date */
+bool set_target_date(const char *date_str, struct tm *target) {
+    int len = strlen(date_str);
+    int cc = -1, yy = -1, mm = -1, dd = -1;
+
+    for (int i = 0; i &lt; len; i++) {
+        if (!isdigit((unsigned char)date_str[i])) return false;
+    }
+
+    if (len == 2) sscanf(date_str, "%2d", &amp;dd);
+    else if (len == 4) sscanf(date_str, "%2d%2d", &amp;mm, &amp;dd);
+    else if (len == 6) sscanf(date_str, "%2d%2d%2d", &amp;yy, &amp;mm, &amp;dd);
+    else if (len == 8) sscanf(date_str, "%2d%2d%2d%2d", &amp;cc, &amp;yy, &amp;mm, &amp;dd);
+    else return false;
+
+    target-&gt;tm_mday = dd;
+    if (mm != -1) target-&gt;tm_mon = mm - 1;
+    if (yy != -1) {
+        if (cc != -1) target-&gt;tm_year = (cc * 100 + yy) - 1900;
+        else {
+            if (yy &gt;= 69) target-&gt;tm_year = yy;
+            else target-&gt;tm_year = yy + 100;
+        }
+    }
+
+    target-&gt;tm_isdst = -1; 
+    if (mktime(target) == -1) return false;
+    return true;
+}
+</pre>
+</div>
+
+<p>
+<i>The Rationale:</i> Standard POSIX behavior dictates that 2-digit years below 69 pivot into the 2000s, while 69 and above assume the 1900s. The true magic here is the final <code>mktime(target)</code>. By passing our mutated struct back to C's standard time library, it automatically recalculates the day of the week (<code>tm_wday</code>). This ensures that if we simulate a Thursday, our <code>M-F</code> weekday rules still trigger correctly.
+</p>
+</div>
+</div>
+<div id="outline-container-orgde9f299" class="outline-3">
+<h3 id="orgde9f299">4. The Matching Engine</h3>
+<div class="outline-text-3" id="text-orgde9f299">
+<p>
+This is the heart of <code>kal.c</code>. It evaluates the string preceding the first tab character against the target date.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">/* Core matching logic for a specific single day. Extracts year if available. */
+bool matches_today(char *date_str, struct tm *target_day, int *out_year) {
+    char lower_date[64];
+    strncpy(lower_date, date_str, sizeof(lower_date) - 1);
+    lower_date[sizeof(lower_date) - 1] = '\0';
+
+    char *end = lower_date + strlen(lower_date) - 1;
+    while (end &gt; lower_date &amp;&amp; isspace((unsigned char)*end)) {
+        *end = '\0';
+        end--;
+    }
+    str_tolower(lower_date);
+
+    // 1. Custom Repetition Macros
+    if (strcmp(lower_date, "* *") == 0) return true;
+    if (strcmp(lower_date, "m-f") == 0) return (target_day-&gt;tm_wday &gt;= 1 &amp;&amp; target_day-&gt;tm_wday &lt;= 5);
+    if (strcmp(lower_date, "sasun") == 0) return (target_day-&gt;tm_wday == 0 || target_day-&gt;tm_wday == 6);
+
+    // [Standard BSD matching blocks omitted for brevity: handles MM/DD, Jan 16, etc.]
+    // ...
+</pre>
+</div>
+
+<p>
+<i>The Rationale:</i> The classic BSD tool lacked a way to handle simple repetition. Rather than implementing a full cron parser, <code>kal</code> introduces three human-readable strict strings:
+</p>
+<dl class="org-dl">
+<dt><code>* *</code></dt><dd>Triggers every single day (for daily reading goals or system checks).</dd>
+<dt><code>M-F</code></dt><dd>Triggers Monday through Friday.</dd>
+<dt><code>SaSun</code></dt><dd>Triggers strictly on weekends.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orga89c9e3" class="outline-3">
+<h3 id="orga89c9e3">5. The Window Loop</h3>
+<div class="outline-text-3" id="text-orga89c9e3">
+<p>
+If you only see today's tasks, you can't plan. <code>kal</code> uses a looping window to look forward and backward in time.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">/* Loop through the window. Returns the integer offset of days (e.g. 1 for tomorrow). */
+int find_matching_offset(char *date_str, struct tm *base_target, int lookbehind_days, int lookahead_days, int *out_year) {
+    for (int i = -lookbehind_days; i &lt;= lookahead_days; i++) {
+        struct tm day_to_check = *base_target;
+        day_to_check.tm_mday += i;
+        day_to_check.tm_isdst = -1;
+
+        if (mktime(&amp;day_to_check) != -1) {
+            int matched_year = -1;
+            if (matches_today(date_str, &amp;day_to_check, &amp;matched_year)) {
+                if (out_year) *out_year = matched_year;
+                return i;
+            }
+        }
+    }
+    return INT_MAX;
+}
+</pre>
+</div>
+
+<p>
+<i>The Rationale:</i> Date math across month boundaries (e.g., looking three days ahead from February 27th on a leap year) is notoriously complex. By simply adding an integer offset (<code>i</code>) to <code>tm_mday</code> and letting <code>mktime</code> normalize the struct, the C standard library handles all leap-year and month-rollover edge cases flawlessly. Returning the actual integer offset allows the main loop to generate dynamic tags like <code>[Tomorrow]</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org0e158aa" class="outline-3">
+<h3 id="org0e158aa">6. The Main Loop &amp; Output Formatting</h3>
+<div class="outline-text-3" id="text-org0e158aa">
+<p>
+The final piece parses the command-line arguments, reads the file, applies filters, and formats the output.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">// [Inside the fgets while-loop...]
+
+// Apply the -g grep filter to the event description
+if (filter_tag &amp;&amp; strstr(tab_pos + 1, filter_tag) == NULL) {
+    *tab_pos = '\t';
+    continue;
+}
+
+int event_year = -1;
+int offset = find_matching_offset(buffer, target, lookbehind_days, lookahead_days, &amp;event_year);
+
+if (offset != INT_MAX) {
+    // Calculate and replace %AGE% macro
+    if (event_year != -1) {
+        int age = (target-&gt;tm_year + 1900) - event_year;
+        replace_age(tab_pos + 1, age);
+    }
+
+    // Determine weekday
+    int matched_wday = (target-&gt;tm_wday + offset) % 7;
+    if (matched_wday &lt; 0) matched_wday += 7;
+
+    // Format the relative countdown tag
+    char countdown[64] = "";
+    if (offset == 1) snprintf(countdown, sizeof(countdown), " [Tomorrow]");
+    else if (offset == -1) snprintf(countdown, sizeof(countdown), " [Yesterday]");
+    else if (offset &gt; 1) snprintf(countdown, sizeof(countdown), " [In %d days]", offset);
+    else if (offset &lt; -1) snprintf(countdown, sizeof(countdown), " [%d days ago]", -offset);
+
+    // Print Output
+    if (print_wday) printf("%s ", day_names[matched_wday]);
+    if (print_rule) {
+        *tab_pos = '\t';
+        printf("%s%s\n", buffer, countdown);
+    } else {
+        printf("%s%s\n", tab_pos + 1, countdown);
+    }
+}
+</pre>
+</div>
+
+<p>
+<i>The Rationale:</i> 
+</p>
+<ul class="org-ul">
+<li><b>The Grep Filter (-g):</b> I want a single, centralized plain-text file for everything—coding, writing, crafts, and home maintenance. The simple <code>strstr</code> check allows me to run <code>./kal -g "@writing"</code> and instantly isolate my publishing tasks without maintaining separate files.</li>
+<li><b>Relative Countdowns:</b> Standard terminal outputs can be an impenetrable wall of text. By dynamically appending <code>[Tomorrow]</code> or <code>[In 3 days]</code> to the lookahead matches, the output becomes instantly scannable, reducing cognitive load when evaluating the week ahead.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Last edited by: William Wear on 2026-09-13 Sun 21:03.</p>
+</div>
+</body>
+</html>
