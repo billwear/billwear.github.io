@@ -1,0 +1,82 @@
+#+TITLE: The Mechanic and the Text File: How kal.c Reclaims the Unix Philosophy
+#+AUTHOR: William Wear
+#+DATE: 2026-09-13
+#+OPTIONS: toc:nil num:nil
+
+We live in an era of digital learned helplessness. To manage the simple act of knowing what day it is and what needs to be done, the modern computing industry insists you require a globally distributed database, real-time synchronization engines, and a subscription to a cloud service. We have traded agency for convenience, relying on black-box platforms that nag us with push notifications, harvest our metadata, and mysteriously fail when an AWS region goes down. We are tenants in our own digital lives, renting the ability to schedule a Tuesday.
+
+But there is a quieter, older, and vastly more resilient way to use a computer. It is found in the Unix philosophy, the doctrine of text-as-data, and the quiet power of rolling your own tools. 
+
+Recently, we built =kal.c=---a lightweight, 300-line C utility designed to parse a plain-text calendar file. On the surface, it is just a modernized clone of the classic BSD =calendar= tool. But beneath the compiler flags, =kal.c= is a manifesto. It is a working demonstration of why the Unix philosophy remains undefeated, and it serves as the ultimate case study in the quiet, radical power of *ordinary competence*.
+
+* The Elegance of Text as the Universal API
+
+In 1978, Doug McIlroy summarized the Unix philosophy: 
+
+#+BEGIN_QUOTE
+Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.
+#+END_QUOTE
+
+Modern productivity tools violate every tenet of this philosophy. They are monolithic, they refuse to talk to each other without brittle API keys, and their data is locked in proprietary binary blobs or opaque SQLite databases. If you want to find all your tasks related to a specific writing project, you are at the mercy of the application’s built-in search bar.
+
+=kal.c= violently rejects this model. It operates on a fundamentally different premise: your life can be represented by a date, a literal =TAB= character, and a string of text. That is it. No XML, no JSON, no hidden metadata. 
+
+Because =kal.c= uses plain text, the data does not belong to the program; the data belongs to /you/. The program is merely a lens through which you view it. If =kal.c= ceases to exist tomorrow, your data is still perfectly readable in Emacs, Neovim, or =cat=. Because it handles text streams, =kal.c= inherits the entire lineage of Unix text processing for free. By simply adding a =-g= flag to run a =strstr()= evaluation on the text buffer, =kal= becomes its own internal =grep=. You can pipe its output into =awk=, redirect it into an Org-mode file, or script it into a =.zshrc= file to greet you every morning. 
+
+This is the beauty of the Unix way: you do not have to build a complex ecosystem. You simply build a well-behaved citizen that speaks the lingua franca of text, and the ecosystem embraces it.
+
+* The Pragmatic Architecture of =kal.c=
+
+To understand ordinary competence, you must look at how a problem is solved. There is a temptation in modern software engineering to over-engineer---to import a massive date-time library, set up a local database, and write thousands of lines of code to handle edge cases. 
+
+Date math is famously hostile. Calculating leap years, rolling over months, and figuring out what day of the week it will be three days from February 27th is a nightmare of arbitrary human rules. A novice programmer might try to write their own leap-year logic. A modern web developer might install a 50-megabyte NPM package.
+
+=kal.c= relies on ordinary competence. It recognizes that the problem has already been solved perfectly by the C standard library. 
+
+When you pass the =-A 5= flag to look five days into the future, =kal= does not attempt to calculate whether February has 28 or 29 days this year. It simply takes today's =struct tm=, loops from 1 to 5, and blindly adds that integer to =tm_mday=. It then hands that mutated struct to =mktime()=. The POSIX standard dictates that =mktime()= must normalize out-of-bounds dates. If you hand it "February 32nd," it instantly and flawlessly recalculates the struct to "March 3rd" (or 4th), seamlessly updating the day of the week (=tm_wday=) in the process.
+
+This is the essence of hacking in its purest, original sense. It is not about writing the most code; it is about writing the /right/ code. By understanding the tools at your disposal, a 300-line C program can execute complex, rolling time-window evaluations with absolute precision. 
+
+* The Core Concept of Ordinary Competence
+
+Why write your own calendar utility? Why maintain your own GitHub Pages site with Org-mode instead of using Substack or WordPress for everything? 
+
+The answer lies in the idea of *ordinary competence*. 
+
+Ordinary competence is the refusal to be a passive consumer of technology. It is the belief that you should understand the mechanisms you rely on daily. You do not need to be a 10x rockstar engineer rewriting the Linux kernel to possess ordinary competence. You simply need to know how your tools work, how to fix them when they break, and how to mold them to fit your actual life. 
+
+When you use a commercial app, you must adapt your workflow to the imagination of a product manager in Silicon Valley. If you want a feature that calculates your age or reminds you to water the plants every Saturday, you have to submit a feature request and wait. 
+
+When you possess ordinary competence, you just open =kal.c=, write a quick =strstr()= function to look for the string =%AGE%=, do basic subtraction against the current year, and recompile. You want a rule that triggers every Monday through Friday? You write =if (strcmp(lower_date, "m-f") == 0)= and map it to =tm_wday=. 
+
+You scratch your own itch. You build systems that fit the contours of your mind, rather than forcing your mind into the rigid constraints of a SaaS platform. 
+
+* Self-Reliance in a Fragile Digital World
+
+There is a profound psychological benefit to relying on your own ordinary competence on a daily basis. 
+
+Modern technology is built on a foundation of anxiety. We are constantly worried about the next software update breaking our workflow, the next subscription price hike, or the sudden deprecation of an app we have used for years. Our digital foundations are built on shifting sand.
+
+When your entire scheduling system consists of a plaintext file and a compiled C binary on your local hard drive, that anxiety evaporates. =kal= will not undergo a surprise UI overhaul next week. It will not pivot to an AI-driven, blockchain-enabled calendar experience. It will not start showing you advertisements. It will do exactly what it did today, flawlessly, for the next forty years. 
+
+To type =./kal -w -A 3= into a terminal and watch it instantly output your custom-tailored tasks is to experience a rare kind of digital peace. It is the satisfaction of a carpenter sitting on a chair they built themselves. It might not have the padded upholstery of a mass-produced luxury recliner, but the joints are solid, the wood is real, and if a leg ever gets wobbly, the carpenter knows exactly how to fix it.
+
+* The Mechanics of a Resilient Life
+
+The Unix philosophy and the practice of ordinary competence are ultimately about the same thing: resilience. 
+
+Complex systems fail catastrophically. Simple, composable systems fail gracefully, and they are easy to repair. By adopting tools like =kal.c=, you are actively choosing to live a high-signal, low-noise digital life. You are rejecting the bloat. You are insisting that a computer's primary purpose is to be a bicycle for the mind, not a slot machine for your attention.
+
+When you sit down at your terminal, pull up your =calendar= file in a text editor, and type out:
+
+#+BEGIN_SRC text
+M-F	Write 500 words for Ordinary Competence @writing
+#+END_SRC
+
+You are making a contract with yourself, mediated by a system you completely understand. There is no algorithm standing between you and your work. There is no cloud sync error waiting to erase your intentions. There is only the text, the compiler, and the quiet hum of a machine doing exactly---and only---what you told it to do. 
+
+That is the power of Unix. That is the triumph of ordinary competence. And that is why, in a world of infinite, loud, and fragile software, the most radical thing you can do is write a C program, compile it, and trust yourself.
+
+#+MACRO: small @@html:<small>@@$1@@html:</small>@@
+
+{{{small(Text passages copyright © 2026 by William Wear. All rights reserved. All code provided herein is free and unencumbered software released into the public domain under The Unlicense. For more information please refer directly to <https://unlicense.org/>.)}}}

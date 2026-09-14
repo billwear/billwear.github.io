@@ -80,8 +80,3 @@ SaSun	Water the plants @home
 
 * AUTHOR
 William Wear
-
-
-#+MACRO: small @@html:<small>@@$1@@html:</small>@@
-
-{{{small(Text passages copyright © 2026 by William Wear. All rights reserved. All code provided herein is free and unencumbered software released into the public domain under The Unlicense. For more information please refer directly to <https://unlicense.org/>.)}}}

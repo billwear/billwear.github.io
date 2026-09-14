@@ -200,7 +200,3 @@ The final piece parses the command-line arguments, reads the file, applies filte
 /The Rationale:/ 
 - *The Grep Filter (-g):* I want a single, centralized plain-text file for everything—coding, writing, crafts, and home maintenance. The simple =strstr= check allows me to run =./kal -g "@writing"= and instantly isolate my publishing tasks without maintaining separate files.
 - *Relative Countdowns:* Standard terminal outputs can be an impenetrable wall of text. By dynamically appending =[Tomorrow]= or =[In 3 days]= to the lookahead matches, the output becomes instantly scannable, reducing cognitive load when evaluating the week ahead.
-
-  #+MACRO: small @@html:<small>@@$1@@html:</small>@@
-
-{{{small(Text passages copyright © 2026 by William Wear. All rights reserved. All code provided herein is free and unencumbered software released into the public domain under The Unlicense. For more information please refer directly to <https://unlicense.org/>.)}}}
