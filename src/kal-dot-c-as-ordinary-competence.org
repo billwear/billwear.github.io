@@ -1,4 +1,4 @@
-#+TITLE: The Mechanic and the Text File: How kal.c Reclaims the Unix Philosophy
+#+TITLE: The 42 of kal.c
 #+AUTHOR: William Wear
 #+DATE: 2026-09-13
 #+OPTIONS: toc:nil num:nil
@@ -7,7 +7,7 @@ We live in an era of digital learned helplessness. To manage the simple act of k
 
 But there is a quieter, older, and vastly more resilient way to use a computer. It is found in the Unix philosophy, the doctrine of text-as-data, and the quiet power of rolling your own tools. 
 
-Recently, we built =kal.c=---a lightweight, 300-line C utility designed to parse a plain-text calendar file. On the surface, it is just a modernized clone of the classic BSD =calendar= tool. But beneath the compiler flags, =kal.c= is a manifesto. It is a working demonstration of why the Unix philosophy remains undefeated, and it serves as the ultimate case study in the quiet, radical power of *ordinary competence*.
+Recently, I built =kal.c=---a lightweight, 300-line C utility designed to parse a plain-text calendar file. On the surface, it is just a modernized clone of the classic BSD =calendar= tool. But beneath the compiler flags, =kal.c= is a manifesto. It is a working demonstration of why the Unix philosophy remains undefeated, and it serves as the ultimate case study in the quiet, radical power of *ordinary competence*.
 
 * The Elegance of Text as the Universal API
 
