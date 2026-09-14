@@ -70,3 +70,22 @@ small {
     margin-bottom: 0.2rem;
     color: #777;
 }
+
+/* 6. Header Layout */
+.site-header {
+    display: flex;
+    align-items: center;  /* Vertically centers the logo and title */
+    gap: 1.25rem;         /* Adds a clean space between them */
+    margin-bottom: 2rem;
+}
+
+.site-logo {
+    width: 72px;          /* Adjust this based on your SVG's natural size */
+    height: auto;
+    flex-shrink: 0;       /* Prevents the logo from squishing on small screens */
+}
+
+/* Strip the bottom margin off the title since the .site-header container handles it now */
+.site-header h1.title {
+    margin-bottom: 0;
+}
