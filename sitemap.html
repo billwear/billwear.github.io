@@ -4,8 +4,8 @@
 <!-- 2026-09-18 Fri 08:17 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>kal(1)</title>
-<meta name="author" content="William Wear" />
+<title>Site Map</title>
+<meta name="author" content="Bill Wear" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
   #content { max-width: 60em; margin: auto; }
@@ -196,172 +196,14 @@
 <body>
 <div id="content" class="content">
 <header>
-<h1 class="title">kal(1)</h1>
-</header><div id="outline-container-org5dd34a2" class="outline-2">
-<h2 id="org5dd34a2">NAME</h2>
-<div class="outline-text-2" id="text-org5dd34a2">
-<p>
-<code>kal</code> - a lightweight, plain-text terminal calendar and scheduling utility
-</p>
-</div>
-</div>
-<div id="outline-container-orgb3e65be" class="outline-2">
-<h2 id="orgb3e65be">SYNOPSIS</h2>
-<div class="outline-text-2" id="text-orgb3e65be">
-<p>
-<code>kal</code> [-r] [-w] [-A num] [-B num] [-t [[[cc]yy]mm]dd] [-g tag] [file]
-</p>
-</div>
-</div>
-<div id="outline-container-org16636f0" class="outline-2">
-<h2 id="org16636f0">DESCRIPTION</h2>
-<div class="outline-text-2" id="text-org16636f0">
-<p>
-The <code>kal</code> utility reads a plain-text file (defaulting to <code>calendar</code> in the current directory) and prints any lines whose leading date rule matches the current date. 
-</p>
-
-<p>
-Unlike the standard BSD <code>calendar</code>, <code>kal</code> is designed for modern daily workflows, featuring dynamic age calculation, grep-style filtering, relative countdowns, and native support for recurring weekday/weekend habits.
-</p>
-</div>
-</div>
-<div id="outline-container-org6cbadf2" class="outline-2">
-<h2 id="org6cbadf2">OPTIONS</h2>
-<div class="outline-text-2" id="text-org6cbadf2">
-<dl class="org-dl">
-<dt><code>-A num</code></dt><dd>Look ahead. Print lines matching today and the next <i>num</i> days. Appends a relative countdown tag (e.g., <code>[Tomorrow]</code>, <code>[In 3 days]</code>) to future matches.</dd>
-<dt><code>-B num</code></dt><dd>Look behind. Print lines matching today and the previous <i>num</i> days. Appends a relative tag (e.g., <code>[Yesterday]</code>) to past matches.</dd>
-<dt><code>-g tag</code></dt><dd>Grep filter. Only print matching lines that also contain the literal string <i>tag</i> in the event description.</dd>
-<dt><code>-r</code></dt><dd>Rule print. Include the matched date rule (the string before the tab) in the output. By default, <code>kal</code> strips the date rule and only prints the event text.</dd>
-<dt><code>-t [[[cc]yy]mm]dd</code></dt><dd>Target date. Override the system clock and evaluate the file as if today were the specified date. Years may be 2 or 4 digits.</dd>
-<dt><code>-w</code></dt><dd>Weekday print. Prepend the three-letter day of the week (e.g., <code>Sun</code>, <code>Mon</code>) to the beginning of each printed line.</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-orgb7bbeed" class="outline-2">
-<h2 id="orgb7bbeed">FILE FORMAT</h2>
-<div class="outline-text-2" id="text-orgb7bbeed">
-<p>
-The calendar file relies on strict text-as-data formatting. Empty lines and lines beginning with <code>#</code> are ignored. 
-</p>
-
-<p>
-Every valid line must consist of a date rule, followed by a single <code>TAB</code> character, followed by the event description.
-</p>
-</div>
-<div id="outline-container-org37a0e32" class="outline-3">
-<h3 id="org37a0e32">Custom Repetition Macros</h3>
-<div class="outline-text-3" id="text-org37a0e32">
-<p>
-<code>kal</code> natively supports three exact-string macros for recurring events:
-</p>
-<dl class="org-dl">
-<dt><code>* *</code></dt><dd>Matches every day.</dd>
-<dt><code>M-F</code></dt><dd>Matches Monday through Friday.</dd>
-<dt><code>SaSun</code></dt><dd>Matches Saturday and Sunday.</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-orgfb6b9ce" class="outline-3">
-<h3 id="orgfb6b9ce">Supported Date Formats</h3>
-<div class="outline-text-3" id="text-orgfb6b9ce">
-<ul class="org-ul">
-<li>Numeric dates: <code>09/13</code>, <code>9/14</code></li>
-<li>Text dates (Forward and Reversed): <code>Sep 13</code>, <code>13 Sep</code>, <code>September 13</code></li>
-<li>Wildcard months: <code>* 15</code> (matches the 15th of every month)</li>
-<li>Standalone words: <code>Sunday</code> (matches every Sunday), <code>Oct</code> (matches October 1st)</li>
+<h1 class="title">Site Map</h1>
+</header><ul class="org-ul">
+<li><a href="licensing-statement.html">licensing-statement</a></li>
+<li><a href="kal-manpage.html">kal(1)</a></li>
+<li><a href="kal-dot-c-as-ordinary-competence.html">The 42 of kal.c</a></li>
+<li><a href="kal-code-audit.html">kal.c: A Resilient Terminal Calendar</a></li>
+<li><a href="index.html">William Wear</a></li>
 </ul>
-</div>
-</div>
-<div id="outline-container-org75846c7" class="outline-3">
-<h3 id="org75846c7">Dynamic Age Calculation</h3>
-<div class="outline-text-3" id="text-org75846c7">
-<p>
-If an event description contains the literal string <code>%AGE%</code>, <code>kal</code> will calculate the difference between the current year and the event&rsquo;s year, dynamically replacing the string with the resulting integer.
-</p>
-
-<p>
-To trigger this, the date rule must be formatted as <code>YYYY-MM-DD</code> or <code>YYYY/MM/DD</code>.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org2c8c51b" class="outline-2">
-<h2 id="org2c8c51b">EXAMPLES</h2>
-<div class="outline-text-2" id="text-org2c8c51b">
-<p>
-Print today&rsquo;s events, showing the weekday and the date rule:
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">kal -w -r
-</pre>
-</div>
-
-<p>
-Look ahead 7 days, filtering only for lines containing &ldquo;@writing&rdquo;:
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">kal -A 7 -g "@writing"
-</pre>
-</div>
-
-<p>
-Simulate running the calendar on January 16, 2027:
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">kal -t 270116
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-org71794f2" class="outline-2">
-<h2 id="org71794f2">EXAMPLES: CALENDAR FILE</h2>
-<div class="outline-text-2" id="text-org71794f2">
-<p>
-#+BEGIN<sub>SRC</sub> text
-</p>
-</div>
-</div>
-<div id="outline-container-org7852d92" class="outline-2">
-<h2 id="org7852d92">*	Read 10 pages of a book</h2>
-<div class="outline-text-2" id="text-org7852d92">
-<p>
-M-F	Review system logs @admin
-SaSun	Water the plants @home
-</p>
-
-<p>
-09/13	Update GitHub Pages repository
-15 Sep	Publish essay
-</p>
-
-<p>
-1959-01-16	Birthday (Turning %AGE% years old)
-#+END<sub>SRC</sub>
-</p>
-</div>
-</div>
-<div id="outline-container-orgc352330" class="outline-2">
-<h2 id="orgc352330">SEE ALSO</h2>
-<div class="outline-text-2" id="text-orgc352330">
-<p>
-<code>calendar(1)</code>, <code>date(1)</code>
-</p>
-</div>
-</div>
-<div id="outline-container-org9792ad6" class="outline-2">
-<h2 id="org9792ad6">AUTHOR</h2>
-<div class="outline-text-2" id="text-org9792ad6">
-<p>
-William Wear
-</p>
-
-
-<p>
-<small>Text passages copyright © 2026 by William Wear. All rights reserved. All code provided herein is free and unencumbered software released into the public domain under The Unlicense. For more information please refer directly to <a href="https://unlicense.org/">https://unlicense.org/</a>.</small>
-</p>
-</div>
-</div>
 </div>
 </body>
 </html>

@@ -1,0 +1,7 @@
+#+TITLE: Site Map
+
+- [[file:licensing-statement.org][licensing-statement]]
+- [[file:kal-manpage.org][kal(1)]]
+- [[file:kal-dot-c-as-ordinary-competence.org][The 42 of kal.c]]
+- [[file:kal-code-audit.org][kal.c: A Resilient Terminal Calendar]]
+- [[file:index.org][William Wear]]
