@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2026-09-18 Fri 08:30 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Working Title: Exit Code Zero: When to Stay, When to kill -9, and How to Survive Either Way</title>
+<meta name="author" content="Bill Wear" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">Working Title: Exit Code Zero: When to Stay, When to kill -9, and How to Survive Either Way</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org84ed474">Segment 1: The Trap of the Binary (0:00 – 5:00)</a>
+<ul>
+<li><a href="#org5f5d547">Amy:</a></li>
+<li><a href="#org68e3439">Bill:</a></li>
+</ul>
+</li>
+<li><a href="#org3fdc4f4">Segment 2: The Art of Deliberate Compromise (5:00 – 10:30)</a>
+<ul>
+<li><a href="#orgceec155">Amy:</a></li>
+<li><a href="#orgdbdf0c3">Bill:</a></li>
+</ul>
+</li>
+<li><a href="#org22b5d38">Segment 3: Building the Buffer and Managing Risk (10:30 – 15:30)</a>
+<ul>
+<li><a href="#org174b8a8">Amy:</a></li>
+<li><a href="#org7bb48f5">Bill:</a></li>
+</ul>
+</li>
+<li><a href="#org897f71a">Segment 4: The Graceful Exit (SIGTERM before SIGKILL) (15:30 – 20:00)</a>
+<ul>
+<li><a href="#orgb62ba45">Amy:</a></li>
+<li><a href="#org760e912">Bill:</a></li>
+<li><a href="#org008394f">Amy:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-org84ed474" class="outline-2">
+<h2 id="org84ed474">Segment 1: The Trap of the Binary (0:00 – 5:00)</h2>
+<div class="outline-text-2" id="text-org84ed474">
+</div>
+<div id="outline-container-org5f5d547" class="outline-3">
+<h3 id="org5f5d547">Amy:</h3>
+<div class="outline-text-3" id="text-org5f5d547">
+<p>
+Welcome back. Today we’re tackling a query that hits search engines millions of times a year, usually typed late at night by someone staring at an open terminal or a mountain of unread tickets: “Should I stay or should I leave my job?”
+</p>
+
+<p>
+Bill, this hits close to home for me. Years ago at IBM, I had the signing bonus, the title, the above-average paycheck. From the outside, I had “arrived.” But inside, it was tribal warfare—team against team, zero technical depth, and zero room to build. After eight months, terrified of losing who I was, I walked out with nothing lined up.
+</p>
+
+<p>
+Fast forward twelve years: different company, same symptoms. But this time I told myself, “Be an adult. Don’t make that juvenile move again. Suck it up.” And that decision nearly hollowed me out completely. My health broke, my spark vanished, and I realized I had traded my soul to prove I had grit.
+</p>
+
+<p>
+Looking at that dilemma, is there a way to evaluate this that doesn’t boil down to reckless impulse versus slow self-destruction?
+</p>
+</div>
+</div>
+<div id="outline-container-org68e3439" class="outline-3">
+<h3 id="org68e3439">Bill:</h3>
+<div class="outline-text-3" id="text-org68e3439">
+<p>
+The mistake begins with treating it as a boolean. Programmers love a clean if/else, but careers rarely run on clean logic gates.
+</p>
+
+<p>
+In fifty-two years around the shell, the first thing you learn about diagnosing a frozen machine is that you don’t immediately pull the power cord out of the wall, nor do you sit and stare at a runaway thread consuming 100% CPU forever. You investigate the runlevel.
+</p>
+
+<p>
+When people ask, “Should I stay or should I leave?”, they’re usually asking under acute distress. But leaving isn&rsquo;t the only active choice, and staying isn&rsquo;t automatically passive cowardice. Both of your choices were valid diagnostic steps. The first time, you checked the boundary conditions of your self-respect. The second time, you tested your capacity for compromise. The failure wasn’t in either decision—it was in expecting either job to define who you were in the first place.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3fdc4f4" class="outline-2">
+<h2 id="org3fdc4f4">Segment 2: The Art of Deliberate Compromise (5:00 – 10:30)</h2>
+<div class="outline-text-2" id="text-org3fdc4f4">
+</div>
+<div id="outline-container-orgceec155" class="outline-3">
+<h3 id="orgceec155">Amy:</h3>
+<div class="outline-text-3" id="text-orgceec155">
+<p>
+Let’s talk about that compromise, because that’s what kept me trapped the second time. In tech, we preach “follow your passion,” but every adult job involves a massive helping of tedium, politics, and legacy systems nobody wants to touch. Where is the line between healthy compromise—doing the unglamorous work to get paid—and compromise that rots your engine?
+</p>
+</div>
+</div>
+<div id="outline-container-orgdbdf0c3" class="outline-3">
+<h3 id="orgdbdf0c3">Bill:</h3>
+<div class="outline-text-3" id="text-orgdbdf0c3">
+<p>
+Think of it like standard Unix pipes: stdin goes in, stdout comes out, and stderr captures the garbage.
+</p>
+
+<p>
+⚬ The Acceptable Trade: You trade labor, attention, and technical skill for capital and time. You don&rsquo;t have to love the product. If the team is functional and the work is tolerable, you do the job with ordinary competence, close the laptop at five, and live your actual life. That’s not selling out; that’s an honest transaction.
+⚬ The Toxic Trade: You start trading your nervous system, your integrity, or your baseline mental clarity. The moment a workplace demands that you internalize its internal dysfunction—pitting teams against each other, asking you to lie to clients, or operating in perpetual panic—the return code is broken.
+</p>
+
+<p>
+If the job isn&rsquo;t giving you passion, it had better give you two things instead: clean financial compensation and enough leftover cognitive bandwidth to pursue what actually matters to you. If it steals both, it’s not a job anymore—it’s an extractive process.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org22b5d38" class="outline-2">
+<h2 id="org22b5d38">Segment 3: Building the Buffer and Managing Risk (10:30 – 15:30)</h2>
+<div class="outline-text-2" id="text-org22b5d38">
+</div>
+<div id="outline-container-org174b8a8" class="outline-3">
+<h3 id="org174b8a8">Amy:</h3>
+<div class="outline-text-3" id="text-org174b8a8">
+<p>
+That financial reality is what paralyzes people. It’s easy to say “walk away,” but people have mortgages, kids, and health insurance to worry about. When I quit IBM with zero runway, that panic was real. How do you construct a practical buffer so you aren’t trapped?
+</p>
+</div>
+</div>
+<div id="outline-container-org7bb48f5" class="outline-3">
+<h3 id="org7bb48f5">Bill:</h3>
+<div class="outline-text-3" id="text-org7bb48f5">
+<p>
+Panic happens when your operational margin drops to zero. In systems administration, you never run a filesystem at 99% capacity; the moment a log file spikes, the entire kernel panics.
+</p>
+
+<p>
+Survival Principle	What It Looks Like in Practice
+Keep the core light	Strip recurring fixed overhead to the absolute essentials. Autonomy is directly proportional to how little it costs you to exist every month.
+Separate identity from PID	A job is just a Process ID (PID). It is running right now, but it isn&rsquo;t the operating system. You are the kernel. If a process dies, the OS shouldn&rsquo;t crash with it.
+Maintain the toolkit	Always keep your tools sharp and portable: your plain-text notes, your network, your baseline skills. If your entire skill set only works inside Company X’s proprietary pipeline, you’re trapped.
+</p>
+
+<p>
+When you treat your paycheck as seed capital for your personal independence, your psychological relationship to your manager changes overnight. You’re not an inmate hoping for parole; you’re an independent contractor renting your brain by the hour.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org897f71a" class="outline-2">
+<h2 id="org897f71a">Segment 4: The Graceful Exit (SIGTERM before SIGKILL) (15:30 – 20:00)</h2>
+<div class="outline-text-2" id="text-org897f71a">
+</div>
+<div id="outline-container-orgb62ba45" class="outline-3">
+<h3 id="orgb62ba45">Amy:</h3>
+<div class="outline-text-3" id="text-orgb62ba45">
+<p>
+I love that reframing. It turns staying into a deliberate, bounded tactic rather than a defeat. You stay while you build the runway, and you leave when the math—not just the emotion—says it’s time.
+</p>
+
+<p>
+So if someone is listening right now, feeling hollowed out, how do they let go of the fear of what comes next?
+</p>
+</div>
+</div>
+<div id="outline-container-org760e912" class="outline-3">
+<h3 id="org760e912">Bill:</h3>
+<div class="outline-text-3" id="text-org760e912">
+<p>
+You recognize that no decision comes with guaranteed uptime.
+</p>
+
+<p>
+In Unix, when you need to shut down a rogue process, you don’t immediately hammer it with kill -9 unless everything has gone completely off the rails. You send SIGTERM first. You give things a chance to flush buffers, clean up state, and exit gracefully.
+</p>
+
+<p>
+⚬ If you decide to stay, you define the terms: “I am staying for nine months to bank X dollars and learn Y technology. I will not engage in team tribalism.”
+⚬ If you decide to go, you accept that the landing might be bumpy. But discomfort is not failure.
+</p>
+
+<p>
+Every time you prune a dead branch from your routine, you create space for actual growth. You will win some, you will lose some, but as long as you retain ownership of your own mind and your craft, you haven&rsquo;t lost the game. You&rsquo;ve just redirected the stream.
+</p>
+</div>
+</div>
+<div id="outline-container-org008394f" class="outline-3">
+<h3 id="org008394f">Amy:</h3>
+<div class="outline-text-3" id="text-org008394f">
+<p>
+Exit with intentionality, keep your overhead low, and never let a temporary process consume your entire core. Until next time.
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
