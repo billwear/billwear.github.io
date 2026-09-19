@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-18 Fri 08:30 -->
+<!-- 2026-09-19 Sat 11:18 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Working Title: Exit Code Zero: When to Stay, When to kill -9, and How to Survive Either Way</title>
@@ -201,41 +201,52 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org84ed474">Segment 1: The Trap of the Binary (0:00 – 5:00)</a>
+<li><a href="#org1f3f0bf">intro</a></li>
+<li><a href="#org4f9d763">Segment 1: The Trap of the Binary (0:00 – 5:00)</a>
 <ul>
-<li><a href="#org5f5d547">Amy:</a></li>
-<li><a href="#org68e3439">Bill:</a></li>
+<li><a href="#org9e76e28">Amy:</a></li>
+<li><a href="#org949015f">Bill:</a></li>
 </ul>
 </li>
-<li><a href="#org3fdc4f4">Segment 2: The Art of Deliberate Compromise (5:00 – 10:30)</a>
+<li><a href="#orgf7ad361">Segment 2: The Art of Deliberate Compromise (5:00 – 10:30)</a>
 <ul>
-<li><a href="#orgceec155">Amy:</a></li>
-<li><a href="#orgdbdf0c3">Bill:</a></li>
+<li><a href="#org6706448">Amy:</a></li>
+<li><a href="#org4a17963">Bill:</a></li>
 </ul>
 </li>
-<li><a href="#org22b5d38">Segment 3: Building the Buffer and Managing Risk (10:30 – 15:30)</a>
+<li><a href="#org8f96a36">Segment 3: Building the Buffer and Managing Risk (10:30 – 15:30)</a>
 <ul>
-<li><a href="#org174b8a8">Amy:</a></li>
-<li><a href="#org7bb48f5">Bill:</a></li>
+<li><a href="#org1f0ee1e">Amy:</a></li>
+<li><a href="#org9fd5f4f">Bill:</a></li>
 </ul>
 </li>
-<li><a href="#org897f71a">Segment 4: The Graceful Exit (SIGTERM before SIGKILL) (15:30 – 20:00)</a>
+<li><a href="#org65d8b4a">Segment 4: The Graceful Exit (SIGTERM before SIGKILL) (15:30 – 20:00)</a>
 <ul>
-<li><a href="#orgb62ba45">Amy:</a></li>
-<li><a href="#org760e912">Bill:</a></li>
-<li><a href="#org008394f">Amy:</a></li>
+<li><a href="#orgea4ce53">Amy:</a></li>
+<li><a href="#org9e3693c">Bill:</a></li>
+<li><a href="#orgbf6a20f">Amy:</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org84ed474" class="outline-2">
-<h2 id="org84ed474">Segment 1: The Trap of the Binary (0:00 – 5:00)</h2>
-<div class="outline-text-2" id="text-org84ed474">
+<div id="outline-container-org1f3f0bf" class="outline-2">
+<h2 id="org1f3f0bf">intro</h2>
+<div class="outline-text-2" id="text-org1f3f0bf">
+<p>
+hey, i&rsquo;m bill, the accidental physicist
+&#x2026;
+and it&rsquo;s tuesday after lunch
+</p>
 </div>
-<div id="outline-container-org5f5d547" class="outline-3">
-<h3 id="org5f5d547">Amy:</h3>
-<div class="outline-text-3" id="text-org5f5d547">
+</div>
+<div id="outline-container-org4f9d763" class="outline-2">
+<h2 id="org4f9d763">Segment 1: The Trap of the Binary (0:00 – 5:00)</h2>
+<div class="outline-text-2" id="text-org4f9d763">
+</div>
+<div id="outline-container-org9e76e28" class="outline-3">
+<h3 id="org9e76e28">Amy:</h3>
+<div class="outline-text-3" id="text-org9e76e28">
 <p>
 Welcome back. Today we’re tackling a query that hits search engines millions of times a year, usually typed late at night by someone staring at an open terminal or a mountain of unread tickets: “Should I stay or should I leave my job?”
 </p>
@@ -253,9 +264,9 @@ Looking at that dilemma, is there a way to evaluate this that doesn’t boil dow
 </p>
 </div>
 </div>
-<div id="outline-container-org68e3439" class="outline-3">
-<h3 id="org68e3439">Bill:</h3>
-<div class="outline-text-3" id="text-org68e3439">
+<div id="outline-container-org949015f" class="outline-3">
+<h3 id="org949015f">Bill:</h3>
+<div class="outline-text-3" id="text-org949015f">
 <p>
 The mistake begins with treating it as a boolean. Programmers love a clean if/else, but careers rarely run on clean logic gates.
 </p>
@@ -270,21 +281,21 @@ When people ask, “Should I stay or should I leave?”, they’re usually askin
 </div>
 </div>
 </div>
-<div id="outline-container-org3fdc4f4" class="outline-2">
-<h2 id="org3fdc4f4">Segment 2: The Art of Deliberate Compromise (5:00 – 10:30)</h2>
-<div class="outline-text-2" id="text-org3fdc4f4">
+<div id="outline-container-orgf7ad361" class="outline-2">
+<h2 id="orgf7ad361">Segment 2: The Art of Deliberate Compromise (5:00 – 10:30)</h2>
+<div class="outline-text-2" id="text-orgf7ad361">
 </div>
-<div id="outline-container-orgceec155" class="outline-3">
-<h3 id="orgceec155">Amy:</h3>
-<div class="outline-text-3" id="text-orgceec155">
+<div id="outline-container-org6706448" class="outline-3">
+<h3 id="org6706448">Amy:</h3>
+<div class="outline-text-3" id="text-org6706448">
 <p>
 Let’s talk about that compromise, because that’s what kept me trapped the second time. In tech, we preach “follow your passion,” but every adult job involves a massive helping of tedium, politics, and legacy systems nobody wants to touch. Where is the line between healthy compromise—doing the unglamorous work to get paid—and compromise that rots your engine?
 </p>
 </div>
 </div>
-<div id="outline-container-orgdbdf0c3" class="outline-3">
-<h3 id="orgdbdf0c3">Bill:</h3>
-<div class="outline-text-3" id="text-orgdbdf0c3">
+<div id="outline-container-org4a17963" class="outline-3">
+<h3 id="org4a17963">Bill:</h3>
+<div class="outline-text-3" id="text-org4a17963">
 <p>
 Think of it like standard Unix pipes: stdin goes in, stdout comes out, and stderr captures the garbage.
 </p>
@@ -300,21 +311,21 @@ If the job isn&rsquo;t giving you passion, it had better give you two things ins
 </div>
 </div>
 </div>
-<div id="outline-container-org22b5d38" class="outline-2">
-<h2 id="org22b5d38">Segment 3: Building the Buffer and Managing Risk (10:30 – 15:30)</h2>
-<div class="outline-text-2" id="text-org22b5d38">
+<div id="outline-container-org8f96a36" class="outline-2">
+<h2 id="org8f96a36">Segment 3: Building the Buffer and Managing Risk (10:30 – 15:30)</h2>
+<div class="outline-text-2" id="text-org8f96a36">
 </div>
-<div id="outline-container-org174b8a8" class="outline-3">
-<h3 id="org174b8a8">Amy:</h3>
-<div class="outline-text-3" id="text-org174b8a8">
+<div id="outline-container-org1f0ee1e" class="outline-3">
+<h3 id="org1f0ee1e">Amy:</h3>
+<div class="outline-text-3" id="text-org1f0ee1e">
 <p>
 That financial reality is what paralyzes people. It’s easy to say “walk away,” but people have mortgages, kids, and health insurance to worry about. When I quit IBM with zero runway, that panic was real. How do you construct a practical buffer so you aren’t trapped?
 </p>
 </div>
 </div>
-<div id="outline-container-org7bb48f5" class="outline-3">
-<h3 id="org7bb48f5">Bill:</h3>
-<div class="outline-text-3" id="text-org7bb48f5">
+<div id="outline-container-org9fd5f4f" class="outline-3">
+<h3 id="org9fd5f4f">Bill:</h3>
+<div class="outline-text-3" id="text-org9fd5f4f">
 <p>
 Panic happens when your operational margin drops to zero. In systems administration, you never run a filesystem at 99% capacity; the moment a log file spikes, the entire kernel panics.
 </p>
@@ -332,13 +343,13 @@ When you treat your paycheck as seed capital for your personal independence, you
 </div>
 </div>
 </div>
-<div id="outline-container-org897f71a" class="outline-2">
-<h2 id="org897f71a">Segment 4: The Graceful Exit (SIGTERM before SIGKILL) (15:30 – 20:00)</h2>
-<div class="outline-text-2" id="text-org897f71a">
+<div id="outline-container-org65d8b4a" class="outline-2">
+<h2 id="org65d8b4a">Segment 4: The Graceful Exit (SIGTERM before SIGKILL) (15:30 – 20:00)</h2>
+<div class="outline-text-2" id="text-org65d8b4a">
 </div>
-<div id="outline-container-orgb62ba45" class="outline-3">
-<h3 id="orgb62ba45">Amy:</h3>
-<div class="outline-text-3" id="text-orgb62ba45">
+<div id="outline-container-orgea4ce53" class="outline-3">
+<h3 id="orgea4ce53">Amy:</h3>
+<div class="outline-text-3" id="text-orgea4ce53">
 <p>
 I love that reframing. It turns staying into a deliberate, bounded tactic rather than a defeat. You stay while you build the runway, and you leave when the math—not just the emotion—says it’s time.
 </p>
@@ -348,9 +359,9 @@ So if someone is listening right now, feeling hollowed out, how do they let go o
 </p>
 </div>
 </div>
-<div id="outline-container-org760e912" class="outline-3">
-<h3 id="org760e912">Bill:</h3>
-<div class="outline-text-3" id="text-org760e912">
+<div id="outline-container-org9e3693c" class="outline-3">
+<h3 id="org9e3693c">Bill:</h3>
+<div class="outline-text-3" id="text-org9e3693c">
 <p>
 You recognize that no decision comes with guaranteed uptime.
 </p>
@@ -369,9 +380,9 @@ Every time you prune a dead branch from your routine, you create space for actua
 </p>
 </div>
 </div>
-<div id="outline-container-org008394f" class="outline-3">
-<h3 id="org008394f">Amy:</h3>
-<div class="outline-text-3" id="text-org008394f">
+<div id="outline-container-orgbf6a20f" class="outline-3">
+<h3 id="orgbf6a20f">Amy:</h3>
+<div class="outline-text-3" id="text-orgbf6a20f">
 <p>
 Exit with intentionality, keep your overhead low, and never let a temporary process consume your entire core. Until next time.
 </p>

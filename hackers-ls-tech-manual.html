@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2026-09-19 Sat 18:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>hls(1) User Manual &amp; Feature Guide</title>
+<meta name="author" content="Bill Wear" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root {
+--bg: #0d1117;
+--fg: #c9d1d9;
+--text-muted: #8b949e;
+--border: #30363d;
+--accent: #58a6ff;
+--code-bg: #161b22;
+--callout-bg: #1f242c;
+--green: #3fb950;
+--red: #f85149;
+--yellow: #d29922;
+}
+body {
+max-width: 920px;
+margin: 2rem auto;
+padding: 0 1.5rem;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+line-height: 1.65;
+color: var(--fg);
+background-color: var(--bg);
+}
+h1, h2, h3, h4 { color: #f0f6fc; font-weight: 600; }
+h1 { border-bottom: 2px solid var(--border); padding-bottom: 0.6rem; margin-top: 2rem; }
+h2 { border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-top: 2.5rem; color: #58a6ff; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code {
+background: var(--code-bg);
+color: #ff7b72;
+padding: 0.18rem 0.35rem;
+border-radius: 4px;
+font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 0.9em;
+}
+pre.src, pre.example {
+background: var(--code-bg);
+color: var(--fg);
+padding: 1rem;
+border: 1px solid var(--border);
+border-radius: 6px;
+overflow-x: auto;
+font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+font-size: 0.88rem;
+}
+#table-of-contents {
+background: var(--code-bg);
+border: 1px solid var(--border);
+border-radius: 6px;
+padding: 1rem 1.5rem;
+margin-bottom: 2.5rem;
+}
+#table-of-contents h2 { border-bottom: none; margin-top: 0; font-size: 1.25rem; color: #f0f6fc; }
+#table-of-contents ul { list-style-type: none; padding-left: 1rem; }
+#table-of-contents li { margin: 0.3rem 0; }
+table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; }
+th, td { border: 1px solid var(--border); padding: 0.6rem 0.8rem; text-align: left; }
+th { background: var(--code-bg); font-weight: 600; color: #f0f6fc; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">hls(1) User Manual &amp; Feature Guide</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org993ef2e">Standard Options</a>
+<ul>
+<li><a href="#orgf1b8a8e">The <code>-a</code> Option: Include Hidden Files</a></li>
+<li><a href="#orgb646650">The <code>-l</code> Option: Long Record Format</a></li>
+<li><a href="#org57310e1">The <code>-H</code> Option: Human-Readable Sizes</a></li>
+<li><a href="#orgf4f2311">The <code>-F</code> Option: Classify Entries</a></li>
+<li><a href="#org23b3f5a">The <code>-n</code> Option: Numeric IDs</a></li>
+<li><a href="#org44a32c2">The <code>-t</code> Option: Sort by Modification Time</a></li>
+<li><a href="#org50bced5">The <code>-S</code> Option: Sort by Logical File Size</a></li>
+<li><a href="#org4ba8931">The <code>-r</code> Option: Reverse Sort Order</a></li>
+<li><a href="#org3ab0974">The <code>-R</code> Option: Recursive Traversal</a></li>
+</ul>
+</li>
+<li><a href="#orgd9a410e">Advanced Telemetry Options</a>
+<ul>
+<li><a href="#org814c469">The <code>-G</code> Option: Git Repository Integration</a></li>
+<li><a href="#org510c942">The <code>-T</code> Option: Cycle-Safe Tree Traversal</a></li>
+<li><a href="#org0e62c96">The <code>-M</code> Option: Magic Byte Sniffing</a></li>
+<li><a href="#org9d42ede">The <code>-@</code> Option: Extended Attributes &amp; ACLs</a></li>
+<li><a href="#org00b8ca1">The <code>-s</code> Option: True Disk Allocation</a></li>
+</ul>
+</li>
+<li><a href="#org9a26bea">Built-in Documentation</a>
+<ul>
+<li><a href="#orgf4b40e7">The <code>-h</code> Option: Usage Summary</a></li>
+<li><a href="#org6fb6263">The <code>-m</code> Option: Full Manual Page</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<p>
+<code>hls</code> is a native, dependency-free POSIX utility designed to replace your system&rsquo;s default <code>ls</code>. It retains the standard flags you already have committed to muscle memory while introducing advanced systems-level telemetry features: Git status parsing, tree rendering, magic byte sniffing, extended attribute inspection, and physical disk allocation analytics.
+</p>
+
+<p>
+Because <code>hls</code> is built as a unified tool, every flag composes elegantly with the others.
+</p>
+<div id="outline-container-org993ef2e" class="outline-2">
+<h2 id="org993ef2e">Standard Options</h2>
+<div class="outline-text-2" id="text-org993ef2e">
+<p>
+Let&rsquo;s explore each of the standard options.
+</p>
+</div>
+<div id="outline-container-orgf1b8a8e" class="outline-3">
+<h3 id="orgf1b8a8e">The <code>-a</code> Option: Include Hidden Files</h3>
+<div class="outline-text-3" id="text-orgf1b8a8e">
+<p>
+By default, <code>hls</code> ignores files and directories that begin with a period (<code>.</code>). Passing <code>-a</code> forces <code>hls</code> to reveal all entries in the directory, including the current directory (<code>.</code>) and parent directory (<code>..</code>) pointers.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -a
+.               .bashrc         .git            Makefile        src
+..              .config         .gitignore      README.md
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb646650" class="outline-3">
+<h3 id="orgb646650">The <code>-l</code> Option: Long Record Format</h3>
+<div class="outline-text-3" id="text-orgb646650">
+<p>
+Transforms the multi-column layout into a detailed, vertical list displaying POSIX file modes, link counts, owners, groups, logical sizes, and modification timestamps.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -l
+drwxr-xr-x  4 bill users     128 Oct 19 14:00 src
+-rw-r--r--  1 bill users    1048 Oct 19 14:05 Makefile
+lrwxr-xr-x  1 bill users       8 Oct 19 14:10 current_build -&gt; src/main
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org57310e1" class="outline-3">
+<h3 id="org57310e1">The <code>-H</code> Option: Human-Readable Sizes</h3>
+<div class="outline-text-3" id="text-org57310e1">
+<p>
+When used alongside the <code>-l</code> or <code>-s</code> flags, <code>-H</code> scales raw byte sizes into human-readable binary suffixes (Base 1024: K, M, G, T, P) for immediate comprehension.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -l -H
+-rw-r--r-- 1 bill users 1.0K Oct 19 14:05 Makefile
+-rw-r--r-- 1 bill users 2.4M Oct 19 14:12 target_binary
+-rw-r--r-- 1 bill users 4.0G Oct 19 14:15 large_database.img
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf4f2311" class="outline-3">
+<h3 id="orgf4f2311">The <code>-F</code> Option: Classify Entries</h3>
+<div class="outline-text-3" id="text-orgf4f2311">
+<p>
+Appends a single classification character to the end of filenames to visually indicate the file type.
+</p>
+
+<p>
+⚬ <code>/</code> indicates a Directory.
+⚬ <code>*</code> indicates an Executable regular file.
+⚬ <code>@</code> indicates a Symbolic Link.
+⚬ <code>|</code> indicates a FIFO (named pipe).
+⚬ <code>=</code> indicates a Socket.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -F
+Makefile      server.sock=  src/          target_binary*
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org23b3f5a" class="outline-3">
+<h3 id="org23b3f5a">The <code>-n</code> Option: Numeric IDs</h3>
+<div class="outline-text-3" id="text-org23b3f5a">
+<p>
+Functions identically to the <code>-l</code> flag, but bypasses the operating system&rsquo;s <code>/etc/passwd</code> and <code>/etc/group</code> resolution, displaying the raw numeric User ID (UID) and Group ID (GID). This is highly useful for inspecting tarball extractions or network mounts where local usernames do not map correctly.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -n
+-rw-r--r-- 1 1000 1000 1.0K Oct 19 14:05 Makefile
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org44a32c2" class="outline-3">
+<h3 id="org44a32c2">The <code>-t</code> Option: Sort by Modification Time</h3>
+<div class="outline-text-3" id="text-org44a32c2">
+<p>
+Sorts the directory contents by their modification timestamp (<code>mtime</code>), placing the most recently modified files at the top of the output.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -l -t
+-rw-r--r-- 1 bill users 2.4M Oct 19 14:12 target_binary
+-rw-r--r-- 1 bill users 1.0K Oct 19 14:05 Makefile
+drwxr-xr-x 4 bill users  128 Oct 18 09:30 src
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org50bced5" class="outline-3">
+<h3 id="org50bced5">The <code>-S</code> Option: Sort by Logical File Size</h3>
+<div class="outline-text-3" id="text-org50bced5">
+<p>
+Sorts the directory contents by their apparent logical size (<code>st_size</code>) in descending order, placing the largest files at the top.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -l -H -S
+-rw-r--r-- 1 bill users 4.0G Oct 19 14:15 large_database.img
+-rw-r--r-- 1 bill users 2.4M Oct 19 14:12 target_binary
+-rw-r--r-- 1 bill users 1.0K Oct 19 14:05 Makefile
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4ba8931" class="outline-3">
+<h3 id="org4ba8931">The <code>-r</code> Option: Reverse Sort Order</h3>
+<div class="outline-text-3" id="text-org4ba8931">
+<p>
+Inverts the current sorting algorithm. By default, it reverses the standard alphabetical sort. When combined with <code>-t</code>, it places the oldest files at the top. When combined with <code>-S</code>, it places the smallest files at the top.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -l -H -S -r
+-rw-r--r-- 1 bill users 1.0K Oct 19 14:05 Makefile
+-rw-r--r-- 1 bill users 2.4M Oct 19 14:12 target_binary
+-rw-r--r-- 1 bill users 4.0G Oct 19 14:15 large_database.img
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3ab0974" class="outline-3">
+<h3 id="org3ab0974">The <code>-R</code> Option: Recursive Traversal</h3>
+<div class="outline-text-3" id="text-org3ab0974">
+<p>
+Descends into subdirectories and lists their contents sequentially.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -R
+.:
+Makefile  src
+
+./src:
+main.c    utils.c   utils.h
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd9a410e" class="outline-2">
+<h2 id="orgd9a410e">Advanced Telemetry Options</h2>
+<div class="outline-text-2" id="text-orgd9a410e">
+</div>
+<div id="outline-container-org814c469" class="outline-3">
+<h3 id="org814c469">The <code>-G</code> Option: Git Repository Integration</h3>
+<div class="outline-text-3" id="text-org814c469">
+<p>
+The <code>-G</code> flag polls the active Git repository and prepends standard two-character Git status badges to your file output. It automatically crawls upward to find the <code>.git</code> root, meaning it works from any nested subdirectory within your project without needing a separate <code>git status</code> execution.
+</p>
+
+<p>
+⚬ Green Badges (<code>M =, =A =, =D =): Changes staged for commit.
+⚬ Yellow Badges (</code> M=, <code>??</code>): Unstaged modifications or untracked files.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -G
+M  hls.c
+?? test.log
+Makefile
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org510c942" class="outline-3">
+<h3 id="org510c942">The <code>-T</code> Option: Cycle-Safe Tree Traversal</h3>
+<div class="outline-text-3" id="text-org510c942">
+<p>
+The <code>-T</code> flag replaces external utilities by rendering the directory hierarchy using UTF-8 box-drawing characters. Because this is built natively into <code>hls</code>, it composes perfectly with all other flags (like <code>-l</code> or <code>-G</code>). If it detects a circular symbolic link that points back to a parent directory, it safely halts traversal for that branch to prevent infinite recursive loops.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -T -F
+.
+├── src/
+│   ├── main.c
+│   └── utils.h
+└── build.sh*
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0e62c96" class="outline-3">
+<h3 id="org0e62c96">The <code>-M</code> Option: Magic Byte Sniffing</h3>
+<div class="outline-text-3" id="text-org0e62c96">
+<p>
+File extensions can be missing or falsified. The <code>-M</code> flag forces <code>hls</code> to open regular files and inspect their first 32 bytes to determine the actual content type. Calling <code>-M</code> automatically enables long-format listing (<code>-l</code>) to provide space for the content description.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -M
+-rwxr-xr-x 1 bill users 14336 Oct 19 14:00 build_tool (ELF binary)
+-rw-r--r-- 1 bill users 22016 Oct 19 14:00 archive.bak (ZIP archive)
+-rw-r--r-- 1 bill users    12 Oct 19 14:00 raw_data (raw binary)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9d42ede" class="outline-3">
+<h3 id="org9d42ede">The <code>-@</code> Option: Extended Attributes &amp; ACLs</h3>
+<div class="outline-text-3" id="text-org9d42ede">
+<p>
+Modern operating systems store metadata out-of-band, such as macOS quarantine bits or Linux security contexts. The <code>-@</code> flag exposes this hidden data. Files with extended attributes will feature an <code>@</code> symbol appended to their permission block, and <code>hls</code> will enumerate the specific attribute namespaces indented beneath the file.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -l -@
+-rwxr-xr-x@ 1 bill users 12288 Oct 19 14:00 downloaded_script.sh
+@ com.apple.quarantine
+@ com.apple.metadata:kMDItemWhereFroms
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org00b8ca1" class="outline-3">
+<h3 id="org00b8ca1">The <code>-s</code> Option: True Disk Allocation</h3>
+<div class="outline-text-3" id="text-org00b8ca1">
+<p>
+Standard long listings display logical file sizes, which can be misleading on modern filesystems supporting sparse files. The <code>-s</code> flag measures actual block allocation (<code>st_blocks * 512</code>). If the physical footprint is less than the logical size, <code>hls</code> displays a sparse efficiency ratio. Otherwise, it shows the physical blocks allocated to the file on disk.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -l -s -H
+-rw-r--r-- 1 bill users 10.0G [0% sparse] Oct 19 14:00 virtual_machine.img
+-rw-r--r-- 1 bill users   14K [16K blk]   Oct 19 14:00 normal_file.txt
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9a26bea" class="outline-2">
+<h2 id="org9a26bea">Built-in Documentation</h2>
+<div class="outline-text-2" id="text-org9a26bea">
+<p>
+<code>hls</code> contains its own self-documenting manual, eliminating the need to install external groff/man pages to your system paths.
+</p>
+</div>
+<div id="outline-container-orgf4b40e7" class="outline-3">
+<h3 id="orgf4b40e7">The <code>-h</code> Option: Usage Summary</h3>
+<div class="outline-text-3" id="text-orgf4b40e7">
+<p>
+Prints a rapid, concise syntax overview and exits immediately.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -h
+Usage: ./hls [-aFlrRnStHM@Gs] [-h] [-m] [file ...]
+Modern systems programmer's directory browser and APUE reference tool.
+Execute './hls -m' for the comprehensive manual page or -h for usage summary.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6fb6263" class="outline-3">
+<h3 id="org6fb6263">The <code>-m</code> Option: Full Manual Page</h3>
+<div class="outline-text-3" id="text-org6fb6263">
+<p>
+Generates the full, system-style manual page to <code>stdout</code>. <code>hls</code> automatically detects when <code>stdout</code> is piped to an external tool (like <code>less</code>) and strips ANSI formatting codes to ensure perfectly clean pager viewing.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -m | less
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Bill Wear (<a href="mailto:williamowear@gmail.com">williamowear@gmail.com</a>)</p>
+<p class="date">Date: 2026-09-19 Sat 00:00</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

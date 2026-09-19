@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2026-09-19 Sat 18:19 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Introducing =hls=: The Terminal Native's Directory Browser</title>
+<meta name="author" content="Bill Wear" />
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root {
+--bg: #0d1117;
+--fg: #c9d1d9;
+--text-muted: #8b949e;
+--border: #30363d;
+--accent: #58a6ff;
+--code-bg: #161b22;
+--callout-bg: #1f242c;
+--green: #3fb950;
+--red: #f85149;
+--yellow: #d29922;
+}
+body {
+max-width: 920px;
+margin: 2rem auto;
+padding: 0 1.5rem;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+line-height: 1.65;
+color: var(--fg);
+background-color: var(--bg);
+}
+h1, h2, h3, h4 { color: #f0f6fc; font-weight: 600; }
+h1 { border-bottom: 2px solid var(--border); padding-bottom: 0.6rem; margin-top: 2rem; }
+h2 { border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-top: 2.5rem; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code {
+background: var(--code-bg);
+color: #ff7b72;
+padding: 0.18rem 0.35rem;
+border-radius: 4px;
+font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 0.9em;
+}
+pre.src, pre.example {
+background: var(--code-bg);
+color: var(--fg);
+padding: 1rem;
+border: 1px solid var(--border);
+border-radius: 6px;
+overflow-x: auto;
+font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+font-size: 0.88rem;
+}
+#table-of-contents {
+background: var(--code-bg);
+border: 1px solid var(--border);
+border-radius: 6px;
+padding: 1rem 1.5rem;
+margin-bottom: 2.5rem;
+}
+#table-of-contents h2 { border-bottom: none; margin-top: 0; font-size: 1.25rem; }
+#table-of-contents ul { list-style-type: none; padding-left: 1rem; }
+#table-of-contents li { margin: 0.3rem 0; }
+blockquote {
+border-left: 4px solid var(--accent);
+background: var(--callout-bg);
+margin: 1.5rem 0;
+padding: 0.75rem 1.25rem;
+border-radius: 0 6px 6px 0;
+}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title">Introducing <code>hls</code>: The Terminal Native&rsquo;s Directory Browser</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9bfe623">Version Control Visibility (<code>-G</code>)</a></li>
+<li><a href="#org5eca983">The Integrated Tree View (<code>-T</code>)</a></li>
+<li><a href="#org6232498">True Disk Allocation Analytics (<code>-s</code>)</a></li>
+<li><a href="#org92c79c7">Content-Type Sniffing (<code>-M</code>)</a></li>
+<li><a href="#org5fc39d7">Extended Attributes (<code>-@</code>)</a></li>
+</ul>
+</li>
+<li><a href="#org5f8becc">Everyday Workflows</a>
+<ul>
+<li><a href="#orgfaddef7">The Hacker&rsquo;s Default</a></li>
+<li><a href="#orgf8807b4">The Deep Dive</a></li>
+<li><a href="#org86c78b0">The Built-in Manual</a></li>
+</ul>
+</li>
+<li><a href="#org64b73ac">Summary</a></div>
+</nav>
+<p>
+The standard <code>ls</code> command is one of the most frequently typed commands in computing history. It is fast, ubiquitous, and reliable. But as development workflows have evolved, the filesystem has become a much more complex place. We now live inside Git repositories, deal with heavily optimized filesystems like APFS and ext4, and encounter files completely divorced from their conventional file extensions.
+</p>
+
+<p>
+Enter <code>hls</code> (Hacker&rsquo;s <code>ls</code>).
+</p>
+
+<p>
+Built as a lightweight, drop-in companion for your daily workflow, <code>hls</code> takes the speed and standard interface of traditional POSIX commands and supercharges it with modern telemetry. It doesn&rsquo;t rely on massive external frameworks or languages; it is a single, dependency-free C binary designed to answer the specific questions terminal users ask every day.
+</p>
+
+<p>
+Here is what it does, and why you might want to alias your standard <code>ls</code> to use it.
+</p>
+<div id="outline-container-org9bfe623" class="outline-3">
+<h3 id="org9bfe623">Version Control Visibility (<code>-G</code>)</h3>
+<div class="outline-text-3" id="text-org9bfe623">
+<p>
+If you spend your days in the terminal, you likely suffer from &ldquo;Git Status Fatigue&rdquo;—the habit of typing <code>git status</code> every time you change directories just to orient yourself.
+</p>
+
+<p>
+By passing the <code>-G</code> flag, <code>hls</code> natively queries your working tree and displays standard two-character Git badges (e.g., <code>M</code> for modified, <code>??</code> for untracked, <code>A</code> for added) directly next to the filenames.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -G
+M  main.c
+?? test.log
+README.md
+</pre>
+</div>
+
+<p>
+Why it’s useful: It merges filesystem navigation with version control awareness. You immediately see what needs to be staged or committed without running a secondary command.
+</p>
+</div>
+</div>
+<div id="outline-container-org5eca983" class="outline-3">
+<h3 id="org5eca983">The Integrated Tree View (<code>-T</code>)</h3>
+<div class="outline-text-3" id="text-org5eca983">
+<p>
+Visualizing deeply nested directories usually means reaching for a secondary tool like <code>tree</code>. But <code>tree</code> doesn&rsquo;t usually share the same formatting flags, coloring, or metadata as your directory lister.
+</p>
+
+<p>
+The <code>-T</code> flag instructs <code>hls</code> to render a hierarchical, box-drawn graph of your directory structure. Because it&rsquo;s built into <code>hls</code>, it composes perfectly with all other flags. You can view a tree structure that includes long file permissions, sizes, and Git status all at once.
+</p>
+
+<p>
+Why it’s useful: Context. You get the recursive mapping of <code>tree</code> combined with the rich metadata of <code>ls -l</code>, while safely avoiding the infinite loops that often happen when traversing circular symbolic links.
+</p>
+</div>
+</div>
+<div id="outline-container-org6232498" class="outline-3">
+<h3 id="org6232498">True Disk Allocation Analytics (<code>-s</code>)</h3>
+<div class="outline-text-3" id="text-org6232498">
+<p>
+Standard directory tools lie about file sizes. A file might report a logical size (<code>st_size</code>) of 10 GB, but because it is a &ldquo;sparse file&rdquo; (a file with massive blocks of empty zeroes, common in database allocations or virtual machine images), it might actually be consuming zero bytes of physical disk space.
+</p>
+
+<p>
+The <code>-s</code> flag looks past the logical length and queries the physical blocks allocated by the filesystem. If a file is sparse, <code>hls</code> explicitly flags it and shows you the efficiency percentage.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -l -s
+-rw-r--r-- 1 bill users 10.0G [0% sparse] Oct 19 14:00 database.img
+</pre>
+</div>
+
+<p>
+Why it’s useful: When managing backups, VM images, or running out of disk space, knowing the difference between &ldquo;apparent size&rdquo; and &ldquo;actual physical footprint&rdquo; prevents catastrophic miscalculations.
+</p>
+</div>
+</div>
+<div id="outline-container-org92c79c7" class="outline-3">
+<h3 id="org92c79c7">Content-Type Sniffing (<code>-M</code>)</h3>
+<div class="outline-text-3" id="text-org92c79c7">
+<p>
+In Unix, file extensions (like <code>.txt</code> or <code>.pdf</code>) are polite suggestions, not enforced rules. A file named <code>data.csv</code> might actually be a compiled executable, and a file with no extension at all might be a shell script.
+</p>
+
+<p>
+When you pass the <code>-M</code> flag, <code>hls</code> opens regular files, peeks at the first 32 bytes of content (the &ldquo;magic numbers&rdquo;), and identifies what the file <i>actually</i> is.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -l -M
+-rwxr-xr-x 1 bill users 12K Oct 19 build_script (script text)
+-rw-r--r-- 1 bill users 84K Oct 19 data.csv (SQLite database)
+</pre>
+</div>
+
+<p>
+Why it’s useful: It completely eliminates the need to run the <code>file</code> command on suspicious or ambiguously named files, saving keystrokes and preventing you from accidentally trying to <code>cat</code> a compiled binary into your terminal.
+</p>
+</div>
+</div>
+<div id="outline-container-org5fc39d7" class="outline-3">
+<h3 id="org5fc39d7">Extended Attributes (<code>-@</code>)</h3>
+<div class="outline-text-3" id="text-org5fc39d7">
+<p>
+Modern operating systems tag files with invisible metadata. On macOS, this is often the <code>com.apple.quarantine</code> bit that prevents downloaded scripts from executing. On Linux, it might be an SELinux security context or user-defined labels.
+</p>
+
+<p>
+Standard <code>ls -l</code> will append a cryptic <code>@</code> or <code>+</code> symbol if these exist, leaving you to manually run <code>xattr</code> or <code>getfattr</code> to figure out what they actually are. <code>hls -@</code> expands them inline, indenting the extended attribute keys cleanly under the parent file.
+</p>
+
+<p>
+Why it’s useful: When a script inexplicably refuses to run despite having <code>+x</code> permissions, or when a file transfer behaves strangely, surfacing extended metadata immediately reveals the invisible rules governing that file.
+</p>
+</div>
+</div>
+<div id="outline-container-org5f8becc" class="outline-2">
+<h2 id="org5f8becc">Everyday Workflows</h2>
+<div class="outline-text-2" id="text-org5f8becc">
+<p>
+<code>hls</code> was designed so its flags compose elegantly. For everyday command-line navigation, here are a few ways to combine them into powerful workflows:
+</p>
+</div>
+<div id="outline-container-orgfaddef7" class="outline-3">
+<h3 id="orgfaddef7">The Hacker&rsquo;s Default</h3>
+<div class="outline-text-3" id="text-orgfaddef7">
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -lG
+</pre>
+</div>
+<p>
+Renders a standard long list, but with Git statuses cleanly aligned on the left margin. Perfect for active development directories.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf8807b4" class="outline-3">
+<h3 id="orgf8807b4">The Deep Dive</h3>
+<div class="outline-text-3" id="text-orgf8807b4">
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -lGMT
+</pre>
+</div>
+<p>
+Recursively prints the directory as a tree (<code>-T</code>), showing full permissions and human-readable sizes (<code>-l</code>), annotating every file&rsquo;s Git status (<code>-G</code>), and revealing the true file type regardless of its extension (<code>-M</code>).
+</p>
+</div>
+</div>
+<div id="outline-container-org86c78b0" class="outline-3">
+<h3 id="org86c78b0">The Built-in Manual</h3>
+<div class="outline-text-3" id="text-org86c78b0">
+<p>
+Because terminal life should be self-contained, <code>hls</code> doesn&rsquo;t require you to install a separate man page to your system directories.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ hls -m
+</pre>
+</div>
+<p>
+This command generates a cleanly formatted, system-style manual page directly to standard output, ready to be piped into a pager like <code>less</code> for quick reference.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org64b73ac" class="outline-2">
+<h2 id="org64b73ac">Summary</h2>
+<div class="outline-text-2" id="text-org64b73ac">
+<p>
+<code>hls</code> isn&rsquo;t trying to reinvent the paradigm of listing files; it&rsquo;s simply bringing the tool up to speed with the modern filesystem. By collapsing the functionality of <code>ls</code>, <code>git status</code>, <code>tree</code>, <code>file</code>, and <code>xattr</code> into a single, high-performance binary, it strips away terminal friction and lets you focus on the actual work.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Bill Wear (<a href="mailto:williamowear@gmail.com">williamowear@gmail.com</a>)</p>
+<p class="date">Date: 2026-09-19 Sat 00:00</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

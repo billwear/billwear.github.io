@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-18 Fri 08:17 -->
+<!-- 2026-09-19 Sat 11:18 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>kal.c: A Resilient Terminal Calendar</title>
@@ -197,9 +197,9 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">kal.c: A Resilient Terminal Calendar</h1>
-</header><div id="outline-container-orge2480bf" class="outline-2">
-<h2 id="orge2480bf">The Philosophy of <code>kal</code></h2>
-<div class="outline-text-2" id="text-orge2480bf">
+</header><div id="outline-container-org242a004" class="outline-2">
+<h2 id="org242a004">The Philosophy of <code>kal</code></h2>
+<div class="outline-text-2" id="text-org242a004">
 <p>
 The standard BSD <code>calendar</code> utility is a testament to the Unix philosophy: it reads plain text files, matches dates, and prints strings. It is simple, unpretentious, and enduring. 
 </p>
@@ -213,13 +213,13 @@ Here is a code audit that explains how the engine works, block by block.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf2bad47" class="outline-2">
-<h2 id="orgf2bad47">The Code, Explained</h2>
-<div class="outline-text-2" id="text-orgf2bad47">
+<div id="outline-container-org78ccca2" class="outline-2">
+<h2 id="org78ccca2">The Code, Explained</h2>
+<div class="outline-text-2" id="text-org78ccca2">
 </div>
-<div id="outline-container-org0077cec" class="outline-3">
-<h3 id="org0077cec">1. Dependencies and String Manipulation</h3>
-<div class="outline-text-3" id="text-org0077cec">
+<div id="outline-container-org37fb65d" class="outline-3">
+<h3 id="org37fb65d">1. Dependencies and String Manipulation</h3>
+<div class="outline-text-3" id="text-org37fb65d">
 <p>
 C requires you to build your own tools for handling text. These helper functions ensure our calendar file is resilient against typos, case-shifting, and invisible trailing spaces.
 </p>
@@ -252,9 +252,9 @@ void strip_newline(char *str) {
 </p>
 </div>
 </div>
-<div id="outline-container-orgad41b53" class="outline-3">
-<h3 id="orgad41b53">2. The Dynamic %AGE% Macro</h3>
-<div class="outline-text-3" id="text-orgad41b53">
+<div id="outline-container-orgd0fed31" class="outline-3">
+<h3 id="orgd0fed31">2. The Dynamic %AGE% Macro</h3>
+<div class="outline-text-3" id="text-orgd0fed31">
 <p>
 Plain text is inherently static, but time is not. If I write down a birthday or a system installation date, I do not want to update the file every year. 
 </p>
@@ -280,9 +280,9 @@ void replace_age(char *str, int age) {
 </p>
 </div>
 </div>
-<div id="outline-container-org519d83b" class="outline-3">
-<h3 id="org519d83b">3. Target Dates and Time Math</h3>
-<div class="outline-text-3" id="text-org519d83b">
+<div id="outline-container-org5826b7b" class="outline-3">
+<h3 id="org5826b7b">3. Target Dates and Time Math</h3>
+<div class="outline-text-3" id="text-org5826b7b">
 <p>
 To simulate running the calendar on future dates, we need a way to parse continuous numeric strings (like <code>250913</code> for September 13, 2025) and forcefully override the system clock.
 </p>
@@ -325,9 +325,9 @@ bool set_target_date(const char *date_str, struct tm *target) {
 </p>
 </div>
 </div>
-<div id="outline-container-org08005d6" class="outline-3">
-<h3 id="org08005d6">4. The Matching Engine</h3>
-<div class="outline-text-3" id="text-org08005d6">
+<div id="outline-container-org363852b" class="outline-3">
+<h3 id="org363852b">4. The Matching Engine</h3>
+<div class="outline-text-3" id="text-org363852b">
 <p>
 This is the heart of <code>kal.c</code>. It evaluates the string preceding the first tab character against the target date.
 </p>
@@ -366,9 +366,9 @@ bool matches_today(char *date_str, struct tm *target_day, int *out_year) {
 </dl>
 </div>
 </div>
-<div id="outline-container-orga8cb530" class="outline-3">
-<h3 id="orga8cb530">5. The Window Loop</h3>
-<div class="outline-text-3" id="text-orga8cb530">
+<div id="outline-container-orgcffd555" class="outline-3">
+<h3 id="orgcffd555">5. The Window Loop</h3>
+<div class="outline-text-3" id="text-orgcffd555">
 <p>
 If you only see today&rsquo;s tasks, you can&rsquo;t plan. <code>kal</code> uses a looping window to look forward and backward in time.
 </p>
@@ -399,9 +399,9 @@ int find_matching_offset(char *date_str, struct tm *base_target, int lookbehind_
 </p>
 </div>
 </div>
-<div id="outline-container-org904f454" class="outline-3">
-<h3 id="org904f454">6. The Main Loop &amp; Output Formatting</h3>
-<div class="outline-text-3" id="text-org904f454">
+<div id="outline-container-org0890219" class="outline-3">
+<h3 id="org0890219">6. The Main Loop &amp; Output Formatting</h3>
+<div class="outline-text-3" id="text-org0890219">
 <p>
 The final piece parses the command-line arguments, reads the file, applies filters, and formats the output.
 </p>

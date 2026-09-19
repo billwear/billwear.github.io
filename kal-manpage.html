@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-18 Fri 08:17 -->
+<!-- 2026-09-19 Sat 11:18 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>kal(1)</title>
@@ -197,25 +197,25 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">kal(1)</h1>
-</header><div id="outline-container-org5dd34a2" class="outline-2">
-<h2 id="org5dd34a2">NAME</h2>
-<div class="outline-text-2" id="text-org5dd34a2">
+</header><div id="outline-container-orga06decb" class="outline-2">
+<h2 id="orga06decb">NAME</h2>
+<div class="outline-text-2" id="text-orga06decb">
 <p>
 <code>kal</code> - a lightweight, plain-text terminal calendar and scheduling utility
 </p>
 </div>
 </div>
-<div id="outline-container-orgb3e65be" class="outline-2">
-<h2 id="orgb3e65be">SYNOPSIS</h2>
-<div class="outline-text-2" id="text-orgb3e65be">
+<div id="outline-container-org99a084b" class="outline-2">
+<h2 id="org99a084b">SYNOPSIS</h2>
+<div class="outline-text-2" id="text-org99a084b">
 <p>
 <code>kal</code> [-r] [-w] [-A num] [-B num] [-t [[[cc]yy]mm]dd] [-g tag] [file]
 </p>
 </div>
 </div>
-<div id="outline-container-org16636f0" class="outline-2">
-<h2 id="org16636f0">DESCRIPTION</h2>
-<div class="outline-text-2" id="text-org16636f0">
+<div id="outline-container-orgf84d75d" class="outline-2">
+<h2 id="orgf84d75d">DESCRIPTION</h2>
+<div class="outline-text-2" id="text-orgf84d75d">
 <p>
 The <code>kal</code> utility reads a plain-text file (defaulting to <code>calendar</code> in the current directory) and prints any lines whose leading date rule matches the current date. 
 </p>
@@ -225,9 +225,9 @@ Unlike the standard BSD <code>calendar</code>, <code>kal</code> is designed for 
 </p>
 </div>
 </div>
-<div id="outline-container-org6cbadf2" class="outline-2">
-<h2 id="org6cbadf2">OPTIONS</h2>
-<div class="outline-text-2" id="text-org6cbadf2">
+<div id="outline-container-org7ca3f16" class="outline-2">
+<h2 id="org7ca3f16">OPTIONS</h2>
+<div class="outline-text-2" id="text-org7ca3f16">
 <dl class="org-dl">
 <dt><code>-A num</code></dt><dd>Look ahead. Print lines matching today and the next <i>num</i> days. Appends a relative countdown tag (e.g., <code>[Tomorrow]</code>, <code>[In 3 days]</code>) to future matches.</dd>
 <dt><code>-B num</code></dt><dd>Look behind. Print lines matching today and the previous <i>num</i> days. Appends a relative tag (e.g., <code>[Yesterday]</code>) to past matches.</dd>
@@ -238,9 +238,9 @@ Unlike the standard BSD <code>calendar</code>, <code>kal</code> is designed for 
 </dl>
 </div>
 </div>
-<div id="outline-container-orgb7bbeed" class="outline-2">
-<h2 id="orgb7bbeed">FILE FORMAT</h2>
-<div class="outline-text-2" id="text-orgb7bbeed">
+<div id="outline-container-orgd97ab17" class="outline-2">
+<h2 id="orgd97ab17">FILE FORMAT</h2>
+<div class="outline-text-2" id="text-orgd97ab17">
 <p>
 The calendar file relies on strict text-as-data formatting. Empty lines and lines beginning with <code>#</code> are ignored. 
 </p>
@@ -249,9 +249,9 @@ The calendar file relies on strict text-as-data formatting. Empty lines and line
 Every valid line must consist of a date rule, followed by a single <code>TAB</code> character, followed by the event description.
 </p>
 </div>
-<div id="outline-container-org37a0e32" class="outline-3">
-<h3 id="org37a0e32">Custom Repetition Macros</h3>
-<div class="outline-text-3" id="text-org37a0e32">
+<div id="outline-container-org0dbb49a" class="outline-3">
+<h3 id="org0dbb49a">Custom Repetition Macros</h3>
+<div class="outline-text-3" id="text-org0dbb49a">
 <p>
 <code>kal</code> natively supports three exact-string macros for recurring events:
 </p>
@@ -262,9 +262,9 @@ Every valid line must consist of a date rule, followed by a single <code>TAB</co
 </dl>
 </div>
 </div>
-<div id="outline-container-orgfb6b9ce" class="outline-3">
-<h3 id="orgfb6b9ce">Supported Date Formats</h3>
-<div class="outline-text-3" id="text-orgfb6b9ce">
+<div id="outline-container-orgd4efca5" class="outline-3">
+<h3 id="orgd4efca5">Supported Date Formats</h3>
+<div class="outline-text-3" id="text-orgd4efca5">
 <ul class="org-ul">
 <li>Numeric dates: <code>09/13</code>, <code>9/14</code></li>
 <li>Text dates (Forward and Reversed): <code>Sep 13</code>, <code>13 Sep</code>, <code>September 13</code></li>
@@ -273,9 +273,9 @@ Every valid line must consist of a date rule, followed by a single <code>TAB</co
 </ul>
 </div>
 </div>
-<div id="outline-container-org75846c7" class="outline-3">
-<h3 id="org75846c7">Dynamic Age Calculation</h3>
-<div class="outline-text-3" id="text-org75846c7">
+<div id="outline-container-orgbba858f" class="outline-3">
+<h3 id="orgbba858f">Dynamic Age Calculation</h3>
+<div class="outline-text-3" id="text-orgbba858f">
 <p>
 If an event description contains the literal string <code>%AGE%</code>, <code>kal</code> will calculate the difference between the current year and the event&rsquo;s year, dynamically replacing the string with the resulting integer.
 </p>
@@ -286,9 +286,9 @@ To trigger this, the date rule must be formatted as <code>YYYY-MM-DD</code> or <
 </div>
 </div>
 </div>
-<div id="outline-container-org2c8c51b" class="outline-2">
-<h2 id="org2c8c51b">EXAMPLES</h2>
-<div class="outline-text-2" id="text-org2c8c51b">
+<div id="outline-container-org37a9d0c" class="outline-2">
+<h2 id="org37a9d0c">EXAMPLES</h2>
+<div class="outline-text-2" id="text-org37a9d0c">
 <p>
 Print today&rsquo;s events, showing the weekday and the date rule:
 </p>
@@ -314,17 +314,17 @@ Simulate running the calendar on January 16, 2027:
 </div>
 </div>
 </div>
-<div id="outline-container-org71794f2" class="outline-2">
-<h2 id="org71794f2">EXAMPLES: CALENDAR FILE</h2>
-<div class="outline-text-2" id="text-org71794f2">
+<div id="outline-container-orgd975265" class="outline-2">
+<h2 id="orgd975265">EXAMPLES: CALENDAR FILE</h2>
+<div class="outline-text-2" id="text-orgd975265">
 <p>
 #+BEGIN<sub>SRC</sub> text
 </p>
 </div>
 </div>
-<div id="outline-container-org7852d92" class="outline-2">
-<h2 id="org7852d92">*	Read 10 pages of a book</h2>
-<div class="outline-text-2" id="text-org7852d92">
+<div id="outline-container-orgb0c80c8" class="outline-2">
+<h2 id="orgb0c80c8">*	Read 10 pages of a book</h2>
+<div class="outline-text-2" id="text-orgb0c80c8">
 <p>
 M-F	Review system logs @admin
 SaSun	Water the plants @home
@@ -341,17 +341,17 @@ SaSun	Water the plants @home
 </p>
 </div>
 </div>
-<div id="outline-container-orgc352330" class="outline-2">
-<h2 id="orgc352330">SEE ALSO</h2>
-<div class="outline-text-2" id="text-orgc352330">
+<div id="outline-container-orgccfcc86" class="outline-2">
+<h2 id="orgccfcc86">SEE ALSO</h2>
+<div class="outline-text-2" id="text-orgccfcc86">
 <p>
 <code>calendar(1)</code>, <code>date(1)</code>
 </p>
 </div>
 </div>
-<div id="outline-container-org9792ad6" class="outline-2">
-<h2 id="org9792ad6">AUTHOR</h2>
-<div class="outline-text-2" id="text-org9792ad6">
+<div id="outline-container-org56ddbaa" class="outline-2">
+<h2 id="org56ddbaa">AUTHOR</h2>
+<div class="outline-text-2" id="text-org56ddbaa">
 <p>
 William Wear
 </p>

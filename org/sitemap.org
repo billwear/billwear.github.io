@@ -1,8 +1,0 @@
-#+TITLE: Site Map
-
-- [[file:amy-bill-podcast-script-1.org][Working Title: Exit Code Zero: When to Stay, When to kill -9, and How to Survive Either Way]]
-- [[file:licensing-statement.org][licensing-statement]]
-- [[file:kal-manpage.org][kal(1)]]
-- [[file:kal-dot-c-as-ordinary-competence.org][The 42 of kal.c]]
-- [[file:kal-code-audit.org][kal.c: A Resilient Terminal Calendar]]
-- [[file:index.org][William Wear]]
