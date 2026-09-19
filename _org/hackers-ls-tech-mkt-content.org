@@ -1,0 +1,161 @@
+#+TITLE: Introducing =hls=: The Terminal Native's Directory Browser
+#+AUTHOR: Bill Wear
+#+DATE: [2026-09-19 Sat]
+#+OPTIONS: toc:2 num:nil html-postamble:t html-style:nil
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#+HTML_HEAD: <style>
+#+HTML_HEAD:   :root {
+#+HTML_HEAD:     --bg: #0d1117;
+#+HTML_HEAD:     --fg: #c9d1d9;
+#+HTML_HEAD:     --text-muted: #8b949e;
+#+HTML_HEAD:     --border: #30363d;
+#+HTML_HEAD:     --accent: #58a6ff;
+#+HTML_HEAD:     --code-bg: #161b22;
+#+HTML_HEAD:     --callout-bg: #1f242c;
+#+HTML_HEAD:     --green: #3fb950;
+#+HTML_HEAD:     --red: #f85149;
+#+HTML_HEAD:     --yellow: #d29922;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   body {
+#+HTML_HEAD:     max-width: 920px;
+#+HTML_HEAD:     margin: 2rem auto;
+#+HTML_HEAD:     padding: 0 1.5rem;
+#+HTML_HEAD:     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+#+HTML_HEAD:     line-height: 1.65;
+#+HTML_HEAD:     color: var(--fg);
+#+HTML_HEAD:     background-color: var(--bg);
+#+HTML_HEAD:   }
+#+HTML_HEAD:   h1, h2, h3, h4 { color: #f0f6fc; font-weight: 600; }
+#+HTML_HEAD:   h1 { border-bottom: 2px solid var(--border); padding-bottom: 0.6rem; margin-top: 2rem; }
+#+HTML_HEAD:   h2 { border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-top: 2.5rem; }
+#+HTML_HEAD:   a { color: var(--accent); text-decoration: none; }
+#+HTML_HEAD:   a:hover { text-decoration: underline; }
+#+HTML_HEAD:   code {
+#+HTML_HEAD:     background: var(--code-bg);
+#+HTML_HEAD:     color: #ff7b72;
+#+HTML_HEAD:     padding: 0.18rem 0.35rem;
+#+HTML_HEAD:     border-radius: 4px;
+#+HTML_HEAD:     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+#+HTML_HEAD:     font-size: 0.9em;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   pre.src, pre.example {
+#+HTML_HEAD:     background: var(--code-bg);
+#+HTML_HEAD:     color: var(--fg);
+#+HTML_HEAD:     padding: 1rem;
+#+HTML_HEAD:     border: 1px solid var(--border);
+#+HTML_HEAD:     border-radius: 6px;
+#+HTML_HEAD:     overflow-x: auto;
+#+HTML_HEAD:     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+#+HTML_HEAD:     font-size: 0.88rem;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   #table-of-contents {
+#+HTML_HEAD:     background: var(--code-bg);
+#+HTML_HEAD:     border: 1px solid var(--border);
+#+HTML_HEAD:     border-radius: 6px;
+#+HTML_HEAD:     padding: 1rem 1.5rem;
+#+HTML_HEAD:     margin-bottom: 2.5rem;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   #table-of-contents h2 { border-bottom: none; margin-top: 0; font-size: 1.25rem; }
+#+HTML_HEAD:   #table-of-contents ul { list-style-type: none; padding-left: 1rem; }
+#+HTML_HEAD:   #table-of-contents li { margin: 0.3rem 0; }
+#+HTML_HEAD:   blockquote {
+#+HTML_HEAD:     border-left: 4px solid var(--accent);
+#+HTML_HEAD:     background: var(--callout-bg);
+#+HTML_HEAD:     margin: 1.5rem 0;
+#+HTML_HEAD:     padding: 0.75rem 1.25rem;
+#+HTML_HEAD:     border-radius: 0 6px 6px 0;
+#+HTML_HEAD:   }
+#+HTML_HEAD: </style>
+
+The standard =ls= command is one of the most frequently typed commands in computing history. It is fast, ubiquitous, and reliable. But as development workflows have evolved, the filesystem has become a much more complex place. We now live inside Git repositories, deal with heavily optimized filesystems like APFS and ext4, and encounter files completely divorced from their conventional file extensions.
+
+Enter =hls= (Hacker's =ls=).
+
+Built as a lightweight, drop-in companion for your daily workflow, =hls= takes the speed and standard interface of traditional POSIX commands and supercharges it with modern telemetry. It doesn't rely on massive external frameworks or languages; it is a single, dependency-free C binary designed to answer the specific questions terminal users ask every day.
+
+Here is what it does, and why you might want to alias your standard =ls= to use it.
+
+** Version Control Visibility (=-G=)
+
+If you spend your days in the terminal, you likely suffer from "Git Status Fatigue"—the habit of typing =git status= every time you change directories just to orient yourself.
+
+By passing the =-G= flag, =hls= natively queries your working tree and displays standard two-character Git badges (e.g., =M= for modified, =??= for untracked, =A= for added) directly next to the filenames.
+
+#+BEGIN_SRC bash
+$ hls -G
+M  main.c
+?? test.log
+README.md
+#+END_SRC
+
+Why it’s useful: It merges filesystem navigation with version control awareness. You immediately see what needs to be staged or committed without running a secondary command.
+
+** The Integrated Tree View (=-T=)
+
+Visualizing deeply nested directories usually means reaching for a secondary tool like =tree=. But =tree= doesn't usually share the same formatting flags, coloring, or metadata as your directory lister.
+
+The =-T= flag instructs =hls= to render a hierarchical, box-drawn graph of your directory structure. Because it's built into =hls=, it composes perfectly with all other flags. You can view a tree structure that includes long file permissions, sizes, and Git status all at once.
+
+Why it’s useful: Context. You get the recursive mapping of =tree= combined with the rich metadata of =ls -l=, while safely avoiding the infinite loops that often happen when traversing circular symbolic links.
+
+** True Disk Allocation Analytics (=-s=)
+
+Standard directory tools lie about file sizes. A file might report a logical size (=st_size=) of 10 GB, but because it is a "sparse file" (a file with massive blocks of empty zeroes, common in database allocations or virtual machine images), it might actually be consuming zero bytes of physical disk space.
+
+The =-s= flag looks past the logical length and queries the physical blocks allocated by the filesystem. If a file is sparse, =hls= explicitly flags it and shows you the efficiency percentage.
+
+#+BEGIN_SRC bash
+$ hls -l -s
+-rw-r--r-- 1 bill users 10.0G [0% sparse] Oct 19 14:00 database.img
+#+END_SRC
+
+Why it’s useful: When managing backups, VM images, or running out of disk space, knowing the difference between "apparent size" and "actual physical footprint" prevents catastrophic miscalculations.
+
+** Content-Type Sniffing (=-M=)
+
+In Unix, file extensions (like =.txt= or =.pdf=) are polite suggestions, not enforced rules. A file named =data.csv= might actually be a compiled executable, and a file with no extension at all might be a shell script.
+
+When you pass the =-M= flag, =hls= opens regular files, peeks at the first 32 bytes of content (the "magic numbers"), and identifies what the file /actually/ is.
+
+#+BEGIN_SRC bash
+$ hls -l -M
+-rwxr-xr-x 1 bill users 12K Oct 19 build_script (script text)
+-rw-r--r-- 1 bill users 84K Oct 19 data.csv (SQLite database)
+#+END_SRC
+
+Why it’s useful: It completely eliminates the need to run the =file= command on suspicious or ambiguously named files, saving keystrokes and preventing you from accidentally trying to =cat= a compiled binary into your terminal.
+
+** Extended Attributes (=-@=)
+
+Modern operating systems tag files with invisible metadata. On macOS, this is often the =com.apple.quarantine= bit that prevents downloaded scripts from executing. On Linux, it might be an SELinux security context or user-defined labels.
+
+Standard =ls -l= will append a cryptic =@= or =+= symbol if these exist, leaving you to manually run =xattr= or =getfattr= to figure out what they actually are. =hls -@= expands them inline, indenting the extended attribute keys cleanly under the parent file.
+
+Why it’s useful: When a script inexplicably refuses to run despite having =+x= permissions, or when a file transfer behaves strangely, surfacing extended metadata immediately reveals the invisible rules governing that file.
+
+* Everyday Workflows
+
+=hls= was designed so its flags compose elegantly. For everyday command-line navigation, here are a few ways to combine them into powerful workflows:
+
+** The Hacker's Default
+#+BEGIN_SRC bash
+$ hls -lG
+#+END_SRC
+Renders a standard long list, but with Git statuses cleanly aligned on the left margin. Perfect for active development directories.
+
+** The Deep Dive
+#+BEGIN_SRC bash
+$ hls -lGMT
+#+END_SRC
+Recursively prints the directory as a tree (=-T=), showing full permissions and human-readable sizes (=-l=), annotating every file's Git status (=-G=), and revealing the true file type regardless of its extension (=-M=).
+
+** The Built-in Manual
+Because terminal life should be self-contained, =hls= doesn't require you to install a separate man page to your system directories.
+#+BEGIN_SRC bash
+$ hls -m
+#+END_SRC
+This command generates a cleanly formatted, system-style manual page directly to standard output, ready to be piped into a pager like =less= for quick reference.
+
+* Summary
+
+=hls= isn't trying to reinvent the paradigm of listing files; it's simply bringing the tool up to speed with the modern filesystem. By collapsing the functionality of =ls=, =git status=, =tree=, =file=, and =xattr= into a single, high-performance binary, it strips away terminal friction and lets you focus on the actual work.

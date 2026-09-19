@@ -1,0 +1,241 @@
+#+TITLE: hls(1) User Manual & Feature Guide
+#+AUTHOR: Bill Wear
+#+DATE: [2026-09-19 Sat]
+#+OPTIONS: toc:2 num:nil html-postamble:t html-style:nil
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#+HTML_HEAD: <style>
+#+HTML_HEAD:   :root {
+#+HTML_HEAD:     --bg: #0d1117;
+#+HTML_HEAD:     --fg: #c9d1d9;
+#+HTML_HEAD:     --text-muted: #8b949e;
+#+HTML_HEAD:     --border: #30363d;
+#+HTML_HEAD:     --accent: #58a6ff;
+#+HTML_HEAD:     --code-bg: #161b22;
+#+HTML_HEAD:     --callout-bg: #1f242c;
+#+HTML_HEAD:     --green: #3fb950;
+#+HTML_HEAD:     --red: #f85149;
+#+HTML_HEAD:     --yellow: #d29922;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   body {
+#+HTML_HEAD:     max-width: 920px;
+#+HTML_HEAD:     margin: 2rem auto;
+#+HTML_HEAD:     padding: 0 1.5rem;
+#+HTML_HEAD:     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+#+HTML_HEAD:     line-height: 1.65;
+#+HTML_HEAD:     color: var(--fg);
+#+HTML_HEAD:     background-color: var(--bg);
+#+HTML_HEAD:   }
+#+HTML_HEAD:   h1, h2, h3, h4 { color: #f0f6fc; font-weight: 600; }
+#+HTML_HEAD:   h1 { border-bottom: 2px solid var(--border); padding-bottom: 0.6rem; margin-top: 2rem; }
+#+HTML_HEAD:   h2 { border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-top: 2.5rem; color: #58a6ff; }
+#+HTML_HEAD:   a { color: var(--accent); text-decoration: none; }
+#+HTML_HEAD:   a:hover { text-decoration: underline; }
+#+HTML_HEAD:   code {
+#+HTML_HEAD:     background: var(--code-bg);
+#+HTML_HEAD:     color: #ff7b72;
+#+HTML_HEAD:     padding: 0.18rem 0.35rem;
+#+HTML_HEAD:     border-radius: 4px;
+#+HTML_HEAD:     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+#+HTML_HEAD:     font-size: 0.9em;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   pre.src, pre.example {
+#+HTML_HEAD:     background: var(--code-bg);
+#+HTML_HEAD:     color: var(--fg);
+#+HTML_HEAD:     padding: 1rem;
+#+HTML_HEAD:     border: 1px solid var(--border);
+#+HTML_HEAD:     border-radius: 6px;
+#+HTML_HEAD:     overflow-x: auto;
+#+HTML_HEAD:     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+#+HTML_HEAD:     font-size: 0.88rem;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   #table-of-contents {
+#+HTML_HEAD:     background: var(--code-bg);
+#+HTML_HEAD:     border: 1px solid var(--border);
+#+HTML_HEAD:     border-radius: 6px;
+#+HTML_HEAD:     padding: 1rem 1.5rem;
+#+HTML_HEAD:     margin-bottom: 2.5rem;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   #table-of-contents h2 { border-bottom: none; margin-top: 0; font-size: 1.25rem; color: #f0f6fc; }
+#+HTML_HEAD:   #table-of-contents ul { list-style-type: none; padding-left: 1rem; }
+#+HTML_HEAD:   #table-of-contents li { margin: 0.3rem 0; }
+#+HTML_HEAD:   table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; }
+#+HTML_HEAD:   th, td { border: 1px solid var(--border); padding: 0.6rem 0.8rem; text-align: left; }
+#+HTML_HEAD:   th { background: var(--code-bg); font-weight: 600; color: #f0f6fc; }
+#+HTML_HEAD: </style>
+
+=hls= is a native, dependency-free POSIX utility designed to replace your system's default =ls=. It retains the standard flags you already have committed to muscle memory while introducing advanced systems-level telemetry features: Git status parsing, tree rendering, magic byte sniffing, extended attribute inspection, and physical disk allocation analytics.
+
+Because =hls= is built as a unified tool, every flag composes elegantly with the others.
+
+* Standard Options
+Let's explore each of the standard options.
+
+** The =-a= Option: Include Hidden Files
+By default, =hls= ignores files and directories that begin with a period (=.=). Passing =-a= forces =hls= to reveal all entries in the directory, including the current directory (=.=) and parent directory (=..=) pointers.
+
+#+BEGIN_SRC bash
+$ hls -a
+.               .bashrc         .git            Makefile        src
+..              .config         .gitignore      README.md
+#+END_SRC
+
+** The =-l= Option: Long Record Format
+Transforms the multi-column layout into a detailed, vertical list displaying POSIX file modes, link counts, owners, groups, logical sizes, and modification timestamps.
+
+#+BEGIN_SRC bash
+$ hls -l
+drwxr-xr-x  4 bill users     128 Oct 19 14:00 src
+-rw-r--r--  1 bill users    1048 Oct 19 14:05 Makefile
+lrwxr-xr-x  1 bill users       8 Oct 19 14:10 current_build -> src/main
+#+END_SRC
+
+** The =-H= Option: Human-Readable Sizes
+When used alongside the =-l= or =-s= flags, =-H= scales raw byte sizes into human-readable binary suffixes (Base 1024: K, M, G, T, P) for immediate comprehension.
+
+#+BEGIN_SRC bash
+$ hls -l -H
+-rw-r--r-- 1 bill users 1.0K Oct 19 14:05 Makefile
+-rw-r--r-- 1 bill users 2.4M Oct 19 14:12 target_binary
+-rw-r--r-- 1 bill users 4.0G Oct 19 14:15 large_database.img
+#+END_SRC
+
+** The =-F= Option: Classify Entries
+Appends a single classification character to the end of filenames to visually indicate the file type.
+
+⚬ =/= indicates a Directory.
+⚬ =*= indicates an Executable regular file.
+⚬ =@= indicates a Symbolic Link.
+⚬ =|= indicates a FIFO (named pipe).
+⚬ === indicates a Socket.
+
+#+BEGIN_SRC bash
+$ hls -F
+Makefile      server.sock=  src/          target_binary*
+#+END_SRC
+
+** The =-n= Option: Numeric IDs
+Functions identically to the =-l= flag, but bypasses the operating system's =/etc/passwd= and =/etc/group= resolution, displaying the raw numeric User ID (UID) and Group ID (GID). This is highly useful for inspecting tarball extractions or network mounts where local usernames do not map correctly.
+
+#+BEGIN_SRC bash
+$ hls -n
+-rw-r--r-- 1 1000 1000 1.0K Oct 19 14:05 Makefile
+#+END_SRC
+
+** The =-t= Option: Sort by Modification Time
+Sorts the directory contents by their modification timestamp (=mtime=), placing the most recently modified files at the top of the output.
+
+#+BEGIN_SRC bash
+$ hls -l -t
+-rw-r--r-- 1 bill users 2.4M Oct 19 14:12 target_binary
+-rw-r--r-- 1 bill users 1.0K Oct 19 14:05 Makefile
+drwxr-xr-x 4 bill users  128 Oct 18 09:30 src
+#+END_SRC
+
+** The =-S= Option: Sort by Logical File Size
+Sorts the directory contents by their apparent logical size (=st_size=) in descending order, placing the largest files at the top.
+
+#+BEGIN_SRC bash
+$ hls -l -H -S
+-rw-r--r-- 1 bill users 4.0G Oct 19 14:15 large_database.img
+-rw-r--r-- 1 bill users 2.4M Oct 19 14:12 target_binary
+-rw-r--r-- 1 bill users 1.0K Oct 19 14:05 Makefile
+#+END_SRC
+
+** The =-r= Option: Reverse Sort Order
+Inverts the current sorting algorithm. By default, it reverses the standard alphabetical sort. When combined with =-t=, it places the oldest files at the top. When combined with =-S=, it places the smallest files at the top.
+
+#+BEGIN_SRC bash
+$ hls -l -H -S -r
+-rw-r--r-- 1 bill users 1.0K Oct 19 14:05 Makefile
+-rw-r--r-- 1 bill users 2.4M Oct 19 14:12 target_binary
+-rw-r--r-- 1 bill users 4.0G Oct 19 14:15 large_database.img
+#+END_SRC
+
+** The =-R= Option: Recursive Traversal
+Descends into subdirectories and lists their contents sequentially.
+
+#+BEGIN_SRC bash
+$ hls -R
+.:
+Makefile  src
+
+./src:
+main.c    utils.c   utils.h
+#+END_SRC
+
+* Advanced Telemetry Options
+
+** The =-G= Option: Git Repository Integration
+The =-G= flag polls the active Git repository and prepends standard two-character Git status badges to your file output. It automatically crawls upward to find the =.git= root, meaning it works from any nested subdirectory within your project without needing a separate =git status= execution.
+
+⚬ Green Badges (=M =, =A =, =D =): Changes staged for commit.
+⚬ Yellow Badges (= M=, =??=): Unstaged modifications or untracked files.
+
+#+BEGIN_SRC bash
+$ hls -G
+M  hls.c
+?? test.log
+Makefile
+#+END_SRC
+
+** The =-T= Option: Cycle-Safe Tree Traversal
+The =-T= flag replaces external utilities by rendering the directory hierarchy using UTF-8 box-drawing characters. Because this is built natively into =hls=, it composes perfectly with all other flags (like =-l= or =-G=). If it detects a circular symbolic link that points back to a parent directory, it safely halts traversal for that branch to prevent infinite recursive loops.
+
+#+BEGIN_SRC bash
+$ hls -T -F
+.
+├── src/
+│   ├── main.c
+│   └── utils.h
+└── build.sh*
+#+END_SRC
+
+** The =-M= Option: Magic Byte Sniffing
+File extensions can be missing or falsified. The =-M= flag forces =hls= to open regular files and inspect their first 32 bytes to determine the actual content type. Calling =-M= automatically enables long-format listing (=-l=) to provide space for the content description.
+
+#+BEGIN_SRC bash
+$ hls -M
+-rwxr-xr-x 1 bill users 14336 Oct 19 14:00 build_tool (ELF binary)
+-rw-r--r-- 1 bill users 22016 Oct 19 14:00 archive.bak (ZIP archive)
+-rw-r--r-- 1 bill users    12 Oct 19 14:00 raw_data (raw binary)
+#+END_SRC
+
+** The =-@= Option: Extended Attributes & ACLs
+Modern operating systems store metadata out-of-band, such as macOS quarantine bits or Linux security contexts. The =-@= flag exposes this hidden data. Files with extended attributes will feature an =@= symbol appended to their permission block, and =hls= will enumerate the specific attribute namespaces indented beneath the file.
+
+#+BEGIN_SRC bash
+$ hls -l -@
+-rwxr-xr-x@ 1 bill users 12288 Oct 19 14:00 downloaded_script.sh
+@ com.apple.quarantine
+@ com.apple.metadata:kMDItemWhereFroms
+#+END_SRC
+
+** The =-s= Option: True Disk Allocation
+Standard long listings display logical file sizes, which can be misleading on modern filesystems supporting sparse files. The =-s= flag measures actual block allocation (=st_blocks * 512=). If the physical footprint is less than the logical size, =hls= displays a sparse efficiency ratio. Otherwise, it shows the physical blocks allocated to the file on disk.
+
+#+BEGIN_SRC bash
+$ hls -l -s -H
+-rw-r--r-- 1 bill users 10.0G [0% sparse] Oct 19 14:00 virtual_machine.img
+-rw-r--r-- 1 bill users   14K [16K blk]   Oct 19 14:00 normal_file.txt
+#+END_SRC
+
+* Built-in Documentation
+
+=hls= contains its own self-documenting manual, eliminating the need to install external groff/man pages to your system paths.
+
+** The =-h= Option: Usage Summary
+Prints a rapid, concise syntax overview and exits immediately.
+
+#+BEGIN_SRC bash
+$ hls -h
+Usage: ./hls [-aFlrRnStHM@Gs] [-h] [-m] [file ...]
+Modern systems programmer's directory browser and APUE reference tool.
+Execute './hls -m' for the comprehensive manual page or -h for usage summary.
+#+END_SRC
+
+** The =-m= Option: Full Manual Page
+Generates the full, system-style manual page to =stdout=. =hls= automatically detects when =stdout= is piped to an external tool (like =less=) and strips ANSI formatting codes to ensure perfectly clean pager viewing.
+
+#+BEGIN_SRC bash
+$ hls -m | less
+#+END_SRC

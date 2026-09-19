@@ -1,0 +1,16 @@
+#+TITLE: William Wear
+#+OPTIONS: title:nil
+#+MACRO: small @@html:<small>@@$1@@html:</small>@@
+
+#+BEGIN_EXPORT html
+<header class="site-header">
+    <img src="logo.svg" alt="Logo" class="site-logo" />
+    <h1 class="title">William Wear</h1>
+</header>
+#+END_EXPORT
+
+I write the code, write the tests, and write the documentation, write the marketing content, and write the help and manpages.  Here's an example that took me about a day, dragging *APUE* along with me to the cafe.
+
+
+{{{small(Text passages copyright © 2026 by William Wear. All rights reserved. All code provided herein is free and unencumbered software released into the public domain under The Unlicense. For more information please refer directly to <https://unlicense.org/>.)}}}
+

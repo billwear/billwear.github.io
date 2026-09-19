@@ -1,0 +1,87 @@
+#+TITLE: kal(1)
+#+AUTHOR: William Wear
+#+DATE: 2026-09-13
+#+OPTIONS: toc:nil num:nil
+
+* NAME
+=kal= - a lightweight, plain-text terminal calendar and scheduling utility
+
+* SYNOPSIS
+=kal= [-r] [-w] [-A num] [-B num] [-t [[[cc]yy]mm]dd] [-g tag] [file]
+
+* DESCRIPTION
+The =kal= utility reads a plain-text file (defaulting to =calendar= in the current directory) and prints any lines whose leading date rule matches the current date. 
+
+Unlike the standard BSD =calendar=, =kal= is designed for modern daily workflows, featuring dynamic age calculation, grep-style filtering, relative countdowns, and native support for recurring weekday/weekend habits.
+
+* OPTIONS
+- =-A num= :: Look ahead. Print lines matching today and the next /num/ days. Appends a relative countdown tag (e.g., =[Tomorrow]=, =[In 3 days]=) to future matches.
+- =-B num= :: Look behind. Print lines matching today and the previous /num/ days. Appends a relative tag (e.g., =[Yesterday]=) to past matches.
+- =-g tag= :: Grep filter. Only print matching lines that also contain the literal string /tag/ in the event description.
+- =-r= :: Rule print. Include the matched date rule (the string before the tab) in the output. By default, =kal= strips the date rule and only prints the event text.
+- =-t [[[cc]yy]mm]dd= :: Target date. Override the system clock and evaluate the file as if today were the specified date. Years may be 2 or 4 digits.
+- =-w= :: Weekday print. Prepend the three-letter day of the week (e.g., =Sun=, =Mon=) to the beginning of each printed line.
+
+* FILE FORMAT
+The calendar file relies on strict text-as-data formatting. Empty lines and lines beginning with =#= are ignored. 
+
+Every valid line must consist of a date rule, followed by a single =TAB= character, followed by the event description.
+
+** Custom Repetition Macros
+=kal= natively supports three exact-string macros for recurring events:
+- =* *= :: Matches every day.
+- =M-F= :: Matches Monday through Friday.
+- =SaSun= :: Matches Saturday and Sunday.
+
+** Supported Date Formats
+- Numeric dates: =09/13=, =9/14=
+- Text dates (Forward and Reversed): =Sep 13=, =13 Sep=, =September 13=
+- Wildcard months: =* 15= (matches the 15th of every month)
+- Standalone words: =Sunday= (matches every Sunday), =Oct= (matches October 1st)
+
+** Dynamic Age Calculation
+If an event description contains the literal string =%AGE%=, =kal= will calculate the difference between the current year and the event's year, dynamically replacing the string with the resulting integer.
+
+To trigger this, the date rule must be formatted as =YYYY-MM-DD= or =YYYY/MM/DD=.
+
+* EXAMPLES
+Print today's events, showing the weekday and the date rule:
+#+BEGIN_SRC bash
+kal -w -r
+#+END_SRC
+
+Look ahead 7 days, filtering only for lines containing "@writing":
+#+BEGIN_SRC bash
+kal -A 7 -g "@writing"
+#+END_SRC
+
+Simulate running the calendar on January 16, 2027:
+#+BEGIN_SRC bash
+kal -t 270116
+#+END_SRC
+
+* EXAMPLES: CALENDAR FILE
+#+BEGIN_SRC text
+# Daily routines
+* *	Read 10 pages of a book
+M-F	Review system logs @admin
+SaSun	Water the plants @home
+
+# Specific dates
+09/13	Update GitHub Pages repository
+15 Sep	Publish essay
+
+# Dynamic calculations
+1959-01-16	Birthday (Turning %AGE% years old)
+#+END_SRC
+
+* SEE ALSO
+=calendar(1)=, =date(1)=
+
+* AUTHOR
+William Wear
+
+
+#+MACRO: small @@html:<small>@@$1@@html:</small>@@
+
+{{{small(Text passages copyright © 2026 by William Wear. All rights reserved. All code provided herein is free and unencumbered software released into the public domain under The Unlicense. For more information please refer directly to <https://unlicense.org/>.)}}}
