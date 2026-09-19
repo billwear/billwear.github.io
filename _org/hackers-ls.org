@@ -908,8 +908,9 @@ I wrote an automated test harness in =bash= (=test_hls.sh=) to exercise =hls= ag
 
 Here's the test rig.
 
-@@html<details>@@
-@@html<summary>Click here to open the test rig code; it's also a little long.</summary>@@
+@@html:<details>@@
+@@html:<summary>Click here to expand the test rig; it's also kindof long.</summary>@@
+
 
 #+BEGIN_SRC
 #!/usr/bin/env bash
@@ -1125,7 +1126,7 @@ Here's a look at where I screwed up the first time.
 The first failure halted execution with a message to =stderr=:
 
 #+BEGIN_EXAMPLE
-hls: illegal option -- 
+hls: illegal option -- S
 #+END_EXAMPLE
 
 Looking at line ~580 of =hls.c=:

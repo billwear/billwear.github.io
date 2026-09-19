@@ -1,7 +1,7 @@
 #+TITLE: Site Map
 
-- [[file:index.org][William Wear]]
 - [[file:hackers-ls.org][Building a Hacker's ls]]
+- [[file:index.org][William Wear]]
 - [[file:hackers-ls-tech-mkt-content.org][Introducing =hls=: The Terminal Native's Directory Browser]]
 - [[file:hackers-ls-tech-manual.org][hls(1) User Manual & Feature Guide]]
 - [[file:amy-bill-podcast-script-1.org][Working Title: Exit Code Zero: When to Stay, When to kill -9, and How to Survive Either Way]]
