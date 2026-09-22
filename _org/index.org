@@ -19,7 +19,9 @@ Here's an example that took me about a day, dragging *APUE* along with me to the
  - [[file:hackers-ls-tech-manual.org][hls(1) technical manual page]]: the user's manual page
  - [[file:hackers-ls-tech-mkt-content.html][tech marketing content for general use]]: a tech marketing blurb to be shaped into various marketing channels
 
-There's actually more there at the [[https://github.com/billwear/hackers-cli][hacker's CLI repo]]. Enjoy.
+There's actually more there at the [[https://github.com/billwear/hackers-cli][hacker's CLI repo]].
+
+[[https://billwear.github.io/grep-oP-K-1.html][Here's an idea for a unique CLI video]] that talks about some little-known, underused options for grep that cut down on complex piping.
 
 {{{small(Text passages copyright © 2026 by William Wear. All rights reserved. All code provided herein is free and unencumbered software released into the public domain under The Unlicense. For more information please refer directly to <https://unlicense.org/>.)}}}
 
