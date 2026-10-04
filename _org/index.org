@@ -1,4 +1,5 @@
 #+TITLE: William Wear
+#+SUBTITLE: Draw small circles. Pick two actions. Take small bites.
 #+OPTIONS: title:nil
 #+MACRO: small @@html:<small>@@$1@@html:</small>@@
 
