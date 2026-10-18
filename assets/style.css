@@ -53,3 +53,32 @@ a:hover {
 ::selection {
   background-color: rgba(92, 114, 138, 0.3);
 }
+
+/* 8. Mobile Responsiveness */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Centers the title and removes the default bottom margin */
+  nav ul:first-of-type {
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  /* Allows navigation links to wrap gracefully onto new lines */
+  nav ul:last-of-type {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  /* Slightly scales down the title to fit narrower phone screens */
+  nav strong {
+    font-size: 1.1rem; 
+    text-align: center;
+  }
+}
