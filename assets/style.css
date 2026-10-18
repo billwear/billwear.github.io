@@ -1,0 +1,55 @@
+/* 1. Import Premium Fonts (Inter for body, Merriweather for headings) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap');
+
+/* 2. Override Pico's Default Variables */
+:root {
+  /* Typography */
+  --pico-font-family-base: 'Inter', system-ui, sans-serif;
+  --pico-line-height: 1.7; /* Slightly looser line spacing for deep reading */
+  
+  /* Sophisticated color palette (Muted Slate Blue) */
+  --pico-primary: #5c728a;
+  --pico-primary-hover: #3d4f63;
+  --pico-primary-underline: rgba(92, 114, 138, 0.3);
+}
+
+/* 3. Dark Mode Refinements */
+@media only screen and (prefers-color-scheme: dark) {
+  :root {
+    --pico-background-color: #12151a; /* Deeper, richer black */
+    --pico-color: #d1d6df; /* Softer off-white to prevent retina burn */
+    --pico-primary: #7d96b3;
+    --pico-primary-hover: #a1b8d4;
+  }
+}
+
+/* 4. Elegant Serif Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.01em; /* Tighter letter spacing on headers looks bespoke */
+}
+
+/* 5. Polish the Site Title in the Nav Bar */
+nav strong {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+/* 6. Premium Link Hover Effects */
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--pico-primary-underline);
+  transition: text-decoration-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+a:hover {
+  text-decoration-color: var(--pico-primary);
+}
+
+/* 7. Custom Text Selection (When a user highlights text) */
+::selection {
+  background-color: rgba(92, 114, 138, 0.3);
+}
