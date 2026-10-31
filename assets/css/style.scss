@@ -7,9 +7,21 @@ body {
   background-color: #1e1e24; /* Charcoal background */
   color: #d1d1d6; /* Soft white text */
 }
+/* 405nm Wavelength Header Variations */
+h1 {
+  color: #e0b0ff !important; /* Bright Lavender */
+}
+
+h2 {
+  color: #c792ea !important; /* Medium Violet */
+}
+
+h3, h4, h5, h6 {
+  color: #9d72c3 !important; /* Deep Muted Purple */
+}
 
 a {
-  color: #c792ea; /* Lavender links (405nm vibe) */
+  color: #c792ea; /* Lavender links */
 }
 
 header {
