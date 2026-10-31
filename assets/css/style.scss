@@ -1,0 +1,17 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+body {
+  background-color: #1e1e24; /* Charcoal background */
+  color: #d1d1d6; /* Soft white text */
+}
+
+a {
+  color: #c792ea; /* Lavender links (405nm vibe) */
+}
+
+header {
+  background-color: #1e1e24;
+}
