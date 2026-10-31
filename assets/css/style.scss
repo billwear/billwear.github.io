@@ -3,6 +3,22 @@
 
 @import "{{ site.theme }}";
 
+/* Increase the width of the main container */
+.wrapper {
+  max-width: 1200px; /* Default is usually smaller, like 800px or 900px */
+  margin: 0 auto; /* Keeps it centered */
+}
+
+/* Optional: Add a background to the content area to separate it from the margins */
+body {
+  background-color: #1a1a1a; /* Outer margin color */
+}
+
+.wrapper {
+  background-color: #2d2d2d; /* Content background color */
+  padding: 20px;
+}
+
 body {
   background-color: #1e1e24; /* Charcoal background */
   color: #d1d1d6; /* Soft white text */
