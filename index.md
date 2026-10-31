@@ -1,5 +1,5 @@
 ---
-layout:default
+layout: default
 ---
 
 # 405 Nano
