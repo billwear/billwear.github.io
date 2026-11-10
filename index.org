@@ -1,5 +1,5 @@
 #+TITLE: Testing Orgstar
-#+OPTION: num:nil
+#+OPTIONS: num:nil
 
 * Prepared in Orgstar
 i just created a new org file in my billwear.github.io repo, exported it to HTML, and pushed it up to git. 
