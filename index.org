@@ -1,7 +1,62 @@
-#+TITLE: Testing Orgstar
+#+TITLE: Novel Approach
 #+OPTIONS: num:nil
 
-* Prepared in Orgstar
-i just created a new org file in my billwear.github.io repo, exported it to HTML, and pushed it up to git. 
-
-How's it look?
+* The Novel Approach
+** Bradbury Override
+Drop rigid schedules when impulse strikes.
+** Asimov Shuffle
+Keep mamny projects open & switch when bored or stuck.
+** Chandler Trap
+Forbid all work to force boredom, which will eventually force action.
+** Gaiman Permission
+Give yourself permission to daydream.
+** Lamott Splatt
+Seed a lousy start to lower the stakes and engage the critic.,
+** Cunningham Bypass
+Make a plan for doing the exact wrong thing.
+** Doctorow Walk
+Kill overthinking and spinning thoughts with physical movement.
+** Trollope Two-Step
+Set a timer or a numeric goal and don't censor yourself.
+** Hugo Restraint
+Modify your environment to support work -- before you start.
+** Schiller Apples
+Add mood-influencing sensory triggers.
+** Angenlou Airlock
+Enforce strict boundaries on mental states.
+** London Goat Path
+Uncouple your cognitive tasks from the clock on the wall.
+** Christie Guardrails
+Keep notebooks of creative ideas, hints, and snippets.
+** Dickens Mirror
+Inhabit the person who could behave in the right way to get it done.
+** Stevenson Brownies
+Set a distinct time or place to do something difficult.
+** Hemingway Bridge
+Quit a peak momentum in mid-task and stop until a later time.
+** Twain Scratchpad
+Capture unrelated or tangential thoughts for later.
+** Nabokov Puzzle
+Break big tasks and problems into steps and then rearrange them until things make sense.
+** Luhmann Scramble
+Unlink and relink steps and ideas until things feel smooth and realistic.
+** Rowling Countdown
+Work backwards from the end goal, one backstep at a time.
+** Heller Grid
+Build a map of desired state changes all along the path from start to finish.
+** Caro-Eco Wall
+Expand a complex problem into a mind-map or web.
+** Faulkner Muzzle
+Let different parts of your brain (logical, emotional, spatial) each weigh in on a problem /in turn/.
+** Steinbeck Jolt
+Use a physical or verbal anomaly to break unresolvable loops.
+** Quiller Knife
+Enforce a strict contract or perimeter on problems and solutions.
+** King Guillotine
+Don't use complicated solutions when a simple one will do.
+** Lincoln Reset
+Invest time in your tools, and you'll feel committed to start.
+** Salinger Doubt
+Treat much of what you're thinking about a problem as coming from an unreliable narrator.
+** Wallace Hedge
+Mark opinions that are masquerading as facts with ""[CITATION NEEDED]."
