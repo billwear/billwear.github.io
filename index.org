@@ -1,7 +1,31 @@
 #+TITLE: Novel Approach
 #+OPTIONS: num:nil
 
-* The Novel Approach
+* The Novel Approach to Life
+** Having a clear runway doesn't mean you can fly the plane
+There are several genuinely good personal growth books out there, but they fall short when it comes to solving hard problems.  For example:
+
+*** If you need to motivate yourself
+Read Jocko Willink's "Discipline Equals Freedom."  It'll get you up off the couch for sure.
+*** If you need to manage routine affairs better
+Read James Clear's "Atomic Habits." It will teach you how to make routines effortless.
+*** If you have a bunch of ideas crowding your thinking
+Read David Allen's "Getting Things Done." It will show you how to get all that stuff off your mind so you can think more clearly.
+*** If you can't focus because there are so many distractions
+Read Cal Newport's "Deep Work." It provides techniques for blocking out focus time while blocking out noise and interruptions.
+
+** These books are fantastic, as far as they go, but everybody stops short
+So you're on fire to do something; you've got your administrivia on autopilot; you've got all those someday-maybe projects safely parked in a list you know you'll look at; you've blocked out 90-180 minutes daily to shut out the world and do hard things.
+
+Great.
+
+Now how, exactly, do you /do/ those hard things?
+
+
+
+
+
+
 ** Bradbury Override
 Drop rigid schedules when impulse strikes.
 ** Asimov Shuffle
